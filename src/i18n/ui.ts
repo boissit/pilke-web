@@ -77,7 +77,7 @@ const fi = {
   'economy.amount.two': '2 terälehteä',
   'economy.amount.five': '5 terälehteä',
   'economy.note':
-    'Terälehtiä voi kerätä kerrallaan viidentoista asti. Määrät voivat muuttua betavaiheen aikana.',
+    'Terälehtiä voi ansaita viisitoista kerrallaan. Kun raja tulee vastaan, ansaitut terälehdet odottavat siihen asti, kunnes käytät niitä. Määrät voivat muuttua betavaiheen aikana.',
 
   // The detail page. Every number here is the backend's own constant, and the
   // README records which.
@@ -120,7 +120,7 @@ const fi = {
 
   'detail.economy.spend': 'Näin ruusu kuluu',
   'detail.economy.spend.body':
-    'Ruusu kuluu sillä hetkellä, kun avaat kolmen ehdokkaan valikoiman. Kutsun lähettäminen ei maksa enää mitään. Ruusuja voi olla kerrallaan enintään kolme, ja terälehtiä kerätä viisitoista: kun raja tulee vastaan, ansaitut terälehdet odottavat, kunnes käytät ruusun.',
+    'Ruusu kuluu sillä hetkellä, kun avaat kolmen ehdokkaan valikoiman. Kutsun lähettäminen ei maksa enää mitään. Terälehtiä voi ansaita viisitoista kerrallaan, eli kolmen ruusun verran: kun raja tulee vastaan, ansaitut terälehdet odottavat, kunnes käytät ruusun. Hyvitykset, kuten peruneen kutsun palautus, tulevat perille rajasta riippumatta.',
 
   'detail.changes.title': 'Jos suunnitelmat muuttuvat',
   'detail.changes.expired': 'Kutsuun ei vastata vuorokaudessa',
@@ -261,7 +261,7 @@ const en: Record<keyof typeof fi, string> = {
   'economy.amount.two': '2 petals',
   'economy.amount.five': '5 petals',
   'economy.note':
-    'You can hold up to fifteen petals at a time. The amounts may change during the beta.',
+    'You can earn fifteen petals at a time. Once you reach that, what you have earned waits until you spend some. The amounts may change during the beta.',
 
   'detail.title': 'How Pilke works',
   'detail.lead':
@@ -302,7 +302,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'detail.economy.spend': 'How a rose goes',
   'detail.economy.spend.body':
-    'A rose goes the moment you open a set of three candidates. Sending the invitation costs nothing more. You can hold three roses at a time and fifteen petals: once you reach that, what you earn waits until you spend a rose.',
+    'A rose goes the moment you open a set of three candidates. Sending the invitation costs nothing more. You can earn fifteen petals at a time, which is three roses worth: once you reach that, what you have earned waits until you spend a rose. Reimbursements, such as the rose returned when an invitation lapses, arrive regardless of the limit.',
 
   'detail.changes.title': 'If plans change',
   'detail.changes.expired': 'An invitation goes unanswered for a day',
