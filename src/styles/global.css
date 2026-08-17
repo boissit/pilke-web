@@ -1,0 +1,173 @@
+/*
+  The app's design tokens, carried over so the site and the product look like one
+  thing. Values come from pilke-app/src/constants/colors.ts, fonts.ts and
+  dimensions.ts; the names match theirs so a change on either side is easy to
+  trace to the other.
+*/
+
+@font-face {
+  font-family: 'Courgette';
+  src: url('/fonts/Courgette-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans_bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans_extrabold.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+}
+
+:root {
+  /* colors.ts */
+  --ink: #3c3c3c;
+  --button-text: #222222;
+  --white: #fcf5f7;
+  --success: #a8dacb;
+  --muted: #808080;
+  --error: #ff7075;
+  --brand-background: #fff8c2;
+  --brand-main: #f4e04d;
+
+  /* The four match-list tints, used here to colour the steps of the loop. */
+  --card-confirmed: #fff8c2;
+  --card-sent: #dcfbff;
+  --card-received: #ffeafc;
+  --card-feedback: #ffe3d3;
+
+  /* dimensions.ts */
+  --radius-small: 8px;
+  --radius-normal: 12px;
+  --radius-large: 16px;
+  --border-width: 2px;
+
+  --pad-small: 6px;
+  --pad-normal: 12px;
+  --pad-medium: 16px;
+  --pad-large: 32px;
+
+  --measure: 34rem;
+
+  /* fonts.ts pairs Courgette for display with OpenSans for everything else. */
+  --font-display: 'Courgette', 'Segoe Script', cursive;
+  --font-body: 'OpenSans', system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  text-wrap: balance;
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 6vw, 3.75rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.125rem;
+}
+
+p {
+  margin: 0;
+  max-width: var(--measure);
+}
+
+a {
+  color: var(--ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 68rem;
+  margin-inline: auto;
+  padding-inline: var(--pad-medium);
+}
+
+.stack > * + * {
+  margin-top: var(--pad-medium);
+}
+
+/* The app draws a bordered card everywhere; this is that card. */
+.card {
+  background: var(--white);
+  border: var(--border-width) solid var(--ink);
+  border-radius: var(--radius-large);
+  padding: var(--pad-medium);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

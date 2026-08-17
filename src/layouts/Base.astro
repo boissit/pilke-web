@@ -1,0 +1,165 @@
+---
+import '../styles/global.css';
+import { languages, localePath, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const other: Lang = lang === 'fi' ? 'en' : 'fi';
+const nav = [
+  { href: '#how', label: t('nav.how') },
+  { href: '#safety', label: t('nav.safety') },
+  { href: '#faq', label: t('nav.questions') },
+];
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t('meta.title')}</title>
+    <meta name="description" content={t('meta.description')} />
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+
+    <!--
+      Both languages point at each other so a search engine offers the reader the
+      one they asked for, and `x-default` names Finnish because that is the
+      product's language rather than a fallback.
+    -->
+    <link rel="alternate" hreflang="fi" href={new URL('/', Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL('/en', Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site)} />
+
+    <meta property="og:title" content={t('meta.title')} />
+    <meta property="og:description" content={t('meta.description')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang === 'fi' ? 'fi_FI' : 'en_GB'} />
+  </head>
+
+  <body>
+    <a class="skip" href="#main">{t('nav.skip')}</a>
+
+    <header class="site-head">
+      <div class="wrap head-inner">
+        <a class="brand" href={localePath(lang)}>
+          <img src="/img/icon.png" alt="" width="36" height="36" />
+          <span>Pilke</span>
+        </a>
+
+        <nav aria-label={t('meta.title')}>
+          <ul class="nav-list">
+            {nav.map((item) => (
+              <li><a href={item.href}>{item.label}</a></li>
+            ))}
+            <li>
+              <a class="lang" href={localePath(other)} lang={other} hreflang={other}>
+                {languages[other]}
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-foot">
+      <div class="wrap foot-inner">
+        <p>{t('footer.beta')}</p>
+        <p class="mark">{t('footer.rights')}</p>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .skip {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--brand-main);
+    border: var(--border-width) solid var(--ink);
+    border-radius: var(--radius-normal);
+    padding: var(--pad-normal);
+    z-index: 10;
+  }
+
+  .skip:focus {
+    left: var(--pad-medium);
+    top: var(--pad-medium);
+  }
+
+  .site-head {
+    background: var(--brand-main);
+    border-bottom: var(--border-width) solid var(--ink);
+  }
+
+  .head-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pad-normal);
+    padding-block: var(--pad-normal);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--pad-small);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pad-medium);
+    list-style: none;
+    padding: 0;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .nav-list a:hover {
+    text-decoration: underline;
+  }
+
+  /* The language link is the one control on the page, so it looks like one. */
+  .lang {
+    border: var(--border-width) solid var(--ink);
+    border-radius: var(--radius-normal);
+    padding: 2px var(--pad-normal);
+    background: var(--white);
+  }
+
+  .site-foot {
+    margin-top: var(--pad-large);
+    background: var(--brand-background);
+    border-top: var(--border-width) solid var(--ink);
+  }
+
+  .foot-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--pad-normal);
+    padding-block: var(--pad-large);
+  }
+
+  .mark {
+    font-family: var(--font-display);
+  }
+</style>
