@@ -66,14 +66,17 @@ const fi = {
     'Kun kutsu on hyväksytty, treffit ovat sovitut. Jälkeenpäin kerrot miten meni, ja samalla terälehdet maksetaan.',
 
   'economy.title': 'Terälehdet ja ruusut',
-  'economy.lead':
-    'Kaksi asiaa, ja ne toimivat yksinkertaisesti. Terälehtiä keräät tekemällä asioita sovelluksessa. Ruusu on se, millä ostat uuden valikoiman ehdokkaita.',
-  'economy.petal.title': 'Terälehti',
-  'economy.petal.body':
-    'Yksi terälehti kolmesta kalenteriin merkitystä treffiajasta, kaksi käydyistä treffeistä kun olet kertonut miten meni, ja viisi rekisteröinnin viimeistelystä.',
-  'economy.rose.title': 'Ruusu',
-  'economy.rose.body':
-    'Viisi terälehteä on yksi ruusu, ja ruusu ostaa kolmen ehdokkaan valikoiman. Ruusu kuluu valikoiman avaamiseen, joten kutsun lähettäminen ei maksa enää mitään.',
+  'economy.lead': 'Viisi terälehteä on yksi ruusu, ja ruusulla avaat kolmen ehdokkaan valikoiman.',
+  'economy.earn.title': 'Näin terälehdet kertyvät',
+  'economy.spend.title': 'Näin ruusu kuluu',
+  'economy.spend.body':
+    'Ruusu kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään.',
+  'economy.earn.calendar': 'Kolme kalenteriin merkittyä treffiaikaa',
+  'economy.earn.date': 'Treffit, kun olet kertonut miten meni',
+  'economy.earn.signup': 'Rekisteröinnin viimeistely',
+  'economy.amount.one': '1 terälehti',
+  'economy.amount.two': '2 terälehteä',
+  'economy.amount.five': '5 terälehteä',
   'economy.note':
     'Terälehtiä voi kerätä kerrallaan viidentoista asti. Määrät voivat muuttua betavaiheen aikana.',
 
@@ -125,7 +128,8 @@ const fi = {
 
   'shot.treffit': 'Pilkkeen etusivu puhelimessa: ruusujen ja terälehtien määrä ylhäällä, alla omat treffit ja saapuneet kutsut.',
   'shot.kalenteri': 'Kalenterinäkymä, jossa viikon päivät ja niihin merkityt vapaat treffiajat.',
-  'shot.kysymykset': 'Kysymyssarjat-sivu, jossa luettelo vastattavista kysymyssarjoista.',
+  'shot.story': 'Tarinatestin ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.',
+  'shot.platter': 'Ehdokkaat-näkymä: yksi kolmesta ehdokkaasta, hänen kanssaan yhteiset ajat ja valittu tekeminen.',
   'shot.asetukset': 'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.',
   'shot.date': 'Sovitut treffit puhelimessa: aika, paikka kartalla ja turvapainike.',
 
@@ -185,14 +189,17 @@ const en: Record<keyof typeof fi, string> = {
     'Once the invitation is accepted, the date is set. Afterwards you say how it went, and that is also when your petals are paid.',
 
   'economy.title': 'Petals and roses',
-  'economy.lead':
-    'Two things, and they work simply. You collect petals by keeping the app up to date and by going on dates. A rose is what buys you a new set of candidates.',
-  'economy.petal.title': 'Petal',
-  'economy.petal.body':
-    'One petal for every three times you mark in your calendar, two for a date once you have said how it went, and five for finishing your registration.',
-  'economy.rose.title': 'Rose',
-  'economy.rose.body':
-    'Five petals are one rose, and a rose buys a set of three candidates. The rose goes when the set is drawn, so sending the invitation itself costs nothing.',
+  'economy.lead': 'Five petals are one rose, and a rose opens a set of three candidates.',
+  'economy.earn.title': 'How petals add up',
+  'economy.spend.title': 'How a rose goes',
+  'economy.spend.body':
+    'A rose goes the moment you open a set. Sending the invitation costs nothing more.',
+  'economy.earn.calendar': 'Three times marked in your calendar',
+  'economy.earn.date': 'A date, once you have said how it went',
+  'economy.earn.signup': 'Finishing your registration',
+  'economy.amount.one': '1 petal',
+  'economy.amount.two': '2 petals',
+  'economy.amount.five': '5 petals',
   'economy.note':
     'You can hold up to fifteen petals at a time. The amounts may change during the beta.',
 
@@ -244,7 +251,8 @@ const en: Record<keyof typeof fi, string> = {
 
   'shot.treffit': 'The Pilke home screen on a phone: your roses and petals along the top, your dates and the invitations you have received below.',
   'shot.kalenteri': 'The calendar view, with the days of the week and the times marked as free.',
-  'shot.kysymykset': 'The question sets page, listing the sets you can answer.',
+  'shot.story': 'The first question of the story test during onboarding: a situation and three options, one of which you pick.',
+  'shot.platter': 'The candidates view: one of three candidates, the times you both have, and the chosen activity.',
   'shot.asetukset': 'The Safety section of the settings, open, with the field for a trusted person\u2019s number.',
   'shot.date': 'An agreed date on a phone: the time, the venue on a map, and the safety button.',
 

@@ -93,20 +93,46 @@ const { t, promises, steps, faq } = content(lang);
 <section class="slab slab-white">
   <div class="wrap section-pad">
     <h2 class="display-mid">{t('economy.title')}</h2>
-    <p class="lede">{t('economy.lead')}</p>
-    <ul class="currencies">
-      <li class="block">
-        <img src="/img/petal.png" alt="" width="72" height="67" />
-        <h3>{t('economy.petal.title')}</h3>
-        <p>{t('economy.petal.body')}</p>
-      </li>
-      <li class="block">
-        <img src="/img/rose.png" alt="" width="62" height="72" />
-        <h3>{t('economy.rose.title')}</h3>
-        <p>{t('economy.rose.body')}</p>
-      </li>
-    </ul>
-    <p class="pill">{t('economy.note')}</p>
+
+    <!--
+      The exchange as one line, because it is one fact with a direction: petals
+      go in, a rose comes out. Two cards side by side stated it twice and put the
+      currencies in competition, which is the wrong shape for a rate.
+    -->
+    <p class="rate">
+      <span class="coin">
+        <img src="/img/petal.png" alt="" width="46" height="43" />
+        <b>5</b>
+      </span>
+      <span class="equals" aria-hidden="true">=</span>
+      <span class="coin">
+        <img src="/img/rose.png" alt="" width="40" height="46" />
+        <b>1</b>
+      </span>
+      <span class="rate-words">{t('economy.lead')}</span>
+    </p>
+
+    <div class="ledger">
+      <div class="earn">
+        <h3>{t('economy.earn.title')}</h3>
+        <!--
+          A description list, because that is what this is: each way of earning
+          and the amount it pays. The amount is the value of the term beside it,
+          so a reader who tabs through hears them paired.
+        -->
+        <dl>
+          <div><dt>{t('economy.earn.signup')}</dt><dd>{t('economy.amount.five')}</dd></div>
+          <div><dt>{t('economy.earn.calendar')}</dt><dd>{t('economy.amount.one')}</dd></div>
+          <div><dt>{t('economy.earn.date')}</dt><dd>{t('economy.amount.two')}</dd></div>
+        </dl>
+        <p class="note">{t('economy.note')}</p>
+      </div>
+
+      <div class="spend block">
+        <h3>{t('economy.spend.title')}</h3>
+        <p>{t('economy.spend.body')}</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -158,20 +184,101 @@ const { t, promises, steps, faq } = content(lang);
     margin-top: var(--pad-medium);
   }
 
-  .promises,
-  .currencies {
+  .promises {
     list-style: none;
     padding: 0;
     display: grid;
     gap: var(--pad-medium);
-  }
-
-  .promises {
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   }
 
-  .currencies {
-    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  /* The rate reads as one sentence with two coins in it. */
+  .rate {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pad-normal);
+    max-width: none;
+  }
+
+  .coin {
+    display: flex;
+    align-items: center;
+    gap: var(--pad-small);
+    padding: 6px 14px 6px 8px;
+    background: var(--brand-background);
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+  }
+
+  .coin b {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  .equals {
+    font-family: var(--font-display);
+    font-size: 1.75rem;
+  }
+
+  .rate-words {
+    flex: 1 1 18rem;
+    font-size: 1.0625rem;
+  }
+
+  .ledger {
+    display: grid;
+    gap: var(--pad-medium);
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    align-items: start;
+  }
+
+  .earn dl {
+    margin: var(--pad-normal) 0 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .earn dl > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--pad-normal);
+    padding: var(--pad-normal) 0;
+    border-top: 3px solid var(--ink);
+  }
+
+  .earn dl > div:last-child {
+    border-bottom: 3px solid var(--ink);
+  }
+
+  .earn dt {
+    flex: 1 1 12rem;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  /* The amounts line up, so they are read as a column of figures. */
+  .earn dd {
+    margin: 0;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .spend {
+    background: var(--brand-background);
+  }
+
+  .spend > * + * {
+    margin-top: var(--pad-small);
+  }
+
+  .note {
+    margin-top: var(--pad-normal);
+    font-size: 0.9375rem;
+    color: var(--muted);
   }
 
   .block > * + * {

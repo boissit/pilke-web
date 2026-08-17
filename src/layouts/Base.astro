@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import Logo from '../components/Logo.astro';
 import { languages, localePath, useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -33,7 +34,12 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{t('meta.title')}</title>
     <meta name="description" content={t('meta.description')} />
-    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <!--
+      The sparkle, not the launcher icon. `icon.png` is the app's Android icon and
+      is drawn for a rounded mask at 1024px; in a 16px tab it is a yellow smudge.
+      An SVG scales to whatever the browser asks for.
+    -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <!--
       Both languages point at each other so a search engine offers the reader the
@@ -55,9 +61,8 @@ const nav = [
 
     <header class="site-head">
       <div class="wrap head-inner">
-        <a class="brand" href={localePath(lang)}>
-          <img src="/img/icon.png" alt="" width="36" height="36" />
-          <span>Pilke</span>
+        <a class="brand" href={localePath(lang)} aria-label="Pilke">
+          <Logo size={30} />
         </a>
 
         <nav aria-label={t('meta.title')}>
@@ -119,13 +124,14 @@ const nav = [
     padding-block: var(--pad-normal);
   }
 
+  /* `Logo` carries its own geometry, so the anchor only has to not interfere
+     with it. */
   .brand {
-    display: flex;
-    align-items: center;
-    gap: var(--pad-small);
-    font-family: var(--font-display);
-    font-size: 1.5rem;
+    display: inline-block;
     text-decoration: none;
+    /* The logo's own top padding is part of the app's lockup, so the header
+       pulls the block back up rather than growing to accommodate it. */
+    margin-block: calc(var(--pad-small) * -1);
   }
 
   .nav-list {

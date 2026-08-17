@@ -1,0 +1,83 @@
+---
+/**
+ * The wordmark, drawn from the same numbers the app draws it from.
+ *
+ * This is a port of `pilke-app/src/components/Logo.tsx`, and the constants below
+ * are that file's, not new ones. It composes the word in Courgette with the
+ * sparkle placed over its top right corner; the sparkle is not beside the word,
+ * it overlaps it, and that overlap is what makes the mark recognisable.
+ *
+ * The app's geometry, at `size` 72:
+ *
+ *   wrapper   position relative, padding-top 30, padding-right 30
+ *   word      Courgette 72, colour ink
+ *   sparkle   37 x 61, absolute, right 0, margin-right -10, margin-top 24
+ *
+ * Everything scales with the font size, exactly as `Logo.tsx` scales it, so the
+ * header mark and a hero mark are the same drawing at two sizes rather than two
+ * drawings.
+ *
+ * Not an SVG of the whole lockup: the word is live text in Courgette, which the
+ * site already loads. Converting it to paths would give a second copy of the
+ * wordmark to keep in step with the app, and would stop the mark being selectable
+ * or readable by a screen reader.
+ */
+import Sparkle from './Sparkle.astro';
+
+interface Props {
+  /** Font size of the word. The rest is derived, as in the app. */
+  size?: number;
+  class?: string;
+}
+
+// From `fonts.title.fontSize` and the offsets in `Logo.tsx`.
+const BASE_SIZE = 72;
+const PAD_TOP = 30;
+const PAD_RIGHT = 30;
+const SPARKLE_WIDTH = 37;
+const SPARKLE_RIGHT = -10;
+const SPARKLE_TOP = 24;
+
+const { size = 28, class: className } = Astro.props;
+const scale = size / BASE_SIZE;
+---
+
+<span
+  class:list={['logo', className]}
+  style={`
+    --size:${size}px;
+    --pad-top:${PAD_TOP * scale}px;
+    --pad-right:${PAD_RIGHT * scale}px;
+    --sparkle-right:${SPARKLE_RIGHT * scale}px;
+    --sparkle-top:${SPARKLE_TOP * scale}px;
+  `}
+>
+  <span class="word">Pilke</span>
+  <Sparkle size={SPARKLE_WIDTH * scale} class="mark" />
+</span>
+
+<style>
+  .logo {
+    position: relative;
+    display: inline-block;
+    padding-top: var(--pad-top);
+    padding-right: var(--pad-right);
+  }
+
+  .word {
+    font-family: var(--font-display);
+    font-size: var(--size);
+    line-height: 1;
+    color: var(--ink);
+    /* Courgette's own side bearing is enough; a letter-spacing here would be a
+       departure from the app, which sets none. */
+    letter-spacing: 0;
+  }
+
+  .logo :global(.mark) {
+    position: absolute;
+    right: var(--sparkle-right);
+    top: var(--sparkle-top);
+    display: block;
+  }
+</style>
