@@ -60,7 +60,9 @@ const fi = {
     'Treffinäytöllä on aika, paikka ja kartta. Sovittuna hetkenä voitte näyttää sijaintinne toisillenne, jotta löydätte perille.',
   'how.four.title': 'Kerro miten meni',
   'how.four.body':
-    'Palaute treffeistä ja vastauksesi kysymyssarjoihin tarkentavat sitä, keitä sinulle jatkossa ehdotetaan. Samalla saat terälehtiä.',
+    'Treffien jälkeen sovellus kysyy lyhyesti, miten meni ja vastasiko toinen toiveitasi. Vastaaminen kestää hetken, tuo terälehtiä ja tarkentaa sitä, keitä sinulle jatkossa ehdotetaan. Sama koskee kysymyssarjoja, joihin voit vastata omaan tahtiisi.',
+  'how.loop':
+    'Sitten kierros alkaa alusta. Kerätyt terälehdet muuttuvat ruusuksi, ruusu avaa uuden valikoiman, ja tiedämme sinusta enemmän kuin viime kerralla.',
 
   'economy.title': 'Terälehdet ja ruusut',
   'economy.lead': 'Viisi terälehteä on yksi ruusu, ja ruusulla avaat kolmen ehdokkaan valikoiman.',
@@ -188,7 +190,7 @@ const fi = {
   'shot.story': 'Tarinatestin ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.',
   'shot.platter': 'Ehdokkaat-näkymä: yksi kolmesta ehdokkaasta, hänen kanssaan yhteiset ajat ja valittu tekeminen.',
   'shot.invitation': 'Saapunut treffikutsu: kutsujan nimi ja kuva, tarjotut ajat ja paikka.',
-  'shot.kysymykset': 'Kysymyssarjat-sivu, jossa luettelo vastattavista kysymyssarjoista.',
+  'shot.feedback': 'Treffipalaute puhelimessa: kuka oli treffeillä, milloin, ja ensimmäinen kysymys vastausvaihtoehtoineen.',
   'shot.asetukset': 'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.',
   'shot.date': 'Sovitut treffit puhelimessa: aika, paikka kartalla ja turvapainike.',
 
@@ -242,7 +244,9 @@ const en: Record<keyof typeof fi, string> = {
     'The date screen carries the time, the place and a map. At the agreed hour you can show each other your locations so you actually find one another.',
   'how.four.title': 'Say how it went',
   'how.four.body':
-    'Your feedback on a date and your answers to the question sets sharpen who gets suggested to you next. They earn you petals at the same time.',
+    'After the date the app asks briefly how it went and whether the other person matched what you were looking for. Answering takes a moment, earns petals, and sharpens who gets suggested to you next. The same goes for the question sets, which you answer at your own pace.',
+  'how.loop':
+    'Then it starts again. The petals you have collected become a rose, the rose opens a new set, and we know more about you than we did last time.',
 
   'economy.title': 'Petals and roses',
   'economy.lead': 'Five petals are one rose, and a rose opens a set of three candidates.',
@@ -368,7 +372,7 @@ const en: Record<keyof typeof fi, string> = {
   'shot.story': 'The first question of the story test during onboarding: a situation and three options, one of which you pick.',
   'shot.platter': 'The candidates view: one of three candidates, the times you both have, and the chosen activity.',
   'shot.invitation': 'A date invitation received: who sent it, with their photo, the times offered and the place.',
-  'shot.kysymykset': 'The question sets page, listing the sets you can answer.',
+  'shot.feedback': 'Date feedback on a phone: who the date was with, when it was, and the first question with its options.',
   'shot.asetukset': 'The Safety section of the settings, open, with the field for a trusted person\u2019s number.',
   'shot.date': 'An agreed date on a phone: the time, the venue on a map, and the safety button.',
 

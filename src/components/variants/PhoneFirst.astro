@@ -60,7 +60,6 @@ const { t, promises, steps, faq } = content(lang);
   <div class="wrap section-pad">
     <h2 class="display-mid">{t('how.title')}</h2>
     <p class="lede">{t('how.lead')}</p>
-    <p><a class="go" href={localePath(lang, 'nain-se-toimii')}>{t('how.more')}</a></p>
 
     <!--
       One step per row, stacked. A row of five side by side left each phone about
@@ -87,6 +86,14 @@ const { t, promises, steps, faq } = content(lang);
         ))
       }
     </ol>
+
+    <!--
+      The link sits after the four steps, not before them: it offers more detail
+      to somebody who has just read the summary, and at the top it competed with
+      the summary it is meant to follow.
+    -->
+    <p class="loop">{t('how.loop')}</p>
+    <p><a class="go" href={localePath(lang, 'nain-se-toimii')}>{t('how.more')}</a></p>
   </div>
 </section>
 
@@ -295,10 +302,14 @@ const { t, promises, steps, faq } = content(lang);
     gap: var(--pad-large);
   }
 
+  /* Centred on both axes, with the copy capped at a measure. Left-aligned
+     columns of unequal height put the text's first line and the phone's top edge
+     at different heights on every row, which is what read as misaligned. */
   .steps > li {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: var(--pad-large);
     padding-bottom: var(--pad-large);
     border-bottom: 3px solid var(--ink);
@@ -315,10 +326,16 @@ const { t, promises, steps, faq } = content(lang);
 
   .step-copy {
     flex: 1 1 20rem;
+    max-width: 65ch;
   }
 
   .step-copy > * + * {
     margin-top: var(--pad-normal);
+  }
+
+  .loop {
+    max-width: 65ch;
+    font-size: 1.0625rem;
   }
 
   .step-title {
