@@ -5,9 +5,10 @@
  * translation rather than a fallback set, so a key missing from `en` is a type
  * error here in the same way it is in the app's own dictionaries.
  *
- * Product vocabulary is the app's own spelling: teralehdet and ruusut are what
- * the product calls its two currencies, and the site should not invent softer
- * words for them.
+ * Product vocabulary is the app's own spelling: kipinat are what the product
+ * calls its currency, and the site should not invent a softer word for it. The
+ * cost is stated as a price at the point of spending rather than as a rate,
+ * because a rate invites the reader to look for a second unit.
  */
 
 export const languages = {
@@ -69,7 +70,7 @@ const fi = {
 
   'how.one.title': 'Lähetä treffikutsu',
   'how.one.body':
-    'Ruusu avaa kolmen ehdokkaan valikoiman. Valitset yhden, tarjoat pari itsellesi sopivaa aikaa ja paikan, ja kutsu lähtee.',
+    'Viisi kipinää avaa kolmen ehdokkaan valikoiman. Valitset yhden, tarjoat pari itsellesi sopivaa aikaa ja paikan, ja kutsu lähtee.',
   'how.two.title': 'Vastaa saapuneisiin kutsuihin',
   'how.two.body':
     'Kun joku kutsuu sinut, näet kuka hän on, mitä teillä on yhteistä ja mitkä ajat hän tarjoaa. Valitset yhden ajan, ja treffit ovat sovitut.',
@@ -78,30 +79,30 @@ const fi = {
     'Treffinäytöllä on aika, paikka ja kartta. Sovittuna hetkenä voitte näyttää sijaintinne toisillenne, jotta löydätte perille.',
   'how.four.title': 'Kerro miten meni',
   'how.four.body':
-    'Treffien jälkeen sovellus kysyy lyhyesti, miten meni ja vastasiko toinen toiveitasi. Vastaaminen kestää hetken, tuo terälehtiä ja tarkentaa sitä, keitä sinulle jatkossa ehdotetaan. Sama koskee kysymyssarjoja, joihin voit vastata omaan tahtiisi.',
+    'Treffien jälkeen sovellus kysyy lyhyesti, miten meni ja vastasiko toinen toiveitasi. Vastaaminen kestää hetken, tuo kipinöitä ja tarkentaa sitä, keitä sinulle jatkossa ehdotetaan. Sama koskee kysymyssarjoja, joihin voit vastata omaan tahtiisi.',
   'how.loop':
-    'Sitten kierros alkaa alusta. Kerätyt terälehdet muuttuvat ruusuksi, ruusu avaa uuden valikoiman, ja tiedämme sinusta enemmän kuin viime kerralla.',
+    'Sitten kierros alkaa alusta. Kerätyillä kipinöillä avaat uuden valikoiman, ja tiedämme sinusta enemmän kuin viime kerralla.',
 
-  'economy.title': 'Terälehdet ja ruusut',
-  'economy.lead': 'Viisi terälehteä on yksi ruusu, ja ruusulla avaat kolmen ehdokkaan valikoiman.',
-  'economy.earn.title': 'Näin terälehdet kertyvät',
-  'economy.spend.title': 'Näin ruusu kuluu',
+  'economy.title': 'Kipinät',
+  'economy.lead': 'Viisi kipinää avaa kolmen ehdokkaan valikoiman.',
+  'economy.earn.title': 'Näin kipinät kertyvät',
+  'economy.spend.title': 'Näin kipinät kuluvat',
   'economy.spend.body':
-    'Ruusu kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään.',
+    'Viisi kipinää kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään.',
   'economy.earn.calendar': 'Kolme kalenteriin merkittyä treffiaikaa',
   'economy.earn.date': 'Treffit, kun olet kertonut miten meni',
   'economy.earn.signup': 'Rekisteröinnin viimeistely',
-  'economy.amount.one': '1 terälehti',
-  'economy.amount.two': '2 terälehteä',
-  'economy.amount.five': '5 terälehteä',
+  'economy.amount.one': '1 kipinä',
+  'economy.amount.two': '2 kipinää',
+  'economy.amount.five': '5 kipinää',
   'economy.note':
-    'Terälehtiä voi ansaita viisitoista kerrallaan. Kun raja tulee vastaan, ansaitut terälehdet odottavat siihen asti, kunnes käytät niitä. Määrät voivat muuttua betavaiheen aikana.',
+    'Kipinöitä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran. Kun raja tulee vastaan, ansaitut kipinät odottavat siihen asti, kunnes käytät niitä. Määrät voivat muuttua betavaiheen aikana.',
 
   // The detail page. Every number here is the backend's own constant, and the
   // README records which.
   'detail.title': 'Näin Pilke toimii',
   'detail.lead':
-    'Etusivu kertoo kierron neljässä vaiheessa. Tällä sivulla on sama asia tarkemmin, mukaan lukien se, mistä terälehdet ja ruusut tulevat.',
+    'Etusivu kertoo kierron neljässä vaiheessa. Tällä sivulla on sama asia tarkemmin, mukaan lukien se, mistä kipinät tulevat.',
 
   'detail.start.title': 'Ennen ensimmäistä kutsua',
   'detail.start.body':
@@ -120,10 +121,10 @@ const fi = {
   'detail.invite.body':
     'Tarjoat vähintään kaksi aikaa ja yhden tekemisen. Toinen valitsee niistä yhden, ja treffit ovat sovitut. Kutsu on voimassa vuorokauden.',
 
-  'detail.economy.title': 'Terälehdet ja ruusut',
+  'detail.economy.title': 'Kipinät',
   'detail.economy.body':
-    'Terälehti on se, mitä keräät. Ruusu on se, minkä käytät. Viisi terälehteä on yksi ruusu, eikä vaihdossa katoa mitään: sovellus näyttää saldosi kumpanakin.',
-  'detail.economy.earn': 'Näin terälehtiä kertyy',
+    'Kipinä on se, mitä keräät ja käytät. Kolmen ehdokkaan valikoima kuluttaa viisi kipinää, eikä muuta hintaa ole.',
+  'detail.economy.earn': 'Näin kipinöitä kertyy',
   'detail.earn.signup': 'Rekisteröinnin viimeistely',
   'detail.earn.signup.note': 'Kerran tilin elinkaaressa, koodin vahvistamisen jälkeen.',
   'detail.earn.calendar': 'Kolme kalenteriin merkittyä aikaa',
@@ -134,21 +135,21 @@ const fi = {
     'Maksetaan, kun olet kertonut miten meni. Molemmat saavat omansa erikseen.',
   'detail.earn.cancelled': 'Jos toinen perui sovitut treffit',
   'detail.earn.cancelled.note':
-    'Hyvitys sinulle. Jos olit kutsun lähettäjä, saat lisäksi ruususi takaisin.',
+    'Hyvitys sinulle. Jos olit kutsun lähettäjä, saat lisäksi kipinäsi takaisin.',
 
-  'detail.economy.spend': 'Näin ruusu kuluu',
+  'detail.economy.spend': 'Näin kipinät kuluvat',
   'detail.economy.spend.body':
-    'Ruusu kuluu sillä hetkellä, kun avaat kolmen ehdokkaan valikoiman. Kutsun lähettäminen ei maksa enää mitään. Terälehtiä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut terälehdet odottavat, kunnes käytät ruusun. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.',
+    'Viisi kipinää kuluu sillä hetkellä, kun avaat kolmen ehdokkaan valikoiman. Kutsun lähettäminen ei maksa enää mitään. Kipinöitä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut kipinät odottavat, kunnes käytät niitä. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.',
 
   'detail.changes.title': 'Jos suunnitelmat muuttuvat',
   'detail.changes.expired': 'Kutsuun ei vastata vuorokaudessa',
-  'detail.changes.expired.note': 'Kutsu raukeaa itsestään ja saat ruususi takaisin.',
+  'detail.changes.expired.note': 'Kutsu raukeaa itsestään ja saat kipinäsi takaisin.',
   'detail.changes.declined': 'Kutsu hylätään',
   'detail.changes.declined.note':
-    'Saat ruususi takaisin. Hylkääminen on aina ilmaista, eikä siitä seuraa hylkääjälle mitään.',
+    'Saat kipinäsi takaisin. Hylkääminen on aina ilmaista, eikä siitä seuraa hylkääjälle mitään.',
   'detail.changes.withdrawn': 'Perut oman kutsusi',
   'detail.changes.withdrawn.note':
-    'Ruusu on käytetty, ja uuden valikoiman avaaminen odottaa hetken.',
+    'Kipinät on käytetty, ja uuden valikoiman avaaminen odottaa hetken.',
   'detail.changes.canceled': 'Sovitut treffit perutaan',
   'detail.changes.canceled.note':
     'Peruminen onnistuu, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen hidastaa uusien ehdokkaiden saamista.',
@@ -195,7 +196,7 @@ const fi = {
     'Puhelinnumeroasi ei näytetä kenellekään. Ehdokas näkee nimesi, kuvasi ja sen, mitä teillä on yhteistä.',
   'faq.cost.q': 'Mitä se maksaa?',
   'faq.cost.a':
-    'Betavaiheessa ei mitään. Terälehdet ja ruusut kerääntyvät käyttämällä sovellusta.',
+    'Betavaiheessa ei mitään. Kipinöitä kerääntyy käyttämällä sovellusta.',
   'faq.cancel.q': 'Entä jos treffit peruuntuvat?',
   'faq.cancel.a':
     'Kutsun hylkääminen on aina ilmaista, eikä siitä seuraa mitään. Sovitun tapaamisen voi perua sovelluksessa, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen tai paikalle saapumatta jättäminen hidastaa uusien ehdokkaiden saamista, koska se on toisen osapuolen kannalta merkityksellistä.',
@@ -203,7 +204,7 @@ const fi = {
   'faq.delete.a':
     'Kyllä, asetuksista. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Menneet treffit ja niistä annetut palautteet jäävät talteen, koska ne ovat yhtä lailla toisen osapuolen tietoja.',
 
-  'shot.treffit': 'Pilkkeen etusivu puhelimessa: ruusujen ja terälehtien määrä ylhäällä, alla omat treffit ja saapuneet kutsut.',
+  'shot.treffit': 'Pilkkeen etusivu puhelimessa: kipinöiden määrä ylhäällä, alla omat treffit ja saapuneet kutsut.',
   'shot.kalenteri': 'Kalenterinäkymä, jossa viikon päivät ja niihin merkityt vapaat treffiajat.',
   'shot.story': 'Tarinatestin ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.',
   'shot.platter': 'Ehdokkaat-näkymä: yksi kolmesta ehdokkaasta, hänen kanssaan yhteiset ajat ja valittu tekeminen.',
@@ -271,7 +272,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'how.one.title': 'Send a date invitation',
   'how.one.body':
-    'A rose opens a set of three candidates. You pick one, offer a couple of times that suit you and a place to meet, and the invitation goes.',
+    'Five glimmers open a set of three candidates. You pick one, offer a couple of times that suit you and a place to meet, and the invitation goes.',
   'how.two.title': 'Answer the invitations you get',
   'how.two.body':
     'When somebody invites you, you see who they are, what you have in common and which times they are offering. You pick one, and the date is set.',
@@ -280,28 +281,28 @@ const en: Record<keyof typeof fi, string> = {
     'The date screen carries the time, the place and a map. At the agreed hour you can show each other your locations so you actually find one another.',
   'how.four.title': 'Say how it went',
   'how.four.body':
-    'After the date the app asks briefly how it went and whether the other person matched what you were looking for. Answering takes a moment, earns petals, and sharpens who gets suggested to you next. The same goes for the question sets, which you answer at your own pace.',
+    'After the date the app asks briefly how it went and whether the other person matched what you were looking for. Answering takes a moment, earns glimmers, and sharpens who gets suggested to you next. The same goes for the question sets, which you answer at your own pace.',
   'how.loop':
-    'Then it starts again. The petals you have collected become a rose, the rose opens a new set, and we know more about you than we did last time.',
+    'Then it starts again. The glimmers you have collected open a new set, and we know more about you than we did last time.',
 
-  'economy.title': 'Petals and roses',
-  'economy.lead': 'Five petals are one rose, and a rose opens a set of three candidates.',
-  'economy.earn.title': 'How petals add up',
-  'economy.spend.title': 'How a rose goes',
+  'economy.title': 'Glimmers',
+  'economy.lead': 'Five glimmers open a set of three candidates.',
+  'economy.earn.title': 'How glimmers add up',
+  'economy.spend.title': 'How glimmers go',
   'economy.spend.body':
-    'A rose goes the moment you open a set. Sending the invitation costs nothing more.',
+    'Five glimmers go the moment you open a set. Sending the invitation costs nothing more.',
   'economy.earn.calendar': 'Three times marked in your calendar',
   'economy.earn.date': 'A date, once you have said how it went',
   'economy.earn.signup': 'Finishing your registration',
-  'economy.amount.one': '1 petal',
-  'economy.amount.two': '2 petals',
-  'economy.amount.five': '5 petals',
+  'economy.amount.one': '1 glimmer',
+  'economy.amount.two': '2 glimmers',
+  'economy.amount.five': '5 glimmers',
   'economy.note':
-    'You can earn fifteen petals at a time. Once you reach that, what you have earned waits until you spend some. The amounts may change during the beta.',
+    'You can earn fifteen glimmers at a time, which is three invitations worth. Once you reach that, what you have earned waits until you spend some. The amounts may change during the beta.',
 
   'detail.title': 'How Pilke works',
   'detail.lead':
-    'The front page gives the loop in four steps. This page is the same thing in detail, including where petals and roses come from.',
+    'The front page gives the loop in four steps. This page is the same thing in detail, including where glimmers come from.',
 
   'detail.start.title': 'Before your first invitation',
   'detail.start.body':
@@ -320,10 +321,10 @@ const en: Record<keyof typeof fi, string> = {
   'detail.invite.body':
     'You offer at least two times and one thing to do. The other person picks one of them, and the date is set. An invitation stands for a day.',
 
-  'detail.economy.title': 'Petals and roses',
+  'detail.economy.title': 'Glimmers',
   'detail.economy.body':
-    'A petal is what you collect. A rose is what you spend. Five petals are one rose, and nothing is lost in the exchange: the app shows your balance as both.',
-  'detail.economy.earn': 'How petals add up',
+    'A glimmer is what you collect and what you spend. A set of three candidates costs five glimmers, and there is no other price.',
+  'detail.economy.earn': 'How glimmers add up',
   'detail.earn.signup': 'Finishing your registration',
   'detail.earn.signup.note': 'Once in the life of an account, after the code is confirmed.',
   'detail.earn.calendar': 'Three times marked in your calendar',
@@ -334,21 +335,21 @@ const en: Record<keyof typeof fi, string> = {
     'Paid once you have said how it went. Each of you gets your own.',
   'detail.earn.cancelled': 'If the other person calls off an agreed date',
   'detail.earn.cancelled.note':
-    'Compensation for you. If you were the one who invited, you also get your rose back.',
+    'Compensation for you. If you were the one who invited, you also get your glimmers back.',
 
-  'detail.economy.spend': 'How a rose goes',
+  'detail.economy.spend': 'How glimmers go',
   'detail.economy.spend.body':
-    'A rose goes the moment you open a set of three candidates. Sending the invitation costs nothing more. You can earn fifteen petals at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend a rose. Reimbursements, such as the rose returned when an invitation lapses, arrive regardless of the limit.',
+    'Five glimmers go the moment you open a set of three candidates. Sending the invitation costs nothing more. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Reimbursements, such as the glimmers returned when an invitation lapses, arrive regardless of the limit.',
 
   'detail.changes.title': 'If plans change',
   'detail.changes.expired': 'An invitation goes unanswered for a day',
-  'detail.changes.expired.note': 'It lapses by itself and your rose comes back.',
+  'detail.changes.expired.note': 'It lapses by itself and your glimmers come back.',
   'detail.changes.declined': 'An invitation is turned down',
   'detail.changes.declined.note':
-    'Your rose comes back. Turning one down is always free and costs the person doing it nothing.',
+    'Your glimmers come back. Turning one down is always free and costs the person doing it nothing.',
   'detail.changes.withdrawn': 'You withdraw your own invitation',
   'detail.changes.withdrawn.note':
-    'The rose is spent, and opening a new set waits a little while.',
+    'The glimmers are spent, and opening a new set waits a little while.',
   'detail.changes.canceled': 'An agreed date is called off',
   'detail.changes.canceled.note':
     'You can do it, and if the date does not feel right you can get out with nothing to pay. Calling off repeatedly slows down how soon you get new candidates.',
@@ -395,7 +396,7 @@ const en: Record<keyof typeof fi, string> = {
     'Your phone number is never shown to anybody. A candidate sees your name, your photo and what the two of you have in common.',
   'faq.cost.q': 'What does it cost?',
   'faq.cost.a':
-    'Nothing during the beta. Petals and roses are collected by using the app.',
+    'Nothing during the beta. Glimmers are collected by using the app.',
   'faq.cancel.q': 'What if a date falls through?',
   'faq.cancel.a':
     'Turning down an invitation is always free and carries no consequence. You can call off a date you agreed to, and if it does not feel right you can get out with nothing to pay. Cancelling repeatedly or not turning up slows down how soon you get new candidates, because that matters to the person on the other side.',
@@ -403,7 +404,7 @@ const en: Record<keyof typeof fi, string> = {
   'faq.delete.a':
     'Yes, from the settings. Your name, photo and contact details go straight away. Past dates and the feedback written about them stay, because those belong to the other person as much as to you.',
 
-  'shot.treffit': 'The Pilke home screen on a phone: your roses and petals along the top, your dates and the invitations you have received below.',
+  'shot.treffit': 'The Pilke home screen on a phone: your glimmers along the top, your dates and the invitations you have received below.',
   'shot.kalenteri': 'The calendar view, with the days of the week and the times marked as free.',
   'shot.story': 'The first question of the story test during onboarding: a situation and three options, one of which you pick.',
   'shot.platter': 'The candidates view: one of three candidates, the times you both have, and the chosen activity.',

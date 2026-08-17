@@ -4,13 +4,13 @@
  *
  * The front page gives the loop in four steps and stops. This page carries what
  * a reader who wants the whole picture needs: what happens before the first
- * invitation, where candidates come from, and the whole of the petal and rose
- * economy including what happens when plans change.
+ * invitation, where candidates come from, the whole of the glimmer economy, and
+ * what happens when plans change.
  *
- * WARNING: **Every number on this page is a backend constant.** Five petals to a
- * rose, three candidates, three roses and fifteen petals held, one hour of shared
+ * WARNING: **Every number on this page is a backend constant.** Five glimmers for
+ * a set of three candidates, fifteen earnable at a time, one hour of shared
  * calendar, at least two times offered, a day to answer. They are cited in the
- * README, and a marketing page stating a rate the product does not honour is
+ * README, and a marketing page stating a price the product does not charge is
  * worse than a page that stays vague.
  */
 import '../styles/bold.css';
@@ -80,10 +80,9 @@ const changes = [
     <h2 class="display-mid">{t('detail.economy.title')}</h2>
     <p class="lede">{t('detail.economy.body')}</p>
 
-    <p class="rate">
+    <p class="price">
       <span class="coin"><img src="/img/petal.png" alt="" width="42" height="39" /><b>5</b></span>
-      <span class="equals" aria-hidden="true">=</span>
-      <span class="coin"><img src="/img/rose.png" alt="" width="36" height="42" /><b>1</b></span>
+      <span>{t('economy.lead')}</span>
     </p>
 
     <h3>{t('detail.economy.earn')}</h3>
@@ -175,8 +174,9 @@ const changes = [
     font-size: clamp(1.375rem, 3vw, 2rem);
   }
 
-  .rate {
+  .price {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: var(--pad-normal);
   }
@@ -195,11 +195,6 @@ const changes = [
     font-family: var(--font-display);
     font-size: 1.375rem;
     font-weight: 400;
-  }
-
-  .equals {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
   }
 
   .ledger {

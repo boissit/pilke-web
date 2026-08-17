@@ -24,7 +24,7 @@ usual way a bilingual site drifts. `src/pages/index.astro` passes `lang="fi"`,
 
 `src/styles/global.css` carries the app's design tokens under the same names they
 have in `pilke-app/src/constants/`, so a change on either side is traceable to
-the other. Fonts and the petal and rose images are copied from
+the other. Fonts and the currency mark are copied from
 `pilke-app/assets/`.
 
 ## Where the claims come from
@@ -33,16 +33,20 @@ Every factual statement was taken from the code in `pilke-app` and
 `treffit-backend` rather than from their documentation, because the docs in those
 repositories have repeatedly been found stale. The load-bearing numbers:
 
-- Five petals are one rose, and a rose buys a set of three candidates
-  (`PETALS_PER_ROSE = 5`, and the platter is three).
-- A rose is spent when the set is drawn, not when the invitation is sent.
-- One petal per three credited calendar spans, two for a date, five for
-  finishing registration.
-- Petals stop accruing at fifteen (`PETAL_BALANCE_CEILING`).
+- A set of three candidates costs five glimmers, and there is no other price.
+- The glimmers are spent when the set is drawn, not when the invitation is sent.
+- One glimmer per three credited calendar spans, two for a date once feedback is
+  given, five for finishing registration, five if somebody calls off a date on you.
+- Earning stops at fifteen glimmers, which is three invitations' worth. Refunds are
+  uncapped, so a balance can legitimately pass it.
 - Position sharing runs about ten minutes either side of the agreed start, only
   within 300 m of the venue, and only to the other party.
-- The safety button texts the trusted contact and nobody else. The message names
-  no location, no venue and no partner.
+- The safety button texts the trusted contact and nobody else. The message names no
+  location, no venue and no partner.
+
+The backend calls the unit a **token** in code; `glimmer` and `kipinä` are the
+words users read. `Glimmer.astro` is the sparkle texture and is unrelated to the
+currency.
 
 ## Copy that needs a human before this goes public
 

@@ -144,21 +144,16 @@ const { t, promises, steps, faq } = content(lang);
     <h2 class="display-mid">{t('economy.title')}</h2>
 
     <!--
-      The exchange as one line, because it is one fact with a direction: petals
-      go in, a rose comes out. Two cards side by side stated it twice and put the
-      currencies in competition, which is the wrong shape for a rate.
+      One mark and one price. A two-coin equals-sign graphic depicted an exchange
+      between two units, and there is one unit: the number people need is what a
+      set of candidates costs, not what anything converts into.
     -->
-    <p class="rate">
+    <p class="price">
       <span class="coin">
         <img src="/img/petal.png" alt="" width="46" height="43" />
         <b>5</b>
       </span>
-      <span class="equals" aria-hidden="true">=</span>
-      <span class="coin">
-        <img src="/img/rose.png" alt="" width="40" height="46" />
-        <b>1</b>
-      </span>
-      <span class="rate-words">{t('economy.lead')}</span>
+      <span class="price-words">{t('economy.lead')}</span>
     </p>
 
     <div class="ledger">
@@ -241,8 +236,8 @@ const { t, promises, steps, faq } = content(lang);
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   }
 
-  /* The rate reads as one sentence with two coins in it. */
-  .rate {
+  /* The price reads as one sentence with the mark in it. */
+  .price {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -266,12 +261,7 @@ const { t, promises, steps, faq } = content(lang);
     font-weight: 400;
   }
 
-  .equals {
-    font-family: var(--font-display);
-    font-size: 1.75rem;
-  }
-
-  .rate-words {
+  .price-words {
     flex: 1 1 18rem;
     font-size: 1.0625rem;
   }
