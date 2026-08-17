@@ -55,6 +55,41 @@ const { t, promises, steps, faq } = content(lang);
   </div>
 </section>
 
+<section class="slab slab-white" id="different">
+  <div class="wrap section-pad">
+    <h2 class="display-mid">{t('diff.title')}</h2>
+    <p class="lede">{t('diff.lead')}</p>
+
+    <!--
+      Two columns rather than a table of ticks and crosses. The comparison is
+      between two ways of spending an evening, and both descriptions have to be
+      recognisable to somebody who has done the first one, or the section reads as
+      a swipe at the reader's own habits rather than at the shape of the thing.
+    -->
+    <div class="compare">
+      <article class="side">
+        <p class="side-label">{t('diff.old.label')}</p>
+        <h3>{t('diff.old.title')}</h3>
+        <p>{t('diff.old.body')}</p>
+      </article>
+
+      <article class="side ours">
+        <p class="side-label">{t('diff.new.label')}</p>
+        <h3>{t('diff.new.title')}</h3>
+        <p>{t('diff.new.body')}</p>
+      </article>
+    </div>
+
+    <div class="learn">
+      <Sparkle size={34} />
+      <div>
+        <h3>{t('diff.learn.title')}</h3>
+        <p class="prose">{t('diff.learn.body')}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="slab slab-pale" id="how">
   <Glimmer tile={300} />
   <div class="wrap section-pad">
@@ -73,8 +108,15 @@ const { t, promises, steps, faq } = content(lang);
         steps.map((step, i) => (
           <li>
             <div class="step-copy">
-              <span class="numeral">{i + 1}</span>
-              <h3 class="step-title">{step.title}</h3>
+              <!--
+                The number sits on the title's line rather than above it, so the
+                eye reads "1 Lahetä treffikutsu" as one heading instead of a
+                figure and then a heading.
+              -->
+              <div class="step-head">
+                <span class="numeral">{i + 1}</span>
+                <h3 class="step-title">{step.title}</h3>
+              </div>
               <p>{step.body}</p>
             </div>
             {step.shot ? (
@@ -331,6 +373,67 @@ const { t, promises, steps, faq } = content(lang);
 
   .step-copy > * + * {
     margin-top: var(--pad-normal);
+  }
+
+  .step-head {
+    display: flex;
+    align-items: center;
+    gap: var(--pad-normal);
+  }
+
+  /* The title takes the rest of the line and wraps under itself, not under the
+     number, so a long title stays a block of text beside the figure. */
+  .step-head .step-title {
+    flex: 1;
+  }
+
+  .compare {
+    display: grid;
+    gap: var(--pad-medium);
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+  }
+
+  .side {
+    padding: var(--pad-medium);
+    border: 3px solid var(--ink);
+    border-radius: var(--radius-large);
+    background: var(--white);
+  }
+
+  /* Ours carries the brand ground and the offset edge; the other column is drawn
+     plainly. The difference in weight is the argument, so it does not need a
+     cross next to it. */
+  .side.ours {
+    background: var(--brand-background);
+    box-shadow: 5px 5px 0 var(--ink);
+  }
+
+  .side > * + * {
+    margin-top: var(--pad-small);
+  }
+
+  .side-label {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .side.ours .side-label {
+    color: var(--ink);
+  }
+
+  .learn {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--pad-medium);
+    max-width: 65ch;
+  }
+
+  .learn > div > * + * {
+    margin-top: var(--pad-small);
   }
 
   .loop {

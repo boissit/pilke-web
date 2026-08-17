@@ -45,6 +45,24 @@ const fi = {
   'promise.three.body':
     'Pilkkeessä ei ole chattia. Se on tarkoituksellista: sovellus vie teidät samaan pöytään sen sijaan, että korvaisi sen.',
 
+  'diff.title': 'Miksi tämä on erilaista',
+  'diff.lead':
+    'Deittisovellukset ovat opettaneet, että tutustuminen tapahtuu ruudulla ja tapaaminen on vasta palkinto. Pilke tekee sen toisin päin.',
+
+  'diff.old.label': 'Muualla',
+  'diff.old.title': 'Profiili, selailu, keskustelu',
+  'diff.old.body':
+    'Ensin teet profiilin: hiot esittelytekstiä, valitset kuvat, mietit mitä ne kertovat sinusta. Sitten selaat päiviä ja chattailet viikkoja. Suurin osa keskusteluista hiipuu ennen kuin kukaan ehdottaa mitään, ja niistä ihmisistä ei ole vielä yksikään istunut samassa pöydässä kanssasi.',
+
+  'diff.new.label': 'Pilkkeessä',
+  'diff.new.title': 'Kysymykset, sitten treffit',
+  'diff.new.body':
+    'Vastaat pariin kysymyssarjaan, merkitset kalenteriin sopivat ajat ja alat käydä treffeillä. Ihmisestä oppii enemmän tunnissa kahvilassa kuin kahdesta viikosta viestejä: miten hän puhuu, mikä häntä naurattaa, onko olo helppo vai ei.',
+
+  'diff.learn.title': 'Ensimmäinen ei ole se oikea, eikä sen tarvitse olla',
+  'diff.learn.body':
+    'Harvoin ensimmäinen tapaaminen osuu kohdalleen, eikä se ole epäonnistuminen vaan lähtökohta. Jokaisen kerran jälkeen kerrot lyhyesti miten meni, ja seuraavat ehdotukset osuvat lähemmäs. Samalla huomaat itsekin asioita siitä, mitä oikeastaan etsit.',
+
   'how.title': 'Näin se toimii',
   'how.lead': 'Neljä vaihetta, ja sitten uudelleen.',
   'how.more': 'Lue tarkemmin',
@@ -228,6 +246,24 @@ const en: Record<keyof typeof fi, string> = {
   'promise.three.title': 'Face to face, not through a screen',
   'promise.three.body':
     'Pilke has no chat. That is deliberate: the app takes you to the same table rather than standing in for it.',
+
+  'diff.title': 'Why this is different',
+  'diff.lead':
+    'Dating apps have taught us that getting to know somebody happens on a screen, and that meeting them is the reward at the end. Pilke does it the other way round.',
+
+  'diff.old.label': 'Elsewhere',
+  'diff.old.title': 'A profile, then scrolling, then chat',
+  'diff.old.body':
+    'First you build a profile: you work on the blurb, pick the photos, wonder what they say about you. Then you scroll for days and chat for weeks. Most of those conversations fade before anybody suggests anything, and not one of those people has yet sat at a table with you.',
+
+  'diff.new.label': 'On Pilke',
+  'diff.new.title': 'Some questions, then a date',
+  'diff.new.body':
+    'You answer a couple of question sets, mark the times that suit you, and start going on dates. You learn more about somebody in an hour at a cafe than in two weeks of messages: how they talk, what makes them laugh, whether it feels easy.',
+
+  'diff.learn.title': 'The first one is not the one, and it does not have to be',
+  'diff.learn.body':
+    'A first meeting rarely lands perfectly, and that is a starting point rather than a failure. After each one you say briefly how it went, and the next suggestions land closer. You tend to notice things about what you are actually looking for, too.',
 
   'how.title': 'How it works',
   'how.lead': 'Four steps, and then again.',
