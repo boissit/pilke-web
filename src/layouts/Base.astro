@@ -21,7 +21,7 @@ const other: Lang = lang === 'fi' ? 'en' : 'fi';
 const route = Astro.url.pathname.replace(/^\/en\/?/, '/').replace(/^\/+/, '').replace(/\/$/, '');
 
 const nav = [
-  { href: `${localePath(lang)}#how`, label: t('nav.how') },
+  { href: localePath(lang, 'nain-se-toimii'), label: t('nav.how') },
   { href: localePath(lang, 'turvallisuus'), label: t('nav.safety') },
   { href: `${localePath(lang)}#faq`, label: t('nav.questions') },
 ];

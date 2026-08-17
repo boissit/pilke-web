@@ -32,7 +32,6 @@ const { t, promises, steps, faq } = content(lang);
   <Glimmer tile={340} background="var(--brand-main)" star="#F7E88A" />
   <div class="wrap hero section-pad">
     <div class="hero-copy">
-      <p class="eyebrow">{t('hero.note')}</p>
       <h1 class="display">{t('hero.title')}</h1>
       <p class="lede">{t('hero.lead')}</p>
     </div>
@@ -61,6 +60,7 @@ const { t, promises, steps, faq } = content(lang);
   <div class="wrap section-pad">
     <h2 class="display-mid">{t('how.title')}</h2>
     <p class="lede">{t('how.lead')}</p>
+    <p><a class="go" href={localePath(lang, 'nain-se-toimii')}>{t('how.more')}</a></p>
 
     <!--
       One step per row, stacked. A row of five side by side left each phone about

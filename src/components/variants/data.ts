@@ -7,7 +7,9 @@
  */
 import asetukset from '../../assets/screens/asetukset.png';
 import date from '../../assets/screens/date.png';
+import invitation from '../../assets/screens/invitation.png';
 import kalenteri from '../../assets/screens/kalenteri.png';
+import kysymykset from '../../assets/screens/kysymykset.png';
 import platter from '../../assets/screens/platter.png';
 import story from '../../assets/screens/story.png';
 import treffit from '../../assets/screens/treffit.png';
@@ -23,7 +25,16 @@ import { useTranslations, type Lang } from '../../i18n/ui';
  * All five are real screenshots of a real build, taken by
  * `pilke-app/.maestro/demo/screenshots.yaml` and `screenshotDate.yaml`.
  */
-export const shots = { treffit, kalenteri, story, platter, asetukset, date } as const;
+export const shots = {
+  treffit,
+  kalenteri,
+  story,
+  platter,
+  invitation,
+  kysymykset,
+  asetukset,
+  date,
+} as const;
 
 export function content(lang: Lang) {
   const t = useTranslations(lang);
@@ -36,11 +47,10 @@ export function content(lang: Lang) {
       { title: t('promise.three.title'), body: t('promise.three.body'), tint: 'var(--card-feedback)' },
     ],
     steps: [
-      { title: t('how.one.title'), body: t('how.one.body'), shot: null, alt: '' },
-      { title: t('how.two.title'), body: t('how.two.body'), shot: shots.story, alt: t('shot.story') },
-      { title: t('how.three.title'), body: t('how.three.body'), shot: shots.kalenteri, alt: t('shot.kalenteri') },
-      { title: t('how.four.title'), body: t('how.four.body'), shot: shots.platter, alt: t('shot.platter') },
-      { title: t('how.five.title'), body: t('how.five.body'), shot: shots.date, alt: t('shot.date') },
+      { title: t('how.one.title'), body: t('how.one.body'), shot: shots.platter, alt: t('shot.platter') },
+      { title: t('how.two.title'), body: t('how.two.body'), shot: shots.invitation, alt: t('shot.invitation') },
+      { title: t('how.three.title'), body: t('how.three.body'), shot: shots.date, alt: t('shot.date') },
+      { title: t('how.four.title'), body: t('how.four.body'), shot: shots.kysymykset, alt: t('shot.kysymykset') },
     ],
     safety: [
       { title: t('safety.contact.title'), body: t('safety.contact.body') },
