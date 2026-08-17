@@ -1,0 +1,112 @@
+/*
+  The bolder treatment: flat yellow blocks, oversized Courgette, the sparkle
+  motif as texture. Shared by all three layout variants so that a comparison
+  between them is about layout and not about two different palettes.
+
+  Everything here builds on the tokens in global.css rather than introducing new
+  colours. The app has a small palette on purpose and the site keeps it.
+*/
+
+.slab {
+  position: relative;
+  isolation: isolate;
+  border-bottom: 3px solid var(--ink);
+}
+
+.slab > .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.slab-yellow {
+  background: var(--brand-main);
+}
+
+.slab-pale {
+  background: var(--brand-background);
+}
+
+.slab-white {
+  background: var(--white);
+}
+
+/* Oversized display type. Courgette has a lot of character and it earns its
+   place at this size; below about 2rem it reads as a label instead. */
+.display {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 9vw, 5.5rem);
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.display-mid {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.5vw, 3.5rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.875rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.lede {
+  font-size: clamp(1.0625rem, 2vw, 1.375rem);
+  max-width: 32ch;
+}
+
+.prose {
+  max-width: 60ch;
+}
+
+/* A block that reads as cut out of the page rather than floated above it: flat
+   offset shadow, no blur, matching how the app draws a button. */
+.block {
+  background: var(--white);
+  border: 3px solid var(--ink);
+  border-radius: var(--radius-large);
+  padding: var(--pad-medium);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.block-flat {
+  box-shadow: none;
+}
+
+.pill {
+  display: inline-block;
+  padding: 4px 14px;
+  background: var(--white);
+  border: 3px solid var(--ink);
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.9375rem;
+}
+
+.numeral {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  background: var(--brand-main);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.section-pad {
+  padding-block: clamp(2.5rem, 7vw, 5rem);
+}
+
+.rule {
+  border: 0;
+  border-top: 3px solid var(--ink);
+  margin: 0;
+}

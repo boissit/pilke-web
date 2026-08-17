@@ -10,10 +10,19 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const other: Lang = lang === 'fi' ? 'en' : 'fi';
+
+/*
+  The path this page is on, without its language prefix, so the language link
+  points at the same page in the other language rather than at the front page.
+  A reader halfway down the safety page who switches to English should still be
+  on the safety page.
+*/
+const route = Astro.url.pathname.replace(/^\/en\/?/, '/').replace(/^\/+/, '').replace(/\/$/, '');
+
 const nav = [
-  { href: '#how', label: t('nav.how') },
-  { href: '#safety', label: t('nav.safety') },
-  { href: '#faq', label: t('nav.questions') },
+  { href: `${localePath(lang)}#how`, label: t('nav.how') },
+  { href: localePath(lang, 'turvallisuus'), label: t('nav.safety') },
+  { href: `${localePath(lang)}#faq`, label: t('nav.questions') },
 ];
 ---
 
@@ -57,7 +66,7 @@ const nav = [
               <li><a href={item.href}>{item.label}</a></li>
             ))}
             <li>
-              <a class="lang" href={localePath(other)} lang={other} hreflang={other}>
+              <a class="lang" href={localePath(other, route)} lang={other} hreflang={other}>
                 {languages[other]}
               </a>
             </li>

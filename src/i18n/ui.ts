@@ -30,7 +30,7 @@ const fi = {
   'nav.language': 'Kieli',
   'nav.skip': 'Siirry sisältöön',
 
-  'hero.title': 'Treffit, ei loputonta chattailua',
+  'hero.title': 'Treffit, ei swaippailua',
   'hero.lead':
     'Pilke etsii teille yhteisen ajan ja paikan, ja sitten te menette sinne. Ei viestiketjuja, jotka hiipuvat kolmen päivän jälkeen. Ei selailua illasta toiseen.',
   'hero.note': 'Sovellus on suljetussa betavaiheessa.',
@@ -123,6 +123,17 @@ const fi = {
   'faq.delete.a':
     'Kyllä, asetuksista. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Menneet treffit ja niistä annetut palautteet jäävät talteen, koska ne ovat yhtä lailla toisen osapuolen tietoja.',
 
+  'shot.treffit': 'Pilkkeen etusivu puhelimessa: ruusujen ja terälehtien määrä ylhäällä, alla omat treffit ja saapuneet kutsut.',
+  'shot.kalenteri': 'Kalenterinäkymä, jossa viikon päivät ja niihin merkityt vapaat treffiajat.',
+  'shot.kysymykset': 'Kysymyssarjat-sivu, jossa luettelo vastattavista kysymyssarjoista.',
+  'shot.asetukset': 'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.',
+  'shot.date': 'Sovitut treffit puhelimessa: aika, paikka kartalla ja turvapainike.',
+
+  'safety.summary': 'Voit tallentaa yhden luotettavan läheisen numeron, ja treffinäytöllä on turvapainike, joka lähettää hänelle tekstiviestin. Treffien jälkeen voit kertoa, jos olosi oli turvaton.',
+  'safety.more': 'Lue turvallisuudesta',
+  'safety.page.lead': 'Tapaaminen tuntemattoman kanssa on eri asia kuin viestittely. Tällä sivulla on se, mitä Pilke tekee asian eteen, ja se mitä kannattaa itse tehdä.',
+  'nav.back': 'Takaisin etusivulle',
+
   'footer.beta': 'Pilke on suljetussa betavaiheessa.',
   'footer.rights': 'Pilke',
 } as const;
@@ -138,7 +149,7 @@ const en: Record<keyof typeof fi, string> = {
   'nav.language': 'Language',
   'nav.skip': 'Skip to content',
 
-  'hero.title': 'Dates, not endless chatting',
+  'hero.title': 'Dates, not swiping',
   'hero.lead':
     'Pilke finds you a time and a place you can both make, and then you go. No message threads that fade after three days. No scrolling one evening into the next.',
   'hero.note': 'The app is in closed beta.',
@@ -230,6 +241,17 @@ const en: Record<keyof typeof fi, string> = {
   'faq.delete.q': 'Can I delete my account?',
   'faq.delete.a':
     'Yes, from the settings. Your name, photo and contact details go straight away. Past dates and the feedback written about them stay, because those belong to the other person as much as to you.',
+
+  'shot.treffit': 'The Pilke home screen on a phone: your roses and petals along the top, your dates and the invitations you have received below.',
+  'shot.kalenteri': 'The calendar view, with the days of the week and the times marked as free.',
+  'shot.kysymykset': 'The question sets page, listing the sets you can answer.',
+  'shot.asetukset': 'The Safety section of the settings, open, with the field for a trusted person\u2019s number.',
+  'shot.date': 'An agreed date on a phone: the time, the venue on a map, and the safety button.',
+
+  'safety.summary': 'You can save one trusted person, and the date screen has a safety button that texts them. After a date you can say if you felt unsafe.',
+  'safety.more': 'Read about safety',
+  'safety.page.lead': 'Meeting a stranger is a different thing from messaging one. This page covers what Pilke does about that, and what is worth doing yourself.',
+  'nav.back': 'Back to the front page',
 
   'footer.beta': 'Pilke is in closed beta.',
   'footer.rights': 'Pilke',

@@ -1,0 +1,11 @@
+---
+/*
+  The English route keeps the Finnish slug. One path per page means a language
+  switch is the prefix and nothing else, so a reader who switches stays on the
+  page they were reading rather than landing on the front page.
+*/
+import SafetyPage from '../../components/SafetyPage.astro';
+import Base from '../../layouts/Base.astro';
+---
+
+<Base lang="en"><SafetyPage lang="en" /></Base>

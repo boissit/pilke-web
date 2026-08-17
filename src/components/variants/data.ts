@@ -1,0 +1,58 @@
+/**
+ * The content each variant renders, assembled once.
+ *
+ * The three layouts differ in arrangement, not in what they say, so they read
+ * from one place. A variant that quietly said something different would make the
+ * comparison useless.
+ */
+import asetukset from '../../assets/screens/asetukset.png';
+import date from '../../assets/screens/date.png';
+import kalenteri from '../../assets/screens/kalenteri.png';
+import kysymykset from '../../assets/screens/kysymykset.png';
+import treffit from '../../assets/screens/treffit.png';
+import { useTranslations, type Lang } from '../../i18n/ui';
+
+/**
+ * The screens worth showing.
+ *
+ * Imported rather than referenced from `public/`, so Astro resizes them and
+ * serves a modern format. Straight off the device they are 1080 wide and 1.4 MB
+ * for the five, which is more than the rest of the page put together.
+ *
+ * All five are real screenshots of a real build, taken by
+ * `pilke-app/.maestro/demo/screenshots.yaml` and `screenshotDate.yaml`.
+ */
+export const shots = { treffit, kalenteri, kysymykset, asetukset, date } as const;
+
+export function content(lang: Lang) {
+  const t = useTranslations(lang);
+
+  return {
+    t,
+    promises: [
+      { title: t('promise.one.title'), body: t('promise.one.body'), tint: 'var(--card-received)' },
+      { title: t('promise.two.title'), body: t('promise.two.body'), tint: 'var(--card-sent)' },
+      { title: t('promise.three.title'), body: t('promise.three.body'), tint: 'var(--card-feedback)' },
+    ],
+    steps: [
+      { title: t('how.one.title'), body: t('how.one.body'), shot: null, alt: '' },
+      { title: t('how.two.title'), body: t('how.two.body'), shot: shots.kysymykset, alt: t('shot.kysymykset') },
+      { title: t('how.three.title'), body: t('how.three.body'), shot: shots.kalenteri, alt: t('shot.kalenteri') },
+      { title: t('how.four.title'), body: t('how.four.body'), shot: shots.treffit, alt: t('shot.treffit') },
+      { title: t('how.five.title'), body: t('how.five.body'), shot: shots.date, alt: t('shot.date') },
+    ],
+    safety: [
+      { title: t('safety.contact.title'), body: t('safety.contact.body') },
+      { title: t('safety.button.title'), body: t('safety.button.body') },
+      { title: t('safety.report.title'), body: t('safety.report.body') },
+    ],
+    tips: [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('tips.five'), t('tips.six')],
+    faq: [
+      { q: t('faq.chat.q'), a: t('faq.chat.a') },
+      { q: t('faq.who.q'), a: t('faq.who.a') },
+      { q: t('faq.cost.q'), a: t('faq.cost.a') },
+      { q: t('faq.cancel.q'), a: t('faq.cancel.a') },
+      { q: t('faq.delete.q'), a: t('faq.delete.a') },
+    ],
+  };
+}

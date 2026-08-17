@@ -1,0 +1,83 @@
+---
+/**
+ * A screenshot in a phone frame.
+ *
+ * The frame is CSS rather than a picture of a handset: it stays sharp at any
+ * size, costs nothing to download, and takes the app's own ink border and radius
+ * so the mockup belongs to the same drawing as the rest of the page.
+ *
+ * `src` is an imported asset rather than a path, so Astro resizes it and serves a
+ * modern format. Straight off the device these are 1080 wide.
+ *
+ * `alt` is required and has no default. These images carry the explaining on a
+ * page about how an app works, so a decorative empty alt would be wrong, and a
+ * generated one would be worse than the caller writing it.
+ */
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  width?: number;
+  tilt?: 'left' | 'right' | 'none';
+  class?: string;
+}
+
+const { src, alt, width = 260, tilt = 'none', class: className } = Astro.props;
+
+const rotation = tilt === 'left' ? '-2.5deg' : tilt === 'right' ? '2.5deg' : '0deg';
+
+// Twice the drawn width, for a high density display. Anything larger is spent on
+// pixels no screen will show.
+const rendered = width * 2;
+---
+
+<figure class:list={['phone', className]} style={`--w:${width}px; --tilt:${rotation}`}>
+  <div class="shell">
+    <div class="speaker" aria-hidden="true"></div>
+    <Image src={src} alt={alt} width={rendered} densities={[1, 2]} loading="lazy" />
+  </div>
+</figure>
+
+<style>
+  .phone {
+    margin: 0;
+    width: var(--w);
+    max-width: 100%;
+    flex: 0 0 auto;
+  }
+
+  .shell {
+    position: relative;
+    padding: 10px;
+    background: var(--white);
+    border: 3px solid var(--ink);
+    border-radius: 30px;
+    /* A flat offset shadow rather than a blur, which is how the app draws a
+       button: the page has no soft edges anywhere else. */
+    box-shadow: 6px 6px 0 var(--ink);
+  }
+
+  .speaker {
+    width: 34%;
+    height: 5px;
+    margin: 0 auto 8px;
+    background: var(--ink);
+    border-radius: 999px;
+  }
+
+  .shell :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    border: 2px solid var(--ink);
+    background: var(--brand-background);
+  }
+
+  @media (min-width: 48rem) {
+    .phone {
+      transform: rotate(var(--tilt));
+    }
+  }
+</style>

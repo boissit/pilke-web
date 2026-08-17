@@ -1,0 +1,286 @@
+---
+/**
+ * The front page: the phone leads.
+ *
+ * A large screenshot beside the headline, then the five steps stacked one to a
+ * row, each with a screenshot big enough to read. The bet is that a stranger
+ * understands an app faster by seeing it than by reading about it, so the
+ * pictures get the room and the page gets longer.
+ *
+ * Safety is a summary here and a page of its own at `turvallisuus`. It is the
+ * part of this product with the most to say, which is exactly why it does not
+ * belong on a front page: three cards of it read as a warning rather than as an
+ * answer to what the app is.
+ */
+import '../../styles/bold.css';
+import Glimmer from '../Glimmer.astro';
+import Phone from '../Phone.astro';
+import Sparkle from '../Sparkle.astro';
+import { content, shots } from './data';
+import { localePath } from '../../i18n/ui';
+import type { Lang } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { t, promises, steps, faq } = content(lang);
+---
+
+<section class="slab slab-yellow">
+  <Glimmer tile={340} background="var(--brand-main)" star="#F7E88A" />
+  <div class="wrap hero section-pad">
+    <div class="hero-copy">
+      <p class="eyebrow">{t('hero.note')}</p>
+      <h1 class="display">{t('hero.title')}</h1>
+      <p class="lede">{t('hero.lead')}</p>
+    </div>
+    <Phone src={shots.treffit} alt={t('shot.treffit')} width={300} tilt="right" />
+  </div>
+</section>
+
+<section class="slab slab-white">
+  <div class="wrap section-pad">
+    <h2 class="display-mid">{t('promise.title')}</h2>
+    <ul class="promises">
+      {
+        promises.map((item) => (
+          <li class="block" style={`background:${item.tint}`}>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<section class="slab slab-pale" id="how">
+  <Glimmer tile={300} />
+  <div class="wrap section-pad">
+    <h2 class="display-mid">{t('how.title')}</h2>
+    <p class="lede">{t('how.lead')}</p>
+
+    <!--
+      One step per row, stacked. A row of five side by side left each phone about
+      190px wide, which is too small to read a screen in, and on a narrow screen
+      it became a sideways scroll that is easy to miss entirely. Vertical costs
+      page length and buys a legible screenshot, which is the whole point of
+      leading with the phone.
+    -->
+    <ol class="steps">
+      {
+        steps.map((step, i) => (
+          <li>
+            <div class="step-copy">
+              <span class="numeral">{i + 1}</span>
+              <h3 class="step-title">{step.title}</h3>
+              <p>{step.body}</p>
+            </div>
+            {step.shot ? (
+              <Phone src={step.shot} alt={step.alt} width={300} tilt={i % 2 === 0 ? 'right' : 'left'} />
+            ) : (
+              <div class="placeholder" aria-hidden="true"><Sparkle size={64} /></div>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<section class="slab slab-white">
+  <div class="wrap section-pad">
+    <h2 class="display-mid">{t('economy.title')}</h2>
+    <p class="lede">{t('economy.lead')}</p>
+    <ul class="currencies">
+      <li class="block">
+        <img src="/img/petal.png" alt="" width="72" height="67" />
+        <h3>{t('economy.petal.title')}</h3>
+        <p>{t('economy.petal.body')}</p>
+      </li>
+      <li class="block">
+        <img src="/img/rose.png" alt="" width="62" height="72" />
+        <h3>{t('economy.rose.title')}</h3>
+        <p>{t('economy.rose.body')}</p>
+      </li>
+    </ul>
+    <p class="pill">{t('economy.note')}</p>
+  </div>
+</section>
+
+<section class="slab slab-yellow" id="safety">
+  <div class="wrap section-pad safety">
+    <div class="safety-copy">
+      <h2 class="display-mid">{t('safety.title')}</h2>
+      <p class="lede">{t('safety.summary')}</p>
+      <p><a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a></p>
+    </div>
+    <Phone src={shots.asetukset} alt={t('shot.asetukset')} width={230} tilt="left" />
+  </div>
+</section>
+
+<section class="slab slab-white" id="faq">
+  <div class="wrap section-pad">
+    <h2 class="display-mid">{t('faq.title')}</h2>
+    <dl class="faq">
+      {
+        faq.map((item) => (
+          <div class="qa">
+            <dt>{item.q}</dt>
+            <dd class="prose">{item.a}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
+
+<style>
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pad-large);
+  }
+
+  .hero-copy {
+    flex: 1 1 20rem;
+  }
+
+  .hero-copy > * + * {
+    margin-top: var(--pad-medium);
+  }
+
+  .wrap > * + * {
+    margin-top: var(--pad-medium);
+  }
+
+  .promises,
+  .currencies {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--pad-medium);
+  }
+
+  .promises {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+
+  .currencies {
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  }
+
+  .block > * + * {
+    margin-top: var(--pad-small);
+  }
+
+  /* One step per row: copy on one side, phone on the other, alternating. Only
+     the visual order alternates; the reading order stays the document's. */
+  .steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--pad-large);
+  }
+
+  .steps > li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pad-large);
+    padding-bottom: var(--pad-large);
+    border-bottom: 3px solid var(--ink);
+  }
+
+  .steps > li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .steps > li:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .step-copy {
+    flex: 1 1 20rem;
+  }
+
+  .step-copy > * + * {
+    margin-top: var(--pad-normal);
+  }
+
+  .step-title {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    line-height: 1.15;
+  }
+
+  .placeholder {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 300px;
+    max-width: 100%;
+    height: 14rem;
+    background: var(--white);
+    border: 3px dashed var(--ink);
+    border-radius: var(--radius-large);
+  }
+
+  .safety {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--pad-large);
+  }
+
+  .safety-copy {
+    flex: 1 1 22rem;
+  }
+
+  .safety-copy > * + * {
+    margin-top: var(--pad-medium);
+  }
+
+  .go {
+    display: inline-block;
+    padding: 8px 18px;
+    background: var(--white);
+    border: 3px solid var(--ink);
+    border-radius: var(--radius-normal);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .go:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+
+  .faq {
+    margin: 0;
+    display: grid;
+    gap: var(--pad-normal);
+  }
+
+  .qa {
+    border-top: 3px solid var(--ink);
+    padding-top: var(--pad-normal);
+  }
+
+  dt {
+    font-weight: 800;
+    font-size: 1.0625rem;
+  }
+
+  dd {
+    margin: var(--pad-small) 0 0;
+  }
+</style>
