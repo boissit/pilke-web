@@ -18,6 +18,7 @@ import { content, shots } from './variants/data';
 import { localePath, type Lang } from '../i18n/ui';
 import Glimmer from './Glimmer.astro';
 import Phone from './Phone.astro';
+import Token from './Token.astro';
 
 interface Props {
   lang: Lang;
@@ -81,7 +82,7 @@ const changes = [
     <p class="lede">{t('detail.economy.body')}</p>
 
     <p class="price">
-      <span class="coin"><img src="/img/petal.png" alt="" width="42" height="39" /><b>5</b></span>
+      <span class="coin"><Token size={42} /><b>5</b></span>
       <span>{t('economy.lead')}</span>
     </p>
 
@@ -181,14 +182,12 @@ const changes = [
     gap: var(--pad-normal);
   }
 
+  /* The mark and the count it carries, with no chip around them: the coin brings
+     its own ink rule, and a pill would be a second ring on the first. */
   .coin {
     display: flex;
     align-items: center;
     gap: var(--pad-small);
-    padding: 6px 14px 6px 8px;
-    background: var(--brand-background);
-    border: 3px solid var(--ink);
-    border-radius: 999px;
   }
 
   .coin b {

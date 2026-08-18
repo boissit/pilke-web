@@ -16,6 +16,7 @@ import '../../styles/bold.css';
 import Glimmer from '../Glimmer.astro';
 import Phone from '../Phone.astro';
 import Sparkle from '../Sparkle.astro';
+import Token from '../Token.astro';
 import { content, shots } from './data';
 import { localePath } from '../../i18n/ui';
 import type { Lang } from '../../i18n/ui';
@@ -150,7 +151,7 @@ const { t, promises, steps, faq } = content(lang);
     -->
     <p class="price">
       <span class="coin">
-        <img src="/img/petal.png" alt="" width="46" height="43" />
+        <Token size={46} />
         <b>5</b>
       </span>
       <span class="price-words">{t('economy.lead')}</span>
@@ -245,14 +246,12 @@ const { t, promises, steps, faq } = content(lang);
     max-width: none;
   }
 
+  /* The mark and the count it carries, with no chip around them: the coin brings
+     its own ink rule, and a pill would be a second ring on the first. */
   .coin {
     display: flex;
     align-items: center;
     gap: var(--pad-small);
-    padding: 6px 14px 6px 8px;
-    background: var(--brand-background);
-    border: 3px solid var(--ink);
-    border-radius: 999px;
   }
 
   .coin b {
