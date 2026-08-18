@@ -18,7 +18,7 @@ import { content, shots } from './variants/data';
 import { localePath, type Lang } from '../i18n/ui';
 import Glimmer from './Glimmer.astro';
 import Phone from './Phone.astro';
-import Token from './Token.astro';
+import GlimmerPile from './GlimmerPile.astro';
 
 interface Props {
   lang: Lang;
@@ -82,7 +82,7 @@ const changes = [
     <p class="lede">{t('detail.economy.body')}</p>
 
     <p class="price">
-      <span class="coin"><Token size={42} /><b>5</b></span>
+      <span class="coin"><GlimmerPile height={120} glimmers={5} alt={t('economy.pile.alt')} /><b>5</b></span>
       <span>{t('economy.lead')}</span>
     </p>
 
@@ -182,18 +182,21 @@ const changes = [
     gap: var(--pad-normal);
   }
 
-  /* The mark and the count it carries, with no chip around them: the coin brings
-     its own ink rule, and a pill would be a second ring on the first. */
+  /* The mark and the price it carries, with no chip around them: the coins bring
+     their own ink rule, and a pill would be a second ring on the first. */
   .coin {
     display: flex;
     align-items: center;
     gap: var(--pad-small);
   }
 
+  /* Sized against the coins rather than against the running text, for the reason the
+     front page's copy of this gives. */
   .coin b {
     font-family: var(--font-display);
-    font-size: 1.375rem;
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
     font-weight: 400;
+    line-height: 1;
   }
 
   .ledger {

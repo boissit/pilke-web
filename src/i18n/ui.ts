@@ -85,6 +85,7 @@ const fi = {
 
   'economy.title': 'Kipinät',
   'economy.lead': 'Viisi kipinää avaa kolmen ehdokkaan valikoiman.',
+  'economy.pile.alt': 'Viisi kipinäkolikkoa pinossa.',
   'economy.earn.title': 'Näin kipinät kertyvät',
   'economy.spend.title': 'Näin kipinät kuluvat',
   'economy.spend.body':
@@ -287,6 +288,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'economy.title': 'Glimmers',
   'economy.lead': 'Five glimmers open a set of three candidates.',
+  'economy.pile.alt': 'Five glimmer coins in a pile.',
   'economy.earn.title': 'How glimmers add up',
   'economy.spend.title': 'How glimmers go',
   'economy.spend.body':
