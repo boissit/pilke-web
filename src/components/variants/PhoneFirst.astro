@@ -2,21 +2,27 @@
 /**
  * The front page: the phone leads.
  *
- * A large screenshot beside the headline, then the five steps stacked one to a
+ * A large screenshot beside the headline, then the four steps stacked one to a
  * row, each with a screenshot big enough to read. The bet is that a stranger
  * understands an app faster by seeing it than by reading about it, so the
  * pictures get the room and the page gets longer.
  *
- * Safety is a summary here and a page of its own at `turvallisuus`. It is the
- * part of this product with the most to say, which is exactly why it does not
- * belong on a front page: three cards of it read as a warning rather than as an
- * answer to what the app is.
+ * The order is an argument, and it runs: dates rather than swiping, three claims
+ * to stand behind, why that is not the same product as the others, the loop,
+ * both halves of it are somebody's decision, and it is safe to do.
+ *
+ * The waitlist is not on this page. It is the footer, in `Base.astro`, so that a
+ * reader who came to `turvallisuus` can join from where they are; the hero's
+ * button points down at it.
+ *
+ * The glimmer economy is not on this page either. A price list and an earning
+ * table read as a game to be played, which is the opposite of what the product
+ * is, so `nain-se-toimii` carries all of it and `both` links there.
  */
 import '../../styles/bold.css';
 import Glimmer from '../Glimmer.astro';
 import Phone from '../Phone.astro';
 import Sparkle from '../Sparkle.astro';
-import GlimmerPile from '../GlimmerPile.astro';
 import { content, shots } from './data';
 import { localePath } from '../../i18n/ui';
 import type { Lang } from '../../i18n/ui';
@@ -26,33 +32,42 @@ interface Props {
 }
 
 const { lang } = Astro.props;
-const { t, promises, steps, faq } = content(lang);
+const { t, facts, routes, steps, safetyCards } = content(lang);
 ---
 
 <section class="slab slab-yellow">
   <Glimmer tile={340} background="var(--brand-main)" star="#F7E88A" />
-  <div class="wrap hero section-pad">
-    <div class="hero-copy">
-      <h1 class="display">{t('hero.title')}</h1>
-      <p class="lede">{t('hero.lead')}</p>
-    </div>
-    <Phone src={shots.treffit} alt={t('shot.treffit')} width={300} tilt="right" />
-  </div>
-</section>
-
-<section class="slab slab-white">
   <div class="wrap section-pad">
-    <h2 class="display-mid">{t('promise.title')}</h2>
-    <ul class="promises">
+    <div class="hero">
+      <div class="hero-copy">
+        <h1 class="display">{t('hero.title')}</h1>
+        <p class="lede">{t('hero.lead')}</p>
+        <!--
+          The footer is the form, so the hero points at it rather than carrying a
+          second copy. Two forms on a page are two things to wire up and two
+          places to disagree about what was submitted.
+        -->
+        <p><a class="go" href="#beta">{t('cta.button')}</a></p>
+      </div>
+      <Phone src={shots.treffit} alt={t('shot.treffit')} width={300} tilt="right" />
+    </div>
+
+    <!--
+      Three claims on one rule under the headline. A description list because
+      that is the shape: a claim, and the line that qualifies it. Cards were
+      three shadowed rectangles beside a phone that is already a rectangle, and
+      none of the three has enough to say to fill one.
+    -->
+    <dl class="fact-list">
       {
-        promises.map((item) => (
-          <li class="block" style={`background:${item.tint}`}>
-            <h3>{item.title}</h3>
-            <p>{item.body}</p>
-          </li>
+        facts.map((fact) => (
+          <div>
+            <dt>{fact.title}</dt>
+            <dd>{fact.body}</dd>
+          </div>
         ))
       }
-    </ul>
+    </dl>
   </div>
 </section>
 
@@ -62,23 +77,34 @@ const { t, promises, steps, faq } = content(lang);
     <p class="lede">{t('diff.lead')}</p>
 
     <!--
-      Two columns rather than a table of ticks and crosses. The comparison is
-      between two ways of spending an evening, and both descriptions have to be
-      recognisable to somebody who has done the first one, or the section reads as
-      a swipe at the reader's own habits rather than at the shape of the thing.
-    -->
-    <div class="compare">
-      <article class="side">
-        <p class="side-label">{t('diff.old.label')}</p>
-        <h3>{t('diff.old.title')}</h3>
-        <p>{t('diff.old.body')}</p>
-      </article>
+      The two ways to end up on a date, one under the other, each as a chain of
+      one-word steps. Stacked rather than side by side: the argument is that one
+      chain is long and the other is short, and two narrow columns wrap the chains
+      onto three lines each, which is exactly the comparison being made. The
+      emphasis is carried by the chips, so neither row needs a box around it.
 
-      <article class="side ours">
-        <p class="side-label">{t('diff.new.label')}</p>
-        <h3>{t('diff.new.title')}</h3>
-        <p>{t('diff.new.body')}</p>
-      </article>
+      The label sits in a gutter to the left of the chain rather than above it, so
+      the two rows line up on the same left edge and the eye compares the chains
+      directly.
+    -->
+    <div class="routes">
+      {
+        routes.map((route) => (
+          <article class:list={['route', route.ours && 'ours']}>
+            <p class="side-label">{route.label}</p>
+            <div class="route-body">
+              <ol class="chain">
+                {route.steps.map((step, i) => (
+                  <li class:list={[!route.ours && i === route.steps.length - 1 && 'maybe']}>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+              <p class="prose">{route.body}</p>
+            </div>
+          </article>
+        ))
+      }
     </div>
 
     <div class="learn">
@@ -95,13 +121,12 @@ const { t, promises, steps, faq } = content(lang);
   <Glimmer tile={300} />
   <div class="wrap section-pad">
     <h2 class="display-mid">{t('how.title')}</h2>
-    <p class="lede">{t('how.lead')}</p>
 
     <!--
-      One step per row, stacked. A row of five side by side left each phone about
-      190px wide, which is too small to read a screen in, and on a narrow screen
-      it became a sideways scroll that is easy to miss entirely. Vertical costs
-      page length and buys a legible screenshot, which is the whole point of
+      One step per row, stacked. A row of four side by side leaves each phone
+      about 190px wide, which is too small to read a screen in, and on a narrow
+      screen it becomes a sideways scroll that is easy to miss entirely. Vertical
+      costs page length and buys a legible screenshot, which is the whole point of
       leading with the phone.
     -->
     <ol class="steps">
@@ -140,73 +165,74 @@ const { t, promises, steps, faq } = content(lang);
   </div>
 </section>
 
-<section class="slab slab-white">
+<!--
+  Two columns, equal weight, because the two halves of a date carry equal
+  weight. An app where everybody waits to be asked has no dates in it, and the
+  reader who assumes their half is the waiting half is the one this section is
+  for.
+-->
+<section class="slab slab-white" id="both">
   <div class="wrap section-pad">
-    <h2 class="display-mid">{t('economy.title')}</h2>
+    <h2 class="display-mid">{t('both.title')}</h2>
+    <p class="lede">{t('both.lead')}</p>
 
-    <!--
-      One mark and one price. A two-coin equals-sign graphic depicted an exchange
-      between two units, and there is one unit: the number people need is what a
-      set of candidates costs, not what anything converts into.
-    -->
-    <p class="price">
-      <span class="coin">
-        <GlimmerPile height={132} glimmers={5} alt={t('economy.pile.alt')} />
-        <b>5</b>
-      </span>
-      <span class="price-words">{t('economy.lead')}</span>
-    </p>
-
-    <div class="ledger">
-      <div class="earn">
-        <h3>{t('economy.earn.title')}</h3>
-        <!--
-          A description list, because that is what this is: each way of earning
-          and the amount it pays. The amount is the value of the term beside it,
-          so a reader who tabs through hears them paired.
-        -->
-        <dl>
-          <div><dt>{t('economy.earn.signup')}</dt><dd>{t('economy.amount.five')}</dd></div>
-          <div><dt>{t('economy.earn.calendar')}</dt><dd>{t('economy.amount.one')}</dd></div>
-          <div><dt>{t('economy.earn.date')}</dt><dd>{t('economy.amount.two')}</dd></div>
-        </dl>
-        <p class="note">{t('economy.note')}</p>
-      </div>
-
-      <div class="spend block">
-        <h3>{t('economy.spend.title')}</h3>
-        <p>{t('economy.spend.body')}</p>
-      </div>
+    <div class="compare">
+      <article class="side">
+        <h3>{t('both.invite.title')}</h3>
+        <p>{t('both.invite.body')}</p>
+      </article>
+      <article class="side">
+        <h3>{t('both.answer.title')}</h3>
+        <p>{t('both.answer.body')}</p>
+      </article>
     </div>
+
+    <p class="note">{t('both.note')}</p>
+    <p><a class="go" href={localePath(lang, 'nain-se-toimii')}>{t('both.more')}</a></p>
   </div>
 </section>
 
 <section class="slab slab-yellow" id="safety">
-  <div class="wrap section-pad safety">
-    <div class="safety-copy">
-      <h2 class="display-mid">{t('safety.title')}</h2>
-      <p class="lede">{t('safety.summary')}</p>
-      <p><a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a></p>
+  <div class="wrap section-pad">
+    <h2 class="display-mid">{t('safety.front.title')}</h2>
+    <p class="lede">{t('safety.front.lead')}</p>
+
+    <!--
+      The phone stands beside the whole column, the forward-looking note included.
+      Beside the cards alone it was the tallest thing in the row by 200px, and that
+      height became a hole between the cards and whatever followed them.
+    -->
+    <div class="safety">
+      <div class="safety-main">
+        <ul class="cards">
+          {
+            safetyCards.map((item) => (
+              <li class="block" style={`background:${item.tint}`}>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </li>
+            ))
+          }
+        </ul>
+
+        <!--
+          Dashed, and under the cards rather than in one: beside two features that
+          ship, a third card reads as a third feature that ships. The dashes are the
+          same signal the unreached step in the route chain carries.
+        -->
+        <div class="future">
+          <h3>{t('safety.future.title')}</h3>
+          <p>{t('safety.future.body')}</p>
+        </div>
+      </div>
+
+      <Phone src={shots.asetukset} alt={t('shot.asetukset')} width={230} tilt="left" />
     </div>
-    <Phone src={shots.asetukset} alt={t('shot.asetukset')} width={230} tilt="left" />
+
+    <p><a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a></p>
   </div>
 </section>
 
-<section class="slab slab-white" id="faq">
-  <div class="wrap section-pad">
-    <h2 class="display-mid">{t('faq.title')}</h2>
-    <dl class="faq">
-      {
-        faq.map((item) => (
-          <div class="qa">
-            <dt>{item.q}</dt>
-            <dd class="prose">{item.a}</dd>
-          </div>
-        ))
-      }
-    </dl>
-  </div>
-</section>
 
 <style>
   .hero {
@@ -225,102 +251,177 @@ const { t, promises, steps, faq } = content(lang);
     margin-top: var(--pad-medium);
   }
 
+  /* Blocks inside a section stand apart. At pad-medium a subsection sat close
+     enough to the one above it to read as part of it.
+
+     Two blocks below ask for more than this and have to name `.wrap >` to get it:
+     Astro scopes every compound, so this selector carries three attributes to a
+     bare class's two and would otherwise win on specificity. */
   .wrap > * + * {
+    margin-top: var(--pad-large);
+  }
+
+  /* A lede belongs to the title above it, so it keeps the tighter gap. */
+  .display-mid + .lede {
+    margin-top: var(--pad-normal);
+  }
+
+  .lede {
+    max-width: 46ch;
+  }
+
+  /* Three claims on one rule. Stacked and rule-separated on a narrow screen,
+     three columns divided by uprights once there is room for them. It carries its
+     own gap above, and more of it than the block spacing gives: the phone beside it
+     is tilted, so the corner it paints falls below the bottom of its own box and a
+     rule set off the box still touched it. */
+  .wrap > .fact-list {
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    display: grid;
+    gap: 0;
+    border-top: 3px solid var(--ink);
+  }
+
+  .fact-list > div {
+    padding-top: var(--pad-medium);
+  }
+
+  .fact-list > div + div {
+    margin-top: var(--pad-medium);
+    border-top: 3px solid var(--ink);
+  }
+
+  @media (min-width: 48rem) {
+    .fact-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .fact-list > div + div {
+      margin-top: 0;
+      padding-left: var(--pad-medium);
+      border-top: 0;
+      border-left: 3px solid var(--ink);
+    }
+
+    .fact-list > div {
+      padding-right: var(--pad-medium);
+    }
+  }
+
+  .fact-list dt {
+    font-weight: 800;
+    font-size: 1.0625rem;
+  }
+
+  .fact-list dd {
+    margin: var(--pad-small) 0 0;
+    max-width: 26ch;
+  }
+
+  /* The two routes, one under the other, divided by a rule. */
+  .routes {
+    display: grid;
+    gap: var(--pad-medium);
+  }
+
+  .route + .route {
+    padding-top: var(--pad-large);
+    border-top: 3px solid var(--ink);
+  }
+
+  .route {
+    display: grid;
+    gap: var(--pad-normal);
+  }
+
+  /* The label moves into a fixed gutter once there is room, so both chains start
+     at the same x and the comparison is a straight one. */
+  @media (min-width: 52rem) {
+    .route {
+      grid-template-columns: 9rem 1fr;
+      gap: var(--pad-medium);
+    }
+
+    .route .side-label {
+      padding-top: 0.35rem;
+    }
+  }
+
+  .route-body > * + * {
     margin-top: var(--pad-medium);
   }
 
-  .promises {
+  .route-body .prose {
+    max-width: 64ch;
+  }
+
+  /* The arrow belongs between two chips, so the item is a row and the chip
+     inside it is the pill. A ::before on the chip itself would draw the arrow
+     inside its own border. */
+  .chain {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: var(--pad-small);
+  }
+
+  .chain li {
+    display: flex;
+    align-items: center;
+  }
+
+  .chain li + li::before {
+    content: '→';
+    margin-inline: 0.5rem;
+    font-weight: 800;
+    color: var(--muted);
+  }
+
+  .chain span {
+    padding: 6px 14px;
+    background: var(--white);
+    border: 3px solid var(--ink);
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.9375rem;
+    white-space: nowrap;
+  }
+
+  /* Ours is the loud chain: brand ground and the offset edge the app gives a
+     button. The difference in weight is the argument, so the other row needs no
+     cross beside it. */
+  .route.ours .chain span {
+    background: var(--brand-main);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .route.ours .side-label {
+    color: var(--ink);
+  }
+
+  /* The step that may never arrive is drawn as though it has not. */
+  .chain li.maybe span {
+    background: transparent;
+    border-style: dashed;
+    color: var(--muted);
+    font-weight: 700;
+  }
+
+  .note {
+    font-size: 0.9375rem;
+    color: var(--muted);
+    max-width: 60ch;
+  }
+
+  .cards {
     list-style: none;
     padding: 0;
     display: grid;
     gap: var(--pad-medium);
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-  }
-
-  /* The price reads as one sentence with the mark in it. */
-  .price {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--pad-normal);
-    max-width: none;
-  }
-
-  /* The mark and the price it carries, with no chip around them: the coins bring
-     their own ink rule, and a pill would be a second ring on the first. */
-  .coin {
-    display: flex;
-    align-items: center;
-    gap: var(--pad-small);
-  }
-
-  /* Sized against the coins rather than against the running text. The mark is a
-     render 132px tall, and a figure set at body scale beside it reads as a footnote
-     to the picture instead of the price the picture is of. */
-  .coin b {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 4vw, 2.75rem);
-    font-weight: 400;
-    line-height: 1;
-  }
-
-  .price-words {
-    flex: 1 1 18rem;
-    font-size: 1.0625rem;
-  }
-
-  .ledger {
-    display: grid;
-    gap: var(--pad-medium);
-    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
-    align-items: start;
-  }
-
-  .earn dl {
-    margin: var(--pad-normal) 0 0;
-    display: grid;
-    gap: 0;
-  }
-
-  .earn dl > div {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: var(--pad-normal);
-    padding: var(--pad-normal) 0;
-    border-top: 3px solid var(--ink);
-  }
-
-  .earn dl > div:last-child {
-    border-bottom: 3px solid var(--ink);
-  }
-
-  .earn dt {
-    flex: 1 1 12rem;
-    font-weight: 400;
-    font-size: 1rem;
-  }
-
-  /* The amounts line up, so they are read as a column of figures. */
-  .earn dd {
-    margin: 0;
-    font-weight: 800;
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-  }
-
-  .spend {
-    background: var(--brand-background);
-  }
-
-  .spend > * + * {
-    margin-top: var(--pad-small);
-  }
-
-  .note {
-    margin-top: var(--pad-normal);
-    font-size: 0.9375rem;
-    color: var(--muted);
   }
 
   .block > * + * {
@@ -365,7 +466,15 @@ const { t, promises, steps, faq } = content(lang);
   }
 
   .step-copy > * + * {
-    margin-top: var(--pad-normal);
+    margin-top: var(--pad-medium);
+  }
+
+  /* Larger than the page's body size. Each of these is one of four things the
+     reader has come to understand, and at 1rem beside a 300px phone they read as
+     captions to the screenshots. */
+  .step-copy p {
+    font-size: 1.1875rem;
+    line-height: 1.55;
   }
 
   .step-head {
@@ -388,16 +497,9 @@ const { t, promises, steps, faq } = content(lang);
 
   .side {
     padding: var(--pad-medium);
+    background: var(--brand-background);
     border: 3px solid var(--ink);
     border-radius: var(--radius-large);
-    background: var(--white);
-  }
-
-  /* Ours carries the brand ground and the offset edge; the other column is drawn
-     plainly. The difference in weight is the argument, so it does not need a
-     cross next to it. */
-  .side.ours {
-    background: var(--brand-background);
     box-shadow: 5px 5px 0 var(--ink);
   }
 
@@ -414,8 +516,10 @@ const { t, promises, steps, faq } = content(lang);
     color: var(--muted);
   }
 
-  .side.ours .side-label {
-    color: var(--ink);
+  /* Its own gap: at the block spacing it read as a third paragraph of the route
+     above rather than as the point that follows both of them. */
+  .wrap > .learn {
+    margin-top: clamp(2.5rem, 5vw, 3.5rem);
   }
 
   .learn {
@@ -453,6 +557,8 @@ const { t, promises, steps, faq } = content(lang);
     border-radius: var(--radius-large);
   }
 
+  /* The cards take the room and the phone sits beside them, so it drops under
+     them on a narrow screen rather than squeezing them into a column. */
   .safety {
     display: flex;
     flex-wrap: wrap;
@@ -460,12 +566,12 @@ const { t, promises, steps, faq } = content(lang);
     gap: var(--pad-large);
   }
 
-  .safety-copy {
-    flex: 1 1 22rem;
+  .safety-main {
+    flex: 1 1 30rem;
   }
 
-  .safety-copy > * + * {
-    margin-top: var(--pad-medium);
+  .safety-main > * + * {
+    margin-top: var(--pad-large);
   }
 
   .go {
@@ -484,23 +590,14 @@ const { t, promises, steps, faq } = content(lang);
     box-shadow: 3px 3px 0 var(--ink);
   }
 
-  .faq {
-    margin: 0;
-    display: grid;
-    gap: var(--pad-normal);
+  /* Not yet built, and drawn that way. */
+  .future {
+    padding: var(--pad-medium);
+    border: 3px dashed var(--ink);
+    border-radius: var(--radius-large);
   }
 
-  .qa {
-    border-top: 3px solid var(--ink);
-    padding-top: var(--pad-normal);
-  }
-
-  dt {
-    font-weight: 800;
-    font-size: 1.0625rem;
-  }
-
-  dd {
-    margin: var(--pad-small) 0 0;
+  .future > * + * {
+    margin-top: var(--pad-small);
   }
 </style>

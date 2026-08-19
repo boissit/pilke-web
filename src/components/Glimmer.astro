@@ -39,7 +39,14 @@ const sparkles = [
 
 const { width: shapeWidth, height: shapeHeight, path } = sparkleShape;
 
-const id = `glimmer-${tile}`;
+/*
+  The id has to distinguish every combination on the page, not just every tile
+  size. Two `<pattern>` elements sharing an id means the first one wins wherever
+  it is referenced, so a second glimmer at the same tile size in different colours
+  silently draws the first one's colours — which is what a grey footer behind a
+  yellow section would have done.
+*/
+const id = `glimmer-${tile}-${`${background}${star}`.replace(/[^a-zA-Z0-9]/g, '')}`;
 ---
 
 <svg class={className} aria-hidden="true" focusable="false" preserveAspectRatio="none">

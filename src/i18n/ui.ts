@@ -6,9 +6,15 @@
  * error here in the same way it is in the app's own dictionaries.
  *
  * Product vocabulary is the app's own spelling: kipinat are what the product
- * calls its currency, and the site should not invent a softer word for it. The
- * cost is stated as a price at the point of spending rather than as a rate,
- * because a rate invites the reader to look for a second unit.
+ * calls its currency, and the site should not invent a softer word for it.
+ *
+ * The front page argues one thing: there is no chat, and the shortest path to
+ * meeting somebody is a kutsu with the time already in it. The currency belongs
+ * to `nain-se-toimii`, because a price list on a front page reads as a game to
+ * be played rather than as an app for meeting people.
+ *
+ * Sentences here are short on purpose. A clause that can be its own sentence is
+ * one, and a paragraph says its point in its first six words.
  */
 
 export const languages = {
@@ -23,87 +29,148 @@ export type Lang = keyof typeof languages;
 const fi = {
   'meta.title': 'Pilke',
   'meta.description':
-    'Pilke on suomalainen deittisovellus, joka tekee yhden asian: sopii teille oikeat treffit oikeaan aikaan.',
+    'Pilke on suomalainen deittisovellus ilman chattia. Saat kutsun, jossa on jo aika ja paikka, ja menet treffeille.',
 
   'nav.how': 'Näin se toimii',
   'nav.safety': 'Turvallisuus',
   'nav.questions': 'Kysyttyä',
   'nav.language': 'Kieli',
   'nav.skip': 'Siirry sisältöön',
+  'nav.back': 'Takaisin etusivulle',
 
   'hero.title': 'Treffit, ei swaippailua',
   'hero.lead':
-    'Pilke etsii teille yhteisen ajan ja paikan, ja sitten te menette sinne. Ei viestiketjuja, jotka hiipuvat kolmen päivän jälkeen. Ei selailua illasta toiseen.',
+    'Ei chattia, ei viikkojen viestittelyä. Saat kutsun, jossa aika ja paikka ovat jo valmiina — valitse sopiva hetki, niin treffit on sovittu.',
 
-  'promise.title': 'Kolme lupausta',
-  'promise.one.title': 'Kolme ehdokasta kerrallaan',
-  'promise.one.body':
-    'Saat kolme ehdokasta, joiden kanssa sinulla on vapaa hetki samaan aikaan ja paikka, johon molemmat pääsevät. Valitset yhden.',
-  'promise.two.title': 'Aika ja paikka valmiina',
-  'promise.two.body':
-    'Kalenterisi kertoo, milloin voit. Kutsussa on jo ajankohta ja paikka, joten sopimista ei tarvitse käydä erikseen läpi.',
-  'promise.three.title': 'Kasvokkain, ei ruudun takana',
-  'promise.three.body':
-    'Pilkkeessä ei ole chattia. Se on tarkoituksellista: sovellus vie teidät samaan pöytään sen sijaan, että korvaisi sen.',
+  'fact.one.title': 'Kolme ehdokasta kerrallaan',
+  'fact.one.body': 'Ei loputonta pinoa selattavaksi.',
+  'fact.two.title': 'Aika ja paikka valmiina',
+  'fact.two.body': 'Kalenterisi sopii treffit puolestasi.',
+  'fact.three.title': 'Ei mitään pelattavaa',
+  'fact.three.body': 'Ei ostettavaa näkyvyyttä, ei nostoja.',
 
   'diff.title': 'Miksi tämä on erilaista',
   'diff.lead':
-    'Deittisovellukset ovat opettaneet, että tutustuminen tapahtuu ruudulla ja tapaaminen on vasta palkinto. Pilke tekee sen toisin päin.',
+    'Muut sovellukset opettivat, että tutustuminen tapahtuu ruudulla ja tapaaminen on palkinto lopussa. Meillä se menee toisin päin.',
 
+  // The two routes, drawn as chips. Each step is one word, because the point is
+  // the length of the chain rather than what any link in it contains.
   'diff.old.label': 'Muualla',
-  'diff.old.title': 'Profiili, selailu, keskustelu',
   'diff.old.body':
-    'Ensin teet profiilin: hiot esittelytekstiä, valitset kuvat, mietit mitä ne kertovat sinusta. Sitten selaat päiviä ja chattailet viikkoja. Suurin osa keskusteluista hiipuu ennen kuin kukaan ehdottaa mitään, ja niistä ihmisistä ei ole vielä yksikään istunut samassa pöydässä kanssasi.',
+    'Hiot profiilia, selaat päiviä, chattailet viikkoja. Suurin osa keskusteluista hiipuu ennen kuin kukaan ehdottaa mitään.',
+  'diff.old.one': 'Profiili',
+  'diff.old.two': 'Selailu',
+  'diff.old.three': 'Chat',
+  'diff.old.four': 'Ehkä treffit',
 
   'diff.new.label': 'Pilkkeessä',
-  'diff.new.title': 'Kysymykset, sitten treffit',
   'diff.new.body':
-    'Vastaat pariin kysymyssarjaan, merkitset kalenteriin sopivat ajat ja alat käydä treffeillä. Ihmisestä oppii enemmän tunnissa kahvilassa kuin kahdesta viikosta viestejä: miten hän puhuu, mikä häntä naurattaa, onko olo helppo vai ei.',
+    'Vastaa pariin kysymyssarjaan ja merkitse kalenteriin sopivat ajat. Sen jälkeen tapaat ihmisiä. Tunnissa kahvilassa opit toisesta enemmän kuin kahdessa viikossa viestejä.',
+  'diff.new.one': 'Kysymykset',
+  'diff.new.two': 'Kalenteri',
+  'diff.new.three': 'Treffit',
 
   'diff.learn.title': 'Ensimmäinen ei ole se oikea, eikä sen tarvitse olla',
   'diff.learn.body':
-    'Harvoin ensimmäinen tapaaminen osuu kohdalleen, eikä se ole epäonnistuminen vaan lähtökohta. Jokaisen kerran jälkeen kerrot lyhyesti miten meni, ja seuraavat ehdotukset osuvat lähemmäs. Samalla huomaat itsekin asioita siitä, mitä oikeastaan etsit.',
+    'Harva ensimmäinen tapaaminen osuu kohdalleen. Se ei ole epäonnistuminen vaan alku. Kerro joka kerran jälkeen lyhyesti miten meni, niin seuraavat ehdotukset osuvat lähemmäs — ja huomaat samalla itsekin, mitä oikeastaan etsit.',
 
   'how.title': 'Näin se toimii',
-  'how.lead': 'Neljä vaihetta, ja sitten uudelleen.',
   'how.more': 'Lue tarkemmin',
 
   'how.one.title': 'Lähetä treffikutsu',
   'how.one.body':
-    'Viisi kipinää avaa kolmen ehdokkaan valikoiman. Valitset yhden, tarjoat pari itsellesi sopivaa aikaa ja paikan, ja kutsu lähtee.',
+    'Avaa kolmen ehdokkaan valikoima ja valitse yksi. Tarjoa pari sinulle sopivaa aikaa ja paikka. Kutsu lähtee.',
   'how.two.title': 'Vastaa saapuneisiin kutsuihin',
   'how.two.body':
-    'Kun joku kutsuu sinut, näet kuka hän on, mitä teillä on yhteistä ja mitkä ajat hän tarjoaa. Valitset yhden ajan, ja treffit ovat sovitut.',
+    'Näet kutsujan, sen mitä teillä on yhteistä ja hänen tarjoamansa ajat. Valitse yksi, niin treffit on sovittu. Se ei maksa sinulle mitään.',
   'how.three.title': 'Menkää treffeille',
   'how.three.body':
     'Treffinäytöllä on aika, paikka ja kartta. Sovittuna hetkenä voitte näyttää sijaintinne toisillenne, jotta löydätte perille.',
   'how.four.title': 'Kerro miten meni',
   'how.four.body':
-    'Treffien jälkeen sovellus kysyy lyhyesti, miten meni ja vastasiko toinen toiveitasi. Vastaaminen kestää hetken, tuo kipinöitä ja tarkentaa sitä, keitä sinulle jatkossa ehdotetaan. Sama koskee kysymyssarjoja, joihin voit vastata omaan tahtiisi.',
-  'how.loop':
-    'Sitten kierros alkaa alusta. Kerätyillä kipinöillä avaat uuden valikoiman, ja tiedämme sinusta enemmän kuin viime kerralla.',
+    'Sovellus kysyy lyhyesti, miten meni ja vastasiko toinen toiveitasi. Vastaa hetkessä, niin seuraavat ehdotukset osuvat paremmin.',
+  'how.loop': 'Sitten kierros alkaa alusta — ja tiedämme sinusta enemmän kuin viime kerralla.',
 
-  'economy.title': 'Kipinät',
-  'economy.lead': 'Viisi kipinää avaa kolmen ehdokkaan valikoiman.',
-  'economy.pile.alt': 'Viisi kipinäkolikkoa pinossa.',
-  'economy.earn.title': 'Näin kipinät kertyvät',
-  'economy.spend.title': 'Näin kipinät kuluvat',
-  'economy.spend.body':
-    'Viisi kipinää kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään.',
-  'economy.earn.calendar': 'Kolme kalenteriin merkittyä treffiaikaa',
-  'economy.earn.date': 'Treffit, kun olet kertonut miten meni',
-  'economy.earn.signup': 'Rekisteröinnin viimeistely',
-  'economy.amount.one': '1 kipinä',
-  'economy.amount.two': '2 kipinää',
-  'economy.amount.five': '5 kipinää',
-  'economy.note':
-    'Kipinöitä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran. Kun raja tulee vastaan, ansaitut kipinät odottavat siihen asti, kunnes käytät niitä. Määrät voivat muuttua betavaiheen aikana.',
+  // The section that stands where the price list used to. Its job is that both
+  // halves of a date are somebody's decision: one person asks, one person
+  // answers, and the app is built so that both are worth doing.
+  'both.title': 'Kutsu, ja vastaa kutsuihin',
+  'both.lead':
+    'Treffit syntyvät vain jos joku kutsuu ja joku vastaa. Pilke on tehty niin, että molemmat kannattavat.',
+  'both.invite.title': 'Kutsu ensin',
+  'both.invite.body':
+    'Kutsu on sovelluksen ainoa varsinainen teko. Valikoiman avaaminen kuluttaa kipinöitä, ja kipinöitä saa käyttämällä sovellusta. Rahalla niitä ei saa.',
+  'both.answer.title': 'Vastaa kutsuun',
+  'both.answer.body':
+    'Kutsuun vastaaminen ei kuluta mitään. Kieltäydy vapaasti, siitä ei seuraa sinulle mitään. Kutsu on voimassa vuorokauden ja raukeaa itsestään, jos jätät sen.',
+  'both.note':
+    'Treffeillä käyminen ja palautteen antaminen tuovat kipinöitä, eli seuraavan kutsun. Määrät voivat muuttua betan aikana.',
+  'both.more': 'Kipinät ja koko kierto tarkemmin',
+
+  // The safety block on the front page. Three short cards; the page at
+  // `turvallisuus` carries the whole of it. The location card is here because it
+  // is the most concrete thing this product can say and it says it in numbers.
+  'safety.front.title': 'Turvallisuus ei ole lisäosa',
+  'safety.front.lead':
+    'Tuntemattoman tapaaminen on eri asia kuin viestittely. Siihen Pilkkeessä on kolme työkalua, ja ne kannattaa ottaa käyttöön ennen ensimmäisiä treffejä.',
+  'safety.card.contact.title': 'Luotettava läheinen',
+  'safety.card.contact.body':
+    'Tallennat asetuksiin yhden numeron. Se on ainoa numero, johon sovellus voi lähettää viestin puolestasi.',
+  'safety.card.button.title': 'Turvapainike',
+  'safety.card.button.body':
+    'Treffinäytöllä. Yksi painallus lähettää läheisellesi tekstiviestin: siinä on nimesi ja pyyntö ottaa yhteyttä. Se ei kerro sijaintiasi, treffipaikkaa eikä mitään toisesta osapuolesta.',
+  'safety.card.places.title': 'Paikat valitsemme itse',
+  'safety.card.places.body':
+    'Treffipaikat eivät ole käyttäjien ehdotuksia. Jokainen niistä on julkinen paikka, jonka olemme itse valinneet: kahvila, ravintola tai muu tila, jossa on muita ihmisiä ympärillä.',
+
+  // Forward-looking, and marked as such in the copy itself. It sits under the
+  // cards rather than in one, because a card next to two shipped features reads
+  // as a third shipped feature.
+  'safety.future.title': 'Tulossa: vahva tunnistautuminen',
+  'safety.future.body':
+    'Haluamme varmistaa käyttäjien henkilöllisyyden suomalaisella vahvalla tunnistautumisella. Sitä ei ole vielä käytössä, emmekä lupaa sille päivämäärää.',
+
+  'safety.title': 'Turvallisuus',
+  'safety.contact.title': 'Luotettava läheinen',
+  'safety.contact.body':
+    'Voit tallentaa yhden puhelinnumeron asetusten Turvallisuus-kohdassa. Se on ainoa numero, johon sovellus voi lähettää viestin puolestasi.',
+  'safety.button.title': 'Turvapainike',
+  'safety.button.body':
+    'Turvapainike näkyy treffinäytöllä, kun olet tallentanut luotettavan läheisen numeron. Yksi painallus lähettää hänelle tekstiviestin. Ilman tallennettua numeroa painiketta ei ole, joten aseta numero etukäteen. Viestissä on nimesi ja se, että painoit painiketta ja pyydät yhteydenottoa. Se ei kerro sijaintiasi, treffipaikkaa, kellonaikaa eikä mitään toisesta osapuolesta. Toinen osapuoli ei saa tietää painalluksesta mitään.',
+  'safety.report.title': 'Ilmoitus',
+  'safety.report.body':
+    'Jos jokin ei mennyt niin kuin sen olisi pitänyt, voit kertoa siitä treffien jälkeen omin sanoin. Ilmoitus jää talteen Pilkkeen väelle luettavaksi. Emme lupaa vielä, kuinka nopeasti joku sen lukee.',
+
+  'tips.title': 'Näin tapaat turvallisesti',
+  'tips.lead':
+    'Nämä eivät ole Pilkkeen erityispiirteitä vaan tavallista järkeä, joka on helppo unohtaa jännittävänä iltana.',
+  'tips.one': 'Aseta luotettavan läheisen numero ennen ensimmäisiä treffejä.',
+  'tips.two': 'Kerro jollekin minne menet ja milloin arvioit olevasi kotona.',
+  'tips.three': 'Valitse ensimmäisille treffeille paikka, jossa on muita ihmisiä.',
+  'tips.four': 'Järjestä oma kulkeminen molempiin suuntiin.',
+  'tips.five': 'Pidä puhelin ladattuna.',
+  'tips.six':
+    'Jos olo on epämukava, lähde. Sinun ei tarvitse selittää sitä kenellekään, ei meillekään.',
+
+  'privacy.title': 'Sijainti ja yksityisyys',
+
+  // Two paragraphs, because these are two different things and conflating them is
+  // how the earlier version came to claim something the app does not do. The area
+  // is a choice on a map; the position is a permission during a date.
+  'privacy.area':
+    'Pilke ei kysy kotiosoitettasi eikä sitä, missä asut. Valitset kartalta alueen ja sen, kuinka kauas voisit lähteä treffeille, ja treffipaikkoja ehdotetaan tuon ympyrän sisältä.',
+  'privacy.body':
+    'Laitteesi sijaintia luetaan vain treffeillä ja vain jos itse valitset näyttää sen. Näyttäminen toimii kymmenen minuuttia sovitun alkamisajan molemmin puolin ja vain 300 metrin säteellä treffipaikasta, joten kotoa sinua ei voi paikantaa. Sijainnin näkee vain toinen osapuoli, ei luotettava läheisesi. Se poistetaan heti kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun: se ei vaikuta hyvityksiin, hidastuksiin eikä ilmoituksiin. Voit lopettaa näyttämisen milloin tahansa.',
+
+  'safety.more': 'Lue turvallisuudesta',
+  'safety.page.lead':
+    'Tapaaminen tuntemattoman kanssa on eri asia kuin viestittely. Tällä sivulla on se, mitä Pilke tekee asian eteen, ja se mitä kannattaa itse tehdä.',
 
   // The detail page. Every number here is the backend's own constant, and the
   // README records which.
   'detail.title': 'Näin Pilke toimii',
   'detail.lead':
-    'Etusivu kertoo kierron neljässä vaiheessa. Tällä sivulla on sama asia tarkemmin, mukaan lukien se, mistä kipinät tulevat.',
+    'Etusivu kertoo kierron neljässä vaiheessa. Tällä sivulla on sama tarkemmin: mistä ehdokkaat tulevat, mistä kipinät tulevat ja mitä tapahtuu kun suunnitelmat muuttuvat.',
 
   'detail.start.title': 'Ennen ensimmäistä kutsua',
   'detail.start.body':
@@ -120,11 +187,11 @@ const fi = {
     'Kun avaat valikoiman, Pilke etsii ihmisiä, joiden toiveet ja sinun toiveesi käyvät yksiin, joilla on kalenterissa vähintään tunnin yhteinen aika sinun kanssasi, ja joiden kanssa on paikka johon molemmat pääsevät. Valikoimaan tulee kolme.',
   'detail.invite.title': 'Kutsu ja vastaus',
   'detail.invite.body':
-    'Tarjoat vähintään kaksi aikaa ja yhden tekemisen. Toinen valitsee niistä yhden, ja treffit ovat sovitut. Kutsu on voimassa vuorokauden.',
+    'Tarjoat vähintään kaksi aikaa ja yhden tekemisen. Toinen valitsee niistä yhden, ja treffit on sovittu. Kutsu on voimassa vuorokauden.',
 
   'detail.economy.title': 'Kipinät',
   'detail.economy.body':
-    'Kipinä on se, mitä keräät ja käytät. Kolmen ehdokkaan valikoima kuluttaa viisi kipinää, eikä muuta hintaa ole.',
+    'Kipinä on se, mitä keräät ja käytät. Kolmen ehdokkaan valikoima kuluttaa viisi kipinää, eikä muuta hintaa ole. Kipinöitä ei myydä.',
   'detail.economy.earn': 'Näin kipinöitä kertyy',
   'detail.earn.signup': 'Rekisteröinnin viimeistely',
   'detail.earn.signup.note': 'Kerran tilin elinkaaressa, koodin vahvistamisen jälkeen.',
@@ -159,152 +226,186 @@ const fi = {
   'detail.chat.body':
     'Kutsussa on jo aika ja paikka, joten sopimiseen ei tarvita keskustelua. Se on koko idea: Pilke vie teidät samaan pöytään sen sijaan, että korvaisi sen. Treffipäivänä kartta kertoo, missä toinen on, jotta löydätte perille ilman viestittelyä.',
 
-  'safety.title': 'Turvallisuus',
-  'safety.lead':
-    'Tapaaminen tuntemattoman kanssa on eri asia kuin viestittely. Pilkkeessä on siihen kolme työkalua, ja ne kannattaa ottaa käyttöön ennen ensimmäisiä treffejä.',
+  'economy.lead': 'Viisi kipinää avaa kolmen ehdokkaan valikoiman.',
+  'economy.pile.alt': 'Viisi kipinäkolikkoa pinossa.',
+  'economy.amount.one': '1 kipinä',
+  'economy.amount.two': '2 kipinää',
+  'economy.amount.five': '5 kipinää',
 
-  'safety.contact.title': 'Luotettava läheinen',
-  'safety.contact.body':
-    'Voit tallentaa yhden puhelinnumeron asetusten Turvallisuus-kohdassa. Se on ainoa numero, johon sovellus voi lähettää viestin puolestasi.',
-  'safety.button.title': 'Turvapainike',
-  'safety.button.body':
-    'Näkyy treffinäytöllä, kun olet tallentanut luotettavan läheisen numeron. Yksi painallus lähettää hänelle tekstiviestin. Ilman tallennettua numeroa painiketta ei ole, joten aseta numero etukäteen. Viesti kertoo, että painoit painiketta ja pyydät yhteydenottoa. Se ei sisällä sijaintiasi eikä toisen osapuolen tietoja.',
-  'safety.report.title': 'Ilmoitus',
-  'safety.report.body':
-    'Jos jokin ei mennyt niin kuin sen olisi pitänyt, voit kertoa siitä treffien jälkeen omin sanoin. Ilmoitus jää talteen Pilkkeen väelle luettavaksi. Emme lupaa vielä, kuinka nopeasti joku sen lukee.',
-
-  'tips.title': 'Näin tapaat turvallisesti',
-  'tips.lead':
-    'Nämä eivät ole Pilkkeen erityispiirteitä vaan tavallista järkeä, joka on helppo unohtaa jännittävänä iltana.',
-  'tips.one': 'Aseta luotettavan läheisen numero ennen ensimmäisiä treffejä.',
-  'tips.two': 'Kerro jollekin minne menet ja milloin arvioit olevasi kotona.',
-  'tips.three': 'Valitse ensimmäisille treffeille paikka, jossa on muita ihmisiä.',
-  'tips.four': 'Järjestä oma kulkeminen molempiin suuntiin.',
-  'tips.five': 'Pidä puhelin ladattuna.',
-  'tips.six':
-    'Jos olo on epämukava, lähde. Sinun ei tarvitse selittää sitä kenellekään, ei meillekään.',
-
-  'privacy.title': 'Sijainti ja yksityisyys',
-  'privacy.body':
-    'Pilke kysyy suunnilleen missä asut, jotta se voi ehdottaa paikkoja joihin molemmat pääsevät. Sijainnin näyttäminen treffeillä on erikseen valittava, ja se toimii vain noin kymmenen minuuttia sovitun alkamisajan molemmin puolin ja vain treffipaikan lähellä. Sijainti näkyy ainoastaan toiselle osapuolelle, ei meille eikä luotettavalle läheiselle, ja se poistetaan heti kun aika umpeutuu. Voit lopettaa näyttämisen milloin tahansa.',
+  // The waitlist. TODO(pilke-web): the form posts nowhere yet — see README.
+  'cta.title': 'Pilke on suljetussa betassa',
+  'cta.body': 'Jätä sähköpostiosoitteesi, niin kerromme heti kun pääset mukaan.',
+  'cta.label': 'Sähköpostiosoite',
+  'cta.placeholder': 'sina@esimerkki.fi',
+  'cta.button': 'Liity betaan',
+  'cta.note': 'Käytämme osoitetta vain betakutsuun. Emme lähetä muuta emmekä anna sitä eteenpäin.',
 
   'faq.title': 'Kysyttyä',
+  'faq.lead': 'Lyhyet vastaukset siihen, mitä Pilkkeestä useimmin kysytään.',
   'faq.chat.q': 'Voiko sovelluksessa viestitellä?',
   'faq.chat.a':
-    'Ei, eikä se ole puute. Kutsussa on aika ja paikka, joten sopiminen ei vaadi keskustelua. Loput sanotaan kasvokkain.',
+    'Ei. Kutsussa on jo aika ja paikka, joten sopiminen ei vaadi keskustelua. Loput sanotaan kasvokkain.',
   'faq.who.q': 'Kuka näkee tietoni?',
   'faq.who.a':
     'Puhelinnumeroasi ei näytetä kenellekään. Ehdokas näkee nimesi, kuvasi ja sen, mitä teillä on yhteistä.',
+  'faq.safety.q': 'Näkeekö toinen, missä olen?',
+  'faq.safety.a':
+    'Vain jos valitset niin. Sijainti näkyy kymmenen minuuttia sovitun alun molemmin puolin ja vain 300 metrin säteellä treffipaikasta, ja voit lopettaa näyttämisen milloin tahansa. Se poistetaan kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun.',
   'faq.cost.q': 'Mitä se maksaa?',
   'faq.cost.a':
-    'Betavaiheessa ei mitään. Kipinöitä kerääntyy käyttämällä sovellusta.',
+    'Betavaiheessa ei mitään. Kipinöitä ei voi ostaa, vaan niitä kertyy käyttämällä sovellusta.',
   'faq.cancel.q': 'Entä jos treffit peruuntuvat?',
   'faq.cancel.a':
-    'Kutsun hylkääminen on aina ilmaista, eikä siitä seuraa mitään. Sovitun tapaamisen voi perua sovelluksessa, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen tai paikalle saapumatta jättäminen hidastaa uusien ehdokkaiden saamista, koska se on toisen osapuolen kannalta merkityksellistä.',
+    'Kutsun hylkääminen on aina ilmaista eikä siitä seuraa mitään. Sovitun tapaamisen voi perua sovelluksessa, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen tai saapumatta jättäminen hidastaa uusien ehdokkaiden saamista, koska se on toiselle osapuolelle merkityksellistä.',
   'faq.delete.q': 'Voinko poistaa tilini?',
   'faq.delete.a':
     'Kyllä, asetuksista. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Menneet treffit ja niistä annetut palautteet jäävät talteen, koska ne ovat yhtä lailla toisen osapuolen tietoja.',
 
-  'shot.treffit': 'Pilkkeen etusivu puhelimessa: kipinöiden määrä ylhäällä, alla omat treffit ja saapuneet kutsut.',
+  'shot.treffit':
+    'Pilkkeen etusivu puhelimessa: kipinöiden määrä ylhäällä, alla omat treffit ja saapuneet kutsut.',
   'shot.kalenteri': 'Kalenterinäkymä, jossa viikon päivät ja niihin merkityt vapaat treffiajat.',
-  'shot.story': 'Tarinatestin ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.',
-  'shot.platter': 'Ehdokkaat-näkymä: yksi kolmesta ehdokkaasta, hänen kanssaan yhteiset ajat ja valittu tekeminen.',
+  'shot.story':
+    'Tarinatestin ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.',
+  'shot.platter':
+    'Ehdokkaat-näkymä: yksi kolmesta ehdokkaasta, hänen kanssaan yhteiset ajat ja valittu tekeminen.',
   'shot.invitation': 'Saapunut treffikutsu: kutsujan nimi ja kuva, tarjotut ajat ja paikka.',
-  'shot.feedback': 'Treffipalaute puhelimessa: kuka oli treffeillä, milloin, ja ensimmäinen kysymys vastausvaihtoehtoineen.',
-  'shot.asetukset': 'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.',
+  'shot.feedback':
+    'Treffipalaute puhelimessa: kuka oli treffeillä, milloin, ja ensimmäinen kysymys vastausvaihtoehtoineen.',
+  'shot.asetukset':
+    'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.',
   'shot.date': 'Sovitut treffit puhelimessa: aika, paikka kartalla ja turvapainike.',
 
-  'safety.summary': 'Voit tallentaa yhden luotettavan läheisen numeron, ja treffinäytöllä on turvapainike, joka lähettää hänelle tekstiviestin yhdellä painalluksella.',
-  'safety.more': 'Lue turvallisuudesta',
-  'safety.page.lead': 'Tapaaminen tuntemattoman kanssa on eri asia kuin viestittely. Tällä sivulla on se, mitä Pilke tekee asian eteen, ja se mitä kannattaa itse tehdä.',
-  'nav.back': 'Takaisin etusivulle',
-
-  'footer.beta': 'Pilke on suljetussa betavaiheessa.',
   'footer.rights': 'Pilke',
 } as const;
 
 const en: Record<keyof typeof fi, string> = {
   'meta.title': 'Pilke',
   'meta.description':
-    'Pilke is a Finnish dating app that does one thing: it arranges a date that suits you both, at a time you are both free.',
+    'Pilke is a Finnish dating app with no chat. An invitation arrives with the time and place already in it, and you go on the date.',
 
   'nav.how': 'How it works',
   'nav.safety': 'Safety',
   'nav.questions': 'Questions',
   'nav.language': 'Language',
   'nav.skip': 'Skip to content',
+  'nav.back': 'Back to the front page',
 
   'hero.title': 'Dates, not swiping',
   'hero.lead':
-    'Pilke finds you a time and a place you can both make, and then you go. No message threads that fade after three days. No scrolling one evening into the next.',
+    'No chat, no weeks of messaging. You get an invitation with the time and the place already in it — pick the hour that suits you, and the date is set.',
 
-  'promise.title': 'Three promises',
-  'promise.one.title': 'Three candidates at a time',
-  'promise.one.body':
-    'You get three people who are free when you are and who can reach the same place as you. You pick one.',
-  'promise.two.title': 'Time and place already settled',
-  'promise.two.body':
-    'Your calendar says when you are free. An invitation already carries the time and the venue, so there is no arranging to do.',
-  'promise.three.title': 'Face to face, not through a screen',
-  'promise.three.body':
-    'Pilke has no chat. That is deliberate: the app takes you to the same table rather than standing in for it.',
+  'fact.one.title': 'Three candidates at a time',
+  'fact.one.body': 'No endless stack to scroll.',
+  'fact.two.title': 'Time and place already set',
+  'fact.two.body': 'Your calendar does the arranging.',
+  'fact.three.title': 'Nothing to game',
+  'fact.three.body': 'No visibility to buy, no boosts.',
 
   'diff.title': 'Why this is different',
   'diff.lead':
-    'Dating apps have taught us that getting to know somebody happens on a screen, and that meeting them is the reward at the end. Pilke does it the other way round.',
+    'Other apps taught us that getting to know somebody happens on a screen, and that meeting them is the prize at the end. Here it goes the other way round.',
 
   'diff.old.label': 'Elsewhere',
-  'diff.old.title': 'A profile, then scrolling, then chat',
   'diff.old.body':
-    'First you build a profile: you work on the blurb, pick the photos, wonder what they say about you. Then you scroll for days and chat for weeks. Most of those conversations fade before anybody suggests anything, and not one of those people has yet sat at a table with you.',
+    'You polish a profile, scroll for days, chat for weeks. Most of those conversations fade before anybody suggests anything.',
+  'diff.old.one': 'Profile',
+  'diff.old.two': 'Scrolling',
+  'diff.old.three': 'Chat',
+  'diff.old.four': 'Maybe a date',
 
   'diff.new.label': 'On Pilke',
-  'diff.new.title': 'Some questions, then a date',
   'diff.new.body':
-    'You answer a couple of question sets, mark the times that suit you, and start going on dates. You learn more about somebody in an hour at a cafe than in two weeks of messages: how they talk, what makes them laugh, whether it feels easy.',
+    'Answer a couple of question sets and mark the times that suit you. After that you meet people. You learn more in an hour at a cafe than in two weeks of messages.',
+  'diff.new.one': 'Questions',
+  'diff.new.two': 'Calendar',
+  'diff.new.three': 'A date',
 
   'diff.learn.title': 'The first one is not the one, and it does not have to be',
   'diff.learn.body':
-    'A first meeting rarely lands perfectly, and that is a starting point rather than a failure. After each one you say briefly how it went, and the next suggestions land closer. You tend to notice things about what you are actually looking for, too.',
+    'Few first meetings land perfectly. That is a beginning, not a failure. Say briefly how each one went and the next suggestions land closer — and you notice what you are actually looking for.',
 
   'how.title': 'How it works',
-  'how.lead': 'Four steps, and then again.',
   'how.more': 'Read more',
 
   'how.one.title': 'Send a date invitation',
   'how.one.body':
-    'Five glimmers open a set of three candidates. You pick one, offer a couple of times that suit you and a place to meet, and the invitation goes.',
+    'Open a set of three candidates and pick one. Offer a couple of times that suit you, and a place. The invitation goes.',
   'how.two.title': 'Answer the invitations you get',
   'how.two.body':
-    'When somebody invites you, you see who they are, what you have in common and which times they are offering. You pick one, and the date is set.',
+    'You see who sent it, what you have in common, and the times they offer. Pick one, and the date is set. It costs you nothing.',
   'how.three.title': 'Go on the date',
   'how.three.body':
     'The date screen carries the time, the place and a map. At the agreed hour you can show each other your locations so you actually find one another.',
   'how.four.title': 'Say how it went',
   'how.four.body':
-    'After the date the app asks briefly how it went and whether the other person matched what you were looking for. Answering takes a moment, earns glimmers, and sharpens who gets suggested to you next. The same goes for the question sets, which you answer at your own pace.',
-  'how.loop':
-    'Then it starts again. The glimmers you have collected open a new set, and we know more about you than we did last time.',
+    'The app asks briefly how it went and whether the other person matched what you hoped for. Answer in a moment, and the next suggestions fit better.',
+  'how.loop': 'Then it starts again — and we know more about you than we did last time.',
 
-  'economy.title': 'Glimmers',
-  'economy.lead': 'Five glimmers open a set of three candidates.',
-  'economy.pile.alt': 'Five glimmer coins in a pile.',
-  'economy.earn.title': 'How glimmers add up',
-  'economy.spend.title': 'How glimmers go',
-  'economy.spend.body':
-    'Five glimmers go the moment you open a set. Sending the invitation costs nothing more.',
-  'economy.earn.calendar': 'Three times marked in your calendar',
-  'economy.earn.date': 'A date, once you have said how it went',
-  'economy.earn.signup': 'Finishing your registration',
-  'economy.amount.one': '1 glimmer',
-  'economy.amount.two': '2 glimmers',
-  'economy.amount.five': '5 glimmers',
-  'economy.note':
-    'You can earn fifteen glimmers at a time, which is three invitations worth. Once you reach that, what you have earned waits until you spend some. The amounts may change during the beta.',
+  'both.title': 'Invite, and answer invitations',
+  'both.lead':
+    'A date happens only if somebody asks and somebody answers. Pilke is built so that both are worth doing.',
+  'both.invite.title': 'Invite first',
+  'both.invite.body':
+    'An invitation is the one real action in the app. Opening a set spends glimmers, and glimmers come from using the app. Money does not buy them.',
+  'both.answer.title': 'Answer an invitation',
+  'both.answer.body':
+    'Answering costs you nothing. Turn one down freely, and nothing follows for you. An invitation stands for a day and lapses by itself if you leave it.',
+  'both.note':
+    'Going on dates and giving feedback earn glimmers, which is your next invitation. The amounts may change during the beta.',
+  'both.more': 'Glimmers and the whole loop in detail',
+
+  'safety.front.title': 'Safety is not an add-on',
+  'safety.front.lead':
+    'Meeting a stranger is a different thing from messaging one. Pilke has three tools for it, and they are worth setting up before your first date.',
+  'safety.card.contact.title': 'A trusted person',
+  'safety.card.contact.body':
+    'You save one number in the settings. It is the only number the app can text on your behalf.',
+  'safety.card.button.title': 'The safety button',
+  'safety.card.button.body':
+    'On the date screen. One press texts your trusted person: the message carries your name and a request to get in touch. It names no location, no venue and nothing about the person you are meeting.',
+  'safety.card.places.title': 'We choose the places',
+  'safety.card.places.body':
+    'Date venues are not user suggestions. Every one of them is a public place we picked ourselves: a cafe, a restaurant, somewhere with other people around.',
+
+  'safety.future.title': 'Coming: strong electronic identification',
+  'safety.future.body':
+    'We want to verify identities using Finnish strong electronic identification. It is not in the app yet, and we are not promising a date for it.',
+
+  'safety.title': 'Safety',
+  'safety.contact.title': 'A trusted person',
+  'safety.contact.body':
+    'You can save one phone number under Safety in the settings. It is the only number the app can text on your behalf.',
+  'safety.button.title': 'The safety button',
+  'safety.button.body':
+    'The safety button appears on the date screen once you have saved a trusted person. One press texts them. Without a saved number there is no button, so set the number beforehand. The message carries your name and the fact that you pressed the button and are asking them to get in touch. It names no location, no venue, no time and nothing about the person you are meeting. The other party learns nothing about the press.',
+  'safety.report.title': 'Reporting',
+  'safety.report.body':
+    'If something did not go the way it should have, you can say so after the date, in your own words. The report is kept for Pilke staff to read. We are not promising yet how quickly somebody gets to it.',
+
+  'tips.title': 'Meeting somebody safely',
+  'tips.lead':
+    'None of this is particular to Pilke. It is ordinary sense, and easy to forget on a nervous evening.',
+  'tips.one': 'Save a trusted person before your first date.',
+  'tips.two': 'Tell somebody where you are going and when you expect to be home.',
+  'tips.three': 'Pick somewhere with other people around for a first date.',
+  'tips.four': 'Arrange your own way there and your own way back.',
+  'tips.five': 'Keep your phone charged.',
+  'tips.six':
+    'If you feel uncomfortable, leave. You do not owe anybody an explanation for it, us included.',
+
+  'privacy.title': 'Location and privacy',
+  'privacy.area':
+    'Pilke does not ask for your home address, or where you live at all. You choose an area on a map and how far you would travel for a date, and venues are suggested inside that circle.',
+  'privacy.body':
+    'Your device location is read only on a date, and only if you choose to show it. Sharing works for ten minutes either side of the agreed start and only within 300 metres of the venue, so you cannot be located from home. Only the other person sees it, not your trusted contact. It is deleted as soon as the window closes, and it is not used for anything else: it feeds no compensation, no slowdown and no report. You can stop at any time.',
+
+  'safety.more': 'Read about safety',
+  'safety.page.lead':
+    'Meeting a stranger is a different thing from messaging one. This page covers what Pilke does about that, and what is worth doing yourself.',
 
   'detail.title': 'How Pilke works',
   'detail.lead':
-    'The front page gives the loop in four steps. This page is the same thing in detail, including where glimmers come from.',
+    'The front page gives the loop in four steps. This page is the same thing in detail: where candidates come from, where glimmers come from, and what happens when plans change.',
 
   'detail.start.title': 'Before your first invitation',
   'detail.start.body':
@@ -325,7 +426,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'detail.economy.title': 'Glimmers',
   'detail.economy.body':
-    'A glimmer is what you collect and what you spend. A set of three candidates costs five glimmers, and there is no other price.',
+    'A glimmer is what you collect and what you spend. A set of three candidates costs five glimmers, and there is no other price. Glimmers are not sold.',
   'detail.economy.earn': 'How glimmers add up',
   'detail.earn.signup': 'Finishing your registration',
   'detail.earn.signup.note': 'Once in the life of an account, after the code is confirmed.',
@@ -333,8 +434,7 @@ const en: Record<keyof typeof fi, string> = {
   'detail.earn.calendar.note':
     'Each has to be at least an hour long, and they cannot overlap each other.',
   'detail.earn.date': 'A date you went on',
-  'detail.earn.date.note':
-    'Paid once you have said how it went. Each of you gets your own.',
+  'detail.earn.date.note': 'Paid once you have said how it went. Each of you gets your own.',
   'detail.earn.cancelled': 'If the other person calls off an agreed date',
   'detail.earn.cancelled.note':
     'Compensation for you. If you were the one who invited, you also get your glimmers back.',
@@ -360,45 +460,34 @@ const en: Record<keyof typeof fi, string> = {
   'detail.chat.body':
     'An invitation already carries the time and the place, so arranging it needs no conversation. That is the whole idea: Pilke takes you to the same table rather than standing in for it. On the day, the map shows where the other person is so you find each other without messaging.',
 
-  'safety.title': 'Safety',
-  'safety.lead':
-    'Meeting a stranger is a different thing from messaging one. Pilke has three tools for it, and they are worth setting up before your first date.',
+  'economy.lead': 'Five glimmers open a set of three candidates.',
+  'economy.pile.alt': 'Five glimmer coins in a pile.',
+  'economy.amount.one': '1 glimmer',
+  'economy.amount.two': '2 glimmers',
+  'economy.amount.five': '5 glimmers',
 
-  'safety.contact.title': 'A trusted person',
-  'safety.contact.body':
-    'You can save one phone number under Safety in the settings. It is the only number the app can text on your behalf.',
-  'safety.button.title': 'The safety button',
-  'safety.button.body':
-    'It appears on the date screen once you have saved a trusted person. One press texts them. Without a saved number there is no button, so set the number beforehand. The message says that you pressed it and are asking them to get in touch. It carries no location and nothing about the person you are meeting.',
-  'safety.report.title': 'Reporting',
-  'safety.report.body':
-    'If something did not go the way it should have, you can say so after the date, in your own words. The report is kept for Pilke staff to read. We are not promising yet how quickly somebody gets to it.',
-
-  'tips.title': 'Meeting somebody safely',
-  'tips.lead':
-    'None of this is particular to Pilke. It is ordinary sense, and easy to forget on a nervous evening.',
-  'tips.one': 'Save a trusted person before your first date.',
-  'tips.two': 'Tell somebody where you are going and when you expect to be home.',
-  'tips.three': 'Pick somewhere with other people around for a first date.',
-  'tips.four': 'Arrange your own way there and your own way back.',
-  'tips.five': 'Keep your phone charged.',
-  'tips.six':
-    'If you feel uncomfortable, leave. You do not owe anybody an explanation for it, us included.',
-
-  'privacy.title': 'Location and privacy',
-  'privacy.body':
-    'Pilke asks roughly where you live so it can suggest places you can both reach. Showing your location on a date is a separate choice, it works only for about ten minutes either side of the agreed start, and only near the venue. It is visible to the other person alone, not to us and not to your trusted contact, and it is deleted as soon as the window closes. You can stop it at any time.',
+  'cta.title': 'Pilke is in closed beta',
+  'cta.body': 'Leave your email address and we will tell you as soon as you can get in.',
+  'cta.label': 'Email address',
+  'cta.placeholder': 'you@example.com',
+  'cta.button': 'Join the beta',
+  'cta.note':
+    'We use the address for the beta invitation and nothing else. We do not pass it on.',
 
   'faq.title': 'Questions',
+  'faq.lead': 'Short answers to what people ask about Pilke most often.',
   'faq.chat.q': 'Can I message people in the app?',
   'faq.chat.a':
-    'No, and that is not a gap. An invitation carries the time and the place, so arranging it needs no conversation. The rest is said in person.',
+    'No. An invitation already carries the time and the place, so arranging it needs no conversation. The rest is said in person.',
   'faq.who.q': 'Who sees my details?',
   'faq.who.a':
     'Your phone number is never shown to anybody. A candidate sees your name, your photo and what the two of you have in common.',
+  'faq.safety.q': 'Can the other person see where I am?',
+  'faq.safety.a':
+    'Only if you choose to show them. It runs for ten minutes either side of the agreed start and only within 300 metres of the venue, and you can stop at any time. It is deleted when the window closes, and nothing else reads it.',
   'faq.cost.q': 'What does it cost?',
   'faq.cost.a':
-    'Nothing during the beta. Glimmers are collected by using the app.',
+    'Nothing during the beta. Glimmers cannot be bought; they come from using the app.',
   'faq.cancel.q': 'What if a date falls through?',
   'faq.cancel.a':
     'Turning down an invitation is always free and carries no consequence. You can call off a date you agreed to, and if it does not feel right you can get out with nothing to pay. Cancelling repeatedly or not turning up slows down how soon you get new candidates, because that matters to the person on the other side.',
@@ -406,21 +495,22 @@ const en: Record<keyof typeof fi, string> = {
   'faq.delete.a':
     'Yes, from the settings. Your name, photo and contact details go straight away. Past dates and the feedback written about them stay, because those belong to the other person as much as to you.',
 
-  'shot.treffit': 'The Pilke home screen on a phone: your glimmers along the top, your dates and the invitations you have received below.',
-  'shot.kalenteri': 'The calendar view, with the days of the week and the times marked as free.',
-  'shot.story': 'The first question of the story test during onboarding: a situation and three options, one of which you pick.',
-  'shot.platter': 'The candidates view: one of three candidates, the times you both have, and the chosen activity.',
-  'shot.invitation': 'A date invitation received: who sent it, with their photo, the times offered and the place.',
-  'shot.feedback': 'Date feedback on a phone: who the date was with, when it was, and the first question with its options.',
-  'shot.asetukset': 'The Safety section of the settings, open, with the field for a trusted person\u2019s number.',
+  'shot.treffit':
+    'The Pilke home screen on a phone: your glimmers along the top, your dates and the invitations you have received below.',
+  'shot.kalenteri':
+    'The calendar view, with the days of the week and the times marked as free.',
+  'shot.story':
+    'The first question of the story test during onboarding: a situation and three options, one of which you pick.',
+  'shot.platter':
+    'The candidates view: one of three candidates, the times you both have, and the chosen activity.',
+  'shot.invitation':
+    'A date invitation received: who sent it, with their photo, the times offered and the place.',
+  'shot.feedback':
+    'Date feedback on a phone: who the date was with, when it was, and the first question with its options.',
+  'shot.asetukset':
+    'The Safety section of the settings, open, with the field for a trusted person’s number.',
   'shot.date': 'An agreed date on a phone: the time, the venue on a map, and the safety button.',
 
-  'safety.summary': 'You can save one trusted person, and the date screen has a safety button that texts them with one press.',
-  'safety.more': 'Read about safety',
-  'safety.page.lead': 'Meeting a stranger is a different thing from messaging one. This page covers what Pilke does about that, and what is worth doing yourself.',
-  'nav.back': 'Back to the front page',
-
-  'footer.beta': 'Pilke is in closed beta.',
   'footer.rights': 'Pilke',
 };
 

@@ -1,0 +1,110 @@
+---
+/**
+ * The questions, at `kysyttya`.
+ *
+ * A page rather than a band at the foot of the front page. Somebody arrives with
+ * one question and wants an answer to it, which is a different visit from reading
+ * the front page top to bottom, and a stack of answers is the last thing a reader
+ * of the front page needs before the waitlist.
+ *
+ * The answers are the same six the header points at, and several of them state
+ * numbers the backend owns. Read `README.md` before changing one.
+ */
+import '../styles/bold.css';
+import { content } from './variants/data';
+import { localePath, type Lang } from '../i18n/ui';
+import Glimmer from './Glimmer.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const { t, faq } = content(lang);
+---
+
+<section class="slab slab-yellow">
+  <Glimmer tile={320} background="var(--brand-main)" star="#F7E88A" />
+  <div class="wrap section-pad head">
+    <h1 class="display-mid">{t('faq.title')}</h1>
+    <p class="lede">{t('faq.lead')}</p>
+  </div>
+</section>
+
+<section class="slab slab-white">
+  <div class="wrap section-pad">
+    <dl class="faq">
+      {
+        faq.map((item) => (
+          <div class="qa">
+            <dt>{item.q}</dt>
+            <dd class="prose">{item.a}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <p class="back">
+      <a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
+      <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .head > * + * {
+    margin-top: var(--pad-medium);
+  }
+
+  .head .lede {
+    max-width: 44ch;
+  }
+
+  .faq {
+    margin: 0;
+    display: grid;
+    gap: var(--pad-large);
+  }
+
+  .qa {
+    border-top: 3px solid var(--ink);
+    padding-top: var(--pad-medium);
+  }
+
+  dt {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 1.125rem;
+  }
+
+  dd {
+    margin: var(--pad-normal) 0 0;
+    font-size: 1.0625rem;
+  }
+
+  .back {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    max-width: none;
+  }
+
+  .go {
+    display: inline-block;
+    margin-right: var(--pad-normal);
+    padding: 8px 18px;
+    background: var(--brand-main);
+    border: 3px solid var(--ink);
+    border-radius: var(--radius-normal);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  .go.ghost {
+    background: var(--white);
+  }
+
+  .go:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+</style>

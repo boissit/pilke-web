@@ -44,10 +44,34 @@ export function content(lang: Lang) {
 
   return {
     t,
-    promises: [
-      { title: t('promise.one.title'), body: t('promise.one.body'), tint: 'var(--card-received)' },
-      { title: t('promise.two.title'), body: t('promise.two.body'), tint: 'var(--card-sent)' },
-      { title: t('promise.three.title'), body: t('promise.three.body'), tint: 'var(--card-feedback)' },
+    /*
+      The three claims that sit in a bar under the headline. One line each and no
+      card around them: as boxes they were three shadowed rectangles competing
+      with the phone beside them, and none of the three needs a paragraph.
+    */
+    facts: [
+      { title: t('fact.one.title'), body: t('fact.one.body') },
+      { title: t('fact.two.title'), body: t('fact.two.body') },
+      { title: t('fact.three.title'), body: t('fact.three.body') },
+    ],
+    /*
+      The two ways to end up on a date, each as a chain of one-word steps. The
+      argument is the length of the chain, so the steps are single words and the
+      prose under them stays to two sentences.
+    */
+    routes: [
+      {
+        label: t('diff.old.label'),
+        body: t('diff.old.body'),
+        ours: false,
+        steps: [t('diff.old.one'), t('diff.old.two'), t('diff.old.three'), t('diff.old.four')],
+      },
+      {
+        label: t('diff.new.label'),
+        body: t('diff.new.body'),
+        ours: true,
+        steps: [t('diff.new.one'), t('diff.new.two'), t('diff.new.three')],
+      },
     ],
     steps: [
       { title: t('how.one.title'), body: t('how.one.body'), shot: shots.platter, alt: t('shot.platter') },
@@ -60,10 +84,35 @@ export function content(lang: Lang) {
       { title: t('safety.button.title'), body: t('safety.button.body') },
       { title: t('safety.report.title'), body: t('safety.report.body') },
     ],
+    /*
+      The front page's three safety cards. Shorter than the ones above and not
+      the same three: the location window replaces the report, because a reader
+      who has not yet used the app is served better by what the app will not do
+      with their whereabouts than by how to complain afterwards. The full set,
+      report included, is on `turvallisuus`.
+    */
+    safetyCards: [
+      {
+        title: t('safety.card.contact.title'),
+        body: t('safety.card.contact.body'),
+        tint: 'var(--card-received)',
+      },
+      {
+        title: t('safety.card.button.title'),
+        body: t('safety.card.button.body'),
+        tint: 'var(--card-sent)',
+      },
+      {
+        title: t('safety.card.places.title'),
+        body: t('safety.card.places.body'),
+        tint: 'var(--card-feedback)',
+      },
+    ],
     tips: [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('tips.five'), t('tips.six')],
     faq: [
       { q: t('faq.chat.q'), a: t('faq.chat.a') },
       { q: t('faq.who.q'), a: t('faq.who.a') },
+      { q: t('faq.safety.q'), a: t('faq.safety.a') },
       { q: t('faq.cost.q'), a: t('faq.cost.a') },
       { q: t('faq.cancel.q'), a: t('faq.cancel.a') },
       { q: t('faq.delete.q'), a: t('faq.delete.a') },
