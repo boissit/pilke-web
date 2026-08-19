@@ -1,0 +1,83 @@
+---
+/**
+ * The questions, at `kysyttya`.
+ *
+ * A page rather than a band at the foot of the front page. Somebody arrives with
+ * one question and wants an answer to it, which is a different visit from reading
+ * the front page top to bottom, and a stack of answers is the last thing a reader
+ * of the front page needs before the waitlist.
+ *
+ * The answers are the same six the header points at, and several of them state
+ * numbers the backend owns. Read `README.md` before changing one.
+ */
+import PageHead from '../../components/PageHead.astro';
+import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
+import Base from '../../layouts/Base.astro';
+
+export const getStaticPaths = () => localeRoutes();
+
+const lang = localeOf(Astro.params);
+const t = useTranslations(lang);
+
+const faq = [
+  { q: t('faq.chat.q'), a: t('faq.chat.a') },
+  { q: t('faq.who.q'), a: t('faq.who.a') },
+  { q: t('faq.safety.q'), a: t('faq.safety.a') },
+  { q: t('faq.cost.q'), a: t('faq.cost.a') },
+  { q: t('faq.cancel.q'), a: t('faq.cancel.a') },
+  { q: t('faq.delete.q'), a: t('faq.delete.a') },
+];
+---
+
+<Base lang={lang}>
+  <PageHead title={t('faq.title')} lead={t('faq.lead')} />
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      <dl class="faq">
+        {
+          faq.map((item) => (
+            <div class="qa">
+              <dt>{item.q}</dt>
+              <dd class="prose">{item.a}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      <p class="back">
+        <a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
+        <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .faq {
+    margin: 0;
+    display: grid;
+    gap: var(--pad-large);
+  }
+
+  .qa {
+    border-top: var(--edge) solid var(--ink);
+    padding-top: var(--pad-medium);
+  }
+
+  dt {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 1.125rem;
+  }
+
+  dd {
+    margin: var(--pad-normal) 0 0;
+    font-size: 1.0625rem;
+  }
+
+  .back {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    max-width: none;
+  }
+</style>

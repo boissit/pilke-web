@@ -531,3 +531,21 @@ export function localePath(lang: Lang, route = ''): string {
   const prefix = lang === defaultLang ? '/' : `/${lang}/`;
   return `${prefix}${clean}`.replace(/\/+$/, '') || '/';
 }
+
+/**
+ * The routes every page is built at: Finnish at the root, English under `/en`.
+ *
+ * A page file lives at `pages/[...lang]/<slug>.astro` and hands this to
+ * `getStaticPaths`, so one file is both languages of one page and a section
+ * cannot exist in Finnish and not in English. The Finnish entry has no segment
+ * at all — a rest parameter matches zero of them — which is what puts Finnish at
+ * the root without a redirect.
+ */
+export function localeRoutes() {
+  return [{ params: { lang: undefined } }, { params: { lang: 'en' } }];
+}
+
+/** The language of the route being built, from the `[...lang]` segment. */
+export function localeOf(params: { lang?: string | undefined }): Lang {
+  return params.lang === 'en' ? 'en' : defaultLang;
+}

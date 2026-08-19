@@ -17,18 +17,26 @@ npx astro check  # types, including a key missing from one language
 English is a type error rather than a blank on the page. This mirrors how the app
 itself types its dictionaries.
 
-One component is the whole of each page, and both language routes render it:
-`src/components/variants/PhoneFirst.astro` for the front page,
-`DetailPage.astro` for `nain-se-toimii`, `SafetyPage.astro` for `turvallisuus`,
-`FaqPage.astro` for `kysyttya`.
-A section therefore cannot exist in one language and not the other, which is the
-usual way a bilingual site drifts. The `fi` route passes `lang="fi"`, the one
-under `en/` passes `lang="en"`, and both English routes keep the Finnish slug so
-a language switch is the prefix and nothing else.
+One file is the whole of a page in both languages. They live under
+`src/pages/[...lang]/`: `index.astro`, `nain-se-toimii.astro`,
+`turvallisuus.astro`, `kysyttya.astro`. The `[...lang]` segment is a rest
+parameter, and `localeRoutes()` in `src/i18n/ui.ts` builds each file twice — once
+with no segment at all, which is Finnish at the root, and once as `en`. A section
+therefore cannot exist in one language and not the other, which is the usual way a
+bilingual site drifts, and the English routes keep the Finnish slug so a language
+switch is the prefix and nothing else.
 
-`src/components/variants/data.ts` assembles the lists a page maps over — the
-promise cards, the four steps, the two sets of safety cards, the questions — so
-the arrangement lives in the component and the content lives in one place.
+A page holds its own sections, its own lists and its own styles. `src/components/`
+is what more than one page draws: `Phone`, `Glimmer`, `Sparkle`, `Logo`,
+`GlimmerPile`, the `PageHead` slab the three subpages open with, and the
+`SiteHeader` and `SiteFooter` that `Base.astro` puts around every page.
+`src/assets/screens.ts` is the table of screenshots, and is the only thing the
+pages share besides the dictionary.
+
+`Base.astro` loads both stylesheets, so a page is a run of `.slab` sections and
+nothing else. The button those sections link out with is `.go` in
+`src/styles/bold.css` — one definition, `.ghost` for the white one that stands on
+a yellow slab.
 
 `src/styles/global.css` carries the app's design tokens under the same names they
 have in `pilke-app/src/constants/`, so a change on either side is traceable to
@@ -173,7 +181,8 @@ Four more things to settle before launch:
 3. **Answering question sets does not affect matching yet.** The site says so
    plainly rather than implying otherwise. If that changes, the story test
    section changes with it.
-4. **The waitlist form submits nowhere.** It is the footer, in `Base.astro`, so
+4. **The waitlist form submits nowhere.** It is the footer, in
+   `SiteFooter.astro`, so
    that a reader who came to `turvallisuus` can join from where they are and the
    front page's hero button is an anchor down to it. It has no `action` and no
    handler, and it is the only thing on the site that asks the reader for

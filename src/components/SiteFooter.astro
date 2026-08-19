@@ -1,0 +1,195 @@
+---
+/**
+ * The footer is the waitlist. It carries the only thing the site asks for, so it
+ * has to be reachable from the safety page and the detail page and not just from
+ * the foot of the front page; the hero's button is an anchor down to this.
+ *
+ * WARNING: **this form submits nowhere.** It has no `action` and no handler, so
+ * it is markup and copy waiting for an endpoint, and it must be wired up or
+ * removed before the site is public. Two things have to be settled first, both
+ * recorded in `README.md`: where the addresses are stored, and the privacy policy
+ * this form has to link to before it may collect one.
+ */
+import Glimmer from './Glimmer.astro';
+import { useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer class="site-foot" id="beta">
+  <!--
+    The same texture the slabs carry, in grey rather than yellow: the footer is
+    the one surface here that is not a slab and not brand-coloured, and a yellow
+    sparkle field would put it back in the run of them. Faint enough to sit under
+    a form without competing with the field it is behind.
+
+    `star` is an rgba literal rather than a token because it needs alpha and
+    `--muted` has none. The alpha is low on purpose: at 0.18 the sparkles read as
+    a pattern and pulled the eye off the field they sit behind, so this is set to
+    shift the ground by about seven values per channel — present, and not
+    something a reader looks at.
+  -->
+  <Glimmer tile={280} background="var(--card-sent)" star="rgba(128, 128, 128, 0.06)" />
+
+  <div class="wrap foot-inner">
+    <div class="foot-copy">
+      <h2>{t('cta.title')}</h2>
+      <p>{t('cta.body')}</p>
+    </div>
+
+    <form class="join">
+      <label for="beta-email">{t('cta.label')}</label>
+      <div class="join-row">
+        <input
+          id="beta-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+          placeholder={t('cta.placeholder')}
+        />
+        <button class="go send" type="submit">{t('cta.button')}</button>
+      </div>
+      <p class="note">{t('cta.note')}</p>
+    </form>
+  </div>
+
+  <div class="wrap foot-mark">
+    <p class="mark">{t('footer.rights')}</p>
+    <p class="tagline">{t('hero.title')}</p>
+  </div>
+</footer>
+
+<style>
+  /* No margin and no top border of its own: every section above this one is a
+     `.slab`, and a slab already draws a rule along its bottom edge. Adding one
+     here put two rules and a gap of pad-large at the foot of every page.
+
+     The one surface on the site that is not yellow. The page above it is a run of
+     yellow and off-white slabs, and the block that asks for something should not
+     read as one more of them. `--card-sent` is the app's own outgoing-invitation
+     tint, so it is a colour the product already uses. */
+  .site-foot {
+    position: relative;
+    isolation: isolate;
+    background: var(--card-sent);
+  }
+
+  /* The texture is absolutely positioned, so everything over it needs a layer of
+     its own — the same arrangement `.slab > .wrap` uses. */
+  .site-foot > .wrap {
+    position: relative;
+    z-index: 1;
+  }
+
+  .foot-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: clamp(2rem, 5vw, 3rem);
+    padding-block: clamp(3.5rem, 8vw, 6rem);
+  }
+
+  .foot-copy {
+    flex: 1 1 20rem;
+  }
+
+  .foot-copy h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  }
+
+  .foot-copy p {
+    margin-top: var(--pad-medium);
+  }
+
+  .join {
+    flex: 1 1 22rem;
+    max-width: 30rem;
+  }
+
+  .join label {
+    display: block;
+    font-weight: 800;
+    font-size: 0.9375rem;
+    margin-bottom: var(--pad-small);
+  }
+
+  /* The field takes the room and the button keeps its own width, so a long
+     button label in either language does not shrink the field it belongs to. */
+  .join-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pad-normal);
+  }
+
+  /* Drawn as the app draws a field: the same ink edge and radius as a card,
+     white ground, and no offset shadow. The button beside it has the shadow, so
+     the pair reads as a hole and a raised key rather than as two buttons. */
+  .join input {
+    flex: 1 1 13rem;
+    min-width: 0;
+    appearance: none;
+    padding: 10px var(--pad-medium);
+    background: var(--white);
+    color: var(--ink);
+    border: var(--edge) solid var(--ink);
+    border-radius: var(--radius-normal);
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .join input::placeholder {
+    color: var(--muted);
+  }
+
+  .join input:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+  }
+
+  /* Taller than a `.go` elsewhere, and heavier: it stands next to the field and
+     has to match the height the field's own padding gives it. */
+  .go.send {
+    padding: 10px 20px;
+    font-weight: 800;
+  }
+
+  .note {
+    margin-top: var(--pad-normal);
+    font-size: 0.875rem;
+    color: var(--ink);
+    opacity: 0.75;
+  }
+
+  /* The wordmark sits under its own rule so it is not read as part of the form.
+     A hairline rather than the weight the slabs use: this divides two lines of
+     the same footer, and at slab weight it read as another section boundary. */
+  .foot-mark {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--pad-normal);
+    border-top: 1px solid var(--ink);
+    padding-block: var(--pad-large);
+  }
+
+  .mark {
+    font-family: var(--font-display);
+  }
+
+  /* The tagline closes the page on the same words the front page opens with. */
+  .tagline {
+    font-family: var(--font-display);
+    text-align: right;
+    color: var(--ink);
+    opacity: 0.75;
+  }
+</style>

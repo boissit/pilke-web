@@ -142,27 +142,6 @@ ul {
   padding-inline: var(--pad-medium);
 }
 
-.stack > * + * {
-  margin-top: var(--pad-medium);
-}
-
-/* The app draws a bordered card everywhere; this is that card. */
-.card {
-  background: var(--white);
-  border: var(--border-width) solid var(--ink);
-  border-radius: var(--radius-large);
-  padding: var(--pad-medium);
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

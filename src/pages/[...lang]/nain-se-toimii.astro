@@ -1,0 +1,235 @@
+---
+/**
+ * The long explanation, at `nain-se-toimii`.
+ *
+ * The front page gives the loop in four steps and stops. This page carries what
+ * a reader who wants the whole picture needs: what happens before the first
+ * invitation, where candidates come from, the whole of the glimmer economy, and
+ * what happens when plans change.
+ *
+ * WARNING: **Every number on this page is a backend constant.** Five glimmers for
+ * a set of three candidates, fifteen earnable at a time, one hour of shared
+ * calendar, at least two times offered, a day to answer. They are cited in the
+ * README, and a marketing page stating a price the product does not charge is
+ * worse than a page that stays vague.
+ */
+import { shots } from '../../assets/screens';
+import GlimmerPile from '../../components/GlimmerPile.astro';
+import PageHead from '../../components/PageHead.astro';
+import Phone from '../../components/Phone.astro';
+import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
+import Base from '../../layouts/Base.astro';
+
+export const getStaticPaths = () => localeRoutes();
+
+const lang = localeOf(Astro.params);
+const t = useTranslations(lang);
+
+const earnings = [
+  { what: t('detail.earn.signup'), amount: t('economy.amount.five'), note: t('detail.earn.signup.note') },
+  { what: t('detail.earn.calendar'), amount: t('economy.amount.one'), note: t('detail.earn.calendar.note') },
+  { what: t('detail.earn.date'), amount: t('economy.amount.two'), note: t('detail.earn.date.note') },
+  { what: t('detail.earn.cancelled'), amount: t('economy.amount.five'), note: t('detail.earn.cancelled.note') },
+];
+
+const changes = [
+  { what: t('detail.changes.expired'), note: t('detail.changes.expired.note') },
+  { what: t('detail.changes.declined'), note: t('detail.changes.declined.note') },
+  { what: t('detail.changes.withdrawn'), note: t('detail.changes.withdrawn.note') },
+  { what: t('detail.changes.canceled'), note: t('detail.changes.canceled.note') },
+];
+---
+
+<Base lang={lang}>
+  <PageHead title={t('detail.title')} lead={t('detail.lead')} />
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad split">
+      <div class="col">
+        <h2 class="display-mid small">{t('detail.start.title')}</h2>
+        <p class="prose">{t('detail.start.body')}</p>
+        <h2 class="display-mid small">{t('detail.story.title')}</h2>
+        <p class="prose">{t('detail.story.body')}</p>
+        <h2 class="display-mid small">{t('detail.prefs.title')}</h2>
+        <p class="prose">{t('detail.prefs.body')}</p>
+      </div>
+      <Phone src={shots.story} alt={t('shot.story')} width={250} tilt="right" />
+    </div>
+  </section>
+
+  <section class="slab slab-pale">
+    <div class="wrap section-pad split">
+      <Phone src={shots.platter} alt={t('shot.platter')} width={250} tilt="left" />
+      <div class="col">
+        <h2 class="display-mid small">{t('detail.draw.title')}</h2>
+        <p class="prose">{t('detail.draw.body')}</p>
+        <h2 class="display-mid small">{t('detail.invite.title')}</h2>
+        <p class="prose">{t('detail.invite.body')}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      <h2 class="display-mid">{t('detail.economy.title')}</h2>
+      <p class="lede">{t('detail.economy.body')}</p>
+
+      <p class="price">
+        <span class="coin"><GlimmerPile height={120} glimmers={5} alt={t('economy.pile.alt')} /><b>5</b></span>
+        <span>{t('economy.lead')}</span>
+      </p>
+
+      <h3>{t('detail.economy.earn')}</h3>
+      <!--
+        A description list rather than a table: each row is one way of earning and
+        what it pays, and the note under it is part of the same item. A table would
+        promise a third column it does not have.
+      -->
+      <dl class="ledger">
+        {
+          earnings.map((row) => (
+            <div>
+              <dt>
+                <span>{row.what}</span>
+                <b>{row.amount}</b>
+              </dt>
+              <dd>{row.note}</dd>
+            </div>
+          ))
+        }
+      </dl>
+
+      <div class="block spend">
+        <h3>{t('detail.economy.spend')}</h3>
+        <p class="prose">{t('detail.economy.spend.body')}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="slab slab-pale">
+    <div class="wrap section-pad">
+      <h2 class="display-mid">{t('detail.changes.title')}</h2>
+      <dl class="ledger">
+        {
+          changes.map((row) => (
+            <div>
+              <dt><span>{row.what}</span></dt>
+              <dd>{row.note}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad split">
+      <div class="col">
+        <h2 class="display-mid small">{t('detail.chat.title')}</h2>
+        <p class="prose">{t('detail.chat.body')}</p>
+        <p>
+          <a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
+          <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
+        </p>
+      </div>
+      <Phone src={shots.date} alt={t('shot.date')} width={250} tilt="right" />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .wrap > * + * {
+    margin-top: var(--pad-medium);
+  }
+
+  .split {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--pad-large);
+  }
+
+  .col {
+    flex: 1 1 22rem;
+  }
+
+  .col > * + * {
+    margin-top: var(--pad-normal);
+  }
+
+  .col h2 + p {
+    margin-top: var(--pad-small);
+  }
+
+  .small {
+    font-size: clamp(1.375rem, 3vw, 2rem);
+  }
+
+  .price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pad-normal);
+  }
+
+  /* The mark and the price it carries, with no chip around them: the coins bring
+     their own ink rule, and a pill would be a second ring on the first. */
+  .coin {
+    display: flex;
+    align-items: center;
+    gap: var(--pad-small);
+  }
+
+  /* Sized against the coins rather than against the running text: the figure is
+     half of one mark with the pile, and at body size it read as a caption under
+     a picture instead. */
+  .coin b {
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .ledger {
+    margin: 0;
+    display: grid;
+    gap: 0;
+  }
+
+  .ledger > div {
+    padding: var(--pad-normal) 0;
+    border-top: var(--edge) solid var(--ink);
+  }
+
+  .ledger > div:last-child {
+    border-bottom: var(--edge) solid var(--ink);
+  }
+
+  dt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--pad-normal);
+    font-weight: 800;
+  }
+
+  /* The amounts line up as a column of figures. */
+  dt b {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  dd {
+    margin: var(--pad-small) 0 0;
+    max-width: 60ch;
+    color: var(--ink);
+  }
+
+  .spend {
+    background: var(--brand-background);
+  }
+
+  .spend > * + * {
+    margin-top: var(--pad-small);
+  }
+</style>

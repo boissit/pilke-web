@@ -1,0 +1,122 @@
+---
+/**
+ * The safety page.
+ *
+ * Everything the front page carries in three cards, plus the meeting-safely
+ * advice and the location note. A page rather than a section because it is the
+ * one subject here somebody arrives looking for, and because a front page that
+ * spends a third of its height on safety reads as a warning about the product
+ * rather than a description of it.
+ *
+ * WARNING: **This page states only what the app does.** It names the trusted
+ * contact, the safety button and the report because those exist and ship. It
+ * promises nothing about what Pilke will do on somebody's behalf, and the
+ * advice below is ordinary meeting-safely sense rather than anything the product
+ * enforces. Read `README.md` before adding a claim here.
+ */
+import { shots } from '../../assets/screens';
+import PageHead from '../../components/PageHead.astro';
+import Phone from '../../components/Phone.astro';
+import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
+import Base from '../../layouts/Base.astro';
+
+export const getStaticPaths = () => localeRoutes();
+
+const lang = localeOf(Astro.params);
+const t = useTranslations(lang);
+
+const safety = [
+  { title: t('safety.contact.title'), body: t('safety.contact.body') },
+  { title: t('safety.button.title'), body: t('safety.button.body') },
+  { title: t('safety.report.title'), body: t('safety.report.body') },
+];
+
+const tips = [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('tips.five'), t('tips.six')];
+---
+
+<Base lang={lang}>
+  <PageHead title={t('safety.title')} lead={t('safety.page.lead')} />
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad tools">
+      <ul class="tool-list">
+        {
+          safety.map((item) => (
+            <li>
+              <h2>{item.title}</h2>
+              <p class="prose">{item.body}</p>
+            </li>
+          ))
+        }
+      </ul>
+      <Phone src={shots.asetukset} alt={t('shot.asetukset')} width={260} tilt="right" />
+    </div>
+  </section>
+
+  <section class="slab slab-pale">
+    <div class="wrap section-pad">
+      <h2 class="display-mid">{t('tips.title')}</h2>
+      <p class="prose">{t('tips.lead')}</p>
+      <ol class="tips">{tips.map((tip) => <li>{tip}</li>)}</ol>
+    </div>
+  </section>
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      <h2 class="display-mid">{t('privacy.title')}</h2>
+      <p class="prose">{t('privacy.area')}</p>
+      <p class="prose">{t('privacy.body')}</p>
+      <p><a class="go" href={localePath(lang)}>{t('nav.back')}</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .wrap > * + * {
+    margin-top: var(--pad-medium);
+  }
+
+  .tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: var(--pad-large);
+  }
+
+  .tool-list {
+    flex: 1 1 22rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: var(--pad-medium);
+  }
+
+  .tool-list > li {
+    padding-bottom: var(--pad-medium);
+    border-bottom: var(--edge) solid var(--ink);
+  }
+
+  .tool-list > li:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .tool-list h2 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(1.375rem, 3vw, 1.875rem);
+    margin-bottom: var(--pad-small);
+  }
+
+  .tips {
+    display: grid;
+    gap: var(--pad-normal);
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+    padding-left: 1.25rem;
+  }
+
+  .tips li {
+    max-width: 44ch;
+  }
+</style>

@@ -1,0 +1,103 @@
+---
+/**
+ * The bar every page carries: the wordmark, the three subpages, the language.
+ */
+import Logo from './Logo.astro';
+import { languages, localePath, useTranslations, type Lang } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const other: Lang = lang === 'fi' ? 'en' : 'fi';
+
+/*
+  The path this page is on, without its language prefix, so the language link
+  points at the same page in the other language rather than at the front page.
+  A reader halfway down the safety page who switches to English should still be
+  on the safety page.
+*/
+const route = Astro.url.pathname.replace(/^\/en\/?/, '/').replace(/^\/+/, '').replace(/\/$/, '');
+
+const nav = [
+  { href: localePath(lang, 'nain-se-toimii'), label: t('nav.how') },
+  { href: localePath(lang, 'turvallisuus'), label: t('nav.safety') },
+  { href: localePath(lang, 'kysyttya'), label: t('nav.questions') },
+];
+---
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href={localePath(lang)} aria-label="Pilke">
+      <Logo size={30} />
+    </a>
+
+    <nav aria-label={t('meta.title')}>
+      <ul class="nav-list">
+        {nav.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+        <li>
+          <a class="lang" href={localePath(other, route)} lang={other} hreflang={other}>
+            {languages[other]}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-head {
+    background: var(--brand-main);
+    border-bottom: var(--border-width) solid var(--ink);
+  }
+
+  .head-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--pad-normal);
+    padding-block: var(--pad-normal);
+  }
+
+  /* `Logo` carries its own geometry, so the anchor only has to not interfere
+     with it. */
+  .brand {
+    display: inline-block;
+    text-decoration: none;
+    /* The logo's own top padding is part of the app's lockup, so the header
+       pulls the block back up rather than growing to accommodate it. */
+    margin-block: calc(var(--pad-small) * -1);
+  }
+
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pad-medium);
+    list-style: none;
+    padding: 0;
+  }
+
+  .nav-list a {
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .nav-list a:hover {
+    text-decoration: underline;
+  }
+
+  /* The language link is the one control on the page, so it looks like one. */
+  .lang {
+    border: var(--border-width) solid var(--ink);
+    border-radius: var(--radius-normal);
+    padding: 2px var(--pad-normal);
+    background: var(--white);
+  }
+</style>

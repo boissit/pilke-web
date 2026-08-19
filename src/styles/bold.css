@@ -1,16 +1,28 @@
 /*
   The bolder treatment: flat yellow blocks, oversized Courgette, the sparkle
-  motif as texture. Shared by all three layout variants so that a comparison
-  between them is about layout and not about two different palettes.
+  motif as texture. Loaded once by `Base.astro`, so every page has it.
 
   Everything here builds on the tokens in global.css rather than introducing new
   colours. The app has a small palette on purpose and the site keeps it.
 */
 
+:root {
+  /*
+    The weight of every rule, edge and chip border on the site.
+
+    Not `--border-width`, which is the app's own 2px and stays the app's: this is
+    the one number that makes the treatment bold, and at the app's weight the
+    slabs and the ledgers read as an ordinary page with lines on it. The two
+    places that deliberately keep the app's weight — the header's language link
+    and the skip link, both controls rather than structure — still name it.
+  */
+  --edge: 3px;
+}
+
 .slab {
   position: relative;
   isolation: isolate;
-  border-bottom: 3px solid var(--ink);
+  border-bottom: var(--edge) solid var(--ink);
 }
 
 .slab > .wrap {
@@ -46,14 +58,6 @@
   text-wrap: balance;
 }
 
-.eyebrow {
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 0.875rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
 .lede {
   font-size: clamp(1.0625rem, 2vw, 1.375rem);
   max-width: 32ch;
@@ -67,24 +71,10 @@
    offset shadow, no blur, matching how the app draws a button. */
 .block {
   background: var(--white);
-  border: 3px solid var(--ink);
+  border: var(--edge) solid var(--ink);
   border-radius: var(--radius-large);
   padding: var(--pad-medium);
   box-shadow: 5px 5px 0 var(--ink);
-}
-
-.block-flat {
-  box-shadow: none;
-}
-
-.pill {
-  display: inline-block;
-  padding: 4px 14px;
-  background: var(--white);
-  border: 3px solid var(--ink);
-  border-radius: 999px;
-  font-weight: 800;
-  font-size: 0.9375rem;
 }
 
 .numeral {
@@ -94,7 +84,7 @@
   height: 3rem;
   flex: 0 0 auto;
   background: var(--brand-main);
-  border: 3px solid var(--ink);
+  border: var(--edge) solid var(--ink);
   border-radius: 50%;
   font-family: var(--font-display);
   font-size: 1.5rem;
@@ -105,8 +95,43 @@
   padding-block: clamp(2.5rem, 7vw, 5rem);
 }
 
-.rule {
-  border: 0;
-  border-top: 3px solid var(--ink);
-  margin: 0;
+/*
+  The one button on the site, wherever it appears: a flat offset key on an ink
+  edge, brand ground by default, white where it stands on a yellow slab. It is
+  here rather than in each page because a link out of the safety page and the
+  submit key in the footer are the same control and have to look it.
+
+  No `line-height`: an anchor takes the page's and a `<button>` takes the
+  browser's, and the footer's key is sized against the field beside it, which is
+  set in the footer.
+*/
+.go {
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--brand-main);
+  color: var(--ink);
+  border: var(--edge) solid var(--ink);
+  border-radius: var(--radius-normal);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--ink);
+  cursor: pointer;
+}
+
+/* On a yellow slab the brand ground disappears into it. */
+.go.ghost {
+  background: var(--white);
+}
+
+/* Two of them on one line are a choice and a way back, so they are spaced as a
+   pair rather than each carrying a trailing margin. */
+.go + .go {
+  margin-left: var(--pad-normal);
+}
+
+.go:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 3px 3px 0 var(--ink);
 }
