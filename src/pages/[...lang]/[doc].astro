@@ -1,0 +1,121 @@
+---
+/**
+ * Every legal document, in both languages: one file for the privacy statement and
+ * the terms, because they are the same page with different prose in it.
+ *
+ * The prose comes from `src/content/legal/` and is styled by `.legal` in
+ * `bold.css`, so a document is Markdown and nothing else — no page markup and no
+ * styles of its own. `legalDocuments()` refuses to build one that is missing a
+ * language or whose two languages disagree about their version.
+ *
+ * WARNING: **A document with `draft: true` renders a notice saying it binds
+ * nobody.** That is the safe way round — the flag defaults to true, so a text that
+ * has not been through review cannot be read as if it had. Clearing it is part of
+ * finishing the text, not a separate step.
+ */
+import { render } from 'astro:content';
+
+import PageHead from '../../components/PageHead.astro';
+import { formatEffective, legalDocuments } from '../../i18n/legal';
+import { defaultLang, languages, localePath, useTranslations, type Lang } from '../../i18n/ui';
+import Base from '../../layouts/Base.astro';
+
+export const getStaticPaths = async () => {
+  const documents = await legalDocuments();
+
+  return documents.flatMap((legal) =>
+    (Object.keys(languages) as Lang[]).map((lang) => ({
+      params: {
+        // Finnish is the site's root and takes no segment at all, exactly as
+        // `localeRoutes()` builds the hand-written pages.
+        lang: lang === defaultLang ? undefined : lang,
+        doc: legal.slug,
+      },
+      props: { legal, lang },
+    })),
+  );
+};
+
+const { legal, lang } = Astro.props;
+const t = useTranslations(lang);
+
+const entry = legal.entries[lang];
+const { Content } = await render(entry);
+---
+
+<Base lang={lang}>
+  <PageHead title={entry.data.title} lead={entry.data.lead} />
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      <p class="effective">
+        {t('legal.effective').replace('{date}', formatEffective(legal.effective, lang))}
+        <span class="version">{legal.version}</span>
+      </p>
+
+      {
+        legal.draft && (
+          <aside class="block provisional">
+            <h2>{t('legal.draft.title')}</h2>
+            <p>{t('legal.draft.body')}</p>
+          </aside>
+        )
+      }
+
+      <div class="legal">
+        <Content />
+      </div>
+
+      <p class="back"><a class="go" href={localePath(lang)}>{t('nav.back')}</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* The date and the version on one line, above everything: a reader of a legal
+     text needs to know which one they are reading before they read it. The
+     version is set in the mono face because it is an identifier rather than a
+     date somebody says out loud. */
+  .effective {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--pad-normal);
+    font-size: 0.9375rem;
+    color: var(--muted);
+  }
+
+  .version {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+  }
+
+  /* Dashed rather than solid, and no offset shadow: on this site a `.block` with
+     a shadow is a thing that ships, and the dashed edge is how the safety page
+     already draws something that is not settled yet. */
+  .provisional {
+    margin-top: var(--pad-large);
+    border-style: dashed;
+    box-shadow: none;
+    background: var(--brand-background);
+  }
+
+  .provisional h2 {
+    font-size: 1.125rem;
+    font-family: var(--font-body);
+    font-weight: 800;
+  }
+
+  .provisional p {
+    margin-top: var(--pad-normal);
+    max-width: 60ch;
+  }
+
+  .legal {
+    margin-top: var(--pad-large);
+  }
+
+  .back {
+    margin-top: var(--pad-large);
+  }
+</style>

@@ -6,12 +6,15 @@
  *
  * WARNING: **this form submits nowhere.** It has no `action` and no handler, so
  * it is markup and copy waiting for an endpoint, and it must be wired up or
- * removed before the site is public. Two things have to be settled first, both
- * recorded in `README.md`: where the addresses are stored, and the privacy policy
- * this form has to link to before it may collect one.
+ * removed before the site is public. It links to the privacy statement, which is
+ * the condition on collecting an address at all — but that document is still a
+ * draft, so the link is not yet a policy. What remains is recorded in `README.md`:
+ * somewhere to put the addresses, and a finished statement at the other end of
+ * that link.
  */
 import Glimmer from './Glimmer.astro';
-import { useTranslations, type Lang } from '../i18n/ui';
+import { legalDocuments, legalHref } from '../i18n/legal';
+import { localePath, useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
@@ -19,6 +22,22 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+/*
+  The legal links, in the order a reader is offered them: what is done with their
+  data, the terms they agreed to, and how to leave. The first two take their label
+  from the document's own frontmatter rather than from `ui.ts`, so a document is
+  named in one place and the footer cannot call it something the page does not.
+*/
+const documents = await legalDocuments();
+
+const legal = [
+  ...documents.map((document) => ({
+    href: legalHref(document.slug, lang),
+    label: document.entries[lang].data.title,
+  })),
+  { href: localePath(lang, 'tietojen-poisto'), label: t('legal.deletion.nav') },
+];
 ---
 
 <footer class="site-foot" id="beta">
@@ -55,12 +74,24 @@ const t = useTranslations(lang);
         />
         <button class="go send" type="submit">{t('cta.button')}</button>
       </div>
-      <p class="note">{t('cta.note')}</p>
+      <p class="note">
+        {t('cta.note')}{' '}
+        <a href={legalHref('tietosuoja', lang)}>{t('cta.privacy')}</a>
+      </p>
     </form>
   </div>
 
   <div class="wrap foot-mark">
     <p class="mark">{t('footer.rights')}</p>
+
+    <nav class="foot-legal" aria-label={t('legal.nav')}>
+      <ul>
+        {legal.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+
     <p class="tagline">{t('hero.title')}</p>
   </div>
 </footer>
@@ -183,6 +214,45 @@ const t = useTranslations(lang);
 
   .mark {
     font-family: var(--font-display);
+  }
+
+  /* Between the wordmark and the tagline, and allowed to take the room they do
+     not: three links in two languages are wider than either of them. The row
+     wraps, so on a narrow screen the links land on their own line rather than
+     squeezing the wordmark. */
+  .foot-legal {
+    flex: 1 1 auto;
+  }
+
+  .foot-legal ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--pad-small) var(--pad-medium);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Underlined at rest, unlike the header's nav. These are the links somebody
+     goes looking for, and a row of unmarked text at the foot of a page is not
+     read as one. */
+  .foot-legal a {
+    font-size: 0.9375rem;
+    color: var(--ink);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+
+  .foot-legal a:hover {
+    text-decoration-thickness: 2px;
+  }
+
+  /* The link inside the note under the field. It sits in a paragraph that is
+     already dimmed, so it takes the full ink to stay a link. */
+  .note a {
+    color: var(--ink);
+    text-underline-offset: 2px;
   }
 
   /* The tagline closes the page on the same words the front page opens with. */

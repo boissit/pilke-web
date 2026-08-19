@@ -239,6 +239,10 @@ const fi = {
   'cta.placeholder': 'sina@esimerkki.fi',
   'cta.button': 'Liity betaan',
   'cta.note': 'Käytämme osoitetta vain betakutsuun. Emme lähetä muuta emmekä anna sitä eteenpäin.',
+  // The link this form may not collect an address without. Its own key rather
+  // than a clause inside `cta.note`, so the promise and the document that has to
+  // back it up are not one sentence somebody has to re-translate together.
+  'cta.privacy': 'Lue tietosuojaselosteesta, mitä osoitteellesi tapahtuu.',
 
   'faq.title': 'Kysyttyä',
   'faq.lead': 'Lyhyet vastaukset siihen, mitä Pilkkeestä useimmin kysytään.',
@@ -274,6 +278,70 @@ const fi = {
   'shot.asetukset':
     'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.',
   'shot.date': 'Sovitut treffit puhelimessa: aika, paikka kartalla ja turvapainike.',
+
+  // The legal documents. Their titles and ledes live in their own frontmatter,
+  // in the document's language, so they are not repeated here; these are the
+  // strings the pages around them need.
+  'legal.effective': 'Voimassa {date} alkaen',
+  'legal.draft.title': 'Tämä teksti on kesken',
+  'legal.draft.body':
+    'Lakimies käy sisällön läpi ennen kuin Pilke avautuu. Siihen asti teksti ei sido ketään eikä siihen voi vedota.',
+
+  'legal.nav': 'Ehdot ja tietosuoja',
+  'legal.deletion.nav': 'Tietojen poisto',
+  'legal.deletion.title': 'Näin poistat tietosi',
+  'legal.deletion.lead':
+    'Poistat tilisi itse sovelluksesta. Tällä sivulla kerromme, mikä poistuu heti ja mikä jää talteen.',
+
+  'legal.deletion.pending.title': 'Sähköpostiosoite puuttuu vielä',
+  'legal.deletion.pending.body':
+    'Tälle sivulle tulee osoite, johon voit kirjoittaa, jos et enää pääse sovellukseen. Osoitetta ei ole vielä hankittu, joten sivu on siltä osin kesken.',
+
+  'legal.deletion.app.title': 'Poista tili sovelluksessa',
+  'legal.deletion.app.body':
+    'Avaa Pilke, mene Asetuksiin ja valitse Poista tili. Vahvista puhelinnumerollasi. Tili poistuu heti, eikä sitä saa takaisin.',
+
+  'legal.deletion.gone.title': 'Jos et enää pääse sovellukseen',
+  'legal.deletion.gone.body':
+    'Kirjoita meille, niin poistamme tilin puolestasi. Kerro se puhelinnumero, jolla olet kirjautunut, jotta löydämme oikean tilin.',
+
+  'legal.deletion.removed.title': 'Mikä poistuu heti',
+  'legal.deletion.removed.one': 'Puhelinnumero ja sähköpostiosoite.',
+  'legal.deletion.removed.two':
+    'Nimimerkki, ikä, sukupuoli ja valokuva. Kuva poistuu myös tallennustilasta.',
+  'legal.deletion.removed.three': 'Luotettavan henkilön numero.',
+  'legal.deletion.removed.four': 'Treffitoiveet ja alue, jonne voisit lähteä treffeille.',
+  'legal.deletion.removed.five': 'Kalenteriin merkityt ajat ja vastaukset kysymyssarjoihin.',
+  'legal.deletion.removed.six':
+    'Kirjautumiset kaikilta laitteilta samalla hetkellä, ja ilmoitusten vastaanotto.',
+  'legal.deletion.removed.seven': 'Jaetut sijainnit.',
+
+  'legal.deletion.kept.title': 'Mikä jää talteen',
+  'legal.deletion.kept.lead':
+    'Osa tiedoista on yhtä lailla toisen osapuolen tietoja, ja osa on turvallisuuspäätöksiä, joita lähteminen ei saa kumota. Nämä jäävät, mutta nimesi ei ole niissä enää kiinni.',
+  'legal.deletion.kept.one':
+    'Sovitut ja menneet treffit sekä niistä annetut palautteet. Toinen osapuoli näkee sinun tilallasi ”Joku”.',
+  'legal.deletion.kept.two':
+    'Turvallisuusilmoitukset ja niiden vapaa teksti, sekä sinun kirjoittamat että sinusta kirjoitetut.',
+  'legal.deletion.kept.three': 'Merkintä siitä, että olet painanut turvapainiketta.',
+  'legal.deletion.kept.four':
+    'Esto, joka syntyy kun joku ei ole kokenut oloaan turvalliseksi. Sitä ei voi purkaa lähtemällä.',
+  'legal.deletion.kept.five': 'Ilmoitukset saapumatta jättämisestä, molempiin suuntiin.',
+  'legal.deletion.kept.six': 'Kipinöiden liikkeet, jotta saldot pysyvät täsmäävinä.',
+  'legal.deletion.kept.seven':
+    'Käynnissä oleva hidastus, jos sinulla on sellainen. Lähteminen ei lyhennä sitä.',
+  'legal.deletion.kept.eight':
+    'Ketkä ehdokkaat sinulle on tarjottu, ja keiden ehdokkaissa olet ollut.',
+
+  'legal.deletion.others.title': 'Mitä tapahtuu sovituille treffeille',
+  'legal.deletion.others.body':
+    'Lähettämäsi kutsut perutaan ja saamasi kutsut hylätään, ja kutsujan kipinät palautetaan. Tulevat treffit peruutetaan, ja toinen osapuoli hyvitetään kuten missä tahansa perumisessa. Sinulle ei tule tästä seurauksia, emmekä kerro kenellekään erikseen, että lähdit.',
+
+  'legal.deletion.again.title': 'Jos palaat myöhemmin',
+  'legal.deletion.again.body':
+    'Voit rekisteröityä samalla puhelinnumerolla uudelleen. Saat tyhjän tilin, eikä mikään yhdistä sitä vanhaan.',
+
+  'legal.deletion.more': 'Lue tarkemmin tietosuojaselosteesta',
 
   'footer.rights': 'Pilke',
 } as const;
@@ -473,6 +541,7 @@ const en: Record<keyof typeof fi, string> = {
   'cta.button': 'Join the beta',
   'cta.note':
     'We use the address for the beta invitation and nothing else. We do not pass it on.',
+  'cta.privacy': 'The privacy policy says what happens to your address.',
 
   'faq.title': 'Questions',
   'faq.lead': 'Short answers to what people ask about Pilke most often.',
@@ -510,6 +579,67 @@ const en: Record<keyof typeof fi, string> = {
   'shot.asetukset':
     'The Safety section of the settings, open, with the field for a trusted person’s number.',
   'shot.date': 'An agreed date on a phone: the time, the venue on a map, and the safety button.',
+
+  'legal.effective': 'In effect from {date}',
+  'legal.draft.title': 'This text is unfinished',
+  'legal.draft.body':
+    'A lawyer goes through it before Pilke opens. Until then it binds nobody and cannot be relied on.',
+
+  'legal.nav': 'Terms and privacy',
+  'legal.deletion.nav': 'Deleting your data',
+  'legal.deletion.title': 'How to delete your data',
+  'legal.deletion.lead':
+    'You delete your account yourself, in the app. This page says what goes straight away and what stays.',
+
+  'legal.deletion.pending.title': 'There is no email address yet',
+  'legal.deletion.pending.body':
+    'An address for people who can no longer reach the app belongs on this page. It has not been bought yet, so the page is unfinished in that respect.',
+
+  'legal.deletion.app.title': 'Delete your account in the app',
+  'legal.deletion.app.body':
+    'Open Pilke, go to Settings and choose Delete account. Confirm with your phone number. The account goes immediately and does not come back.',
+
+  'legal.deletion.gone.title': 'If you can no longer reach the app',
+  'legal.deletion.gone.body':
+    'Write to us and we will delete the account for you. Tell us the phone number you signed in with, so we find the right account.',
+
+  'legal.deletion.removed.title': 'What goes straight away',
+  'legal.deletion.removed.one': 'Your phone number and email address.',
+  'legal.deletion.removed.two':
+    'Your nickname, age, gender and photo. The photo is deleted from storage as well.',
+  'legal.deletion.removed.three': 'Your trusted person’s number.',
+  'legal.deletion.removed.four': 'What you are looking for, and the area you could travel to.',
+  'legal.deletion.removed.five': 'The times marked in your calendar, and your answers to the question sets.',
+  'legal.deletion.removed.six':
+    'Every session on every device, in the same instant, and any notifications to you.',
+  'legal.deletion.removed.seven': 'Any location you shared.',
+
+  'legal.deletion.kept.title': 'What stays',
+  'legal.deletion.kept.lead':
+    'Some of it belongs to the other person as much as to you, and some of it is a safety decision that leaving must not undo. These stay, with your name no longer attached to them.',
+  'legal.deletion.kept.one':
+    'Dates agreed and past, and the feedback given about them. The other person sees ”Someone” where you were.',
+  'legal.deletion.kept.two':
+    'Safety reports and the free text in them, both what you wrote about somebody and what somebody wrote about you.',
+  'legal.deletion.kept.three': 'The fact that you pressed the safety button.',
+  'legal.deletion.kept.four':
+    'The block created when somebody did not feel safe. Leaving does not lift it.',
+  'legal.deletion.kept.five': 'Reports of not turning up, in both directions.',
+  'legal.deletion.kept.six': 'Glimmer movements, so that balances still add up.',
+  'legal.deletion.kept.seven':
+    'Any slowdown you are currently serving. Leaving does not shorten it.',
+  'legal.deletion.kept.eight':
+    'Which candidates you were offered, and whose candidates you appeared among.',
+
+  'legal.deletion.others.title': 'What happens to dates you agreed to',
+  'legal.deletion.others.body':
+    'Invitations you sent are withdrawn and invitations you received are declined, with the sender’s glimmers refunded. Dates still ahead are cancelled and the other person is compensated exactly as for any cancellation. Nothing is held against you, and nobody is told separately that you left.',
+
+  'legal.deletion.again.title': 'If you come back later',
+  'legal.deletion.again.body':
+    'You can register the same phone number again. You get an empty account, and nothing links it to the old one.',
+
+  'legal.deletion.more': 'Read the detail in the privacy policy',
 
   'footer.rights': 'Pilke',
 };

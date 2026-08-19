@@ -1,0 +1,173 @@
+---
+/**
+ * How to delete an account, on the open web.
+ *
+ * A page rather than a section of the privacy statement because Google Play
+ * requires a URL where somebody can find out how to delete their data **without
+ * installing the app** — which is exactly the person who cannot read a screen in
+ * Settings. It is hand-written rather than a `legal` collection entry: it is
+ * instructions, not a binding text, and it does not carry a version.
+ *
+ * WARNING: **Every claim here is checked against `core/deletion.py`** by way of
+ * `docs/legal/privacy-policy.md` §11, and the two lists are that
+ * section's two lists. Deletion is a tombstone rather than a row delete, so the
+ * *what stays* list is the load-bearing half of the page and must not be
+ * softened — the app's own copy already overstates this, and that is the
+ * discrepancy the audit rates highest.
+ *
+ * The kept list has one entry per row of §11.4's table, in that order, and it is
+ * meant to stay that way: a row added to `RETAINED_COLUMNS` or left untouched by
+ * `delete_account` and not named here makes this page quietly incomplete, which
+ * is the one failure it exists to prevent.
+ */
+import PageHead from '../../components/PageHead.astro';
+import { legalHref } from '../../i18n/legal';
+import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
+import Base from '../../layouts/Base.astro';
+
+export const getStaticPaths = () => localeRoutes();
+
+const lang = localeOf(Astro.params);
+const t = useTranslations(lang);
+
+const removed = [
+  t('legal.deletion.removed.one'),
+  t('legal.deletion.removed.two'),
+  t('legal.deletion.removed.three'),
+  t('legal.deletion.removed.four'),
+  t('legal.deletion.removed.five'),
+  t('legal.deletion.removed.six'),
+  t('legal.deletion.removed.seven'),
+];
+
+const kept = [
+  t('legal.deletion.kept.one'),
+  t('legal.deletion.kept.two'),
+  t('legal.deletion.kept.three'),
+  t('legal.deletion.kept.four'),
+  t('legal.deletion.kept.five'),
+  t('legal.deletion.kept.six'),
+  t('legal.deletion.kept.seven'),
+  t('legal.deletion.kept.eight'),
+];
+---
+
+<Base lang={lang}>
+  <PageHead title={t('legal.deletion.title')} lead={t('legal.deletion.lead')} />
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      <!-- Dashed and unshadowed, as the safety page draws something that is not
+           settled: the address this page needs does not exist yet, and a reader
+           should be told that rather than shown a paragraph with a hole in it. -->
+      <aside class="block provisional">
+        <h2>{t('legal.deletion.pending.title')}</h2>
+        <p>{t('legal.deletion.pending.body')}</p>
+      </aside>
+
+      <h2 class="display-mid">{t('legal.deletion.app.title')}</h2>
+      <p class="prose">{t('legal.deletion.app.body')}</p>
+
+      <h2 class="display-mid">{t('legal.deletion.gone.title')}</h2>
+      <p class="prose">{t('legal.deletion.gone.body')}</p>
+    </div>
+  </section>
+
+  <!-- The two lists side by side, because the point is that one is not the whole
+       story. On a narrow screen they stack, and *what goes* comes first: it is
+       what the reader came for. -->
+  <section class="slab slab-pale">
+    <div class="wrap section-pad ledgers">
+      <div>
+        <h2>{t('legal.deletion.removed.title')}</h2>
+        <ul>{removed.map((item) => <li>{item}</li>)}</ul>
+      </div>
+
+      <div>
+        <h2>{t('legal.deletion.kept.title')}</h2>
+        <p class="lead-in">{t('legal.deletion.kept.lead')}</p>
+        <ul>{kept.map((item) => <li>{item}</li>)}</ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      <h2 class="display-mid">{t('legal.deletion.others.title')}</h2>
+      <p class="prose">{t('legal.deletion.others.body')}</p>
+
+      <h2 class="display-mid">{t('legal.deletion.again.title')}</h2>
+      <p class="prose">{t('legal.deletion.again.body')}</p>
+
+      <p class="onward">
+        <a class="go" href={legalHref('tietosuoja', lang)}>{t('legal.deletion.more')}</a>
+        <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .wrap > * + * {
+    margin-top: var(--pad-medium);
+  }
+
+  /* A heading after a paragraph needs the section gap, not the paragraph gap. */
+  .wrap > .display-mid + .prose {
+    margin-top: var(--pad-normal);
+  }
+
+  .wrap > .prose + .display-mid {
+    margin-top: var(--pad-large);
+  }
+
+  .provisional {
+    border-style: dashed;
+    box-shadow: none;
+    background: var(--brand-background);
+  }
+
+  .provisional h2 {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 1.125rem;
+  }
+
+  .provisional p {
+    margin-top: var(--pad-normal);
+    max-width: 60ch;
+  }
+
+  /* The two lists are equal columns rather than a wide one and a narrow one: the
+     comparison is the content, and a reader who skims only the left column has
+     been misled. */
+  .ledgers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: clamp(2rem, 5vw, 3rem);
+  }
+
+  .ledgers h2 {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 1.25rem;
+  }
+
+  .ledgers .lead-in {
+    margin-top: var(--pad-normal);
+    max-width: 44ch;
+  }
+
+  .ledgers ul {
+    margin-top: var(--pad-medium);
+    padding-left: var(--pad-large);
+  }
+
+  .ledgers li + li {
+    margin-top: var(--pad-normal);
+  }
+
+  .onward {
+    margin-top: var(--pad-large);
+  }
+</style>

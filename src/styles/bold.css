@@ -135,3 +135,114 @@
   transform: translate(1px, 1px);
   box-shadow: 3px 3px 0 var(--ink);
 }
+
+/*
+  Legal prose: the privacy statement and the terms.
+
+  It is here rather than in the page that renders them because `<Content />` emits
+  plain Markdown output, which carries no scope attribute — a `<style>` block in
+  the page would not reach a single heading of it. One definition, so the two
+  documents cannot be set differently.
+
+  Narrower than `.prose` and with more air between blocks. These are the only pages
+  on the site somebody reads to find one clause in, and the measure and the spacing
+  are what make that possible.
+*/
+.legal {
+  max-width: 68ch;
+}
+
+.legal > * + * {
+  margin-top: var(--pad-medium);
+}
+
+/* A section of a legal document is a place somebody is sent to — "see section
+   4" — so each one opens with clear air above it and a heading that is not
+   competing with the display type in the slab overhead. Set in the body face:
+   Courgette at this size reads as decoration on a page of clauses. */
+.legal h2 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin-top: var(--pad-large);
+  padding-top: var(--pad-medium);
+  border-top: 1px solid var(--ink);
+}
+
+.legal h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.legal h3 {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.0625rem;
+  margin-top: var(--pad-large);
+}
+
+.legal ul,
+.legal ol {
+  padding-left: var(--pad-large);
+}
+
+.legal li + li {
+  margin-top: var(--pad-small);
+}
+
+/* The note at the top of an unfinished document, and any aside inside one. Flat
+   on the page with a heavy left edge rather than boxed: a bordered box here read
+   as a pull quote, which is the opposite of a warning. */
+.legal blockquote {
+  margin-inline: 0;
+  padding: var(--pad-normal) var(--pad-medium);
+  border-left: var(--edge) solid var(--ink);
+  background: var(--brand-background);
+}
+
+.legal blockquote > * + * {
+  margin-top: var(--pad-normal);
+}
+
+.legal code {
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-small);
+  background: var(--brand-background);
+  font-size: 0.9em;
+}
+
+/* A clause referred to by a link has to be visibly a link on a page of dense
+   text, so it keeps its underline rather than relying on colour. */
+.legal a {
+  color: var(--ink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+
+/* Retention periods and the like arrive as tables, and a wide one scrolls in its
+   own box rather than pushing the page sideways. */
+.legal .table-scroll,
+.legal table {
+  width: 100%;
+}
+
+.legal table {
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  font-size: 0.9375rem;
+}
+
+.legal th,
+.legal td {
+  text-align: left;
+  padding: var(--pad-normal);
+  border-bottom: 1px solid var(--ink);
+  vertical-align: top;
+}
+
+.legal th {
+  font-weight: 800;
+}

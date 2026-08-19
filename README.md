@@ -33,6 +33,46 @@ is what more than one page draws: `Phone`, `Glimmer`, `Sparkle`, `Logo`,
 `src/assets/screens.ts` is the table of screenshots, and is the only thing the
 pages share besides the dictionary.
 
+**Everything legal lives in this repository, and nowhere else.** The published
+documents are `src/content/legal/`; the audit they are written from —
+`privacy-policy.md`, `terms.md` and the Play Data safety worksheet — is
+`docs/legal/`. The app holds no copy of any of it: it opens these URLs and records
+which version it showed. That is the point of the arrangement, so **do not add a
+second copy of a legal text to `pilke-app` or `treffit-backend`**, not even as a
+convenience.
+
+The documents are the one exception to *every string lives in `ui.ts`*.
+`src/content/legal/` holds them as Markdown, one file per document per language,
+named `<slug>.<lang>.md`; `src/content.config.ts` declares the schema and
+`src/pages/[...lang]/[doc].astro` renders every one of them. They are prose a
+lawyer edits, and a lawyer does not edit a TypeScript object literal. Their titles
+and ledes come from their own frontmatter, so the footer names a document from the
+same place the page does.
+
+`src/i18n/legal.ts` is the only reader of that collection, and it throws at build
+time on the two failures nothing downstream would reveal: a document missing a
+language, and two languages of one document claiming different versions.
+`/legal.json` is generated from the same frontmatter and is what lets the app and
+the backend agree with the site about which version is live — the app pins one in
+`pilke-app/src/constants/legal.ts` and the backend stores what each user accepted.
+
+**Where the drafts' shape comes from.** The section order and the Finnish register
+follow Wolt Oy's own `tietosuojaseloste` and `käyttöehdot` — a Finnish company
+writing Finnish first, rather than a US service translated — with the
+dating-specific sections (identity checks, what one user writes about another,
+consequences) modelled on Tinder's Finnish documents. **The content is written from
+Pilke's own source**, by way of `docs/legal/`, and is copied from neither: their
+prose describes their products and is theirs. Read a `TODO(legal)` as a decision
+nobody can make from the code, and do not fill one in with what a dating app usually
+says.
+
+`/tietojen-poisto` is a hand-written page rather than a collection entry: it is
+instructions, not a binding text, and it exists because Google Play requires a URL
+where somebody can find out how to delete their data **without installing the
+app**. Every claim on it is checked against `core/deletion.py` by way of
+`docs/legal/privacy-policy.md` §11. Deletion is a tombstone rather than a
+row delete, so the *what stays* list is the load-bearing half of that page.
+
 `Base.astro` loads both stylesheets, so a page is a run of `.slab` sections and
 nothing else. The button those sections link out with is `.go` in
 `src/styles/bold.css` — one definition, `.ghost` for the white one that stands on
@@ -174,10 +214,18 @@ Four more things to settle before launch:
 1. **The product has two names in the code.** Onboarding copy calls it
    *Treffit*; the safety SMS and the location notification call it *Pilke*. This
    site says Pilke throughout.
-2. **There is no privacy policy, and the terms and etiquette screens in the app
-   are placeholder text.** The site links to none of them, which is why it has no
-   footer legal links. That has to change before a public launch, and this site
-   is where those documents would be served from.
+2. **The legal documents are served, and their text is not written.**
+   `/tietosuoja` and `/kayttoehdot` exist in both languages, the footer links
+   them, and the app opens these same URLs — so the plumbing is done and there is
+   one copy of each document. Both carry `draft: true`, which renders a notice
+   saying the text binds nobody, and every section is a `TODO(legal)` marker
+   naming the section of `docs/legal/` it is written from. **Nothing may
+   clear that flag until a lawyer has read the result.** Two things gate the text
+   itself: the owner decisions collected in Appendix B of `privacy-policy.md`, and
+   a contact address, without which a GDPR Art. 13 notice cannot be published at
+   all. The app's etiquette screen is placeholder text too, and is not one of
+   these documents — house rules are app copy, and folding them into the terms
+   would make a courtesy enforceable.
 3. **Answering question sets does not affect matching yet.** The site says so
    plainly rather than implying otherwise. If that changes, the story test
    section changes with it.
@@ -187,8 +235,9 @@ Four more things to settle before launch:
    front page's hero button is an anchor down to it. It has no `action` and no
    handler, and it is the only thing on the site that asks the reader for
    anything. Wire it up or take it out before the site is public.
-   It needs somewhere to put the addresses, and it needs the privacy policy in
-   point 2 to exist, because this form is the first thing here that collects a
-   personal detail. The copy promises the address is used for the beta
+   It needs somewhere to put the addresses, and it links to `/tietosuoja`
+   because this form is the first thing here that collects a personal detail —
+   but that link is only a link until the document behind it is finished, so
+   point 2 still gates this. The copy promises the address is used for the beta
    invitation and nothing else, and is not passed on; whatever it is wired to
    has to make that true.
