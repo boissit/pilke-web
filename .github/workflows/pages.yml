@@ -1,0 +1,63 @@
+# Publishes the site to GitHub Pages on every push to main.
+#
+# `public/CNAME` is what binds `pilke.app` to this deployment, and it lives in
+# the repository rather than only in the Pages settings for a reason: the setting
+# writes that file into the published output, and a deploy that does not carry it
+# unbinds the custom domain. Astro copies `public/` verbatim, so it survives
+# every build.
+name: Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# `pages: write` and `id-token: write` are what `deploy-pages` needs; the token
+# is exchanged for one scoped to this deployment rather than to the repository.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time, and never cancel one in flight: the site is where
+# the app's legal documents are served from, and a half-finished deploy is a
+# `/tietosuoja` that 404s.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+          cache: npm
+
+      - run: npm ci
+
+      # `astro check` before `astro build`, so a broken content collection or a
+      # bad link fails the deploy rather than shipping.
+      - run: npx astro check
+
+      - run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

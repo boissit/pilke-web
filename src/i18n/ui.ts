@@ -42,7 +42,7 @@ const fi = {
   'hero.lead':
     'Ei chattia, ei viikkojen viestittelyä. Saat kutsun, jossa aika ja paikka ovat jo valmiina — valitse sopiva hetki, niin treffit on sovittu.',
 
-  'fact.one.title': 'Kolme ehdokasta kerrallaan',
+  'fact.one.title': 'Sinä valitset, kenet kutsut',
   'fact.one.body': 'Ei loputonta pinoa selattavaksi.',
   'fact.two.title': 'Aika ja paikka valmiina',
   'fact.two.body': 'Kalenterisi sopii treffit puolestasi.',
@@ -79,7 +79,7 @@ const fi = {
 
   'how.one.title': 'Lähetä treffikutsu',
   'how.one.body':
-    'Avaa kolmen ehdokkaan valikoima ja valitse yksi. Tarjoa pari sinulle sopivaa aikaa ja paikka. Kutsu lähtee.',
+    'Avaa valikoima ja valitse, kenelle lähetät kutsun. Tarjoa pari sinulle sopivaa aikaa ja paikka. Kutsu lähtee.',
   'how.two.title': 'Vastaa saapuneisiin kutsuihin',
   'how.two.body':
     'Näet kutsujan, sen mitä teillä on yhteistä ja hänen tarjoamansa ajat. Valitse yksi, niin treffit on sovittu. Se ei maksa sinulle mitään.',
@@ -184,14 +184,14 @@ const fi = {
 
   'detail.draw.title': 'Mistä ehdokkaat tulevat',
   'detail.draw.body':
-    'Kun avaat valikoiman, Pilke etsii ihmisiä, joiden toiveet ja sinun toiveesi käyvät yksiin, joilla on kalenterissa vähintään tunnin yhteinen aika sinun kanssasi, ja joiden kanssa on paikka johon molemmat pääsevät. Valikoimaan tulee kolme.',
+    'Kun avaat valikoiman, Pilke etsii ihmisiä, joiden toiveet ja sinun toiveesi käyvät yksiin, joilla on kalenterissa vähintään tunnin yhteinen aika sinun kanssasi, ja joiden kanssa on paikka johon molemmat pääsevät. Sinä valitset, kenelle kutsu lähtee.',
   'detail.invite.title': 'Kutsu ja vastaus',
   'detail.invite.body':
     'Tarjoat vähintään kaksi aikaa ja yhden tekemisen. Toinen valitsee niistä yhden, ja treffit on sovittu. Kutsu on voimassa vuorokauden.',
 
   'detail.economy.title': 'Kipinät',
   'detail.economy.body':
-    'Kipinä on se, mitä keräät ja käytät. Kolmen ehdokkaan valikoima kuluttaa viisi kipinää, eikä muuta hintaa ole. Kipinöitä ei myydä.',
+    'Kipinä on se, mitä keräät ja käytät. Valikoima kuluttaa viisi kipinää, eikä muuta hintaa ole. Kipinöitä ei myydä.',
   'detail.economy.earn': 'Näin kipinöitä kertyy',
   'detail.earn.signup': 'Rekisteröinnin viimeistely',
   'detail.earn.signup.note': 'Kerran tilin elinkaaressa, koodin vahvistamisen jälkeen.',
@@ -207,7 +207,7 @@ const fi = {
 
   'detail.economy.spend': 'Näin kipinät kuluvat',
   'detail.economy.spend.body':
-    'Viisi kipinää kuluu sillä hetkellä, kun avaat kolmen ehdokkaan valikoiman. Kutsun lähettäminen ei maksa enää mitään. Kipinöitä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut kipinät odottavat, kunnes käytät niitä. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.',
+    'Viisi kipinää kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään. Kipinöitä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut kipinät odottavat, kunnes käytät niitä. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.',
 
   'detail.changes.title': 'Jos suunnitelmat muuttuvat',
   'detail.changes.expired': 'Kutsuun ei vastata vuorokaudessa',
@@ -226,7 +226,7 @@ const fi = {
   'detail.chat.body':
     'Kutsussa on jo aika ja paikka, joten sopimiseen ei tarvita keskustelua. Se on koko idea: Pilke vie teidät samaan pöytään sen sijaan, että korvaisi sen. Treffipäivänä kartta kertoo, missä toinen on, jotta löydätte perille ilman viestittelyä.',
 
-  'economy.lead': 'Viisi kipinää avaa kolmen ehdokkaan valikoiman.',
+  'economy.lead': 'Viisi kipinää avaa valikoiman.',
   'economy.pile.alt': 'Viisi kipinäkolikkoa pinossa.',
   'economy.amount.one': '1 kipinä',
   'economy.amount.two': '2 kipinää',
@@ -271,7 +271,7 @@ const fi = {
   'shot.story':
     'Tarinatestin ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.',
   'shot.platter':
-    'Ehdokkaat-näkymä: yksi kolmesta ehdokkaasta, hänen kanssaan yhteiset ajat ja valittu tekeminen.',
+    'Ehdokkaat-näkymä: yksi ehdokas, hänen kanssaan yhteiset ajat ja valittu tekeminen.',
   'shot.invitation': 'Saapunut treffikutsu: kutsujan nimi ja kuva, tarjotut ajat ja paikka.',
   'shot.feedback':
     'Treffipalaute puhelimessa: kuka oli treffeillä, milloin, ja ensimmäinen kysymys vastausvaihtoehtoineen.',
@@ -362,7 +362,7 @@ const en: Record<keyof typeof fi, string> = {
   'hero.lead':
     'No chat, no weeks of messaging. You get an invitation with the time and the place already in it — pick the hour that suits you, and the date is set.',
 
-  'fact.one.title': 'Three candidates at a time',
+  'fact.one.title': 'You choose who to invite',
   'fact.one.body': 'No endless stack to scroll.',
   'fact.two.title': 'Time and place already set',
   'fact.two.body': 'Your calendar does the arranging.',
@@ -397,7 +397,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'how.one.title': 'Send a date invitation',
   'how.one.body':
-    'Open a set of three candidates and pick one. Offer a couple of times that suit you, and a place. The invitation goes.',
+    'Open a set and choose who to invite. Offer a couple of times that suit you, and a place. The invitation goes.',
   'how.two.title': 'Answer the invitations you get',
   'how.two.body':
     'You see who sent it, what you have in common, and the times they offer. Pick one, and the date is set. It costs you nothing.',
@@ -487,14 +487,14 @@ const en: Record<keyof typeof fi, string> = {
 
   'detail.draw.title': 'Where candidates come from',
   'detail.draw.body':
-    'When you open a set, Pilke looks for people whose preferences and yours agree, who share at least an hour of calendar time with you, and who have somewhere to meet that you can both reach. Three of them come back.',
+    'When you open a set, Pilke looks for people whose preferences and yours agree, who share at least an hour of calendar time with you, and who have somewhere to meet that you can both reach. You choose which of them the invitation goes to.',
   'detail.invite.title': 'The invitation and the answer',
   'detail.invite.body':
     'You offer at least two times and one thing to do. The other person picks one of them, and the date is set. An invitation stands for a day.',
 
   'detail.economy.title': 'Glimmers',
   'detail.economy.body':
-    'A glimmer is what you collect and what you spend. A set of three candidates costs five glimmers, and there is no other price. Glimmers are not sold.',
+    'A glimmer is what you collect and what you spend. A set costs five glimmers, and there is no other price. Glimmers are not sold.',
   'detail.economy.earn': 'How glimmers add up',
   'detail.earn.signup': 'Finishing your registration',
   'detail.earn.signup.note': 'Once in the life of an account, after the code is confirmed.',
@@ -509,7 +509,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'detail.economy.spend': 'How glimmers go',
   'detail.economy.spend.body':
-    'Five glimmers go the moment you open a set of three candidates. Sending the invitation costs nothing more. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Reimbursements, such as the glimmers returned when an invitation lapses, arrive regardless of the limit.',
+    'Five glimmers go the moment you open a set. Sending the invitation costs nothing more. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Reimbursements, such as the glimmers returned when an invitation lapses, arrive regardless of the limit.',
 
   'detail.changes.title': 'If plans change',
   'detail.changes.expired': 'An invitation goes unanswered for a day',
@@ -528,7 +528,7 @@ const en: Record<keyof typeof fi, string> = {
   'detail.chat.body':
     'An invitation already carries the time and the place, so arranging it needs no conversation. That is the whole idea: Pilke takes you to the same table rather than standing in for it. On the day, the map shows where the other person is so you find each other without messaging.',
 
-  'economy.lead': 'Five glimmers open a set of three candidates.',
+  'economy.lead': 'Five glimmers open a set.',
   'economy.pile.alt': 'Five glimmer coins in a pile.',
   'economy.amount.one': '1 glimmer',
   'economy.amount.two': '2 glimmers',
@@ -571,7 +571,7 @@ const en: Record<keyof typeof fi, string> = {
   'shot.story':
     'The first question of the story test during onboarding: a situation and three options, one of which you pick.',
   'shot.platter':
-    'The candidates view: one of three candidates, the times you both have, and the chosen activity.',
+    'The candidates view: one candidate, the times you both have, and the chosen activity.',
   'shot.invitation':
     'A date invitation received: who sent it, with their photo, the times offered and the place.',
   'shot.feedback':

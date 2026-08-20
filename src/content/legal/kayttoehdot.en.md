@@ -6,255 +6,203 @@ effective: 2026-09-01
 draft: true
 ---
 
-> **Note to whoever finishes this.** A draft. The structure follows Finnish practice —
-> Wolt Oy's terms, with the dating-specific sections modelled on Tinder's Finnish ones —
-> while **the content is written from Pilke's own source**, by way of the audit in
-> `docs/legal/terms.md`, and is copied from neither. Every `TODO(legal)` is an owner or
-> counsel decision. Read sections 4, 6 and 10 in particular: each contains a term that
-> **requires a code change**, not just a sentence. The Finnish is the original and this is
-> its translation. Once a lawyer has read the finished text, remove `draft: true` and this
-> note.
+These terms set out how Pilke is used. Read them before you create an account: creating one
+means you accept them. How we handle your personal data is set out separately in the
+[privacy policy](/en/tietosuoja).
 
-## 1. Who we are, and what these terms are
+## 1. Who you are agreeing with
 
-The Pilke app is provided by **[TODO(legal): the company's registered name, business ID and
-address]**. In these terms *we* and *Pilke* mean that company, and *you* mean you.
+Pilke is provided by **[TO FILL IN: registered company name]**, business ID
+**[TO FILL IN: business ID]**, address **[TO FILL IN: address]**. In these terms *we* and
+*Pilke* mean that company, and *you* mean you.
 
-These terms are an agreement between you and us. You accept them when you create an
-account. We describe what we do with your personal data in a separate
-[privacy policy](/en/tietosuoja), which belongs with these terms without being a
-contractual term itself.
-
-Contact: **[TODO(legal): email address. None exists today, and every complaint, appeal and
-data-protection route in this document ends at it.]**
+You can reach us at **[TO FILL IN: email address]**.
 
 ## 2. What Pilke is
 
-Pilke arranges dates. It is not a messaging app and it is not a personals board.
+Pilke arranges dates. It is not a messaging app and not a personal ads board.
 
-- **There is no chat.** Users cannot send each other messages at all. It is not restricted
-  — it is not built.
-- **You get three candidates at a time.** Suggestions come from gender, age, what you are
-  looking for, your date area and your calendar.
-- **An invitation already carries the time and the place.** You answer by picking a time
-  that suits you.
+- **Users cannot send each other messages.** There is no chat in the service.
+- **You choose who to invite.** Suggestions come from gender, age, your preferences, your
+  date area and your calendar, and you can pass on every one of them.
+- **An invitation already has a time and a venue.** You answer it by picking a time that
+  suits you.
 - **We choose the venues.** Users do not propose them.
-- **The meeting happens in the real world**, at a physical place, at an agreed hour.
-  Everything other than agreeing the time and the place happens face to face.
+- **You meet in the real world**, at a physical place, at an agreed time.
 
-We do not promise that you will get dates, that candidates will be available, or that
-anybody will answer your invitation.
+Pilke is free of charge, and nothing in the service is for sale: visibility, promotion and a
+better place among suggestions cannot be bought. We do not promise that you will get a date,
+that candidates will be available, or that anybody will answer your invitation.
 
-## 3. Your account
+## 3. Who can use Pilke
 
-You identify yourself with a phone number. The account has no password, and every device
-signs in separately with a one-time code sent to that number.
+You can use Pilke if you are 18 or over and give your real date of birth. If we learn that a
+user is younger than that, we delete the account.
 
-You must
+The service is intended for use in Finland. One person has one account, and the account is
+personal: you may not hand it over to anybody else or use somebody else's. If we have ended
+our agreement with you because you broke these terms, you may not create a new account.
 
-- give a real phone number and email address;
-- make sure nobody else can reach your phone or your sign-in codes;
-- use the account yourself. It is personal and may not be handed to anybody else.
+## 4. How your account works
 
-Tell us immediately if you think somebody else has reached your account. You can sign a
-device out from the settings.
+You identify yourself with your phone number. The account has no password: each device signs
+in separately with a one-time code sent to your number.
 
-## 4. Who may use Pilke
+You are expected to give a real phone number and email address, to keep others out of your
+phone and away from your login codes, and to tell us straight away if you suspect somebody
+else has got into your account. You can sign out of a single device in settings.
 
-**[TODO(legal): the minimum age. The suggestion is 18, as is usual for dating services.**
+## 5. What we expect from you
 
-**⚠️ This is not merely a sentence. There is no age check of any kind in the system today:
-a date of birth is asked for, but nothing stops a registration at any age. A term that is
-not checked is broken at the first registration. Writing an age floor here requires a code
-change and new copy in the app, not just this section.]**
+**Go on the dates you agree to.** The other person has set an evening aside for you. If you
+cannot make it, cancel as early as you can.
 
-In addition, **[TODO(legal): other eligibility conditions — for instance that the user has
-not previously been removed from the service, and which countries the service is offered
-in.]**
+**Agree with your trusted contact first.** When you save somebody's number for the safety
+feature, you confirm that they know about it and accept it. The number is their data, not
+yours.
 
-## 5. Glimmers
+**Give real information about yourself.** The photograph is of you, and you are
+recognisable in it.
 
-A glimmer is a counter inside the app. One draw of three candidates costs five glimmers,
-and that is the only price.
+Your photograph and nickname must not contain
 
-- Glimmers are charged when the candidates are drawn — not when an invitation is sent.
-- Glimmers accrue from using the app: one for every three credited calendar spans, two for
-  a date once you have given feedback, five for finishing registration, and five if
-  somebody calls a date off on you.
-- Earning stops at fifteen glimmers. Refunds are not capped, so a balance can pass it.
-- **Glimmers cannot be bought with money.** They also cannot be cashed out, transferred to
-  another user, or redeemed for anything. They are not a means of payment and not your
-  property; they are a way of pacing invitations.
-- **Visibility cannot be bought.** There is no paid draw, no boost and no buying your way
-  up an order.
-- If your invitation is declined or falls through, glimmers are refunded under the rules.
-  We never compensate glimmers in money, because none was paid for them.
+- another person without their permission, or a child;
+- nudity or sexual content;
+- contact details, web addresses, advertising or other commercial content;
+- another person's name or picture in a way that passes you off as them;
+- insults, threats or content that demeans a group of people.
 
-**[TODO(legal): if glimmers are ever sold for money, this section has to be rewritten from
-scratch — the right of withdrawal, refund duties and app-store billing rules all change at
-the same moment.]**
+While using the service you must not
 
-## 6. What we expect of you
+- harass, threaten or pressure another user;
+- ask another user for money, offer sex for payment, or sell anything;
+- collect or spread another user's data outside the service;
+- create an account with another person's details or by automated means;
+- mark times in your calendar you do not intend to keep;
+- try to get around the service's restrictions, probe its security without permission, or
+  disrupt how it works.
 
-**You undertake to turn up to dates you agree to.** It is the whole basis of the service:
-the other person has set an evening aside.
+If another user breaks these rules, file a safety report about them in the app. If a crime
+has been committed, contact the police, and in an emergency call 112.
 
-**Agree it with your trusted person.** If you save somebody's number for the safety
-feature, you warrant that they know about it and accept it. The number is their data.
+## 6. What we do about safety
 
-**Do not farm glimmers.** Marking calendar spans and withdrawing them to earn raises the
-bar for your next glimmer.
+**We do not verify identities and we do not run background checks.** There is no identity
+verification, no criminal record check and no strong authentication in the service. Nobody
+has confirmed that the other user is who they say they are. This is the most important thing
+to understand in these terms.
 
-**[TODO(legal): content rules — what a profile photo and a nickname may not contain, and
-what conduct is prohibited.**
+What the service does give you:
 
-**⚠️ This is more than a sentence too. Photos are not checked in any way: they go straight
-to storage and are visible to everybody who draws you as a candidate. A nickname is a
-30-character free field with no filter. A rule here is therefore a promise rather than a
-control today, and its only enforcement is a person in an administration view. Write the
-rules knowing that.]**
-
-## 7. What you write about other people
-
-After a date we ask how it went. You answer by choosing an option; there is no way to write
-free text. Your answers concern a named person, and they are kept.
-
-**[TODO(legal): are users told who reads their feedback? Today the feedback flow says
-nothing either way, and putting the promise only in these terms leaves the user in the dark
-at the moment it matters.]**
-
-A safety report is free text. It is the only free text in the whole service. It is never
-shown to the other user. Write the truth in it: it is kept, and it concerns somebody who
-did not write it and cannot correct it.
-
-## 8. Safety — what we promise and what we do not
-
-**We do not verify anybody's identity or background.** There is no identity verification,
-no criminal-record check and no strong electronic identification in the service. Nobody has
-confirmed that another user is who they say they are. This is among the most important
-things to understand from these terms.
-
-What the service does have:
-
-- **A trusted person's number** and a safety button that sends them a text message. The
-  message carries your nickname. It names no location, no venue and no date partner, and
-  your date is not told that you pressed it.
-- **Showing your location at the venue**, tightly bounded. The conditions are in section 4
-  of the [privacy policy](/en/tietosuoja).
-- **A report** you can file after a date.
-- **A block**, created when you call off a date because you did not feel safe. After that
-  the two of you are never suggested to each other again, and the other person is not told
-  why.
+- **A trusted contact and the safety button.** Pressing it sends them a text message
+  containing your nickname. The message contains no position, no venue and nothing about the
+  person you are meeting, and that person is not told you pressed it. The safety button is
+  not an emergency number: when you need help now, call 112.
+- **Sharing your position at the venue**, limited as set out in section 3 of the
+  [privacy policy](/en/tietosuoja).
+- **A safety report** you can file after a date. Only Pilke staff can see it.
+- **A block.** When you cancel a date because you did not feel safe, the two of you are
+  never suggested to each other again, and the other person is not told why.
 - **Venues we have chosen ourselves.**
 
-⚠️ **What we do not promise:** we do not supervise meetings, we are not present at them,
-and we are not responsible for what happens at one. We do not promise that a report is
-acted on within any particular time.
+We do not supervise meetings and we are not present at them. We cannot promise how soon we
+will read a safety report. Use the same judgement you would use meeting any stranger: tell
+somebody where you are going, and leave if it does not feel right.
 
-**[TODO(legal): three things that cannot be written until they are settled:**
+## 7. What you write about other users
 
-- **⚠️ The safety button does not work today.** No text message provider is connected, so
-  every press ends in a message saying it was not delivered and advice to call the
-  emergency number. Terms cannot describe a feature that does not function, and this is the
-  service's only safety mechanism.
-- **Who reads the reports?** The app already promises that a person goes through a
-  contradictory case. Today a report reaches only an administration view that nobody
-  watches.
-- **What do we promise in an emergency?** The recommendation is nothing beyond telling
-  people to call the emergency services.]**
+After a date we ask how it went. You answer by picking an option, and your answer is about a
+named person. The other person cannot see what you answered.
 
-## 9. Notifications
+A safety report is free text, and it is the only free text field in the service. The report is
+never shown to the other user. Write down what happened: the report is kept, and it concerns
+somebody who cannot answer it. A knowingly false report is a breach of these terms.
 
-We send you push notifications about invitations, your date's arrival, and feedback
-prompts. They often carry the other party's nickname. You can turn them off in your phone's
-settings; you will then not learn about invitations in time.
+## 8. When we restrict your use
 
-Sign-in codes and safety messages arrive by text message.
+Some restrictions arise automatically from what has happened in the service. A restriction
+means you are not shown among other people's candidates, or you cannot draw new candidates.
+It can follow from cancelling an agreed date, withdrawing from an invitation, or not turning
+up. No restriction lasts longer than 30 days.
 
-## 10. Consequences
+If the person you were meeting reports that you did not turn up, the restriction follows
+automatically. You can file your own report within 24 hours, which lifts it. You can also ask
+for the decision to be looked at again by writing to the address in section 1, and a person
+will then review it.
 
-Pilke imposes consequences **automatically**, without a person deciding, based on what the
-server observed. A consequence is a slowdown: you do not appear among other people's
-candidates, or you cannot draw new candidates, or both. No consequence lasts more than 30
-days.
+We may also restrict your use or end the agreement if you break these terms, if what you are
+doing puts another user's safety at risk, or if the law requires it. We will tell you why,
+unless telling you would put another user at risk. In a serious case a restriction can take
+effect immediately; otherwise we will give you the chance to put things right first. You can
+appeal a decision to the address in section 1.
 
-A consequence can follow from calling off an agreed date, withdrawing an invitation, or not
-turning up.
+## 9. What notifications we send
 
-⚠️ **One consequence rests on another person's word.** If your date reports that you did
-not turn up, the slowdown is imposed automatically. It lifts by itself only if you file a
-counter-report within a day.
+We send push notifications about invitations, about the other person arriving, and about
+feedback requests. A notification often contains the other person's nickname. You can block
+notifications in your phone's settings, but then you will not hear about invitations in time.
 
-**[TODO(legal): is there an appeal against an automatic consequence? There is none today:
-after 24 hours there is no route to answer, and no address to complain to. Administration
-can delete the row, but nothing in the service says so. The recommendation is that the
-address in section 1 is also this route.]**
+Login codes and safety messages are sent by text message. We cannot leave those unsent,
+because the service does not work without them. We do not send marketing messages.
 
-**[TODO(legal): may Pilke remove a user permanently, and on what grounds? It cannot today:
-consequences are capped at 30 days precisely because a permanent removal is a decision made
-by a person, and that mechanism was never built. Ending an account leaves an empty row that
-the same phone number can register around.]**
+## 10. Who owns what
 
-**[TODO(legal): is the decline consequence described? It exists in code but is switched
-off, and the app promises today, unconditionally, that declining invitations affects
-nothing. Flipping the switch would make that sentence false without a new acceptance.]**
+Pilke, its name, its mark, the app and its content belong to us or to our licensors. You get
+the right to use the app personally, in accordance with these terms. No other rights pass to
+you.
 
-## 11. Duration and ending your account
+Your photograph and anything else you provide stays yours. You give us the right to show it
+in the service to the extent set out in section 4 of the [privacy policy](/en/tietosuoja),
+so that the service works. That right ends when you remove the content or your account.
+
+## 11. What we are liable for
+
+We provide Pilke as it is. We work to keep the service running, but we do not promise that it
+will be available without interruption or free of faults. We may suspend it for maintenance
+and change what it does.
+
+We are not liable for what happens at meetings between users, or for what a user says about
+themselves or leaves out. We are not liable for third-party services such as the phone
+network, the map service or the delivery of push notifications, or for a text message or
+notification that fails to arrive.
+
+We are liable for loss you suffer only where we have caused it by our negligence, and we are
+not liable for indirect loss. We do not limit our liability for intent or gross negligence,
+for personal injury, or for anything else where liability cannot be limited by law. These
+terms do not restrict the rights you have as a consumer under the law.
+
+## 12. When you stop, or we do
 
 The agreement lasts as long as your account does.
 
-**You can end it at any time** by deleting your account in the settings. Deletion is
-immediate, cannot be undone, and has no grace period. What goes and what stays is described
-on [deleting your data](/en/tietojen-poisto) and in section 11 of the
-[privacy policy](/en/tietosuoja).
+**You can stop at any time** by deleting your account in settings. It happens immediately and
+cannot be undone. What goes and what stays is set out on
+[How to delete your data](/en/tietojen-poisto) and in section 9 of the
+[privacy policy](/en/tietosuoja). Agreed dates are cancelled and the other person is
+compensated as with any cancellation; you get no restriction for it.
 
-When you leave, agreed dates are cancelled and the other person is compensated exactly as
-for any cancellation. Nothing is held against you.
+We may end the agreement on the grounds set out in section 8. We may also close the service
+altogether, and we will say so in the app at least a month beforehand.
 
-**We may stop providing the service to you** if you break these terms.
-**[TODO(legal): on what grounds, whether it is notified in advance, and whether there is an
-appeal. See the note in section 10: the mechanism does not exist today.]**
+The agreement ending does not undo a decision we have already made under section 8, and it
+does not lift a block created for a safety reason.
 
-We may also discontinue the service altogether. **[TODO(legal): with how much notice.]**
+## 13. When we change these terms
 
-## 12. Intellectual property
+We may change these terms, for instance when the service changes or the law requires it.
+Every version has a date, shown at the top of this page, and the app shows the same version.
 
-Pilke, its name, its mark, the app and its content are ours or our licensors'. You may use
-the app personally and in accordance with these terms, and no other rights pass to you.
-
-Your photo and anything else you provide stays yours. You grant us the right to show it in
-the service to the extent described in section 5 of the
-[privacy policy](/en/tietosuoja), so that the service works.
-
-## 13. Limitation of liability
-
-**[TODO(legal): the whole section. It cannot be written before the company in section 1 and
-the governing law in section 14 are known, because consumer law bounds what may be agreed
-about liability. What to cover:**
-
-- **the service is provided as it is, with no guarantee of uninterrupted operation;**
-- **we are not responsible for what happens at a meeting between users, nor for what a user
-  says about themselves;**
-- **we are not responsible for third-party services such as maps or push notifications
-  failing;**
-- **a monetary cap, if one is set. Note that the service is free, so the usual "no more
-  than you paid" cap is zero, and against a consumer it is unlikely to hold.]**
+If a change affects your rights or obligations, we will tell you in the app at least two weeks
+before it takes effect and ask you to accept the new version. If you do not accept it, you can
+delete your account. Smaller changes, such as corrected contact details, we publish here
+directly.
 
 ## 14. Governing law and disputes
 
-**[TODO(legal): the governing law and the forum. The suggestion is Finnish law and a Finnish
-court, since the service is Finnish and Finnish-speaking. A consumer additionally has the
-right to take the matter to the Consumer Disputes Board and to sue in the court of their own
-domicile, and terms cannot remove that. **Do not copy arbitration clauses from US terms** —
-they do not bind a Finnish consumer.]**
+Finnish law applies to this agreement.
 
-If you are unhappy with the service, contact us first at the address in section 1.
-
-## 15. Changes to these terms
-
-We may change these terms. Every version has a date, shown at the top of this page, and the
-app displays the same version. We record the version you accepted.
-
-**[TODO(legal): how a change is communicated and how a new version is accepted. The app
-records the accepted version, so the technical side exists; the decision about what triggers
-a new acceptance, and what happens if a user does not accept, has to be made.]**
+If you are unhappy with the service, contact us first at the address in section 1. If that
+does not settle it, you can take the matter to the Consumer Disputes Board
+([kuluttajariita.fi](https://www.kuluttajariita.fi/en/)) or to a district court. As a consumer
+you can bring proceedings in the district court where you live. Advice is available from
+consumer advisory services ([kkv.fi](https://www.kkv.fi/en/consumer-advice/)).

@@ -56,15 +56,20 @@ language, and two languages of one document claiming different versions.
 the backend agree with the site about which version is live — the app pins one in
 `pilke-app/src/constants/legal.ts` and the backend stores what each user accepted.
 
-**Where the drafts' shape comes from.** The section order and the Finnish register
-follow Wolt Oy's own `tietosuojaseloste` and `käyttöehdot` — a Finnish company
-writing Finnish first, rather than a US service translated — with the
-dating-specific sections (identity checks, what one user writes about another,
-consequences) modelled on Tinder's Finnish documents. **The content is written from
-Pilke's own source**, by way of `docs/legal/`, and is copied from neither: their
-prose describes their products and is theirs. Read a `TODO(legal)` as a decision
-nobody can make from the code, and do not fill one in with what a dating app usually
-says.
+**Where the documents' shape comes from.** The section order and the Finnish
+register follow Wolt Oy's own `tietosuojaseloste` and `käyttöehdot` — a Finnish
+company writing Finnish first, rather than a US service translated. Headings are
+questions a reader would ask, in finite verbs rather than `-minen` nominalisations,
+as the rest of the Finnish copy is. **The content is written from Pilke's own
+source**, by way of `docs/legal/`, and is copied from nobody: their prose describes
+their products and is theirs.
+
+The text is complete prose and carries no notes to the drafter: everything a
+reviewer needs that is not part of the text is in
+`docs/legal/review-notes.md` — the five fields to fill in, the legal
+positions taken, and the code changes each document now presumes. **Read that
+before editing either document.** An engineering caveat belongs there or in the
+audit, never in a text a user reads.
 
 `/tietojen-poisto` is a hand-written page rather than a collection entry: it is
 instructions, not a binding text, and it exists because Google Play requires a URL
@@ -214,18 +219,18 @@ Four more things to settle before launch:
 1. **The product has two names in the code.** Onboarding copy calls it
    *Treffit*; the safety SMS and the location notification call it *Pilke*. This
    site says Pilke throughout.
-2. **The legal documents are served, and their text is not written.**
-   `/tietosuoja` and `/kayttoehdot` exist in both languages, the footer links
-   them, and the app opens these same URLs — so the plumbing is done and there is
-   one copy of each document. Both carry `draft: true`, which renders a notice
-   saying the text binds nobody, and every section is a `TODO(legal)` marker
-   naming the section of `docs/legal/` it is written from. **Nothing may
-   clear that flag until a lawyer has read the result.** Two things gate the text
-   itself: the owner decisions collected in Appendix B of `privacy-policy.md`, and
-   a contact address, without which a GDPR Art. 13 notice cannot be published at
-   all. The app's etiquette screen is placeholder text too, and is not one of
-   these documents — house rules are app copy, and folding them into the terms
-   would make a courtesy enforceable.
+2. **The legal documents are written and not reviewed.** `/tietosuoja` and
+   `/kayttoehdot` exist in both languages, the footer links them, and the app opens
+   these same URLs. Both carry `draft: true`, which renders a notice saying the text
+   binds nobody, and **nothing may clear that flag until a lawyer has read the
+   result.** Three things gate publication, all of them in
+   `docs/legal/review-notes.md`: five fields nobody can read from the code — the
+   company's name, business ID, address, a contact address and the host — the legal
+   positions the text takes, and six places where the code has to change because the
+   text now states something as a fact. Without a contact address a GDPR Art. 13
+   notice cannot be published at all. The app's etiquette screen is placeholder text
+   too, and is not one of these documents — house rules are app copy, and folding
+   them into the terms would make a courtesy enforceable.
 3. **Answering question sets does not affect matching yet.** The site says so
    plainly rather than implying otherwise. If that changes, the story test
    section changes with it.

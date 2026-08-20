@@ -1,378 +1,274 @@
 ---
 title: Tietosuojaseloste
-lead: Mitä tietoja Pilke kerää, mihin niitä käytetään ja mitä voit vaatia.
+lead: Mitä tietoja käsittelemme sinusta, mihin niitä käytetään ja mitä voit vaatia.
 version: 2026-09-01
 effective: 2026-09-01
 draft: true
 ---
 
-> **Ohje kirjoittajalle.** Tämä on luonnos. Rakenne ja kieliasu seuraavat suomalaista
-> käytäntöä (Wolt Oy:n tietosuojaseloste) ja deittipalvelun omat kohdat Tinderin
-> suomenkielistä selostetta; **sisältö on kirjoitettu Pilkkeen omasta koodista**
-> `docs/legal/privacy-policy.md`-auditin kautta, ei kopioitu kummastakaan. Jokainen
-> `TODO(legal)` on omistajan tai lakimiehen päätös, jota ei voi lukea koodista — älä
-> täytä niitä sillä, mitä deittisovellus tavallisesti sanoo. Kun lakimies on lukenut
-> valmiin tekstin, poista `draft: true` ja tämä huomautus.
+Pilke on sovellus, jolla sovitaan treffit ja tavataan kasvokkain. Tässä selosteessa
+kerromme, mitä henkilötietoja käsittelemme, kun käytät Pilkettä, kenelle niitä
+luovutetaan ja mitä oikeuksia sinulla on.
 
-## 1. Rekisterinpitäjä ja yhteystiedot
+Seloste koskee myös ihmistä, joka ei itse käytä Pilkettä: sitä, jonka puhelinnumeron
+käyttäjä on tallentanut luotettavaksi henkilöksi.
 
-Henkilötietojesi rekisterinpitäjä on **[TODO(legal): yhtiön virallinen nimi, y-tunnus ja
-osoite]**, joka tarjoaa Pilke-sovelluksen.
+## 1. Kuka käsittelee tietojasi
 
-Tietosuojaa koskevissa asioissa voit ottaa meihin yhteyttä osoitteessa
-**[TODO(legal): sähköpostiosoite — ilman tätä selostetta ei voi julkaista, ks. tietosuoja-asetuksen 13 artikla]**.
+Rekisterinpitäjä on **[TÄYDENNÄ: yhtiön virallinen nimi]**, y-tunnus
+**[TÄYDENNÄ: y-tunnus]**, osoite **[TÄYDENNÄ: osoite]**.
 
-**[TODO(legal): onko tietosuojavastaava nimetty? Jos on, nimi ja yhteystiedot tähän.]**
+Tietosuoja-asioissa voit kirjoittaa osoitteeseen **[TÄYDENNÄ: sähköpostiosoite]**.
+Samaan osoitteeseen lähetät myös oikeuksiasi koskevat pyynnöt (luku 11).
 
-## 2. Keitä tämä seloste koskee
+## 2. Mitä tietoja käsittelemme
 
-Tämä seloste koskee sinua, jos käytät Pilkettä. Se koskee myös kahta ihmistä, jotka
-eivät itse käytä sovellusta:
+### Tili ja profiili
 
-- **Luotettava henkilö**, jonka puhelinnumeron olet tallentanut turvatoimintoa varten.
-  Numero on hänen tietonsa, ei sinun, ja siksi se ei näy kenellekään muulle.
-- **Ihminen, josta joku muu kirjoittaa turvallisuusilmoituksen.** Ilmoituksen kohde ei
-  ole kirjoittanut sitä eikä ole voinut estää sitä.
-
-## 3. Mitä tietoja käsittelemme
-
-### 3.1 Tili ja profiili
-
-| Tieto | Tarkemmin |
+| Tieto | Mihin sitä käytetään |
 | --- | --- |
-| Puhelinnumero | Tunnistat itsesi sillä. Tilillä ei ole salasanaa. |
-| Sähköpostiosoite | Kysytään rekisteröityessä. |
-| Nimimerkki | Näkyy muille käyttäjille. |
-| Syntymäaika | Tallennamme päivän, mutta muille näytetään vain ikä. |
-| Sukupuoli | Näkyy muille käyttäjille. |
-| Valokuva | Näkyy muille käyttäjille. |
-| Kieli | Suomi tai englanti. Ratkaisee, millä kielellä ilmoitukset ja tekstiviestit tulevat. |
-| Luotettavan henkilön puhelinnumero | Vapaaehtoinen. Ei näy kenellekään muulle kuin sinulle. |
-| Treffitoiveet | Kenestä olet kiinnostunut, minkälaisia treffejä haet, ikähaarukka ja kielet. |
-| Treffialue | Kartalta valitsemasi piste ja säde kilometreinä. Et kerro meille, missä asut. |
-| Rekisteröitymisen ajankohta ja tilin tila | |
+| Puhelinnumero | Tunnistaudut sillä. Tilillä ei ole salasanaa, ja kirjautumiskoodi tulee tähän numeroon. |
+| Sähköpostiosoite | Otamme yhteyttä tiliäsi koskevissa asioissa. |
+| Nimimerkki, sukupuoli ja valokuva | Näkyvät treffiehdokkaille. |
+| Syntymäaika | Tarkistamme, että olet täyttänyt 18 vuotta. Muille näytämme vain iän vuosina. |
+| Kieli | Ratkaisee, millä kielellä ilmoitukset ja tekstiviestit tulevat. |
+| Treffitoiveet | Kenestä olet kiinnostunut, minkälaisia treffejä haet, minkä ikäisiä ehdokkaita toivot ja millä kielillä haluat keskustella. |
+| Treffialue | Piste kartalla ja säde kilometreinä: kuinka kauas voit lähteä treffeille. |
+| Luotettavan henkilön puhelinnumero | Vapaaehtoinen. Turvapainike lähettää viestin tähän numeroon. |
 
-Treffitoiveisiin kuuluu myös se, haetko seksiä. **[TODO(legal): lakimiehen arvio siitä,
-onko tämä yhdessä sukupuolen ja toivottujen sukupuolten kanssa tietosuoja-asetuksen 9
-artiklan erityinen henkilötietoryhmä, ja mitä siitä seuraa tälle selosteelle.]**
+### Treffit
 
-### 3.2 Kirjautuminen
+Käsittelemme kalenteriin merkitsemäsi vapaat ajat, sinulle tarjotut ehdokkaat ja
+valintasi niistä, lähetetyt ja saadut kutsut, sovitut ajat ja paikat, perumiset ja niiden
+syyt sekä treffien jälkeen annetut palautteet.
 
-Kirjautumiskoodi on kuusi numeroa, se on voimassa viisi minuuttia ja se lakkaa
-toimimasta viidennen väärän arvauksen jälkeen. Jokaisesta kirjautuneesta laitteesta
-jää oma rivi, ja siitä tallennetaan vain istuntotunnuksen tiiviste — ei tunnusta
-itseään. Istunto vanhenee, kun sitä ei ole käytetty 90 päivään. Rajoitamme myös sitä,
-kuinka usein samaan numeroon voi pyytää koodin.
+### Laite ja ilmoitukset
 
-### 3.3 Kalenteri, treffit ja kipinät
+Jotta voimme lähettää sinulle push-ilmoituksia, tarvitsemme laitteeltasi tunnisteen.
+Tallennamme tunnisteen ja laitteen alustan. Tallennamme myös sen, mitkä ilmoitukset
+olemme lähettäneet ja menivätkö ne perille.
 
-| Tieto | Tarkemmin |
-| --- | --- |
-| Kalenteri | Ajat, jotka olet merkinnyt vapaiksi. |
-| Hyvitetyt ajat | Mistä merkitsemistäsi ajoista olet saanut kipinöitä, myös peruuttamistasi. |
-| Ehdokkaat | Kenet järjestelmä on laskenut sinulle mahdolliseksi treffikumppaniksi. |
-| Ehdokasnostot | Ketkä sinulle on tarjottu ja kenet valitsit. |
-| Treffit ja kutsut | Osapuolet, ehdotettu ja sovittu aika, paikka, tila, sekä kuka perui ja millä syyllä. |
-| Kipinätilikirja | Jokainen kipinöiden liike syineen. |
-| Hidastukset | Seuraukset, joita parhaillaan kannat, ja niiden syy. |
-| Estot | Parit, joita ei enää koskaan ehdoteta toisilleen. |
+Jokaisesta laitteesta, jolla olet kirjautunut, jää oma tietue, jotta voit kirjautua ulos
+yhdeltä laitteelta kerrallaan.
 
-### 3.4 Kysymyssarjat ja palautteet
+### Kysymyssarjat
 
-Vastaat kysymyssarjoihin valitsemalla vaihtoehdon; vapaata tekstiä ei voi kirjoittaa.
-Sama koskee treffien jälkeistä palautetta: vastaus on valinta, ei teksti.
+Vastaat kysymyssarjoihin valitsemalla vaihtoehdon; vapaata tekstiä niihin ei voi
+kirjoittaa. Vastaat vain jos haluat, ja vastaukset eivät tällä hetkellä vaikuta siihen,
+keitä sinulle ehdotetaan.
 
-⚠️ **Kysymyssarjojen vastaukset eivät tällä hetkellä vaikuta siihen, keitä sinulle
-ehdotetaan.** Keräämme ne, mutta ehdokkaita rajaavat sukupuoli, ikä, treffityyppi,
-alue, kalenteri, hidastukset ja estot.
+### Turvallisuustiedot
 
-### 3.5 Ilmoitukset ja laitteet
+Käsittelemme turvallisuusilmoituksen ja sen vapaan tekstin, ilmoituksen siitä, ettei
+toinen osapuoli saapunut treffeille, merkinnän turvapainikkeen painalluksesta ja sen,
+kenelle viesti lähti, sekä eston, joka syntyy, kun joku peruu treffit siksi, ettei
+kokenut oloaan turvalliseksi.
 
-Jokaisesta laitteesta tallennetaan push-tunniste, alusta ja se, milloin tunniste on
-viimeksi rekisteröity. Tunniste päivitetään jokaisella sovelluksen käynnistyksellä.
-Tallennamme myös jonon jokaisesta lähetetystä ilmoituksesta: mistä se kertoo, mihin
-treffeihin se liittyy, ja lähetyksen lopputuloksen laitekohtaisesti. **Ilmoituksen
-sisällössä on usein toisen osapuolen nimimerkki.**
+Turvallisuusilmoitus on palvelun ainoa kohta, johon voi kirjoittaa vapaata tekstiä
+toisesta ihmisestä. Kirjoita siihen vain se, mitä on tapahtunut.
 
-### 3.6 Turvallisuustiedot
+### Mitä emme kerää
 
-- **Turvallisuusilmoitus** ja sen vapaa teksti. Tämä on ainoa paikka koko palvelussa,
-  johon voi kirjoittaa vapaata tekstiä toisesta ihmisestä.
-- **Ilmoitus saapumatta jättämisestä**, molempiin suuntiin.
-- **Merkintä turvapainikkeen painamisesta**, ja kenelle viesti lähti.
-- **Esto**, joka syntyy kun joku peruu treffit siksi, ettei kokenut oloaan
-  turvalliseksi. Syytä ei kerrota toiselle osapuolelle.
+Emme käytä analytiikkaa emmekä mainostunnisteita, emme aseta evästeitä tälle sivustolle,
+emmekä kysy kotiosoitettasi. Palvelussa ei ole chattia, joten käyttäjien välisiä viestejä
+ei ole. Laitteesi sijaintia luemme vain luvussa 3 kuvatulla tavalla.
 
-### 3.7 Mitä emme kerää
+## 3. Miten käsittelemme sijaintia
 
-Tämä kannattaa sanoa ääneen, koska se on poikkeuksellista:
+Sijainti tarkoittaa Pilkkeessä kahta eri asiaa.
 
-- Ei analytiikkaa eikä mainostunnisteita.
-- Ei evästeitä. Pilke ei ole verkkosivu, ja tämä sivusto ei aseta evästeitä.
-- Ei kaatumisraportointia.
-- Ei chattia. Käyttäjät eivät voi lähettää toisilleen viestejä lainkaan.
-- Emme kysy kotiosoitettasi emmekä lue laitteesi sijaintia muulloin kuin luvussa 4.2
-  kuvatulla tavalla.
+### Treffialue
 
-**[TODO(legal): mitä palvelinten ja verkkoinfrastruktuurin lokit tallentavat, esimerkiksi
-IP-osoitteet ja kuinka kauan. Sovellus itse ei kirjoita niitä, mutta konesali kirjoittaa.]**
+Valitset kartalta pisteen ja säteen: kuinka kauas voisit lähteä treffeille. Asetat sen
+itse, eikä se tule laitteesi paikannuksesta. Sen perusteella päätämme, mitkä treffipaikat
+ovat ulottuvillasi ja keitä voimme ehdottaa sinulle. Muut käyttäjät eivät näe aluetta, ja
+voit muuttaa sitä asetuksissa milloin tahansa.
 
-## 4. Sijainti
-
-Sanalla sijainti on Pilkkeessä kaksi täysin eri merkitystä, eikä niitä voi kuvata
-yhdessä.
-
-### 4.1 Treffialue — ei laitteen sijainti
-
-Valitset kartalta pisteen ja säteen: kuinka kauas voisit lähteä treffeille. Se on sinun
-itse asettamasi, se ei tule mistään anturista, ja sen perusteella päätämme mitkä
-treffipaikat ovat ulottuvillasi ja kenet voimme ehdottaa sinulle. **Se ei näy muille
-käyttäjille.** Voit muuttaa sitä asetuksissa milloin tahansa, ja se poistetaan kun
-poistat tilisi.
-
-### 4.2 Sijainnin näyttäminen treffipaikalla
+### Sijainti treffipaikalla
 
 Kun treffit ovat alkamassa, voit näyttää sijaintisi sille, jonka kanssa olet menossa
-treffeille. Tarkoitus on yksi: kaksi toisilleen tuntematonta ihmistä löytävät toisensa
-baarin edestä.
+treffeille, jotta löydätte toisenne. Sijainti on tarkka, ja pyydämme siihen erikseen
+luvan.
 
-**Sijainti on tarkka.** Se ei ole sumennettu, karkeistettu eikä likiarvo, vaan noin
-metrin tarkkuudella se, missä puhelimesi on. Emme kerro tarkkuutta suojana, koska se ei
-ole suoja. Suojia on viisi, ja ne ovat tässä:
+Voit näyttää sijaintisi vain näissä rajoissa:
 
-1. **Treffien pitää olla sovittu ja niillä pitää olla paikka.** Muuten toimintoa ei ole.
-2. **Aikaikkuna on kaksikymmentä minuuttia** — kymmenen minuuttia sovitun alun
-   molemmin puolin. Se ei liity siihen, milloin treffit loppuvat. Ikkunan ulkopuolella
-   sijaintia ei voi näyttää eikä katsoa.
-3. **Enintään 300 metriä treffipaikasta.** Puhelimesi tarkistaa tämän ennen kuin lähettää
-   mitään, ja palvelin tarkistaa sen uudelleen. Sohvalta yritetty sijainti ei siis lähde
-   laitteeltasi lainkaan.
-4. **Yksi vastaanottaja:** se, jonka kanssa olet menossa treffeille. Kukaan muu käyttäjä
-   ei näe sitä, ja sitä ei ole viety ylläpidon näkymiin.
-5. **Poistaminen.** Rivi poistetaan, kun ikkuna sulkeutuu; tätä tekee minuutin välein
-   ajettava työ, joten todellinen elinikä on enintään noin 21 minuuttia. Kun lopetat
-   näyttämisen itse, rivi poistetaan heti — eikä siitä jää merkintää. Puuttuvaa sijaintia
-   ei voi erottaa siitä, ettet olisi koskaan näyttänyt sitä.
+1. Treffit on sovittu ja niillä on paikka.
+2. Aikaikkuna on kaksikymmentä minuuttia: kymmenen minuuttia sovitun alun kummallakin
+   puolella.
+3. Olet enintään 300 metrin päässä treffipaikasta. Laitteesi tarkistaa etäisyyden ennen
+   kuin lähettää mitään, ja palvelin tarkistaa sen uudelleen.
+4. Sijainnin näkee vain se, jonka kanssa olet menossa treffeille. Kukaan muu käyttäjä ei
+   näe sitä, eikä se näy ylläpidon näkymissä.
+5. Sijainti poistetaan, kun aikaikkuna sulkeutuu. Jos lopetat näyttämisen itse, se
+   poistetaan heti, eikä siitä jää merkintää.
 
-Sijaintia ei käytetä mihinkään muuhun. Mikään seuraus, ilmoitus tai hyvitys ei lue sitä.
+Sijaintisi näkyy edelleen, vaikka siirryt sovelluksesta pois tai laitat puhelimen
+taskuun. Kerromme tämän myös sovelluksessa, kun pyydämme lupaa. Sijaintia ei käytetä
+mihinkään muuhun kuin siihen, että löydätte toisenne.
 
-Näyttäminen jatkuu, vaikka poistut näkymästä tai laitat puhelimen taskuun — se on
-tarkoitus, ja siksi kerromme sen etukäteen sovelluksessa. Emme pyydä lupaa sijaintiin
-taustalla muuten kuin tämän kahdenkymmenen minuutin ajan.
+## 4. Mitä muut käyttäjät näkevät sinusta
 
-⚠️ **Yksi tarkennus, joka on rehellistä sanoa.** Kun näytät sijaintisi ensimmäisen
-kerran, toiselle osapuolelle lähtee ilmoitus, jonka otsikossa on nimimerkkisi. Itse
-sijaintia ei ole ilmoituksessa, mutta tieto siitä, että saavuit paikalle, kulkee
-push-palvelun ja Googlen kautta (luku 8).
+Toinen käyttäjä näkee nimimerkkisi, ikäsi, sukupuolesi ja valokuvasi. Lisäksi hän näkee
+sovitun ajan ja paikan, ne ajat, joita olet tarjonnut hänelle, ja treffipaikalla
+sijaintisi, jos näytät sen.
 
-## 5. Mitä muut käyttäjät näkevät sinusta
+Toinen käyttäjä ei näe puhelinnumeroasi, sähköpostiosoitettasi, syntymäaikaasi,
+luotettavan henkilön numeroa, treffialuettasi, treffitoiveitasi, sinulle asetettuja
+rajoituksia eikä palautteita, joita annat tai jotka sinusta annetaan.
 
-Toinen käyttäjä näkee **nimimerkkisi, ikäsi, sukupuolesi ja valokuvasi** — ei muuta.
-Lisäksi hän näkee valitun treffipaikan ja ajan, tarjoamasi ajat, ja aikaikkunan
-sisällä treffipaikalla sijaintisi, jos näytät sen.
+## 5. Miksi käsittelemme tietojasi ja millä perusteella
 
-Toinen käyttäjä **ei koskaan näe** puhelinnumeroasi, sähköpostiosoitettasi,
-syntymäaikaasi, luotettavan henkilön numeroa, treffialuettasi, toiveitasi,
-kipinäsaldoasi, hidastuksiasi, palautteitasi eikä ilmoituksia.
+| Tarkoitus | Oikeusperuste |
+| --- | --- |
+| Tilin luonti ja kirjautuminen | Sopimus |
+| Treffiehdokkaiden etsiminen toiveidesi, alueesi ja kalenterisi perusteella | Sopimus |
+| Kutsut, ajan ja paikan sopiminen sekä perumiset | Sopimus |
+| Ilmoitukset kutsuista, saapumisesta ja palautepyynnöistä | Sopimus |
+| Sijaintisi näyttäminen treffipaikalla | Suostumus, jonka voit perua lopettamalla näyttämisen |
+| Vastaukset kysymyssarjoihin | Suostumus, jonka annat vastaamalla |
+| Turvallisuus: estot, ilmoitukset, turvapainike ja rajoitukset | Oikeutettu etu — käyttäjien turvallisuus |
+| Luotettavan henkilön puhelinnumero | Oikeutettu etu — käyttäjän turvallisuus |
+| Käyttäjätuki ja väärinkäytösten selvitys | Oikeutettu etu — palvelun asianmukainen käyttö |
 
-## 6. Miksi käsittelemme tietojasi
+Treffitoiveistasi voi ilmetä, oletko kiinnostunut samasta vai eri sukupuolesta ja haetko
+seksiä. Nämä ovat erityisiin henkilötietoryhmiin kuuluvia tietoja, ja käsittelemme niitä
+vain nimenomaisella suostumuksellasi, jonka annat, kun asetat toiveet. Voit muuttaa
+toiveita tai poistaa tilisi milloin tahansa.
 
-1. Tilin luonti ja kirjautuminen.
-2. Treffiehdokkaiden etsiminen: sukupuoli, ikä, toiveet, alue, kalenteri, hidastukset ja
-   estot.
-3. Treffien sopiminen ja kulku: kutsut, ajan ja paikan valinta, peruminen.
-4. Sen auttaminen, että löydätte toisenne treffipaikalla (luku 4.2).
-5. Ilmoitukset kutsuista, saapumisesta ja palautepyynnöistä.
-6. Turvallisuus: estot, ilmoitukset, turvapainike ja niistä seuraavat hidastukset.
-7. Palvelun reilu käyttö: hidastukset perumisista ja saapumatta jättämisistä, ja
-   kipinätalous, joka rajaa kutsujen tahtia.
-8. Kysymyssarjat. Keräämme ne nyt; ehdokkaisiin ne eivät vielä vaikuta (luku 3.4).
-9. Käyttäjätuki ja väärinkäytösten selvittäminen.
+Turvallisuusilmoituksen vapaa teksti voi kuvata tekoja, jotka ovat rikoksia. Käsittelemme
+tällaista tietoa vain käyttäjien suojaamiseksi ja tarvittaessa oikeudellisen vaateen
+esittämiseksi tai siihen vastaamiseksi.
 
-## 7. Käsittelyn oikeusperuste
+Kun peruste on oikeutettu etu, olemme punninneet etumme ja sinun oikeutesi. Saat
+punninnasta selvityksen luvun 1 osoitteesta.
 
-**[TODO(legal): oikeusperuste jokaiselle luvun 6 tarkoitukselle. Tätä ei voi lukea
-koodista, ja väärä arvaus on kallis. Erikseen ratkaistavat kohdat:**
+## 6. Kenelle luovutamme tietoja
 
-- **ydinpalvelu (1–5): sopimus vai suostumus;**
-- **sijainnin näyttäminen (4): erillinen suostumus vai sopimuksen välttämättömyys, jonka
-  päällä on vahvistus;**
-- **se, mitä yksi käyttäjä kirjoittaa toisesta: kohde ei ole suostunut eikä voi. Oikeutettu
-  etu on ilmeinen ehdokas ja vaatii dokumentoidun tasapainotestin;**
-- **luotettavan henkilön numero: koodin oletus on, että numeron tallentajalla on lupa
-  siihen. Oletus ei ole oikeusperuste;**
-- **treffityyppi ja sukupuolitoiveet, jos ne ovat 9 artiklan tietoja (luku 3.1);**
-- **turvallisuusilmoituksen vapaa teksti, ja 10 artikla jos se kuvaa rikosta.]**
-
-## 8. Kenelle luovutamme tietoja
-
-**Toisille käyttäjille** luvussa 5 kuvatun verran.
-
-**Luotettavalle henkilöllesi** yksi tekstiviesti, jossa on nimimerkkisi, jos painat
-turvapainiketta. Viestissä ei ole sijaintia, treffipaikkaa eikä treffikumppaniasi.
-
-**Push-palvelulle (Expo, 650 Industries, Inc., Yhdysvallat)** laitteesi push-tunniste
-sekä ilmoituksen otsikko, teksti ja sisältö. Kolmessa ilmoituslajissa neljästä
-sisällössä on toisen osapuolen nimimerkki. Expo välittää ilmoituksen edelleen
-**Googlen FCM-palveluun**, joka on siten myös vastaanottaja.
-**[TODO(legal): sopimuskumppani, onko käsittelysopimus allekirjoitettu, ja siirron
-peruste.]**
-
-**Tekstiviestien välittäjälle (GatewayAPI, Tanska)** vastaanottajan puhelinnumero ja
-viestin sisältö. Kaksi lajia: kirjautumiskoodi omaan numeroosi, ja turvaviesti
-luotettavan henkilön numeroon. Palvelu on EU:ssa. ⚠️ **Tekstiviestejä ei tällä hetkellä
-lähetetä lainkaan mistään ympäristöstä**, koska välittäjää ei ole vielä kytketty.
-**[TODO(legal): onko käsittelysopimus allekirjoitettu.]**
-
-**Karttapalvelulle (OpenFreeMap)** laitteesi IP-osoite ja ne karttaruudut, joita se
-pyytää — eli mitä aluetta katsot kartalla. Pyyntö lähtee laitteeltasi, ei
-palvelimeltamme. Tämä koskee treffialueen valintaa, kutsun karttaa ja treffipaikan
-karttaa. **[TODO(legal): palvelun ylläpitäjä, sijaintimaa ja se, onko käsittelysopimus
-mahdollinen ilmaisen palvelun kanssa. Jos ei, karttapalvelu on vaihdettava.]**
-
-**Konesalille [TODO(legal): palveluntarjoaja, maa ja käsittelysopimus]**. Kaikki tämän
-palvelun henkilötiedot ovat yhdessä tietokannassa, ja valokuvat sen vieressä.
-
-**Pilkkeen työntekijöille** ylläpitonäkymän kautta. Sijaintirivit eivät näy siellä
-lainkaan. Ilmoitukset saapumatta jättämisestä ovat vain luettavia, myös meille.
-**[TODO(legal): kuinka monella henkilöllä on ylläpito-oikeus.]**
-
-**Google Playlle** se, mitä se sovelluksen jakelijana saa.
+| Vastaanottaja | Mitä se saa |
+| --- | --- |
+| Toiset käyttäjät | Sen, mitä luvussa 4 on kuvattu. |
+| Luotettava henkilösi | Yhden tekstiviestin, jossa on nimimerkkisi, jos painat turvapainiketta. Viestissä ei ole sijaintiasi, treffipaikkaa eikä treffikumppaniasi. |
+| Expo (650 Industries, Inc., Yhdysvallat) | Laitteesi push-tunnisteen ja ilmoituksen sisällön. Expo välittää ilmoituksen edelleen Googlen FCM-palveluun. |
+| GatewayAPI (Tanska) | Puhelinnumeron ja viestin sisällön, kun lähetämme kirjautumiskoodin tai turvaviestin. |
+| OpenFreeMap (Hyperknot Software Kft., Unkari) | Laitteesi IP-osoitteen ja sen, mitä karttaruutuja se pyytää. Pyyntö lähtee laitteeltasi, ei palvelimeltamme. Palvelun oman selosteen mukaan se ei tallenna IP-osoitteita. |
+| Palvelinsalimme, **[TÄYDENNÄ: palveluntarjoaja]**, Suomi | Kaikki palvelun tiedot ovat sen palvelimilla. |
+| Pilkkeen henkilöstö | Sen, mitä ylläpitonäkymä näyttää, kun se on tarpeen käyttäjätuen tai turvallisuusilmoituksen käsittelyn vuoksi. Näytettyjä sijainteja ylläpitonäkymä ei näytä. |
+| Google Play | Sen, mitä sovelluskauppa saa sovelluksen jakelijana. |
 
 Emme myy tietojasi emmekä luovuta niitä markkinointiin.
 
-## 9. Siirto EU:n ulkopuolelle
+## 7. Milloin tiedot siirtyvät Euroopan ulkopuolelle
 
-Push-ilmoitukset kulkevat **Yhdysvaltoihin** (Expo) ja sieltä Googlelle. Tämä on ainoa
-siirto, joka varmasti tapahtuu tänään. **[TODO(legal): siirron peruste.]**
+Push-ilmoitukset kulkevat Expon kautta Yhdysvaltoihin ja sieltä Googlen FCM-palveluun.
+Siirto perustuu Euroopan komission hyväksymiin vakiolausekkeisiin.
 
-Tekstiviestien välittäjä on Tanskassa, eli EU:ssa. Konesalin ja karttapalvelun maat ovat
-**[TODO(legal)]**.
+Muut vastaanottajat ovat EU- tai ETA-maissa, ja palvelimet, joilla tietosi ovat, ovat
+Suomessa.
 
-## 10. Kuinka kauan säilytämme tietoja
+## 8. Kuinka kauan säilytämme tietoja
 
-Nämä poistuvat itsestään:
-
-| Tieto | Sääntö |
+| Tieto | Säilytysaika |
 | --- | --- |
-| Näytetty sijainti | Kun aikaikkuna sulkeutuu; poistotyö ajetaan minuutin välein. Myös heti, kun lopetat näyttämisen. |
-| Ilmoitus siitä, että olet paikalla | Samalla poistotyöllä, myös jo perille menneet. |
-| Kirjautumiskoodi | Korvautuu uudella; lakkaa toimimasta viidessä minuutissa. |
-| Taustatöiden tulokset | 7 vuorokautta, epäonnistuneet 30. |
+| Tili ja profiili | Niin kauan kuin tilisi on olemassa. |
+| Sijainti, jonka olet näyttänyt treffipaikalla | Poistetaan, kun aikaikkuna sulkeutuu, tai heti, kun lopetat näyttämisen. |
+| Kirjautuneet laitteet | 90 päivää siitä, kun laitetta on viimeksi käytetty. |
+| Kalenterimerkinnät ja vastaukset kysymyssarjoihin | Tilin ajan; poistetaan tilin mukana. |
+| Treffit, kutsut ja perumiset | 12 kuukautta treffien ajankohdasta. |
+| Palautteet | 12 kuukautta treffien ajankohdasta. |
+| Ilmoitukset saapumatta jättämisestä ja niistä seuraavat rajoitukset | 12 kuukautta ilmoituksesta. |
+| Lähetetyt ilmoitukset ja tekstiviestien lähetystiedot | 90 päivää. |
+| Turvallisuusilmoitukset, niiden vapaa teksti ja merkinnät turvapainikkeen painalluksista | 5 vuotta ilmoituksesta. |
+| Esto, joka on syntynyt turvallisuussyystä | Toistaiseksi. Se ei purkaudu ajan kuluessa eikä sillä, että jompikumpi poistaa tilinsä. |
+| Merkintä siitä, minkä version ehdoista olet hyväksynyt | Niin kauan kuin voimme joutua osoittamaan, mihin käsittely on perustunut. |
 
-⚠️ **Kaikkea muuta säilytetään tällä hetkellä ilman määräaikaa.** Treffit, kipinöiden
-liikkeet, kalenterihyvitykset, hidastukset, estot, ilmoitukset saapumatta jättämisestä,
-turvallisuusilmoitukset vapaine teksteineen, turvaviestit, ehdokasnostot ja palautteet
-jäävät. Mikään ajastettu työ ei poista niitä.
+Poistamme tiedot tai muutamme ne tunnistamattomiksi määräajan päätyttyä. Jos meillä on
+kesken käyttäjätukiasia, turvallisuusilmoituksen selvitys tai oikeudellinen vaade,
+säilytämme siihen liittyvät tiedot niin kauan kuin asian hoito vaatii.
 
-**[TODO(legal): säilytysaika jokaiselle yllä olevalle ryhmälle. Tietosuoja-asetuksen 5
-artiklan 1 kohdan e alakohta vaatii sen, eikä koodissa ole yhtäkään. Kaksi kiireellisintä
-ovat turvallisuusilmoituksen vapaa teksti ja pysyvä esto, koska molemmat koskevat ihmistä,
-joka ei ole kirjoittanut niitä.]**
+## 9. Kun poistat tilisi
 
-## 11. Mitä tapahtuu, kun poistat tilin
+Voit poistaa tilisi sovelluksen asetuksissa. Poisto tapahtuu heti, eikä sitä voi
+peruuttaa. Kerromme tarkemmin sivulla [Näin poistat tietosi](/tietojen-poisto).
 
-Voit poistaa tilisi sovelluksen asetuksista. Poisto tapahtuu heti, sitä ei voi peruuttaa,
-eikä sille ole harkinta-aikaa. Kerromme erikseen sivulla
-[tietojen poistaminen](/tietojen-poisto), mikä poistuu ja mikä jää.
+Poistamme puhelinnumeron, sähköpostiosoitteen, nimimerkin, syntymäajan, sukupuolen,
+valokuvan, luotettavan henkilön numeron, treffitoiveet, treffialueen, kalenterimerkinnät
+ja vastaukset kysymyssarjoihin. Valokuva poistuu myös tallennustilasta, ja kirjautumiset
+katkeavat kaikilta laitteilta samalla hetkellä.
 
-Lyhyesti: **tilin tiedot pyyhitään, mutta rivi jää.** Puhelinnumero, sähköpostiosoite,
-nimimerkki, syntymäaika, sukupuoli, kuva, luotettavan henkilön numero, toiveet ja
-treffialue poistetaan, ja kuva poistetaan myös tallennustilasta. Kirjautumiset katkeavat
-kaikilta laitteilta samalla hetkellä.
+Kaksi ryhmää jää:
 
-Jää kaksi ryhmää, eikä kumpaakaan voi poistaa:
+- **Tiedot, jotka ovat yhtä lailla toisen osapuolen tietoja.** Menneet treffit, niistä
+  annetut palautteet ja ilmoitukset saapumatta jättämisestä. Toinen osapuoli näkee sinun
+  tilallasi merkinnän *Joku*.
+- **Turvallisuuspäätökset, joita lähteminen ei kumoa.** Turvallisuusilmoitukset ja esto,
+  joka on syntynyt siitä, ettei joku kokenut oloaan turvalliseksi.
 
-- **Tiedot, jotka ovat yhtä lailla toisen osapuolen tietoja.** Treffit, palautteet,
-  ilmoitukset saapumatta jättämisestä ja turvallisuusilmoitukset. Toinen osapuoli näkee
-  sinun tilallasi *Joku*.
-- **Turvallisuuspäätökset, joita lähteminen ei saa kumota.** Esto, joka on syntynyt siitä,
-  ettei joku kokenut oloaan turvalliseksi, pysyy. Muuten palvelusta lähteminen olisi tapa
-  purkaa toisen ihmisen turvallisuuspäätös.
+Molempia säilytetään luvun 8 mukaisen ajan, ja nimesi ei ole niissä enää kiinni. Jäljelle
+jää myös merkintä siitä, että tili on ollut olemassa, jotta emme luo samalle numerolle
+kahta tiliä. Voit rekisteröityä samalla numerolla uudelleen; saat tyhjän tilin, eikä
+mikään yhdistä sitä vanhaan.
 
-Lisäksi jäävät kipinöiden liikkeet, jotta saldot pysyvät täsmäävinä, ja merkintä siitä,
-että tili on ollut olemassa.
+## 10. Miten teemme automaattisia päätöksiä
 
-Voit rekisteröityä samalla puhelinnumerolla uudelleen. Saat tyhjän tilin, eikä mikään
-yhdistä sitä vanhaan.
+Ehdokkaiden etsiminen on automaattista, mutta se tuottaa vain ehdotuksen. Sinä päätät,
+kenelle lähetät kutsun, ja voit jättää jokaisen ehdokkaan väliin.
 
-## 12. Sinun oikeutesi
+Automaattisesti syntyvät myös rajoitukset, jotka seuraavat siitä, että peruut sovitut
+treffit tai jätät saapumatta. Rajoitus tarkoittaa, ettet näy muiden ehdokkaissa tai ettet
+voi nostaa uusia ehdokkaita, ja se kestää enintään 30 päivää.
+
+Yksi rajoitus perustuu toisen käyttäjän ilmoitukseen: jos treffikumppanisi ilmoittaa,
+ettet saapunut, rajoitus tulee automaattisesti. Voit tehdä oman ilmoituksen vuorokauden
+sisällä, jolloin rajoitus purkautuu. Voit myös pyytää, että päätös arvioidaan uudelleen,
+kirjoittamalla luvun 1 osoitteeseen. Silloin asian käy läpi ihminen.
+
+Turvallisuusilmoitus ei aiheuta rajoitusta automaattisesti.
+
+## 11. Mitä oikeuksia sinulla on
 
 Sinulla on oikeus
 
-- **saada pääsy tietoihisi**;
-- **oikaista** virheelliset tiedot;
-- **poistaa** tiedot siltä osin kuin laki sen sallii (luku 11);
-- **rajoittaa** käsittelyä;
-- **vastustaa** käsittelyä;
-- **siirtää tiedot** järjestelmästä toiseen;
-- **peruuttaa suostumus**, jos käsittely perustuu siihen;
-- **olla joutumatta pelkästään automaattisen päätöksenteon kohteeksi** (luku 15).
+- saada pääsy tietoihisi ja saada niistä jäljennös;
+- oikaista virheelliset tiedot;
+- poistaa tiedot siltä osin kuin laki sen sallii (luku 9);
+- rajoittaa käsittelyä ja vastustaa sitä, kun peruste on oikeutettu etu;
+- siirtää antamasi tiedot järjestelmästä toiseen;
+- perua suostumus, kun käsittely perustuu siihen;
+- olla joutumatta pelkästään automaattiseen päätöksentekoon perustuvan päätöksen
+  kohteeksi (luku 10).
 
-Osan näistä voit tehdä itse: profiilisi ja toiveesi näkyvät ja muuttuvat asetuksissa,
-sijainnin näyttämisen lopetat yhdellä painalluksella, ja tilin poistat asetuksista.
+Osan näistä hoidat itse: muutat profiilin ja toiveet asetuksissa, lopetat sijainnin
+näyttämisen yhdellä painalluksella ja poistat tilin asetuksissa. Muut pyynnöt lähetät
+luvun 1 osoitteeseen. Varmistamme, että pyyntö tulee sinulta, ja vastaamme kuukauden
+kuluessa. Jos pyyntö on laaja, voimme jatkaa määräaikaa kahdella kuukaudella ja kerromme
+siitä sinulle.
 
-Rehellisyyden nimissä kaksi rajoitusta, jotka ovat totta tänään:
+Jos joku toinen käyttäjä on tehnyt sinusta turvallisuusilmoituksen, et näe sen sisältöä.
+Muuten ilmoituksen tekijä olisi tunnistettavissa ja ilmoituksen tekeminen kävisi
+mahdottomaksi. Voit silti pyytää, että selvitämme, käsittelemmekö sinusta tällaista
+tietoa.
 
-- **Tietoja ei saa ulos koneellisesti.** Sovelluksessa ei ole vientitoimintoa, joten
-  pyyntö hoidetaan käsin.
-- **Et näe, mitä joku muu on kirjoittanut sinusta**, eikä sitä voi oikaista. Ilmoitukset
-  ovat vain luettavia myös meille.
+### Valitus valvontaviranomaiselle
 
-Pyynnöt osoitetaan luvun 1 yhteysosoitteeseen.
-**[TODO(legal): miten pyytäjä tunnistetaan ja missä ajassa vastaamme.]**
+Jos katsot, että käsittelemme tietojasi lainvastaisesti, voit tehdä valituksen
+tietosuojavaltuutetun toimistolle: PL 800, 00531 Helsinki, puhelinvaihde 029 566 6700,
+[tietosuoja.fi](https://tietosuoja.fi/). Toivomme, että otat ensin yhteyttä meihin.
 
-## 13. Miten teet valituksen
+## 12. Miten suojaamme tietosi
 
-Jos katsot, että käsittelemme henkilötietojasi tietosuojalainsäädännön vastaisesti, voit
-tehdä valituksen tietosuojavaltuutetun toimistolle.
+Tilillä ei ole salasanaa: tunnistaudut puhelinnumerollasi ja kertakoodilla, ja jokainen
+laite kirjautuu erikseen. Istuntotunnuksesta tallennamme vain tiivisteen, ja puhelimessa
+tunnus on käyttöjärjestelmän suojatussa säilössä.
 
-Tietosuojavaltuutetun toimisto, PL 800, 00531 Helsinki. Puhelinvaihde 029 566 6700.
-Lisätiedot ja lomakkeet: [tietosuoja.fi](https://tietosuoja.fi/).
+Yhteydet sovelluksen ja palvelimen välillä on salattu. Ylläpito-oikeudet on rajattu
+niihin, jotka tarvitsevat niitä työssään, ja näytettyjä sijainteja ylläpitonäkymä ei näytä
+lainkaan.
 
-Toivomme, että otat ensin yhteyttä meihin, mutta valituksen voi tehdä myös suoraan.
+## 13. Kun muutamme tätä selostetta
 
-## 14. Tietoturva
+Jokaisella versiolla on päivämäärä, ja se näkyy tämän sivun alussa. Sovellus näyttää saman
+version ehtojen yhteydessä ja tallentaa sen version, jonka olet hyväksynyt.
 
-Kerromme tässä mitä teemme, emmekä anna takuita.
-
-- **Tilillä ei ole salasanaa.** Kirjautuminen tapahtuu kertakoodilla puhelinnumeroosi.
-  Istuntotunnuksesta tallennetaan vain tiiviste, ei tunnusta itseään, ja jokainen laite
-  kirjautuu erikseen.
-- Puhelimessa istuntotunnus on käyttöjärjestelmän suojatussa säilössä, ja se on rajattu
-  pois laitteen varmuuskopioista.
-- Ylläpito-oikeudet ovat rajattuja: sijaintirivejä ei näytetä ylläpidossa lainkaan, ja
-  ilmoitukset saapumatta jättämisestä ovat vain luettavia.
-- ⚠️ **Valokuvat ovat osoitteessa, joka ei vaadi kirjautumista.** Kuvan osoitteen
-  tunteva voi hakea sen. **[TODO(legal): korjataanko tämä ennen julkaisua vai kerrotaanko
-  se tässä.]**
-
-**[TODO(legal): tässä selosteessa ei sanota mitään salauksesta siirron aikana, koska
-Android-sovellus sallii tällä hetkellä myös salaamattoman yhteyden. Poistakaa asetus
-ennen julkaisua ja lisätkää lause, tai jättäkää lause pois.]**
-
-## 15. Automaattiset päätökset
-
-Ehdokkaiden etsiminen on automaattista, mutta se tuottaa **ehdotuksen**: kolme ehdokasta,
-jotka voit ohittaa.
-
-Automaattisia ja sinulle kielteisiä ovat **hidastukset**. Ne tarkoittavat, ettet näy
-muiden ehdokkaissa tai ettet voi nostaa uusia ehdokkaita, ja ne seuraavat perumisista ja
-saapumatta jättämisistä.
-
-⚠️ Yksi näistä perustuu **toisen ihmisen sanaan**: jos sinusta tehdään ilmoitus
-saapumatta jättämisestä, hidastus tulee automaattisesti ja purkautuu itsestään vain, jos
-teet vastailmoituksen vuorokauden sisällä. **[TODO(legal): lakimiehen arvio 22 artiklasta,
-ja se, riittääkö vastailmoitus ihmisen tekemäksi arvioksi.]**
-
-Turvallisuusilmoitus ei aiheuta mitään automaattisesti. Sen käsittelee ihminen.
-
-## 16. Muutokset selosteeseen
-
-Jokaisella versiolla on päivämäärä, ja se näkyy tämän sivun alussa. Sovellus näyttää
-saman version numeron ehtojen yhteydessä, ja tallennamme sen version, jonka olet
-hyväksynyt.
-
-**[TODO(legal): miten muutoksesta kerrotaan, ja pitääkö uusi versio hyväksyä vai
-riittääkö että se näytetään. Huomaa, että tilit jotka on luotu ennen ensimmäistä
-julkaistua versiota eivät ole hyväksyneet mitään, ja se on tallennettu tyhjänä.]**
+Jos muutos vaikuttaa siihen, mitä tiedoillasi tehdään, kerromme siitä sovelluksessa ennen
+kuin muutos tulee voimaan. Vähäisemmät muutokset, kuten korjatut yhteystiedot,
+julkaisemme suoraan tällä sivulla.
