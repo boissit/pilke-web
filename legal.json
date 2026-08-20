@@ -1,0 +1,16 @@
+{
+  "tietosuoja": {
+    "version": "2026-09-01",
+    "effective": "2026-09-01",
+    "draft": true,
+    "fi": "https://pilke.app/tietosuoja",
+    "en": "https://pilke.app/en/tietosuoja"
+  },
+  "kayttoehdot": {
+    "version": "2026-09-01",
+    "effective": "2026-09-01",
+    "draft": true,
+    "fi": "https://pilke.app/kayttoehdot",
+    "en": "https://pilke.app/en/kayttoehdot"
+  }
+}
