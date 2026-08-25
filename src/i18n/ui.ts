@@ -244,6 +244,16 @@ const fi = {
   // back it up are not one sentence somebody has to re-translate together.
   'cta.privacy': 'Lue tietosuojaselosteesta, mitä osoitteellesi tapahtuu.',
 
+  /*
+    The three states the form has beyond its own copy. `closed` stands in for
+    `cta.note` while the privacy statement is a draft — the note promises what we
+    do with an address, and promising that before the statement exists is the one
+    thing this form must not do.
+  */
+  'cta.closed': 'Betajono avautuu pian.',
+  'cta.sending': 'Lähetetään…',
+  'cta.failed': 'Liittyminen ei onnistunut. Yritä hetken kuluttua uudelleen.',
+
   'faq.title': 'Kysyttyä',
   'faq.lead': 'Lyhyet vastaukset siihen, mitä Pilkkeestä useimmin kysytään.',
   'faq.chat.q': 'Voiko sovelluksessa viestitellä?',
@@ -332,6 +342,8 @@ const fi = {
     'Käynnissä oleva hidastus, jos sinulla on sellainen. Lähteminen ei lyhennä sitä.',
   'legal.deletion.kept.eight':
     'Ketkä ehdokkaat sinulle on tarjottu, ja keiden ehdokkaissa olet ollut.',
+  'legal.deletion.kept.nine':
+    'Virhe- ja suorituskykytiedot, joissa on tilisi numero. Ne eivät poistu tilin mukana, vaan häviävät itsestään 30 päivän kuluessa.',
 
   'legal.deletion.others.title': 'Mitä tapahtuu sovituille treffeille',
   'legal.deletion.others.body':
@@ -542,6 +554,9 @@ const en: Record<keyof typeof fi, string> = {
   'cta.note':
     'We use the address for the beta invitation and nothing else. We do not pass it on.',
   'cta.privacy': 'The privacy policy says what happens to your address.',
+  'cta.closed': 'The waitlist opens soon.',
+  'cta.sending': 'Sending…',
+  'cta.failed': 'That did not go through. Please try again in a moment.',
 
   'faq.title': 'Questions',
   'faq.lead': 'Short answers to what people ask about Pilke most often.',
@@ -630,6 +645,8 @@ const en: Record<keyof typeof fi, string> = {
     'Any slowdown you are currently serving. Leaving does not shorten it.',
   'legal.deletion.kept.eight':
     'Which candidates you were offered, and whose candidates you appeared among.',
+  'legal.deletion.kept.nine':
+    'Error and performance records, which carry your account number. They do not go with the account, but clear on their own within 30 days.',
 
   'legal.deletion.others.title': 'What happens to dates you agreed to',
   'legal.deletion.others.body':

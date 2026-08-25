@@ -18,7 +18,10 @@
  * The kept list has one entry per row of §11.4's table, in that order, and it is
  * meant to stay that way: a row added to `RETAINED_COLUMNS` or left untouched by
  * `delete_account` and not named here makes this page quietly incomplete, which
- * is the one failure it exists to prevent.
+ * is the one failure it exists to prevent. The last entry is the case that rule
+ * would otherwise miss: error and performance records live outside the database,
+ * so `delete_account` never sees them and they age out on a clock of their own —
+ * which is exactly why nothing but this list tells the reader they stay.
  */
 import PageHead from '../../components/PageHead.astro';
 import { legalHref } from '../../i18n/legal';
@@ -49,6 +52,7 @@ const kept = [
   t('legal.deletion.kept.six'),
   t('legal.deletion.kept.seven'),
   t('legal.deletion.kept.eight'),
+  t('legal.deletion.kept.nine'),
 ];
 ---
 

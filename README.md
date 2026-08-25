@@ -234,15 +234,22 @@ Four more things to settle before launch:
 3. **Answering question sets does not affect matching yet.** The site says so
    plainly rather than implying otherwise. If that changes, the story test
    section changes with it.
-4. **The waitlist form submits nowhere.** It is the footer, in
-   `SiteFooter.astro`, so
-   that a reader who came to `turvallisuus` can join from where they are and the
-   front page's hero button is an anchor down to it. It has no `action` and no
-   handler, and it is the only thing on the site that asks the reader for
-   anything. Wire it up or take it out before the site is public.
-   It needs somewhere to put the addresses, and it links to `/tietosuoja`
-   because this form is the first thing here that collects a personal detail —
-   but that link is only a link until the document behind it is finished, so
-   point 2 still gates this. The copy promises the address is used for the beta
-   invitation and nothing else, and is not passed on; whatever it is wired to
-   has to make that true.
+4. **The waitlist form posts to PostStack, and opens itself when the privacy
+   statement is finished.** It is the footer, in `SiteFooter.astro`, so that a
+   reader who came to `turvallisuus` can join from where they are and the front
+   page's hero button is an anchor down to it. It is the only thing on the site
+   that asks the reader for anything.
+
+   The address goes to a hosted signup form — a public, unauthenticated endpoint —
+   so there is no server here and no key in the page. One form per language, each
+   bound to its own subscription topic, because their endpoint keeps the address
+   and drops everything else: the *list* is what carries the language. The submit
+   handler is inline and first-party, so *no analytics, no cookies, no
+   third-party script* above still holds.
+
+   **Point 2 gates this in code rather than in a note.** While `tietosuoja`
+   carries `draft: true` the field and the button are disabled and the note reads
+   `cta.closed`; clearing that flag is the whole of what opens the form. The copy
+   promises the address is used for the beta invitation and nothing else — so
+   nothing else is sent to it, and there is deliberately no welcome mail.
+   `pilke-app/docs/plans/email.md` argues the arrangement.

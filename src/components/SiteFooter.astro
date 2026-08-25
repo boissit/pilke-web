@@ -4,13 +4,23 @@
  * has to be reachable from the safety page and the detail page and not just from
  * the foot of the front page; the hero's button is an anchor down to this.
  *
- * WARNING: **this form submits nowhere.** It has no `action` and no handler, so
- * it is markup and copy waiting for an endpoint, and it must be wired up or
- * removed before the site is public. It links to the privacy statement, which is
- * the condition on collecting an address at all — but that document is still a
- * draft, so the link is not yet a policy. What remains is recorded in `README.md`:
- * somewhere to put the addresses, and a finished statement at the other end of
- * that link.
+ * The form posts straight to PostStack's hosted signup form — a public,
+ * unauthenticated endpoint — so this static site needs no server of its own and
+ * no key in the page. One form per language, each bound to its own subscription
+ * topic, because their submit endpoint keeps the address and drops everything
+ * else: a `locale` property sent alongside is not stored, so the *list* is what
+ * carries the language. `docs/plans/email.md` in `pilke-app` argues the whole
+ * arrangement.
+ *
+ * **Whether the form takes an address is one explicit switch**, `waitlistOpen`
+ * below, and not a read of the privacy statement's `draft` flag. The two
+ * questions are different — whether the text is signed off, and whether we are
+ * willing to collect an address against it — and clearing `draft` is the act of
+ * signing the text off, so it cannot double as the thing that opens a form.
+ *
+ * The submit handler is this site's only script. It is inline and first-party, so
+ * *no analytics, no cookies, no third-party script* stays true as `README.md` §2
+ * and the legal pages both claim.
  */
 import Glimmer from './Glimmer.astro';
 import { legalDocuments, legalHref } from '../i18n/legal';
@@ -30,6 +40,33 @@ const t = useTranslations(lang);
   named in one place and the footer cannot call it something the page does not.
 */
 const documents = await legalDocuments();
+
+/*
+  The hosted form to post to, per language. Not in `ui.ts`: these are not strings
+  a reader sees, they are configuration, and a form id in the dictionary would be
+  a value the copy review is asked to proofread.
+
+  Both are bound to their own topic — `Beta (fi)` and `Beta (en)` — so the
+  invitation months later goes out in the language somebody was reading.
+*/
+const signupForms: Record<Lang, string> = {
+  fi: 'sf_qzh1h7368iwob26hp4vbsdel',
+  en: 'sf_1idzwf65ktaq8ni78ph96rk2',
+};
+
+/*
+  Whether the form takes an address. **Open**, by the owner's decision of 25
+  August 2026, while `tietosuoja` is still a draft.
+
+  The note under the field links to the statement either way: it is published,
+  readable, and says what happens to the address. What the draft flag still
+  means is that no lawyer has read it, and collecting against a statement in
+  that state is a position for counsel rather than a property of this component
+  — it is recorded in `pilke-app/docs/legal/review-notes.md`.
+
+  Closing the form again is one word here, and the copy for it already exists.
+*/
+const waitlistOpen = true;
 
 const legal = [
   ...documents.map((document) => ({
@@ -61,7 +98,12 @@ const legal = [
       <p>{t('cta.body')}</p>
     </div>
 
-    <form class="join">
+    <form
+      class="join"
+      id="beta-form"
+      data-form={signupForms[lang]}
+      data-open={waitlistOpen ? 'yes' : 'no'}
+    >
       <label for="beta-email">{t('cta.label')}</label>
       <div class="join-row">
         <input
@@ -70,15 +112,79 @@ const legal = [
           type="email"
           autocomplete="email"
           required
+          disabled={!waitlistOpen}
           placeholder={t('cta.placeholder')}
         />
-        <button class="go send" type="submit">{t('cta.button')}</button>
+        {/*
+          Their form config names a honeypot field, and this is it. Hidden from
+          people and from assistive technology, left empty by anybody real, and
+          filled in by the half of the bots that fill in every input they find.
+        */}
+        <input type="text" name="_hp" tabindex="-1" aria-hidden="true" class="hp" />
+        <button class="go send" type="submit" disabled={!waitlistOpen}>
+          {t('cta.button')}
+        </button>
       </div>
-      <p class="note">
-        {t('cta.note')}{' '}
-        <a href={legalHref('tietosuoja', lang)}>{t('cta.privacy')}</a>
+      <p class="note" id="beta-note" role="status">
+        {waitlistOpen ? t('cta.note') : t('cta.closed')}{' '}
+        {waitlistOpen && <a href={legalHref('tietosuoja', lang)}>{t('cta.privacy')}</a>}
       </p>
     </form>
+
+    <script is:inline define:vars={{ sending: t('cta.sending'), failed: t('cta.failed') }}>
+      /*
+        One `fetch` and two sentences. Their endpoint answers with the success
+        message the form itself is configured with, so the confirmation a reader
+        sees is the one set beside the list rather than a second copy of it here.
+
+        Nothing is stored, nothing is measured and no library is loaded: this is
+        the whole of the site's JavaScript.
+      */
+      const form = document.getElementById('beta-form');
+
+      if (form && form.dataset.open === 'yes') {
+        const note = document.getElementById('beta-note');
+        const field = document.getElementById('beta-email');
+        const button = form.querySelector('button');
+
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const email = field.value.trim();
+          if (!email) return;
+
+          // A bot that filled the honeypot is answered exactly as a person is,
+          // and nothing is sent. Telling it apart is what it came for.
+          const trap = form.querySelector('input[name="_hp"]').value;
+
+          button.disabled = true;
+          note.textContent = sending;
+
+          if (trap) return;
+
+          try {
+            const response = await fetch(
+              `https://api.poststack.dev/signup-forms/${form.dataset.form}/submit`,
+              {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email }),
+              },
+            );
+
+            const answer = await response.json();
+
+            if (!response.ok) throw new Error(answer.error || 'refused');
+
+            form.querySelector('.join-row').remove();
+            note.textContent = answer.message;
+          } catch {
+            note.textContent = failed;
+            button.disabled = false;
+          }
+        });
+      }
+    </script>
   </div>
 
   <div class="wrap foot-mark">
@@ -157,6 +263,31 @@ const legal = [
     display: flex;
     flex-wrap: wrap;
     gap: var(--pad-normal);
+  }
+
+  /*
+    The honeypot. Taken out of the layout and out of the accessibility tree, and
+    left focusable by nothing — `display: none` would be simpler and is the one
+    thing that does not work, because the bots worth catching skip fields a
+    browser would not render.
+  */
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  /*
+    The field and the button while the form is closed. It is drawn rather than
+    hidden, because the copy above it is the argument for joining and that
+    stands whether or not the box is open.
+  */
+  .join input:disabled,
+  .join button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
   }
 
   /* Drawn as the app draws a field: the same ink edge and radius as a card,
