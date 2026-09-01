@@ -1,0 +1,171 @@
+# House style, and what this format is for, is the header of `site.yaml`.
+#
+# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
+# every page renders from.
+#
+# WARNING: **Every claim on this page is checked against the backend's own
+# deletion code** by way of `docs/legal/privacy-policy.md` §11, and the two lists
+# are that section's two lists. Deletion is a tombstone rather than a row delete,
+# so the *what stays* list is the load-bearing half of the page and must not be
+# softened.
+#
+# The kept list has one entry per row of §11.4’s table, in that order, and it is
+# meant to stay that way. `legal.deletion.kept.nine` is the case that rule would
+# otherwise miss: error and performance records live outside the database, so the
+# deletion code never sees them and they age out on a clock of their own.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The page itself
+# ──────────────────────────────────────────────────────────────────────────
+
+'legal.deletion.title':
+  fi: 'Näin poistat tietosi'
+  en: 'How to delete your data'
+
+'legal.deletion.lead':
+  fi: 'Poistat tilisi itse sovelluksesta. Tällä sivulla kerromme, mikä poistuu heti ja mikä jää talteen.'
+  en: 'You delete your account yourself, in the app. This page says what goes straight away and what stays.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The address that does not exist yet
+#
+# Drawn as a dashed, unshadowed block, which is how this site says something is
+# not settled. A reader should be told the page has a hole in it rather than
+# shown a paragraph with one.
+# ──────────────────────────────────────────────────────────────────────────
+
+'legal.deletion.pending.title':
+  fi: 'Sähköpostiosoite puuttuu vielä'
+  en: 'There is no email address yet'
+
+'legal.deletion.pending.body':
+  fi: 'Tälle sivulle tulee osoite, johon voit kirjoittaa, jos et enää pääse sovellukseen. Osoitetta ei ole vielä hankittu, joten sivu on siltä osin kesken.'
+  en: 'An address for people who can no longer reach the app belongs on this page. It has not been bought yet, so the page is unfinished in that respect.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# How to delete
+# ──────────────────────────────────────────────────────────────────────────
+
+'legal.deletion.app.title':
+  fi: 'Poista tili sovelluksessa'
+  en: 'Delete your account in the app'
+
+'legal.deletion.app.body':
+  fi: 'Avaa Pilke, mene Asetuksiin ja valitse Poista tili. Vahvista puhelinnumerollasi. Tili poistuu heti, eikä sitä saa takaisin.'
+  en: 'Open Pilke, go to Settings and choose Delete account. Confirm with your phone number. The account goes immediately and does not come back.'
+
+'legal.deletion.gone.title':
+  fi: 'Jos et enää pääse sovellukseen'
+  en: 'If you can no longer reach the app'
+
+'legal.deletion.gone.body':
+  fi: 'Kirjoita meille, niin poistamme tilin puolestasi. Kerro se puhelinnumero, jolla olet kirjautunut, jotta löydämme oikean tilin.'
+  en: 'Write to us and we will delete the account for you. Tell us the phone number you signed in with, so we find the right account.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# What goes straight away
+# ──────────────────────────────────────────────────────────────────────────
+
+'legal.deletion.removed.title':
+  fi: 'Mikä poistuu heti'
+  en: 'What goes straight away'
+
+'legal.deletion.removed.one':
+  fi: 'Puhelinnumero ja sähköpostiosoite.'
+  en: 'Your phone number and email address.'
+
+'legal.deletion.removed.two':
+  fi: 'Nimimerkki, ikä, sukupuoli ja valokuva. Kuva poistuu myös tallennustilasta.'
+  en: 'Your nickname, age, gender and photo. The photo is deleted from storage as well.'
+
+'legal.deletion.removed.three':
+  fi: 'Luotettavan henkilön numero.'
+  en: 'Your trusted person’s number.'
+
+'legal.deletion.removed.four':
+  fi: 'Treffitoiveet ja alue, jonne voisit lähteä treffeille.'
+  en: 'What you are looking for, and the area you could travel to.'
+
+'legal.deletion.removed.five':
+  fi: 'Kalenteriin merkityt ajat ja vastaukset kysymyssarjoihin.'
+  en: 'The times marked in your calendar, and your answers to the question sets.'
+
+'legal.deletion.removed.six':
+  fi: 'Kirjautumiset kaikilta laitteilta samalla hetkellä, ja ilmoitusten vastaanotto.'
+  en: 'Every session on every device, in the same instant, and any notifications to you.'
+
+'legal.deletion.removed.seven':
+  fi: 'Jaetut sijainnit.'
+  en: 'Any location you shared.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# What stays
+# ──────────────────────────────────────────────────────────────────────────
+
+'legal.deletion.kept.title':
+  fi: 'Mikä jää talteen'
+  en: 'What stays'
+
+'legal.deletion.kept.lead':
+  fi: 'Osa tiedoista on yhtä lailla toisen osapuolen tietoja, ja osa on turvallisuuspäätöksiä, joita lähteminen ei saa kumota. Nämä jäävät, mutta nimesi ei ole niissä enää kiinni.'
+  en: 'Some of it belongs to the other person as much as to you, and some of it is a safety decision that leaving must not undo. These stay, with your name no longer attached to them.'
+
+'legal.deletion.kept.one':
+  fi: 'Sovitut ja menneet treffit sekä niistä annetut palautteet. Toinen osapuoli näkee sinun tilallasi ”Joku”.'
+  en: 'Dates agreed and past, and the feedback given about them. The other person sees ”Someone” where you were.'
+
+'legal.deletion.kept.two':
+  fi: 'Turvallisuusilmoitukset ja niiden vapaa teksti, sekä sinun kirjoittamat että sinusta kirjoitetut.'
+  en: 'Safety reports and the free text in them, both what you wrote about somebody and what somebody wrote about you.'
+
+'legal.deletion.kept.three':
+  fi: 'Merkintä siitä, että olet painanut turvapainiketta.'
+  en: 'The fact that you pressed the safety button.'
+
+'legal.deletion.kept.four':
+  fi: 'Esto, joka syntyy kun joku ei ole kokenut oloaan turvalliseksi. Sitä ei voi purkaa lähtemällä.'
+  en: 'The block created when somebody did not feel safe. Leaving does not lift it.'
+
+'legal.deletion.kept.five':
+  fi: 'Ilmoitukset saapumatta jättämisestä, molempiin suuntiin.'
+  en: 'Reports of not turning up, in both directions.'
+
+'legal.deletion.kept.six':
+  fi: 'Kipinöiden liikkeet, jotta saldot pysyvät täsmäävinä.'
+  en: 'Glimmer movements, so that balances still add up.'
+
+'legal.deletion.kept.seven':
+  fi: 'Käynnissä oleva hidastus, jos sinulla on sellainen. Lähteminen ei lyhennä sitä.'
+  en: 'Any slowdown you are currently serving. Leaving does not shorten it.'
+
+'legal.deletion.kept.eight':
+  fi: 'Ketkä ehdokkaat sinulle on tarjottu, ja keiden ehdokkaissa olet ollut.'
+  en: 'Which candidates you were offered, and whose candidates you appeared among.'
+
+'legal.deletion.kept.nine':
+  fi: 'Virhe- ja suorituskykytiedot, joissa on tilisi numero. Ne eivät poistu tilin mukana, vaan häviävät itsestään 30 päivän kuluessa.'
+  en: 'Error and performance records, which carry your account number. They do not go with the account, but clear on their own within 30 days.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# Dates already agreed, and coming back later
+# ──────────────────────────────────────────────────────────────────────────
+
+'legal.deletion.others.title':
+  fi: 'Mitä tapahtuu sovituille treffeille'
+  en: 'What happens to dates you agreed to'
+
+'legal.deletion.others.body':
+  fi: 'Lähettämäsi kutsut perutaan ja saamasi kutsut hylätään, ja kutsujan kipinät palautetaan. Tulevat treffit peruutetaan, ja toinen osapuoli hyvitetään kuten missä tahansa perumisessa. Sinulle ei tule tästä seurauksia, emmekä kerro kenellekään erikseen, että lähdit.'
+  en: 'Invitations you sent are withdrawn and invitations you received are declined, with the sender’s glimmers refunded. Dates still ahead are cancelled and the other person is compensated exactly as for any cancellation. Nothing is held against you, and nobody is told separately that you left.'
+
+'legal.deletion.again.title':
+  fi: 'Jos palaat myöhemmin'
+  en: 'If you come back later'
+
+'legal.deletion.again.body':
+  fi: 'Voit rekisteröityä samalla puhelinnumerolla uudelleen. Saat tyhjän tilin, eikä mikään yhdistä sitä vanhaan.'
+  en: 'You can register the same phone number again. You get an empty account, and nothing links it to the old one.'
+
+'legal.deletion.more':
+  fi: 'Lue tarkemmin tietosuojaselosteesta'
+  en: 'Read the detail in the privacy policy'

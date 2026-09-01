@@ -1,0 +1,205 @@
+# House style, and what this format is for, is the header of `site.yaml`.
+#
+# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
+# every page renders from.
+#
+# WARNING: **Every number on this page is a backend constant.** Five kipinää for a
+# set, fifteen earnable at a time, one hour of shared calendar, at least two times
+# offered, a day to answer. The size of a set is deliberately not one of them: what
+# the copy emphasises is that the reader picks who the invitation goes to, not how
+# many faces they are picking from. They are cited in `README.md`, and a marketing
+# page stating a price the product does not charge is worse than a page that stays
+# vague.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The page itself
+# ──────────────────────────────────────────────────────────────────────────
+
+# The detail page. Every number here is the backend's own constant, and the
+# README records which.
+'detail.title':
+  fi: 'Näin Pilke toimii'
+  en: 'How Pilke works'
+
+'detail.lead':
+  fi: 'Etusivu kertoo kierron neljässä vaiheessa. Tällä sivulla on sama tarkemmin: mistä ehdokkaat tulevat, mistä kipinät tulevat ja mitä tapahtuu kun suunnitelmat muuttuvat.'
+  en: 'The front page gives the loop in four steps. This page is the same thing in detail: where candidates come from, where glimmers come from, and what happens when plans change.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# Before the first invitation
+# ──────────────────────────────────────────────────────────────────────────
+
+'detail.start.title':
+  fi: 'Ennen ensimmäistä kutsua'
+  en: 'Before your first invitation'
+
+'detail.start.body':
+  fi: 'Rekisteröinti alkaa puhelinnumerosta ja tekstiviestillä tulevasta koodista. Sen jälkeen annat kutsumanimen, syntymäpäivän ja kuvan.'
+  en: 'Signing up starts with a phone number and a code by text. After that you give a name, a birthday and a photo.'
+
+'detail.story.title':
+  fi: 'Tarinatesti'
+  en: 'The story test'
+
+'detail.story.body':
+  fi: 'Neljätoista tilannetta, joissa valitset mitä tekisit. Yksi kysymys kerrallaan, ja voit jatkaa myöhemmin siitä mihin jäit. Kysymyssarjoihin voit vastata omaan tahtiisi myös myöhemmin.'
+  en: 'Fourteen situations where you choose what you would do, one question at a time, and you can pick up where you left off. The question sets are there to answer at your own pace later on.'
+
+'detail.prefs.title':
+  fi: 'Toiveet ja kalenteri'
+  en: 'Preferences and calendar'
+
+'detail.prefs.body':
+  fi: 'Kerrot kenen kanssa haluat tavata, minkä ikäisiä ehdokkaita otat vastaan ja millaisia treffejä etsit. Kartalta valitset, kuinka kauas lähdet. Lopuksi merkitset kalenteriin ajat, jolloin sinulle sopii: vähintään yksi tunnin mittainen aika tarvitaan, jotta sinulle voi ehdottaa ketään.'
+  en: 'You say who you want to meet, what ages you will consider and what kind of date you are looking for. On a map you set how far you will travel. Then you mark the times that suit you: at least one hour-long slot is needed before anybody can be suggested to you.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# Where candidates come from, and the invitation
+# ──────────────────────────────────────────────────────────────────────────
+
+'detail.draw.title':
+  fi: 'Mistä ehdokkaat tulevat'
+  en: 'Where candidates come from'
+
+'detail.draw.body':
+  fi: 'Kun avaat valikoiman, Pilke etsii ihmisiä, joiden toiveet ja sinun toiveesi käyvät yksiin, joilla on kalenterissa vähintään tunnin yhteinen aika sinun kanssasi, ja joiden kanssa on paikka johon molemmat pääsevät. Sinä valitset, kenelle kutsu lähtee.'
+  en: 'When you open a set, Pilke looks for people whose preferences and yours agree, who share at least an hour of calendar time with you, and who have somewhere to meet that you can both reach. You choose which of them the invitation goes to.'
+
+'detail.invite.title':
+  fi: 'Kutsu ja vastaus'
+  en: 'The invitation and the answer'
+
+'detail.invite.body':
+  fi: 'Tarjoat vähintään kaksi aikaa ja yhden tekemisen. Toinen valitsee niistä yhden, ja treffit on sovittu. Kutsu on voimassa vuorokauden.'
+  en: 'You offer at least two times and one thing to do. The other person picks one of them, and the date is set. An invitation stands for a day.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# Kipinat
+#
+# `economy.amount.*` are the amounts in the earning table, and `economy.lead`
+# and `economy.pile.alt` belong to the picture of five coins beside it.
+# ──────────────────────────────────────────────────────────────────────────
+
+'detail.economy.title':
+  fi: 'Kipinät'
+  en: 'Glimmers'
+
+'detail.economy.body':
+  fi: 'Kipinä on se, mitä keräät ja käytät. Valikoima kuluttaa viisi kipinää, eikä muuta hintaa ole. Kipinöitä ei myydä.'
+  en: 'A glimmer is what you collect and what you spend. A set costs five glimmers, and there is no other price. Glimmers are not sold.'
+
+'detail.economy.earn':
+  fi: 'Näin kipinöitä kertyy'
+  en: 'How glimmers add up'
+
+'detail.earn.signup':
+  fi: 'Rekisteröinnin viimeistely'
+  en: 'Finishing your registration'
+
+'detail.earn.signup.note':
+  fi: 'Kerran tilin elinkaaressa, koodin vahvistamisen jälkeen.'
+  en: 'Once in the life of an account, after the code is confirmed.'
+
+'detail.earn.calendar':
+  fi: 'Kolme kalenteriin merkittyä aikaa'
+  en: 'Three times marked in your calendar'
+
+'detail.earn.calendar.note':
+  fi: 'Jokaisen ajan on oltava vähintään tunnin mittainen, eivätkä ajat saa olla päällekkäisiä.'
+  en: 'Each has to be at least an hour long, and they cannot overlap each other.'
+
+'detail.earn.date':
+  fi: 'Käydyt treffit'
+  en: 'A date you went on'
+
+'detail.earn.date.note':
+  fi: 'Maksetaan, kun olet kertonut miten meni. Molemmat saavat omansa erikseen.'
+  en: 'Paid once you have said how it went. Each of you gets your own.'
+
+'detail.earn.cancelled':
+  fi: 'Jos toinen perui sovitut treffit'
+  en: 'If the other person calls off an agreed date'
+
+'detail.earn.cancelled.note':
+  fi: 'Hyvitys sinulle. Jos olit kutsun lähettäjä, saat lisäksi kipinäsi takaisin.'
+  en: 'Compensation for you. If you were the one who invited, you also get your glimmers back.'
+
+'detail.economy.spend':
+  fi: 'Näin kipinät kuluvat'
+  en: 'How glimmers go'
+
+'detail.economy.spend.body':
+  fi: 'Viisi kipinää kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään. Kipinöitä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut kipinät odottavat, kunnes käytät niitä. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.'
+  en: 'Five glimmers go the moment you open a set. Sending the invitation costs nothing more. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Reimbursements, such as the glimmers returned when an invitation lapses, arrive regardless of the limit.'
+
+'economy.lead':
+  fi: 'Viisi kipinää avaa valikoiman.'
+  en: 'Five glimmers open a set.'
+
+'economy.pile.alt':
+  fi: 'Viisi kipinäkolikkoa pinossa.'
+  en: 'Five glimmer coins in a pile.'
+
+'economy.amount.one':
+  fi: '1 kipinä'
+  en: '1 glimmer'
+
+'economy.amount.two':
+  fi: '2 kipinää'
+  en: '2 glimmers'
+
+'economy.amount.five':
+  fi: '5 kipinää'
+  en: '5 glimmers'
+
+# ──────────────────────────────────────────────────────────────────────────
+# When plans change
+# ──────────────────────────────────────────────────────────────────────────
+
+'detail.changes.title':
+  fi: 'Jos suunnitelmat muuttuvat'
+  en: 'If plans change'
+
+'detail.changes.expired':
+  fi: 'Kutsuun ei vastata vuorokaudessa'
+  en: 'An invitation goes unanswered for a day'
+
+'detail.changes.expired.note':
+  fi: 'Kutsu raukeaa itsestään ja saat kipinäsi takaisin.'
+  en: 'It lapses by itself and your glimmers come back.'
+
+'detail.changes.declined':
+  fi: 'Kutsu hylätään'
+  en: 'An invitation is turned down'
+
+'detail.changes.declined.note':
+  fi: 'Saat kipinäsi takaisin. Hylkääminen on aina ilmaista, eikä siitä seuraa hylkääjälle mitään.'
+  en: 'Your glimmers come back. Turning one down is always free and costs the person doing it nothing.'
+
+'detail.changes.withdrawn':
+  fi: 'Perut oman kutsusi'
+  en: 'You withdraw your own invitation'
+
+'detail.changes.withdrawn.note':
+  fi: 'Kipinät on käytetty, ja uuden valikoiman avaaminen odottaa hetken.'
+  en: 'The glimmers are spent, and opening a new set waits a little while.'
+
+'detail.changes.canceled':
+  fi: 'Sovitut treffit perutaan'
+  en: 'An agreed date is called off'
+
+'detail.changes.canceled.note':
+  fi: 'Peruminen onnistuu, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen hidastaa uusien ehdokkaiden saamista.'
+  en: 'You can do it, and if the date does not feel right you can get out with nothing to pay. Calling off repeatedly slows down how soon you get new candidates.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# Why there is no chat
+# ──────────────────────────────────────────────────────────────────────────
+
+'detail.chat.title':
+  fi: 'Miksi chattia ei ole'
+  en: 'Why there is no chat'
+
+'detail.chat.body':
+  fi: 'Kutsussa on jo aika ja paikka, joten sopimiseen ei tarvita keskustelua. Se on koko idea: Pilke vie teidät samaan pöytään sen sijaan, että korvaisi sen. Treffipäivänä kartta kertoo, missä toinen on, jotta löydätte perille ilman viestittelyä.'
+  en: 'An invitation already carries the time and the place, so arranging it needs no conversation. That is the whole idea: Pilke takes you to the same table rather than standing in for it. On the day, the map shows where the other person is so you find each other without messaging.'

@@ -1,0 +1,67 @@
+# House style, and what this format is for, is the header of `site.yaml`.
+#
+# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
+# every page renders from.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The waitlist form
+#
+# In `SiteFooter.astro`, on every page, because a reader who came to
+# `turvallisuus` should be able to join from where they are.
+#
+# WARNING: **`cta.note` promises what we do with an address.** It is shown only
+# while the form is open, and the privacy statement it links to through
+# `cta.privacy` is what has to back the promise up. `cta.closed` stands in for
+# the note when the form is shut, which is one boolean in `SiteFooter.astro`.
+#
+# `cta.sending` and `cta.failed` are the only strings on this site that reach a
+# reader from JavaScript.
+# ──────────────────────────────────────────────────────────────────────────
+
+# The waitlist. TODO(pilke-web): the form posts nowhere yet — see README.
+'cta.title':
+  fi: 'Pilke on suljetussa betassa'
+  en: 'Pilke is in closed beta'
+
+'cta.body':
+  fi: 'Jätä sähköpostiosoitteesi, niin kerromme heti kun pääset mukaan.'
+  en: 'Leave your email address and we will tell you as soon as you can get in.'
+
+'cta.label':
+  fi: 'Sähköpostiosoite'
+  en: 'Email address'
+
+'cta.placeholder':
+  fi: 'sina@esimerkki.fi'
+  en: 'you@example.com'
+
+'cta.button':
+  fi: 'Liity betaan'
+  en: 'Join the beta'
+
+'cta.note':
+  fi: 'Käytämme osoitetta vain betakutsuun. Emme lähetä muuta emmekä anna sitä eteenpäin.'
+  en: 'We use the address for the beta invitation and nothing else. We do not pass it on.'
+
+# The link this form may not collect an address without. Its own key rather
+# than a clause inside `cta.note`, so the promise and the document that has to
+# back it up are not one sentence somebody has to re-translate together.
+'cta.privacy':
+  fi: 'Lue tietosuojaselosteesta, mitä osoitteellesi tapahtuu.'
+  en: 'The privacy policy says what happens to your address.'
+
+# The three states the form has beyond its own copy. `closed` stands in for
+# `cta.note` while the privacy statement is a draft — the note promises what we
+# do with an address, and promising that before the statement exists is the one
+# thing this form must not do.
+'cta.closed':
+  fi: 'Betajono avautuu pian.'
+  en: 'The waitlist opens soon.'
+
+'cta.sending':
+  fi: 'Lähetetään…'
+  en: 'Sending…'
+
+'cta.failed':
+  fi: 'Liittyminen ei onnistunut. Yritä hetken kuluttua uudelleen.'
+  en: 'That did not go through. Please try again in a moment.'

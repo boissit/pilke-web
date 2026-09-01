@@ -1,0 +1,67 @@
+# Copy a reader sees that is *not* in `src/i18n/ui.ts`.
+#
+# House style, and what this format is for, is the header of `site.yaml`.
+#
+# This file is the answer to "where is all the text?" being not quite "ui.ts".
+# Each entry below is a string a person can read, written into a component or a
+# template instead of the dictionary, which means it is invisible to anybody
+# reviewing copy and untranslatable without editing code.
+#
+# The keys carry an `unmanaged.` prefix so they cannot collide with a real `ui.ts`
+# key, and so a count of this file never muddies a count of that one. Nothing
+# reads them.
+#
+# WARNING: **These are a defect list, not a source.** Wiring one up means giving it
+# a real key in `ui.ts` (or in the rewired collection) and deleting the entry here.
+# Two of the four are arguably fine where they are; the notes say which and why.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The language control
+#
+# `languages` in `src/i18n/ui.ts` — outside both dictionaries, because the name of
+# a language is the same string in every language and a `fi`/`en` pair of it would
+# be two copies of one word. That reasoning holds; it is listed here only so the
+# inventory is complete.
+#
+# It is also why `nav.language` ('Kieli' / 'Language') in `site.yaml` renders
+# nowhere.
+# ──────────────────────────────────────────────────────────────────────────
+
+'unmanaged.languages.fi':
+  fi: 'Suomi'
+  en: 'Suomi'
+
+'unmanaged.languages.en':
+  fi: 'English'
+  en: 'English'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The accessible name of the wordmark
+#
+# `src/components/SiteHeader.astro`, the `aria-label` on the brand link. It is the
+# product name, so it does not translate — but it is the one string on this site
+# that only a screen-reader user hears, and it reaches them without passing any
+# copy review. `meta.title` in `site.yaml` is the same word and is already
+# translated (identically); the link could take it and lose nothing.
+# ──────────────────────────────────────────────────────────────────────────
+
+'unmanaged.header.brand.label':
+  fi: 'Pilke'
+  en: 'Pilke'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The number beside the picture of five coins
+#
+# `src/pages/[...lang]/nain-se-toimii.astro`, written as a literal `<b>5</b>` on
+# the price line.
+#
+# WARNING: **This is a backend constant rendered as a hand-typed digit.** The cost
+# of opening a set appears three times on that page — here, in
+# `economy.amount.five` ('5 kipinää'), and in the prose of
+# `detail.economy.spend.body` — and this is the copy of it that no dictionary and
+# no review would catch if the price changed.
+# ──────────────────────────────────────────────────────────────────────────
+
+'unmanaged.economy.price.digit':
+  fi: '5'
+  en: '5'

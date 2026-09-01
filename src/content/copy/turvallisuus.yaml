@@ -1,0 +1,116 @@
+# House style, and what this format is for, is the header of `site.yaml`.
+#
+# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
+# every page renders from.
+#
+# WARNING: **This page states only what the app does.** It names the trusted
+# contact, the safety button and the report because those exist and ship. It
+# promises nothing about what Pilke will do on somebody's behalf, and the advice
+# below is ordinary meeting-safely sense rather than anything the product
+# enforces. Read `README.md` before adding a claim here.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The page itself
+#
+# `safety.more` is the label of the link *to* this page, and three other pages
+# use it — the front page, `nain-se-toimii` and `kysyttya`. It is here rather
+# than with any one of them so that the page and its own name are one edit.
+# ──────────────────────────────────────────────────────────────────────────
+
+'safety.title':
+  fi: 'Turvallisuus'
+  en: 'Safety'
+
+'safety.more':
+  fi: 'Lue turvallisuudesta'
+  en: 'Read about safety'
+
+'safety.page.lead':
+  fi: 'Tapaaminen tuntemattoman kanssa on eri asia kuin viestittely. Tällä sivulla on se, mitä Pilke tekee asian eteen, ja se mitä kannattaa itse tehdä.'
+  en: 'Meeting a stranger is a different thing from messaging one. This page covers what Pilke does about that, and what is worth doing yourself.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The three tools
+#
+# Longer than the front page’s cards, and the third one is the report rather
+# than the location window.
+# ──────────────────────────────────────────────────────────────────────────
+
+'safety.contact.title':
+  fi: 'Luotettava läheinen'
+  en: 'A trusted person'
+
+'safety.contact.body':
+  fi: 'Voit tallentaa yhden puhelinnumeron asetusten Turvallisuus-kohdassa. Se on ainoa numero, johon sovellus voi lähettää viestin puolestasi.'
+  en: 'You can save one phone number under Safety in the settings. It is the only number the app can text on your behalf.'
+
+'safety.button.title':
+  fi: 'Turvapainike'
+  en: 'The safety button'
+
+'safety.button.body':
+  fi: 'Turvapainike näkyy treffinäytöllä, kun olet tallentanut luotettavan läheisen numeron. Yksi painallus lähettää hänelle tekstiviestin. Ilman tallennettua numeroa painiketta ei ole, joten aseta numero etukäteen. Viestissä on nimesi ja se, että painoit painiketta ja pyydät yhteydenottoa. Se ei kerro sijaintiasi, treffipaikkaa, kellonaikaa eikä mitään toisesta osapuolesta. Toinen osapuoli ei saa tietää painalluksesta mitään.'
+  en: 'The safety button appears on the date screen once you have saved a trusted person. One press texts them. Without a saved number there is no button, so set the number beforehand. The message carries your name and the fact that you pressed the button and are asking them to get in touch. It names no location, no venue, no time and nothing about the person you are meeting. The other party learns nothing about the press.'
+
+'safety.report.title':
+  fi: 'Ilmoitus'
+  en: 'Reporting'
+
+'safety.report.body':
+  fi: 'Jos jokin ei mennyt niin kuin sen olisi pitänyt, voit kertoa siitä treffien jälkeen omin sanoin. Ilmoitus jää talteen Pilkkeen väelle luettavaksi. Emme lupaa vielä, kuinka nopeasti joku sen lukee.'
+  en: 'If something did not go the way it should have, you can say so after the date, in your own words. The report is kept for Pilke staff to read. We are not promising yet how quickly somebody gets to it.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# Meeting somebody safely
+# ──────────────────────────────────────────────────────────────────────────
+
+'tips.title':
+  fi: 'Näin tapaat turvallisesti'
+  en: 'Meeting somebody safely'
+
+'tips.lead':
+  fi: 'Nämä eivät ole Pilkkeen erityispiirteitä vaan tavallista järkeä, joka on helppo unohtaa jännittävänä iltana.'
+  en: 'None of this is particular to Pilke. It is ordinary sense, and easy to forget on a nervous evening.'
+
+'tips.one':
+  fi: 'Aseta luotettavan läheisen numero ennen ensimmäisiä treffejä.'
+  en: 'Save a trusted person before your first date.'
+
+'tips.two':
+  fi: 'Kerro jollekin minne menet ja milloin arvioit olevasi kotona.'
+  en: 'Tell somebody where you are going and when you expect to be home.'
+
+'tips.three':
+  fi: 'Valitse ensimmäisille treffeille paikka, jossa on muita ihmisiä.'
+  en: 'Pick somewhere with other people around for a first date.'
+
+'tips.four':
+  fi: 'Järjestä oma kulkeminen molempiin suuntiin.'
+  en: 'Arrange your own way there and your own way back.'
+
+'tips.five':
+  fi: 'Pidä puhelin ladattuna.'
+  en: 'Keep your phone charged.'
+
+'tips.six':
+  fi: 'Jos olo on epämukava, lähde. Sinun ei tarvitse selittää sitä kenellekään, ei meillekään.'
+  en: 'If you feel uncomfortable, leave. You do not owe anybody an explanation for it, us included.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# Location and privacy
+# ──────────────────────────────────────────────────────────────────────────
+
+'privacy.title':
+  fi: 'Sijainti ja yksityisyys'
+  en: 'Location and privacy'
+
+# Two paragraphs, because these are two different things and conflating them is
+# how the earlier version came to claim something the app does not do. The area
+# is a choice on a map; the position is a permission during a date.
+'privacy.area':
+  fi: 'Pilke ei kysy kotiosoitettasi eikä sitä, missä asut. Valitset kartalta alueen ja sen, kuinka kauas voisit lähteä treffeille, ja treffipaikkoja ehdotetaan tuon ympyrän sisältä.'
+  en: 'Pilke does not ask for your home address, or where you live at all. You choose an area on a map and how far you would travel for a date, and venues are suggested inside that circle.'
+
+'privacy.body':
+  fi: 'Laitteesi sijaintia luetaan vain treffeillä ja vain jos itse valitset näyttää sen. Näyttäminen toimii kymmenen minuuttia sovitun alkamisajan molemmin puolin ja vain 300 metrin säteellä treffipaikasta, joten kotoa sinua ei voi paikantaa. Sijainnin näkee vain toinen osapuoli, ei luotettava läheisesi. Se poistetaan heti kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun: se ei vaikuta hyvityksiin, hidastuksiin eikä ilmoituksiin. Voit lopettaa näyttämisen milloin tahansa.'
+  en: 'Your device location is read only on a date, and only if you choose to show it. Sharing works for ten minutes either side of the agreed start and only within 300 metres of the venue, so you cannot be located from home. Only the other person sees it, not your trusted contact. It is deleted as soon as the window closes, and it is not used for anything else: it feeds no compensation, no slowdown and no report. You can stop at any time.'

@@ -1,0 +1,71 @@
+# House style, and what this format is for, is the header of `site.yaml`.
+#
+# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
+# every page renders from.
+#
+# WARNING: **Several answers here state numbers the backend owns.** Read
+# `README.md` before changing one.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The page itself
+# ──────────────────────────────────────────────────────────────────────────
+
+'faq.title':
+  fi: 'Kysyttyä'
+  en: 'Questions'
+
+'faq.lead':
+  fi: 'Lyhyet vastaukset siihen, mitä Pilkkeestä useimmin kysytään.'
+  en: 'Short answers to what people ask about Pilke most often.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The six questions, in the order they are answered
+# ──────────────────────────────────────────────────────────────────────────
+
+'faq.chat.q':
+  fi: 'Voiko sovelluksessa viestitellä?'
+  en: 'Can I message people in the app?'
+
+'faq.chat.a':
+  fi: 'Ei. Kutsussa on jo aika ja paikka, joten sopiminen ei vaadi keskustelua. Loput sanotaan kasvokkain.'
+  en: 'No. An invitation already carries the time and the place, so arranging it needs no conversation. The rest is said in person.'
+
+'faq.who.q':
+  fi: 'Kuka näkee tietoni?'
+  en: 'Who sees my details?'
+
+'faq.who.a':
+  fi: 'Puhelinnumeroasi ei näytetä kenellekään. Ehdokas näkee nimesi, kuvasi ja sen, mitä teillä on yhteistä.'
+  en: 'Your phone number is never shown to anybody. A candidate sees your name, your photo and what the two of you have in common.'
+
+'faq.safety.q':
+  fi: 'Näkeekö toinen, missä olen?'
+  en: 'Can the other person see where I am?'
+
+'faq.safety.a':
+  fi: 'Vain jos valitset niin. Sijainti näkyy kymmenen minuuttia sovitun alun molemmin puolin ja vain 300 metrin säteellä treffipaikasta, ja voit lopettaa näyttämisen milloin tahansa. Se poistetaan kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun.'
+  en: 'Only if you choose to show them. It runs for ten minutes either side of the agreed start and only within 300 metres of the venue, and you can stop at any time. It is deleted when the window closes, and nothing else reads it.'
+
+'faq.cost.q':
+  fi: 'Mitä se maksaa?'
+  en: 'What does it cost?'
+
+'faq.cost.a':
+  fi: 'Betavaiheessa ei mitään. Kipinöitä ei voi ostaa, vaan niitä kertyy käyttämällä sovellusta.'
+  en: 'Nothing during the beta. Glimmers cannot be bought; they come from using the app.'
+
+'faq.cancel.q':
+  fi: 'Entä jos treffit peruuntuvat?'
+  en: 'What if a date falls through?'
+
+'faq.cancel.a':
+  fi: 'Kutsun hylkääminen on aina ilmaista eikä siitä seuraa mitään. Sovitun tapaamisen voi perua sovelluksessa, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen tai saapumatta jättäminen hidastaa uusien ehdokkaiden saamista, koska se on toiselle osapuolelle merkityksellistä.'
+  en: 'Turning down an invitation is always free and carries no consequence. You can call off a date you agreed to, and if it does not feel right you can get out with nothing to pay. Cancelling repeatedly or not turning up slows down how soon you get new candidates, because that matters to the person on the other side.'
+
+'faq.delete.q':
+  fi: 'Voinko poistaa tilini?'
+  en: 'Can I delete my account?'
+
+'faq.delete.a':
+  fi: 'Kyllä, asetuksista. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Menneet treffit ja niistä annetut palautteet jäävät talteen, koska ne ovat yhtä lailla toisen osapuolen tietoja.'
+  en: 'Yes, from the settings. Your name, photo and contact details go straight away. Past dates and the feedback written about them stay, because those belong to the other person as much as to you.'

@@ -1,0 +1,53 @@
+# House style, and what this format is for, is the header of `site.yaml`.
+#
+# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
+# every page renders from.
+#
+# The strings the pages *around* the legal documents need. The documents
+# themselves are `src/content/legal/*.md` and are already in a format a person can
+# edit, so nothing of them is copied here — the note below the banner is `ui.ts`'s
+# own, and says why.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The header of a legal page
+#
+# WARNING: **`legal.effective` carries a `{date}` placeholder.** `[doc].astro`
+# replaces it with the date spelled for the reader. A translation that drops or
+# renames the placeholder renders the word `{date}` to a reader of a binding
+# text.
+# ──────────────────────────────────────────────────────────────────────────
+
+# The legal documents. Their titles and ledes live in their own frontmatter,
+# in the document's language, so they are not repeated here; these are the
+# strings the pages around them need.
+'legal.effective':
+  fi: 'Voimassa {date} alkaen'
+  en: 'In effect from {date}'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The notice on an unreviewed document
+#
+# WARNING: **Shown whenever a document has `draft: true`.** That flag defaults
+# to true, so a text that has not been through legal review cannot be read as
+# if it had. This is the sentence that says so.
+# ──────────────────────────────────────────────────────────────────────────
+
+'legal.draft.title':
+  fi: 'Tämä teksti on kesken'
+  en: 'This text is unfinished'
+
+'legal.draft.body':
+  fi: 'Lakimies käy sisällön läpi ennen kuin Pilke avautuu. Siihen asti teksti ei sido ketään eikä siihen voi vedota.'
+  en: 'A lawyer goes through it before Pilke opens. Until then it binds nobody and cannot be relied on.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The links in the footer
+# ──────────────────────────────────────────────────────────────────────────
+
+'legal.nav':
+  fi: 'Ehdot ja tietosuoja'
+  en: 'Terms and privacy'
+
+'legal.deletion.nav':
+  fi: 'Tietojen poisto'
+  en: 'Deleting your data'

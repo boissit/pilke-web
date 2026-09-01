@@ -1,0 +1,100 @@
+# Every string on this site, in both languages, grouped by the page that shows it.
+#
+# This is a *second copy* of the strings in `src/i18n/ui.ts`, extracted so that copy
+# can be read and proofread as copy: one page per file, the two languages of a
+# sentence on adjacent lines, and prose in a file a non-developer can open.
+#
+# WARNING: **The site does not read these files yet.** `src/i18n/ui.ts` is still the
+# only thing any page renders from, so an edit made here changes nothing a reader
+# sees until the two are reconciled. Until then, edit both or edit `ui.ts`.
+#
+# The `key` of each entry is the dotted key `ui.ts` uses, unchanged and unnested. It
+# is kept flat on purpose: it is the join between the two copies, so a diff of the
+# two is a mechanical check rather than a reading exercise, and a flat key is one
+# indentation level for somebody editing prose in YAML.
+#
+# ## House style, from `ui.ts`
+#
+# Finnish is the product's language and the one written first; English is a full
+# translation rather than a fallback set, so a key missing from `en` is a type
+# error in `ui.ts` in the same way it is in the app's own dictionaries.
+#
+# WARNING: **YAML has no such type.** A `fi:` with no `en:` beside it parses
+# cleanly and would ship a blank, which is the one guarantee this format gives up
+# relative to the TypeScript it was extracted from. Recovering it is a schema on
+# the collection, and is the first thing to add if the site is ever rewired to
+# read these files.
+#
+# Product vocabulary is the app's own spelling: kipinat are what the product calls
+# its currency, and the site should not invent a softer word for it.
+#
+# The front page argues one thing: there is no chat, and the shortest path to
+# meeting somebody is a kutsu with the time already in it. The currency belongs to
+# `nain-se-toimii`, because a price list on a front page reads as a game to be
+# played rather than as an app for meeting people.
+#
+# Sentences here are short on purpose. A clause that can be its own sentence is one,
+# and a paragraph says its point in its first six words.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The document itself
+#
+# The title and description of every page on the site. One pair, not one per
+# page: `Base.astro` sets them for all of them, and a per-page description is
+# a promise to keep six of them current.
+# ──────────────────────────────────────────────────────────────────────────
+
+'meta.title':
+  fi: 'Pilke'
+  en: 'Pilke'
+
+'meta.description':
+  fi: 'Pilke on suomalainen deittisovellus ilman chattia. Saat kutsun, jossa on jo aika ja paikka, ja menet treffeille.'
+  en: 'Pilke is a Finnish dating app with no chat. An invitation arrives with the time and place already in it, and you go on the date.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The bar at the top, and the link that skips it
+#
+# Three subpages and a language, in `SiteHeader.astro`. `nav.back` is the
+# button every subpage closes with rather than anything in the bar.
+# ──────────────────────────────────────────────────────────────────────────
+
+'nav.how':
+  fi: 'Näin se toimii'
+  en: 'How it works'
+
+'nav.safety':
+  fi: 'Turvallisuus'
+  en: 'Safety'
+
+'nav.questions':
+  fi: 'Kysyttyä'
+  en: 'Questions'
+
+# WARNING: **Nothing renders this.** The language control in `SiteHeader.astro`
+# is labelled with the name of the other language — `Suomi` or `English`, from
+# `languages` in `ui.ts` — rather than with the word `Kieli`. Either wire it up
+# or delete it; a dictionary entry no page reads is copy nobody proofreads.
+'nav.language':
+  fi: 'Kieli'
+  en: 'Language'
+
+'nav.skip':
+  fi: 'Siirry sisältöön'
+  en: 'Skip to content'
+
+'nav.back':
+  fi: 'Takaisin etusivulle'
+  en: 'Back to the front page'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The wordmark at the foot of the page
+#
+# The footer also closes on `hero.title` as a tagline, which is deliberate —
+# the page ends on the words it opened with — and lives in `etusivu.yaml`
+# because the front page is where it is written.
+# ──────────────────────────────────────────────────────────────────────────
+
+'footer.rights':
+  fi: 'Pilke'
+  en: 'Pilke'
