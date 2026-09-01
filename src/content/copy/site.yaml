@@ -21,7 +21,7 @@
 #
 # WARNING: **YAML has no such type.** A `fi:` with no `en:` beside it parses
 # cleanly and would ship a blank, which is the one guarantee this format gives up
-# relative to the TypeScript it was extracted from. Recovering it is a schema on
+# relative to the TypeScript dictionary. Recovering it is a schema on
 # the collection, and is the first thing to add if the site is ever rewired to
 # read these files.
 #
