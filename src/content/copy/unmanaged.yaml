@@ -50,7 +50,7 @@
   en: 'Pilke'
 
 # ──────────────────────────────────────────────────────────────────────────
-# The number beside the picture of five coins
+# The number beside the rose
 #
 # `src/pages/[...lang]/nain-se-toimii.astro`, written as a literal `<b>5</b>` on
 # the price line.

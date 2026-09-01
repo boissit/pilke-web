@@ -1,12 +1,12 @@
 ---
 /**
- * The slab a subpage opens with: title, lede, and the sparkle field behind them.
+ * The slab a subpage opens with: title, lede, and the petal field behind them.
  *
  * The front page opens with the hero instead, which is a different arrangement —
  * a headline beside a phone. The other three open identically, so they open from
  * here, and a yellow band at the top of one of them cannot drift from the rest.
  */
-import Glimmer from './Glimmer.astro';
+import PetalField from './PetalField.astro';
 
 interface Props {
   title: string;
@@ -17,7 +17,7 @@ const { title, lead } = Astro.props;
 ---
 
 <section class="slab slab-yellow">
-  <Glimmer tile={320} background="var(--brand-main)" star="#F7E88A" />
+  <PetalField tile={320} background="var(--brand-main)" petal="#F7E88A" />
   <div class="wrap section-pad head">
     <h1 class="display-mid">{title}</h1>
     <p class="lede">{lead}</p>
@@ -30,7 +30,7 @@ const { title, lead } = Astro.props;
   }
 
   /* Narrower than the ledes further down a page. This one sits under a display
-     title with nothing beside it, and at the full measure it ran wider than the
+     title with nothing beside it, and at the full measure it runs wider than the
      title it belongs to. */
   .head .lede {
     max-width: 44ch;

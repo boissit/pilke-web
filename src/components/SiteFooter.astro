@@ -22,7 +22,7 @@
  * *no analytics, no cookies, no third-party script* stays true as `README.md` §2
  * and the legal pages both claim.
  */
-import Glimmer from './Glimmer.astro';
+import PetalField from './PetalField.astro';
 import { legalDocuments, legalHref } from '../i18n/legal';
 import { localePath, useTranslations, type Lang } from '../i18n/ui';
 
@@ -81,16 +81,16 @@ const legal = [
   <!--
     The same texture the slabs carry, in grey rather than yellow: the footer is
     the one surface here that is not a slab and not brand-coloured, and a yellow
-    sparkle field would put it back in the run of them. Faint enough to sit under
-    a form without competing with the field it is behind.
+    field would put it back in the run of them. Faint enough to sit under a form
+    without competing with the field it is behind.
 
-    `star` is an rgba literal rather than a token because it needs alpha and
-    `--muted` has none. The alpha is low on purpose: at 0.18 the sparkles read as
-    a pattern and pulled the eye off the field they sit behind, so this is set to
-    shift the ground by about seven values per channel — present, and not
+    `petal` is an rgba literal rather than a token because it needs alpha and
+    `--muted` has none. The alpha is low on purpose: much above this the petals
+    read as a pattern and pull the eye off the form they sit behind, so it is set
+    to shift the ground by about seven values per channel — present, and not
     something a reader looks at.
   -->
-  <Glimmer tile={280} background="var(--card-sent)" star="rgba(128, 128, 128, 0.06)" />
+  <PetalField tile={280} background="var(--card-sent)" petal="rgba(128, 128, 128, 0.06)" />
 
   <div class="wrap foot-inner">
     <div class="foot-copy">
@@ -332,7 +332,7 @@ const legal = [
 
   /* The wordmark sits under its own rule so it is not read as part of the form.
      A hairline rather than the weight the slabs use: this divides two lines of
-     the same footer, and at slab weight it read as another section boundary. */
+     the same footer, and at slab weight it reads as another section boundary. */
   .foot-mark {
     display: flex;
     flex-wrap: wrap;

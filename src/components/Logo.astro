@@ -2,66 +2,63 @@
 /**
  * The wordmark, drawn from the same numbers the app draws it from.
  *
- * This is a port of `pilke-app/src/components/Logo.tsx`, and the constants below
- * are that file's, not new ones. It composes the word in Courgette with the
- * sparkle placed over its top right corner; the sparkle is not beside the word,
- * it overlaps it, and that overlap is what makes the mark recognisable.
+ * A port of `pilke-app/src/components/Logo.tsx`, and the two constants below are that
+ * file's rather than new ones. It composes the word in Courgette with the rose beside
+ * it, and everything scales with the font size, so the header mark and a hero mark are
+ * the same drawing at two sizes rather than two drawings.
  *
- * The app's geometry, at `size` 72:
- *
- *   wrapper   position relative, padding-top 30, padding-right 30
- *   word      Courgette 72, colour ink
- *   sparkle   37 x 61, absolute, right 0, margin-right -10, margin-top 24
- *
- * Everything scales with the font size, exactly as `Logo.tsx` scales it, so the
- * header mark and a hero mark are the same drawing at two sizes rather than two
- * drawings.
- *
- * Not an SVG of the whole lockup: the word is live text in Courgette, which the
- * site already loads. Converting it to paths would give a second copy of the
- * wordmark to keep in step with the app, and would stop the mark being selectable
- * or readable by a screen reader.
+ * Not an SVG of the whole lockup: the word is live text in Courgette, which the site
+ * already loads. Converting it to paths would give a second copy of the wordmark to
+ * keep in step with the app, and would stop the mark being selectable or readable.
  */
-import Sparkle from './Sparkle.astro';
+import RoseMark from './RoseMark.astro';
+
+/**
+ * The mark's **height**, as a multiple of the word's font size.
+ *
+ * A height rather than a width because a height is the one dimension `RoseMark` takes:
+ * the rose is not square and `ROSE_ASPECT` owns the other side. At the header's 30 that
+ * is 32 tall by 23 across.
+ */
+const MARK_HEIGHT = 1.05;
+
+/**
+ * The gap between the word and the mark, as a multiple of the font size.
+ *
+ * ⚠️ **A real gap, and the mark may not overlap the type.** A filled rose pulled over
+ * the final *e* covers the *e*. So the mark is a sibling of the word laid out in flow
+ * with this between them, and nothing in this file positions one against the other.
+ */
+const MARK_GAP = 0.18;
 
 interface Props {
-  /** Font size of the word. The rest is derived, as in the app. */
+  /** Font size of the word. The mark and the gap are derived, as in the app. */
   size?: number;
   class?: string;
 }
 
-// From `fonts.title.fontSize` and the offsets in `Logo.tsx`.
-const BASE_SIZE = 72;
-const PAD_TOP = 30;
-const PAD_RIGHT = 30;
-const SPARKLE_WIDTH = 37;
-const SPARKLE_RIGHT = -10;
-const SPARKLE_TOP = 24;
-
 const { size = 28, class: className } = Astro.props;
-const scale = size / BASE_SIZE;
 ---
 
 <span
   class:list={['logo', className]}
-  style={`
-    --size:${size}px;
-    --pad-top:${PAD_TOP * scale}px;
-    --pad-right:${PAD_RIGHT * scale}px;
-    --sparkle-right:${SPARKLE_RIGHT * scale}px;
-    --sparkle-top:${SPARKLE_TOP * scale}px;
-  `}
+  style={`--size:${size}px; --gap:${MARK_GAP * size}px;`}
 >
   <span class="word">Pilke</span>
-  <Sparkle size={SPARKLE_WIDTH * scale} class="mark" />
+  <RoseMark size={MARK_HEIGHT * size} />
 </span>
 
 <style>
+  /*
+    One row: the word, a gap, the mark, bottom-aligned so the rose's stem finishes where
+    the letters do. Not centred: the mark is a plant with a stem, and centring it
+    against the line box leaves the stem ending in mid air with the drawing floating off
+    its own ground.
+  */
   .logo {
-    position: relative;
-    display: inline-block;
-    padding-top: var(--pad-top);
-    padding-right: var(--pad-right);
+    display: inline-flex;
+    align-items: flex-end;
+    column-gap: var(--gap);
   }
 
   .word {
@@ -72,12 +69,5 @@ const scale = size / BASE_SIZE;
     /* Courgette's own side bearing is enough; a letter-spacing here would be a
        departure from the app, which sets none. */
     letter-spacing: 0;
-  }
-
-  .logo :global(.mark) {
-    position: absolute;
-    right: var(--sparkle-right);
-    top: var(--sparkle-top);
-    display: block;
   }
 </style>

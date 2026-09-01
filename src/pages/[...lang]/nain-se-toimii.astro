@@ -16,7 +16,7 @@
  * worse than a page that stays vague.
  */
 import { shots } from '../../assets/screens';
-import GlimmerPile from '../../components/GlimmerPile.astro';
+import RoseCount from '../../components/RoseCount.astro';
 import PageHead from '../../components/PageHead.astro';
 import Phone from '../../components/Phone.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
@@ -77,7 +77,7 @@ const changes = [
       <p class="lede">{t('detail.economy.body')}</p>
 
       <p class="price">
-        <span class="coin"><GlimmerPile height={120} glimmers={5} alt={t('economy.pile.alt')} /><b>5</b></span>
+        <span class="price-mark"><RoseCount height={120} petals={5} alt={t('economy.rose.alt')} /><b>5</b></span>
         <span>{t('economy.lead')}</span>
       </p>
 
@@ -174,18 +174,18 @@ const changes = [
     gap: var(--pad-normal);
   }
 
-  /* The mark and the price it carries, with no chip around them: the coins bring
-     their own ink rule, and a pill would be a second ring on the first. */
-  .coin {
+  /* The mark and the price it carries, with no chip around them: the rose brings
+     its own ink outline, and a pill would be a second ring on the first. */
+  .price-mark {
     display: flex;
     align-items: center;
     gap: var(--pad-small);
   }
 
-  /* Sized against the coins rather than against the running text: the figure is
-     half of one mark with the pile, and at body size it read as a caption under
-     a picture instead. */
-  .coin b {
+  /* Sized against the rose rather than against the running text: the figure is
+     half of the mark, and at body size it reads as a caption under a picture
+     instead of as the price the rose is. */
+  .price-mark b {
     font-family: var(--font-display);
     font-size: clamp(1.875rem, 4vw, 2.5rem);
     font-weight: 400;

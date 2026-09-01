@@ -1,0 +1,106 @@
+---
+/**
+ * A tileable field of petals, behind whatever is placed over it.
+ *
+ * The five placements are the app's own, from `pilke-app/src/components/svgs/PetalField.tsx`,
+ * given there as fractions of the tile so that `tile` scales the petals *and* their
+ * spacing together. Three properties of the arrangement are load-bearing, and they are
+ * the reason for not inventing a new one: a wide spread of size (0.30 down to 0.10 of
+ * the tile), a distinct rotation for each mark, and no two marks sharing a row or a
+ * column. A regular tile reads as a grid, which looks worse than no texture at all.
+ *
+ * **Five marks, and a sixth is one too many.** A petal is a fat, round silhouette that
+ * lays down more ink per unit of its box than a thin mark does, and at six the pale
+ * tints here stop reading as *tinted* and start reading as *patterned*, which pulls the
+ * eye off whatever the field is behind.
+ *
+ * ⚠️ **Every petal sits wholly inside the tile, and has to stay that way.** The pattern
+ * repeats edge to edge with no bleed, so a shape crossing a boundary is cut in half and
+ * the cuts line up across every repeat — a lattice of chopped petals, which is the
+ * artefact the scattering above exists to avoid. `petalClearance` is what a placement is
+ * checked against: `x`, `y` and `1 - x`, `1 - y` all have to exceed it.
+ *
+ * ⚠️ **Which means the tile has a working range.** Up to about three repeats each way it
+ * reads as scattered; a field a dozen repeats wide reads as wallpaper. That is the honest
+ * ceiling of tiling as a mechanism, and it is what a caller chooses between with `tile`.
+ */
+import { PETAL_VIEWBOX, petalSilhouette } from './petalArtwork';
+
+interface Props {
+  /** The tile's edge in px — the one knob for both petal size and density. */
+  tile?: number;
+  /** The field the petals sit on. */
+  background?: string;
+  /** The petals themselves. */
+  petal?: string;
+  class?: string;
+}
+
+const {
+  tile = 320,
+  background = 'var(--brand-background)',
+  petal = '#FCF3AE',
+  class: className,
+} = Astro.props;
+
+/**
+ * One petal's place in the tile, in fractions of the tile's edge.
+ *
+ * `size` is the edge of the petal's 240-unit box as a fraction of the tile, and the
+ * eight shapes are square so there is no second proportion to carry. ⚠️ **It is the
+ * box, not the ink**: the artwork leaves 25 to 50 units of margin inside its box on
+ * every side, so a mark at `size: 0.3` draws about 0.23 of the tile across at its
+ * widest. `x`/`y` are the box's *centre*, which is also what it rotates about.
+ */
+const placements = [
+  { x: 0.24, y: 0.2, size: 0.3, rotate: -14, shape: 'comma' },
+  { x: 0.66, y: 0.44, size: 0.24, rotate: 38, shape: 'spoon' },
+  { x: 0.86, y: 0.86, size: 0.16, rotate: -30, shape: 'curl' },
+  { x: 0.4, y: 0.66, size: 0.13, rotate: 82, shape: 'split' },
+  { x: 0.1, y: 0.52, size: 0.1, rotate: 20, shape: 'backroll' },
+];
+
+/*
+  The id has to distinguish every combination on the page, not just every tile size. Two
+  `<pattern>` elements sharing an id means the first one wins wherever it is referenced,
+  so a second field at the same tile size in different colours silently draws the first
+  one's colours — which is what a grey footer under a yellow section would do.
+*/
+const id = `petals-${tile}-${`${background}${petal}`.replace(/[^a-zA-Z0-9]/g, '')}`;
+
+const centre = PETAL_VIEWBOX / 2;
+
+/*
+  Read each mark's transform right to left: centre the shape on the origin, size it,
+  turn it, then move it to its place. Any other order rotates it about the corner of
+  its box and walks it out of the tile.
+*/
+---
+
+<svg class={className} aria-hidden="true" focusable="false" preserveAspectRatio="none">
+  <defs>
+    <pattern id={id} patternUnits="userSpaceOnUse" width={tile} height={tile}>
+      <rect width={tile} height={tile} fill={background} />
+      {
+        placements.map(({ x, y, size, rotate, shape }) => (
+          <g
+            transform={`translate(${x * tile} ${y * tile}) rotate(${rotate}) scale(${(size * tile) / PETAL_VIEWBOX}) translate(${-centre} ${-centre})`}
+          >
+            <path d={petalSilhouette(shape)} fill={petal} />
+          </g>
+        ))
+      }
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill={`url(#${id})`} />
+</svg>
+
+<style>
+  svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>

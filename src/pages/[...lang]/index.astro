@@ -20,9 +20,9 @@
  * is, so `nain-se-toimii` carries all of it and `both` links there.
  */
 import { shots } from '../../assets/screens';
-import Glimmer from '../../components/Glimmer.astro';
+import PetalField from '../../components/PetalField.astro';
 import Phone from '../../components/Phone.astro';
-import Sparkle from '../../components/Sparkle.astro';
+import RoseMark from '../../components/RoseMark.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
@@ -33,8 +33,8 @@ const t = useTranslations(lang);
 
 /*
   The three claims that sit in a bar under the headline. One line each and no
-  card around them: as boxes they were three shadowed rectangles competing with
-  the phone beside them, and none of the three needs a paragraph.
+  card around them: as boxes they would be three shadowed rectangles competing
+  with the phone beside them, and none of the three needs a paragraph.
 */
 const facts = [
   { title: t('fact.one.title'), body: t('fact.one.body') },
@@ -97,7 +97,7 @@ const safetyCards = [
 
 <Base lang={lang}>
   <section class="slab slab-yellow">
-    <Glimmer tile={340} background="var(--brand-main)" star="#F7E88A" />
+    <PetalField tile={340} background="var(--brand-main)" petal="#F7E88A" />
     <div class="wrap section-pad">
       <div class="hero">
         <div class="hero-copy">
@@ -115,7 +115,7 @@ const safetyCards = [
 
       <!--
         Three claims on one rule under the headline. A description list because
-        that is the shape: a claim, and the line that qualifies it. Cards were
+        that is the shape: a claim, and the line that qualifies it. Cards would be
         three shadowed rectangles beside a phone that is already a rectangle, and
         none of the three has enough to say to fill one.
       -->
@@ -169,7 +169,7 @@ const safetyCards = [
       </div>
 
       <div class="learn">
-        <Sparkle size={34} />
+        <RoseMark size={44} />
         <div>
           <h3>{t('diff.learn.title')}</h3>
           <p class="prose">{t('diff.learn.body')}</p>
@@ -179,7 +179,7 @@ const safetyCards = [
   </section>
 
   <section class="slab slab-pale" id="how">
-    <Glimmer tile={300} />
+    <PetalField tile={300} />
     <div class="wrap section-pad">
       <h2 class="display-mid">{t('how.title')}</h2>
 
@@ -256,9 +256,9 @@ const safetyCards = [
 
       <!--
         The phone stands beside the whole column, the forward-looking note
-        included. Beside the cards alone it was the tallest thing in the row by
-        200px, and that height became a hole between the cards and whatever
-        followed them.
+        included, rather than beside the cards alone: the cards on their own are
+        about 200px shorter than the phone, and that difference is a hole between
+        them and whatever follows.
       -->
       <div class="safety">
         <div class="safety-main">
@@ -582,7 +582,7 @@ const safetyCards = [
     color: var(--muted);
   }
 
-  /* Its own gap: at the block spacing it read as a third paragraph of the route
+  /* Its own gap: at the block spacing it reads as a third paragraph of the route
      above rather than as the point that follows both of them. */
   .wrap > .learn {
     margin-top: clamp(2.5rem, 5vw, 3.5rem);

@@ -27,9 +27,10 @@ bilingual site drifts, and the English routes keep the Finnish slug so a languag
 switch is the prefix and nothing else.
 
 A page holds its own sections, its own lists and its own styles. `src/components/`
-is what more than one page draws: `Phone`, `Glimmer`, `Sparkle`, `Logo`,
-`GlimmerPile`, the `PageHead` slab the three subpages open with, and the
+is what more than one page draws: `Phone`, `PetalField`, `RoseMark`, `Logo`,
+`RoseCount`, the `PageHead` slab the three subpages open with, and the
 `SiteHeader` and `SiteFooter` that `Base.astro` puts around every page.
+`roseArtwork.ts` and `petalArtwork.ts` hold the geometry those three draw from.
 `src/assets/screens.ts` is the table of screenshots, and is the only thing the
 pages share besides the dictionary.
 
@@ -95,12 +96,12 @@ swiping, three claims to stand behind, why that is not the same product as the
 others, the loop, both halves of it are somebody's decision, and it is safe to
 do.
 
-Two things carry that argument visually, and both replaced a grid of shadowed
-boxes:
+Two things carry that argument visually, and neither of them is a grid of
+shadowed boxes:
 
 - **The fact bar under the headline.** Three claims on one rule — three
   candidates at a time, time and place already set, nothing to game — one line
-  each. As cards they were three shadowed rectangles beside a phone that is
+  each. As cards they would be three shadowed rectangles beside a phone that is
   already a rectangle, and none of the three has enough to say to fill one.
 - **The two routes in *Miksi tämä on erilaista*.** Each way of ending up on a
   date is a chain of one-word chips: elsewhere it is profile → scrolling → chat →
@@ -126,7 +127,7 @@ specificity otherwise. A bare `.learn { margin-top }` silently does nothing.
 
 Three deliberate omissions:
 
-- **The glimmer economy is not on the front page.** A price and an earning table
+- **The petal economy is not on the front page.** A price and an earning table
   read as a game to be played, which is the opposite of what this product is.
   `nain-se-toimii` carries all of it, and the front page's *Kutsu, ja vastaa
   kutsuihin* section links there. That section exists because an app where
@@ -142,8 +143,8 @@ Three deliberate omissions:
   ships.
 - **The questions are their own page** at `kysyttya`, which the header points at.
   Somebody arriving with one question is a different visit from reading the front
-  page top to bottom, and a stack of six answers was the last thing a front-page
-  reader met before the waitlist.
+  page top to bottom, and a stack of six answers has no business being the last
+  thing a front-page reader meets before the waitlist.
 
 ## Where the claims come from
 
@@ -157,11 +158,11 @@ model field or a string in the app's own dictionaries, it does not go on the
 site** — and a plausible-sounding sentence about what an app "asks" is exactly the
 shape the invented ones take. The load-bearing numbers:
 
-- A set of three candidates costs five glimmers, and there is no other price.
-- The glimmers are spent when the set is drawn, not when the invitation is sent.
-- One glimmer per three credited calendar spans, two for a date once feedback is
+- A set of three candidates costs five petals, and there is no other price.
+- The petals are spent when the set is drawn, not when the invitation is sent.
+- One petal per three credited calendar spans, two for a date once feedback is
   given, five for finishing registration, five if somebody calls off a date on you.
-- Earning stops at fifteen glimmers, which is three invitations' worth. Refunds are
+- Earning stops at fifteen petals, which is three invitations' worth. Refunds are
   uncapped, so a balance can legitimately pass it.
 - **Pilke never asks where anybody lives.** There is no home address and no
   device-location read outside a date. `User.date_location_preference` is a point
@@ -194,16 +195,17 @@ shape the invented ones take. The load-bearing numbers:
   safety section says so in the copy itself — not in use, no date promised — and
   it is the only forward-looking statement on the site. If it ships, that note
   becomes a card; if it is dropped, the note goes.
-- There is no way to buy a glimmer, no paid visibility, no boost and no ranking.
+- There is no way to buy a petal, no paid visibility, no boost and no ranking.
   `TokenGrantReason` in `users/models.py` declares nine reasons and not one of
   them is a purchase, and there is no billing, in-app-purchase, boost or ranking
   code in either repository. The front page's *Ei mitään pelattavaa* claim and the
   *what does it cost* answer both rest on that. Ship any of those four and both
   have to change.
 
-The backend calls the unit a **token** in code; `glimmer` and `kipinä` are the
-words users read. `Glimmer.astro` is the sparkle texture and is unrelated to the
-currency.
+The backend calls the unit a **token** in code; `petal` and `terälehti` are the
+words users read, and five of them make a `rose` — a `ruusu` — which is what the
+mark draws. `PetalField.astro` is the page texture and is unrelated to the
+currency; `RoseCount.astro` is the currency.
 
 ## Copy that needs a human before this goes public
 

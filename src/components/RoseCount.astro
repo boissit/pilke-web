@@ -1,0 +1,88 @@
+---
+/**
+ * An amount of petals, drawn as roses: five petals make one whole rose, and a part-paid
+ * rose shows the petals it has.
+ *
+ * The rose still opening is the **rightmost** and finished roses stack to its left,
+ * which is why the slots are drawn in ascending order: slot 0 fills first and ends up
+ * furthest left. Reversing it would make the finished roses appear to slide sideways as
+ * an amount grows.
+ *
+ * Every amount on this site is a price or something earned, never a reader's balance,
+ * so it is written into the page by hand. Which is why an impossible amount throws: it
+ * can only be a typo, and a build that fails is better than a page quietly drawing a
+ * different number than the copy beside it claims.
+ */
+import RoseMark from './RoseMark.astro';
+import { PETALS_PER_ROSE, ROSE_ASPECT, type PetalCount } from './roseArtwork';
+
+/**
+ * How many roses there is room for: three, one per invitation the app's earn ceiling
+ * allows, which is the most the product ever pictures at once.
+ */
+const SLOTS = 3;
+
+/**
+ * The gap between two roses, as a fraction of one rose's width.
+ *
+ * A fraction rather than a token, because this is one drawing at every size the site
+ * draws it: a fixed 2px gap that reads as air between two roses at 30px reads as two
+ * roses touching at 120.
+ */
+const SLOT_GAP_RATIO = 2 / 30;
+
+interface Props {
+  /**
+   * How many petals the amount is. Five to a rose, and at most three roses' worth.
+   */
+  petals: number;
+  /**
+   * How tall to draw one rose, in px. The row's width follows from the roses in it.
+   *
+   * Height rather than width, because what has to agree with the type beside it is how
+   * tall the roses stand.
+   */
+  height: number;
+  /**
+   * What the drawing says, for a reader who cannot see it. It describes the picture
+   * rather than the amount — the amount is in the copy beside it either way.
+   */
+  alt: string;
+  class?: string;
+}
+
+const { petals, height, alt, class: className } = Astro.props;
+
+const ceiling = SLOTS * PETALS_PER_ROSE;
+
+if (!Number.isInteger(petals) || petals < 1 || petals > ceiling) {
+  throw new Error(
+    `RoseCount: ${petals} is not an amount this draws. A whole number of petals from ` +
+      `1 to ${ceiling}, which is ${SLOTS} roses of ${PETALS_PER_ROSE}.`,
+  );
+}
+
+/*
+  One entry per rose, left to right, each with the petals that fall to it. The last one
+  is the part-paid rose whenever the amount is not a whole number of roses.
+*/
+const roses = Array.from({ length: Math.ceil(petals / PETALS_PER_ROSE) }, (_, slot) =>
+  Math.min(PETALS_PER_ROSE, petals - PETALS_PER_ROSE * slot) as PetalCount,
+);
+
+const gap = height * ROSE_ASPECT * SLOT_GAP_RATIO;
+---
+
+<span class:list={['roses', className]} role="img" aria-label={alt} style={`--gap:${gap}px;`}>
+  {roses.map((filled) => <RoseMark size={height} petals={filled} />)}
+</span>
+
+<style>
+  /* `flex-end`, so every rose stands on the same ground however many petals it has.
+     The marks are all the same height, so this only matters if one is ever not. */
+  .roses {
+    display: inline-flex;
+    align-items: flex-end;
+    column-gap: var(--gap);
+  }
+</style>

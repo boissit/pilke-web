@@ -1,0 +1,77 @@
+---
+/**
+ * The rose: the app's mark and the petal economy's currency, drawn from the same
+ * artwork the product ships.
+ *
+ * Decorative by itself — it takes `aria-hidden`, and anything that means something by
+ * drawing one labels the drawing from outside. `Logo.astro` composes it with the word
+ * *Pilke*; `RoseCount.astro` lays out a row of them as an amount.
+ *
+ * **The drawing and nothing else.** It takes a height and a petal count and returns a
+ * rose. How many roses there are, what they add up to and how they line up is
+ * `RoseCount.astro`'s.
+ */
+import {
+  PETALS_PER_ROSE,
+  ROSE_ASPECT,
+  ROSE_VIEWBOX,
+  leafLeftPath,
+  leafRightPath,
+  outlinePath,
+  petalPaths,
+  roseFills,
+  stemPath,
+  type PetalCount,
+} from './roseArtwork';
+
+interface Props {
+  /**
+   * The mark's **height** in px. The width follows at `ROSE_ASPECT × size`.
+   *
+   * Height rather than width, and no default: the rose is not square, its height is
+   * what everything drawing it hangs off — the wordmark sets its own from the font
+   * size — and there is no size that suits both a 30px header and a 120px price.
+   */
+  size: number;
+  /**
+   * How many of the five petals are filled, from the centre outwards. A whole rose by
+   * default, because most of the site's uses are the mark rather than an amount.
+   */
+  petals?: PetalCount;
+  class?: string;
+}
+
+const { size, petals = PETALS_PER_ROSE, class: className } = Astro.props;
+
+const fills = roseFills(petals);
+
+/*
+  Everything below is drawn in the artwork's order, which is z-order: the petals, then
+  the foliage, then the one filled outline path over all of it. The outline is last or
+  it is under the fills it is supposed to define.
+*/
+---
+
+<svg
+  class={className}
+  width={size * ROSE_ASPECT}
+  height={size}
+  viewBox={ROSE_VIEWBOX}
+  aria-hidden="true"
+  focusable="false"
+>
+  {petalPaths.map(({ group, d }) => <path d={d} fill={fills.petals[group]} />)}
+
+  <path d={stemPath} fill={fills.foliage} />
+  <path d={leafRightPath} fill={fills.foliage} />
+  <path d={leafLeftPath} fill={fills.foliage} />
+  <path d={outlinePath} fill={fills.outline} />
+</svg>
+
+<style>
+  /* Block, so the mark takes no descender space under it and its bottom edge is where
+     the drawing ends. The lockup aligns the stem with the letters on that edge. */
+  svg {
+    display: block;
+  }
+</style>

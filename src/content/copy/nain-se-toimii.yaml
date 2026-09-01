@@ -77,7 +77,7 @@
 # Teralehdet
 #
 # `economy.amount.*` are the amounts in the earning table, and `economy.lead`
-# and `economy.pile.alt` belong to the picture of five coins beside it.
+# and `economy.rose.alt` belong to the rose drawn beside it.
 # ──────────────────────────────────────────────────────────────────────────
 
 'detail.economy.title':
@@ -136,9 +136,9 @@
   fi: 'Viisi terälehteä avaa valikoiman.'
   en: 'Five petals open a set.'
 
-'economy.pile.alt':
-  fi: 'Viisi kipinäkolikkoa pinossa.'
-  en: 'Five glimmer coins in a pile.'
+'economy.rose.alt':
+  fi: 'Ruusu, jonka kaikki viisi terälehteä on kerätty.'
+  en: 'A rose with all five of its petals collected.'
 
 'economy.amount.one':
   fi: '1 terälehti'

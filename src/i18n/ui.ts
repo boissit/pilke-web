@@ -92,7 +92,7 @@ const fi = {
     'Sovellus kysyy lyhyesti, miten meni ja vastasiko toinen toiveitasi. Vastaa hetkessä, niin seuraavat ehdotukset osuvat paremmin.',
   'how.loop': 'Sitten kierros alkaa alusta — ja tiedämme sinusta enemmän kuin viime kerralla.',
 
-  // The section that stands where the price list used to. Its job is that both
+  // The section between the loop and the safety cards. Its job is that both
   // halves of a date are somebody's decision: one person asks, one person
   // answers, and the app is built so that both are worth doing.
   'both.title': 'Kutsu, ja vastaa kutsuihin',
@@ -228,7 +228,7 @@ const fi = {
     'Kutsussa on jo aika ja paikka, joten sopimiseen ei tarvita keskustelua. Se on koko idea: Pilke vie teidät samaan pöytään sen sijaan, että korvaisi sen. Treffipäivänä kartta kertoo, missä toinen on, jotta löydätte perille ilman viestittelyä.',
 
   'economy.lead': 'Viisi terälehteä avaa valikoiman.',
-  'economy.pile.alt': 'Viisi kipinäkolikkoa pinossa.',
+  'economy.rose.alt': 'Ruusu, jonka kaikki viisi terälehteä on kerätty.',
   'economy.amount.one': '1 terälehti',
   'economy.amount.two': '2 terälehteä',
   'economy.amount.five': '5 terälehteä',
@@ -542,7 +542,7 @@ const en: Record<keyof typeof fi, string> = {
     'An invitation already carries the time and the place, so arranging it needs no conversation. That is the whole idea: Pilke takes you to the same table rather than standing in for it. On the day, the map shows where the other person is so you find each other without messaging.',
 
   'economy.lead': 'Five petals open a set.',
-  'economy.pile.alt': 'Five glimmer coins in a pile.',
+  'economy.rose.alt': 'A rose with all five of its petals collected.',
   'economy.amount.one': '1 petal',
   'economy.amount.two': '2 petals',
   'economy.amount.five': '5 petals',

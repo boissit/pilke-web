@@ -66,13 +66,12 @@ const nav = [
   }
 
   /* `Logo` carries its own geometry, so the anchor only has to not interfere
-     with it. */
+     with it. `inline-flex` rather than `inline-block`: the lockup is a flex row
+     of a word and a block-level drawing, and an inline-block anchor around it
+     adds a line box under the mark that the header would then centre against. */
   .brand {
-    display: inline-block;
+    display: inline-flex;
     text-decoration: none;
-    /* The logo's own top padding is part of the app's lockup, so the header
-       pulls the block back up rather than growing to accommodate it. */
-    margin-block: calc(var(--pad-small) * -1);
   }
 
   .nav-list {
