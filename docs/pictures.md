@@ -64,18 +64,18 @@ that are visible, so a change to any of them can be traced back to the pictures 
 
 | Picture | App screen | Taken by | What is visible in it |
 | --- | --- | --- | --- |
-| `treffit` | Home, populated | `screenshots.yaml` | **The balance counter: the glimmer pile, the `Kipinat:` label and the figure.** The wordmark, three stacks of match cards with partner photos, names, ages, venues and timeslot chips, the `Loyda treffit!` button, the tab bar. The only picture on this site with the currency in it |
+| `treffit` | Home, populated | `screenshots.yaml` | **The balance counter: the rose slots and the `n/5` figure.** The wordmark, three stacks of match cards with partner photos, names, ages, venues and timeslot chips, the `Loyda treffit!` button, the tab bar. The only picture on this site with the currency in it. ⚠️ **Stale: it still shows the coin counter**, so it needs retaking against a build carrying `RoseCounter` |
 | `platter` | Candidates | `screenshotPlatter.yaml` | A candidate's photo card, name and age, the times both people share, the activity chips, the `Ehdota!` button, the pager dots. Drawn on the brand yellow, so a change to that colour shows here |
 | `invitation` | Invitation received | `screenshots.yaml` | The sender's photo card, the timeslots offered as chips, the venue, the map, and the two answers: `Hylkaa` and `Sovittu!` |
 | `date` | An agreed date | `screenshotDate.yaml` | The partner card, the venue and its description, the map, the location-sharing line, the back control |
 | `feedback` | Date feedback | `screenshotFeedback.yaml` | The partner card with the date's time, one feedback question and its `Kylla` / `Ei` answers |
 | `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress dots, the question and its options, `Jatka` |
 | `asetukset` | Settings, Safety open | `screenshots.yaml` | The Safety section's whole explanation, the trusted-contact field and its save button, the tab bar. The most copy of any picture here, so it goes stale on wording as well as on layout |
-| `05` | Not a screenshot | `tools/glimmer-pile` | Five glimmer coins, the price of one set of candidates. A render, so it changes when the coins or the amount do and never when the app's UI does. See **The currency** below |
 
 ## The currency
 
-The coins in the price lines are not screenshots. They are renders from
-`pilke-app/tools/glimmer-pile`, and that directory's README carries the command this site's
-copy comes from. `GlimmerPile.astro` names the amounts the site holds a picture of, so an
-amount with no file fails the build rather than drawing a different one.
+The currency in the price lines is not a picture and not a screenshot: `RoseCount.astro`
+draws it as vector SVG from `roseArtwork.ts`, whose paths are the app's own. So it cannot
+go stale against the app's mark the way a render could, and it needs no file per amount —
+`PetalCount` bounds what can be asked for, and an amount outside it fails the build rather
+than drawing a different one.

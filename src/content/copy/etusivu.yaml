@@ -169,13 +169,12 @@
 # ──────────────────────────────────────────────────────────────────────────
 # Both halves of a date are somebody’s decision
 #
-# The section that stands where the price list used to. `both.more` is the link
-# to `nain-se-toimii`, which is where the currency is allowed to be explained.
+# `both.more` is the link to `nain-se-toimii`, which is where the currency is
+# allowed to be explained.
 # ──────────────────────────────────────────────────────────────────────────
 
-# The section that stands where the price list used to. Its job is that both
-# halves of a date are somebody's decision: one person asks, one person
-# answers, and the app is built so that both are worth doing.
+# Its job is that both halves of a date are somebody's decision: one person
+# asks, one person answers, and the app is built so that both are worth doing.
 'both.title':
   fi: 'Kutsu, ja vastaa kutsuihin'
   en: 'Invite, and answer invitations'
