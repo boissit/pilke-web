@@ -5,8 +5,9 @@
  * translation rather than a fallback set, so a key missing from `en` is a type
  * error here in the same way it is in the app's own dictionaries.
  *
- * Product vocabulary is the app's own spelling: kipinat are what the product
- * calls its currency, and the site should not invent a softer word for it.
+ * Product vocabulary is the app's own spelling: teralehdet are what the product
+ * calls its currency, and five of them make a ruusu. The site should not invent
+ * a softer word for either.
  *
  * The front page argues one thing: there is no chat, and the shortest path to
  * meeting somebody is a kutsu with the time already in it. The currency belongs
@@ -99,13 +100,13 @@ const fi = {
     'Treffit syntyvät vain jos joku kutsuu ja joku vastaa. Pilke on tehty niin, että molemmat kannattavat.',
   'both.invite.title': 'Kutsu ensin',
   'both.invite.body':
-    'Kutsu on sovelluksen ainoa varsinainen teko. Valikoiman avaaminen kuluttaa kipinöitä, ja kipinöitä saa käyttämällä sovellusta. Rahalla niitä ei saa.',
+    'Kutsu on sovelluksen ainoa varsinainen teko. Valikoiman avaaminen kuluttaa terälehtiä, ja terälehtiä saa käyttämällä sovellusta. Rahalla niitä ei saa.',
   'both.answer.title': 'Vastaa kutsuun',
   'both.answer.body':
     'Kutsuun vastaaminen ei kuluta mitään. Kieltäydy vapaasti, siitä ei seuraa sinulle mitään. Kutsu on voimassa vuorokauden ja raukeaa itsestään, jos jätät sen.',
   'both.note':
-    'Treffeillä käyminen ja palautteen antaminen tuovat kipinöitä, eli seuraavan kutsun. Määrät voivat muuttua betan aikana.',
-  'both.more': 'Kipinät ja koko kierto tarkemmin',
+    'Treffeillä käyminen ja palautteen antaminen tuovat terälehtiä, eli seuraavan kutsun. Määrät voivat muuttua betan aikana.',
+  'both.more': 'Terälehdet ja koko kierto tarkemmin',
 
   // The safety block on the front page. Three short cards; the page at
   // `turvallisuus` carries the whole of it. The location card is here because it
@@ -170,7 +171,7 @@ const fi = {
   // README records which.
   'detail.title': 'Näin Pilke toimii',
   'detail.lead':
-    'Etusivu kertoo kierron neljässä vaiheessa. Tällä sivulla on sama tarkemmin: mistä ehdokkaat tulevat, mistä kipinät tulevat ja mitä tapahtuu kun suunnitelmat muuttuvat.',
+    'Etusivu kertoo kierron neljässä vaiheessa. Tällä sivulla on sama tarkemmin: mistä ehdokkaat tulevat, mistä terälehdet tulevat ja mitä tapahtuu kun suunnitelmat muuttuvat.',
 
   'detail.start.title': 'Ennen ensimmäistä kutsua',
   'detail.start.body':
@@ -189,10 +190,10 @@ const fi = {
   'detail.invite.body':
     'Tarjoat vähintään kaksi aikaa ja yhden tekemisen. Toinen valitsee niistä yhden, ja treffit on sovittu. Kutsu on voimassa vuorokauden.',
 
-  'detail.economy.title': 'Kipinät',
+  'detail.economy.title': 'Terälehdet',
   'detail.economy.body':
-    'Kipinä on se, mitä keräät ja käytät. Valikoima kuluttaa viisi kipinää, eikä muuta hintaa ole. Kipinöitä ei myydä.',
-  'detail.economy.earn': 'Näin kipinöitä kertyy',
+    'Terälehti on se, mitä keräät ja käytät. Viisi terälehteä tekee ruusun, ja ruusu avaa valikoiman. Muuta hintaa ei ole. Terälehtiä ei myydä.',
+  'detail.economy.earn': 'Näin terälehtiä kertyy',
   'detail.earn.signup': 'Rekisteröinnin viimeistely',
   'detail.earn.signup.note': 'Kerran tilin elinkaaressa, koodin vahvistamisen jälkeen.',
   'detail.earn.calendar': 'Kolme kalenteriin merkittyä aikaa',
@@ -203,21 +204,21 @@ const fi = {
     'Maksetaan, kun olet kertonut miten meni. Molemmat saavat omansa erikseen.',
   'detail.earn.cancelled': 'Jos toinen perui sovitut treffit',
   'detail.earn.cancelled.note':
-    'Hyvitys sinulle. Jos olit kutsun lähettäjä, saat lisäksi kipinäsi takaisin.',
+    'Hyvitys sinulle. Jos olit kutsun lähettäjä, saat lisäksi terälehtesi takaisin.',
 
-  'detail.economy.spend': 'Näin kipinät kuluvat',
+  'detail.economy.spend': 'Näin terälehdet kuluvat',
   'detail.economy.spend.body':
-    'Viisi kipinää kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään. Kipinöitä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut kipinät odottavat, kunnes käytät niitä. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.',
+    'Viisi terälehteä kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään. Terälehtiä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut terälehdet odottavat, kunnes käytät niitä. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.',
 
   'detail.changes.title': 'Jos suunnitelmat muuttuvat',
   'detail.changes.expired': 'Kutsuun ei vastata vuorokaudessa',
-  'detail.changes.expired.note': 'Kutsu raukeaa itsestään ja saat kipinäsi takaisin.',
+  'detail.changes.expired.note': 'Kutsu raukeaa itsestään ja saat terälehtesi takaisin.',
   'detail.changes.declined': 'Kutsu hylätään',
   'detail.changes.declined.note':
-    'Saat kipinäsi takaisin. Hylkääminen on aina ilmaista, eikä siitä seuraa hylkääjälle mitään.',
+    'Saat terälehtesi takaisin. Hylkääminen on aina ilmaista, eikä siitä seuraa hylkääjälle mitään.',
   'detail.changes.withdrawn': 'Perut oman kutsusi',
   'detail.changes.withdrawn.note':
-    'Kipinät on käytetty, ja uuden valikoiman avaaminen odottaa hetken.',
+    'Terälehdet on käytetty, ja uuden valikoiman avaaminen odottaa hetken.',
   'detail.changes.canceled': 'Sovitut treffit perutaan',
   'detail.changes.canceled.note':
     'Peruminen onnistuu, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen hidastaa uusien ehdokkaiden saamista.',
@@ -226,11 +227,11 @@ const fi = {
   'detail.chat.body':
     'Kutsussa on jo aika ja paikka, joten sopimiseen ei tarvita keskustelua. Se on koko idea: Pilke vie teidät samaan pöytään sen sijaan, että korvaisi sen. Treffipäivänä kartta kertoo, missä toinen on, jotta löydätte perille ilman viestittelyä.',
 
-  'economy.lead': 'Viisi kipinää avaa valikoiman.',
+  'economy.lead': 'Viisi terälehteä avaa valikoiman.',
   'economy.pile.alt': 'Viisi kipinäkolikkoa pinossa.',
-  'economy.amount.one': '1 kipinä',
-  'economy.amount.two': '2 kipinää',
-  'economy.amount.five': '5 kipinää',
+  'economy.amount.one': '1 terälehti',
+  'economy.amount.two': '2 terälehteä',
+  'economy.amount.five': '5 terälehteä',
 
   // The waitlist. TODO(pilke-web): the form posts nowhere yet — see README.
   'cta.title': 'Pilke on suljetussa betassa',
@@ -267,7 +268,7 @@ const fi = {
     'Vain jos valitset niin. Sijainti näkyy kymmenen minuuttia sovitun alun molemmin puolin ja vain 300 metrin säteellä treffipaikasta, ja voit lopettaa näyttämisen milloin tahansa. Se poistetaan kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun.',
   'faq.cost.q': 'Mitä se maksaa?',
   'faq.cost.a':
-    'Betavaiheessa ei mitään. Kipinöitä ei voi ostaa, vaan niitä kertyy käyttämällä sovellusta.',
+    'Betavaiheessa ei mitään. Terälehtiä ei voi ostaa, vaan niitä kertyy käyttämällä sovellusta.',
   'faq.cancel.q': 'Entä jos treffit peruuntuvat?',
   'faq.cancel.a':
     'Kutsun hylkääminen on aina ilmaista eikä siitä seuraa mitään. Sovitun tapaamisen voi perua sovelluksessa, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen tai saapumatta jättäminen hidastaa uusien ehdokkaiden saamista, koska se on toiselle osapuolelle merkityksellistä.',
@@ -276,7 +277,7 @@ const fi = {
     'Kyllä, asetuksista. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Menneet treffit ja niistä annetut palautteet jäävät talteen, koska ne ovat yhtä lailla toisen osapuolen tietoja.',
 
   'shot.treffit':
-    'Pilkkeen etusivu puhelimessa: kipinöiden määrä ylhäällä, alla omat treffit ja saapuneet kutsut.',
+    'Pilkkeen etusivu puhelimessa: terälehtien määrä ylhäällä, alla omat treffit ja saapuneet kutsut.',
   'shot.kalenteri': 'Kalenterinäkymä, jossa viikon päivät ja niihin merkityt vapaat treffiajat.',
   'shot.story':
     'Tarinatestin ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.',
@@ -337,7 +338,7 @@ const fi = {
   'legal.deletion.kept.four':
     'Esto, joka syntyy kun joku ei ole kokenut oloaan turvalliseksi. Sitä ei voi purkaa lähtemällä.',
   'legal.deletion.kept.five': 'Ilmoitukset saapumatta jättämisestä, molempiin suuntiin.',
-  'legal.deletion.kept.six': 'Kipinöiden liikkeet, jotta saldot pysyvät täsmäävinä.',
+  'legal.deletion.kept.six': 'Terälehtien liikkeet, jotta saldot pysyvät täsmäävinä.',
   'legal.deletion.kept.seven':
     'Käynnissä oleva hidastus, jos sinulla on sellainen. Lähteminen ei lyhennä sitä.',
   'legal.deletion.kept.eight':
@@ -347,7 +348,7 @@ const fi = {
 
   'legal.deletion.others.title': 'Mitä tapahtuu sovituille treffeille',
   'legal.deletion.others.body':
-    'Lähettämäsi kutsut perutaan ja saamasi kutsut hylätään, ja kutsujan kipinät palautetaan. Tulevat treffit peruutetaan, ja toinen osapuoli hyvitetään kuten missä tahansa perumisessa. Sinulle ei tule tästä seurauksia, emmekä kerro kenellekään erikseen, että lähdit.',
+    'Lähettämäsi kutsut perutaan ja saamasi kutsut hylätään, ja kutsujan terälehdet palautetaan. Tulevat treffit peruutetaan, ja toinen osapuoli hyvitetään kuten missä tahansa perumisessa. Sinulle ei tule tästä seurauksia, emmekä kerro kenellekään erikseen, että lähdit.',
 
   'legal.deletion.again.title': 'Jos palaat myöhemmin',
   'legal.deletion.again.body':
@@ -426,13 +427,13 @@ const en: Record<keyof typeof fi, string> = {
     'A date happens only if somebody asks and somebody answers. Pilke is built so that both are worth doing.',
   'both.invite.title': 'Invite first',
   'both.invite.body':
-    'An invitation is the one real action in the app. Opening a set spends glimmers, and glimmers come from using the app. Money does not buy them.',
+    'An invitation is the one real action in the app. Opening a set spends petals, and petals come from using the app. Money does not buy them.',
   'both.answer.title': 'Answer an invitation',
   'both.answer.body':
     'Answering costs you nothing. Turn one down freely, and nothing follows for you. An invitation stands for a day and lapses by itself if you leave it.',
   'both.note':
-    'Going on dates and giving feedback earn glimmers, which is your next invitation. The amounts may change during the beta.',
-  'both.more': 'Glimmers and the whole loop in detail',
+    'Going on dates and giving feedback earn petals, which is your next invitation. The amounts may change during the beta.',
+  'both.more': 'Petals and the whole loop in detail',
 
   'safety.front.title': 'Safety is not an add-on',
   'safety.front.lead':
@@ -485,7 +486,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'detail.title': 'How Pilke works',
   'detail.lead':
-    'The front page gives the loop in four steps. This page is the same thing in detail: where candidates come from, where glimmers come from, and what happens when plans change.',
+    'The front page gives the loop in four steps. This page is the same thing in detail: where candidates come from, where petals come from, and what happens when plans change.',
 
   'detail.start.title': 'Before your first invitation',
   'detail.start.body':
@@ -504,10 +505,10 @@ const en: Record<keyof typeof fi, string> = {
   'detail.invite.body':
     'You offer at least two times and one thing to do. The other person picks one of them, and the date is set. An invitation stands for a day.',
 
-  'detail.economy.title': 'Glimmers',
+  'detail.economy.title': 'Petals',
   'detail.economy.body':
-    'A glimmer is what you collect and what you spend. A set costs five glimmers, and there is no other price. Glimmers are not sold.',
-  'detail.economy.earn': 'How glimmers add up',
+    'A petal is what you collect and what you spend. Five petals make a rose, and a rose opens a set. There is no other price. Petals are not sold.',
+  'detail.economy.earn': 'How petals add up',
   'detail.earn.signup': 'Finishing your registration',
   'detail.earn.signup.note': 'Once in the life of an account, after the code is confirmed.',
   'detail.earn.calendar': 'Three times marked in your calendar',
@@ -517,21 +518,21 @@ const en: Record<keyof typeof fi, string> = {
   'detail.earn.date.note': 'Paid once you have said how it went. Each of you gets your own.',
   'detail.earn.cancelled': 'If the other person calls off an agreed date',
   'detail.earn.cancelled.note':
-    'Compensation for you. If you were the one who invited, you also get your glimmers back.',
+    'Compensation for you. If you were the one who invited, you also get your petals back.',
 
-  'detail.economy.spend': 'How glimmers go',
+  'detail.economy.spend': 'How petals go',
   'detail.economy.spend.body':
-    'Five glimmers go the moment you open a set. Sending the invitation costs nothing more. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Reimbursements, such as the glimmers returned when an invitation lapses, arrive regardless of the limit.',
+    'Five petals go the moment you open a set. Sending the invitation costs nothing more. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Reimbursements, such as the petals returned when an invitation lapses, arrive regardless of the limit.',
 
   'detail.changes.title': 'If plans change',
   'detail.changes.expired': 'An invitation goes unanswered for a day',
-  'detail.changes.expired.note': 'It lapses by itself and your glimmers come back.',
+  'detail.changes.expired.note': 'It lapses by itself and your petals come back.',
   'detail.changes.declined': 'An invitation is turned down',
   'detail.changes.declined.note':
-    'Your glimmers come back. Turning one down is always free and costs the person doing it nothing.',
+    'Your petals come back. Turning one down is always free and costs the person doing it nothing.',
   'detail.changes.withdrawn': 'You withdraw your own invitation',
   'detail.changes.withdrawn.note':
-    'The glimmers are spent, and opening a new set waits a little while.',
+    'The petals are spent, and opening a new set waits a little while.',
   'detail.changes.canceled': 'An agreed date is called off',
   'detail.changes.canceled.note':
     'You can do it, and if the date does not feel right you can get out with nothing to pay. Calling off repeatedly slows down how soon you get new candidates.',
@@ -540,11 +541,11 @@ const en: Record<keyof typeof fi, string> = {
   'detail.chat.body':
     'An invitation already carries the time and the place, so arranging it needs no conversation. That is the whole idea: Pilke takes you to the same table rather than standing in for it. On the day, the map shows where the other person is so you find each other without messaging.',
 
-  'economy.lead': 'Five glimmers open a set.',
+  'economy.lead': 'Five petals open a set.',
   'economy.pile.alt': 'Five glimmer coins in a pile.',
-  'economy.amount.one': '1 glimmer',
-  'economy.amount.two': '2 glimmers',
-  'economy.amount.five': '5 glimmers',
+  'economy.amount.one': '1 petal',
+  'economy.amount.two': '2 petals',
+  'economy.amount.five': '5 petals',
 
   'cta.title': 'Pilke is in closed beta',
   'cta.body': 'Leave your email address and we will tell you as soon as you can get in.',
@@ -571,7 +572,7 @@ const en: Record<keyof typeof fi, string> = {
     'Only if you choose to show them. It runs for ten minutes either side of the agreed start and only within 300 metres of the venue, and you can stop at any time. It is deleted when the window closes, and nothing else reads it.',
   'faq.cost.q': 'What does it cost?',
   'faq.cost.a':
-    'Nothing during the beta. Glimmers cannot be bought; they come from using the app.',
+    'Nothing during the beta. Petals cannot be bought; they come from using the app.',
   'faq.cancel.q': 'What if a date falls through?',
   'faq.cancel.a':
     'Turning down an invitation is always free and carries no consequence. You can call off a date you agreed to, and if it does not feel right you can get out with nothing to pay. Cancelling repeatedly or not turning up slows down how soon you get new candidates, because that matters to the person on the other side.',
@@ -580,7 +581,7 @@ const en: Record<keyof typeof fi, string> = {
     'Yes, from the settings. Your name, photo and contact details go straight away. Past dates and the feedback written about them stay, because those belong to the other person as much as to you.',
 
   'shot.treffit':
-    'The Pilke home screen on a phone: your glimmers along the top, your dates and the invitations you have received below.',
+    'The Pilke home screen on a phone: your petals along the top, your dates and the invitations you have received below.',
   'shot.kalenteri':
     'The calendar view, with the days of the week and the times marked as free.',
   'shot.story':
@@ -640,7 +641,7 @@ const en: Record<keyof typeof fi, string> = {
   'legal.deletion.kept.four':
     'The block created when somebody did not feel safe. Leaving does not lift it.',
   'legal.deletion.kept.five': 'Reports of not turning up, in both directions.',
-  'legal.deletion.kept.six': 'Glimmer movements, so that balances still add up.',
+  'legal.deletion.kept.six': 'Petal movements, so that balances still add up.',
   'legal.deletion.kept.seven':
     'Any slowdown you are currently serving. Leaving does not shorten it.',
   'legal.deletion.kept.eight':
@@ -650,7 +651,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'legal.deletion.others.title': 'What happens to dates you agreed to',
   'legal.deletion.others.body':
-    'Invitations you sent are withdrawn and invitations you received are declined, with the sender’s glimmers refunded. Dates still ahead are cancelled and the other person is compensated exactly as for any cancellation. Nothing is held against you, and nobody is told separately that you left.',
+    'Invitations you sent are withdrawn and invitations you received are declined, with the sender’s petals refunded. Dates still ahead are cancelled and the other person is compensated exactly as for any cancellation. Nothing is held against you, and nobody is told separately that you left.',
 
   'legal.deletion.again.title': 'If you come back later',
   'legal.deletion.again.body':

@@ -19,8 +19,8 @@
 # ──────────────────────────────────────────────────────────────────────────
 
 'shot.treffit':
-  fi: 'Pilkkeen etusivu puhelimessa: kipinöiden määrä ylhäällä, alla omat treffit ja saapuneet kutsut.'
-  en: 'The Pilke home screen on a phone: your glimmers along the top, your dates and the invitations you have received below.'
+  fi: 'Pilkkeen etusivu puhelimessa: terälehtien määrä ylhäällä, alla omat treffit ja saapuneet kutsut.'
+  en: 'The Pilke home screen on a phone: your petals along the top, your dates and the invitations you have received below.'
 
 # WARNING: **Nothing renders this.** There is no calendar screenshot in
 # `src/assets/screens.ts`, and `screens.ts` says why: the calendar and the

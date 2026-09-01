@@ -57,7 +57,7 @@
 #
 # WARNING: **This is a backend constant rendered as a hand-typed digit.** The cost
 # of opening a set appears three times on that page — here, in
-# `economy.amount.five` ('5 kipinää'), and in the prose of
+# `economy.amount.five` ('5 terälehteä'), and in the prose of
 # `detail.economy.spend.body` — and this is the copy of it that no dictionary and
 # no review would catch if the price changed.
 # ──────────────────────────────────────────────────────────────────────────

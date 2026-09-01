@@ -25,8 +25,9 @@
 # the collection, and is the first thing to add if the site is ever rewired to
 # read these files.
 #
-# Product vocabulary is the app's own spelling: kipinat are what the product calls
-# its currency, and the site should not invent a softer word for it.
+# Product vocabulary is the app's own spelling: teralehdet are what the product
+# calls its currency, and five of them make a ruusu. The site should not invent a
+# softer word for either.
 #
 # The front page argues one thing: there is no chat, and the shortest path to
 # meeting somebody is a kutsu with the time already in it. The currency belongs to

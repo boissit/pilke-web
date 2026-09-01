@@ -131,8 +131,8 @@
   en: 'Reports of not turning up, in both directions.'
 
 'legal.deletion.kept.six':
-  fi: 'Kipinöiden liikkeet, jotta saldot pysyvät täsmäävinä.'
-  en: 'Glimmer movements, so that balances still add up.'
+  fi: 'Terälehtien liikkeet, jotta saldot pysyvät täsmäävinä.'
+  en: 'Petal movements, so that balances still add up.'
 
 'legal.deletion.kept.seven':
   fi: 'Käynnissä oleva hidastus, jos sinulla on sellainen. Lähteminen ei lyhennä sitä.'
@@ -155,8 +155,8 @@
   en: 'What happens to dates you agreed to'
 
 'legal.deletion.others.body':
-  fi: 'Lähettämäsi kutsut perutaan ja saamasi kutsut hylätään, ja kutsujan kipinät palautetaan. Tulevat treffit peruutetaan, ja toinen osapuoli hyvitetään kuten missä tahansa perumisessa. Sinulle ei tule tästä seurauksia, emmekä kerro kenellekään erikseen, että lähdit.'
-  en: 'Invitations you sent are withdrawn and invitations you received are declined, with the sender’s glimmers refunded. Dates still ahead are cancelled and the other person is compensated exactly as for any cancellation. Nothing is held against you, and nobody is told separately that you left.'
+  fi: 'Lähettämäsi kutsut perutaan ja saamasi kutsut hylätään, ja kutsujan terälehdet palautetaan. Tulevat treffit peruutetaan, ja toinen osapuoli hyvitetään kuten missä tahansa perumisessa. Sinulle ei tule tästä seurauksia, emmekä kerro kenellekään erikseen, että lähdit.'
+  en: 'Invitations you sent are withdrawn and invitations you received are declined, with the sender’s petals refunded. Dates still ahead are cancelled and the other person is compensated exactly as for any cancellation. Nothing is held against you, and nobody is told separately that you left.'
 
 'legal.deletion.again.title':
   fi: 'Jos palaat myöhemmin'

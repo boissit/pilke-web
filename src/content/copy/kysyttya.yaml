@@ -51,8 +51,8 @@
   en: 'What does it cost?'
 
 'faq.cost.a':
-  fi: 'Betavaiheessa ei mitään. Kipinöitä ei voi ostaa, vaan niitä kertyy käyttämällä sovellusta.'
-  en: 'Nothing during the beta. Glimmers cannot be bought; they come from using the app.'
+  fi: 'Betavaiheessa ei mitään. Terälehtiä ei voi ostaa, vaan niitä kertyy käyttämällä sovellusta.'
+  en: 'Nothing during the beta. Petals cannot be bought; they come from using the app.'
 
 'faq.cancel.q':
   fi: 'Entä jos treffit peruuntuvat?'

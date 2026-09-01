@@ -189,8 +189,8 @@
   en: 'Invite first'
 
 'both.invite.body':
-  fi: 'Kutsu on sovelluksen ainoa varsinainen teko. Valikoiman avaaminen kuluttaa kipinöitä, ja kipinöitä saa käyttämällä sovellusta. Rahalla niitä ei saa.'
-  en: 'An invitation is the one real action in the app. Opening a set spends glimmers, and glimmers come from using the app. Money does not buy them.'
+  fi: 'Kutsu on sovelluksen ainoa varsinainen teko. Valikoiman avaaminen kuluttaa terälehtiä, ja terälehtiä saa käyttämällä sovellusta. Rahalla niitä ei saa.'
+  en: 'An invitation is the one real action in the app. Opening a set spends petals, and petals come from using the app. Money does not buy them.'
 
 'both.answer.title':
   fi: 'Vastaa kutsuun'
@@ -201,12 +201,12 @@
   en: 'Answering costs you nothing. Turn one down freely, and nothing follows for you. An invitation stands for a day and lapses by itself if you leave it.'
 
 'both.note':
-  fi: 'Treffeillä käyminen ja palautteen antaminen tuovat kipinöitä, eli seuraavan kutsun. Määrät voivat muuttua betan aikana.'
-  en: 'Going on dates and giving feedback earn glimmers, which is your next invitation. The amounts may change during the beta.'
+  fi: 'Treffeillä käyminen ja palautteen antaminen tuovat terälehtiä, eli seuraavan kutsun. Määrät voivat muuttua betan aikana.'
+  en: 'Going on dates and giving feedback earn petals, which is your next invitation. The amounts may change during the beta.'
 
 'both.more':
-  fi: 'Kipinät ja koko kierto tarkemmin'
-  en: 'Glimmers and the whole loop in detail'
+  fi: 'Terälehdet ja koko kierto tarkemmin'
+  en: 'Petals and the whole loop in detail'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Safety, on the front page

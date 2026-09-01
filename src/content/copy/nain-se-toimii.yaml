@@ -3,7 +3,7 @@
 # WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
 # every page renders from.
 #
-# WARNING: **Every number on this page is a backend constant.** Five kipinää for a
+# WARNING: **Every number on this page is a backend constant.** Five terälehteä for a
 # set, fifteen earnable at a time, one hour of shared calendar, at least two times
 # offered, a day to answer. The size of a set is deliberately not one of them: what
 # the copy emphasises is that the reader picks who the invitation goes to, not how
@@ -22,8 +22,8 @@
   en: 'How Pilke works'
 
 'detail.lead':
-  fi: 'Etusivu kertoo kierron neljässä vaiheessa. Tällä sivulla on sama tarkemmin: mistä ehdokkaat tulevat, mistä kipinät tulevat ja mitä tapahtuu kun suunnitelmat muuttuvat.'
-  en: 'The front page gives the loop in four steps. This page is the same thing in detail: where candidates come from, where glimmers come from, and what happens when plans change.'
+  fi: 'Etusivu kertoo kierron neljässä vaiheessa. Tällä sivulla on sama tarkemmin: mistä ehdokkaat tulevat, mistä terälehdet tulevat ja mitä tapahtuu kun suunnitelmat muuttuvat.'
+  en: 'The front page gives the loop in four steps. This page is the same thing in detail: where candidates come from, where petals come from, and what happens when plans change.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Before the first invitation
@@ -74,23 +74,23 @@
   en: 'You offer at least two times and one thing to do. The other person picks one of them, and the date is set. An invitation stands for a day.'
 
 # ──────────────────────────────────────────────────────────────────────────
-# Kipinat
+# Teralehdet
 #
 # `economy.amount.*` are the amounts in the earning table, and `economy.lead`
 # and `economy.pile.alt` belong to the picture of five coins beside it.
 # ──────────────────────────────────────────────────────────────────────────
 
 'detail.economy.title':
-  fi: 'Kipinät'
-  en: 'Glimmers'
+  fi: 'Terälehdet'
+  en: 'Petals'
 
 'detail.economy.body':
-  fi: 'Kipinä on se, mitä keräät ja käytät. Valikoima kuluttaa viisi kipinää, eikä muuta hintaa ole. Kipinöitä ei myydä.'
-  en: 'A glimmer is what you collect and what you spend. A set costs five glimmers, and there is no other price. Glimmers are not sold.'
+  fi: 'Terälehti on se, mitä keräät ja käytät. Viisi terälehteä tekee ruusun, ja ruusu avaa valikoiman. Muuta hintaa ei ole. Terälehtiä ei myydä.'
+  en: 'A petal is what you collect and what you spend. Five petals make a rose, and a rose opens a set. There is no other price. Petals are not sold.'
 
 'detail.economy.earn':
-  fi: 'Näin kipinöitä kertyy'
-  en: 'How glimmers add up'
+  fi: 'Näin terälehtiä kertyy'
+  en: 'How petals add up'
 
 'detail.earn.signup':
   fi: 'Rekisteröinnin viimeistely'
@@ -121,36 +121,36 @@
   en: 'If the other person calls off an agreed date'
 
 'detail.earn.cancelled.note':
-  fi: 'Hyvitys sinulle. Jos olit kutsun lähettäjä, saat lisäksi kipinäsi takaisin.'
-  en: 'Compensation for you. If you were the one who invited, you also get your glimmers back.'
+  fi: 'Hyvitys sinulle. Jos olit kutsun lähettäjä, saat lisäksi terälehtesi takaisin.'
+  en: 'Compensation for you. If you were the one who invited, you also get your petals back.'
 
 'detail.economy.spend':
-  fi: 'Näin kipinät kuluvat'
-  en: 'How glimmers go'
+  fi: 'Näin terälehdet kuluvat'
+  en: 'How petals go'
 
 'detail.economy.spend.body':
-  fi: 'Viisi kipinää kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään. Kipinöitä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut kipinät odottavat, kunnes käytät niitä. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.'
-  en: 'Five glimmers go the moment you open a set. Sending the invitation costs nothing more. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Reimbursements, such as the glimmers returned when an invitation lapses, arrive regardless of the limit.'
+  fi: 'Viisi terälehteä kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään. Terälehtiä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut terälehdet odottavat, kunnes käytät niitä. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.'
+  en: 'Five petals go the moment you open a set. Sending the invitation costs nothing more. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Reimbursements, such as the petals returned when an invitation lapses, arrive regardless of the limit.'
 
 'economy.lead':
-  fi: 'Viisi kipinää avaa valikoiman.'
-  en: 'Five glimmers open a set.'
+  fi: 'Viisi terälehteä avaa valikoiman.'
+  en: 'Five petals open a set.'
 
 'economy.pile.alt':
   fi: 'Viisi kipinäkolikkoa pinossa.'
   en: 'Five glimmer coins in a pile.'
 
 'economy.amount.one':
-  fi: '1 kipinä'
-  en: '1 glimmer'
+  fi: '1 terälehti'
+  en: '1 petal'
 
 'economy.amount.two':
-  fi: '2 kipinää'
-  en: '2 glimmers'
+  fi: '2 terälehteä'
+  en: '2 petals'
 
 'economy.amount.five':
-  fi: '5 kipinää'
-  en: '5 glimmers'
+  fi: '5 terälehteä'
+  en: '5 petals'
 
 # ──────────────────────────────────────────────────────────────────────────
 # When plans change
@@ -165,24 +165,24 @@
   en: 'An invitation goes unanswered for a day'
 
 'detail.changes.expired.note':
-  fi: 'Kutsu raukeaa itsestään ja saat kipinäsi takaisin.'
-  en: 'It lapses by itself and your glimmers come back.'
+  fi: 'Kutsu raukeaa itsestään ja saat terälehtesi takaisin.'
+  en: 'It lapses by itself and your petals come back.'
 
 'detail.changes.declined':
   fi: 'Kutsu hylätään'
   en: 'An invitation is turned down'
 
 'detail.changes.declined.note':
-  fi: 'Saat kipinäsi takaisin. Hylkääminen on aina ilmaista, eikä siitä seuraa hylkääjälle mitään.'
-  en: 'Your glimmers come back. Turning one down is always free and costs the person doing it nothing.'
+  fi: 'Saat terälehtesi takaisin. Hylkääminen on aina ilmaista, eikä siitä seuraa hylkääjälle mitään.'
+  en: 'Your petals come back. Turning one down is always free and costs the person doing it nothing.'
 
 'detail.changes.withdrawn':
   fi: 'Perut oman kutsusi'
   en: 'You withdraw your own invitation'
 
 'detail.changes.withdrawn.note':
-  fi: 'Kipinät on käytetty, ja uuden valikoiman avaaminen odottaa hetken.'
-  en: 'The glimmers are spent, and opening a new set waits a little while.'
+  fi: 'Terälehdet on käytetty, ja uuden valikoiman avaaminen odottaa hetken.'
+  en: 'The petals are spent, and opening a new set waits a little while.'
 
 'detail.changes.canceled':
   fi: 'Sovitut treffit perutaan'
