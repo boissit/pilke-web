@@ -18,8 +18,15 @@ import { defaultLang, languages, localePath, type Lang } from './ui';
  *
  * The slug is Finnish and English keeps it under `/en`, as every other route on
  * the site does, so a language switch is the prefix and nothing else.
+ *
+ * `lapsiturvallisuus` is last and is the one document here a user does not accept:
+ * it is a statement of our own standards, published because Google Play's child
+ * safety standards policy requires every social or dating app to publish one and
+ * to link it from the Play Console. It lives in this collection anyway because the
+ * collection is what gives a text an effective date, a checked pair of languages
+ * and a stable URL — which is precisely what that policy asks for.
  */
-export const legalSlugs = ['tietosuoja', 'kayttoehdot'] as const;
+export const legalSlugs = ['tietosuoja', 'kayttoehdot', 'lapsiturvallisuus'] as const;
 
 export type LegalSlug = (typeof legalSlugs)[number];
 
