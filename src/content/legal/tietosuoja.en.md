@@ -58,7 +58,7 @@ voluntary, and the answers currently have no effect on who you are offered.
 
 We process a safety report and the free text in it, a report that the other person did not
 turn up, a record that you pressed the safety button and who the message went to, and the
-block created when somebody cancels a date because they did not feel safe.
+block created by a safety report.
 
 A safety report is the only place in the service where free text can be written about
 another person. Write down only what happened.
@@ -194,8 +194,8 @@ Two groups remain:
 
 - **Data that belongs as much to the other person.** Past dates, the feedback given about
   them, and no-show reports. The other person sees *Somebody* where you used to be.
-- **Safety decisions that leaving must not undo.** Safety reports, and a block created
-  because somebody did not feel safe.
+- **Safety decisions that leaving must not undo.** Safety reports, and the block they
+  create.
 
 Both are kept for the period set out in section 8, and your name is no longer attached to
 them. A record that the account existed also remains, so that we do not create two

@@ -123,8 +123,8 @@
   en: 'The fact that you pressed the safety button.'
 
 'legal.deletion.kept.four':
-  fi: 'Esto, joka syntyy kun joku ei ole kokenut oloaan turvalliseksi. Sitä ei voi purkaa lähtemällä.'
-  en: 'The block created when somebody did not feel safe. Leaving does not lift it.'
+  fi: 'Esto, joka syntyy turvallisuusilmoituksesta. Sitä ei voi purkaa lähtemällä.'
+  en: 'The block created by a safety report. Leaving does not lift it.'
 
 'legal.deletion.kept.five':
   fi: 'Ilmoitukset saapumatta jättämisestä, molempiin suuntiin.'

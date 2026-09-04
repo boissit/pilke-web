@@ -336,7 +336,7 @@ const fi = {
     'Turvallisuusilmoitukset ja niiden vapaa teksti, sekä sinun kirjoittamat että sinusta kirjoitetut.',
   'legal.deletion.kept.three': 'Merkintä siitä, että olet painanut turvapainiketta.',
   'legal.deletion.kept.four':
-    'Esto, joka syntyy kun joku ei ole kokenut oloaan turvalliseksi. Sitä ei voi purkaa lähtemällä.',
+    'Esto, joka syntyy turvallisuusilmoituksesta. Sitä ei voi purkaa lähtemällä.',
   'legal.deletion.kept.five': 'Ilmoitukset saapumatta jättämisestä, molempiin suuntiin.',
   'legal.deletion.kept.six': 'Terälehtien liikkeet, jotta saldot pysyvät täsmäävinä.',
   'legal.deletion.kept.seven':
@@ -639,7 +639,7 @@ const en: Record<keyof typeof fi, string> = {
     'Safety reports and the free text in them, both what you wrote about somebody and what somebody wrote about you.',
   'legal.deletion.kept.three': 'The fact that you pressed the safety button.',
   'legal.deletion.kept.four':
-    'The block created when somebody did not feel safe. Leaving does not lift it.',
+    'The block created by a safety report. Leaving does not lift it.',
   'legal.deletion.kept.five': 'Reports of not turning up, in both directions.',
   'legal.deletion.kept.six': 'Petal movements, so that balances still add up.',
   'legal.deletion.kept.seven':

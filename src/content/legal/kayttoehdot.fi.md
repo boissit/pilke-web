@@ -101,8 +101,8 @@ Palvelu antaa sinulle nämä keinot:
   kuvatuin rajoituksin.
 - **Turvallisuusilmoitus**, jonka voit tehdä treffien jälkeen. Sen näkevät vain Pilkkeen
   työntekijät.
-- **Esto.** Kun peruut treffit siksi, ettet kokenut oloasi turvalliseksi, teitä ei
-  ehdoteta toisillenne enää koskaan, eikä toiselle kerrota syytä.
+- **Esto.** Kun teet treffien jälkeen turvallisuusilmoituksen, teitä ei ehdoteta
+  toisillenne enää koskaan, eikä toiselle kerrota syytä.
 - **Treffipaikat, jotka olemme itse valinneet.**
 
 Emme valvo tapaamisia emmekä ole niissä läsnä. Emme voi luvata, kuinka pian ehdimme lukea

@@ -61,8 +61,7 @@ keitä sinulle ehdotetaan.
 
 Käsittelemme turvallisuusilmoituksen ja sen vapaan tekstin, ilmoituksen siitä, ettei
 toinen osapuoli saapunut treffeille, merkinnän turvapainikkeen painalluksesta ja sen,
-kenelle viesti lähti, sekä eston, joka syntyy, kun joku peruu treffit siksi, ettei
-kokenut oloaan turvalliseksi.
+kenelle viesti lähti, sekä eston, joka syntyy turvallisuusilmoituksesta.
 
 Turvallisuusilmoitus on palvelun ainoa kohta, johon voi kirjoittaa vapaata tekstiä
 toisesta ihmisestä. Kirjoita siihen vain se, mitä on tapahtunut.
@@ -200,8 +199,8 @@ Kaksi ryhmää jää:
 - **Tiedot, jotka ovat yhtä lailla toisen osapuolen tietoja.** Menneet treffit, niistä
   annetut palautteet ja ilmoitukset saapumatta jättämisestä. Toinen osapuoli näkee sinun
   tilallasi merkinnän *Joku*.
-- **Turvallisuuspäätökset, joita lähteminen ei kumoa.** Turvallisuusilmoitukset ja esto,
-  joka on syntynyt siitä, ettei joku kokenut oloaan turvalliseksi.
+- **Turvallisuuspäätökset, joita lähteminen ei kumoa.** Turvallisuusilmoitukset ja
+  niistä syntyvä esto.
 
 Molempia säilytetään luvun 8 mukaisen ajan, ja nimesi ei ole niissä enää kiinni. Jäljelle
 jää myös merkintä siitä, että tili on ollut olemassa, jotta emme luo samalle numerolle
