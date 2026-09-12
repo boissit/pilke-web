@@ -1,8 +1,8 @@
 ---
 title: Käyttöehdot
 lead: Mihin sitoudut, kun käytät Pilkettä, ja mitä me lupaamme sinulle.
-version: 2026-09-01
-effective: 2026-09-01
+version: 2026-09-12
+effective: 2026-09-12
 draft: true
 ---
 
@@ -113,6 +113,12 @@ tuntemattoman: kerro jollekulle, minne menet, ja lähde pois, jos olo ei tunnu h
 
 Treffien jälkeen kysymme, miten meni. Vastaat valitsemalla vaihtoehdon, ja vastauksesi
 koskee nimettyä ihmistä. Toinen osapuoli ei näe, mitä olet vastannut.
+
+Viimeinen kysymys on tästä poikkeus. Siinä kysymme, haluaisitko tavata uudelleen ja saako
+puhelinnumerosi jakaa. Jos te molemmat valitsette numeron jakamisen, vaihdamme numeronne,
+ja silloin toinen näkee, että vastasit niin. Muissa tapauksissa emme kerro hänelle
+vastauksestasi mitään. Vastaus on lopullinen, eikä sitä voi perua; lue
+[tietosuojaselosteen](/tietosuoja) luku 5.
 
 Turvallisuusilmoitukseen voit kirjoittaa vapaasti, ja se on palvelun ainoa vapaa
 tekstikenttä. Ilmoitus ei näy toiselle käyttäjälle koskaan. Kirjoita siihen se, mitä on

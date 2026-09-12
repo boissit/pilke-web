@@ -262,7 +262,7 @@ const fi = {
     'Ei. Kutsussa on jo aika ja paikka, joten sopiminen ei vaadi keskustelua. Loput sanotaan kasvokkain.',
   'faq.who.q': 'Kuka näkee tietoni?',
   'faq.who.a':
-    'Puhelinnumeroasi ei näytetä kenellekään. Ehdokas näkee nimesi, kuvasi ja sen, mitä teillä on yhteistä.',
+    'Ehdokas näkee nimesi, kuvasi ja sen, mitä teillä on yhteistä. Puhelinnumeroasi ei näytetä kenellekään — yhtä poikkeusta lukuun ottamatta: jos te molemmat treffien jälkeen valitsette, että numerot saa jakaa, välitämme ne. Tarkemmin tietosuojaselosteessa.',
   'faq.safety.q': 'Näkeekö toinen, missä olen?',
   'faq.safety.a':
     'Vain jos valitset niin. Sijainti näkyy kymmenen minuuttia sovitun alun molemmin puolin ja vain 300 metrin säteellä treffipaikasta, ja voit lopettaa näyttämisen milloin tahansa. Se poistetaan kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun.',
@@ -566,7 +566,7 @@ const en: Record<keyof typeof fi, string> = {
     'No. An invitation already carries the time and the place, so arranging it needs no conversation. The rest is said in person.',
   'faq.who.q': 'Who sees my details?',
   'faq.who.a':
-    'Your phone number is never shown to anybody. A candidate sees your name, your photo and what the two of you have in common.',
+    'A candidate sees your name, your photo and what the two of you have in common. Your phone number is not shown to anybody — with one exception: if you both choose, after a date, to share the numbers, we pass them on. The privacy policy has the detail.',
   'faq.safety.q': 'Can the other person see where I am?',
   'faq.safety.a':
     'Only if you choose to show them. It runs for ten minutes either side of the agreed start and only within 300 metres of the venue, and you can stop at any time. It is deleted when the window closes, and nothing else reads it.',

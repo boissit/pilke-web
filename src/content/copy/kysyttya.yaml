@@ -35,8 +35,8 @@
   en: 'Who sees my details?'
 
 'faq.who.a':
-  fi: 'Puhelinnumeroasi ei näytetä kenellekään. Ehdokas näkee nimesi, kuvasi ja sen, mitä teillä on yhteistä.'
-  en: 'Your phone number is never shown to anybody. A candidate sees your name, your photo and what the two of you have in common.'
+  fi: 'Ehdokas näkee nimesi, kuvasi ja sen, mitä teillä on yhteistä. Puhelinnumeroasi ei näytetä kenellekään — yhtä poikkeusta lukuun ottamatta: jos te molemmat treffien jälkeen valitsette, että numerot saa jakaa, välitämme ne. Tarkemmin tietosuojaselosteessa.'
+  en: 'A candidate sees your name, your photo and what the two of you have in common. Your phone number is not shown to anybody — with one exception: if you both choose, after a date, to share the numbers, we pass them on. The privacy policy has the detail.'
 
 'faq.safety.q':
   fi: 'Näkeekö toinen, missä olen?'

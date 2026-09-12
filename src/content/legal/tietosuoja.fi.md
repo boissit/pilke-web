@@ -1,8 +1,8 @@
 ---
 title: Tietosuojaseloste
 lead: Mitä tietoja käsittelemme sinusta, mihin niitä käytetään ja mitä voit vaatia.
-version: 2026-09-01
-effective: 2026-09-01
+version: 2026-09-12
+effective: 2026-09-12
 draft: true
 ---
 
@@ -41,6 +41,27 @@ Samaan osoitteeseen lähetät myös oikeuksiasi koskevat pyynnöt (luku 11).
 Käsittelemme kalenteriin merkitsemäsi vapaat ajat, sinulle tarjotut ehdokkaat ja
 valintasi niistä, lähetetyt ja saadut kutsut, sovitut ajat ja paikat, perumiset ja niiden
 syyt sekä treffien jälkeen annetut palautteet.
+
+### Haluatteko tavata uudelleen
+
+Treffien jälkeen kysymme, haluaisitko tavata treffiparisi uudelleen. Vaihtoehtoja on
+kolme: kyllä ja puhelinnumeroni saa jakaa hänelle, kyllä mutta vain Pilkkeen kautta, ja
+en. Tallennamme vastauksesi näiden treffien tietoihin.
+
+Jos te molemmat valitsette numeron jakamisen, kumpikin saa toisen nimimerkin ja
+puhelinnumeron: push-ilmoituksena ja näiden treffien kohdalla sovelluksessa. Jos molemmat
+vastaatte kyllä mutta toinen teistä valitsi Pilkkeen kautta, teidät voidaan ehdottaa
+toisillenne uudelleen, eikä mitään luovuteta. Jos jompikumpi vastaa en, mitään ei tapahdu
+eikä mitään luovuteta.
+
+Emme kerro toiselle, mitä vastasit. Kieltävästä vastauksesta emme lähetä kummallekaan
+minkäänlaista ilmoitusta, jotta kieltäytyminen näyttäisi toiselle täsmälleen samalta kuin
+se, ettei palautetta ole annettu.
+
+Vastaus on lopullinen: sitä ei voi muuttaa eikä perua sen jälkeen, kun olet lähettänyt
+palautteen. Jos teet samassa palautteessa toisesta turvallisuusilmoituksen, numeroita ei
+vaihdeta, vaikka molemmat olisitte sitä pyytäneet. Ilmoituksen voi tehdä vain siinä
+samassa palautteessa, ei jälkikäteen.
 
 ### Laite ja ilmoitukset
 
@@ -111,9 +132,14 @@ Toinen käyttäjä näkee nimimerkkisi, ikäsi, sukupuolesi ja valokuvasi. Lisä
 sovitun ajan ja paikan, ne ajat, joita olet tarjonnut hänelle, ja treffipaikalla
 sijaintisi, jos näytät sen.
 
-Toinen käyttäjä ei näe puhelinnumeroasi, sähköpostiosoitettasi, syntymäaikaasi,
-luotettavan henkilön numeroa, treffialuettasi, treffitoiveitasi, sinulle asetettuja
-rajoituksia eikä palautteita, joita annat tai jotka sinusta annetaan.
+Toinen käyttäjä ei näe sähköpostiosoitettasi, syntymäaikaasi, luotettavan henkilön
+numeroa, treffialuettasi, treffitoiveitasi, sinulle asetettuja rajoituksia eikä
+palautteita, joita annat tai jotka sinusta annetaan.
+
+Puhelinnumeroasi hän ei näe, yhtä poikkeusta lukuun ottamatta: jos te molemmat olette
+treffien jälkeen valinneet, että numeron saa jakaa, saatte toistenne nimimerkin ja
+numeron. Jos vain toinen teistä valitsee niin tai kumpikaan ei valitse, numeroasi ei
+kerrota kenellekään. Luvussa 2 kerromme, miten tämä kysymys toimii.
 
 ## 5. Miksi käsittelemme tietojasi ja millä perusteella
 
@@ -125,9 +151,24 @@ rajoituksia eikä palautteita, joita annat tai jotka sinusta annetaan.
 | Ilmoitukset kutsuista, saapumisesta ja palautepyynnöistä | Sopimus |
 | Sijaintisi näyttäminen treffipaikalla | Suostumus, jonka voit perua lopettamalla näyttämisen |
 | Vastaukset kysymyssarjoihin | Suostumus, jonka annat vastaamalla |
+| Puhelinnumeroiden vaihto treffien jälkeen | Suostumus, jonka annat valitsemalla sen vastauksen |
 | Turvallisuus: estot, ilmoitukset, turvapainike ja rajoitukset | Oikeutettu etu — käyttäjien turvallisuus |
 | Luotettavan henkilön puhelinnumero | Oikeutettu etu — käyttäjän turvallisuus |
 | Käyttäjätuki ja väärinkäytösten selvitys | Oikeutettu etu — palvelun asianmukainen käyttö |
+
+Puhelinnumeroiden vaihto on ainoa kohta, jossa luovutamme henkilötietojasi toiselle
+käyttäjälle suostumuksesi perusteella. Suostumus koskee yksiä treffejä ja vaikuttaa vain,
+jos toinenkin antaa sen.
+
+Vastausta ei voi muuttaa eikä perua sen jälkeen, kun olet lähettänyt palautteen. Jos
+peruut suostumuksesi, peruutus vaikuttaa siihen, mitä teemme tästä eteenpäin, eikä se
+kumoa jo tehtyä luovutusta: lähetettyä numeroa ei saa pois toisen puhelimesta.
+
+Vaihtoa ei siis voi pysäyttää jälkikäteen. Ennen vaihtoa sen estää
+turvallisuusilmoituksesta syntyvä esto — estetylle parille numeroita ei vaihdeta, vaikka
+molemmat olisivat niin valinneet — mutta ilmoituksen voi tehdä vain treffien palautteessa,
+ei myöhemmin. Kun numerot on vaihdettu, voit poistaa tilisi: numerosi katoaa toisen
+sovelluksesta, mutta jo saapunutta ilmoitusta sekään ei tavoita (luku 9).
 
 Treffitoiveistasi voi ilmetä, oletko kiinnostunut samasta vai eri sukupuolesta ja haetko
 seksiä. Nämä ovat erityisiin henkilötietoryhmiin kuuluvia tietoja, ja käsittelemme niitä
@@ -146,6 +187,7 @@ punninnasta selvityksen luvun 1 osoitteesta.
 | Vastaanottaja | Mitä se saa |
 | --- | --- |
 | Toiset käyttäjät | Sen, mitä luvussa 4 on kuvattu. |
+| Treffiparisi, kun te molemmat niin valitsette | Nimimerkkisi ja puhelinnumerosi, kerran, treffien jälkeen. Tämä on ainoa luovutus, jonka perusteena on suostumuksesi, ja ainoa, jota ei voi ottaa takaisin. |
 | Luotettava henkilösi | Yhden tekstiviestin, jossa on nimimerkkisi, jos painat turvapainiketta. Viestissä ei ole sijaintiasi, treffipaikkaa eikä treffikumppaniasi. |
 | Expo (650 Industries, Inc., Yhdysvallat) | Laitteesi push-tunnisteen ja ilmoituksen sisällön. Expo välittää ilmoituksen edelleen Googlen FCM-palveluun. |
 | GatewayAPI (Tanska) | Puhelinnumeron ja viestin sisällön, kun lähetämme kirjautumiskoodin tai turvaviestin. |
@@ -174,6 +216,7 @@ Suomessa.
 | Kalenterimerkinnät ja vastaukset kysymyssarjoihin | Tilin ajan; poistetaan tilin mukana. |
 | Treffit, kutsut ja perumiset | 12 kuukautta treffien ajankohdasta. |
 | Palautteet | 12 kuukautta treffien ajankohdasta. |
+| Vastaus siihen, haluatko tavata uudelleen, ja vaihdettu puhelinnumero | 12 kuukautta treffien ajankohdasta, treffien mukana. Kopio numerosta on lähetetyssä push-ilmoituksessa, ja se poistuu 90 päivässä. |
 | Ilmoitukset saapumatta jättämisestä ja niistä seuraavat rajoitukset | 12 kuukautta ilmoituksesta. |
 | Lähetetyt ilmoitukset ja tekstiviestien lähetystiedot | 90 päivää. |
 | Turvallisuusilmoitukset, niiden vapaa teksti ja merkinnät turvapainikkeen painalluksista | 5 vuotta ilmoituksesta. |
@@ -193,6 +236,11 @@ Poistamme puhelinnumeron, sähköpostiosoitteen, nimimerkin, syntymäajan, sukup
 valokuvan, luotettavan henkilön numeron, treffitoiveet, treffialueen, kalenterimerkinnät
 ja vastaukset kysymyssarjoihin. Valokuva poistuu myös tallennustilasta, ja kirjautumiset
 katkeavat kaikilta laitteilta samalla hetkellä.
+
+Yhtä asiaa poisto ei tavoita. Jos olet vaihtanut puhelinnumeron treffiparisi kanssa,
+numerosi katoaa hänen sovelluksestaan samalla hetkellä kuin tilisi, mutta jo saapunutta
+push-ilmoitusta emme voi ottaa takaisin: numero on hänen puhelimessaan, ja se jää sinne.
+Oma kopiomme siitä ilmoituksesta poistuu 90 päivässä.
 
 Kaksi ryhmää jää:
 
@@ -241,6 +289,11 @@ näyttämisen yhdellä painalluksella ja poistat tilin asetuksissa. Muut pyynnö
 luvun 1 osoitteeseen. Varmistamme, että pyyntö tulee sinulta, ja vastaamme kuukauden
 kuluessa. Jos pyyntö on laaja, voimme jatkaa määräaikaa kahdella kuukaudella ja kerromme
 siitä sinulle.
+
+Suostumuksen peruminen vaikuttaa vain tulevaan käsittelyyn. Sijainnin näyttämisen lopetat
+yhdellä painalluksella, ja treffitoiveita voit muuttaa milloin tahansa. Vastausta siihen,
+haluatko tavata uudelleen, ei sen sijaan voi perua: jos numerot on jo vaihdettu, peruminen
+ei saa niitä takaisin. Luvussa 5 kerromme, mitä peruminen tässä tilanteessa tarkoittaa.
 
 Jos joku toinen käyttäjä on tehnyt sinusta turvallisuusilmoituksen, et näe sen sisältöä.
 Muuten ilmoituksen tekijä olisi tunnistettavissa ja ilmoituksen tekeminen kävisi

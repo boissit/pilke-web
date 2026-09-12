@@ -1,8 +1,8 @@
 ---
 title: Terms of use
 lead: What you agree to when you use Pilke, and what we promise you.
-version: 2026-09-01
-effective: 2026-09-01
+version: 2026-09-12
+effective: 2026-09-12
 draft: true
 ---
 
@@ -113,6 +113,12 @@ somebody where you are going, and leave if it does not feel right.
 
 After a date we ask how it went. You answer by picking an option, and your answer is about a
 named person. The other person cannot see what you answered.
+
+The last question is an exception to that. It asks whether you would like to meet again and
+whether your phone number may be shared. If you both choose to share the number, we exchange
+your numbers, and the other person then sees that this is what you answered. In every other
+case we tell them nothing about your answer. The answer is final and cannot be taken back;
+see section 5 of the [privacy policy](/en/tietosuoja).
 
 A safety report is free text, and it is the only free text field in the service. The report is
 never shown to the other user. Write down what happened: the report is kept, and it concerns

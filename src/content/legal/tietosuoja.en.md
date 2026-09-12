@@ -1,8 +1,8 @@
 ---
 title: Privacy policy
 lead: What we hold about you, what it is used for, and what you can ask us to do.
-version: 2026-09-01
-effective: 2026-09-01
+version: 2026-09-12
+effective: 2026-09-12
 draft: true
 ---
 
@@ -40,6 +40,27 @@ concerning your rights go to the same address (section 11).
 We process the times you mark as free in the calendar, the candidates offered to you and
 which of them you chose, invitations sent and received, agreed times and venues,
 cancellations and their reasons, and the feedback given after a date.
+
+### Whether you want to meet again
+
+After a date we ask whether you would like to meet the person again. There are three
+answers: yes and my phone number may be shared with them, yes but only through Pilke, and
+no. We store your answer with that date.
+
+If you both choose to share the number, each of you is given the other's nickname and
+phone number: in a push notification and on that date in the app. If you both answer yes
+but either of you chose through Pilke, the two of you can be offered to each other again,
+and nothing is disclosed. If either of you answers no, nothing happens and nothing is
+disclosed.
+
+We do not tell the other person what you answered. A refusal produces no notification of
+any kind to either of you, so that saying no looks to the other person exactly like not
+having given feedback at all.
+
+The answer is final: it cannot be changed or taken back once you have submitted your
+feedback. If you file a safety report about the other person in the same feedback, no
+numbers are exchanged, even if you both asked for it. A report can only be filed in that
+same feedback, not afterwards.
 
 ### Device and notifications
 
@@ -107,9 +128,14 @@ Another user sees your nickname, age, gender and photograph. They also see the a
 and venue, the times you have offered them, and your position at the venue if you share
 it.
 
-Another user does not see your phone number, your email address, your date of birth, your
-trusted contact's number, your date area, your preferences, any restriction placed on you,
-or the feedback you give or that is given about you.
+Another user does not see your email address, your date of birth, your trusted contact's
+number, your date area, your preferences, any restriction placed on you, or the feedback
+you give or that is given about you.
+
+They do not see your phone number either, with one exception: if the two of you have both
+chosen, after the date, that the number may be shared, you are each given the other's
+nickname and number. If only one of you chooses that, or neither does, your number is told
+to nobody. Section 2 says how that question works.
 
 ## 5. Why we process your data, and on what basis
 
@@ -121,9 +147,26 @@ or the feedback you give or that is given about you.
 | Notifications about invitations, arrivals and feedback requests | Contract |
 | Showing your position at the venue | Consent, which you can withdraw by stopping sharing |
 | Answers to question sets | Consent, given by answering |
+| Exchanging phone numbers after a date | Consent, given by choosing that answer |
 | Safety: blocks, reports, the safety button and restrictions | Legitimate interest — the safety of our users |
 | Your trusted contact's phone number | Legitimate interest — the user's safety |
 | Support and investigating misuse | Legitimate interest — proper use of the service |
+
+Exchanging phone numbers is the only place where we disclose your personal data to
+another user on the basis of your consent. The consent concerns one date, and it has an
+effect only if the other person gives it too.
+
+The answer cannot be changed or taken back once you have submitted your feedback. If you
+withdraw your consent, the withdrawal affects what we do from then on, and it does not
+undo a disclosure already made: a number that has been sent cannot be taken off the other
+person's phone.
+
+So an exchange cannot be stopped afterwards. Before it happens, a block created by a
+safety report stops it — a blocked pair never exchanges numbers, even if both of them
+chose to — but a report can only be filed in the feedback for that date, not later. Once
+the numbers have been exchanged you can delete your account: your number disappears from
+the other person's app, but that does not reach a notification that has already arrived
+either (section 9).
 
 Your date preferences can reveal whether you are interested in the same or a different
 gender and whether you are looking for sex. That is special category data, and we process
@@ -141,6 +184,7 @@ You can ask us for an account of that assessment at the address in section 1.
 | Recipient | What they get |
 | --- | --- |
 | Other users | What section 4 describes. |
+| The person you dated, when you both choose it | Your nickname and your phone number, once, after the date. This is the only disclosure that rests on your consent, and the only one that cannot be taken back. |
 | Your trusted contact | One text message containing your nickname, if you press the safety button. It contains no position, no venue and nothing about the person you are meeting. |
 | Expo (650 Industries, Inc., United States) | Your device's push token and the content of the notification. Expo passes the notification on to Google's FCM service. |
 | GatewayAPI (Denmark) | The recipient's phone number and the content of the message, when we send a login code or a safety message. |
@@ -170,6 +214,7 @@ Finland.
 | Calendar entries and answers to question sets | For the life of the account; deleted with it. |
 | Dates, invitations and cancellations | 12 months from the date. |
 | Feedback | 12 months from the date. |
+| Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. A copy of the number sits in the push notification that was sent, and that goes after 90 days. |
 | No-show reports and the restrictions that follow from them | 12 months from the report. |
 | Notifications sent, and delivery records for text messages | 90 days. |
 | Safety reports, their free text, and records of safety button presses | 5 years from the report. |
@@ -189,6 +234,11 @@ We delete your phone number, email address, nickname, date of birth, gender, pho
 trusted contact's number, date preferences, date area, calendar entries and answers to
 question sets. The photograph is deleted from storage as well, and every device is signed
 out at the same moment.
+
+There is one thing the deletion does not reach. If you have exchanged phone numbers with
+somebody you dated, your number disappears from their app at the same moment as your
+account, but a push notification that has already arrived cannot be taken back: the number
+is on their phone and it stays there. Our own copy of that notification goes after 90 days.
 
 Two groups remain:
 
@@ -235,6 +285,11 @@ sharing your position with one tap, and you delete your account in settings. Sen
 requests to the address in section 1. We will confirm that the request comes from you and
 answer within one month. If the request is extensive we may extend that by two months, and
 we will tell you if we do.
+
+Withdrawing consent affects processing from then on. You stop sharing your position with
+one tap, and you can change your date preferences at any time. The answer about meeting
+again cannot be withdrawn: once the numbers have been exchanged, withdrawing does not get
+them back. Section 5 says what withdrawing means in that situation.
 
 If another user has filed a safety report about you, you cannot see what it says. Otherwise
 the person who filed it would be identifiable and reporting would become impossible. You
