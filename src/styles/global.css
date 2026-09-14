@@ -45,6 +45,20 @@
   --brand-main: #ffa98c;
 
   /* The four match-list tints, used here to colour the steps of the loop. */
+  /* What a PetalField draws over a brand slab: one per brand colour, and each is
+     that colour a shade deeper by `colors.cardMotif`'s rule in the app — the same
+     two values the app itself uses, so a phone on the page and the page around it
+     are marked the same way.
+
+     ⚠️ **Deeper, never lighter, and on both.** The site used to go deeper on the
+     pale slab and lighter on the saturated one, which is two rules and reads as
+     two textures; the app settled this where its calendar is drawn — a mark
+     lighter than its fill reads as a wash rather than as marks. The lighter one
+     was also a hardcoded yellow that survived a whole rebrand, which is the other
+     reason these live here. */
+  --brand-motif: #fcd8cd; /* on --brand-background; app `cardMotif.confirmed` */
+  --brand-main-motif: #fc8e69; /* on --brand-main; app calendar `petalColor` */
+
   --card-confirmed: #ffe3da;
   --card-sent: #dcfbff;
   --card-received: #ffeafc;

@@ -17,7 +17,13 @@ const { title, lead } = Astro.props;
 ---
 
 <section class="slab slab-brand">
-  <PetalField tile={320} background="var(--brand-main)" petal="#F7E88A" />
+  <!--
+    The mark is its ground a shade deeper — the same rule everywhere on the site and
+    in the app, and the reason both values live in `global.css` rather than here.
+    There used to be a lighter tint hardcoded at this spot, and it was still yellow a
+    whole rebrand later.
+  -->
+    <PetalField tile={320} background="var(--brand-main)" petal="var(--brand-main-motif)" />
   <div class="wrap section-pad head">
     <h1 class="display-mid">{title}</h1>
     <p class="lede">{lead}</p>
