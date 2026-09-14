@@ -57,7 +57,7 @@
      was also a hardcoded yellow that survived a whole rebrand, which is the other
      reason these live here. */
   --brand-motif: #fcd8cd; /* on --brand-background; app `cardMotif.confirmed` */
-  --brand-main-motif: #fc8e69; /* on --brand-main; app calendar `petalColor` */
+  --brand-main-motif: #fc9d7e; /* on --brand-main; app calendar `petalColor` */
 
   --card-confirmed: #ffe3da;
   --card-sent: #dcfbff;
