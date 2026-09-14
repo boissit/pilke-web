@@ -39,7 +39,7 @@ interface Props {
 const {
   tile = 320,
   background = 'var(--brand-background)',
-  petal = '#FCF3AE',
+  petal = '#FCD8CD',
   class: className,
 } = Astro.props;
 
@@ -64,7 +64,7 @@ const placements = [
   The id has to distinguish every combination on the page, not just every tile size. Two
   `<pattern>` elements sharing an id means the first one wins wherever it is referenced,
   so a second field at the same tile size in different colours silently draws the first
-  one's colours — which is what a grey footer under a yellow section would do.
+  one's colours — which is what a grey footer under a brand section would do.
 */
 const id = `petals-${tile}-${`${background}${petal}`.replace(/[^a-zA-Z0-9]/g, '')}`;
 

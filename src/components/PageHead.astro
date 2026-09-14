@@ -4,7 +4,7 @@
  *
  * The front page opens with the hero instead, which is a different arrangement —
  * a headline beside a phone. The other three open identically, so they open from
- * here, and a yellow band at the top of one of them cannot drift from the rest.
+ * here, and a coral band at the top of one of them cannot drift from the rest.
  */
 import PetalField from './PetalField.astro';
 
@@ -16,7 +16,7 @@ interface Props {
 const { title, lead } = Astro.props;
 ---
 
-<section class="slab slab-yellow">
+<section class="slab slab-brand">
   <PetalField tile={320} background="var(--brand-main)" petal="#F7E88A" />
   <div class="wrap section-pad head">
     <h1 class="display-mid">{title}</h1>

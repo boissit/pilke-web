@@ -41,14 +41,14 @@
   --success: #a8dacb;
   --muted: #808080;
   --error: #ff7075;
-  --brand-background: #fff8c2;
-  --brand-main: #f4e04d;
+  --brand-background: #ffe3da;
+  --brand-main: #ffa98c;
 
   /* The four match-list tints, used here to colour the steps of the loop. */
-  --card-confirmed: #fff8c2;
+  --card-confirmed: #ffe3da;
   --card-sent: #dcfbff;
   --card-received: #ffeafc;
-  --card-feedback: #ffe3d3;
+  --card-feedback: #fff8c2;
 
   /* dimensions.ts */
   --radius-small: 8px;

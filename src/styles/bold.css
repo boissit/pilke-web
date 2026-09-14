@@ -1,5 +1,5 @@
 /*
-  The bolder treatment: flat yellow blocks, oversized Courgette, the petal
+  The bolder treatment: flat coral blocks, oversized Courgette, the petal
   motif as texture. Loaded once by `Base.astro`, so every page has it.
 
   Everything here builds on the tokens in global.css rather than introducing new
@@ -30,7 +30,7 @@
   z-index: 1;
 }
 
-.slab-yellow {
+.slab-brand {
   background: var(--brand-main);
 }
 
@@ -97,7 +97,7 @@
 
 /*
   The one button on the site, wherever it appears: a flat offset key on an ink
-  edge, brand ground by default, white where it stands on a yellow slab. It is
+  edge, brand ground by default, white where it stands on a brand slab. It is
   here rather than in each page because a link out of the safety page and the
   submit key in the footer are the same control and have to look it.
 
@@ -120,7 +120,7 @@
   cursor: pointer;
 }
 
-/* On a yellow slab the brand ground disappears into it. */
+/* On a brand slab the brand ground disappears into it. */
 .go.ghost {
   background: var(--white);
 }
