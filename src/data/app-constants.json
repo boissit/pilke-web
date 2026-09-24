@@ -1,0 +1,85 @@
+{
+  "petals": {
+    "set_cost": 5,
+    "per_rose": 5,
+    "cap": 15,
+    "cap_roses": 3,
+    "signup_bonus": 5,
+    "per_date": 2,
+    "consolation": 5,
+    "refund": 5
+  },
+  "calendar": {
+    "min_shared_hours": 1,
+    "min_slot_hours": 1,
+    "horizon_days": 30,
+    "petal_week_hours": 10,
+    "earning_horizon_days": 14,
+    "counted_hours_cap": 40,
+    "max_petals_per_week": 4,
+    "density_min_people": 5,
+    "density_days": 30
+  },
+  "candidates": {
+    "per_set": 3,
+    "times_per_card": 5,
+    "venues_per_card": 3,
+    "set_hours": 24,
+    "max_appearances": 10,
+    "exposure_half_life_days": 14
+  },
+  "profile": {
+    "min_age": 18,
+    "min_categories": 3,
+    "story_questions": 14
+  },
+  "matching": {
+    "pace_weekly_days": 7,
+    "pace_fortnightly_days": 14
+  },
+  "invitation": {
+    "answer_hours": 24,
+    "min_times_offered": 1,
+    "min_venues_offered": 1,
+    "choice_threshold": 2,
+    "expiry_warning_hours": 4
+  },
+  "date": {
+    "length_hours": 1,
+    "reminder_hours": 1
+  },
+  "sharing": {
+    "lead_minutes": 10,
+    "trail_minutes": 10,
+    "window_minutes": 20,
+    "radius_m": 300
+  },
+  "noshow": {
+    "grace_minutes": 15,
+    "venue_radius_m": 300
+  },
+  "cooldown": {
+    "withdrawal_hours": 12,
+    "cancel_long_notice_days": 3,
+    "cancel_long_notice_hours": 24,
+    "cancel_short_notice_hours": 12,
+    "cancel_short_notice_days": 3,
+    "cancel_late_days": 7,
+    "repeat_window_days": 30,
+    "repeat_multiplier": 2,
+    "ceiling_days": 30,
+    "noshow_days": 7
+  },
+  "feedback": {
+    "prompt_hour": 12,
+    "report_max_chars": 2000
+  },
+  "login": {
+    "code_minutes": 5,
+    "code_attempts": 5,
+    "session_days": 90
+  },
+  "notifications": {
+    "calendar_nudge_hour": 17
+  }
+}

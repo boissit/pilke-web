@@ -1,0 +1,112 @@
+---
+/**
+ * The manual's front page: `/ohje` and `/en/guide`.
+ *
+ * Two lists, because the manual has two kinds of page and they are read differently:
+ * guides walk through doing something, explainers say how something works. Each is in
+ * the pages' own `order`. A group with nothing in it is left out rather than drawn
+ * empty, and so is the whole list until there is a page to put in it.
+ *
+ * An unfinished page is listed, and says so beside its title. The manual is written a
+ * page at a time and a list that hid drafts would be empty for most of its life; the
+ * page itself carries the full notice.
+ */
+import PageHead from '../../../components/PageHead.astro';
+import { manualHref, manualPages, manualSegment, type ManualKind } from '../../../i18n/manual';
+import { defaultLang, languages, useTranslations, type Lang, type UiKey } from '../../../i18n/ui';
+import Base from '../../../layouts/Base.astro';
+
+export const getStaticPaths = () =>
+  (Object.keys(languages) as Lang[]).map((lang) => ({
+    params: { lang: lang === defaultLang ? undefined : lang, manual: manualSegment[lang] },
+    props: { lang },
+  }));
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const pages = await manualPages();
+
+const groups = (
+  [
+    { kind: 'guide', title: 'manual.guides' },
+    { kind: 'explainer', title: 'manual.explainers' },
+  ] satisfies { kind: ManualKind; title: UiKey }[]
+)
+  .map((group) => ({ ...group, pages: pages.filter((page) => page.kind === group.kind) }))
+  .filter((group) => group.pages.length > 0);
+---
+
+<Base lang={lang}>
+  <PageHead title={t('manual.title')} lead={t('manual.lead')} />
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      {groups.length === 0 && <p class="prose">{t('manual.empty')}</p>}
+
+      {
+        groups.map((group) => (
+          <section class="group">
+            <h2 class="display-mid small">{t(group.title)}</h2>
+            <ul class="pages">
+              {group.pages.map((page) => (
+                <li>
+                  <a href={manualHref(lang, page.slug)}>{page.text[lang].title}</a>
+                  {page.entries[lang].data.draft && <span class="tag">{t('manual.draft.tag')}</span>}
+                  <p>{page.text[lang].lead}</p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+  </section>
+</Base>
+
+<style>
+  .group + .group {
+    margin-top: var(--pad-large);
+  }
+
+  .small {
+    font-size: clamp(1.375rem, 3vw, 2rem);
+  }
+
+  /* A ruled list, as the ledgers on `nain-se-toimii` are: each row a title that is
+     the link and the page's own lead under it. */
+  .pages {
+    list-style: none;
+    padding: 0;
+    margin-top: var(--pad-medium);
+    border-bottom: var(--edge) solid var(--ink);
+  }
+
+  .pages li {
+    padding-block: var(--pad-normal);
+    border-top: var(--edge) solid var(--ink);
+  }
+
+  .pages a {
+    font-weight: 800;
+    font-size: 1.125rem;
+  }
+
+  .pages p {
+    margin-top: var(--pad-small);
+    max-width: 60ch;
+  }
+
+  /* Dashed, as every unsettled thing on the site is. */
+  .tag {
+    display: inline-block;
+    margin-left: var(--pad-normal);
+    padding: 0 var(--pad-small);
+    border: var(--border-width) dashed var(--ink);
+    border-radius: var(--radius-small);
+    background: var(--brand-background);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    vertical-align: 0.15em;
+  }
+</style>

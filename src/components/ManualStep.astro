@@ -1,0 +1,154 @@
+---
+/**
+ * One step of a manual page: the screenshot in a phone, numbered, with the step's text
+ * beside it.
+ *
+ * Side by side where there is room and stacked where there is not, by the same
+ * flex-wrap `nain-se-toimii` sets its phones and columns with: the text column has a
+ * basis, and when the row cannot fit it beside the phone it wraps under. No breakpoint,
+ * so it is right at whatever width a phone in portrait or a tablet in landscape is.
+ *
+ * The markers are drawn over the picture from the sidecar's bounds and hidden from
+ * assistive technology. They are a way to point at part of an image for somebody
+ * looking at it; the alt text and the step's own words carry the same thing for
+ * somebody who is not, and a stray "1" read out after the alt would be noise.
+ *
+ * The slot is the step's text as HTML, and it is styled by `.manual` in `bold.css`
+ * rather than here, because Markdown output carries no scope attribute.
+ */
+import Phone from './Phone.astro';
+import { useTranslations } from '../i18n/ui';
+import { BADGE_SHARE, type Still } from '../manual/stills';
+
+interface Props {
+  still: Still;
+}
+
+const { still } = Astro.props;
+const t = useTranslations(still.lang);
+
+const id = `${still.lang}/${still.name}`;
+const badgeSize = `${BADGE_SHARE * 100}%`;
+---
+
+<div class="step">
+  {
+    still.image ? (
+      <Phone src={still.image} alt={still.alt} width={280} still={id}>
+        {still.markers.map((marker) => (
+          <>
+            <span
+              class="marker"
+              aria-hidden="true"
+              style={`left:${marker.left}%;top:${marker.top}%;width:${marker.width}%;height:${marker.height}%`}
+            />
+            <span
+              class="badge"
+              aria-hidden="true"
+              style={`left:${marker.badgeLeft}%;top:${marker.badgeTop}%;width:${badgeSize}`}
+            >
+              {marker.number}
+            </span>
+          </>
+        ))}
+      </Phone>
+    ) : (
+      /*
+        Drawn the size and shape of the phone it stands in for, so the page reads as it
+        will once the still exists, and dashed, which is how this site draws something
+        that is not settled. The alt is printed because it is the only description of
+        the picture there is yet, and the name because it is what to go and capture.
+      */
+      <figure class="missing" data-still-missing={id}>
+        <p class="missing-title">{t('manual.shot.missing')}</p>
+        <p class="missing-alt">{still.alt}</p>
+        <code>{still.name}</code>
+      </figure>
+    )
+  }
+
+  <div class="step-text">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .step {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    /* Only tells once the text has wrapped under: the phone then sits in the middle
+       of a phone-width page rather than hard against one edge. */
+    justify-content: center;
+    gap: var(--pad-large);
+  }
+
+  .step-text {
+    flex: 1 1 22rem;
+    min-width: 0;
+  }
+
+  /* The bounds of the element, outlined so a big one reads as an area and a small
+     one as a target. A white halo inside the ink, because the screens underneath are
+     every colour the app has and a bare ink line vanishes on its darker ones. */
+  .marker {
+    position: absolute;
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-small);
+    box-shadow:
+      0 0 0 2px var(--white),
+      inset 0 0 0 2px var(--white);
+    pointer-events: none;
+  }
+
+  /* The site's `.numeral`, at the size of a finger on the screen it sits on. Its
+     centre and width come from `placeBadges` in `stills.ts`, which puts it beside the
+     element it numbers; the width is a share of the screen, so the number is sized in
+     the same units. */
+  .badge {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    background: var(--brand-main);
+    border: var(--border-width) solid var(--ink);
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-size: 6.5cqw;
+    line-height: 1;
+    box-shadow: 2px 2px 0 var(--ink);
+    pointer-events: none;
+  }
+
+  /* The phone is 280 wide by the 1080 × 2280 the stills are captured at. */
+  .missing {
+    flex: 0 0 auto;
+    width: 280px;
+    max-width: 100%;
+    aspect-ratio: 1080 / 2280;
+    margin: 0;
+    padding: var(--pad-medium);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--pad-normal);
+    text-align: center;
+    background: var(--brand-background);
+    border: var(--edge) dashed var(--ink);
+    border-radius: 30px;
+  }
+
+  .missing-title {
+    font-weight: 800;
+  }
+
+  .missing-alt {
+    font-size: 0.9375rem;
+  }
+
+  .missing code {
+    font-size: 0.8125rem;
+    color: var(--muted);
+  }
+</style>

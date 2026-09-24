@@ -90,27 +90,6 @@ const { Content } = await render(entry);
     letter-spacing: 0.04em;
   }
 
-  /* Dashed rather than solid, and no offset shadow: on this site a `.block` with
-     a shadow is a thing that ships, and the dashed edge is how the safety page
-     already draws something that is not settled yet. */
-  .provisional {
-    margin-top: var(--pad-large);
-    border-style: dashed;
-    box-shadow: none;
-    background: var(--brand-background);
-  }
-
-  .provisional h2 {
-    font-size: 1.125rem;
-    font-family: var(--font-body);
-    font-weight: 800;
-  }
-
-  .provisional p {
-    margin-top: var(--pad-normal);
-    max-width: 60ch;
-  }
-
   .legal {
     margin-top: var(--pad-large);
   }

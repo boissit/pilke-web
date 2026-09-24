@@ -35,6 +35,7 @@ const fi = {
   'nav.how': 'Näin se toimii',
   'nav.safety': 'Turvallisuus',
   'nav.questions': 'Kysyttyä',
+  'nav.manual': 'Ohjeet',
   'nav.language': 'Kieli',
   'nav.skip': 'Siirry sisältöön',
   'nav.back': 'Takaisin etusivulle',
@@ -356,6 +357,18 @@ const fi = {
 
   'legal.deletion.more': 'Lue tarkemmin tietosuojaselosteesta',
 
+  'manual.title': 'Käyttöohje',
+  'manual.lead': 'Näin Pilkeä käytetään, ja näin sen osat toimivat.',
+  'manual.guides': 'Vaihe vaiheelta',
+  'manual.explainers': 'Taustaa',
+  'manual.empty': 'Ohjeita ei ole vielä julkaistu.',
+  'manual.draft.tag': 'Kesken',
+  'manual.draft.title': 'Tämä ohje on kesken',
+  'manual.draft.body':
+    'Teksti ja kuvat voivat vielä muuttua, eikä kaikki tässä välttämättä vastaa sovellusta sellaisenaan.',
+  'manual.shot.missing': 'Kuva puuttuu',
+  'manual.back': 'Takaisin ohjeisiin',
+
   'footer.rights': 'Pilke',
 } as const;
 
@@ -367,6 +380,7 @@ const en: Record<keyof typeof fi, string> = {
   'nav.how': 'How it works',
   'nav.safety': 'Safety',
   'nav.questions': 'Questions',
+  'nav.manual': 'Guide',
   'nav.language': 'Language',
   'nav.skip': 'Skip to content',
   'nav.back': 'Back to the front page',
@@ -658,6 +672,18 @@ const en: Record<keyof typeof fi, string> = {
     'You can register the same phone number again. You get an empty account, and nothing links it to the old one.',
 
   'legal.deletion.more': 'Read the detail in the privacy policy',
+
+  'manual.title': 'User guide',
+  'manual.lead': 'How to use Pilke, and how its parts work.',
+  'manual.guides': 'Step by step',
+  'manual.explainers': 'Background',
+  'manual.empty': 'No guides have been published yet.',
+  'manual.draft.tag': 'Unfinished',
+  'manual.draft.title': 'This guide is unfinished',
+  'manual.draft.body':
+    'The text and the pictures may still change, and not everything here necessarily matches the app as it is.',
+  'manual.shot.missing': 'Screenshot missing',
+  'manual.back': 'Back to the guide',
 
   'footer.rights': 'Pilke',
 };

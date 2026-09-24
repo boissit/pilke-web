@@ -66,4 +66,61 @@ const legal = defineCollection({
   }),
 });
 
-export const collections = { legal };
+/**
+ * The user manual: how to do things in the app, and how its parts work.
+ *
+ * Named and paired exactly as `legal` is — `<slug>.<lang>.md`, a Finnish slug in
+ * both languages, both languages required — so a reader who switches language
+ * lands on the same page, and a page cannot exist in Finnish and quietly 404 in
+ * English. `manualPages()` in `src/i18n/manual.ts` is the only reader and is
+ * where that is enforced.
+ *
+ * The body is ordinary Markdown with two additions, both resolved when the page
+ * is built rather than here: `![alt](shot:<name>#testID,…)` on a paragraph of its
+ * own is a screenshot from `src/assets/manual/<lang>/`, drawn in a phone with
+ * numbered markers, and `{{area.name}}` is a value from
+ * `src/data/app-constants.json`. `docs/manual-shots.md` is the contract for the
+ * first. `src/manual/body.ts` explains why neither is a Markdown plugin.
+ */
+const manual = defineCollection({
+  // The same id as `legal`, for the same reason: `kalenteri.fi`, not `kalenterifi`.
+  loader: glob({ pattern: '*.md', base: './src/content/manual', generateId: ({ entry }) => entry.replace(/\.md$/, '') }),
+
+  schema: z.object({
+    /** The heading, in the page's own language. */
+    title: z.string(),
+
+    /** One sentence under the heading, and the line the index shows under the link. */
+    lead: z.string(),
+
+    /**
+     * What sort of page this is, which is how the index groups them.
+     *
+     * A `guide` walks through a task — make a date, mark your calendar — and is
+     * read with the app open beside it. An `explainer` describes how a part of
+     * the system works — why the draw offers who it offers, what a cooldown is —
+     * and is read to understand something that has already happened. They are
+     * different reads, so they are two lists rather than one.
+     */
+    kind: z.enum(['guide', 'explainer']),
+
+    /**
+     * Where the page sits in its group on the index, lowest first. Only its
+     * order relative to the others matters, so leave gaps: `10`, `20`, `30`.
+     */
+    order: z.number(),
+
+    /**
+     * Whether the text and its pictures are finished.
+     *
+     * It defaults to `true`, as `legal` does and for the same reason: a page is
+     * unfinished until somebody says otherwise, and an unfinished one says so at
+     * the top. It is also the one switch that lets a page be built before its
+     * screenshots exist — a draft draws a "screenshot missing" box where a still
+     * has not been captured yet, and a finished page refuses to build without it.
+     */
+    draft: z.boolean().default(true),
+  }),
+});
+
+export const collections = { legal, manual };

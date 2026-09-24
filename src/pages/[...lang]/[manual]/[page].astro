@@ -1,0 +1,89 @@
+---
+/**
+ * One page of the manual, in both languages: `/ohje/<slug>` and `/en/guide/<slug>`.
+ *
+ * `[manual]` is a parameter rather than a folder named `ohje` because the manual is the
+ * one part of the site whose path is translated — see `manualSegment` — and a folder can
+ * only be spelled one way. Each language is built at its own spelling and no other, so
+ * `/en/ohje/…` and `/guide/…` do not exist.
+ *
+ * The prose is `src/content/manual/<slug>.<lang>.md`, turned into runs of text and
+ * steps by `renderManualBody()`; a step is a phone with its text beside it. Styled by
+ * `.manual` in `bold.css`, so a page is Markdown and nothing else.
+ *
+ * WARNING: **A page with `draft: true` renders a notice saying it is unfinished**, and
+ * is the only kind that builds with a screenshot missing. The flag defaults to true.
+ */
+import ManualStep from '../../../components/ManualStep.astro';
+import PageHead from '../../../components/PageHead.astro';
+import { manualFile, manualHref, manualPages, manualSegment } from '../../../i18n/manual';
+import { defaultLang, languages, useTranslations, type Lang } from '../../../i18n/ui';
+import Base from '../../../layouts/Base.astro';
+import { renderManualBody } from '../../../manual/body';
+
+export const getStaticPaths = async () => {
+  const pages = await manualPages();
+
+  return pages.flatMap((page) =>
+    (Object.keys(languages) as Lang[]).map((lang) => ({
+      params: {
+        lang: lang === defaultLang ? undefined : lang,
+        manual: manualSegment[lang],
+        page: page.slug,
+      },
+      props: { page, lang },
+    })),
+  );
+};
+
+const { page, lang } = Astro.props;
+const t = useTranslations(lang);
+
+const entry = page.entries[lang];
+const { draft } = entry.data;
+const blocks = await renderManualBody(entry.body ?? '', lang, draft, manualFile(entry));
+---
+
+<Base lang={lang}>
+  <PageHead title={page.text[lang].title} lead={page.text[lang].lead} />
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      {
+        draft && (
+          <aside class="block provisional">
+            <h2>{t('manual.draft.title')}</h2>
+            <p>{t('manual.draft.body')}</p>
+          </aside>
+        )
+      }
+
+      <div class="manual">
+        {
+          blocks.map((block) =>
+            block.kind === 'prose' ? (
+              <Fragment set:html={block.html} />
+            ) : (
+              <ManualStep still={block.still}>
+                <Fragment set:html={block.html} />
+              </ManualStep>
+            ),
+          )
+        }
+      </div>
+
+      <p class="back"><a class="go" href={manualHref(lang)}>{t('manual.back')}</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .provisional {
+    margin-top: 0;
+    margin-bottom: var(--pad-large);
+  }
+
+  .back {
+    margin-top: var(--pad-large);
+  }
+</style>

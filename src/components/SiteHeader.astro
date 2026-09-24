@@ -1,8 +1,9 @@
 ---
 /**
- * The bar every page carries: the wordmark, the three subpages, the language.
+ * The bar every page carries: the wordmark, the subpages, the manual, the language.
  */
 import Logo from './Logo.astro';
+import { manualHref, manualRouteIn } from '../i18n/manual';
 import { languages, localePath, useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
@@ -19,13 +20,27 @@ const other: Lang = lang === 'fi' ? 'en' : 'fi';
   points at the same page in the other language rather than at the front page.
   A reader halfway down the safety page who switches to English should still be
   on the safety page.
+
+  The build is `format: 'file'`, so while building the path is the file's —
+  `/en/turvallisuus.html`, `/index.html`, `/en.html` — and the extension and an
+  `index` are dropped before the language is, or the front page would link to
+  `/.html`.
+
+  The manual is the one section whose path is spelled differently per language —
+  `/ohje` and `/en/guide` — so its segment is translated on the way across.
 */
-const route = Astro.url.pathname.replace(/^\/en\/?/, '/').replace(/^\/+/, '').replace(/\/$/, '');
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/(^|\/)index$/, '$1');
+const route = manualRouteIn(
+  path.replace(/^\/en(\/|$)/, '/').replace(/^\/+/, '').replace(/\/$/, ''),
+  lang,
+  other,
+);
 
 const nav = [
   { href: localePath(lang, 'nain-se-toimii'), label: t('nav.how') },
   { href: localePath(lang, 'turvallisuus'), label: t('nav.safety') },
   { href: localePath(lang, 'kysyttya'), label: t('nav.questions') },
+  { href: manualHref(lang), label: t('nav.manual') },
 ];
 ---
 

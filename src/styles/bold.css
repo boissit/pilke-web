@@ -137,6 +137,33 @@
 }
 
 /*
+  The notice at the top of an unfinished text: a legal document not yet reviewed,
+  or a manual page whose words and pictures may still change. Here rather than in
+  either page because it is one signal and has to look like one.
+
+  Dashed rather than solid, and no offset shadow: on this site a `.block` with a
+  shadow is a thing that ships, and the dashed edge is how the safety page already
+  draws something that is not settled yet.
+*/
+.provisional {
+  margin-top: var(--pad-large);
+  border-style: dashed;
+  box-shadow: none;
+  background: var(--brand-background);
+}
+
+.provisional h2 {
+  font-size: 1.125rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+}
+
+.provisional p {
+  margin-top: var(--pad-normal);
+  max-width: 60ch;
+}
+
+/*
   Legal prose: the privacy statement and the terms.
 
   It is here rather than in the page that renders them because `<Content />` emits
@@ -245,4 +272,86 @@
 
 .legal th {
   font-weight: 800;
+}
+
+/*
+  Manual prose, and the text beside each step's phone.
+
+  Global for the reason `.legal` is: the page is Markdown rendered to HTML, which
+  carries no scope attribute. The measure is `.prose`'s rather than `.legal`'s,
+  because a manual is read beside an open app a few lines at a time, not searched
+  for one clause.
+
+  Section headings are the display face at the size `nain-se-toimii` sets its
+  column headings in — a manual section is a thing somebody scrolls to, like those,
+  and not a numbered clause somebody is referred to.
+*/
+.manual > * + * {
+  margin-top: var(--pad-medium);
+}
+
+.manual > :is(p, ul, ol, blockquote, table),
+.manual .step-text > * {
+  max-width: 60ch;
+}
+
+.manual h2 {
+  font-size: clamp(1.375rem, 3vw, 2rem);
+  margin-top: var(--pad-large);
+}
+
+.manual h2:first-child {
+  margin-top: 0;
+}
+
+.manual h3 {
+  margin-top: var(--pad-large);
+}
+
+.manual .step {
+  margin-block: var(--pad-large);
+}
+
+.manual .step-text > * + * {
+  margin-top: var(--pad-normal);
+}
+
+.manual ul,
+.manual ol {
+  padding-left: var(--pad-large);
+}
+
+.manual li + li {
+  margin-top: var(--pad-small);
+}
+
+.manual blockquote {
+  margin-inline: 0;
+  padding: var(--pad-normal) var(--pad-medium);
+  border-left: var(--edge) solid var(--ink);
+  background: var(--brand-background);
+}
+
+.manual code {
+  padding: 0.1em 0.35em;
+  border-radius: var(--radius-small);
+  background: var(--brand-background);
+  font-size: 0.9em;
+}
+
+/* `(1)` in a step's text, drawn as the marker it refers to on the phone beside it,
+   at the size of the text it sits in. */
+.manual .callout-ref {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.5em;
+  height: 1.5em;
+  padding-inline: 0.2em;
+  vertical-align: 0.05em;
+  background: var(--brand-main);
+  border: var(--border-width) solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 0.875em;
+  line-height: 1;
 }

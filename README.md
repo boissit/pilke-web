@@ -156,7 +156,18 @@ That rule has been broken at least once and the result was a paragraph describin
 a screen that does not exist. **If a claim here cannot be traced to a constant, a
 model field or a string in the app's own dictionaries, it does not go on the
 site** — and a plausible-sounding sentence about what an app "asks" is exactly the
-shape the invented ones take. The load-bearing numbers:
+shape the invented ones take.
+
+**The manual in `src/content/manual/` states no number by hand.** Every figure in
+it is a `{{area.name}}` token, and `src/data/app-constants.json` is what fills them
+in. That file is generated, not edited: `make export-constants` in
+`treffit-backend` (containers up) reads each value off the setting or constant the
+backend enforces and writes it here. Rerun it whenever one of those rules changes
+and commit the result; a token the file does not hold fails the build. The pages
+elsewhere on this site still carry their numbers as prose, so a change the export
+picks up has to be checked against them by hand.
+
+The load-bearing numbers:
 
 - A set of three candidates costs five petals, and there is no other price.
 - The petals are spent when the set is drawn, not when the invitation is sent.
