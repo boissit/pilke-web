@@ -1,0 +1,30 @@
+{
+  "name": "onboarding-omat-tiedot",
+  "language": "en",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T15:20:27Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "birthday-day": {
+      "x": 74,
+      "y": 1431,
+      "width": 217,
+      "height": 118
+    },
+    "birthday-month": {
+      "x": 323,
+      "y": 1431,
+      "width": 217,
+      "height": 118
+    },
+    "birthday-year": {
+      "x": 573,
+      "y": 1431,
+      "width": 433,
+      "height": 118
+    }
+  }
+}

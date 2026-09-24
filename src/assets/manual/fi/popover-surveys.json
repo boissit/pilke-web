@@ -1,0 +1,30 @@
+{
+  "name": "popover-surveys",
+  "language": "fi",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T16:50:25Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "surveys-explainer-popup": {
+      "x": 81,
+      "y": 783,
+      "width": 918,
+      "height": 715
+    },
+    "surveys-explainer-body-0": {
+      "x": 122,
+      "y": 824,
+      "width": 836,
+      "height": 427
+    },
+    "surveys-explainer-close": {
+      "x": 376,
+      "y": 1284,
+      "width": 328,
+      "height": 172
+    }
+  }
+}

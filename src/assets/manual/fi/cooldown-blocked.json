@@ -1,0 +1,42 @@
+{
+  "name": "cooldown-blocked",
+  "language": "fi",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T14:53:03Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "economy-explainer": {
+      "x": 603,
+      "y": 116,
+      "width": 444,
+      "height": 117
+    },
+    "cooldown-notice": {
+      "x": 33,
+      "y": 357,
+      "width": 1014,
+      "height": 295
+    },
+    "tip-bank": {
+      "x": 33,
+      "y": 1739,
+      "width": 197,
+      "height": 178
+    },
+    "balance-counter": {
+      "x": 603,
+      "y": 116,
+      "width": 444,
+      "height": 117
+    },
+    "balance-counter-0": {
+      "x": 603,
+      "y": 116,
+      "width": 444,
+      "height": 117
+    }
+  }
+}

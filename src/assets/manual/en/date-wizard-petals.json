@@ -1,0 +1,36 @@
+{
+  "name": "date-wizard-petals",
+  "language": "en",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T17:22:31Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "wizard-balance": {
+      "x": 88,
+      "y": 770,
+      "width": 904,
+      "height": 452
+    },
+    "wizard-balance-0": {
+      "x": 169,
+      "y": 770,
+      "width": 742,
+      "height": 452
+    },
+    "date-wizard-balance-body": {
+      "x": 88,
+      "y": 1309,
+      "width": 904,
+      "height": 122
+    },
+    "date-wizard-send": {
+      "x": 179,
+      "y": 1976,
+      "width": 722,
+      "height": 172
+    }
+  }
+}

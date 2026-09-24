@@ -1,0 +1,42 @@
+{
+  "name": "asetukset-omat-tiedot",
+  "language": "fi",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T17:27:24Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "date-pace": {
+      "x": 88,
+      "y": 767,
+      "width": 904,
+      "height": 473
+    },
+    "save-own-info": {
+      "x": 557,
+      "y": 1273,
+      "width": 435,
+      "height": 172
+    },
+    "date-pace-option-0": {
+      "x": 102,
+      "y": 873,
+      "width": 876,
+      "height": 103
+    },
+    "date-pace-option-1": {
+      "x": 102,
+      "y": 987,
+      "width": 876,
+      "height": 103
+    },
+    "date-pace-option-2": {
+      "x": 102,
+      "y": 1101,
+      "width": 876,
+      "height": 103
+    }
+  }
+}

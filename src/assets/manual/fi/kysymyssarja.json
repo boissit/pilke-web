@@ -1,0 +1,36 @@
+{
+  "name": "kysymyssarja",
+  "language": "fi",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T16:59:16Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "question-0": {
+      "x": 44,
+      "y": 461,
+      "width": 992,
+      "height": 359
+    },
+    "save-survey": {
+      "x": 601,
+      "y": 952,
+      "width": 435,
+      "height": 172
+    },
+    "question-0-option-0": {
+      "x": 58,
+      "y": 567,
+      "width": 964,
+      "height": 103
+    },
+    "question-0-option-1": {
+      "x": 58,
+      "y": 681,
+      "width": 964,
+      "height": 103
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "sent",
+  "language": "fi",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T16:45:26Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "waiting-explainer": {
+      "x": 992,
+      "y": 230,
+      "width": 55,
+      "height": 58
+    },
+    "venue-map": {
+      "x": 33,
+      "y": 1264,
+      "width": 1014,
+      "height": 646
+    },
+    "withdraw-invitation-open": {
+      "x": 33,
+      "y": 2000,
+      "width": 289,
+      "height": 59
+    }
+  }
+}

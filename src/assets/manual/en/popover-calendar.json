@@ -1,0 +1,42 @@
+{
+  "name": "popover-calendar",
+  "language": "en",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T17:13:18Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "calendar-explainer-popup": {
+      "x": 81,
+      "y": 689,
+      "width": 918,
+      "height": 903
+    },
+    "calendar-explainer-body-0": {
+      "x": 122,
+      "y": 730,
+      "width": 836,
+      "height": 122
+    },
+    "calendar-explainer-body-1": {
+      "x": 122,
+      "y": 885,
+      "width": 836,
+      "height": 305
+    },
+    "calendar-explainer-body-2": {
+      "x": 122,
+      "y": 1223,
+      "width": 836,
+      "height": 122
+    },
+    "calendar-explainer-close": {
+      "x": 369,
+      "y": 1378,
+      "width": 342,
+      "height": 172
+    }
+  }
+}

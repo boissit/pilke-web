@@ -1,0 +1,42 @@
+{
+  "name": "date-map",
+  "language": "fi",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T16:17:08Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "live-map": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 2280
+    },
+    "meet-up-status": {
+      "x": 44,
+      "y": 1699,
+      "width": 992,
+      "height": 53
+    },
+    "meet-up-reveal": {
+      "x": 389,
+      "y": 1785,
+      "width": 302,
+      "height": 59
+    },
+    "date-map-directions": {
+      "x": 44,
+      "y": 1932,
+      "width": 348,
+      "height": 172
+    },
+    "date-map-back": {
+      "x": 609,
+      "y": 1932,
+      "width": 427,
+      "height": 172
+    }
+  }
+}

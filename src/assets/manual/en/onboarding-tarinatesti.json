@@ -1,0 +1,30 @@
+{
+  "name": "onboarding-tarinatesti",
+  "language": "en",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T15:23:23Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "story-question-option-0": {
+      "x": 88,
+      "y": 964,
+      "width": 904,
+      "height": 163
+    },
+    "story-question-option-1": {
+      "x": 88,
+      "y": 1138,
+      "width": 904,
+      "height": 163
+    },
+    "story-question-option-2": {
+      "x": 88,
+      "y": 1312,
+      "width": 904,
+      "height": 223
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "name": "invitation",
+  "language": "en",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T17:07:03Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "timeslot-0": {
+      "x": 534,
+      "y": 454,
+      "width": 279,
+      "height": 74
+    },
+    "timeslot-1": {
+      "x": 534,
+      "y": 539,
+      "width": 279,
+      "height": 74
+    },
+    "timeslot-2": {
+      "x": 534,
+      "y": 624,
+      "width": 279,
+      "height": 74
+    },
+    "timeslot-3": {
+      "x": 534,
+      "y": 709,
+      "width": 279,
+      "height": 74
+    },
+    "venue-0": {
+      "x": 33,
+      "y": 901,
+      "width": 299,
+      "height": 74
+    },
+    "venue-1": {
+      "x": 343,
+      "y": 901,
+      "width": 356,
+      "height": 74
+    },
+    "venue-2": {
+      "x": 33,
+      "y": 986,
+      "width": 390,
+      "height": 74
+    },
+    "venue-map": {
+      "x": 33,
+      "y": 1093,
+      "width": 1014,
+      "height": 725
+    },
+    "invitation-decline": {
+      "x": 33,
+      "y": 1851,
+      "width": 402,
+      "height": 172
+    },
+    "invitation-accept": {
+      "x": 640,
+      "y": 1851,
+      "width": 407,
+      "height": 172
+    }
+  }
+}

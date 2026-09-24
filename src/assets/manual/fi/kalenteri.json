@@ -1,0 +1,24 @@
+{
+  "name": "kalenteri",
+  "language": "fi",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T16:48:04Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "calendar-menu": {
+      "x": 805,
+      "y": 109,
+      "width": 99,
+      "height": 91
+    },
+    "calendar-explainer": {
+      "x": 937,
+      "y": 126,
+      "width": 55,
+      "height": 58
+    }
+  }
+}

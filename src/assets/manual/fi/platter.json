@@ -1,0 +1,84 @@
+{
+  "name": "platter",
+  "language": "fi",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T16:41:34Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "__CAROUSEL_ITEM_1__": {
+      "x": 108,
+      "y": 371,
+      "width": 865,
+      "height": 1468
+    },
+    "__CAROUSEL_ITEM_2__": {
+      "x": 1022,
+      "y": 463,
+      "width": 58,
+      "height": 1284
+    },
+    "__CAROUSEL_ITEM_0__": {
+      "x": 0,
+      "y": 463,
+      "width": 59,
+      "height": 1284
+    },
+    "card-map-toggle": {
+      "x": 795,
+      "y": 404,
+      "width": 145,
+      "height": 66
+    },
+    "propose": {
+      "x": 378,
+      "y": 1668,
+      "width": 325,
+      "height": 138
+    },
+    "timeslot-chip-0": {
+      "x": 141,
+      "y": 1268,
+      "width": 386,
+      "height": 59
+    },
+    "activity-chip-0": {
+      "x": 554,
+      "y": 1268,
+      "width": 386,
+      "height": 59
+    },
+    "timeslot-chip-1": {
+      "x": 141,
+      "y": 1336,
+      "width": 386,
+      "height": 59
+    },
+    "activity-chip-1": {
+      "x": 554,
+      "y": 1336,
+      "width": 386,
+      "height": 59
+    },
+    "timeslot-chip-2": {
+      "x": 141,
+      "y": 1404,
+      "width": 386,
+      "height": 59
+    },
+    "activity-chip-2": {
+      "x": 554,
+      "y": 1404,
+      "width": 386,
+      "height": 59
+    },
+    "timeslot-chip-3": {
+      "x": 141,
+      "y": 1472,
+      "width": 386,
+      "height": 59
+    }
+  }
+}

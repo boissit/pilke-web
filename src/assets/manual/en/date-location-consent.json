@@ -1,0 +1,30 @@
+{
+  "name": "date-location-consent",
+  "language": "en",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T15:57:14Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "meet-up-disclose-body": {
+      "x": 122,
+      "y": 669,
+      "width": 836,
+      "height": 689
+    },
+    "meet-up-disclose-cancel": {
+      "x": 122,
+      "y": 1391,
+      "width": 241,
+      "height": 172
+    },
+    "meet-up-disclose-confirm": {
+      "x": 122,
+      "y": 1574,
+      "width": 602,
+      "height": 172
+    }
+  }
+}

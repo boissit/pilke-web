@@ -1,0 +1,42 @@
+{
+  "name": "cooldown-hidden",
+  "language": "en",
+  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
+  "takenAt": "2026-09-24T15:49:35Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "economy-explainer": {
+      "x": 676,
+      "y": 116,
+      "width": 371,
+      "height": 117
+    },
+    "cooldown-notice": {
+      "x": 33,
+      "y": 357,
+      "width": 1014,
+      "height": 348
+    },
+    "tip-bank": {
+      "x": 33,
+      "y": 1739,
+      "width": 150,
+      "height": 178
+    },
+    "balance-counter": {
+      "x": 676,
+      "y": 116,
+      "width": 371,
+      "height": 117
+    },
+    "balance-counter-0": {
+      "x": 676,
+      "y": 116,
+      "width": 371,
+      "height": 117
+    }
+  }
+}
