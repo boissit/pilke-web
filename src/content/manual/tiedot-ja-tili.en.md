@@ -44,4 +44,4 @@ You sign in with a one-time code sent to your phone number, and there is no pass
 - Invitations you sent are withdrawn and invitations you received are declined. Whoever sent one gets their petals back.
 - Past dates, the feedback given on them and safety reports are kept. Where your name was, people see *Deleted user*.
 
-You can sign up again later with the same number, but you start from an empty account. How long each thing is kept is in the [privacy statement](/en/tietosuoja).
+You can sign up again later with the same number, but you start from an empty account. How long each thing is kept is in the [privacy policy](/en/tietosuoja).

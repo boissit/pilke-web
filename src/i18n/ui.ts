@@ -261,7 +261,7 @@ const fi = {
     'Vain jos valitset niin. Sijainti näkyy kymmenen minuuttia sovitun alun molemmin puolin ja vain 300 metrin säteellä treffipaikasta, ja voit lopettaa näyttämisen milloin tahansa. Se poistetaan kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun.',
   'faq.cost.q': 'Mitä se maksaa?',
   'faq.cost.a':
-    'Betavaiheessa ei mitään. Terälehtiä ei voi ostaa, vaan niitä kertyy käyttämällä sovellusta.',
+    'Pilke on maksuton. Terälehdet ovat Pilkkeen valuutta: ansaitset niitä käymällä treffeillä ja pitämällä kalenterisi ajan tasalla, ja treffikutsu maksaa viisi. Sovelluksessa ei ole rahamaksuja.',
   'faq.cancel.q': 'Entä jos treffit peruuntuvat?',
   'faq.cancel.a':
     'Kutsun hylkääminen on ilmaista, eikä siitä seuraa jäähyä. Sovitut treffit voit perua sovelluksessa, mutta se on toiselle epäkohteliasta, ja siitä seuraa jäähy: hetken aikaa et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Sama koskee saapumatta jättämistä.',
@@ -546,7 +546,7 @@ const en: Record<keyof typeof fi, string> = {
   'cta.button': 'Join the beta',
   'cta.note':
     'We use the address for the beta invitation and nothing else. We do not pass it on.',
-  'cta.privacy': 'Read more in the privacy statement.',
+  'cta.privacy': 'Read more in the privacy policy.',
   'cta.closed': 'The waitlist opens soon.',
   'cta.sending': 'Sending…',
   'cta.failed': 'That did not go through. Please try again in a moment.',
@@ -564,7 +564,7 @@ const en: Record<keyof typeof fi, string> = {
     'Only if you choose to show them. It runs for ten minutes either side of the agreed start and only within 300 metres of the venue, and you can stop at any time. It is deleted when the window closes, and nothing else reads it.',
   'faq.cost.q': 'What does it cost?',
   'faq.cost.a':
-    'Nothing during the beta. Petals cannot be bought; they come from using the app.',
+    'Pilke is free. Petals are Pilke’s currency: you earn them by going on dates and keeping your calendar up to date, and a date invitation costs five. There are no payments in the app.',
   'faq.cancel.q': 'What if a date falls through?',
   'faq.cancel.a':
     'Turning down an invitation is free and brings no cooldown. You can call off an agreed date in the app, but it is rude to the other person, and it brings a cooldown: for a while you do not appear among other people’s candidates and cannot find new ones. The same goes for not turning up.',

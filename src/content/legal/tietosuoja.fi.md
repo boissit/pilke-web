@@ -1,5 +1,7 @@
 ---
-title: Tietosuojaseloste
+# The soft hyphen is where the heading may break: at phone width the one word is
+# wider than the room beside the petal on the page's head card.
+title: "Tietosuoja\u00ADseloste"
 lead: Mitä tietoja käsittelemme sinusta, mihin niitä käytetään ja mitä voit vaatia.
 version: 2026-09-12
 effective: 2026-09-12

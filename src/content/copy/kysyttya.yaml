@@ -51,8 +51,8 @@
   en: 'What does it cost?'
 
 'faq.cost.a':
-  fi: 'Betavaiheessa ei mitään. Terälehtiä ei voi ostaa, vaan niitä kertyy käyttämällä sovellusta.'
-  en: 'Nothing during the beta. Petals cannot be bought; they come from using the app.'
+  fi: 'Pilke on maksuton. Terälehdet ovat Pilkkeen valuutta: ansaitset niitä käymällä treffeillä ja pitämällä kalenterisi ajan tasalla, ja treffikutsu maksaa viisi. Sovelluksessa ei ole rahamaksuja.'
+  en: 'Pilke is free. Petals are Pilke’s currency: you earn them by going on dates and keeping your calendar up to date, and a date invitation costs five. There are no payments in the app.'
 
 'faq.cancel.q':
   fi: 'Entä jos treffit peruuntuvat?'

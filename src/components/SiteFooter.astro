@@ -97,13 +97,18 @@ const legal = [
 
 <section class="beta" id="beta" aria-labelledby="beta-title">
   <div class="wrap card">
+    <!--
+      The wide petals keep to the card's corners. Where they first appear the card is
+      not much wider than its headline and its 600px form, and a petal set further
+      in lies under the headline or the field.
+    -->
     <PetalScatter
       fill="var(--petal-on-coral)"
       petals={[
-        { shape: 'curl', size: 160, rotate: -24, left: '80px', top: '60px', only: 'wide' },
-        { shape: 'spoon', size: 130, rotate: 30, right: '110px', bottom: '70px', only: 'wide' },
+        { shape: 'curl', size: 120, rotate: -24, left: '48px', top: '28px', only: 'wide' },
+        { shape: 'spoon', size: 110, rotate: 30, right: '40px', bottom: '40px', only: 'wide' },
         { shape: 'comma', size: 90, rotate: 36, right: '90px', top: '50px', only: 'wide' },
-        { shape: 'fan', size: 110, rotate: -14, left: '110px', bottom: '60px', only: 'wide' },
+        { shape: 'fan', size: 96, rotate: -14, left: '36px', bottom: '36px', only: 'wide' },
         { shape: 'curl', size: 100, rotate: 30, right: '-20px', top: '30px', only: 'narrow' },
         { shape: 'spoon', size: 70, rotate: -30, left: '-16px', top: '24px', only: 'narrow' },
       ]}

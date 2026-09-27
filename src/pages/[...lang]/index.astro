@@ -79,6 +79,7 @@ const safetyCards = [
     <div class="wrap hero">
       <PetalScatter
         fill="var(--petal-on-peach)"
+        fold="hero"
         petals={[
           { shape: 'spoon', size: 90, rotate: 24, left: '36%', top: '40px', only: 'wide' },
           { shape: 'curl', size: 120, rotate: -30, left: '40px', bottom: '30px', only: 'wide' },
@@ -210,7 +211,7 @@ const safetyCards = [
           fill="var(--petal-on-peach)"
           petals={[
             { shape: 'spoon', size: 80, rotate: -24, left: '36px', top: '40px' },
-            { shape: 'comma', size: 64, rotate: 40, right: '44px', bottom: '60px', only: 'wide' },
+            { shape: 'comma', size: 64, rotate: 40, right: '36px', bottom: '24px', only: 'wide' },
             { shape: 'curl', size: 70, rotate: 20, right: '28px', top: '56px', only: 'wide' },
             { shape: 'backroll', size: 56, rotate: -16, left: '40px', bottom: '28px', only: 'wide' },
             { shape: 'comma', size: 48, rotate: 50, right: '20px', top: '24px', only: 'narrow' },
@@ -389,6 +390,15 @@ const safetyCards = [
       flex-direction: row;
       flex-wrap: wrap;
       gap: 12px;
+    }
+  }
+
+  /* Stacked on a tablet the headline has the card's whole width, and a line of it
+     runs under the petal in the top corner. It stops short of the petal instead;
+     the size stays the column's, so only where a line breaks changes. */
+  @media (min-width: 40rem) and (max-width: 68.99rem) {
+    h1 {
+      max-width: calc(100% - 56px);
     }
   }
 

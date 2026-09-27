@@ -41,9 +41,16 @@ interface Placement {
 interface Props {
   fill: string;
   petals: Placement[];
+  /**
+   * The width at which `wide` petals replace the `narrow` ones: the line the header
+   * folds its links at, unless the card lays itself out side by side somewhere else.
+   * The hero stacks its copy over the phone until 69rem, and the side-by-side petals
+   * drawn over a stacked hero land in its headline, so it passes `hero`.
+   */
+  fold?: 'header' | 'hero';
 }
 
-const { fill, petals } = Astro.props;
+const { fill, petals, fold = 'header' } = Astro.props;
 
 const place = ({ top, right, bottom, left, size, rotate }: Placement) =>
   [
@@ -59,7 +66,7 @@ const place = ({ top, right, bottom, left, size, rotate }: Placement) =>
     .join(';');
 ---
 
-<div class="petals" aria-hidden="true">
+<div class:list={['petals', `fold-${fold}`]} aria-hidden="true">
   {
     petals.map((petal) => (
       <svg class:list={[petal.only]} viewBox={`0 0 ${PETAL_VIEWBOX} ${PETAL_VIEWBOX}`} style={place(petal)} focusable="false">
@@ -83,13 +90,26 @@ const place = ({ top, right, bottom, left, size, rotate }: Placement) =>
 
   /* The same line the header folds its links at. */
   @media (max-width: 63.99rem) {
-    .wide {
+    .fold-header .wide {
       display: none;
     }
   }
 
   @media (min-width: 64rem) {
-    .narrow {
+    .fold-header .narrow {
+      display: none;
+    }
+  }
+
+  /* The line the hero puts its copy beside the phone at. */
+  @media (max-width: 68.99rem) {
+    .fold-hero .wide {
+      display: none;
+    }
+  }
+
+  @media (min-width: 69rem) {
+    .fold-hero .narrow {
       display: none;
     }
   }

@@ -48,7 +48,7 @@
 # back it up are not one sentence somebody has to re-translate together.
 'cta.privacy':
   fi: 'Lue lisää tietosuojaselosteesta.'
-  en: 'Read more in the privacy statement.'
+  en: 'Read more in the privacy policy.'
 
 # The three states the form has beyond its own copy. `closed` stands in for
 # `cta.note` while the privacy statement is a draft — the note promises what we
