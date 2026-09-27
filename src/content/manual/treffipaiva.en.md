@@ -39,7 +39,7 @@ The screen tells you whether it was sent. If not, call your trusted person yours
 There is no messaging in the app, so the other person cannot tell you they are late. If you end up waiting alone, you can tell us, but only during the date and only at the venue:
 
 - **When.** From {{noshow.grace_minutes}} minutes after the agreed start until the date ends, {{date.length_hours}} hour after the start. The first minutes leave room for being a little late.
-- **Where.** Within about {{noshow.venue_radius_m}} metres of the venue. A report gives the other person a long cooldown on one person's word, and made on the spot it tells the evening as it was. Your phone checks your position at the moment you report, and it is not stored.
+- **Where.** Within about {{noshow.venue_radius_m}} metres of the venue. A report gives the other person a long cooldown on one person's word, and made on the spot it tells it as it was. Your phone checks your position at the moment you report, and it is not stored.
 
 To report:
 

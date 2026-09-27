@@ -45,7 +45,6 @@ Only the stills the manual draws are listed. Each one is there because it shows 
 | platter | a drawn set of candidates, centred card | `timeslot-chip-0`, `activity-chip-0` |
 | cooldown-blocked | Treffit tab with the blocked (hidden and no-draw) cooldown notice | `cooldown-notice` |
 | cooldown-nodraw | Treffit tab with the no-draw cooldown notice | `cooldown-notice` |
-| cooldown-hidden | Treffit tab with the hidden cooldown notice | `cooldown-notice` |
 | invitation | received invitation, several times and venues | `timeslot-0`, `venue-0` |
 | sent | sent invitation, waiting for an answer, several venues | `withdraw-invitation-open` |
 | date | the agreed date screen once it has started, the live map under Löydättekö toisenne? | `agreed-time`, `live-map` |

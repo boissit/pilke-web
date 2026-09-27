@@ -181,8 +181,8 @@
   en: 'An agreed date is called off'
 
 'detail.changes.canceled.note':
-  fi: 'Voit perua, mutta se on toiselle epäkohteliasta: hän on varannut illan sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa terälehtensä takaisin.'
-  en: 'You can, but it is rude to the other person: they have set the evening aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The closer the date and the more often you call dates off, the longer it lasts. If the person invited calls it off, the sender gets their petals back.'
+  fi: 'Voit perua, mutta se on toiselle epäkohteliasta: hän on varannut aikaa sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa terälehtensä takaisin.'
+  en: 'You can, but it is rude to the other person: they have set time aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The closer the date and the more often you call dates off, the longer it lasts. If the person invited calls it off, the sender gets their petals back.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Why there is no chat

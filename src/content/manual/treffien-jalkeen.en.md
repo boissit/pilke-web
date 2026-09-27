@@ -1,6 +1,6 @@
 ---
 title: After the date
-lead: Feedback says how the evening went, decides whether you meet again, and earns petals.
+lead: Feedback says how the date went, decides whether you meet again, and earns petals.
 order: 80
 draft: true
 ---

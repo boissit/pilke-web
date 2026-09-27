@@ -5,7 +5,7 @@ order: 60
 draft: true
 ---
 
-An agreed date is something two people decided together. The other person has set the time aside for you, and there is no messaging in the app, so they cannot ask you anything. Calling it off decides for both of you, which is rude to them, and it earns you a cooldown. A cooldown takes no petals and ends on its own.
+An agreed date is something two people decided together. The other person has set time aside for you, and there is no messaging in the app, so they cannot ask you anything. Calling it off decides for both of you, which is rude to them, and it earns you a cooldown. A cooldown takes no petals and ends on its own.
 
 ## Three kinds of cooldown
 
@@ -21,15 +21,9 @@ During a cooldown you can still answer invitations you receive and go on your ag
 
 During a cooldown the top of the Dates page carries a notice (1): what it stops, until when, and why. The same text appears if you try to look for candidates. With more than one cooldown running, the notice gives the reason and end time of the one that ends last.
 
-![A notice on the Dates page: you cannot look for new candidates](shot:cooldown-nodraw#cooldown-notice)
-
-When you cannot look but still show up for others, the notice (1) is shorter. This follows withdrawing an invitation.
-
 <!-- hidden-cooldown: pending owner decision -->
 
-![A notice on the Dates page: you are not showing up in other people's candidates](shot:cooldown-hidden#cooldown-notice)
-
-The third kind (1) would take you out of other people's candidates if invitations you received kept going unaccepted. That rule is not in use at the moment, so declining invitations, or leaving them unanswered, does not hide you.
+The third kind would take you out of other people's candidates if invitations you received kept going unaccepted. That rule is not in use at the moment, so declining invitations, or leaving them unanswered, does not hide you.
 
 ## What starts one
 

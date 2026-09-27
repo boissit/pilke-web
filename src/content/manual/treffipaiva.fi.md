@@ -39,7 +39,7 @@ Näytöllä lukee, lähtikö viesti. Jos ei, soita läheisellesi itse. Hätätil
 Sovelluksessa ei ole keskusteluyhteyttä, joten toinen ei voi ilmoittaa myöhästyvänsä. Jos jäät odottamaan yksin, voit kertoa siitä meille, mutta vain treffien aikana ja treffipaikalla:
 
 - **Milloin.** Aikaisintaan {{noshow.grace_minutes}} minuuttia sovitun alkamisajan jälkeen ja viimeistään, kun treffit päättyvät, {{date.length_hours}} tunnin kuluttua alusta. Ensimmäiset minuutit jättävät tilaa pienelle myöhästymiselle.
-- **Missä.** Noin {{noshow.venue_radius_m}} metrin päässä treffipaikasta. Ilmoituksesta toinen saa pitkän jäähyn yhden ihmisen sanan perusteella, ja paikan päällä tehtynä se kertoo illasta sellaisena kuin se oli. Puhelin tarkistaa sijaintisi sillä hetkellä, kun ilmoitat, eikä sitä tallenneta.
+- **Missä.** Noin {{noshow.venue_radius_m}} metrin päässä treffipaikasta. Ilmoituksesta toinen saa pitkän jäähyn yhden ihmisen sanan perusteella, ja paikan päällä tehtynä se kertoo tilanteesta sellaisena kuin se oli. Puhelin tarkistaa sijaintisi sillä hetkellä, kun ilmoitat, eikä sitä tallenneta.
 
 Näin ilmoitat:
 

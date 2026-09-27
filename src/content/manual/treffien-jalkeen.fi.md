@@ -1,6 +1,6 @@
 ---
 title: Treffien jälkeen
-lead: Palaute kertoo, miten ilta meni, ratkaisee, näettekö toisenne uudelleen, ja tuo terälehtiä.
+lead: Palaute kertoo, miten treffit menivät, ratkaisee, näettekö toisenne uudelleen, ja tuo terälehtiä.
 order: 80
 draft: true
 ---

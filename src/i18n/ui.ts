@@ -219,7 +219,7 @@ const fi = {
     'Terälehdet on käytetty, ja uusia ehdokkaita pääset löytämään vasta hetken päästä.',
   'detail.changes.canceled': 'Sovitut treffit perutaan',
   'detail.changes.canceled.note':
-    'Voit perua, mutta se on toiselle epäkohteliasta: hän on varannut illan sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa terälehtensä takaisin.',
+    'Voit perua, mutta se on toiselle epäkohteliasta: hän on varannut aikaa sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa terälehtensä takaisin.',
 
   'detail.chat.title': 'Miksi chattia ei ole',
   'detail.chat.body':
@@ -543,7 +543,7 @@ const en: Record<keyof typeof fi, string> = {
     'The petals are spent, and you can only find new candidates again after a little while.',
   'detail.changes.canceled': 'An agreed date is called off',
   'detail.changes.canceled.note':
-    'You can, but it is rude to the other person: they have set the evening aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The closer the date and the more often you call dates off, the longer it lasts. If the person invited calls it off, the sender gets their petals back.',
+    'You can, but it is rude to the other person: they have set time aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The closer the date and the more often you call dates off, the longer it lasts. If the person invited calls it off, the sender gets their petals back.',
 
   'detail.chat.title': 'Why there is no chat',
   'detail.chat.body':
