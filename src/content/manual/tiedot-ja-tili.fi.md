@@ -7,11 +7,11 @@ draft: true
 
 ## Mitä muut näkevät
 
-| Milloin | Kuka | Mitä |
+| Mitä | Kuka | Milloin |
 |---|---|---|
-| Olet hänen ehdokkaidensa joukossa tai kutsussa | Ehdokas tai kutsuttu | Kutsumanimi, ikä ja kuva sekä yhteiset aikanne ja paikkanne |
-| Olette molemmat valinneet palautteessa numeron jakamisen | Treffikumppani | Kutsumanimi ja puhelinnumero |
-| Treffien alun ympärillä, jos itse näytät sijaintisi | Treffikumppani | Sijaintisi kartalla, {{sharing.window_minutes}} minuutin ajan |
+| Kutsumanimi, ikä ja kuva sekä yhteiset aikanne ja paikkanne | Ehdokas tai kutsuttu | Olet hänen ehdokkaidensa joukossa tai kutsussa |
+| Kutsumanimi ja puhelinnumero | Treffikumppani | Olette molemmat valinneet palautteessa numeron jakamisen |
+| Sijaintisi kartalla, {{sharing.window_minutes}} minuutin ajan | Treffikumppani | Treffien alun ympärillä, jos itse näytät sijaintisi |
 
 Taulukossa on kaikki, mitä sinusta näytetään muille. Sähköpostiosoitettasi ja luotettavan henkilön numeroa ei näe kukaan muu kuin sinä. Palautettasi ei näe treffikumppanisi. Jos Pilke merkitsee treffit sinun kalenteriisi, esimerkiksi Google- tai Apple-kalenteriisi, merkinnän näkevät kaikki, jotka näkevät sen kalenterin. Katso [Vapaat aikasi](/ohje/vapaat-ajat).
 
