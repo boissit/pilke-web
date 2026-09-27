@@ -1,11 +1,11 @@
 ---
 title: Peruminen ja jäähy
-lead: Jos perut sovitut treffit, peruutat kutsun tai et saavu paikalle, Pilke pitää tauon. Tässä, mistä tauko alkaa, kuinka kauan se kestää ja mitä se estää.
+lead: Jos perut sovitut treffit, peruutat lähettämäsi kutsun tai jätät saapumatta treffeille, saat jäähyn. Tältä sivulta näet, mistä jäähyn saa, kuinka kauan se kestää ja mitä sen aikana ei voi tehdä.
 order: 60
 draft: true
 ---
 
-Sovitut treffit ovat kahden ihmisen yhteinen päätös. Toinen on varannut illan sinulle, eikä hän voi kysyä sinulta mitään, koska sovelluksessa ei ole keskusteluyhteyttä. Peruminen on siksi epäkohteliasta häntä kohtaan, ja jäähy on tauko, joka seuraa siitä. Se ei vie terälehtiä, ja se päättyy itsestään.
+Sovitut treffit ovat kahden ihmisen yhteinen päätös. Toinen on varannut ajan sinulle, eikä hän voi kysyä sinulta mitään, koska sovelluksessa ei ole keskusteluyhteyttä. Peruminen on siksi epäkohteliasta häntä kohtaan, ja siitä saa jäähyn. Jäähy ei vie terälehtiä, ja se päättyy itsestään.
 
 ## Kolme jäähyä
 
@@ -41,7 +41,7 @@ Kolmas jäähy (1) piilottaisi sinut muiden ehdokkaista, jos saamiasi kutsuja j�
 | Peruit sovitut treffit myöhemmin | Molemmat | {{cooldown.cancel_late_days}} päivää |
 | Toinen kertoi, ettet saapunut | Molemmat | {{cooldown.noshow_days}} päivää |
 
-Toistuva peruminen pidentää taukoa. Jokainen aiempi sovittujen treffien peruminen viimeisen {{cooldown.repeat_window_days}} päivän ajalta kertoo seuraavan perumisen keston {{cooldown.repeat_multiplier}}:lla. Jäähy kestää kuitenkin enintään {{cooldown.ceiling_days}} päivää. Kutsujen peruutukset ja saapumatta jäämiset eivät kasvata kerrointa.
+Toistuva peruminen pidentää jäähyä. Jokainen aiempi sovittujen treffien peruminen viimeisen {{cooldown.repeat_window_days}} päivän ajalta kertoo seuraavan perumisen keston {{cooldown.repeat_multiplier}}:lla. Jäähy kestää kuitenkin enintään {{cooldown.ceiling_days}} päivää. Kutsujen peruutukset ja saapumatta jäämiset eivät kasvata kerrointa.
 
 ## Mitä perumisesta seuraa toiselle
 
@@ -49,4 +49,4 @@ Kun perut sovitut treffit, toinen saa siitä heti ilmoituksen. Ilmoitusta ei voi
 
 Sovitut treffit perutaan treffisivun **Peru treffit** -painikkeella. Kun treffien alkamisaika on ohi, painiketta ei enää ole.
 
-Peru siis heti, kun tiedät, ettet pääse: mitä aikaisemmin perut, sitä lyhyempi tauko on.
+Peru siis heti, kun tiedät, ettet pääse: mitä aikaisemmin perut, sitä lyhyempi jäähy on.

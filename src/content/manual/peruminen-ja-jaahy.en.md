@@ -1,11 +1,11 @@
 ---
 title: Cancelling and cooldowns
-lead: Call off an agreed date, withdraw an invitation or fail to turn up, and Pilke puts in a pause. What starts one, how long it lasts and what it stops.
+lead: If you call off an agreed date, withdraw an invitation you sent or don’t turn up to a date, you get a cooldown. This page shows what causes one, how long it lasts and what you can’t do during it.
 order: 60
 draft: true
 ---
 
-An agreed date is something two people decided together. The other person has set the evening aside for you, and there is no messaging in the app, so they cannot ask you anything. Calling it off decides for both of you, which is rude to them, and a cooldown is the pause that follows. It takes no petals and ends on its own.
+An agreed date is something two people decided together. The other person has set the time aside for you, and there is no messaging in the app, so they cannot ask you anything. Calling it off decides for both of you, which is rude to them, and it earns you a cooldown. A cooldown takes no petals and ends on its own.
 
 ## Three kinds of cooldown
 
@@ -41,7 +41,7 @@ The third kind (1) would take you out of other people's candidates if invitation
 | Called off an agreed date any later | Both | {{cooldown.cancel_late_days}} days |
 | The other person told us you did not turn up | Both | {{cooldown.noshow_days}} days |
 
-Calling off dates again and again makes the pause longer. Each date you called off in the last {{cooldown.repeat_window_days}} days multiplies the next one's length by {{cooldown.repeat_multiplier}}, up to a ceiling of {{cooldown.ceiling_days}} days. Withdrawn invitations and no-shows do not add to the multiplier.
+Calling off dates again and again makes the cooldown longer. Each date you called off in the last {{cooldown.repeat_window_days}} days multiplies the next one's length by {{cooldown.repeat_multiplier}}, up to a ceiling of {{cooldown.ceiling_days}} days. Withdrawn invitations and no-shows do not add to the multiplier.
 
 ## What calling off means for the other person
 
@@ -49,4 +49,4 @@ When you call off an agreed date, the other person is told straight away. That n
 
 You call off an agreed date with **Cancel the date** on its screen. Once the start time has passed, the button is gone.
 
-So call off as soon as you know you cannot make it: the earlier you do, the shorter the pause.
+So call off as soon as you know you cannot make it: the earlier you do, the shorter the cooldown.
