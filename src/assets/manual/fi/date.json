@@ -1,8 +1,8 @@
 {
   "name": "date",
   "language": "fi",
-  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
-  "takenAt": "2026-09-24T14:47:38Z",
+  "commit": "c0d7c2c7174871ecdacfcc54009468dc6dfc0a3e-dirty",
+  "takenAt": "2026-09-27T11:40:00Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -10,33 +10,21 @@
   "elements": {
     "agreed-time": {
       "x": 534,
-      "y": 454,
+      "y": 544,
       "width": 316,
       "height": 74
     },
-    "venue-map": {
+    "meet-up-block": {
       "x": 33,
       "y": 948,
       "width": 1014,
-      "height": 757
+      "height": 52
     },
-    "no-show-report": {
+    "live-map": {
       "x": 33,
-      "y": 1738,
+      "y": 1033,
       "width": 1014,
-      "height": 172
-    },
-    "no-show-explainer": {
-      "x": 970,
-      "y": 1760,
-      "width": 55,
-      "height": 58
-    },
-    "no-show-report-open": {
-      "x": 55,
-      "y": 1829,
-      "width": 970,
-      "height": 59
+      "height": 877
     }
   }
 }

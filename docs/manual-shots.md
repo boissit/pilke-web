@@ -12,7 +12,7 @@ This file is shared by three pieces of work: the capture pipeline in `pilke-app`
 The sidecar `<name>.json`:
 
     {
-      "name": "kalenteri-drag",
+      "name": "kalenteri",
       "language": "fi",
       "commit": "<pilke-app HEAD sha, with -dirty if the tree was dirty>",
       "takenAt": "2026-09-24T12:00:00Z",
@@ -26,58 +26,41 @@ Element bounds are in the PNG's own pixels. Only the testIDs listed under **Call
 
 A paragraph that contains only an image:
 
-    ![Alt text in the page's language](shot:kalenteri-drag)
-    ![Alt text](shot:kalenteri-drag#calendar-grid,calendar-tools)
+    ![Alt text in the page's language](shot:kalenteri)
+    ![Alt text](shot:kalenteri-toistuva#repeat-proposal,repeat-save)
 
 After `#` comes an ordered list of testIDs. The page draws numbered markers 1, 2, … on those elements, using the bounds in the sidecar. The text refers to them as (1), (2).
 
 ## The stills
 
+Only the stills the manual draws are listed. Each one is there because it shows a state people misread, so the state column says which state that is: a capture of the same screen in another state is a different picture.
+
 | name | screen and state | callouts (testIDs) |
 |---|---|---|
-| onboarding-tervetuloa | welcome | |
-| onboarding-ehdot | terms acceptance | |
-| onboarding-profiilin-luonti | profile creation | |
-| onboarding-yhteystiedot | contact details | |
-| onboarding-omat-tiedot | own details | |
-| onboarding-profiilikuva | profile picture | |
-| onboarding-persoonallisuus | personality | |
-| onboarding-tarinatesti | story test, first question | |
-| onboarding-kielet | languages | |
-| onboarding-treffiaktiviteetit | date activities | |
-| treffit | home screen with petals, a date and an invitation | `balance-counter`, `tip-bank`, `find-dates` |
-| popover-petals | petals explainer open | |
-| kalenteri | calendar week with free slots and density shading | `calendar-menu`, `calendar-explainer` |
-| kalenteri-drag | mid-drag selecting a new slot | |
-| kalenteri-toistuva | the repeat-week sheet open | `repeat-proposal`, `repeat-save`, `repeat-cancel` |
-| popover-calendar | calendar explainer open | |
-| date-wizard-kalenteri | date wizard, calendar step | `date-wizard-next` |
-| date-wizard-petals | date wizard, petal balance step | `wizard-balance`, `date-wizard-send` |
-| platter | a drawn set of candidates | `card-map-toggle`, `timeslot-chip-0`, `activity-chip-0`, `propose` |
-| cooldown-blocked | what a blocked cooldown looks like | `cooldown-notice` |
-| cooldown-hidden | hidden cooldown | `cooldown-notice` |
-| cooldown-nodraw | no-draw cooldown | `cooldown-notice` |
-| invitation | received invitation | `timeslot-0`, `venue-0`, `invitation-accept`, `invitation-decline` |
-| sent | sent invitation, waiting for an answer | `waiting-explainer`, `withdraw-invitation-open` |
-| date | the agreed date screen | `agreed-time`, `venue-map` |
-| date-map | the date map | `meet-up-reveal` |
+| treffit | home screen with petals, a received invitation and an agreed date | `balance-counter`, `find-dates` |
+| kalenteri | calendar week with own free slots and the yellow density shading visible on several hours | `calendar-density` |
+| kalenteri-valikko | the calendar's quick-actions menu open over the calendar, the ⋮ button still in view behind it | `calendar-menu`, `repeat-week` |
+| kalenteri-toistuva | the repeat-week proposal, drawn dashed, with its summary bar | `repeat-proposal`, `repeat-save` |
+| date-wizard-petals | date wizard, petal balance step, before the set is drawn | `wizard-balance`, `date-wizard-send` |
+| platter | a drawn set of candidates, centred card | `timeslot-chip-0`, `activity-chip-0` |
+| cooldown-blocked | Treffit tab with the blocked (hidden and no-draw) cooldown notice | `cooldown-notice` |
+| cooldown-nodraw | Treffit tab with the no-draw cooldown notice | `cooldown-notice` |
+| cooldown-hidden | Treffit tab with the hidden cooldown notice | `cooldown-notice` |
+| invitation | received invitation, several times and venues | `timeslot-0`, `venue-0` |
+| sent | sent invitation, waiting for an answer, several venues | `waiting-explainer`, `withdraw-invitation-open` |
+| date | the agreed date screen once it has started, the live map under Löydättekö toisenne? | `agreed-time`, `live-map` |
+| date-map | the date map inside the sharing window, not yet sharing | `meet-up-reveal` |
 | date-location-consent | the location-sharing consent | |
-| date-noshow-not-at-venue | no-show report refused: not at the venue | |
-| feedback | post-date feedback | `feedback-when` |
-| kysymykset | question sets tab | `retake-story-test`, `question-set-0` |
-| kysymyssarja | a question set open | `question-0`, `save-survey` |
-| popover-surveys | question sets explainer | |
-| asetukset | settings | |
-| asetukset-omat-tiedot | settings: own details open | `date-pace`, `save-own-info` |
-| asetukset-turvallisuus | settings: safety open | `safety-contact-input`, `save-safety-contact` |
-| asetukset-ilmoitukset | settings: notifications open | `save-notification-preferences` |
-| asetukset-ehdot | settings: terms open | |
-| asetukset-tili | settings: account open (sign out everywhere, delete) | `sign-out`, `sign-out-everywhere`, `delete-account` |
+| date-noshow-not-at-venue | no-show report refused: not at the venue | `no-show-report` |
+| feedback | post-date feedback, first question | `feedback-when` |
+| asetukset-ilmoitukset | settings: notifications open, the three always-on rows in view | `notification-reveal_prompt-push`, `notification-party_arrived-push`, `notification-date_cancelled-push` |
+| asetukset-tili | settings: account open (sign out everywhere, delete) | `sign-out-everywhere`, `delete-account` |
 
-Four of the callouts above name a testID the app does not have yet, so the capture work adds them. What each one should sit on:
+Two callouts need a word on where their bounds come from:
 
-- `find-dates`: the `Löydä treffit!` / `Viimeistele kutsu` button in the Treffit tab's footer (`src/app/(tabs)/treffit.tsx`).
-- `propose`: the `Ehdota!` button on the centred candidate card (`src/components/CandidateCard.tsx`).
-- `invitation-accept`, `invitation-decline`: the `Sovittu!` and `Hylkää` buttons on a received invitation (`src/app/invitation/[matchId].tsx`).
+- `calendar-density`: the first shaded hour on screen, one cell of the yellow density shading drawn by `src/components/calendar/density.tsx`. The shading is one view per hour and day, with no wrapper around a band, so each hour row marks its first shaded cell and the sidecar keeps the first one on screen. The capture needs at least five people free at the same hours, which `make seed-density` in the backend provides.
+- `calendar-menu` on `kalenteri-valikko`: the menu is a modal, its own window, and the menu's view hierarchy has nothing behind the scrim in it. The flow photographs the calendar just before opening the menu, and the capture lays that hierarchy under the menu's.
+
+In `asetukset-ilmoitukset` the "Aina päällä" heading is scrolled off the top of the current capture. The next capture should scroll so the heading and its three rows are both in view.
 
 Callouts are filled in by whoever writes the text. When the text needs a new callout, add the testID in the table above. The capture pipeline then records its bounds on the next run. If a testID does not exist in the app yet, the capture work adds it.

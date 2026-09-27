@@ -3,7 +3,8 @@
   motif as texture. Loaded once by `Base.astro`, so every page has it.
 
   Everything here builds on the tokens in global.css rather than introducing new
-  colours. The app has a small palette on purpose and the site keeps it.
+  colours. The app has a small palette on purpose and the site keeps it. The one
+  exception is `--annotation`, below, which is outside the palette on purpose.
 */
 
 :root {
@@ -17,6 +18,20 @@
     and the skip link, both controls rather than structure — still name it.
   */
   --edge: 3px;
+
+  /*
+    The manual's markings on a screenshot: the ring, the badge, the leader and the
+    `(1)` in the text that refers to them.
+
+    WARNING: **Keep this out of the app's palette.** A marker in the app's coral
+    and ink is drawn in the same language as the buttons it points at, and reads
+    as one of them. This blue is no colour the app uses, and it holds its contrast
+    on both the pale screens and the dark map. The halo is what separates it from
+    whatever is underneath.
+  */
+  --annotation: #1f4fe0;
+  --annotation-halo: #ffffff;
+  --annotation-wash: rgb(31 79 224 / 0.08);
 }
 
 .slab {
@@ -249,13 +264,16 @@
 }
 
 /* Retention periods and the like arrive as tables, and a wide one scrolls in its
-   own box rather than pushing the page sideways. */
+   own box rather than pushing the page sideways. The manual's tables — what earns
+   petals, how long a cooldown lasts — are drawn the same way. */
 .legal .table-scroll,
-.legal table {
+.legal table,
+.manual table {
   width: 100%;
 }
 
-.legal table {
+.legal table,
+.manual table {
   border-collapse: collapse;
   display: block;
   overflow-x: auto;
@@ -263,14 +281,17 @@
 }
 
 .legal th,
-.legal td {
+.legal td,
+.manual th,
+.manual td {
   text-align: left;
   padding: var(--pad-normal);
   border-bottom: 1px solid var(--ink);
   vertical-align: top;
 }
 
-.legal th {
+.legal th,
+.manual th {
   font-weight: 800;
 }
 
@@ -290,9 +311,15 @@
   margin-top: var(--pad-medium);
 }
 
-.manual > :is(p, ul, ol, blockquote, table),
+.manual > :is(p, ul, ol, blockquote),
 .manual .step-text > * {
   max-width: 60ch;
+}
+
+/* A table is read across rather than down, and at the prose measure its three
+   columns wrap every cell to a few words. */
+.manual > table {
+  max-width: 80ch;
 }
 
 .manual h2 {
@@ -339,19 +366,22 @@
   font-size: 0.9em;
 }
 
-/* `(1)` in a step's text, drawn as the marker it refers to on the phone beside it,
-   at the size of the text it sits in. */
+/* `(1)` in a step's text, drawn as the badge it refers to on the phone beside it,
+   at the size of the text it sits in: the annotation blue, a sans numeral, no
+   border and no shadow, so it reads as a reference and not as a button. */
 .manual .callout-ref {
   display: inline-grid;
   place-items: center;
-  min-width: 1.5em;
-  height: 1.5em;
+  min-width: 1.4em;
+  height: 1.4em;
   padding-inline: 0.2em;
   vertical-align: 0.05em;
-  background: var(--brand-main);
-  border: var(--border-width) solid var(--ink);
+  background: var(--annotation);
+  color: var(--annotation-halo);
   border-radius: 999px;
-  font-family: var(--font-display);
-  font-size: 0.875em;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.8125em;
   line-height: 1;
+  font-variant-numeric: tabular-nums;
 }

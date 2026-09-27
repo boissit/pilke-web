@@ -18,7 +18,7 @@
  */
 import Phone from './Phone.astro';
 import { useTranslations } from '../i18n/ui';
-import { BADGE_SHARE, type Still } from '../manual/stills';
+import { BADGE_SHARE, type Marker, type Still } from '../manual/stills';
 
 interface Props {
   still: Still;
@@ -29,12 +29,30 @@ const t = useTranslations(still.lang);
 
 const id = `${still.lang}/${still.name}`;
 const badgeSize = `${BADGE_SHARE * 100}%`;
+
+/**
+ * The point on the element's outline nearest its badge, where the badge's leader ends.
+ * Clamping the badge's centre into the box finds it in percentages as well as in
+ * pixels, so this needs neither the still's size nor the phone's.
+ */
+function leaderEnd(marker: Marker): { x: number; y: number } {
+  const clamp = (value: number, from: number, size: number) => Math.min(Math.max(value, from), from + size);
+  return { x: clamp(marker.badgeLeft, marker.left, marker.width), y: clamp(marker.badgeTop, marker.top, marker.height) };
+}
 ---
 
 <div class="step">
   {
     still.image ? (
       <Phone src={still.image} alt={still.alt} width={280} still={id}>
+        {still.markers.length > 0 && (
+          <svg class="leaders" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            {still.markers.map((marker) => {
+              const end = leaderEnd(marker);
+              return <line x1={marker.badgeLeft} y1={marker.badgeTop} x2={end.x} y2={end.y} />;
+            })}
+          </svg>
+        )}
         {still.markers.map((marker) => (
           <>
             <span
@@ -88,36 +106,70 @@ const badgeSize = `${BADGE_SHARE * 100}%`;
     min-width: 0;
   }
 
-  /* The bounds of the element, outlined so a big one reads as an area and a small
-     one as a target. A white halo inside the ink, because the screens underneath are
-     every colour the app has and a bare ink line vanishes on its darker ones. */
+  /*
+    The annotation layer: the ring round an element, the badge that numbers it and
+    the leader between them, all in `--annotation` and nothing else.
+
+    WARNING: **None of it may look like part of the app.** The screenshots are the
+    app's own coral fills, ink borders and flat offset shadows, which is every
+    control a reader is about to look for, so a marker drawn in those reads as one
+    more button on the screen. Blue, a dashed edge, a sans numeral and no shadow
+    are what a hand marking up a screenshot draws, and nothing the app draws is any
+    of them. The white on each side is what keeps them visible on a dark map as
+    well as on a pale card.
+  */
+
+  /* The bounds of the element, so a big one reads as an area and a small one as
+     a target. Dashed, because a solid ring round a card reads as the card's own
+     border. */
   .marker {
     position: absolute;
-    border: 2px solid var(--ink);
+    border: 2px dashed var(--annotation);
     border-radius: var(--radius-small);
+    background: var(--annotation-wash);
     box-shadow:
-      0 0 0 2px var(--white),
-      inset 0 0 0 2px var(--white);
+      0 0 0 1.5px var(--annotation-halo),
+      inset 0 0 0 1.5px var(--annotation-halo);
     pointer-events: none;
   }
 
-  /* The site's `.numeral`, at the size of a finger on the screen it sits on. Its
-     centre and width come from `placeBadges` in `stills.ts`, which puts it beside the
-     element it numbers; the width is a share of the screen, so the number is sized in
-     the same units. */
+  /* From the badge's centre to the nearest point of its ring. The badge covers its
+     own half, so what shows is the short run across the gap that ties the two
+     together when two elements sit close. The viewBox is the still in percent, and
+     the stroke keeps its width whatever the stretch. */
+  .leaders {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+  .leaders line {
+    stroke: var(--annotation);
+    stroke-width: 2px;
+    vector-effect: non-scaling-stroke;
+  }
+
+  /* Its centre and width come from `placeBadges` in `stills.ts`, which puts it
+     beside the element it numbers; the width is a share of the screen, so the
+     numeral is sized in the same units. */
   .badge {
     position: absolute;
     transform: translate(-50%, -50%);
     aspect-ratio: 1;
     display: grid;
     place-items: center;
-    background: var(--brand-main);
-    border: var(--border-width) solid var(--ink);
+    background: var(--annotation);
+    color: var(--annotation-halo);
+    border: 1.5px solid var(--annotation-halo);
     border-radius: 50%;
-    font-family: var(--font-display);
-    font-size: 6.5cqw;
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 6cqw;
     line-height: 1;
-    box-shadow: 2px 2px 0 var(--ink);
+    font-variant-numeric: tabular-nums;
     pointer-events: none;
   }
 

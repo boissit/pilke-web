@@ -2,18 +2,18 @@
 /**
  * The manual's front page: `/ohje` and `/en/guide`.
  *
- * Two lists, because the manual has two kinds of page and they are read differently:
- * guides walk through doing something, explainers say how something works. Each is in
- * the pages' own `order`. A group with nothing in it is left out rather than drawn
- * empty, and so is the whole list until there is a page to put in it.
+ * One list, in the pages' own `order`: each page is one system of the app, and they
+ * are in the order somebody learning it meets them, from what Pilke is to what it
+ * keeps about you. Numbered, because that order is the point of the list. Until
+ * there is a page to put in it, the list is left out and a line says so.
  *
  * An unfinished page is listed, and says so beside its title. The manual is written a
  * page at a time and a list that hid drafts would be empty for most of its life; the
  * page itself carries the full notice.
  */
 import PageHead from '../../../components/PageHead.astro';
-import { manualHref, manualPages, manualSegment, type ManualKind } from '../../../i18n/manual';
-import { defaultLang, languages, useTranslations, type Lang, type UiKey } from '../../../i18n/ui';
+import { manualHref, manualPages, manualSegment } from '../../../i18n/manual';
+import { defaultLang, languages, useTranslations, type Lang } from '../../../i18n/ui';
 import Base from '../../../layouts/Base.astro';
 
 export const getStaticPaths = () =>
@@ -26,15 +26,6 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const pages = await manualPages();
-
-const groups = (
-  [
-    { kind: 'guide', title: 'manual.guides' },
-    { kind: 'explainer', title: 'manual.explainers' },
-  ] satisfies { kind: ManualKind; title: UiKey }[]
-)
-  .map((group) => ({ ...group, pages: pages.filter((page) => page.kind === group.kind) }))
-  .filter((group) => group.pages.length > 0);
 ---
 
 <Base lang={lang}>
@@ -42,49 +33,52 @@ const groups = (
 
   <section class="slab slab-white">
     <div class="wrap section-pad">
-      {groups.length === 0 && <p class="prose">{t('manual.empty')}</p>}
+      {pages.length === 0 && <p class="prose">{t('manual.empty')}</p>}
 
       {
-        groups.map((group) => (
-          <section class="group">
-            <h2 class="display-mid small">{t(group.title)}</h2>
-            <ul class="pages">
-              {group.pages.map((page) => (
-                <li>
-                  <a href={manualHref(lang, page.slug)}>{page.text[lang].title}</a>
-                  {page.entries[lang].data.draft && <span class="tag">{t('manual.draft.tag')}</span>}
-                  <p>{page.text[lang].lead}</p>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))
+        pages.length > 0 && (
+          <ol class="pages">
+            {pages.map((page) => (
+              <li>
+                <a href={manualHref(lang, page.slug)}>{page.text[lang].title}</a>
+                {page.entries[lang].data.draft && <span class="tag">{t('manual.draft.tag')}</span>}
+                <p>{page.text[lang].lead}</p>
+              </li>
+            ))}
+          </ol>
+        )
       }
     </div>
   </section>
 </Base>
 
 <style>
-  .group + .group {
-    margin-top: var(--pad-large);
-  }
-
-  .small {
-    font-size: clamp(1.375rem, 3vw, 2rem);
-  }
-
-  /* A ruled list, as the ledgers on `nain-se-toimii` are: each row a title that is
-     the link and the page's own lead under it. */
+  /* A ruled list, as the ledgers on `nain-se-toimii` are: each row a numeral, the
+     title that is the link and the page's own lead under it. The numeral hangs in
+     its own column so the titles line up down the page. */
   .pages {
     list-style: none;
     padding: 0;
-    margin-top: var(--pad-medium);
     border-bottom: var(--edge) solid var(--ink);
+    counter-reset: page;
   }
 
   .pages li {
+    position: relative;
     padding-block: var(--pad-normal);
+    padding-left: 2.75rem;
     border-top: var(--edge) solid var(--ink);
+    counter-increment: page;
+  }
+
+  .pages li::before {
+    content: counter(page);
+    position: absolute;
+    left: 0;
+    top: var(--pad-normal);
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    line-height: 1.2;
   }
 
   .pages a {

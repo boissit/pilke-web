@@ -55,20 +55,15 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | --- | --- |
 | `/en.html/` | `treffit` 600px<br>`platter` 600px<br>`invitation` 600px<br>`date` 600px<br>`feedback` 600px<br>`asetukset` 460px |
 | `/en/guide.html/` | none |
-| `/en/guide/aloitus.html/` | `en/onboarding-tervetuloa` 560px<br>`en/onboarding-ehdot` 560px<br>`en/onboarding-profiilin-luonti` 560px<br>`en/onboarding-yhteystiedot` 560px<br>`en/onboarding-omat-tiedot` 560px<br>`en/onboarding-profiilikuva` 560px<br>`en/onboarding-persoonallisuus` 560px<br>`en/onboarding-tarinatesti` 560px<br>`en/onboarding-kielet` 560px<br>`en/onboarding-treffiaktiviteetit` 560px |
-| `/en/guide/asetukset.html/` | `en/asetukset` 560px<br>`en/asetukset-omat-tiedot` 560px<br>`en/asetukset-turvallisuus` 560px<br>`en/asetukset-ilmoitukset` 560px<br>`en/asetukset-ehdot` 560px<br>`en/asetukset-tili` 560px |
-| `/en/guide/ehdokkaat.html/` | `en/date-wizard-kalenteri` 560px<br>`en/date-wizard-petals` 560px<br>`en/platter` 560px |
-| `/en/guide/ehdokkaiden-valinta.html/` | none |
-| `/en/guide/jaahdytys.html/` | `en/cooldown-blocked` 560px<br>`en/cooldown-nodraw` 560px<br>`en/cooldown-hidden` 560px |
-| `/en/guide/kalenteri.html/` | `en/kalenteri` 560px<br>`en/kalenteri-drag` 560px<br>`en/kalenteri-toistuva` 560px<br>`en/popover-calendar` 560px |
-| `/en/guide/kutsu.html/` | `en/sent` 560px<br>`en/invitation` 560px |
-| `/en/guide/kysymykset.html/` | `en/kysymykset` 560px<br>`en/kysymyssarja` 560px<br>`en/popover-surveys` 560px |
-| `/en/guide/palaute.html/` | `en/feedback` 560px |
-| `/en/guide/saapumatta-jaaminen.html/` | none |
-| `/en/guide/teralehdet.html/` | none |
+| `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
+| `/en/guide/kutsut.html/` | `en/invitation` 560px<br>`en/sent` 560px |
+| `/en/guide/peruminen-ja-jaahdytys.html/` | `en/cooldown-blocked` 560px<br>`en/cooldown-nodraw` 560px<br>`en/cooldown-hidden` 560px |
+| `/en/guide/pilke-lyhyesti.html/` | `en/treffit` 560px |
+| `/en/guide/teralehdet.html/` | `en/date-wizard-petals` 560px |
+| `/en/guide/tiedot-ja-tili.html/` | `en/asetukset-ilmoitukset` 560px<br>`en/asetukset-tili` 560px |
+| `/en/guide/treffien-jalkeen.html/` | `en/feedback` 560px |
 | `/en/guide/treffipaiva.html/` | `en/date` 560px<br>`en/date-map` 560px<br>`en/date-location-consent` 560px<br>`en/date-noshow-not-at-venue` 560px |
-| `/en/guide/treffit.html/` | `en/treffit` 560px<br>`en/popover-petals` 560px |
-| `/en/guide/yksityisyys.html/` | none |
+| `/en/guide/vapaat-ajat.html/` | `en/kalenteri` 560px<br>`en/kalenteri-valikko` 560px<br>`en/kalenteri-toistuva` 560px |
 | `/en/kayttoehdot.html/` | none |
 | `/en/kysyttya.html/` | none |
 | `/en/lapsiturvallisuus.html/` | none |
@@ -82,20 +77,15 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/lapsiturvallisuus.html/` | none |
 | `/nain-se-toimii.html/` | `story` 500px<br>`platter` 500px<br>`date` 500px |
 | `/ohje.html/` | none |
-| `/ohje/aloitus.html/` | `fi/onboarding-tervetuloa` 560px<br>`fi/onboarding-ehdot` 560px<br>`fi/onboarding-profiilin-luonti` 560px<br>`fi/onboarding-yhteystiedot` 560px<br>`fi/onboarding-omat-tiedot` 560px<br>`fi/onboarding-profiilikuva` 560px<br>`fi/onboarding-persoonallisuus` 560px<br>`fi/onboarding-tarinatesti` 560px<br>`fi/onboarding-kielet` 560px<br>`fi/onboarding-treffiaktiviteetit` 560px |
-| `/ohje/asetukset.html/` | `fi/asetukset` 560px<br>`fi/asetukset-omat-tiedot` 560px<br>`fi/asetukset-turvallisuus` 560px<br>`fi/asetukset-ilmoitukset` 560px<br>`fi/asetukset-ehdot` 560px<br>`fi/asetukset-tili` 560px |
-| `/ohje/ehdokkaat.html/` | `fi/date-wizard-kalenteri` 560px<br>`fi/date-wizard-petals` 560px<br>`fi/platter` 560px |
-| `/ohje/ehdokkaiden-valinta.html/` | none |
-| `/ohje/jaahdytys.html/` | `fi/cooldown-blocked` 560px<br>`fi/cooldown-nodraw` 560px<br>`fi/cooldown-hidden` 560px |
-| `/ohje/kalenteri.html/` | `fi/kalenteri` 560px<br>`fi/kalenteri-drag` 560px<br>`fi/kalenteri-toistuva` 560px<br>`fi/popover-calendar` 560px |
-| `/ohje/kutsu.html/` | `fi/sent` 560px<br>`fi/invitation` 560px |
-| `/ohje/kysymykset.html/` | `fi/kysymykset` 560px<br>`fi/kysymyssarja` 560px<br>`fi/popover-surveys` 560px |
-| `/ohje/palaute.html/` | `fi/feedback` 560px |
-| `/ohje/saapumatta-jaaminen.html/` | none |
-| `/ohje/teralehdet.html/` | none |
+| `/ohje/ehdokkaat.html/` | `fi/platter` 560px<br>`fi/cooldown-nodraw` 560px |
+| `/ohje/kutsut.html/` | `fi/invitation` 560px<br>`fi/sent` 560px |
+| `/ohje/peruminen-ja-jaahdytys.html/` | `fi/cooldown-blocked` 560px<br>`fi/cooldown-nodraw` 560px<br>`fi/cooldown-hidden` 560px |
+| `/ohje/pilke-lyhyesti.html/` | `fi/treffit` 560px |
+| `/ohje/teralehdet.html/` | `fi/date-wizard-petals` 560px |
+| `/ohje/tiedot-ja-tili.html/` | `fi/asetukset-ilmoitukset` 560px<br>`fi/asetukset-tili` 560px |
+| `/ohje/treffien-jalkeen.html/` | `fi/feedback` 560px |
 | `/ohje/treffipaiva.html/` | `fi/date` 560px<br>`fi/date-map` 560px<br>`fi/date-location-consent` 560px<br>`fi/date-noshow-not-at-venue` 560px |
-| `/ohje/treffit.html/` | `fi/treffit` 560px<br>`fi/popover-petals` 560px |
-| `/ohje/yksityisyys.html/` | none |
+| `/ohje/vapaat-ajat.html/` | `fi/kalenteri` 560px<br>`fi/kalenteri-valikko` 560px<br>`fi/kalenteri-toistuva` 560px |
 | `/tietojen-poisto.html/` | none |
 | `/tietosuoja.html/` | none |
 | `/turvallisuus.html/` | `asetukset` 520px |

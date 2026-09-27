@@ -1,76 +1,68 @@
 ---
 title: Treffipäivä
-lead: Treffisivulla ovat aika, paikka ja kartta. Sieltä löydät toisen perillä, ja sieltä saat apua, jos tarvitset.
-kind: guide
-order: 60
+lead: Miten löydätte toisenne perillä, mitä turvapainike lähettää, ja mitä teet, jos toinen ei tule.
+order: 70
 draft: true
 ---
 
-Avaa treffit Treffit-sivulta kohdasta **Sovitut treffit:**. Saat muistutuksen {{date.reminder_hours}} tuntia ennen treffejä, jos se on päällä asetuksissa.
+![Sovitut treffit: ajankohta, paikka ja Löydättekö toisenne? -kartta](shot:date#agreed-time,live-map)
 
-## Treffisivu
-
-![Sovitut treffit: aika, paikka, kartta ja turvapainike](shot:date#agreed-time,venue-map)
-
-Sivulla näkyvät treffikumppanisi ja **Ajankohta:** (1). Sen alla on paikan nimi ja se, mitä siellä tehdään.
-
-Napauta karttaa (2), niin näet paikan koko näytöllä. **Reitti** avaa reitin puhelimesi karttasovelluksessa.
-
-## Turvapainike
-
-**Turvapainike** näkyy otsikon vieressä, jos olet tallentanut luotettavan henkilön numeron asetusten kohtaan **Turvallisuus**. Ilman numeroa painiketta ei ole, joten tallenna numero etukäteen.
-
-Kun painat sitä, lähetämme numeroon tekstiviestin. Siinä on nimesi ja pyyntö ottaa sinuun yhteyttä. Viestissä ei ole sijaintiasi eikä tietoja treffeistä. Treffikumppanisi ei saa tietää painalluksesta.
-
-Näytöllä lukee, lähtikö viesti. Jos viestiä ei saatu lähetettyä, soita läheisellesi itse. Hätätilanteessa soita 112.
+Treffisivulla on sovittu ajankohta (1), paikka ja kartta (2). Muistutus tulee {{date.reminder_hours}} h ennen treffejä, jos se on päällä asetuksissa.
 
 ## Toisen löytäminen perillä
 
 Voit näyttää sijaintisi treffikumppanillesi kartalla, jotta löydätte toisenne. Se on vapaaehtoista.
 
-Sijaintia voi näyttää {{sharing.lead_minutes}} minuuttia ennen treffien alkua ja {{sharing.trail_minutes}} minuuttia alun jälkeen. Sitä ennen treffisivulla lukee, mistä kellonajasta alkaen se on mahdollista. Kun aika alkaa, saat ilmoituksen.
+- **Milloin.** {{sharing.lead_minutes}} minuuttia ennen treffien alkua ja {{sharing.trail_minutes}} minuuttia alun jälkeen. Kun aika alkaa, saat ilmoituksen.
+- **Missä.** Vain noin {{sharing.radius_m}} metrin päässä treffipaikasta. Kauempaa lähetettyä sijaintia ei hyväksytä, joten sinua ei voi paikantaa kotoa.
+- **Kenelle.** Vain treffikumppanillesi. Hän saa ilmoituksen, kun olet paikalla.
+- **Kuinka kauan.** Sijainti on palvelimella vain näyttämisen ajan. Se poistetaan heti, kun lopetat näyttämisen tai aika loppuu. Talteen jää vain tieto siitä, että sijaintia näytettiin.
 
 ![Treffipaikan kartta ja Näytä sijaintini -painike](shot:date-map#meet-up-reveal)
 
-1. Mene treffipaikalle.
-2. Napauta treffisivulla kohdan **Löydättekö toisenne?** karttaa.
-3. Paina **Näytä sijaintini** (1).
+Näyttäminen alkaa kartan painikkeesta **Näytä sijaintini** (1). Se päivittyy itsestään, vaikka puhelin olisi taskussa, ja päättyy, kun aika loppuu tai kun painat **Lopeta sijainnin näyttäminen**.
 
 ![Kysymys Näytetäänkö sijaintisi? ja sen selitys](shot:date-location-consent)
 
-4. Lue selitys ja paina **Näytä sijaintini**.
+Ennen kuin mitään näytetään, sovellus kertoo vielä, mitä tapahtuu, ja kysyy luvan.
 
-Puhelin tarkistaa, oletko noin {{sharing.radius_m}} metrin päässä treffipaikasta. Jos olet, sijaintisi näkyy kartalla vain treffikumppanillesi. Hän saa ilmoituksen, kun olet paikalla.
+## Turvapainike
 
-Kartalla oranssi nasta on treffikumppanisi, vaalea nasta sinä ja tumma nasta treffipaikka. Nastat näyttävät viimeksi lähetetyn sijainnin.
+**Turvapainike** näkyy treffisivulla, jos olet tallentanut asetusten kohtaan **Turvallisuus** luotettavan henkilön puhelinnumeron. Ilman numeroa painiketta ei ole, joten tallenna se etukäteen ja sovi asiasta hänen kanssaan.
 
-Sijaintisi päivittyy itsestään, vaikka poistut näkymästä. Näyttäminen päättyy, kun aika loppuu, tai kun painat **Lopeta sijainnin näyttäminen**.
+Yksi painallus lähettää hänelle tekstiviestin: *Pilke: [nimesi] painoi turvapainiketta ja pyytää sinua ottamaan yhteyttä.* Viestissä ei ole sijaintiasi, treffipaikkaa, kellonaikaa eikä mitään treffikumppanistasi. Treffikumppanisi ei saa tietää painalluksesta. Pilke kirjaa, että painoit painiketta ja menikö viesti perille.
 
-Jos olet vielä liian kaukana, sovellus kertoo: *Et ole vielä treffipaikan lähellä.* Sijainnin näyttäminen vaatii, että sovellus saa käyttää tarkkaa sijaintia. Mitä sijainnista tallennetaan ja kuinka kauan, kerrotaan sivulla [Yksityisyys treffeillä](/ohje/yksityisyys).
+Näytöllä lukee, lähtikö viesti. Jos ei, soita läheisellesi itse. Hätätilanteessa soita 112.
 
 ## Jos toinen ei tule
 
-Jos odotat yksin, voit kertoa siitä meille treffien aikana, treffipaikalla.
+Sovelluksessa ei ole keskusteluyhteyttä, joten toinen ei voi ilmoittaa myöhästyvänsä. Jos jäät odottamaan yksin, voit kertoa siitä meille, mutta vain treffien aikana ja treffipaikalla:
 
-1. Odota, kunnes alkamisajasta on kulunut {{noshow.grace_minutes}} minuuttia. Treffisivulle ilmestyy kohta **Jäitkö odottamaan yksin?**.
-2. Paina **Kerro, ettei toinen saapunut**.
+- **Milloin.** Aikaisintaan {{noshow.grace_minutes}} minuuttia sovitun alkamisajan jälkeen ja viimeistään, kun treffit päättyvät, {{date.length_hours}} tunnin kuluttua alusta. Ensimmäiset minuutit jättävät tilaa pienelle myöhästymiselle.
+- **Missä.** Noin {{noshow.venue_radius_m}} metrin päässä treffipaikasta. Ilmoitus maksaa toiselle pitkän tauon yhden ihmisen sanan perusteella, ja paikan päällä tehtynä se kertoo illasta sellaisena kuin se oli. Puhelin tarkistaa sijaintisi sillä hetkellä, kun ilmoitat, eikä sitä tallenneta.
+
+Näin ilmoitat:
+
+1. Pysy treffipaikalla.
+2. Treffisivulle ilmestyy kohta **Jäitkö odottamaan yksin?**. Kun alkamisajasta on kulunut {{noshow.grace_minutes}} minuuttia, paina **Kerro, ettei toinen saapunut**.
 3. Vahvista painamalla **Kerro meille**.
 
-Sovellus tarkistaa sijaintisi. Jos olet noin {{noshow.venue_radius_m}} metrin päässä treffipaikasta, ilmoitus tallentuu. Kerran tehtyä ilmoitusta ei voi perua.
+![Ilmoitusta ei voi tehdä, koska et ole treffipaikalla](shot:date-noshow-not-at-venue#no-show-report)
 
-![Ilmoitusta ei voi tehdä, koska et ole treffipaikalla](shot:date-noshow-not-at-venue)
+Jos et ole treffipaikalla, ilmoitusta ei tehdä, ja sovellus kertoo sen (1).
 
-Jos et ole treffipaikalla, sovellus kertoo: *Kertoa voi vain treffipaikalla.*
+Kerran tehtyä ilmoitusta ei voi perua. Emme kysy sinulta enää palautetta näistä treffeistä. Toinen ei näy muiden ehdokkaissa eikä voi hakea uusia ehdokkaita {{cooldown.noshow_days}} päivään, ja hän näkee Treffit-sivulla, että hänestä on tehty ilmoitus. Jos hänkin kertoo treffien aikana treffipaikalta, ettet sinä saapunut, kumpaakaan ei rangaista ja Pilkkeen työntekijä käy tapauksen läpi.
 
-Mitä ilmoituksesta seuraa, kerrotaan sivulla [Saapumatta jääminen](/ohje/saapumatta-jaaminen).
+## Kysyttyä
 
-## Treffien peruminen
+**Mitä tapahtuu, kun kutsu hyväksytään?** Treffit on sovittu. Valittu aika varataan teiltä molemmilta, muut tarjotut ajat vapautuvat, ja kutsuja saa ilmoituksen. Treffit näkyvät Treffit-sivulla kohdassa **Sovitut treffit**.
 
-Jos et pääse, peru treffit heti kun tiedät sen.
+**Voiko aikaa tai paikkaa muuttaa jälkikäteen?** Ei. Jos sovittu ei käy, peru treffit, ja siitä seuraa jäähdytys. Katso [Peruminen ja jäähdytys](/ohje/peruminen-ja-jaahdytys).
 
-1. Paina treffisivulla **Peru treffit**.
-2. Vahvista painamalla **Peru**.
+**Myöhästyn. Voinko kertoa siitä?** Et. Mene paikalle niin pian kuin pääset. Ensimmäiset {{noshow.grace_minutes}} minuuttia jättävät tilaa pienelle myöhästymiselle.
 
-Toinen saa ilmoituksen ja terälehtiä hyvitykseksi. Sinä et hetkeen näy muiden ehdokkaissa etkä voi hakea uusia ehdokkaita. Mitä lähempänä treffit ovat, sitä pidempään tämä kestää. Katso [Jäähdytys](/ohje/jaahdytys).
+**En löydä toista paikan päältä.** Näytä sijaintisi kartalla. Toinen saa ilmoituksen, kun olet paikalla, ja näkee sinut kartalla.
 
-Kun treffien alkamisaika on ohi, perumispainiketta ei enää ole. Sen tilalla lukee *Nämä treffit ovat jo olleet.*
+**Kauanko treffit kestävät?** Pilkkeen kannalta {{date.length_hours}} tunnin alkamisajasta. Sen jälkeen voit antaa palautetta. Katso [Treffien jälkeen](/ohje/treffien-jalkeen). Te päätätte itse, kauanko olette yhdessä.
+
+**Kuka näkee, missä olen?** Vain treffikumppanisi, vain jos itse näytät sijaintisi ja vain {{sharing.window_minutes}} minuutin ajan treffien alun ympärillä. Luotettava läheisesi ei näe sijaintiasi.

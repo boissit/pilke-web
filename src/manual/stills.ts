@@ -98,6 +98,29 @@ function percent(part: number, whole: number): number {
  */
 export const BADGE_SHARE = 0.11;
 
+/**
+ * How far the ring stands off its element, as a share of the still's width.
+ *
+ * A testID's bounds are the element's own edge, so a ring drawn on them sits on the
+ * element's border and hides it, and the dashes cut across the first letters of a
+ * link. The padding is applied before the badges are placed, so a badge clears the
+ * ring and not merely the element inside it. It is clamped to the screen, which is
+ * where an edge-to-edge element such as a map already ends.
+ */
+const RING_PADDING_SHARE = 0.018;
+
+function padded(element: Box, image: { width: number; height: number }): Box {
+  const pad = image.width * RING_PADDING_SHARE;
+  const x = Math.max(0, element.x - pad);
+  const y = Math.max(0, element.y - pad);
+  return {
+    x,
+    y,
+    width: Math.min(image.width, element.x + element.width + pad) - x,
+    height: Math.min(image.height, element.y + element.height + pad) - y,
+  };
+}
+
 interface Box {
   x: number;
   y: number;
@@ -202,7 +225,7 @@ export function resolveStill(reference: ShotReference, lang: Lang, draft: boolea
         `${where} numbers ${testID} on shot:${name}, but ${json} has no bounds for it. Add ${testID} to the still's callouts in docs/manual-shots.md so the next capture records it.`,
       );
     }
-    return element;
+    return padded(element, image);
   });
   const badges = placeBadges(elements, image);
 

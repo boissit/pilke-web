@@ -1,58 +1,57 @@
 ---
-title: Candidates
-lead: How to open a set of candidates and choose who your invitation goes to.
-kind: guide
+title: Who you are shown
+lead: Why these people are your candidates, in what order you see them, and why someone stops turning up.
 order: 40
 draft: true
 ---
 
-A set holds {{candidates.per_set}} candidates. You pick one of them and offer them times and places. Opening a set costs {{petals.set_cost}} petals.
+You find {{candidates.per_set}} candidates at a time. Pilke goes through everyone you could have a date with and picks the {{candidates.per_set}} who suit you best. If there are not {{candidates.per_set}} of them, no petals are charged.
 
-## Opening a set
+![The Candidates screen: the middle candidate's card, the times you both have and something to do together](shot:platter#timeslot-chip-0,activity-chip-0)
 
-On the Dates page, press **Find a date!**.
+Each card shows the candidate's photo, name and age, up to {{candidates.times_per_card}} of the soonest times you both have free (1), and up to {{candidates.venues_per_card}} venues that suit you both (2). Those are what you build an invitation from. See [Invitations](/en/guide/kutsut).
 
-![The first step: your calendar and the Next button](shot:date-wizard-kalenteri#date-wizard-next)
+## Why these people
 
-First you see your calendar. Candidates are found from it, so check that it is up to date, then press **Next** (1).
+A candidate has to meet every one of these, and each is checked both ways: you have to fit their wishes too.
 
-![The second step: your petals and the Send an invitation! button](shot:date-wizard-petals#wizard-balance,date-wizard-send)
+- **Shared time.** Your calendars share at least {{calendar.min_shared_hours}} hour. Hours already held by an open invitation or an agreed date do not count.
+- **Date area.** An area you have both chosen has a venue that suits what you both want to do.
+- **Language.** You have at least one language in common.
+- **Things to do.** You want at least partly the same kind of date.
+- **Wishes.** Gender and age fit what each of you is looking for, and you share an answer to what you want from a date.
+- **A choice.** You share at least {{invitation.choice_threshold}} times or at least {{invitation.choice_threshold}} venues, so an invitation can offer a choice.
 
-Next you see your petals (1). Press **Send an invitation!** (2) and Pilke looks for candidates for you.
+**The pace setting** counts too: *How often would you like to go on a date?* in Your details. Someone who chose *Once a week* is not shown to anyone while they have an agreed date within {{matching.pace_weekly_days}} days either way. *Once every two weeks* works the same within {{matching.pace_fortnightly_days}} days. The same applies to you when you are someone else's candidate. It does not limit when you find candidates yourself.
 
-This is the moment the petals are spent. Sending the invitation itself costs nothing more. Without enough petals you see *You need more petals* and a **Back** button instead.
+## Why someone stops turning up
 
-## Looking through the candidates
+- **One of you has already sent the other an invitation.** Once there has been an invitation between two people, either way and however it ended, they are not suggested to each other again. The exception is when you both said after a date that you would like to meet again. See [After the date](/en/guide/treffien-jalkeen).
+- **They were shown to you recently.** A recently shown candidate moves down the order, and the effect halves every {{candidates.exposure_half_life_days}} days. Once someone has been among your candidates {{candidates.max_appearances}} times, they are not shown to you again.
+- **One of you made a safety report.** Then you are never suggested to each other again.
 
-![Candidates: a candidate's photo, the times you both have and something to do together](shot:platter#card-map-toggle,timeslot-chip-0,activity-chip-0,propose)
+## In what order
 
-The candidates are cards side by side. Swipe sideways for the next one. The middle card is the one Pilke thinks suits you best.
+The personality quiz shapes the order: the more of its questions you have both answered the same way, the higher a candidate comes. Recently shown candidates move down, as above. Petals cannot change the order.
 
-Each card has the candidate's photo, name and age. **Map** (1) swaps the photo for a map of the places you could meet, and **Photo** swaps it back.
+## How long your candidates wait
 
-To put an invitation together:
+Your candidates wait for you for {{candidates.set_hours}} hours. If you leave, the button on the Dates page reads **Finish your invitation** and takes you back to the same candidates at no cost. You can find new candidates once you have sent an invitation or these candidates have expired.
 
-1. Under **Times you both have** (2), choose the times that would suit you. The card shows at most the {{candidates.times_per_card}} soonest times you are both free.
-2. Under **Something to do together** (3), choose the places you would like to go. The card shows at most {{candidates.venues_per_card}}.
-3. Press **Propose!** (4).
+Your candidates expire sooner if any one of them can no longer be sent an invitation: the card's times have passed, or they have been taken by another invitation. Then they all expire, and no petals come back.
 
-Choose at least {{invitation.min_times_offered}} time and {{invitation.min_venues_offered}} place, and give the other person a choice: either {{invitation.choice_threshold}} times or {{invitation.choice_threshold}} places. Until you have, the card says what is missing and **Propose!** does nothing.
+When you send an invitation, the other two candidates go. They are not told they were your candidates.
 
-The invitation goes straight away. The other candidates in the set go, and you are back on the Dates page. The other person picks one of your times and one of your places. See [The invitation](/en/guide/kutsu).
+![A notice on the Dates page: you cannot look for new candidates until a given time](shot:cooldown-nodraw#cooldown-notice)
 
-## If you do not send it straight away
+If you cannot find candidates right now, the Dates page carries a notice (1) with the reason and the time it ends. See [Cancelling and cooldowns](/en/guide/peruminen-ja-jaahdytys).
 
-A set stays open for {{candidates.set_hours}} hours. Meanwhile the Dates page button reads **Finish your invitation** and takes you back to the same set.
+## Questions
 
-A set closes sooner if its times go by. Petals spent on a set that closes unused do not come back.
+**Why were no candidates found?** There were fewer than {{candidates.per_set}} suitable candidates. The app says which condition ruled out the last of them: your wishes, things to do, date areas, shared time, or simply too few suitable people right now. Marking more time usually helps most, especially in the yellow hours. No petals are charged.
 
-## If no candidates are found
+**Why does a card not show all our shared times?** A card shows at most {{candidates.times_per_card}} of the soonest times and {{candidates.venues_per_card}} venues. If you share more venues, different candidates' cards can show different ones.
 
-If Pilke cannot find {{candidates.per_set}} candidates who suit you, no petals are spent, and you are told why, for example:
+**Can someone see they were my candidate?** No. A candidate only learns about you when you send them an invitation.
 
-- *Nobody suitable shares a single time with you.* Mark more times in your calendar.
-- *What you are looking for does not match anybody right now.* Widen what you are looking for under Settings, Your details.
-- *There is nobody suitable in your date area.* Choose more date areas.
-- *There are too few suitable people right now.* Try again later.
-
-If you cannot look for candidates right now, you are told why and until when. See [Cooldowns](/en/guide/jaahdytys). How the candidates are chosen is on [How candidates are chosen](/en/guide/ehdokkaiden-valinta).
+**How do I get suggested more often?** Mark more time, especially in the yellow hours, and choose more date areas and things to do. You are not suggested to anyone during a cooldown.

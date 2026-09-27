@@ -67,7 +67,9 @@ const legal = defineCollection({
 });
 
 /**
- * The user manual: how to do things in the app, and how its parts work.
+ * The user manual: the rules of the app a user cannot see on its screens — why a
+ * candidate appeared, where the petals went, why a report was refused — one system
+ * to a page.
  *
  * Named and paired exactly as `legal` is — `<slug>.<lang>.md`, a Finnish slug in
  * both languages, both languages required — so a reader who switches language
@@ -94,19 +96,10 @@ const manual = defineCollection({
     lead: z.string(),
 
     /**
-     * What sort of page this is, which is how the index groups them.
-     *
-     * A `guide` walks through a task — make a date, mark your calendar — and is
-     * read with the app open beside it. An `explainer` describes how a part of
-     * the system works — why the draw offers who it offers, what a cooldown is —
-     * and is read to understand something that has already happened. They are
-     * different reads, so they are two lists rather than one.
-     */
-    kind: z.enum(['guide', 'explainer']),
-
-    /**
-     * Where the page sits in its group on the index, lowest first. Only its
-     * order relative to the others matters, so leave gaps: `10`, `20`, `30`.
+     * Where the page sits on the index, lowest first. The manual is one list, read
+     * top to bottom as the order the app is learnt in, so this is the whole of its
+     * structure. Only the order relative to the others matters, so leave gaps: `10`,
+     * `20`, `30`.
      */
     order: z.number(),
 

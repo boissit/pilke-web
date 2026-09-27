@@ -26,11 +26,8 @@ export const manualSegment: Record<Lang, string> = { fi: 'ohje', en: 'guide' };
 
 type ManualEntry = CollectionEntry<'manual'>;
 
-export type ManualKind = ManualEntry['data']['kind'];
-
 export interface ManualPage {
   slug: string;
-  kind: ManualKind;
   order: number;
 
   /** Both languages, guaranteed present. `draft` is read from each: a translation can lag. */
@@ -81,14 +78,14 @@ export async function manualPages(): Promise<ManualPage[]> {
 
     const entries = Object.fromEntries(langs.map((lang) => [lang, found.get(lang)!])) as Record<Lang, ManualEntry>;
 
-    // `kind` and `order` place the page on the index, and the index is the same list in
-    // both languages. If they disagree, one file was edited and the other was not.
+    // `order` places the page on the index, and the index is the same list in both
+    // languages. If they disagree, one file was edited and the other was not.
     const authoritative = entries[defaultLang].data;
     for (const lang of langs) {
       const data = entries[lang].data;
-      if (data.kind !== authoritative.kind || data.order !== authoritative.order) {
+      if (data.order !== authoritative.order) {
         throw new Error(
-          `Manual page "${slug}" is ${authoritative.kind} ${authoritative.order} in ${defaultLang} and ${data.kind} ${data.order} in ${lang}. One of the two has not been updated.`,
+          `Manual page "${slug}" is at ${authoritative.order} in ${defaultLang} and at ${data.order} in ${lang}. One of the two has not been updated.`,
         );
       }
     }
@@ -101,7 +98,7 @@ export async function manualPages(): Promise<ManualPage[]> {
       }),
     ) as ManualPage['text'];
 
-    return { slug, kind: authoritative.kind, order: authoritative.order, entries, text } satisfies ManualPage;
+    return { slug, order: authoritative.order, entries, text } satisfies ManualPage;
   });
 
   pages.sort((a, b) => a.order - b.order || a.slug.localeCompare(b.slug));

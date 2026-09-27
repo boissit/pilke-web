@@ -1,0 +1,45 @@
+---
+title: Your data and your account
+lead: What other people see about you and when, which notifications always come, and what deleting your account does.
+order: 90
+draft: true
+---
+
+## What other people see
+
+| When | Who | What |
+|---|---|---|
+| You are one of their candidates, or in an invitation | The candidate, or the person invited | Your first name, age and photo, and the times and places you share |
+| You both chose to share your number in the feedback | Your date | Your first name and phone number |
+| Around the start of a date, if you choose to show your position | Your date | Your position on a map, for {{sharing.window_minutes}} minutes |
+
+The table is everything other people see about you. Nobody but you sees your email address or your trusted person's number. Your date does not see your feedback. If Pilke puts your dates in your own calendar, such as your Google or Apple calendar, anyone who can see that calendar sees the entry. See [Your free times](/en/guide/vapaat-ajat).
+
+## Notifications
+
+![Notification settings: the three that are always on, at the top](shot:asetukset-ilmoitukset#notification-reveal_prompt-push,notification-party_arrived-push,notification-date_cancelled-push)
+
+Three notifications always come to your phone and cannot be switched off, because they are only any use on time:
+
+- **A date starting** (1): you can now show your position, {{sharing.lead_minutes}} minutes before the start.
+- **When the other person arrives** (2): your date has shown their position at the venue.
+- **Cancelled dates** (3): without it you would go and wait for someone who is not coming.
+
+For the rest you choose the phone, email, both or neither. Email only works once your address is confirmed. The empty-calendar reminder comes on Sundays at about {{notifications.calendar_nudge_hour}}:00, if you have nothing marked for the week ahead.
+
+## Your account
+
+![Account opened: Sign out, Sign out of every device and Delete account](shot:asetukset-tili#sign-out-everywhere,delete-account)
+
+You sign in with a one-time code sent to your phone number, and there is no password. Signing in is per device, and it lasts {{login.session_days}} days from when you last used the app.
+
+**Sign out of every device** (1) signs you out everywhere, this device included. Use it if your phone is lost or on loan.
+
+**Delete account** (2) deletes your account straight away, and it cannot be undone:
+
+- Your name, photo, contact details, wishes, calendar and answers are deleted at once.
+- Upcoming agreed dates are called off, and the other person is told. If they sent the invitation, they get their petals back. A date that has already started is left as it is.
+- Invitations you sent are withdrawn and invitations you received are declined. Whoever sent one gets their petals back.
+- Past dates, the feedback given on them and safety reports are kept. Where your name was, people see *Deleted user*.
+
+You can sign up again later with the same number, but you start from an empty account. How long each thing is kept is in the [privacy statement](/en/tietosuoja).

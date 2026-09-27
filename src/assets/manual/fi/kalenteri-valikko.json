@@ -1,0 +1,54 @@
+{
+  "name": "kalenteri-valikko",
+  "language": "fi",
+  "commit": "c0d7c2c7174871ecdacfcc54009468dc6dfc0a3e-dirty",
+  "takenAt": "2026-09-27T11:28:15Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "calendar-menu-sheet": {
+      "x": 81,
+      "y": 514,
+      "width": 918,
+      "height": 1252
+    },
+    "repeat-week": {
+      "x": 122,
+      "y": 661,
+      "width": 836,
+      "height": 261
+    },
+    "suggest-times": {
+      "x": 122,
+      "y": 955,
+      "width": 836,
+      "height": 260
+    },
+    "clear-future": {
+      "x": 122,
+      "y": 1248,
+      "width": 836,
+      "height": 261
+    },
+    "calendar-menu": {
+      "x": 805,
+      "y": 109,
+      "width": 99,
+      "height": 91
+    },
+    "calendar-explainer": {
+      "x": 937,
+      "y": 126,
+      "width": 55,
+      "height": 58
+    },
+    "calendar-density": {
+      "x": 386,
+      "y": 528,
+      "width": 301,
+      "height": 143
+    }
+  }
+}
