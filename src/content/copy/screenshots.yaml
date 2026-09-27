@@ -30,8 +30,8 @@
   en: 'The calendar view, with the days of the week and the times marked as free.'
 
 'shot.story':
-  fi: 'Tarinatestin ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.'
-  en: 'The first question of the story test during onboarding: a situation and three options, one of which you pick.'
+  fi: 'Persoonallisuuskyselyn ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.'
+  en: 'The first question of the personality quiz during onboarding: a situation and three options, one of which you pick.'
 
 'shot.platter':
   fi: 'Ehdokkaat-näkymä: yksi ehdokas, hänen kanssaan yhteiset ajat ja valittu tekeminen.'

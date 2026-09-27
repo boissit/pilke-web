@@ -135,8 +135,8 @@
   en: 'Send a date invitation'
 
 'how.one.body':
-  fi: 'Avaa valikoima ja valitse, kenelle lähetät kutsun. Tarjoa pari sinulle sopivaa aikaa ja paikka. Kutsu lähtee.'
-  en: 'Open a set and choose who to invite. Offer a couple of times that suit you, and a place. The invitation goes.'
+  fi: 'Löydä ehdokkaat ja valitse, kenet kutsut. Tarjoa pari sinulle sopivaa aikaa ja paikka, niin kutsu lähtee.'
+  en: 'Find candidates and choose who to invite. Offer a couple of times that suit you and a place, and off the invitation goes.'
 
 'how.two.title':
   fi: 'Vastaa saapuneisiin kutsuihin'
@@ -188,8 +188,8 @@
   en: 'Invite first'
 
 'both.invite.body':
-  fi: 'Kutsu on sovelluksen ainoa varsinainen teko. Valikoiman avaaminen kuluttaa terälehtiä, ja terälehtiä saa käyttämällä sovellusta. Rahalla niitä ei saa.'
-  en: 'An invitation is the one real action in the app. Opening a set spends petals, and petals come from using the app. Money does not buy them.'
+  fi: 'Terälehdet ovat Pilkkeen valuutta. Ansaitset niitä käymällä treffeillä ja kulutat niitä lähettämällä treffikutsuja.'
+  en: 'Petals are Pilke’s currency: you earn them by going on dates and spend them by sending date invitations.'
 
 'both.answer.title':
   fi: 'Vastaa kutsuun'

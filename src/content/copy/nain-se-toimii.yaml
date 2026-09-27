@@ -38,8 +38,8 @@
   en: 'Signing up starts with a phone number and a code by text. After that you give a name, a birthday and a photo.'
 
 'detail.story.title':
-  fi: 'Tarinatesti'
-  en: 'The story test'
+  fi: 'Persoonallisuuskysely'
+  en: 'The personality quiz'
 
 'detail.story.body':
   fi: 'Neljätoista tilannetta, joissa valitset mitä tekisit. Yksi kysymys kerrallaan, ja voit jatkaa myöhemmin siitä mihin jäit. Kysymyssarjoihin voit vastata omaan tahtiisi myös myöhemmin.'
@@ -62,8 +62,8 @@
   en: 'Where candidates come from'
 
 'detail.draw.body':
-  fi: 'Kun avaat valikoiman, Pilke etsii ihmisiä, joiden toiveet ja sinun toiveesi käyvät yksiin, joilla on kalenterissa vähintään tunnin yhteinen aika sinun kanssasi, ja joiden kanssa on paikka johon molemmat pääsevät. Sinä valitset, kenelle kutsu lähtee.'
-  en: 'When you open a set, Pilke looks for people whose preferences and yours agree, who share at least an hour of calendar time with you, and who have somewhere to meet that you can both reach. You choose which of them the invitation goes to.'
+  fi: 'Kun löydät ehdokkaat, jokainen heistä täyttää kolme ehtoa: toiveenne käyvät yksiin, kalentereissanne on vähintään tunti yhteistä aikaa, ja löytyy paikka, johon pääsette molemmat. Sinä valitset, kenelle kutsu lähtee.'
+  en: 'When you find candidates, every one of them meets three conditions: your wishes match, your calendars share at least an hour, and there is a place you can both get to. You choose who the invitation goes to.'
 
 'detail.invite.title':
   fi: 'Kutsu ja vastaus'
@@ -85,8 +85,8 @@
   en: 'Petals'
 
 'detail.economy.body':
-  fi: 'Terälehti on se, mitä keräät ja käytät. Viisi terälehteä tekee ruusun, ja ruusu avaa valikoiman. Muuta hintaa ei ole. Terälehtiä ei myydä.'
-  en: 'A petal is what you collect and what you spend. Five petals make a rose, and a rose opens a set. There is no other price. Petals are not sold.'
+  fi: 'Terälehdet ovat Pilkkeen valuutta. Ansaitset niitä käymällä treffeillä ja kulutat niitä lähettämällä treffikutsuja. Viisi terälehteä tekee ruusun, ja ruusu on yhden kutsun hinta.'
+  en: 'Petals are Pilke’s currency: you earn them by going on dates and spend them by sending date invitations. Five petals make a rose, and a rose is the price of one invitation.'
 
 'detail.economy.earn':
   fi: 'Näin terälehtiä kertyy'
@@ -101,12 +101,12 @@
   en: 'Once in the life of an account, after the code is confirmed.'
 
 'detail.earn.calendar':
-  fi: 'Kolme kalenteriin merkittyä aikaa'
-  en: 'Three times marked in your calendar'
+  fi: 'Kymmenen tuntia kalenterissa viikon ajan'
+  en: 'Ten hours in your calendar, kept for a week'
 
 'detail.earn.calendar.note':
-  fi: 'Jokaisen ajan on oltava vähintään tunnin mittainen, eivätkä ajat saa olla päällekkäisiä.'
-  en: 'Each has to be at least an hour long, and they cannot overlap each other.'
+  fi: 'Lasketaan vain seuraavan 14 päivän ajat ja niistä enintään 40 tuntia kerrallaan. Viikossa voi siis kertyä enintään neljä terälehteä.'
+  en: 'Only times in the next 14 days count, and at most 40 hours of them at once, so a week earns four petals at most.'
 
 'detail.earn.date':
   fi: 'Käydyt treffit'
@@ -116,25 +116,17 @@
   fi: 'Maksetaan, kun olet kertonut miten meni. Molemmat saavat omansa erikseen.'
   en: 'Paid once you have said how it went. Each of you gets your own.'
 
-'detail.earn.cancelled':
-  fi: 'Jos toinen perui sovitut treffit'
-  en: 'If the other person calls off an agreed date'
-
-'detail.earn.cancelled.note':
-  fi: 'Hyvitys sinulle. Jos olit kutsun lähettäjä, saat lisäksi terälehtesi takaisin.'
-  en: 'Compensation for you. If you were the one who invited, you also get your petals back.'
-
 'detail.economy.spend':
   fi: 'Näin terälehdet kuluvat'
   en: 'How petals go'
 
 'detail.economy.spend.body':
-  fi: 'Viisi terälehteä kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään. Terälehtiä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut terälehdet odottavat, kunnes käytät niitä. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.'
-  en: 'Five petals go the moment you open a set. Sending the invitation costs nothing more. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Reimbursements, such as the petals returned when an invitation lapses, arrive regardless of the limit.'
+  fi: 'Treffikutsu maksaa viisi terälehteä. Ne kuluvat heti, kun aloitat kutsun, eli jo ennen kuin valitset, kenelle se lähtee. Jos sopivia ehdokkaita ei löydy, terälehtiä ei kulu. Terälehtiä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut terälehdet odottavat, kunnes käytät niitä. Palautukset, kuten rauenneen kutsun terälehdet, tulevat perille rajasta riippumatta.'
+  en: 'A date invitation costs five petals. They go as soon as you start the invitation, before you choose who it goes to. If no suitable candidates can be found, no petals go. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Refunds, such as the petals returned when an invitation lapses, arrive regardless of the limit.'
 
 'economy.lead':
-  fi: 'Viisi terälehteä avaa valikoiman.'
-  en: 'Five petals open a set.'
+  fi: 'Viisi terälehteä, yksi treffikutsu.'
+  en: 'Five petals, one date invitation.'
 
 'economy.rose.alt':
   fi: 'Ruusu, jonka kaikki viisi terälehteä on kerätty.'
@@ -181,16 +173,16 @@
   en: 'You withdraw your own invitation'
 
 'detail.changes.withdrawn.note':
-  fi: 'Terälehdet on käytetty, ja uuden valikoiman avaaminen odottaa hetken.'
-  en: 'The petals are spent, and opening a new set waits a little while.'
+  fi: 'Terälehdet on käytetty, ja uusia ehdokkaita pääset löytämään vasta hetken päästä.'
+  en: 'The petals are spent, and you can only find new candidates again after a little while.'
 
 'detail.changes.canceled':
   fi: 'Sovitut treffit perutaan'
   en: 'An agreed date is called off'
 
 'detail.changes.canceled.note':
-  fi: 'Peruminen onnistuu, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen hidastaa uusien ehdokkaiden saamista.'
-  en: 'You can do it, and if the date does not feel right you can get out with nothing to pay. Calling off repeatedly slows down how soon you get new candidates.'
+  fi: 'Voit perua, mutta se on toiselle epäkohteliasta: hän on varannut illan sinulle. Perumisesta seuraa jäähdytys, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa terälehtensä takaisin.'
+  en: 'You can, but it is rude to the other person: they have set the evening aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The closer the date and the more often you call dates off, the longer it lasts. If the person invited calls it off, the sender gets their petals back.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Why there is no chat

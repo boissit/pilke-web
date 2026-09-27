@@ -171,8 +171,13 @@ The load-bearing numbers:
 
 - A set of three candidates costs five petals, and there is no other price.
 - The petals are spent when the set is drawn, not when the invitation is sent.
-- One petal per three credited calendar spans, two for a date once feedback is
-  given, five for finishing registration, five if somebody calls off a date on you.
+- One petal per ten hours of availability kept marked for a week
+  (`PETAL_HOUR_DAYS`, 70 hour-days), counting only the next 14 days
+  (`CALENDAR_EARNING_HORIZON`) and at most 40 hours at once
+  (`CALENDAR_PENDING_HOURS_CAP`), so at most four a week. Two for a date once
+  feedback is given, and five for finishing registration.
+- The five a set cost come back if the invitation is declined, lapses, or is
+  accepted and then called off by the person invited.
 - Earning stops at fifteen petals, which is three invitations' worth. Refunds are
   uncapped, so a balance can legitimately pass it.
 - **Pilke never asks where anybody lives.** There is no home address and no
@@ -190,7 +195,7 @@ The load-bearing numbers:
   database until `core.tasks.sweep_closed_positions` deletes it, so "ei meille" and
   "Pilke itself does not see it" were both overclaims and are gone. What is true
   and worth saying instead is that nothing reads it: no penalty, no report and no
-  compensation depends on it, which is what `test_positions.TestLocationIsNeverEvidence`
+  petals depend on it, which is what `test_positions.TestLocationIsNeverEvidence`
   exists to keep true.
 - The safety button texts the trusted contact and nobody else. The message names no
   location, no venue and no partner.

@@ -81,7 +81,7 @@ const fi = {
 
   'how.one.title': 'Lähetä treffikutsu',
   'how.one.body':
-    'Avaa valikoima ja valitse, kenelle lähetät kutsun. Tarjoa pari sinulle sopivaa aikaa ja paikka. Kutsu lähtee.',
+    'Löydä ehdokkaat ja valitse, kenet kutsut. Tarjoa pari sinulle sopivaa aikaa ja paikka, niin kutsu lähtee.',
   'how.two.title': 'Vastaa saapuneisiin kutsuihin',
   'how.two.body':
     'Näet kutsujan, sen mitä teillä on yhteistä ja hänen tarjoamansa ajat. Valitse yksi, niin treffit on sovittu. Se ei maksa sinulle mitään.',
@@ -101,7 +101,7 @@ const fi = {
     'Treffit syntyvät vain jos joku kutsuu ja joku vastaa. Pilke on tehty niin, että molemmat kannattavat.',
   'both.invite.title': 'Kutsu ensin',
   'both.invite.body':
-    'Kutsu on sovelluksen ainoa varsinainen teko. Valikoiman avaaminen kuluttaa terälehtiä, ja terälehtiä saa käyttämällä sovellusta. Rahalla niitä ei saa.',
+    'Terälehdet ovat Pilkkeen valuutta. Ansaitset niitä käymällä treffeillä ja kulutat niitä lähettämällä treffikutsuja.',
   'both.answer.title': 'Vastaa kutsuun',
   'both.answer.body':
     'Kutsuun vastaaminen ei kuluta mitään. Kieltäydy vapaasti, siitä ei seuraa sinulle mitään. Kutsu on voimassa vuorokauden ja raukeaa itsestään, jos jätät sen.',
@@ -162,7 +162,7 @@ const fi = {
   'privacy.area':
     'Pilke ei kysy kotiosoitettasi eikä sitä, missä asut. Valitset kartalta alueen ja sen, kuinka kauas voisit lähteä treffeille, ja treffipaikkoja ehdotetaan tuon ympyrän sisältä.',
   'privacy.body':
-    'Laitteesi sijaintia luetaan vain treffeillä ja vain jos itse valitset näyttää sen. Näyttäminen toimii kymmenen minuuttia sovitun alkamisajan molemmin puolin ja vain 300 metrin säteellä treffipaikasta, joten kotoa sinua ei voi paikantaa. Sijainnin näkee vain toinen osapuoli, ei luotettava läheisesi. Se poistetaan heti kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun: se ei vaikuta hyvityksiin, hidastuksiin eikä ilmoituksiin. Voit lopettaa näyttämisen milloin tahansa.',
+    'Laitteesi sijaintia luetaan vain treffeillä ja vain jos itse valitset näyttää sen. Näyttäminen toimii kymmenen minuuttia sovitun alkamisajan molemmin puolin ja vain 300 metrin säteellä treffipaikasta, joten kotoa sinua ei voi paikantaa. Sijainnin näkee vain toinen osapuoli, ei luotettava läheisesi. Se poistetaan heti kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun: se ei vaikuta terälehtiin, hidastuksiin eikä ilmoituksiin. Voit lopettaa näyttämisen milloin tahansa.',
 
   'safety.more': 'Lue turvallisuudesta',
   'safety.page.lead':
@@ -177,7 +177,7 @@ const fi = {
   'detail.start.title': 'Ennen ensimmäistä kutsua',
   'detail.start.body':
     'Rekisteröinti alkaa puhelinnumerosta ja tekstiviestillä tulevasta koodista. Sen jälkeen annat kutsumanimen, syntymäpäivän ja kuvan.',
-  'detail.story.title': 'Tarinatesti',
+  'detail.story.title': 'Persoonallisuuskysely',
   'detail.story.body':
     'Neljätoista tilannetta, joissa valitset mitä tekisit. Yksi kysymys kerrallaan, ja voit jatkaa myöhemmin siitä mihin jäit. Kysymyssarjoihin voit vastata omaan tahtiisi myös myöhemmin.',
   'detail.prefs.title': 'Toiveet ja kalenteri',
@@ -186,30 +186,27 @@ const fi = {
 
   'detail.draw.title': 'Mistä ehdokkaat tulevat',
   'detail.draw.body':
-    'Kun avaat valikoiman, Pilke etsii ihmisiä, joiden toiveet ja sinun toiveesi käyvät yksiin, joilla on kalenterissa vähintään tunnin yhteinen aika sinun kanssasi, ja joiden kanssa on paikka johon molemmat pääsevät. Sinä valitset, kenelle kutsu lähtee.',
+    'Kun löydät ehdokkaat, jokainen heistä täyttää kolme ehtoa: toiveenne käyvät yksiin, kalentereissanne on vähintään tunti yhteistä aikaa, ja löytyy paikka, johon pääsette molemmat. Sinä valitset, kenelle kutsu lähtee.',
   'detail.invite.title': 'Kutsu ja vastaus',
   'detail.invite.body':
     'Tarjoat vähintään kaksi aikaa ja yhden tekemisen. Toinen valitsee niistä yhden, ja treffit on sovittu. Kutsu on voimassa vuorokauden.',
 
   'detail.economy.title': 'Terälehdet',
   'detail.economy.body':
-    'Terälehti on se, mitä keräät ja käytät. Viisi terälehteä tekee ruusun, ja ruusu avaa valikoiman. Muuta hintaa ei ole. Terälehtiä ei myydä.',
+    'Terälehdet ovat Pilkkeen valuutta. Ansaitset niitä käymällä treffeillä ja kulutat niitä lähettämällä treffikutsuja. Viisi terälehteä tekee ruusun, ja ruusu on yhden kutsun hinta.',
   'detail.economy.earn': 'Näin terälehtiä kertyy',
   'detail.earn.signup': 'Rekisteröinnin viimeistely',
   'detail.earn.signup.note': 'Kerran tilin elinkaaressa, koodin vahvistamisen jälkeen.',
-  'detail.earn.calendar': 'Kolme kalenteriin merkittyä aikaa',
+  'detail.earn.calendar': 'Kymmenen tuntia kalenterissa viikon ajan',
   'detail.earn.calendar.note':
-    'Jokaisen ajan on oltava vähintään tunnin mittainen, eivätkä ajat saa olla päällekkäisiä.',
+    'Lasketaan vain seuraavan 14 päivän ajat ja niistä enintään 40 tuntia kerrallaan. Viikossa voi siis kertyä enintään neljä terälehteä.',
   'detail.earn.date': 'Käydyt treffit',
   'detail.earn.date.note':
     'Maksetaan, kun olet kertonut miten meni. Molemmat saavat omansa erikseen.',
-  'detail.earn.cancelled': 'Jos toinen perui sovitut treffit',
-  'detail.earn.cancelled.note':
-    'Hyvitys sinulle. Jos olit kutsun lähettäjä, saat lisäksi terälehtesi takaisin.',
 
   'detail.economy.spend': 'Näin terälehdet kuluvat',
   'detail.economy.spend.body':
-    'Viisi terälehteä kuluu sillä hetkellä, kun avaat valikoiman. Kutsun lähettäminen ei maksa enää mitään. Terälehtiä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut terälehdet odottavat, kunnes käytät niitä. Hyvitykset, kuten rauenneen kutsun palautus, tulevat perille rajasta riippumatta.',
+    'Treffikutsu maksaa viisi terälehteä. Ne kuluvat heti, kun aloitat kutsun, eli jo ennen kuin valitset, kenelle se lähtee. Jos sopivia ehdokkaita ei löydy, terälehtiä ei kulu. Terälehtiä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut terälehdet odottavat, kunnes käytät niitä. Palautukset, kuten rauenneen kutsun terälehdet, tulevat perille rajasta riippumatta.',
 
   'detail.changes.title': 'Jos suunnitelmat muuttuvat',
   'detail.changes.expired': 'Kutsuun ei vastata vuorokaudessa',
@@ -219,16 +216,16 @@ const fi = {
     'Saat terälehtesi takaisin. Hylkääminen on aina ilmaista, eikä siitä seuraa hylkääjälle mitään.',
   'detail.changes.withdrawn': 'Perut oman kutsusi',
   'detail.changes.withdrawn.note':
-    'Terälehdet on käytetty, ja uuden valikoiman avaaminen odottaa hetken.',
+    'Terälehdet on käytetty, ja uusia ehdokkaita pääset löytämään vasta hetken päästä.',
   'detail.changes.canceled': 'Sovitut treffit perutaan',
   'detail.changes.canceled.note':
-    'Peruminen onnistuu, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen hidastaa uusien ehdokkaiden saamista.',
+    'Voit perua, mutta se on toiselle epäkohteliasta: hän on varannut illan sinulle. Perumisesta seuraa jäähdytys, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa terälehtensä takaisin.',
 
   'detail.chat.title': 'Miksi chattia ei ole',
   'detail.chat.body':
     'Kutsussa on jo aika ja paikka, joten sopimiseen ei tarvita keskustelua. Se on koko idea: Pilke vie teidät samaan pöytään sen sijaan, että korvaisi sen. Treffipäivänä kartta kertoo, missä toinen on, jotta löydätte perille ilman viestittelyä.',
 
-  'economy.lead': 'Viisi terälehteä avaa valikoiman.',
+  'economy.lead': 'Viisi terälehteä, yksi treffikutsu.',
   'economy.rose.alt': 'Ruusu, jonka kaikki viisi terälehteä on kerätty.',
   'economy.amount.one': '1 terälehti',
   'economy.amount.two': '2 terälehteä',
@@ -272,7 +269,7 @@ const fi = {
     'Betavaiheessa ei mitään. Terälehtiä ei voi ostaa, vaan niitä kertyy käyttämällä sovellusta.',
   'faq.cancel.q': 'Entä jos treffit peruuntuvat?',
   'faq.cancel.a':
-    'Kutsun hylkääminen on aina ilmaista eikä siitä seuraa mitään. Sovitun tapaamisen voi perua sovelluksessa, ja jos treffit eivät tunnu oikeilta, pääset pois ilman seurauksia. Toistuva peruminen tai saapumatta jättäminen hidastaa uusien ehdokkaiden saamista, koska se on toiselle osapuolelle merkityksellistä.',
+    'Kutsun hylkääminen on ilmaista, eikä siitä seuraa jäähdytystä. Sovitut treffit voit perua sovelluksessa, mutta se on toiselle epäkohteliasta, ja siitä seuraa jäähdytys: hetken aikaa et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Sama koskee saapumatta jättämistä.',
   'faq.delete.q': 'Voinko poistaa tilini?',
   'faq.delete.a':
     'Kyllä, asetuksista. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Menneet treffit ja niistä annetut palautteet jäävät talteen, koska ne ovat yhtä lailla toisen osapuolen tietoja.',
@@ -281,7 +278,7 @@ const fi = {
     'Pilkkeen etusivu puhelimessa: terälehtien määrä ylhäällä, alla omat treffit ja saapuneet kutsut.',
   'shot.kalenteri': 'Kalenterinäkymä, jossa viikon päivät ja niihin merkityt vapaat treffiajat.',
   'shot.story':
-    'Tarinatestin ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.',
+    'Persoonallisuuskyselyn ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.',
   'shot.platter':
     'Ehdokkaat-näkymä: yksi ehdokas, hänen kanssaan yhteiset ajat ja valittu tekeminen.',
   'shot.invitation': 'Saapunut treffikutsu: kutsujan nimi ja kuva, tarjotut ajat ja paikka.',
@@ -349,7 +346,7 @@ const fi = {
 
   'legal.deletion.others.title': 'Mitä tapahtuu sovituille treffeille',
   'legal.deletion.others.body':
-    'Lähettämäsi kutsut perutaan ja saamasi kutsut hylätään, ja kutsujan terälehdet palautetaan. Tulevat treffit peruutetaan, ja toinen osapuoli hyvitetään kuten missä tahansa perumisessa. Sinulle ei tule tästä seurauksia, emmekä kerro kenellekään erikseen, että lähdit.',
+    'Lähettämäsi kutsut perutaan ja saamasi kutsut hylätään, ja kutsujan terälehdet palautetaan. Tulevat treffit peruutetaan, ja jos toinen osapuoli oli lähettänyt kutsun, hän saa terälehtensä takaisin. Sinulle ei tule tästä seurauksia, emmekä kerro kenellekään erikseen, että lähdit.',
 
   'legal.deletion.again.title': 'Jos palaat myöhemmin',
   'legal.deletion.again.body':
@@ -424,7 +421,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'how.one.title': 'Send a date invitation',
   'how.one.body':
-    'Open a set and choose who to invite. Offer a couple of times that suit you, and a place. The invitation goes.',
+    'Find candidates and choose who to invite. Offer a couple of times that suit you and a place, and off the invitation goes.',
   'how.two.title': 'Answer the invitations you get',
   'how.two.body':
     'You see who sent it, what you have in common, and the times they offer. Pick one, and the date is set. It costs you nothing.',
@@ -441,7 +438,7 @@ const en: Record<keyof typeof fi, string> = {
     'A date happens only if somebody asks and somebody answers. Pilke is built so that both are worth doing.',
   'both.invite.title': 'Invite first',
   'both.invite.body':
-    'An invitation is the one real action in the app. Opening a set spends petals, and petals come from using the app. Money does not buy them.',
+    'Petals are Pilke’s currency: you earn them by going on dates and spend them by sending date invitations.',
   'both.answer.title': 'Answer an invitation',
   'both.answer.body':
     'Answering costs you nothing. Turn one down freely, and nothing follows for you. An invitation stands for a day and lapses by itself if you leave it.',
@@ -492,7 +489,7 @@ const en: Record<keyof typeof fi, string> = {
   'privacy.area':
     'Pilke does not ask for your home address, or where you live at all. You choose an area on a map and how far you would travel for a date, and venues are suggested inside that circle.',
   'privacy.body':
-    'Your device location is read only on a date, and only if you choose to show it. Sharing works for ten minutes either side of the agreed start and only within 300 metres of the venue, so you cannot be located from home. Only the other person sees it, not your trusted contact. It is deleted as soon as the window closes, and it is not used for anything else: it feeds no compensation, no slowdown and no report. You can stop at any time.',
+    'Your device location is read only on a date, and only if you choose to show it. Sharing works for ten minutes either side of the agreed start and only within 300 metres of the venue, so you cannot be located from home. Only the other person sees it, not your trusted contact. It is deleted as soon as the window closes, and it is not used for anything else: it feeds no petals, no slowdown and no report. You can stop at any time.',
 
   'safety.more': 'Read about safety',
   'safety.page.lead':
@@ -505,7 +502,7 @@ const en: Record<keyof typeof fi, string> = {
   'detail.start.title': 'Before your first invitation',
   'detail.start.body':
     'Signing up starts with a phone number and a code by text. After that you give a name, a birthday and a photo.',
-  'detail.story.title': 'The story test',
+  'detail.story.title': 'The personality quiz',
   'detail.story.body':
     'Fourteen situations where you choose what you would do, one question at a time, and you can pick up where you left off. The question sets are there to answer at your own pace later on.',
   'detail.prefs.title': 'Preferences and calendar',
@@ -514,29 +511,26 @@ const en: Record<keyof typeof fi, string> = {
 
   'detail.draw.title': 'Where candidates come from',
   'detail.draw.body':
-    'When you open a set, Pilke looks for people whose preferences and yours agree, who share at least an hour of calendar time with you, and who have somewhere to meet that you can both reach. You choose which of them the invitation goes to.',
+    'When you find candidates, every one of them meets three conditions: your wishes match, your calendars share at least an hour, and there is a place you can both get to. You choose who the invitation goes to.',
   'detail.invite.title': 'The invitation and the answer',
   'detail.invite.body':
     'You offer at least two times and one thing to do. The other person picks one of them, and the date is set. An invitation stands for a day.',
 
   'detail.economy.title': 'Petals',
   'detail.economy.body':
-    'A petal is what you collect and what you spend. Five petals make a rose, and a rose opens a set. There is no other price. Petals are not sold.',
+    'Petals are Pilke’s currency: you earn them by going on dates and spend them by sending date invitations. Five petals make a rose, and a rose is the price of one invitation.',
   'detail.economy.earn': 'How petals add up',
   'detail.earn.signup': 'Finishing your registration',
   'detail.earn.signup.note': 'Once in the life of an account, after the code is confirmed.',
-  'detail.earn.calendar': 'Three times marked in your calendar',
+  'detail.earn.calendar': 'Ten hours in your calendar, kept for a week',
   'detail.earn.calendar.note':
-    'Each has to be at least an hour long, and they cannot overlap each other.',
+    'Only times in the next 14 days count, and at most 40 hours of them at once, so a week earns four petals at most.',
   'detail.earn.date': 'A date you went on',
   'detail.earn.date.note': 'Paid once you have said how it went. Each of you gets your own.',
-  'detail.earn.cancelled': 'If the other person calls off an agreed date',
-  'detail.earn.cancelled.note':
-    'Compensation for you. If you were the one who invited, you also get your petals back.',
 
   'detail.economy.spend': 'How petals go',
   'detail.economy.spend.body':
-    'Five petals go the moment you open a set. Sending the invitation costs nothing more. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Reimbursements, such as the petals returned when an invitation lapses, arrive regardless of the limit.',
+    'A date invitation costs five petals. They go as soon as you start the invitation, before you choose who it goes to. If no suitable candidates can be found, no petals go. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Refunds, such as the petals returned when an invitation lapses, arrive regardless of the limit.',
 
   'detail.changes.title': 'If plans change',
   'detail.changes.expired': 'An invitation goes unanswered for a day',
@@ -546,16 +540,16 @@ const en: Record<keyof typeof fi, string> = {
     'Your petals come back. Turning one down is always free and costs the person doing it nothing.',
   'detail.changes.withdrawn': 'You withdraw your own invitation',
   'detail.changes.withdrawn.note':
-    'The petals are spent, and opening a new set waits a little while.',
+    'The petals are spent, and you can only find new candidates again after a little while.',
   'detail.changes.canceled': 'An agreed date is called off',
   'detail.changes.canceled.note':
-    'You can do it, and if the date does not feel right you can get out with nothing to pay. Calling off repeatedly slows down how soon you get new candidates.',
+    'You can, but it is rude to the other person: they have set the evening aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The closer the date and the more often you call dates off, the longer it lasts. If the person invited calls it off, the sender gets their petals back.',
 
   'detail.chat.title': 'Why there is no chat',
   'detail.chat.body':
     'An invitation already carries the time and the place, so arranging it needs no conversation. That is the whole idea: Pilke takes you to the same table rather than standing in for it. On the day, the map shows where the other person is so you find each other without messaging.',
 
-  'economy.lead': 'Five petals open a set.',
+  'economy.lead': 'Five petals, one date invitation.',
   'economy.rose.alt': 'A rose with all five of its petals collected.',
   'economy.amount.one': '1 petal',
   'economy.amount.two': '2 petals',
@@ -589,7 +583,7 @@ const en: Record<keyof typeof fi, string> = {
     'Nothing during the beta. Petals cannot be bought; they come from using the app.',
   'faq.cancel.q': 'What if a date falls through?',
   'faq.cancel.a':
-    'Turning down an invitation is always free and carries no consequence. You can call off a date you agreed to, and if it does not feel right you can get out with nothing to pay. Cancelling repeatedly or not turning up slows down how soon you get new candidates, because that matters to the person on the other side.',
+    'Turning down an invitation is free and brings no cooldown. You can call off an agreed date in the app, but it is rude to the other person, and it brings a cooldown: for a while you do not appear among other people’s candidates and cannot find new ones. The same goes for not turning up.',
   'faq.delete.q': 'Can I delete my account?',
   'faq.delete.a':
     'Yes, from the settings. Your name, photo and contact details go straight away. Past dates and the feedback written about them stay, because those belong to the other person as much as to you.',
@@ -599,7 +593,7 @@ const en: Record<keyof typeof fi, string> = {
   'shot.kalenteri':
     'The calendar view, with the days of the week and the times marked as free.',
   'shot.story':
-    'The first question of the story test during onboarding: a situation and three options, one of which you pick.',
+    'The first question of the personality quiz during onboarding: a situation and three options, one of which you pick.',
   'shot.platter':
     'The candidates view: one candidate, the times you both have, and the chosen activity.',
   'shot.invitation':
@@ -665,7 +659,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'legal.deletion.others.title': 'What happens to dates you agreed to',
   'legal.deletion.others.body':
-    'Invitations you sent are withdrawn and invitations you received are declined, with the sender’s petals refunded. Dates still ahead are cancelled and the other person is compensated exactly as for any cancellation. Nothing is held against you, and nobody is told separately that you left.',
+    'Invitations you sent are withdrawn and invitations you received are declined, with the sender’s petals refunded. Dates still ahead are cancelled, and if the other person sent the invitation, they get their petals back. Nothing is held against you, and nobody is told separately that you left.',
 
   'legal.deletion.again.title': 'If you come back later',
   'legal.deletion.again.body':
