@@ -22,7 +22,7 @@ A candidate has to meet every one of these, and each is checked both ways: you h
 - **Wishes.** Gender and age fit what each of you is looking for, and you share an answer to what you want from a date.
 - **A choice.** You share at least {{invitation.choice_threshold}} times or at least {{invitation.choice_threshold}} venues, so an invitation can offer a choice.
 
-**The pace setting** counts too: *How often would you like to go on a date?* in Your details. Someone who chose *Once a week* is not shown to anyone while they have an agreed date within {{matching.pace_weekly_days}} days either way. *Once every two weeks* works the same within {{matching.pace_fortnightly_days}} days. The same applies to you when you are someone else's candidate. It does not limit when you find candidates yourself.
+**The pace setting** counts too: *How often would you like to go on a date?* in Your details. If someone chose *Once a week*, they are suggested for times before their latest agreed date, or from {{matching.pace_weekly_days}} days after it (*Once every two weeks*: {{matching.pace_fortnightly_days}} days). The same goes for you when you are suggested to others.
 
 ## Why someone stops turning up
 
