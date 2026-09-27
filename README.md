@@ -27,8 +27,8 @@ bilingual site drifts, and the English routes keep the Finnish slug so a languag
 switch is the prefix and nothing else.
 
 A page holds its own sections, its own lists and its own styles. `src/components/`
-is what more than one page draws: `Phone`, `PetalField`, `RoseMark`, `Logo`,
-`RoseCount`, the `PageHead` slab the three subpages open with, and the
+is what more than one page draws: `Phone`, `PetalScatter`, `RoseMark`, `Logo`,
+`RoseCount`, the `PageHead` card every subpage opens with, and the
 `SiteHeader` and `SiteFooter` that `Base.astro` puts around every page.
 `roseArtwork.ts` and `petalArtwork.ts` hold the geometry those three draw from.
 `src/assets/screens.ts` is the table of screenshots, and is the only thing the
@@ -80,67 +80,74 @@ app**. Every claim on it is checked against `core/deletion.py` by way of
 row delete, so the *what stays* list is the load-bearing half of that page.
 
 `Base.astro` loads both stylesheets, so a page is a run of `.slab` sections and
-nothing else. The button those sections link out with is `.go` in
-`src/styles/bold.css` — one definition, `.ghost` for the white one that stands on
-a yellow slab.
+nothing else, and a slab is a rounded card in the page's gutter: `slab-white`,
+`slab-pale` (peach), `slab-brand` (coral) or `slab-mint`. The button those
+sections link out with is `.go` in `src/styles/soft.css` — one definition, an ink
+pill, with `.ghost` for the white one and `.coral` for the header's.
 
 `src/styles/global.css` carries the app's design tokens under the same names they
 have in `pilke-app/src/constants/`, so a change on either side is traceable to
-the other. Fonts and the currency mark are copied from
-`pilke-app/assets/`.
+the other, and beside them the site's own: the blush ground, the warm ink, the
+soft rules and shadows. Courgette and the currency mark are copied from
+`pilke-app/assets/`; Courgette sets the wordmark and nothing else. Fredoka, the
+display face, and Figtree, the body, are Google Fonts' variable files,
+self-hosted in `public/fonts` the same way so no page asks a third party for
+anything.
+
+**The look is the Pehmeä direction**: rounded cards with soft shadows on a blush
+page, a floating pill for the header, the phone on a coral disc, and the app's
+own card tints — blue for an invitation sent, pink for one received, peach for a
+confirmed date, yellow for the feedback after it — carrying the four steps of the
+loop. It is light only, as the site has always been. The front page is one
+composition at every width: every measure is a straight line between the 390 and
+the 1440 artboard, and the layout changes shape only at 40rem, 64rem and 75rem.
+
+`Phone.astro` never lets a rounded corner cut into a screenshot. The picture is
+inset on the colour the app paints behind that screen (`grounds` in
+`src/assets/screens.ts`), and the marketing shots have the device's status bar
+and navigation bar cropped; the manual keeps them, because its markers are
+positioned on the whole picture.
 
 ## What the front page argues
 
-The order of the sections is the argument, and it runs: dates rather than
-swiping, three claims to stand behind, why that is not the same product as the
-others, the loop, both halves of it are somebody's decision, and it is safe to
-do.
+The order of the sections is the argument, and it runs: what Pilke is, the three
+things to remember of it, how a date comes about, what the currency is, and that
+meeting a stranger through it is looked after.
 
-Two things carry that argument visually, and neither of them is a grid of
-shadowed boxes:
-
-- **The fact bar under the headline.** Three claims on one rule — three
-  candidates at a time, time and place already set, nothing to game — one line
-  each. As cards they would be three shadowed rectangles beside a phone that is
-  already a rectangle, and none of the three has enough to say to fill one.
-- **The two routes in *Miksi tämä on erilaista*.** Each way of ending up on a
-  date is a chain of one-word chips: elsewhere it is profile → scrolling → chat →
-  *maybe a date*, and here it is questions → calendar → a date. The argument is
-  that one chain is long and the other is short, so the two are stacked rather
-  than set side by side, where each would wrap onto three lines and destroy the
-  comparison. The last chip of the long chain is drawn dashed and muted, because
-  it is the step that may never arrive. Emphasis is carried by the chips, so
-  neither row needs a box.
+- **The hero** is the owner's headline and lead beside the app's home screen on a
+  coral disc, with two buttons: down to the waitlist, and down to the steps.
+- **Three cards under it**: inviting and being invited, time and place already
+  set, and the petals as Pilke's currency. One line of body each.
+- **How it works** opens with the one thing done once — the personality quiz and
+  the calendar — on its own white card, then the four steps on the four card
+  tints, each with its screen running off the bottom of the card: the top of a
+  screen is what says which screen it is.
+- **The petals** get one short section: what a petal is, the two ways it is
+  earned week to week (+1 for ten hours kept in the calendar for a week, +2 for a
+  date once feedback is given) and a link on. The whole ledger — registration,
+  the fifteen-petal ceiling, refunds — stays on `nain-se-toimii`, because a full
+  price list on a front page reads as a game to be played.
+- **Safety** is two cards, venues first and then the trusted person and the
+  button as one card, because the button does nothing until the number is saved.
+  Venues lead because a reader who has not used the app yet is better served by
+  knowing where they will be sent than by knowing how to complain afterwards.
+  The forward-looking note about *vahva tunnistautuminen* sits under the cards and
+  is drawn dashed, not as a third card: beside features that ship, a card reads as
+  a feature that ships. One figure, *300 m*, stands under the phone.
 
 **Never set body text beside a title.** A lede to the right of a heading reads as
 a second column and the eye does not know which to follow first, so every section
-head stacks: title, then lede under it at a wider measure (46ch) so the block does
-not read as a narrow column.
+head stacks: title, then lede under it.
 
-Two spacing rules earn their keep. Blocks inside a section are `--pad-large`
-apart, and a lede keeps a tighter `--pad-normal` under its own title so it stays
-attached to it. Where a block needs more than that — the fact bar under the
-tilted phone, the note below the two routes — the selector has to be written
-`.wrap > .thing`: Astro scopes every compound selector, so `.wrap > * + *`
-carries three attribute selectors against a bare class's two and wins on
-specificity otherwise. A bare `.learn { margin-top }` silently does nothing.
+Astro scopes every compound selector, so a rule like `.start > :not(.petals)`
+carries more attribute selectors than a bare `.start-phone` and wins on
+specificity; a later override of a child has to be written with the same parent
+(`.start > .start-phone`) or it silently does nothing.
 
-Three deliberate omissions:
+Two deliberate omissions:
 
-- **The petal economy is not on the front page.** A price and an earning table
-  read as a game to be played, which is the opposite of what this product is.
-  `nain-se-toimii` carries all of it, and the front page's *Kutsu, ja vastaa
-  kutsuihin* section links there. That section exists because an app where
-  everybody waits to be asked has no dates in it, so inviting and answering are
-  given equal weight and the front page says what each one costs in one line.
-- **The report and the meeting-safely advice are not on the front page.** Its
-  three safety cards are the trusted contact, the safety button and the curated
-  venues. Venues are there rather than the report because a reader who has not
-  used the app yet is better served by knowing where they will be sent than by
-  knowing how to complain afterwards. The forward-looking note about *vahva
-  tunnistautuminen* sits under the cards and is drawn dashed, not as a fourth
-  card: beside two features that ship, a card reads as a third feature that
-  ships.
+- **The report and the meeting-safely advice are not on the front page.** Both
+  are on `turvallisuus`, which the safety section links to.
 - **The questions are their own page** at `kysyttya`, which the header points at.
   Somebody arriving with one question is a different visit from reading the front
   page top to bottom, and a stack of six answers has no business being the last
@@ -208,20 +215,21 @@ The load-bearing numbers:
   a promise about how the team fills the table, and it is the only claim on the
   site that rests on a practice rather than on a constant. Keep it true.
 - **Strong electronic identification does not exist in either repository.** The
-  safety section says so in the copy itself — not in use, no date promised — and
-  it is the only forward-looking statement on the site. If it ships, that note
+  safety section says so in the copy itself — *tulossa*, and we will say when it
+  is in use — and it is the only forward-looking statement on the site. If it ships, that note
   becomes a card; if it is dropped, the note goes.
 - There is no way to buy a petal, no paid visibility, no boost and no ranking.
   `TokenGrantReason` in `users/models.py` declares nine reasons and not one of
   them is a purchase, and there is no billing, in-app-purchase, boost or ranking
-  code in either repository. The front page's *Ei mitään pelattavaa* claim and the
-  *what does it cost* answer both rest on that. Ship any of those four and both
+  code in either repository. The front page's petals, earned and never bought, and
+  the *what does it cost* answer both rest on that. Ship any of those four and both
   have to change.
 
 The backend calls the unit a **token** in code; `petal` and `terälehti` are the
 words users read, and five of them make a `rose` — a `ruusu` — which is what the
-mark draws. `PetalField.astro` is the page texture and is unrelated to the
-currency; `RoseCount.astro` is the currency.
+mark draws. `PetalScatter.astro` is decoration behind a card and is unrelated to
+the currency; `RoseCount.astro` and a `RoseMark` with a petal count are the
+currency.
 
 ## Copy that needs a human before this goes public
 
