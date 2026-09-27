@@ -1,6 +1,6 @@
 ---
 title: Treffipäivä
-lead: Miten löydätte toisenne perillä, mitä turvapainike lähettää, ja mitä teet, jos toinen ei tule.
+lead: Miten löydätte toisenne perillä, ja mitä teet, jos toinen ei tule.
 order: 70
 draft: true
 ---
@@ -25,14 +25,6 @@ Näyttäminen alkaa kartan painikkeesta **Näytä sijaintini** (1). Se päivitty
 ![Kysymys Näytetäänkö sijaintisi? ja sen selitys](shot:date-location-consent)
 
 Ennen kuin mitään näytetään, sovellus kertoo vielä, mitä tapahtuu, ja kysyy luvan.
-
-## Turvapainike
-
-**Turvapainike** näkyy treffisivulla, jos olet tallentanut asetusten kohtaan **Turvallisuus** luotettavan henkilön puhelinnumeron. Ilman numeroa painiketta ei ole, joten tallenna se etukäteen ja sovi asiasta hänen kanssaan.
-
-Yksi painallus lähettää hänelle tekstiviestin: *Pilke: [nimesi] painoi turvapainiketta ja pyytää sinua ottamaan yhteyttä.* Viestissä ei ole sijaintiasi, treffipaikkaa, kellonaikaa eikä mitään treffikumppanistasi. Treffikumppanisi ei saa tietää painalluksesta. Pilke kirjaa, että painoit painiketta ja menikö viesti perille.
-
-Näytöllä lukee, lähtikö viesti. Jos ei, soita läheisellesi itse. Hätätilanteessa soita 112.
 
 ## Jos toinen ei tule
 

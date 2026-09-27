@@ -1,6 +1,6 @@
 ---
 title: The day of the date
-lead: How you find each other at the venue, what the safety button sends, and what to do if the other person does not come.
+lead: How you find each other at the venue, and what to do if the other person does not come.
 order: 70
 draft: true
 ---
@@ -25,14 +25,6 @@ Showing starts from **Show my position** (1) on the map. It keeps updating by it
 ![The question Show your position? and its explanation](shot:date-location-consent)
 
 Before anything is shown, the app tells you what will happen and asks.
-
-## The safety button
-
-The **Safety button** appears on the date's screen once you have saved a trusted person's phone number under **Security** in Settings. Without a number there is no button, so save it beforehand and agree it with them.
-
-One press sends them a text message: *Pilke: [your name] pressed the safety button and is asking you to get in touch.* It contains no location, no venue, no time and nothing about your date. Your date is not told you pressed it. Pilke records that you pressed it and whether the message got through.
-
-The screen tells you whether it was sent. If not, call your trusted person yourself. In an emergency, call 112.
 
 ## If the other person does not come
 

@@ -26,8 +26,4 @@ Kieltäytyminen ja vastaamatta jättäminen näyttävät toiselle samalta.
 
 ## Jos jokin meni pieleen
 
-Jos vastaat kysymykseen *Mikä ei toiminut?* vaihtoehdolla *Oloni oli turvaton*, palaute vie ilmoitukseen. Voit halutessasi kertoa omin sanoin, mitä tapahtui, enintään {{feedback.report_max_chars}} merkkiä.
-
-Ilmoitus menee Pilkkeen työntekijöille, ja vain he lukevat sen. Treffikumppanisi ei näe sitä. Teitä kahta ei ilmoituksen jälkeen enää koskaan ehdoteta toisillenne.
-
-Ilmoitus ei tavoita viranomaisia. Hätätilanteessa soita 112.
+Jos olosi oli treffeillä turvaton, voit kertoa siitä meille palautteessa. Katso [Turvallisuus](/ohje/turvallisuus).

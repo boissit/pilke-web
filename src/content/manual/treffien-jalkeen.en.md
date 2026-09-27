@@ -26,8 +26,4 @@ Saying no and not answering look the same to the other person.
 
 ## If something went wrong
 
-If you answer *What did not work?* with *I felt unsafe*, the questionnaire takes you to a report. You can describe what happened in your own words if you want to, up to {{feedback.report_max_chars}} characters.
-
-The report goes to Pilke's staff, and only they read it. Your date does not see it. After a report, the two of you are never suggested to each other again.
-
-A report does not reach the authorities. In an emergency, call 112.
+If you felt unsafe on the date, you can tell us in your feedback. See [Safety](/en/guide/turvallisuus).
