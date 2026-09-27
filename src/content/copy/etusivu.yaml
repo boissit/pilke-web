@@ -12,10 +12,6 @@
 # the compound may break on a phone too narrow for it whole.
 # ──────────────────────────────────────────────────────────────────────────
 
-'hero.badge':
-  fi: 'Suljettu beta'
-  en: 'Closed beta'
-
 'hero.title':
   fi: "Vihdoin, treffailu\u00adsovellus"
   en: 'Finally, a dating app'
@@ -206,19 +202,6 @@
 'safety.card.button.body':
   fi: 'Tallenna asetuksiin luotettavan läheisen numero. Treffien aikana yksi painallus lähettää hänelle tekstiviestin, jossa pyydät häntä ottamaan yhteyttä.'
   en: 'Save a trusted person’s number in the settings. During a date, one press sends them a text asking them to get in touch.'
-
-# The location window as one figure. `POSITION_PROXIMITY_RADIUS` in the backend.
-'safety.radius.value':
-  fi: '300 m'
-  en: '300 m'
-
-'safety.radius.label':
-  fi: 'treffipaikan ympärillä'
-  en: 'around the venue'
-
-'safety.location':
-  fi: 'Sijaintisi näkyy vain treffeillä ja vain jos itse valitset.'
-  en: 'Your location shows only on a date, and only if you choose.'
 
 # Forward-looking, and marked as such in the copy itself. It sits under the
 # cards rather than in one, because a card next to two shipped features reads

@@ -47,8 +47,8 @@
 # than a clause inside `cta.note`, so the promise and the document that has to
 # back it up are not one sentence somebody has to re-translate together.
 'cta.privacy':
-  fi: 'Lue tietosuojaselosteesta, mitä osoitteellesi tapahtuu.'
-  en: 'The privacy policy says what happens to your address.'
+  fi: 'Lue lisää tietosuojaselosteesta.'
+  en: 'Read more in the privacy statement.'
 
 # The three states the form has beyond its own copy. `closed` stands in for
 # `cta.note` while the privacy statement is a draft — the note promises what we

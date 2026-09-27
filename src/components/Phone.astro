@@ -53,7 +53,11 @@ interface Props {
   tilt?: 'left' | 'right' | 'none' | number;
   ground?: string;
   bars?: 'crop' | 'keep';
-  /** The shell's colour. White by default; the ground where the phone stands on white. */
+  /**
+   * The shell's colour. White by default, for a phone on a tinted card. On a white
+   * card a white shell disappears and the phone reads as a hole, so those pass the
+   * peach, or the mint where the screen itself is peach at the top.
+   */
   shell?: string;
   /** A deeper shadow, for the one phone that floats over a coloured disc. */
   lifted?: boolean;

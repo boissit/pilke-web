@@ -50,7 +50,6 @@ const fi = {
   'nav.main': 'Päävalikko',
   'nav.menu': 'Valikko',
 
-  'hero.badge': 'Suljettu beta',
   // The owner's own words, negations included: this one line is the exception to
   // the house rule against opening with what something is not. The soft hyphen is
   // where the compound may break when a phone is too narrow for it whole.
@@ -120,11 +119,6 @@ const fi = {
   'safety.card.button.title': 'Turvapainike',
   'safety.card.button.body':
     'Tallenna asetuksiin luotettavan läheisen numero. Treffien aikana yksi painallus lähettää hänelle tekstiviestin, jossa pyydät häntä ottamaan yhteyttä.',
-
-  // The location window as one figure. `POSITION_PROXIMITY_RADIUS` in the backend.
-  'safety.radius.value': '300 m',
-  'safety.radius.label': 'treffipaikan ympärillä',
-  'safety.location': 'Sijaintisi näkyy vain treffeillä ja vain jos itse valitset.',
 
   // Forward-looking, and marked as such in the copy itself. It sits under the
   // cards rather than in one, because a card next to two shipped features reads
@@ -242,7 +236,7 @@ const fi = {
   // The link this form may not collect an address without. Its own key rather
   // than a clause inside `cta.note`, so the promise and the document that has to
   // back it up are not one sentence somebody has to re-translate together.
-  'cta.privacy': 'Lue tietosuojaselosteesta, mitä osoitteellesi tapahtuu.',
+  'cta.privacy': 'Lue lisää tietosuojaselosteesta.',
 
   /*
     The three states the form has beyond its own copy. `closed` stands in for
@@ -393,7 +387,6 @@ const en: Record<keyof typeof fi, string> = {
   'nav.main': 'Main menu',
   'nav.menu': 'Menu',
 
-  'hero.badge': 'Closed beta',
   'hero.title': 'Finally, a dating app',
   'hero.lead': 'No swiping, no chatting. Pilke sets up your dates when it suits you.',
 
@@ -449,10 +442,6 @@ const en: Record<keyof typeof fi, string> = {
   'safety.card.button.title': 'The safety button',
   'safety.card.button.body':
     'Save a trusted person’s number in the settings. During a date, one press sends them a text asking them to get in touch.',
-
-  'safety.radius.value': '300 m',
-  'safety.radius.label': 'around the venue',
-  'safety.location': 'Your location shows only on a date, and only if you choose.',
 
   'safety.future.title': 'Coming: strong electronic identification',
   'safety.future.body':
@@ -557,7 +546,7 @@ const en: Record<keyof typeof fi, string> = {
   'cta.button': 'Join the beta',
   'cta.note':
     'We use the address for the beta invitation and nothing else. We do not pass it on.',
-  'cta.privacy': 'The privacy policy says what happens to your address.',
+  'cta.privacy': 'Read more in the privacy statement.',
   'cta.closed': 'The waitlist opens soon.',
   'cta.sending': 'Sending…',
   'cta.failed': 'That did not go through. Please try again in a moment.',

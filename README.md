@@ -133,7 +133,8 @@ meeting a stranger through it is looked after.
   knowing where they will be sent than by knowing how to complain afterwards.
   The forward-looking note about *vahva tunnistautuminen* sits under the cards and
   is drawn dashed, not as a third card: beside features that ship, a card reads as
-  a feature that ships. One figure, *300 m*, stands under the phone.
+  a feature that ships. The phone beside them is the settings screen where the
+  trusted person's number is saved; the location window is on `turvallisuus`.
 
 **Never set body text beside a title.** A lede to the right of a heading reads as
 a second column and the eye does not know which to follow first, so every section

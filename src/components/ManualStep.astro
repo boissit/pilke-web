@@ -44,7 +44,7 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
 <div class="step">
   {
     still.image ? (
-      <Phone src={still.image} alt={still.alt} width={280} still={id} bars="keep" shell="var(--ground)">
+      <Phone src={still.image} alt={still.alt} width={280} still={id} bars="keep" shell="var(--brand-background)">
         {still.markers.length > 0 && (
           <svg class="leaders" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             {still.markers.map((marker) => {

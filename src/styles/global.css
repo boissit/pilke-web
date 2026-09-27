@@ -129,9 +129,6 @@
   --mint-ground: #e4f3ee;
   --mint-edge: #7fb3a2;
 
-  /* The green of the "closed beta" dot is the rose's own foliage. */
-  --leaf: #529a74;
-
   /* Two depths of shadow, both warm and both soft: a card resting on the page, and
      a phone held above it. */
   --shadow-card: 0 1px 2px rgb(58 46 43 / 0.05), 0 8px 24px rgb(58 46 43 / 0.05);
