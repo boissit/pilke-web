@@ -1,0 +1,59 @@
+---
+/**
+ * A Lucide icon, inlined as SVG when the page is built.
+ *
+ * Lucide because it is the app's icon set: the app draws its icons from Lucide, so a
+ * calendar or a map pin here is the drawing a reader meets again on the phone. The
+ * site takes them from `lucide-static`, where each icon is its SVG as a string, and
+ * copies the paths of the one it is asked for into the page as it renders. Nothing
+ * reaches the browser but those paths: no script, no sprite and no font.
+ *
+ * Decorative unless it is given a `label`, the same rule the app's `Icon` keeps: an
+ * icon beside a heading repeats the heading in a picture, and a screen reader that
+ * announced both would say the one thing twice.
+ */
+import * as icons from 'lucide-static';
+
+interface Props {
+  /** The icon's Lucide name, as lucide.dev spells it: `map-pin`, not `MapPin`. */
+  name: string;
+  /** Width and height in px. Lucide draws in a 24-unit box, so 24 is one unit a pixel. */
+  size?: number;
+  /**
+   * In the icon's 24 units, not in pixels, so it thins as the icon shrinks. Lucide's
+   * own is 2.
+   */
+  strokeWidth?: number;
+  /** What the icon says, for an icon that is the only thing saying it. */
+  label?: string;
+  class?: string;
+}
+
+const { name, size = 24, strokeWidth = 2, label, class: className } = Astro.props;
+
+/*
+  The package exports each icon under its component name, `map-pin` as `MapPin` and
+  `flower-2` as `Flower2`. A name with no icon behind it fails the build rather than
+  drawing an empty circle on a card.
+*/
+const exportName = name.replace(/(^|-)([a-z0-9])/g, (_, _dash, c: string) => c.toUpperCase());
+const svg: unknown = (icons as Record<string, unknown>)[exportName];
+const paths = typeof svg === 'string' ? svg.match(/<svg[^>]*>([\s\S]*)<\/svg>/)?.[1] : undefined;
+if (paths === undefined) throw new Error(`Lucide has no icon called "${name}"`);
+---
+
+<svg
+  class={className}
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width={strokeWidth}
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden={label ? undefined : 'true'}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  set:html={paths.trim()}
+/>

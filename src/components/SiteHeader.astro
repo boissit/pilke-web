@@ -16,6 +16,7 @@
  * while reading and is there as soon as they reach for it. The small script below is
  * all of that; without it the bar simply stays put.
  */
+import Icon from './Icon.astro';
 import Logo from './Logo.astro';
 import { manualHref } from '../i18n/manual';
 import { otherLanguage, otherLanguageHref } from '../i18n/switch';
@@ -66,9 +67,7 @@ const current = (href: string) => here === href || here.startsWith(`${href}/`);
       <details class="menu">
         <summary>
           <span class="visually-hidden">{t('nav.menu')}</span>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
-            <path d="M3 7h14M3 13h14" />
-          </svg>
+          <Icon name="menu" size={22} />
         </summary>
         <nav aria-label={t('nav.main')}>
           <ul>
