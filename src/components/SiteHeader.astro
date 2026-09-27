@@ -9,8 +9,12 @@
  * to find.
  *
  * The menu is a `<details>`, not a script. It opens and closes with a tap or the
- * keyboard, is announced as expandable, and keeps the footer's form the only
- * JavaScript on the site.
+ * keyboard and is announced as expandable.
+ *
+ * The bar stays with the reader: it slides away while they scroll down into the page
+ * and comes back once they have scrolled back up a little, so it costs no height
+ * while reading and is there as soon as they reach for it. The small script below is
+ * all of that; without it the bar simply stays put.
  */
 import Logo from './Logo.astro';
 import { manualHref } from '../i18n/manual';
@@ -41,7 +45,7 @@ const here = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '') |
 const current = (href: string) => here === href || here.startsWith(`${href}/`);
 ---
 
-<header class="site-head">
+<header class="site-head" data-site-head>
   <div class="wrap pill">
     <a class="brand" href={localePath(lang)} aria-label={t('nav.home')}>
       <Logo size={32} />
@@ -79,9 +83,64 @@ const current = (href: string) => here === href || here.startsWith(`${href}/`);
   </div>
 </header>
 
+<script>
+  // How far the reader has to scroll back up before the bar returns, so a small
+  // wobble of a thumb mid-read does not bring it back.
+  const REVEAL_AFTER = 64;
+
+  const head = document.querySelector<HTMLElement>('[data-site-head]');
+  if (head) {
+    let lastY = window.scrollY;
+    let upBy = 0;
+    let queued = false;
+
+    const hide = (hidden: boolean) => head.toggleAttribute('data-hidden', hidden);
+    // Never hide it from someone using it: an open menu, or focus inside the bar.
+    const inUse = () => head.querySelector('details[open]') !== null || head.contains(document.activeElement);
+
+    const update = () => {
+      queued = false;
+      const y = window.scrollY;
+      const dy = y - lastY;
+      lastY = y;
+      if (y <= head.offsetHeight || inUse()) {
+        upBy = 0;
+        hide(false);
+      } else if (dy > 0) {
+        upBy = 0;
+        hide(true);
+      } else if (dy < 0) {
+        upBy -= dy;
+        if (upBy >= REVEAL_AFTER) hide(false);
+      }
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!queued) {
+        queued = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+    head.addEventListener('focusin', () => hide(false));
+  }
+</script>
+
 <style>
   .site-head {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 30;
     padding: clamp(12px, 0.76vw + 9px, 20px) var(--gutter-tight) 8px;
+    transition: transform 280ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  /* Up past its own shadow, which reaches below the pill. */
+  .site-head[data-hidden] {
+    transform: translateY(calc(-100% - 24px));
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .site-head {
+      transition: none;
+    }
   }
 
   /* Its own layer, so the open menu lies over the hero card below it. */
