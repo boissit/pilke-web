@@ -57,7 +57,7 @@ A report cannot be taken back, and we stop asking you for feedback on this date.
 
 **What happens when an invitation is accepted?** The date is agreed. The chosen time is held for both of you, the other times offered are freed, and whoever invited is told. The date appears under **Agreed dates** on the Dates page.
 
-**Can the time or place be changed afterwards?** No. If what you agreed no longer works, call the date off, and a cooldown follows. See [Cancelling and cooldowns](/en/guide/peruminen-ja-jaahdytys).
+**Can the time or place be changed afterwards?** No. If what you agreed no longer works, call the date off, and a cooldown follows. See [Cancelling and cooldowns](/en/guide/peruminen-ja-jaahy).
 
 **I am running late. Can I tell them?** No. Get there as soon as you can. The first {{noshow.grace_minutes}} minutes leave room for being a little late.
 

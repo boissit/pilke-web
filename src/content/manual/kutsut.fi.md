@@ -30,21 +30,21 @@ Niin kauan kuin kutsu on avoinna, kaikki sen tarjoamat ajat ovat varattuja teilt
 
 Kun kutsu hyväksytään, vain sovittu aika jää varatuksi ja muut vapautuvat. Kun kutsu hylätään, raukeaa tai peruutetaan, kaikki ajat vapautuvat heti.
 
-![Lähetetty treffikutsu: ehdotetut ajat ja paikat, alhaalla Peruuta kutsu](shot:sent#waiting-explainer,withdraw-invitation-open)
+![Lähetetty treffikutsu: ehdotetut ajat ja paikat, alhaalla Peruuta kutsu](shot:sent#withdraw-invitation-open)
 
-Lähettämäsi kutsun **i** (1) kertoo, kuinka kauan vastausta odotetaan. **Peruuta kutsu** (2) peruu sen: katso alta, mitä siitä seuraa.
+**Peruuta kutsu** (1) peruu lähettämäsi kutsun: katso alta, mitä siitä seuraa.
 
-## Miten kutsu päättyy
+## Mitä kutsulle käy
 
 | Loppu | Kutsujalle | Vastaajalle |
 |---|---|---|
-| **Hyväksytty.** Treffit on sovittu. | Terälehdet jäävät käytetyiksi. Saat ilmoituksen. | Ei terälehtiä eikä jäähdytystä. |
-| **Hylätty.** | {{petals.refund}} terälehteä takaisin. Saat ilmoituksen. | Ei terälehtiä eikä jäähdytystä. |
-| **Rauennut.** Kukaan ei vastannut {{invitation.answer_hours}} tunnissa. | {{petals.refund}} terälehteä takaisin. Saat ilmoituksen. | Ei terälehtiä eikä jäähdytystä. |
+| **Hyväksytty.** Treffit on sovittu. | Terälehdet jäävät käytetyiksi. Saat ilmoituksen. | Ei terälehtiä eikä jäähyä. |
+| **Hylätty.** | {{petals.refund}} terälehteä takaisin. Saat ilmoituksen. | Ei terälehtiä eikä jäähyä. |
+| **Rauennut.** Kukaan ei vastannut {{invitation.answer_hours}} tunnissa. | {{petals.refund}} terälehteä takaisin. Saat ilmoituksen. | Ei terälehtiä eikä jäähyä. |
 | **Peruutettu.** Kutsuja perui ennen vastausta. | Ei palautusta. Et voi hakea uusia ehdokkaita {{cooldown.withdrawal_hours}} tuntiin. | Jos hän oli jo saanut ilmoituksen kutsusta, hän saa ilmoituksen myös peruutuksesta. |
 
 Ilmoitukset tulevat, jos ne ovat päällä asetuksissa.
 
 Päättyipä kutsu miten tahansa, teitä kahta ei sen jälkeen enää ehdoteta toisillenne. Ainoa poikkeus on, jos kävitte treffeillä ja vastasitte molemmat haluavanne tavata uudelleen.
 
-Sovittujen treffien perumisesta kerrotaan sivulla [Peruminen ja jäähdytys](/ohje/peruminen-ja-jaahdytys).
+Sovittujen treffien perumisesta kerrotaan sivulla [Peruminen ja jäähy](/ohje/peruminen-ja-jaahy).

@@ -57,7 +57,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kutsut.html/` | `en/invitation` 560px<br>`en/sent` 560px |
-| `/en/guide/peruminen-ja-jaahdytys.html/` | `en/cooldown-blocked` 560px<br>`en/cooldown-nodraw` 560px<br>`en/cooldown-hidden` 560px |
+| `/en/guide/peruminen-ja-jaahy.html/` | `en/cooldown-blocked` 560px<br>`en/cooldown-nodraw` 560px<br>`en/cooldown-hidden` 560px |
 | `/en/guide/pilke-lyhyesti.html/` | `en/treffit` 560px |
 | `/en/guide/teralehdet.html/` | `en/date-wizard-petals` 560px |
 | `/en/guide/tiedot-ja-tili.html/` | `en/asetukset-ilmoitukset` 560px<br>`en/asetukset-tili` 560px |
@@ -79,7 +79,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/ohje.html/` | none |
 | `/ohje/ehdokkaat.html/` | `fi/platter` 560px<br>`fi/cooldown-nodraw` 560px |
 | `/ohje/kutsut.html/` | `fi/invitation` 560px<br>`fi/sent` 560px |
-| `/ohje/peruminen-ja-jaahdytys.html/` | `fi/cooldown-blocked` 560px<br>`fi/cooldown-nodraw` 560px<br>`fi/cooldown-hidden` 560px |
+| `/ohje/peruminen-ja-jaahy.html/` | `fi/cooldown-blocked` 560px<br>`fi/cooldown-nodraw` 560px<br>`fi/cooldown-hidden` 560px |
 | `/ohje/pilke-lyhyesti.html/` | `fi/treffit` 560px |
 | `/ohje/teralehdet.html/` | `fi/date-wizard-petals` 560px |
 | `/ohje/tiedot-ja-tili.html/` | `fi/asetukset-ilmoitukset` 560px<br>`fi/asetukset-tili` 560px |

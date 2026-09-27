@@ -44,13 +44,11 @@ When you send an invitation, the other two candidates go. They are not told they
 
 ![A notice on the Dates page: you cannot look for new candidates until a given time](shot:cooldown-nodraw#cooldown-notice)
 
-If you cannot find candidates right now, the Dates page carries a notice (1) with the reason and the time it ends. See [Cancelling and cooldowns](/en/guide/peruminen-ja-jaahdytys).
+If you cannot find candidates right now, the Dates page carries a notice (1) with the reason and the time it ends. See [Cancelling and cooldowns](/en/guide/peruminen-ja-jaahy).
 
 ## Questions
 
 **Why were no candidates found?** There were fewer than {{candidates.per_set}} suitable candidates. The app says which condition ruled out the last of them: your wishes, things to do, date areas, shared time, or simply too few suitable people right now. Marking more time usually helps most, especially in the yellow hours. No petals are charged.
-
-**Why does a card not show all our shared times?** A card shows at most {{candidates.times_per_card}} of the soonest times and {{candidates.venues_per_card}} venues. If you share more venues, different candidates' cards can show different ones.
 
 **Can someone see they were my candidate?** No. A candidate only learns about you when you send them an invitation.
 

@@ -59,7 +59,7 @@
   en: 'What if a date falls through?'
 
 'faq.cancel.a':
-  fi: 'Kutsun hylkääminen on ilmaista, eikä siitä seuraa jäähdytystä. Sovitut treffit voit perua sovelluksessa, mutta se on toiselle epäkohteliasta, ja siitä seuraa jäähdytys: hetken aikaa et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Sama koskee saapumatta jättämistä.'
+  fi: 'Kutsun hylkääminen on ilmaista, eikä siitä seuraa jäähyä. Sovitut treffit voit perua sovelluksessa, mutta se on toiselle epäkohteliasta, ja siitä seuraa jäähy: hetken aikaa et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Sama koskee saapumatta jättämistä.'
   en: 'Turning down an invitation is free and brings no cooldown. You can call off an agreed date in the app, but it is rude to the other person, and it brings a cooldown: for a while you do not appear among other people’s candidates and cannot find new ones. The same goes for not turning up.'
 
 'faq.delete.q':

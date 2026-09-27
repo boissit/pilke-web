@@ -57,7 +57,7 @@ Kerran tehtyä ilmoitusta ei voi perua. Emme kysy sinulta enää palautetta näi
 
 **Mitä tapahtuu, kun kutsu hyväksytään?** Treffit on sovittu. Valittu aika varataan teiltä molemmilta, muut tarjotut ajat vapautuvat, ja kutsuja saa ilmoituksen. Treffit näkyvät Treffit-sivulla kohdassa **Sovitut treffit**.
 
-**Voiko aikaa tai paikkaa muuttaa jälkikäteen?** Ei. Jos sovittu ei käy, peru treffit, ja siitä seuraa jäähdytys. Katso [Peruminen ja jäähdytys](/ohje/peruminen-ja-jaahdytys).
+**Voiko aikaa tai paikkaa muuttaa jälkikäteen?** Ei. Jos sovittu ei käy, peru treffit, ja siitä seuraa jäähy. Katso [Peruminen ja jäähy](/ohje/peruminen-ja-jaahy).
 
 **Myöhästyn. Voinko kertoa siitä?** Et. Mene paikalle niin pian kuin pääset. Ensimmäiset {{noshow.grace_minutes}} minuuttia jättävät tilaa pienelle myöhästymiselle.
 

@@ -1,25 +1,25 @@
 ---
-title: Peruminen ja jäähdytys
+title: Peruminen ja jäähy
 lead: Jos perut sovitut treffit, peruutat kutsun tai et saavu paikalle, Pilke pitää tauon. Tässä, mistä tauko alkaa, kuinka kauan se kestää ja mitä se estää.
 order: 60
 draft: true
 ---
 
-Sovitut treffit ovat kahden ihmisen yhteinen päätös. Toinen on varannut illan sinulle, eikä hän voi kysyä sinulta mitään, koska sovelluksessa ei ole keskusteluyhteyttä. Peruminen on siksi epäkohteliasta häntä kohtaan, ja jäähdytys on tauko, joka seuraa siitä. Se ei vie terälehtiä, ja se päättyy itsestään.
+Sovitut treffit ovat kahden ihmisen yhteinen päätös. Toinen on varannut illan sinulle, eikä hän voi kysyä sinulta mitään, koska sovelluksessa ei ole keskusteluyhteyttä. Peruminen on siksi epäkohteliasta häntä kohtaan, ja jäähy on tauko, joka seuraa siitä. Se ei vie terälehtiä, ja se päättyy itsestään.
 
-## Kolme jäähdytystä
+## Kolme jäähyä
 
-| Jäähdytys | Mitä et voi tehdä | Ilmoitus alkaa |
+| Jäähy | Mitä et voi tehdä | Ilmoitus alkaa |
 |---|---|---|
 | Molemmat | Et näy muiden ehdokkaissa etkä voi hakea uusia ehdokkaita. | *Et näy juuri nyt muiden treffiehdokkaissa etkä voi hakea uusia ehdokkaita …* |
 | Ei hakua | Et voi hakea uusia ehdokkaita. Näyt muille. | *Et voi hakea uusia ehdokkaita …* |
 | Et näy | Et näy muiden ehdokkaissa. Voit hakea ehdokkaita. | *Et näy juuri nyt muiden treffiehdokkaissa …* |
 
-Jäähdytyksen aikana voit silti vastata saamiisi kutsuihin ja käydä sovituilla treffeillä. Avoimet kutsusi ja sovitut treffisi pysyvät ennallaan. Jos olit jo löytänyt ehdokkaat, voit silti lähettää kutsun jollekulle heistä.
+Jäähyn aikana voit silti vastata saamiisi kutsuihin ja käydä sovituilla treffeillä. Avoimet kutsusi ja sovitut treffisi pysyvät ennallaan. Jos olit jo löytänyt ehdokkaat, voit silti lähettää kutsun jollekulle heistä.
 
 ![Ilmoitus Treffit-sivulla: et näy muiden ehdokkaissa etkä voi hakea uusia ehdokkaita](shot:cooldown-blocked#cooldown-notice)
 
-Jäähdytyksen aikana Treffit-sivun yläosassa on ilmoitus (1): mitä se estää, mihin asti ja miksi. Sama teksti näkyy, jos yrität hakea ehdokkaita. Jos voimassa on useampi jäähdytys, ilmoitus kertoo viimeisenä päättyvän syyn ja päättymisajan.
+Jäähyn aikana Treffit-sivun yläosassa on ilmoitus (1): mitä se estää, mihin asti ja miksi. Sama teksti näkyy, jos yrität hakea ehdokkaita. Jos voimassa on useampi jäähy, ilmoitus kertoo viimeisenä päättyvän syyn ja päättymisajan.
 
 ![Ilmoitus Treffit-sivulla: et voi hakea uusia ehdokkaita](shot:cooldown-nodraw#cooldown-notice)
 
@@ -29,11 +29,11 @@ Kun et voi hakea ehdokkaita, mutta näyt muille, ilmoitus (1) on lyhyempi. Täm�
 
 ![Ilmoitus Treffit-sivulla: et näy muiden ehdokkaissa](shot:cooldown-hidden#cooldown-notice)
 
-Kolmas jäähdytys (1) piilottaisi sinut muiden ehdokkaista, jos saamiasi kutsuja jäisi toistuvasti hyväksymättä. Sääntö ei ole tällä hetkellä käytössä, joten kutsujen hylkääminen tai vastaamatta jättäminen ei piilota sinua.
+Kolmas jäähy (1) piilottaisi sinut muiden ehdokkaista, jos saamiasi kutsuja jäisi toistuvasti hyväksymättä. Sääntö ei ole tällä hetkellä käytössä, joten kutsujen hylkääminen tai vastaamatta jättäminen ei piilota sinua.
 
-## Mistä jäähdytys alkaa
+## Mistä jäähy alkaa
 
-| Mitä teit | Jäähdytys | Kesto |
+| Mitä teit | Jäähy | Kesto |
 |---|---|---|
 | Peruutit lähettämäsi kutsun ennen vastausta | Ei hakua | {{cooldown.withdrawal_hours}} tuntia |
 | Peruit sovitut treffit vähintään {{cooldown.cancel_long_notice_days}} päivää ennen | Molemmat | {{cooldown.cancel_long_notice_hours}} tuntia |
@@ -41,7 +41,7 @@ Kolmas jäähdytys (1) piilottaisi sinut muiden ehdokkaista, jos saamiasi kutsuj
 | Peruit sovitut treffit myöhemmin | Molemmat | {{cooldown.cancel_late_days}} päivää |
 | Toinen kertoi, ettet saapunut | Molemmat | {{cooldown.noshow_days}} päivää |
 
-Toistuva peruminen pidentää taukoa. Jokainen aiempi sovittujen treffien peruminen viimeisen {{cooldown.repeat_window_days}} päivän ajalta kertoo seuraavan perumisen keston {{cooldown.repeat_multiplier}}:lla. Jäähdytys kestää kuitenkin enintään {{cooldown.ceiling_days}} päivää. Kutsujen peruutukset ja saapumatta jäämiset eivät kasvata kerrointa.
+Toistuva peruminen pidentää taukoa. Jokainen aiempi sovittujen treffien peruminen viimeisen {{cooldown.repeat_window_days}} päivän ajalta kertoo seuraavan perumisen keston {{cooldown.repeat_multiplier}}:lla. Jäähy kestää kuitenkin enintään {{cooldown.ceiling_days}} päivää. Kutsujen peruutukset ja saapumatta jäämiset eivät kasvata kerrointa.
 
 ## Mitä perumisesta seuraa toiselle
 

@@ -30,11 +30,11 @@ For as long as an invitation is open, every time it offers is held for both of y
 
 When the invitation is accepted, only the agreed time stays held and the rest are freed. When it is declined, lapses or is withdrawn, all of them are freed straight away.
 
-![A sent invitation: the times and venues offered, with Withdraw the invitation at the bottom](shot:sent#waiting-explainer,withdraw-invitation-open)
+![A sent invitation: the times and venues offered, with Withdraw the invitation at the bottom](shot:sent#withdraw-invitation-open)
 
-The **i** (1) on an invitation you sent says how long an answer is waited for. **Withdraw the invitation** (2) takes it back: see below for what follows.
+**Withdraw the invitation** (1) takes back an invitation you sent: see below for what follows.
 
-## How an invitation ends
+## What happens to your invitation
 
 | Ending | For the one who invited | For the one invited |
 |---|---|---|
@@ -47,4 +47,4 @@ You are told if the notification is on in Settings.
 
 However an invitation ends, the two of you are not suggested to each other again. The only exception is when you went on the date and both said you would like to meet again.
 
-Calling off an agreed date is covered in [Cancelling and cooldowns](/en/guide/peruminen-ja-jaahdytys).
+Calling off an agreed date is covered in [Cancelling and cooldowns](/en/guide/peruminen-ja-jaahy).

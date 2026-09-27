@@ -44,14 +44,12 @@ Kun lähetät kutsun, kaksi muuta ehdokasta poistuvat. He eivät saa tietää ol
 
 ![Ilmoitus Treffit-sivulla: et voi hakea uusia ehdokkaita tiettyyn aikaan asti](shot:cooldown-nodraw#cooldown-notice)
 
-Jos et pääse juuri nyt löytämään ehdokkaita, Treffit-sivulla on ilmoitus (1), jossa kerrotaan syy ja päättymisaika. Katso [Peruminen ja jäähdytys](/ohje/peruminen-ja-jaahdytys).
+Jos et pääse juuri nyt löytämään ehdokkaita, Treffit-sivulla on ilmoitus (1), jossa kerrotaan syy ja päättymisaika. Katso [Peruminen ja jäähy](/ohje/peruminen-ja-jaahy).
 
 ## Kysyttyä
 
 **Miksi ehdokkaita ei löytynyt?** Sopivia ehdokkaita oli alle {{candidates.per_set}}. Sovellus kertoo, mikä ehto karsi viimeisetkin: toiveet, tekeminen, treffialueet, yhteinen aika tai se, että sopivia ihmisiä on juuri nyt vähän. Useimmiten apu on merkitä kalenteriin lisää aikaa, erityisesti kellertäville tunneille. Terälehtiä ei veloiteta.
 
-**Miksi kortissa ei ole kaikkia yhteisiä aikojamme?** Kortissa on enintään {{candidates.times_per_card}} lähintä aikaa ja {{candidates.venues_per_card}} paikkaa. Jos yhteisiä paikkoja on enemmän, eri ehdokkaiden korteissa voi olla eri paikkoja.
-
 **Näkeekö joku, että hän oli ehdokkaani?** Ei. Ehdokas saa tietää sinusta vasta, kun lähetät hänelle kutsun.
 
-**Miten tulen itse useammin ehdotetuksi?** Merkitse enemmän aikaa, erityisesti kellertäville tunneille, ja valitse useampia treffialueita ja tekemisiä. Jäähdytyksen aikana sinua ei ehdoteta.
+**Miten tulen itse useammin ehdotetuksi?** Merkitse enemmän aikaa, erityisesti kellertäville tunneille, ja valitse useampia treffialueita ja tekemisiä. Jäähyn aikana sinua ei ehdoteta.

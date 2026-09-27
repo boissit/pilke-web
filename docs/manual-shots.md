@@ -47,7 +47,7 @@ Only the stills the manual draws are listed. Each one is there because it shows 
 | cooldown-nodraw | Treffit tab with the no-draw cooldown notice | `cooldown-notice` |
 | cooldown-hidden | Treffit tab with the hidden cooldown notice | `cooldown-notice` |
 | invitation | received invitation, several times and venues | `timeslot-0`, `venue-0` |
-| sent | sent invitation, waiting for an answer, several venues | `waiting-explainer`, `withdraw-invitation-open` |
+| sent | sent invitation, waiting for an answer, several venues | `withdraw-invitation-open` |
 | date | the agreed date screen once it has started, the live map under Löydättekö toisenne? | `agreed-time`, `live-map` |
 | date-map | the date map inside the sharing window, not yet sharing | `meet-up-reveal` |
 | date-location-consent | the location-sharing consent | |

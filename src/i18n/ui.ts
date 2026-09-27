@@ -219,7 +219,7 @@ const fi = {
     'Terälehdet on käytetty, ja uusia ehdokkaita pääset löytämään vasta hetken päästä.',
   'detail.changes.canceled': 'Sovitut treffit perutaan',
   'detail.changes.canceled.note':
-    'Voit perua, mutta se on toiselle epäkohteliasta: hän on varannut illan sinulle. Perumisesta seuraa jäähdytys, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa terälehtensä takaisin.',
+    'Voit perua, mutta se on toiselle epäkohteliasta: hän on varannut illan sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa terälehtensä takaisin.',
 
   'detail.chat.title': 'Miksi chattia ei ole',
   'detail.chat.body':
@@ -269,7 +269,7 @@ const fi = {
     'Betavaiheessa ei mitään. Terälehtiä ei voi ostaa, vaan niitä kertyy käyttämällä sovellusta.',
   'faq.cancel.q': 'Entä jos treffit peruuntuvat?',
   'faq.cancel.a':
-    'Kutsun hylkääminen on ilmaista, eikä siitä seuraa jäähdytystä. Sovitut treffit voit perua sovelluksessa, mutta se on toiselle epäkohteliasta, ja siitä seuraa jäähdytys: hetken aikaa et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Sama koskee saapumatta jättämistä.',
+    'Kutsun hylkääminen on ilmaista, eikä siitä seuraa jäähyä. Sovitut treffit voit perua sovelluksessa, mutta se on toiselle epäkohteliasta, ja siitä seuraa jäähy: hetken aikaa et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Sama koskee saapumatta jättämistä.',
   'faq.delete.q': 'Voinko poistaa tilini?',
   'faq.delete.a':
     'Kyllä, asetuksista. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Menneet treffit ja niistä annetut palautteet jäävät talteen, koska ne ovat yhtä lailla toisen osapuolen tietoja.',
