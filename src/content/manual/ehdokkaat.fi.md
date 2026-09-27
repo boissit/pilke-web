@@ -32,7 +32,7 @@ Lisäksi vaikuttaa **treffitahti**, Omien tietojen kohta *Kuinka usein haluaisit
 
 ## Missä järjestyksessä
 
-Järjestykseen vaikuttaa persoonallisuuskysely: mitä useampaan sen kysymykseen olette vastanneet samoin, sitä korkeammalle ehdokas nousee. Äskettäin näytetyt laskevat, kuten yllä. Terälehdillä ei voi vaikuttaa järjestykseen.
+Järjestykseen vaikuttaa persoonallisuuskysely: mitä useampaan sen kysymykseen olette vastanneet samoin, sitä korkeammalle ehdokas nousee. Äskettäin näytetyt laskevat, kuten yllä.
 
 ## Kuinka kauan ehdokkaat odottavat
 
@@ -40,7 +40,7 @@ Ehdokkaasi odottavat sinua {{candidates.set_hours}} tuntia. Jos poistut, Treffit
 
 Ehdokkaat vanhenevat jo aiemmin, jos yhdellekin heistä ei voi enää lähettää kutsua: kortin ajat ovat menneet ohi tai varautuneet toiseen kutsuun. Silloin vanhenevat kaikki, eikä terälehtiä palauteta.
 
-Kun lähetät kutsun, kaksi muuta ehdokasta poistuvat. He eivät saa tietää olleensa ehdokkainasi.
+Kun lähetät kutsun, kaksi muuta ehdokasta poistuvat.
 
 ![Ilmoitus Treffit-sivulla: et voi hakea uusia ehdokkaita tiettyyn aikaan asti](shot:cooldown-nodraw#cooldown-notice)
 

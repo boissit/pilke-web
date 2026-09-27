@@ -25,7 +25,7 @@ Eleet: paina ruudukkoa pitkään ja vedä, niin syntyy merkintä. Napauta merkin
 Kellertävä sävy (1) näyttää tunnit, joille moni sinulle sopiva ihminen on merkinnyt vapaata aikaa. Mitä tummempi sävy, sitä enemmän heitä on verrattuna muihin näkyviin tunteihin.
 
 - Mukana ovat vain ihmiset, jotka voisivat olla ehdokkaitasi: toiveenne, kielenne, tekemisenne ja treffialueenne sopivat yhteen.
-- Tunti sävytetään vasta, kun vapaita on vähintään {{calendar.density_min_people}}. Siksi kenenkään yksittäisen ihmisen kalenteria ei voi päätellä sävyistä.
+- Tunti sävytetään vasta, kun vapaita on vähintään {{calendar.density_min_people}}.
 - Sävyt kattavat seuraavat {{calendar.density_days}} päivää. Kaukaiset päivät ovat usein vaaleita, koska harva on merkinnyt niin pitkälle.
 
 Merkitseminen kannattaa siis siellä, missä on sävyä: niihin aikoihin sinulle löytyy todennäköisimmin ehdokkaita.
@@ -45,4 +45,4 @@ Kopio näkyy ensin ehdotuksena. Ajat ovat katkoviivalla, ja yhteenveto (1) kerto
 Asetusten Kalenteri-kohdassa voit yhdistää Pilkkeen sinun kalenteriisi, esimerkiksi Google- tai Apple-kalenteriisi. Kumpikin suunta on oma valintansa.
 
 - **Pilke kirjoittaa** valitsemaasi kalenteriin sovitut treffit ja halutessasi myös avoimet kutsut. Merkinnässä on treffikumppanisi kutsumanimi ja, kun paikka on päätetty, treffipaikka. Perutut treffit poistetaan. Merkintä näkyy kaikille, jotka näkevät sen kalenterin, esimerkiksi Googlessa.
-- **Pilke lukee** kalenteristasi vain varatut ajat ja näyttää ne raidoitettuina Pilkkeen kalenterissa, jotta et merkitse vapaaksi aikaa, joka on jo varattu. Lukeminen tapahtuu puhelimessa. Mitään kalenterisi tapahtumista ei lähetetä Pilkkeelle.
+- **Pilke lukee** kalenteristasi vain varatut ajat ja näyttää ne raidoitettuina Pilkkeen kalenterissa, jotta et merkitse vapaaksi aikaa, joka on jo varattu. Lukeminen tapahtuu puhelimessa.

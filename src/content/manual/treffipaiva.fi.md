@@ -14,7 +14,7 @@ Treffisivulla on sovittu ajankohta (1), paikka ja kartta (2). Muistutus tulee {{
 Voit näyttää sijaintisi treffikumppanillesi kartalla, jotta löydätte toisenne. Se on vapaaehtoista.
 
 - **Milloin.** {{sharing.lead_minutes}} minuuttia ennen treffien alkua ja {{sharing.trail_minutes}} minuuttia alun jälkeen. Kun aika alkaa, saat ilmoituksen.
-- **Missä.** Vain noin {{sharing.radius_m}} metrin päässä treffipaikasta. Kauempaa lähetettyä sijaintia ei hyväksytä, joten sinua ei voi paikantaa kotoa.
+- **Missä.** Vain noin {{sharing.radius_m}} metrin päässä treffipaikasta.
 - **Kenelle.** Vain treffikumppanillesi. Hän saa ilmoituksen, kun olet paikalla.
 - **Kuinka kauan.** Sijainti on palvelimella vain näyttämisen ajan. Se poistetaan heti, kun lopetat näyttämisen tai aika loppuu. Talteen jää vain tieto siitä, että sijaintia näytettiin.
 
@@ -57,4 +57,4 @@ Kerran tehtyä ilmoitusta ei voi perua. Emme kysy sinulta enää palautetta näi
 
 **Kauanko treffit kestävät?** Pilkkeen kannalta {{date.length_hours}} tunnin alkamisajasta. Sen jälkeen voit antaa palautetta. Katso [Treffien jälkeen](/ohje/treffien-jalkeen). Te päätätte itse, kauanko olette yhdessä.
 
-**Kuka näkee, missä olen?** Vain treffikumppanisi, vain jos itse näytät sijaintisi ja vain {{sharing.window_minutes}} minuutin ajan treffien alun ympärillä. Luotettava läheisesi ei näe sijaintiasi.
+**Kuka näkee, missä olen?** Vain treffikumppanisi, vain jos itse näytät sijaintisi ja vain {{sharing.window_minutes}} minuutin ajan treffien alun ympärillä.

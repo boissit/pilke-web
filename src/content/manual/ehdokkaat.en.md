@@ -32,7 +32,7 @@ A candidate has to meet every one of these, and each is checked both ways: you h
 
 ## In what order
 
-The personality quiz shapes the order: the more of its questions you have both answered the same way, the higher a candidate comes. Recently shown candidates move down, as above. Petals cannot change the order.
+The personality quiz shapes the order: the more of its questions you have both answered the same way, the higher a candidate comes. Recently shown candidates move down, as above.
 
 ## How long your candidates wait
 
@@ -40,7 +40,7 @@ Your candidates wait for you for {{candidates.set_hours}} hours. If you leave, t
 
 Your candidates expire sooner if any one of them can no longer be sent an invitation: the card's times have passed, or they have been taken by another invitation. Then they all expire, and no petals come back.
 
-When you send an invitation, the other two candidates go. They are not told they were your candidates.
+When you send an invitation, the other two candidates go.
 
 ![A notice on the Dates page: you cannot look for new candidates until a given time](shot:cooldown-nodraw#cooldown-notice)
 

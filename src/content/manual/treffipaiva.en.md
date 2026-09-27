@@ -14,7 +14,7 @@ The date's screen holds the agreed time (1), the place and a map (2). A reminder
 You can show your position to your date on a map, so the two of you find each other. It is up to you.
 
 - **When.** From {{sharing.lead_minutes}} minutes before the start to {{sharing.trail_minutes}} minutes after it. You are notified when it opens.
-- **Where.** Only within about {{sharing.radius_m}} metres of the venue. A position sent from further away is refused, so nobody can locate you at home.
+- **Where.** Only within about {{sharing.radius_m}} metres of the venue.
 - **Who.** Only your date. They are notified when you are there.
 - **For how long.** Your position is on the server only while you are showing it. It is deleted as soon as you stop or the time runs out. All that is kept is the fact that a position was shown.
 
@@ -57,4 +57,4 @@ A report cannot be taken back, and we stop asking you for feedback on this date.
 
 **How long does a date last?** As far as Pilke is concerned, {{date.length_hours}} hour from the start. After that you can give feedback: see [After the date](/en/guide/treffien-jalkeen). How long you actually stay is up to the two of you.
 
-**Who can see where I am?** Only your date, only if you choose to show your position, and only for {{sharing.window_minutes}} minutes around the start. Your trusted person does not see it.
+**Who can see where I am?** Only your date, only if you choose to show your position, and only for {{sharing.window_minutes}} minutes around the start.
