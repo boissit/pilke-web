@@ -22,7 +22,7 @@ Ehdokkaan on täytettävä kaikki nämä ehdot, ja ne tarkistetaan molempiin suu
 - **Toiveet.** Sukupuoli ja ikä sopivat kummankin toiveisiin, ja teillä on yhteinen vastaus siihen, mitä odotatte treffeiltä.
 - **Vaihtoehto.** Teillä on vähintään {{invitation.choice_threshold}} yhteistä aikaa tai {{invitation.choice_threshold}} yhteistä paikkaa, jotta kutsussa voi tarjota valinnan.
 
-Lisäksi vaikuttaa **treffitahti**, Omien tietojen kohta *Kuinka usein haluaisit käydä treffeillä?* Jos ehdokas on valinnut *Kerran viikossa*, hänelle ehdotetaan aikoja ennen hänen viimeisimpiä sovittuja treffejään tai vasta {{matching.pace_weekly_days}} päivän päästä niistä (*Kerran kahdessa viikossa*: {{matching.pace_fortnightly_days}} päivän). Sama koskee sinua silloin, kun sinua ehdotetaan muille.
+Lisäksi vaikuttaa **treffitahti**, Omien tietojen kohta *Kuinka usein haluaisit käydä treffeillä?* Jos ehdokas on valinnut *Kerran viikossa*, hänelle ehdotetaan aikoja ennen hänen viimeisimpiä sovittuja treffejään tai vasta {{matching.pace_weekly_days}} päivän päästä niistä (*Kerran kahdessa viikossa*: {{matching.pace_fortnightly_days}} päivän). Sama koskee sinua silloin, kun sinua ehdotetaan muille. Kun etsit itse ehdokkaita, myös oma tahtisi otetaan huomioon: sitä noudattavat ajat näytetään ensin.
 
 ## Miksi joku ei tule enää vastaan
 
