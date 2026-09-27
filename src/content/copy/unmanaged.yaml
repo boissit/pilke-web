@@ -13,7 +13,7 @@
 #
 # WARNING: **These are a defect list, not a source.** Wiring one up means giving it
 # a real key in `ui.ts` (or in the rewired collection) and deleting the entry here.
-# Two of the four are arguably fine where they are; the notes say which and why.
+# Two of the three are arguably fine where they are; the notes say which and why.
 
 # ──────────────────────────────────────────────────────────────────────────
 # The language control
@@ -34,20 +34,6 @@
 'unmanaged.languages.en':
   fi: 'English'
   en: 'English'
-
-# ──────────────────────────────────────────────────────────────────────────
-# The accessible name of the wordmark
-#
-# `src/components/SiteHeader.astro`, the `aria-label` on the brand link. It is the
-# product name, so it does not translate — but it is the one string on this site
-# that only a screen-reader user hears, and it reaches them without passing any
-# copy review. `meta.title` in `site.yaml` is the same word and is already
-# translated (identically); the link could take it and lose nothing.
-# ──────────────────────────────────────────────────────────────────────────
-
-'unmanaged.header.brand.label':
-  fi: 'Pilke'
-  en: 'Pilke'
 
 # ──────────────────────────────────────────────────────────────────────────
 # The number beside the rose

@@ -1,0 +1,427 @@
+/*
+  The Pehmeä treatment: rounded cards on a blush page, soft shadows, round display
+  type. Loaded once by `Base.astro`, so every page has it.
+
+  Everything here builds on the tokens in global.css. The one colour it adds is
+  `--annotation`, below, which is outside the palette on purpose.
+*/
+
+:root {
+  /*
+    The manual's markings on a screenshot: the ring, the badge, the leader and the
+    `(1)` in the text that refers to them.
+
+    WARNING: **Keep this out of the app's palette, and out of the site's.** A marker
+    in coral, peach or ink is drawn in the same language as the buttons it points
+    at, and reads as one of them. This blue is no colour the app or this site uses
+    anywhere else, and it holds its contrast on both the pale screens and the dark
+    map. The halo is what separates it from whatever is underneath.
+  */
+  --annotation: #1f4fe0;
+  --annotation-halo: #ffffff;
+  --annotation-wash: rgb(31 79 224 / 0.08);
+}
+
+/*
+  A page below the header is a run of `.slab` sections, and a slab is now a card
+  rather than a band: the section keeps the page's gutter and its `.wrap` is the
+  rounded surface. The variants are the surfaces the artboards use — white with a
+  resting shadow, peach, coral and mint — so a page picks a ground by name and
+  every card on the site has the same corner, the same padding and the same air
+  between it and the next one.
+*/
+.slab {
+  padding-inline: var(--gutter);
+}
+
+.slab + .slab {
+  margin-top: 24px;
+}
+
+.slab > .wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-panel);
+}
+
+.slab-white > .wrap {
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+.slab-pale > .wrap {
+  background: var(--brand-background);
+}
+
+.slab-brand > .wrap {
+  background: var(--brand-main);
+}
+
+.slab-mint > .wrap {
+  background: var(--mint-ground);
+}
+
+/* Anything laid over the scattered petals needs a layer above them. */
+.slab > .wrap > :not(.petals) {
+  position: relative;
+}
+
+/* The padding inside a card, as a straight line from the phone artboard's to the
+   desktop's. Block and inline differ because a phone needs its side room for the
+   text and a desktop card needs its height to breathe. */
+.section-pad {
+  padding: clamp(28px, 4.95vw + 8.7px, 80px) clamp(22px, 5.52vw + 0.5px, 80px);
+}
+
+/* The two display sizes. `.display` is a hero's headline, `.display-mid` the head of
+   a section. Both are Fredoka, tight and slightly negative-tracked, as the artboards
+   set every display line. */
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(3.125rem, 3.62vw + 2.25rem, 5.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.display-mid {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(2rem, 2.29vw + 1.44rem, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.lede {
+  font-size: clamp(1.0625rem, 0.38vw + 0.97rem, 1.3125rem);
+  line-height: 1.55;
+  max-width: 46ch;
+}
+
+.prose {
+  max-width: 60ch;
+}
+
+/* A card inside a card: white, a resting shadow, the artboards' 28px corner. */
+.block {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  padding: clamp(20px, 1.5vw + 14px, 28px);
+  box-shadow: var(--shadow-card);
+}
+
+/* A step number: a white disc with the figure in the display face. */
+.numeral {
+  display: grid;
+  place-items: center;
+  width: clamp(48px, 0.76vw + 45px, 56px);
+  height: clamp(48px, 0.76vw + 45px, 56px);
+  flex: 0 0 auto;
+  background: var(--surface);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(1.375rem, 0.2vw + 1.3rem, 1.5rem);
+  line-height: 1;
+}
+
+/*
+  The one button on the site, wherever it appears: a pill. Ink by default, which
+  is the artboards' primary — "Liity betaan" in the hero — and `.ghost` for the
+  white one beside it, `.coral` for the brand one the header carries. It is here
+  rather than in each page because a link out of the safety page and the submit
+  key in the footer are the same control and have to look it.
+
+  48px tall at the least, which is a comfortable thumb anywhere and the height the
+  artboards give every secondary pill.
+*/
+.go {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  background: var(--text);
+  color: var(--ground);
+  border: 0;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.go:hover {
+  color: var(--ground);
+  background: var(--text-hover);
+}
+
+.go.ghost {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgb(58 46 43 / 0.06), 0 6px 16px rgb(58 46 43 / 0.06);
+}
+
+.go.ghost:hover {
+  color: var(--text);
+  background: var(--ground);
+}
+
+.go.coral {
+  background: var(--brand-main);
+  color: var(--text);
+}
+
+.go.coral:hover {
+  color: var(--text);
+  background: var(--coral-hover);
+}
+
+/* Two of them in a paragraph are a choice and a way back, so the paragraph lays
+   them out as a wrapping row: on a phone the second drops under the first on the
+   same left edge rather than carrying a margin into the next line. */
+p:has(> .go) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: none;
+}
+
+/*
+  The notice at the top of an unfinished text: a legal document not yet reviewed,
+  or a manual page whose words and pictures may still change. Here rather than in
+  either page because it is one signal and has to look like one.
+
+  Dashed rather than solid, and no shadow: on this site a card that rests on the
+  page is a thing that ships, and the dashed edge is how the front page draws the
+  identification that has not shipped yet.
+*/
+.provisional {
+  max-width: 52rem;
+  margin-top: var(--pad-large);
+  border: 2px dashed var(--brand-main);
+  box-shadow: none;
+  background: var(--ground);
+}
+
+.provisional h2 {
+  font-size: 1.0625rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.provisional p {
+  margin-top: var(--pad-small);
+  max-width: 60ch;
+}
+
+/* "Kesken" beside a manual page's title: the same dashed edge, as a pill. */
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 1.5px dashed var(--brand-main);
+  border-radius: 999px;
+  background: var(--ground);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/*
+  Legal prose: the privacy statement and the terms.
+
+  It is here rather than in the page that renders them because `<Content />` emits
+  plain Markdown output, which carries no scope attribute — a `<style>` block in
+  the page would not reach a single heading of it. One definition, so the documents
+  cannot be set differently.
+
+  Narrower than `.prose` and with more air between blocks. These are the only pages
+  on the site somebody reads to find one clause in, and the measure and the spacing
+  are what make that possible.
+*/
+.legal {
+  max-width: 68ch;
+}
+
+.legal > * + * {
+  margin-top: var(--pad-medium);
+}
+
+/* A section of a legal document is a place somebody is sent to — "see section
+   4" — so each one opens with clear air above it and a soft rule, and a heading in
+   the body face: Fredoka at this size on a page of clauses reads as a sticker. */
+.legal h2 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  letter-spacing: 0;
+  margin-top: var(--pad-large);
+  padding-top: var(--pad-medium);
+  border-top: 1px solid var(--rule);
+}
+
+.legal h2:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.legal h3 {
+  font-size: 1.0625rem;
+  margin-top: var(--pad-large);
+}
+
+.legal ul,
+.legal ol {
+  padding-left: var(--pad-large);
+}
+
+.legal li + li {
+  margin-top: var(--pad-small);
+}
+
+/* An aside inside a document: a peach card rather than a ruled quote, which on a
+   page of rounded surfaces read as a pull quote. */
+.legal blockquote,
+.manual blockquote {
+  margin-inline: 0;
+  padding: var(--pad-medium) 20px;
+  border-radius: 20px;
+  background: var(--brand-background);
+}
+
+.legal blockquote > * + *,
+.manual blockquote > * + * {
+  margin-top: var(--pad-normal);
+}
+
+.legal code,
+.manual code {
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-small);
+  background: var(--brand-background);
+  font-size: 0.9em;
+}
+
+/* A clause referred to by a link has to be visibly a link on a page of dense
+   text, so it keeps its underline rather than relying on colour. */
+.legal a {
+  text-underline-offset: 3px;
+}
+
+/* Retention periods and the like arrive as tables, and a wide one scrolls in its
+   own box rather than pushing the page sideways. The manual's tables — what earns
+   petals, how long a jäähy lasts — are drawn the same way. */
+.legal .table-scroll,
+.legal table,
+.manual table {
+  width: 100%;
+}
+
+.legal table,
+.manual table {
+  border-collapse: collapse;
+  display: block;
+  overflow-x: auto;
+  font-size: 0.9375rem;
+}
+
+.legal th,
+.legal td,
+.manual th,
+.manual td {
+  text-align: left;
+  padding: var(--pad-normal);
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+.legal th,
+.manual th {
+  font-weight: 700;
+  background: var(--ground);
+}
+
+/*
+  Manual prose, and the text beside each step's phone.
+
+  Global for the reason `.legal` is: the page is Markdown rendered to HTML, which
+  carries no scope attribute. The measure is `.prose`'s rather than `.legal`'s,
+  because a manual is read beside an open app a few lines at a time, not searched
+  for one clause.
+
+  Section headings are the display face — a manual section is a thing somebody
+  scrolls to, not a numbered clause somebody is referred to.
+*/
+.manual > * + * {
+  margin-top: var(--pad-medium);
+}
+
+.manual > :is(p, ul, ol, blockquote),
+.manual .step-text > * {
+  max-width: 60ch;
+}
+
+/* A table is read across rather than down, and at the prose measure its three
+   columns wrap every cell to a few words. */
+.manual > table {
+  max-width: 80ch;
+}
+
+.manual h2 {
+  font-size: clamp(1.625rem, 1vw + 1.35rem, 2.25rem);
+  margin-top: 48px;
+}
+
+.manual h2:first-child {
+  margin-top: 0;
+}
+
+.manual h3 {
+  margin-top: var(--pad-large);
+}
+
+.manual .step {
+  margin-block: 40px;
+}
+
+.manual .step-text > * + * {
+  margin-top: var(--pad-normal);
+}
+
+.manual ul,
+.manual ol {
+  padding-left: var(--pad-large);
+}
+
+.manual li + li {
+  margin-top: var(--pad-small);
+}
+
+/* `(1)` in a step's text, drawn as the badge it refers to on the phone beside it,
+   at the size of the text it sits in: the annotation blue, a sans numeral, no
+   border and no shadow, so it reads as a reference and not as a button. */
+.manual .callout-ref {
+  display: inline-grid;
+  place-items: center;
+  min-width: 1.4em;
+  height: 1.4em;
+  padding-inline: 0.2em;
+  vertical-align: 0.05em;
+  background: var(--annotation);
+  color: var(--annotation-halo);
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.8125em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}

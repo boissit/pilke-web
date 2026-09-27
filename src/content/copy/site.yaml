@@ -56,8 +56,9 @@
 # ──────────────────────────────────────────────────────────────────────────
 # The bar at the top, and the link that skips it
 #
-# Three subpages and a language, in `SiteHeader.astro`. `nav.back` is the
-# button every subpage closes with rather than anything in the bar.
+# Three subpages and a language, in `SiteHeader.astro`, which folds them into a
+# menu on a phone. `nav.back` is the button every subpage closes with rather than
+# anything in the bar.
 # ──────────────────────────────────────────────────────────────────────────
 
 'nav.how':
@@ -88,14 +89,51 @@
   fi: 'Takaisin etusivulle'
   en: 'Back to the front page'
 
+# The accessible name of the wordmark, in the header and the footer. It is the only
+# string here that only a screen-reader user hears.
+'nav.home':
+  fi: 'Pilke, etusivu'
+  en: 'Pilke, home'
+
+'nav.main':
+  fi: 'Päävalikko'
+  en: 'Main menu'
+
+'nav.menu':
+  fi: 'Valikko'
+  en: 'Menu'
+
 # ──────────────────────────────────────────────────────────────────────────
-# The wordmark at the foot of the page
+# The foot of every page
 #
-# The footer also closes on `hero.title` as a tagline, which is deliberate —
-# the page ends on the words it opened with — and lives in `etusivu.yaml`
-# because the front page is where it is written.
+# The wordmark, the two lists of links and the language switch, in
+# `SiteFooter.astro`. The legal list's label is `legal.nav`, and the documents name
+# themselves from their own frontmatter.
 # ──────────────────────────────────────────────────────────────────────────
 
 'footer.rights':
   fi: 'Pilke'
   en: 'Pilke'
+
+'footer.pages':
+  fi: 'Sivut'
+  en: 'Pages'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The 404
+#
+# The page GitHub Pages serves for any address it has no file for. One file for both
+# languages, so it carries a line of English under the Finnish.
+# ──────────────────────────────────────────────────────────────────────────
+
+'notfound.title':
+  fi: 'Hups, väärä osoite'
+  en: 'Oops, wrong address'
+
+'notfound.lead':
+  fi: 'Linkki on ehkä vanhentunut. Etusivulta pääset jatkamaan.'
+  en: 'The link may be out of date. Carry on from the front page.'
+
+'notfound.home':
+  fi: 'Etusivulle'
+  en: 'To the front page'

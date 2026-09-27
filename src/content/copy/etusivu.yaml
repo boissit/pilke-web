@@ -6,32 +6,38 @@
 # ──────────────────────────────────────────────────────────────────────────
 # Hero
 #
-# The headline beside the phone. `hero.title` is used twice: here, and as the
-# tagline at the foot of every page, so it is the site's one slogan and reads
-# as one out of context.
+# The headline beside the phone on its coral disc. The title and the lead are the
+# owner's own words, negations included, and the one exception to the house rule
+# against opening with what something is not. The soft hyphen in the title is where
+# the compound may break on a phone too narrow for it whole.
 # ──────────────────────────────────────────────────────────────────────────
+
+'hero.badge':
+  fi: 'Suljettu beta'
+  en: 'Closed beta'
 
 'hero.title':
-  fi: 'Treffit, ei swaippailua'
-  en: 'Dates, not swiping'
+  fi: "Vihdoin, treffailu\u00adsovellus"
+  en: 'Finally, a dating app'
 
 'hero.lead':
-  fi: 'Ei chattia, ei viikkojen viestittelyä. Saat kutsun, jossa aika ja paikka ovat jo valmiina — valitse sopiva hetki, niin treffit on sovittu.'
-  en: 'No chat, no weeks of messaging. You get an invitation with the time and the place already in it — pick the hour that suits you, and the date is set.'
+  fi: 'Ei swaippailua, ei chättäilyä. Pilke sopii treffit, kun sinulle sopii.'
+  en: 'No swiping, no chatting. Pilke sets up your dates when it suits you.'
 
 # ──────────────────────────────────────────────────────────────────────────
-# The three claims under the headline
+# The three cards under the hero
 #
-# One line each. None of the three has enough to say to fill a card.
+# One line of body each: the headline has made the argument, and these are the three
+# things to remember of it.
 # ──────────────────────────────────────────────────────────────────────────
 
 'fact.one.title':
-  fi: 'Sinä valitset, kenet kutsut'
-  en: 'You choose who to invite'
+  fi: 'Kutsu ja tule kutsutuksi'
+  en: 'Invite, and be invited'
 
 'fact.one.body':
-  fi: 'Ei loputonta pinoa selattavaksi.'
-  en: 'No endless stack to scroll.'
+  fi: 'Lähetä kutsu ehdokkaalle, joka tuntuu sinun tyypiltäsi, ja vastaa kutsuihin, joita saat.'
+  en: 'Send an invitation to a candidate who feels like your type, and answer the ones you get.'
 
 'fact.two.title':
   fi: 'Aika ja paikka valmiina'
@@ -39,220 +45,180 @@
 
 'fact.two.body':
   fi: 'Kalenterisi sopii treffit puolestasi.'
-  en: 'Your calendar does the arranging.'
+  en: 'Your calendar arranges the date for you.'
 
 'fact.three.title':
-  fi: 'Ei mitään pelattavaa'
-  en: 'Nothing to game'
+  fi: 'Terälehdet ovat Pilkkeen valuutta'
+  en: 'Petals are Pilke’s currency'
 
 'fact.three.body':
-  fi: 'Ei ostettavaa näkyvyyttä, ei nostoja.'
-  en: 'No visibility to buy, no boosts.'
+  fi: 'Ansaitset niitä käymällä treffeillä ja pitämällä kalenterisi ajan tasalla. Treffikutsu maksaa viisi.'
+  en: 'You earn them by going on dates and keeping your calendar up to date. A date invitation costs five.'
 
 # ──────────────────────────────────────────────────────────────────────────
-# Why this is different
-# ──────────────────────────────────────────────────────────────────────────
-
-'diff.title':
-  fi: 'Miksi tämä on erilaista'
-  en: 'Why this is different'
-
-'diff.lead':
-  fi: 'Muut sovellukset opettivat, että tutustuminen tapahtuu ruudulla ja tapaaminen on palkinto lopussa. Meillä se menee toisin päin.'
-  en: 'Other apps taught us that getting to know somebody happens on a screen, and that meeting them is the prize at the end. Here it goes the other way round.'
-
-# The two routes, drawn as chips. Each step is one word, because the point is
-# the length of the chain rather than what any link in it contains.
-'diff.old.label':
-  fi: 'Muualla'
-  en: 'Elsewhere'
-
-'diff.old.body':
-  fi: 'Hiot profiilia, selaat päiviä, chattailet viikkoja. Suurin osa keskusteluista hiipuu ennen kuin kukaan ehdottaa mitään.'
-  en: 'You polish a profile, scroll for days, chat for weeks. Most of those conversations fade before anybody suggests anything.'
-
-'diff.old.one':
-  fi: 'Profiili'
-  en: 'Profile'
-
-'diff.old.two':
-  fi: 'Selailu'
-  en: 'Scrolling'
-
-'diff.old.three':
-  fi: 'Chat'
-  en: 'Chat'
-
-'diff.old.four':
-  fi: 'Ehkä treffit'
-  en: 'Maybe a date'
-
-'diff.new.label':
-  fi: 'Pilkkeessä'
-  en: 'On Pilke'
-
-'diff.new.body':
-  fi: 'Vastaa pariin kysymyssarjaan ja merkitse kalenteriin sopivat ajat. Sen jälkeen tapaat ihmisiä. Tunnissa kahvilassa opit toisesta enemmän kuin kahdessa viikossa viestejä.'
-  en: 'Answer a couple of question sets and mark the times that suit you. After that you meet people. You learn more in an hour at a cafe than in two weeks of messages.'
-
-'diff.new.one':
-  fi: 'Kysymykset'
-  en: 'Questions'
-
-'diff.new.two':
-  fi: 'Kalenteri'
-  en: 'Calendar'
-
-'diff.new.three':
-  fi: 'Treffit'
-  en: 'A date'
-
-'diff.learn.title':
-  fi: 'Ensimmäinen ei ole se oikea, eikä sen tarvitse olla'
-  en: 'The first one is not the one, and it does not have to be'
-
-'diff.learn.body':
-  fi: 'Harva ensimmäinen tapaaminen osuu kohdalleen. Se ei ole epäonnistuminen vaan alku. Kerro joka kerran jälkeen lyhyesti miten meni, niin seuraavat ehdotukset osuvat lähemmäs — ja huomaat samalla itsekin, mitä oikeastaan etsit.'
-  en: 'Few first meetings land perfectly. That is a beginning, not a failure. Say briefly how each one went and the next suggestions land closer — and you notice what you are actually looking for.'
-
-# ──────────────────────────────────────────────────────────────────────────
-# The loop, in four steps
+# How it works
 #
-# `how.more` is the link on to `nain-se-toimii`, which carries the same thing
-# in detail.
+# What happens once, before the loop, and then the loop in four steps. `how.more`
+# is the link on to `nain-se-toimii`, which carries the same thing in detail.
 # ──────────────────────────────────────────────────────────────────────────
 
 'how.title':
   fi: 'Näin se toimii'
   en: 'How it works'
 
+'how.lead':
+  fi: 'Ensin persoonallisuuskysely ja kalenteri. Sen jälkeen tapaat ihmisiä.'
+  en: 'First the personality quiz and your calendar. Then you meet people.'
+
 'how.more':
   fi: 'Lue tarkemmin'
   en: 'Read more'
+
+# What happens once, before the loop starts. Its own card above the four steps,
+# because it is not one of them: nobody does it a second time.
+'how.start.tag':
+  fi: 'Ennen ensimmäistä kutsua'
+  en: 'Before your first invitation'
+
+'how.start.title':
+  fi: "Aloita persoonallisuus\u00adkyselystä"
+  en: 'Start with the personality quiz'
+
+'how.start.body':
+  fi: 'Neljätoista tilannetta, joissa valitset mitä tekisit. Yksi kysymys kerrallaan, ja voit jatkaa myöhemmin siitä mihin jäit. Sitten kerrot toiveesi ja merkitset kalenteriin ajat, jolloin sinulle sopii.'
+  en: 'Fourteen situations where you choose what you would do. One question at a time, and you can pick up later where you left off. Then you say what you are looking for and mark the times that suit you in your calendar.'
 
 'how.one.title':
   fi: 'Lähetä treffikutsu'
   en: 'Send a date invitation'
 
 'how.one.body':
-  fi: 'Löydä ehdokkaat ja valitse, kenet kutsut. Tarjoa pari sinulle sopivaa aikaa ja paikka, niin kutsu lähtee.'
-  en: 'Find candidates and choose who to invite. Offer a couple of times that suit you and a place, and off the invitation goes.'
+  fi: 'Löydä ehdokkaat ja kutsu sinulle sopivin. Tarjoa pari aikaa ja paikkaa, niin kutsu lähtee.'
+  en: 'Find candidates and invite the one who suits you best. Offer a couple of times and places, and your invitation is on its way.'
 
 'how.two.title':
-  fi: 'Vastaa saapuneisiin kutsuihin'
-  en: 'Answer the invitations you get'
+  fi: 'Vastaa kutsuihin'
+  en: 'Answer invitations'
 
 'how.two.body':
-  fi: 'Näet kutsujan, sen mitä teillä on yhteistä ja hänen tarjoamansa ajat. Valitse yksi, niin treffit on sovittu. Se ei maksa sinulle mitään.'
-  en: 'You see who sent it, what you have in common, and the times they offer. Pick one, and the date is set. It costs you nothing.'
+  fi: 'Näet, kuka kutsui ja milloin. Valitse aika ja paikka, niin treffit on sovittu.'
+  en: 'You see who invited you and when. Pick a time and a place, and the date is set.'
 
 'how.three.title':
   fi: 'Menkää treffeille'
   en: 'Go on the date'
 
 'how.three.body':
-  fi: 'Treffinäytöllä on aika, paikka ja kartta. Sovittuna hetkenä voitte näyttää sijaintinne toisillenne, jotta löydätte perille.'
-  en: 'The date screen carries the time, the place and a map. At the agreed hour you can show each other your locations so you actually find one another.'
+  fi: 'Pilke kertoo ajan, paikan ja reitin. Paikan päällä voitte näyttää sijaintinne, niin löydätte toisenne.'
+  en: 'Pilke gives you the time, the place and the way there. At the venue you can show each other where you are, so you find one another.'
 
 'how.four.title':
   fi: 'Kerro miten meni'
   en: 'Say how it went'
 
 'how.four.body':
-  fi: 'Sovellus kysyy lyhyesti, miten meni ja vastasiko toinen toiveitasi. Vastaa hetkessä, niin seuraavat ehdotukset osuvat paremmin.'
-  en: 'The app asks briefly how it went and whether the other person matched what you hoped for. Answer in a moment, and the next suggestions fit better.'
+  fi: 'Vastaa treffien jälkeen pariin kysymykseen. Saat terälehtiä, ja seuraavat ehdokkaat osuvat paremmin.'
+  en: 'Answer a couple of questions after the date. You earn petals, and your next candidates fit better.'
 
 'how.loop':
-  fi: 'Sitten kierros alkaa alusta — ja tiedämme sinusta enemmän kuin viime kerralla.'
-  en: 'Then it starts again — and we know more about you than we did last time.'
+  fi: 'Pidä kalenterisi ajan tasalla, niin seuraavat treffit löytyvät helpommin.'
+  en: 'Keep your calendar up to date, and your next date is easier to find.'
 
 # ──────────────────────────────────────────────────────────────────────────
-# Both halves of a date are somebody’s decision
+# Petals
 #
-# `both.more` is the link to `nain-se-toimii`, which is where the currency is
-# allowed to be explained.
+# The currency, on the front page in two lines and no more: what it is, the two ways
+# it is earned week to week, and a link to the rest. The full ledger — registration,
+# the ceiling, refunds — is `nain-se-toimii`'s. The calendar row's label is
+# `detail.earn.calendar` and the date row's `detail.earn.date`, shared with that
+# page so the two cannot name one way of earning differently.
 # ──────────────────────────────────────────────────────────────────────────
 
-# Its job is that both halves of a date are somebody's decision: one person
-# asks, one person answers, and the app is built so that both are worth doing.
-'both.title':
-  fi: 'Kutsu, ja vastaa kutsuihin'
-  en: 'Invite, and answer invitations'
+'petals.title':
+  fi: 'Terälehdet ovat Pilkkeen valuutta.'
+  en: 'Petals are Pilke’s currency.'
 
-'both.lead':
-  fi: 'Treffit syntyvät vain jos joku kutsuu ja joku vastaa. Pilke on tehty niin, että molemmat kannattavat.'
-  en: 'A date happens only if somebody asks and somebody answers. Pilke is built so that both are worth doing.'
+'petals.body':
+  fi: 'Ansaitset niitä käymällä treffeillä ja pitämällä kalenterisi ajan tasalla. Viidellä terälehdellä lähetät treffikutsun.'
+  en: 'You earn them by going on dates and keeping your calendar up to date. Five petals send a date invitation.'
 
-'both.invite.title':
-  fi: 'Kutsu ensin'
-  en: 'Invite first'
+'petals.earn':
+  fi: 'Näin niitä kertyy'
+  en: 'How they add up'
 
-'both.invite.body':
-  fi: 'Terälehdet ovat Pilkkeen valuutta. Ansaitset niitä käymällä treffeillä ja kulutat niitä lähettämällä treffikutsuja.'
-  en: 'Petals are Pilke’s currency: you earn them by going on dates and spend them by sending date invitations.'
+'petals.calendar.amount':
+  fi: '+1'
+  en: '+1'
 
-'both.answer.title':
-  fi: 'Vastaa kutsuun'
-  en: 'Answer an invitation'
+'petals.calendar.note':
+  fi: 'enintään 4 viikossa'
+  en: 'at most 4 a week'
 
-'both.answer.body':
-  fi: 'Kutsuun vastaaminen ei kuluta mitään. Kieltäydy vapaasti, siitä ei seuraa sinulle mitään. Kutsu on voimassa vuorokauden ja raukeaa itsestään, jos jätät sen.'
-  en: 'Answering costs you nothing. Turn one down freely, and nothing follows for you. An invitation stands for a day and lapses by itself if you leave it.'
+'petals.date.amount':
+  fi: '+2'
+  en: '+2'
 
-'both.note':
-  fi: 'Treffeillä käyminen ja palautteen antaminen tuovat terälehtiä, eli seuraavan kutsun. Määrät voivat muuttua betan aikana.'
-  en: 'Going on dates and giving feedback earn petals, which is your next invitation. The amounts may change during the beta.'
+'petals.date.note':
+  fi: 'kun olet kertonut miten meni'
+  en: 'once you have said how it went'
 
-'both.more':
+'petals.highlight':
+  fi: 'Käy treffeillä ja pidä kalenterisi ajan tasalla, niin pääset kutsumaan itse.'
+  en: 'Go on dates and keep your calendar up to date, and you get to invite someone yourself.'
+
+'petals.rose.alt':
+  fi: 'Ruusu, jonka viidestä terälehdestä kaksi on kerätty.'
+  en: 'A rose with two of its five petals collected.'
+
+'petals.more':
   fi: 'Terälehdet ja koko kierto tarkemmin'
   en: 'Petals and the whole loop in detail'
 
 # ──────────────────────────────────────────────────────────────────────────
-# Safety, on the front page
+# Safety
 #
-# Three short cards and one forward-looking note. Not the same three as the
-# cards on `turvallisuus`: the location window replaces the report here,
-# because a reader who has not used the app yet is served better by what the
-# app will not do with their whereabouts than by how to complain afterwards.
-#
-# The label of the link on to the safety page is `safety.more`, in
-# `turvallisuus.yaml`.
+# Two cards, venues first because a reader who has not used the app yet is best
+# served by where they will be sent; the trusted person and the button are one card,
+# because the one does nothing without the other. The page at `turvallisuus` carries
+# the whole of it.
 # ──────────────────────────────────────────────────────────────────────────
 
-# The safety block on the front page. Three short cards; the page at
-# `turvallisuus` carries the whole of it. The location card is here because it
-# is the most concrete thing this product can say and it says it in numbers.
 'safety.front.title':
-  fi: 'Turvallisuus ei ole lisäosa'
-  en: 'Safety is not an add-on'
+  fi: 'Turvallisuus on mukana alusta asti.'
+  en: 'Safety is built in from the start.'
 
 'safety.front.lead':
-  fi: 'Tuntemattoman tapaaminen on eri asia kuin viestittely. Siihen Pilkkeessä on kolme työkalua, ja ne kannattaa ottaa käyttöön ennen ensimmäisiä treffejä.'
-  en: 'Meeting a stranger is a different thing from messaging one. Pilke has three tools for it, and they are worth setting up before your first date.'
-
-'safety.card.contact.title':
-  fi: 'Luotettava läheinen'
-  en: 'A trusted person'
-
-'safety.card.contact.body':
-  fi: 'Tallennat asetuksiin yhden numeron. Se on ainoa numero, johon sovellus voi lähettää viestin puolestasi.'
-  en: 'You save one number in the settings. It is the only number the app can text on your behalf.'
-
-'safety.card.button.title':
-  fi: 'Turvapainike'
-  en: 'The safety button'
-
-'safety.card.button.body':
-  fi: 'Treffinäytöllä. Yksi painallus lähettää läheisellesi tekstiviestin: siinä on nimesi ja pyyntö ottaa yhteyttä. Se ei kerro sijaintiasi, treffipaikkaa eikä mitään toisesta osapuolesta.'
-  en: 'On the date screen. One press texts your trusted person: the message carries your name and a request to get in touch. It names no location, no venue and nothing about the person you are meeting.'
+  fi: 'Tuntemattoman tapaaminen on eri asia kuin viestittely. Siksi valitsemme treffipaikat itse ja annamme sinulle turvapainikkeen. Ota se käyttöön ennen ensimmäisiä treffejä.'
+  en: 'Meeting a stranger is a different thing from messaging one. So we choose the venues ourselves and give you a safety button. Set it up before your first date.'
 
 'safety.card.places.title':
   fi: 'Paikat valitsemme itse'
   en: 'We choose the places'
 
 'safety.card.places.body':
-  fi: 'Treffipaikat eivät ole käyttäjien ehdotuksia. Jokainen niistä on julkinen paikka, jonka olemme itse valinneet: kahvila, ravintola tai muu tila, jossa on muita ihmisiä ympärillä.'
-  en: 'Date venues are not user suggestions. Every one of them is a public place we picked ourselves: a cafe, a restaurant, somewhere with other people around.'
+  fi: 'Jokainen treffipaikka on julkinen paikka, jonka olemme itse valinneet: kahvila, ravintola tai muu tila, jossa on muita ihmisiä ympärillä.'
+  en: 'Every venue is a public place we picked ourselves: a cafe, a restaurant or somewhere else with other people around.'
+
+'safety.card.button.title':
+  fi: 'Turvapainike'
+  en: 'The safety button'
+
+'safety.card.button.body':
+  fi: 'Tallenna asetuksiin luotettavan läheisen numero. Treffien aikana yksi painallus lähettää hänelle tekstiviestin, jossa pyydät häntä ottamaan yhteyttä.'
+  en: 'Save a trusted person’s number in the settings. During a date, one press sends them a text asking them to get in touch.'
+
+# The location window as one figure. `POSITION_PROXIMITY_RADIUS` in the backend.
+'safety.radius.value':
+  fi: '300 m'
+  en: '300 m'
+
+'safety.radius.label':
+  fi: 'treffipaikan ympärillä'
+  en: 'around the venue'
+
+'safety.location':
+  fi: 'Sijaintisi näkyy vain treffeillä ja vain jos itse valitset.'
+  en: 'Your location shows only on a date, and only if you choose.'
 
 # Forward-looking, and marked as such in the copy itself. It sits under the
 # cards rather than in one, because a card next to two shipped features reads
@@ -262,5 +228,5 @@
   en: 'Coming: strong electronic identification'
 
 'safety.future.body':
-  fi: 'Haluamme varmistaa käyttäjien henkilöllisyyden suomalaisella vahvalla tunnistautumisella. Sitä ei ole vielä käytössä, emmekä lupaa sille päivämäärää.'
-  en: 'We want to verify identities using Finnish strong electronic identification. It is not in the app yet, and we are not promising a date for it.'
+  fi: 'Haluamme varmistaa käyttäjien henkilöllisyyden suomalaisella vahvalla tunnistautumisella. Kerromme, kun se on käytössä.'
+  en: 'We want to verify identities with Finnish strong electronic identification. We will tell you when it is in use.'

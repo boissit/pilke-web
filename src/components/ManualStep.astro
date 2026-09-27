@@ -13,7 +13,7 @@
  * looking at it; the alt text and the step's own words carry the same thing for
  * somebody who is not, and a stray "1" read out after the alt would be noise.
  *
- * The slot is the step's text as HTML, and it is styled by `.manual` in `bold.css`
+ * The slot is the step's text as HTML, and it is styled by `.manual` in `soft.css`
  * rather than here, because Markdown output carries no scope attribute.
  */
 import Phone from './Phone.astro';
@@ -44,7 +44,7 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
 <div class="step">
   {
     still.image ? (
-      <Phone src={still.image} alt={still.alt} width={280} still={id}>
+      <Phone src={still.image} alt={still.alt} width={280} still={id} bars="keep" shell="var(--ground)">
         {still.markers.length > 0 && (
           <svg class="leaders" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
             {still.markers.map((marker) => {
@@ -98,7 +98,7 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
     /* Only tells once the text has wrapped under: the phone then sits in the middle
        of a phone-width page rather than hard against one edge. */
     justify-content: center;
-    gap: var(--pad-large);
+    gap: clamp(28px, 3vw, 48px);
   }
 
   .step-text {
@@ -110,10 +110,11 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
     The annotation layer: the ring round an element, the badge that numbers it and
     the leader between them, all in `--annotation` and nothing else.
 
-    WARNING: **None of it may look like part of the app.** The screenshots are the
-    app's own coral fills, ink borders and flat offset shadows, which is every
-    control a reader is about to look for, so a marker drawn in those reads as one
-    more button on the screen. Blue, a dashed edge, a sans numeral and no shadow
+    WARNING: **None of it may look like part of the app, or of this site.** The
+    screenshots are the app's own coral fills, ink borders and flat offset shadows,
+    which is every control a reader is about to look for, and the page around them
+    is peach, coral and mint; a marker drawn in any of those reads as one more
+    button on the screen. Blue, a dashed edge, a sans numeral and no shadow
     are what a hand marking up a screenshot draws, and nothing the app draws is any
     of them. The white on each side is what keeps them visible on a dark map as
     well as on a pale card.
@@ -166,14 +167,15 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
     border: 1.5px solid var(--annotation-halo);
     border-radius: 50%;
     font-family: var(--font-body);
-    font-weight: 800;
+    font-weight: 700;
     font-size: 6cqw;
     line-height: 1;
     font-variant-numeric: tabular-nums;
     pointer-events: none;
   }
 
-  /* The phone is 280 wide by the 1080 × 2280 the stills are captured at. */
+  /* The phone is 280 wide by the 1080 × 2280 the stills are captured at, with the
+     frame's corner. */
   .missing {
     flex: 0 0 auto;
     width: 280px;
@@ -186,13 +188,13 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
     justify-content: center;
     gap: var(--pad-normal);
     text-align: center;
-    background: var(--brand-background);
-    border: var(--edge) dashed var(--ink);
-    border-radius: 30px;
+    background: var(--ground);
+    border: 2px dashed var(--brand-main);
+    border-radius: 45px;
   }
 
   .missing-title {
-    font-weight: 800;
+    font-weight: 700;
   }
 
   .missing-alt {
@@ -201,6 +203,6 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
 
   .missing code {
     font-size: 0.8125rem;
-    color: var(--muted);
+    color: var(--text-soft);
   }
 </style>

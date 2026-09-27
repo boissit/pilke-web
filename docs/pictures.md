@@ -17,9 +17,20 @@ read off a file.
    which mock partner the fixture paired you with.
 3. `npm run build && npm run pictures -- --check`, which fails if a page draws a picture this
    document does not account for.
-4. Verify by decoding the built file, not the source: `dist/_astro/<name>.<hash>.webp`. The
+4. If a reshoot changes the colour a screen stands on, change its entry in `grounds` in
+   `src/assets/screens.ts` to match. The phone frame insets each marketing shot on that
+   colour so its rounded corner never cuts into the app, and a stale entry draws a band
+   of the old colour round the new picture.
+5. Verify by decoding the built file, not the source: `dist/_astro/<name>.<hash>.webp`. The
    optimiser keys its cache on the source path rather than the content, so a changed image at
    an unchanged path can serve stale. `rm -rf node_modules/.astro` before a build settles it.
+
+**What a reader sees of a marketing shot is less than the file.** `Phone.astro` crops the
+device's status bar and navigation bar off every picture in `src/assets/screens` — 96px off
+the top and 136px off the bottom of 2280, the same on every still because every still is
+taken on the same emulator profile — so a change that only touches those bars changes
+nothing on the site. A reshoot on a different device profile moves them, and the crop in
+`Phone.astro` has to move with it. The manual's stills are drawn whole, bars included.
 
 Not every screen the flows take is carried here. `screenshots.yaml` also shoots the
 calendar and the question sets, and neither has a place on the site; the way to bring one
@@ -53,7 +64,8 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 
 | Page | Pictures, in the order they appear |
 | --- | --- |
-| `/en.html/` | `treffit` 600px<br>`platter` 600px<br>`invitation` 600px<br>`date` 600px<br>`feedback` 600px<br>`asetukset` 460px |
+| `/404.html/` | none |
+| `/en.html/` | `treffit` 620px<br>`story` 520px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`asetukset` 580px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kutsut.html/` | `en/invitation` 560px<br>`en/sent` 560px |
@@ -72,7 +84,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset` 520px |
-| `/` | `treffit` 600px<br>`platter` 600px<br>`invitation` 600px<br>`date` 600px<br>`feedback` 600px<br>`asetukset` 460px |
+| `/` | `treffit` 620px<br>`story` 520px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`asetukset` 580px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |

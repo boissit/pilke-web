@@ -53,54 +53,70 @@ const pages = await manualPages();
 </Base>
 
 <style>
-  /* A ruled list, as the ledgers on `nain-se-toimii` are: each row a numeral, the
-     title that is the link and the page's own lead under it. The numeral hangs in
-     its own column so the titles line up down the page. */
+  /* One soft card per page of the manual, numbered in a coral disc: the order is
+     the point of the list, so the numeral is the first thing on each card and the
+     titles line up beside it down the page. The whole card is not the link — the
+     title is — so a reader selecting the lead does not follow it by accident. */
   .pages {
     list-style: none;
+    margin: 0;
     padding: 0;
-    border-bottom: var(--edge) solid var(--ink);
+    display: grid;
+    gap: 12px;
     counter-reset: page;
   }
 
   .pages li {
     position: relative;
-    padding-block: var(--pad-normal);
-    padding-left: 2.75rem;
-    border-top: var(--edge) solid var(--ink);
+    padding: 20px 22px 20px 76px;
+    background: var(--ground);
+    border-radius: var(--radius-card);
     counter-increment: page;
   }
 
   .pages li::before {
     content: counter(page);
     position: absolute;
-    left: 0;
-    top: var(--pad-normal);
+    left: 20px;
+    top: 18px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--brand-main);
     font-family: var(--font-display);
-    font-size: 1.5rem;
-    line-height: 1.2;
-  }
-
-  .pages a {
-    font-weight: 800;
+    font-weight: 600;
     font-size: 1.125rem;
   }
 
-  .pages p {
-    margin-top: var(--pad-small);
-    max-width: 60ch;
+  .pages a {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.1875rem, 0.29vw + 1.12rem, 1.375rem);
+    line-height: 1.5;
   }
 
-  /* Dashed, as every unsettled thing on the site is. */
+  .pages p {
+    margin-top: 2px;
+    max-width: 60ch;
+    color: var(--text-soft);
+  }
+
   .tag {
-    display: inline-block;
     margin-left: var(--pad-normal);
-    padding: 0 var(--pad-small);
-    border: var(--border-width) dashed var(--ink);
-    border-radius: var(--radius-small);
-    background: var(--brand-background);
-    font-size: 0.8125rem;
-    font-weight: 700;
-    vertical-align: 0.15em;
+    vertical-align: 0.2em;
+  }
+
+  /* On a phone this is a card inside a card, so both give back some of their side
+     room to the text. */
+  @media (max-width: 39.99rem) {
+    .pages li {
+      padding: 18px 16px 18px 62px;
+    }
+
+    .pages li::before {
+      left: 12px;
+    }
   }
 </style>

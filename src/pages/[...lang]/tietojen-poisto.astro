@@ -122,49 +122,58 @@ const kept = [
   }
 
   .wrap > .prose + .display-mid {
-    margin-top: var(--pad-large);
+    margin-top: 40px;
   }
 
-  .provisional {
-    border-style: dashed;
-    box-shadow: none;
-    background: var(--brand-background);
+  /* The provisional notice opens this card, so it has no gap of its own above. */
+  .wrap > .provisional {
+    margin-top: 0;
+    margin-bottom: var(--pad-medium);
   }
 
-  .provisional h2 {
-    font-family: var(--font-body);
-    font-weight: 800;
-    font-size: 1.125rem;
-  }
-
-  .provisional p {
-    margin-top: var(--pad-normal);
-    max-width: 60ch;
+  .display-mid {
+    font-size: clamp(1.75rem, 1.33vw + 1.43rem, 2.625rem);
   }
 
   /* The two lists are equal columns rather than a wide one and a narrow one: the
      comparison is the content, and a reader who skims only the left column has
-     been misled. */
+     been misled. Each is a white card on the peach section, so the two read as a
+     pair of equals. */
   .ledgers {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: clamp(2rem, 5vw, 3rem);
+    gap: 16px;
+  }
+
+  .wrap.ledgers > * + * {
+    margin-top: 0;
+  }
+
+  .ledgers > div {
+    padding: clamp(22px, 2vw + 14px, 36px);
+    background: var(--surface);
+    border-radius: var(--radius-card);
   }
 
   .ledgers h2 {
-    font-family: var(--font-body);
-    font-weight: 800;
-    font-size: 1.25rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.375rem, 0.38vw + 1.28rem, 1.625rem);
   }
 
   .ledgers .lead-in {
     margin-top: var(--pad-normal);
     max-width: 44ch;
+    color: var(--text-soft);
   }
 
   .ledgers ul {
     margin-top: var(--pad-medium);
-    padding-left: var(--pad-large);
+    padding-left: 1.25rem;
+  }
+
+  .ledgers li::marker {
+    color: var(--brand-main);
   }
 
   .ledgers li + li {

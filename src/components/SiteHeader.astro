@@ -1,40 +1,33 @@
 ---
 /**
- * The bar every page carries: the wordmark, the subpages, the manual, the language.
+ * The bar every page carries: a white pill floating on the page, with the wordmark,
+ * the subpages, the manual, the language and the one thing the site asks for.
+ *
+ * Wide, the links sit in the pill between the wordmark and the button. Narrow, they
+ * fold into a menu behind a round button beside it, and the button stays: joining
+ * the beta is the one action a reader on a phone should never have to open a menu
+ * to find.
+ *
+ * The menu is a `<details>`, not a script. It opens and closes with a tap or the
+ * keyboard, is announced as expandable, and keeps the footer's form the only
+ * JavaScript on the site.
  */
 import Logo from './Logo.astro';
-import { manualHref, manualRouteIn } from '../i18n/manual';
+import { manualHref } from '../i18n/manual';
+import { otherLanguage, otherLanguageHref } from '../i18n/switch';
 import { languages, localePath, useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
+  /** Where the language link goes, when this page has no twin in the other language. */
+  alternate?: string;
 }
 
-const { lang } = Astro.props;
+const { lang, alternate } = Astro.props;
 const t = useTranslations(lang);
 
-const other: Lang = lang === 'fi' ? 'en' : 'fi';
-
-/*
-  The path this page is on, without its language prefix, so the language link
-  points at the same page in the other language rather than at the front page.
-  A reader halfway down the safety page who switches to English should still be
-  on the safety page.
-
-  The build is `format: 'file'`, so while building the path is the file's —
-  `/en/turvallisuus.html`, `/index.html`, `/en.html` — and the extension and an
-  `index` are dropped before the language is, or the front page would link to
-  `/.html`.
-
-  The manual is the one section whose path is spelled differently per language —
-  `/ohje` and `/en/guide` — so its segment is translated on the way across.
-*/
-const path = Astro.url.pathname.replace(/\.html$/, '').replace(/(^|\/)index$/, '$1');
-const route = manualRouteIn(
-  path.replace(/^\/en(\/|$)/, '/').replace(/^\/+/, '').replace(/\/$/, ''),
-  lang,
-  other,
-);
+const other = otherLanguage(lang);
+const switchHref = alternate ?? otherLanguageHref(Astro.url.pathname, lang);
 
 const nav = [
   { href: localePath(lang, 'nain-se-toimii'), label: t('nav.how') },
@@ -42,76 +35,181 @@ const nav = [
   { href: localePath(lang, 'kysyttya'), label: t('nav.questions') },
   { href: manualHref(lang), label: t('nav.manual') },
 ];
+
+// The page being read, as the links spell it, so its own link can say so.
+const here = Astro.url.pathname.replace(/\.html$/, '').replace(/\/index$/, '') || '/';
+const current = (href: string) => here === href || here.startsWith(`${href}/`);
 ---
 
 <header class="site-head">
-  <div class="wrap head-inner">
-    <a class="brand" href={localePath(lang)} aria-label="Pilke">
-      <Logo size={30} />
+  <div class="wrap pill">
+    <a class="brand" href={localePath(lang)} aria-label={t('nav.home')}>
+      <Logo size={32} />
     </a>
 
-    <nav aria-label={t('meta.title')}>
-      <ul class="nav-list">
+    <nav class="inline" aria-label={t('nav.main')}>
+      <ul>
         {nav.map((item) => (
-          <li><a href={item.href}>{item.label}</a></li>
+          <li><a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a></li>
         ))}
-        <li>
-          <a class="lang" href={localePath(other, route)} lang={other} hreflang={other}>
-            {languages[other]}
-          </a>
-        </li>
+        <li><a href={switchHref} lang={other} hreflang={other}>{languages[other]}</a></li>
       </ul>
     </nav>
+
+    <div class="actions">
+      <a class="go coral join" href="#beta">{t('cta.button')}</a>
+
+      <details class="menu">
+        <summary>
+          <span class="visually-hidden">{t('nav.menu')}</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <path d="M3 7h14M3 13h14" />
+          </svg>
+        </summary>
+        <nav aria-label={t('nav.main')}>
+          <ul>
+            {nav.map((item) => (
+              <li><a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a></li>
+            ))}
+            <li><a href={switchHref} lang={other} hreflang={other}>{languages[other]}</a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
   </div>
 </header>
 
 <style>
   .site-head {
-    background: var(--brand-main);
-    border-bottom: var(--border-width) solid var(--ink);
+    padding: clamp(12px, 0.76vw + 9px, 20px) var(--gutter-tight) 8px;
   }
 
-  .head-inner {
+  /* Its own layer, so the open menu lies over the hero card below it. */
+  .pill {
+    position: relative;
+    z-index: 20;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: var(--pad-normal);
-    padding-block: var(--pad-normal);
+    gap: var(--pad-medium);
+    min-height: clamp(64px, 0.76vw + 61px, 72px);
+    padding: 0 clamp(10px, 0.19vw + 9px, 12px) 0 clamp(22px, 0.95vw + 18px, 32px);
+    background: var(--surface);
+    border-radius: 999px;
+    box-shadow: 0 1px 2px rgb(58 46 43 / 0.06), 0 10px 30px rgb(58 46 43 / 0.07);
   }
 
-  /* `Logo` carries its own geometry, so the anchor only has to not interfere
-     with it. `inline-flex` rather than `inline-block`: the lockup is a flex row
-     of a word and a block-level drawing, and an inline-block anchor around it
-     adds a line box under the mark that the header would then centre against. */
+  /* `Logo` carries its own geometry, so the anchor only has to not interfere with
+     it. `inline-flex` rather than `inline-block`: an inline-block anchor round a
+     flex row adds a line box under the mark that the pill would centre against. */
   .brand {
     display: inline-flex;
     text-decoration: none;
   }
 
-  .nav-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--pad-medium);
+  ul {
     list-style: none;
+    margin: 0;
     padding: 0;
   }
 
-  .nav-list a {
+  a:not(.go) {
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
   }
 
-  .nav-list a:hover {
+  a:not(.go):hover,
+  a[aria-current='page'] {
     text-decoration: underline;
+    text-decoration-color: var(--brand-main);
   }
 
-  /* The language link is the one control on the page, so it looks like one. */
-  .lang {
-    border: var(--border-width) solid var(--ink);
-    border-radius: var(--radius-normal);
-    padding: 2px var(--pad-normal);
-    background: var(--white);
+  .inline ul {
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 2vw, 32px);
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .join {
+    min-height: 44px;
+    padding-inline: clamp(18px, 0.57vw + 16px, 24px);
+    font-size: clamp(0.9375rem, 0.1vw + 0.9rem, 1rem);
+    white-space: nowrap;
+  }
+
+  .menu {
+    position: relative;
+  }
+
+  .menu summary {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    background: var(--ground);
+    color: var(--text);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .menu summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .menu[open] summary {
+    background: var(--brand-background);
+  }
+
+  .menu nav {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 18px);
+    min-width: 14rem;
+    padding: 12px;
+    background: var(--surface);
+    border-radius: 24px;
+    box-shadow: var(--shadow-float);
+  }
+
+  .menu a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 14px;
+    border-radius: 14px;
+  }
+
+  .menu a:hover {
+    background: var(--ground);
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  /* The links move into the pill once there is room for all five beside the
+     wordmark and the button, in the longer of the two languages. */
+  @media (min-width: 64rem) {
+    .menu {
+      display: none;
+    }
+  }
+
+  @media (max-width: 63.99rem) {
+    .inline {
+      display: none;
+    }
   }
 </style>

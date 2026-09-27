@@ -2,16 +2,14 @@
  * The eight petals as pure geometry: one silhouette each, in the box they share.
  *
  * Ported from `pilke-app/assets/rose/petal-*.svg`, the same artwork the app draws a
- * grant with. The site draws them in one place only — the tiled texture behind its
- * slabs — and it draws them **flat**: the files' stroked interior creases and each
- * shape's own baked rotation are left in the app, because a mark at a tenth of a
- * 300px tile is thirty pixels across, where an outline over three creases reads as
- * grit rather than as a petal, and the tile's own angles are one of the things keeping
- * five marks off a grid.
+ * grant with. The site draws them in one place only — the few large petals
+ * `PetalScatter.astro` lays behind a card — and it draws them **flat**: the files'
+ * stroked interior creases and each shape's own baked rotation are left in the app,
+ * because a pale mark behind text wants a silhouette and nothing inside it, and the
+ * scatter's own angles are what keep two marks on one card from looking stamped.
  *
- * All eight are carried, not only the five the tile names. They are the artwork's set,
- * `PETAL_INK_RADIUS` is measured across all of them, and a placement can be re-pointed
- * at another shape without a trip back to the app.
+ * All eight are carried, not only the ones a card names. They are the artwork's set,
+ * and a placement can be re-pointed at another shape without a trip back to the app.
  */
 
 /**
@@ -38,34 +36,11 @@ export const petalSilhouettes: readonly PetalSilhouette[] = [
 ];
 
 /**
- * The radius the ink actually reaches, in the petals' own 240-unit box: **95 units from
- * the box's centre**, which is where a placement turns.
- *
- * ⚠️ **Not the box's half-diagonal, and substituting that is what breaks a placement.**
- * The box is not drawn tight to the artwork — it carries 25 to 50 units of dead margin
- * on every side — so its half-diagonal is 170 where the ink stops at 95. Read the box's
- * way, the largest mark in the tile fails clearance against an edge it is nowhere near.
- *
- * 95 is the farthest **control point** of any of the eight silhouettes from the box's
- * centre (`fan`'s, at 94.76), rounded up. Control points rather than sampled curves,
- * because a cubic lies inside the convex hull of its own control points, so a bound over
- * those bounds the drawn curve too. One figure for all eight rather than one each: the
- * shapes share a box precisely so they need no per-shape fitting.
- */
-export const PETAL_INK_RADIUS = 95;
-
-/** How much room a petal drawn at `size` needs each way, as a fraction of the tile. */
-export function petalClearance(size: number): number {
-  return (size * PETAL_INK_RADIUS) / PETAL_VIEWBOX;
-}
-
-/**
  * The silhouette a name asks for.
  *
  * ⚠️ **It throws rather than falling back on a shape that exists.** The two ways of
- * surviving a bad name are both worse than a failed build: drawing one shape five times
- * is the lattice the tile is arranged to avoid, and dropping the mark thins the texture
- * silently.
+ * surviving a bad name are both worse than a failed build: substituting a shape puts
+ * two identical petals on one card, and dropping the mark leaves a card silently bare.
  */
 export function petalSilhouette(name: string): string {
   const shape = petalSilhouettes.find((candidate) => candidate.name === name);

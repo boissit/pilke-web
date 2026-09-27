@@ -15,7 +15,7 @@
  * README, and a marketing page stating a price the product does not charge is
  * worse than a page that stays vague.
  */
-import { shots } from '../../assets/screens';
+import { grounds, shots } from '../../assets/screens';
 import RoseCount from '../../components/RoseCount.astro';
 import PageHead from '../../components/PageHead.astro';
 import Phone from '../../components/Phone.astro';
@@ -54,13 +54,13 @@ const changes = [
         <h2 class="display-mid small">{t('detail.prefs.title')}</h2>
         <p class="prose">{t('detail.prefs.body')}</p>
       </div>
-      <Phone src={shots.story} alt={t('shot.story')} width={250} tilt="right" />
+      <Phone src={shots.story} ground={grounds.story} alt={t('shot.story')} width={250} tilt="right" shell="var(--ground)" />
     </div>
   </section>
 
   <section class="slab slab-pale">
     <div class="wrap section-pad split">
-      <Phone src={shots.platter} alt={t('shot.platter')} width={250} tilt="left" />
+      <Phone src={shots.platter} ground={grounds.platter} alt={t('shot.platter')} width={250} tilt="left" />
       <div class="col">
         <h2 class="display-mid small">{t('detail.draw.title')}</h2>
         <p class="prose">{t('detail.draw.body')}</p>
@@ -133,7 +133,7 @@ const changes = [
           <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
         </p>
       </div>
-      <Phone src={shots.date} alt={t('shot.date')} width={250} tilt="right" />
+      <Phone src={shots.date} ground={grounds.date} alt={t('shot.date')} width={250} tilt="right" shell="var(--ground)" />
     </div>
   </section>
 </Base>
@@ -143,11 +143,19 @@ const changes = [
     margin-top: var(--pad-medium);
   }
 
+  /* Copy beside a phone where there is room, the phone under the copy where there
+     is not. Centred on the cross axis once side by side, so a short column does not
+     leave the phone hanging below it. */
   .split {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
-    gap: var(--pad-large);
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(32px, 4vw, 64px);
+  }
+
+  .split > :global(.phone) {
+    margin-inline: auto;
   }
 
   .col {
@@ -162,19 +170,32 @@ const changes = [
     margin-top: var(--pad-small);
   }
 
+  .col p + h2 {
+    margin-top: 28px;
+  }
+
   .small {
-    font-size: clamp(1.375rem, 3vw, 2rem);
+    font-size: clamp(1.625rem, 1vw + 1.35rem, 2.25rem);
   }
 
   .price {
+    width: fit-content;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--pad-normal);
+    gap: var(--pad-medium);
+    margin-block: 8px;
+    padding: 20px 28px;
+    background: var(--brand-background);
+    border-radius: var(--radius-card);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.1875rem, 0.29vw + 1.12rem, 1.375rem);
+    max-width: none;
   }
 
   /* The mark and the price it carries, with no chip around them: the rose brings
-     its own ink outline, and a pill would be a second ring on the first. */
+     its own outline, and a pill would be a second ring on the first. */
   .price-mark {
     display: flex;
     align-items: center;
@@ -186,36 +207,53 @@ const changes = [
      instead of as the price the rose is. */
   .price-mark b {
     font-family: var(--font-display);
-    font-size: clamp(1.875rem, 4vw, 2.5rem);
-    font-weight: 400;
+    font-size: clamp(2.25rem, 1vw + 2rem, 3rem);
+    font-weight: 600;
     line-height: 1;
   }
 
+  /* Each row a soft pill on the card, as the front page draws its two earning
+     rows: the row is the unit, so it is the thing with an edge. */
+  /* Held to a reading width: a row stretched across a desktop card puts its amount
+     a long way from the line it belongs to. */
   .ledger {
     margin: 0;
+    max-width: 52rem;
     display: grid;
-    gap: 0;
+    gap: 10px;
+  }
+
+  .wrap > .ledger,
+  .wrap > h3 {
+    margin-top: 24px;
   }
 
   .ledger > div {
-    padding: var(--pad-normal) 0;
-    border-top: var(--edge) solid var(--ink);
+    padding: 16px 22px;
+    background: var(--ground);
+    border-radius: 22px;
   }
 
-  .ledger > div:last-child {
-    border-bottom: var(--edge) solid var(--ink);
+  .slab-pale .ledger > div {
+    background: var(--surface);
   }
 
   dt {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
     gap: var(--pad-normal);
-    font-weight: 800;
+    font-weight: 700;
   }
 
-  /* The amounts line up as a column of figures. */
+  /* The amounts are the coral chips the front page gives them. */
   dt b {
+    padding: 4px 14px;
+    background: var(--brand-main);
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 600;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
@@ -223,11 +261,13 @@ const changes = [
   dd {
     margin: var(--pad-small) 0 0;
     max-width: 60ch;
-    color: var(--ink);
+    color: var(--text-soft);
   }
 
   .spend {
-    background: var(--brand-background);
+    max-width: 52rem;
+    background: var(--card-sent);
+    box-shadow: none;
   }
 
   .spend > * + * {

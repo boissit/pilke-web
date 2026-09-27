@@ -4,7 +4,7 @@
  * the terms, because they are the same page with different prose in it.
  *
  * The prose comes from `src/content/legal/` and is styled by `.legal` in
- * `bold.css`, so a document is Markdown and nothing else — no page markup and no
+ * `soft.css`, so a document is Markdown and nothing else — no page markup and no
  * styles of its own. `legalDocuments()` refuses to build one that is missing a
  * language or whose two languages disagree about their version.
  *
@@ -73,19 +73,22 @@ const { Content } = await render(entry);
 
 <style>
   /* The date and the version on one line, above everything: a reader of a legal
-     text needs to know which one they are reading before they read it. The
-     version is set in the mono face because it is an identifier rather than a
-     date somebody says out loud. */
+     text needs to know which one they are reading before they read it. */
   .effective {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     gap: var(--pad-normal);
     font-size: 0.9375rem;
-    color: var(--muted);
+    color: var(--text-soft);
+    max-width: none;
   }
 
+  /* The version as a small pill: it is an identifier to quote, not a date to read. */
   .version {
+    padding: 2px 10px;
+    background: var(--ground);
+    border-radius: 999px;
     font-variant-numeric: tabular-nums;
     letter-spacing: 0.04em;
   }

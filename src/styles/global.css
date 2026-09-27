@@ -1,10 +1,26 @@
 /*
-  The app's design tokens, carried over so the site and the product look like one
-  thing. Values come from pilke-app/src/constants/colors.ts, fonts.ts and
-  dimensions.ts; the names match theirs so a change on either side is easy to
-  trace to the other.
+  The tokens and the base elements every page stands on.
+
+  Two sets of colours, kept apart on purpose. The first is the app's own palette,
+  under the names it has in pilke-app/src/constants/colors.ts, so a change on either
+  side is traceable to the other. The second is what the site adds around it for the
+  Pehmeä direction: a blush ground, a warm ink and the soft rules and shadows the
+  cards are drawn with. Everything a page paints is one of these two sets; a hex
+  literal in a page is a colour nobody can find again.
 */
 
+/*
+  Three faces, each with one job. Courgette is the wordmark and nothing else: at
+  heading sizes on a page of rounded cards it read as decoration rather than as a
+  name. Fredoka carries the display type, round like the cards it sits in. Figtree
+  is the body, chosen for an open, friendly lowercase that stays legible at 14px.
+
+  Self-hosted from `public/fonts`, as Courgette always was, so no page asks a third
+  party for anything. Fredoka and Figtree are the variable files Google Fonts
+  serves, split into its latin and latin-ext subsets: latin holds every letter
+  Finnish uses, and a browser only fetches latin-ext when a page needs a glyph
+  from it, a name with a háček or an ogonek.
+*/
 @font-face {
   font-family: 'Courgette';
   src: url('/fonts/Courgette-Regular.ttf') format('truetype');
@@ -13,61 +29,117 @@
 }
 
 @font-face {
-  font-family: 'OpenSans';
-  src: url('/fonts/OpenSans.ttf') format('truetype');
-  font-weight: 400;
+  font-family: 'Fredoka';
+  src: url('/fonts/Fredoka-latin.woff2') format('woff2');
+  font-weight: 500 600;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: 'OpenSans';
-  src: url('/fonts/OpenSans_bold.ttf') format('truetype');
-  font-weight: 700;
+  font-family: 'Fredoka';
+  src: url('/fonts/Fredoka-latin-ext.woff2') format('woff2');
+  font-weight: 500 600;
   font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 @font-face {
-  font-family: 'OpenSans';
-  src: url('/fonts/OpenSans_extrabold.ttf') format('truetype');
-  font-weight: 800;
+  font-family: 'Figtree';
+  src: url('/fonts/Figtree-latin.woff2') format('woff2');
+  font-weight: 400 700;
   font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Figtree';
+  src: url('/fonts/Figtree-latin-ext.woff2') format('woff2');
+  font-weight: 400 700;
+  font-display: swap;
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 :root {
+  /*
+    Light only. The site has never had a dark theme, and every surface here is a
+    tint of the app's own light palette; a dark variant would be a second design
+    rather than this one inverted. Saying so stops a browser in dark mode from
+    painting form controls and scrollbars dark against a blush page.
+  */
+  color-scheme: light;
+
   /* colors.ts */
   --ink: #3c3c3c;
-  --button-text: #222222;
   --white: #fcf5f7;
   --success: #a8dacb;
-  --muted: #808080;
-  --error: #ff7075;
   --brand-background: #ffe3da;
   --brand-main: #ffa98c;
 
-  /* The four match-list tints, used here to colour the steps of the loop. */
-  /* What a PetalField draws over a brand slab: one per brand colour, and each is
-     that colour a shade deeper by `colors.cardMotif`'s rule in the app — the same
-     two values the app itself uses, so a phone on the page and the page around it
-     are marked the same way.
-
-     ⚠️ **Deeper, never lighter, and on both.** The site used to go deeper on the
-     pale slab and lighter on the saturated one, which is two rules and reads as
-     two textures; the app settled this where its calendar is drawn — a mark
-     lighter than its fill reads as a wash rather than as marks. The lighter one
-     was also a hardcoded yellow that survived a whole rebrand, which is the other
-     reason these live here. */
-  --brand-motif: #fcd8cd; /* on --brand-background; app `cardMotif.confirmed` */
-  --brand-main-motif: #fc9d7e; /* on --brand-main; app calendar `petalColor` */
-
+  /* The four match-list tints. On the site each one keeps the meaning it has in the
+     app: blue is an invitation you sent, pink one you received, peach a date that is
+     confirmed and yellow the feedback after it. The four steps of the loop are
+     coloured by them for exactly that reason. */
   --card-confirmed: #ffe3da;
   --card-sent: #dcfbff;
   --card-received: #ffeafc;
   --card-feedback: #fff8c2;
 
-  /* dimensions.ts */
+  /*
+    The site's own colours around the app's.
+
+    `--text` rather than the app's `--ink` for everything a reader reads: a warm
+    brown-black that sits with peach and coral where the app's neutral grey reads
+    cold beside them. 12.4:1 on the ground. `--text-soft` is the secondary line under
+    a title, and it is dark enough for body text on every pale ground here (5.0:1 on
+    peach, its worst) — **never on coral**, where it falls to 3.3:1, so a note on a
+    coral card is set in `--text`.
+  */
+  --text: #3a2e2b;
+  --text-soft: #6e5f5a;
+  --link-hover: #8f3a26;
+
+  /* A pill under the pointer: the same ground a step lighter or deeper, so a hover
+     is felt without the pill changing colour. */
+  --text-hover: #54433f;
+  --coral-hover: #ff9774;
+
+  /* The page, and the surfaces laid on it. */
+  --ground: #fff8f4;
+  --surface: #ffffff;
+  --rule: #f0ddd5;
+
+  /* The petals scattered behind a card: each is its ground a shade deeper, by the
+     same rule `colors.cardMotif` applies in the app, so a mark never reads as a
+     wash lighter than what it sits on. */
+  --petal-on-peach: #fcd1c3;
+  --petal-on-coral: #ffbda6;
+
+  /* The safety card's ground, and the dashed edge of the one thing on it that has
+     not shipped. Mint because the app draws its confirming controls in `--success`,
+     which is the icon circle on that card. */
+  --mint-ground: #e4f3ee;
+  --mint-edge: #7fb3a2;
+
+  /* The green of the "closed beta" dot is the rose's own foliage. */
+  --leaf: #529a74;
+
+  /* Two depths of shadow, both warm and both soft: a card resting on the page, and
+     a phone held above it. */
+  --shadow-card: 0 1px 2px rgb(58 46 43 / 0.05), 0 8px 24px rgb(58 46 43 / 0.05);
+  --shadow-float: 0 2px 4px rgb(58 46 43 / 0.08), 0 20px 40px rgb(58 46 43 / 0.12);
+
+  /* dimensions.ts, kept for the few controls that still take the app's measures. */
   --radius-small: 8px;
   --radius-normal: 12px;
-  --radius-large: 16px;
   --border-width: 2px;
 
   --pad-small: 6px;
@@ -75,11 +147,27 @@
   --pad-medium: 16px;
   --pad-large: 32px;
 
+  /*
+    The page's measures, each a straight line between what the 390 artboard and the
+    1440 artboard draw, so the page is one composition that grows rather than two
+    that swap. Written as `clamp(phone, slope + intercept, desktop)`.
+
+    `--gutter` is the room either side of every card; `--gutter-tight` is the
+    header's and the hero's, which run a little wider on a phone so the first
+    screen is mostly card.
+  */
+  --gutter: clamp(16px, 6.1vw - 7.8px, 80px);
+  --gutter-tight: clamp(12px, 6.48vw - 13.3px, 80px);
+  --section-space: clamp(64px, 5.33vw + 43.2px, 120px);
+  --radius-panel: clamp(32px, 1.52vw + 26px, 48px);
+  --radius-card: 28px;
+  --page-max: 1280px;
+
   --measure: 34rem;
 
-  /* fonts.ts pairs Courgette for display with OpenSans for everything else. */
-  --font-display: 'Courgette', 'Segoe Script', cursive;
-  --font-body: 'OpenSans', system-ui, -apple-system, sans-serif;
+  --font-wordmark: 'Courgette', 'Segoe Script', cursive;
+  --font-display: 'Fredoka', 'Trebuchet MS', sans-serif;
+  --font-body: 'Figtree', 'Trebuchet MS', system-ui, sans-serif;
 }
 
 *,
@@ -90,52 +178,74 @@
 
 body {
   margin: 0;
-  background: var(--white);
-  color: var(--ink);
+  background: var(--ground);
+  color: var(--text);
   font-family: var(--font-body);
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  /* A tilted phone or a petal hanging off a card must never widen the page. `clip`
+     rather than `hidden`, because `hidden` makes the body a scroll container and
+     breaks `position: sticky` anywhere below it. */
+  overflow-x: clip;
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--font-display);
-  font-weight: 400;
-  line-height: 1.2;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
   text-wrap: balance;
   margin: 0;
 }
 
 h1 {
-  font-size: clamp(2.25rem, 6vw, 3.75rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
 }
 
 h2 {
   font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 
+/* A third-level heading is a label on a card, so it is the body face at weight:
+   Fredoka below about 22px reads as a sticker rather than as a heading. */
 h3 {
   font-family: var(--font-body);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.125rem;
+  line-height: 1.3;
+  letter-spacing: 0;
 }
 
 p {
   margin: 0;
   max-width: var(--measure);
+  text-wrap: pretty;
 }
 
 a {
-  color: var(--ink);
+  color: var(--text);
   text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--brand-main);
 }
 
+a:hover {
+  color: var(--link-hover);
+}
+
+/*
+  One focus ring for every control on the site: the page's own ink, three pixels,
+  held off the element so it reads on any of the grounds. Pills get it round the
+  pill because `outline` follows `border-radius`.
+*/
 a:focus-visible,
-button:focus-visible {
-  outline: 3px solid var(--ink);
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--text);
   outline-offset: 3px;
 }
 
@@ -151,9 +261,19 @@ ul {
 
 .wrap {
   width: 100%;
-  max-width: 68rem;
+  max-width: var(--page-max);
   margin-inline: auto;
-  padding-inline: var(--pad-medium);
+}
+
+/* The floating header sits above whatever an in-page link scrolls to. */
+[id] {
+  scroll-margin-top: var(--pad-medium);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

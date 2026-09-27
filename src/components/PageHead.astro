@@ -1,12 +1,14 @@
 ---
 /**
- * The slab a subpage opens with: title, lede, and the petal field behind them.
+ * The card a subpage opens with: title, lede, and a few petals behind them.
  *
- * The front page opens with the hero instead, which is a different arrangement —
- * a headline beside a phone. The other three open identically, so they open from
- * here, and a coral band at the top of one of them cannot drift from the rest.
+ * The front page opens with the hero instead, which is a different arrangement — a
+ * headline beside a phone. Every other page opens identically, so they open from here,
+ * and the peach card at the top of one of them cannot drift from the rest. It is the
+ * hero's ground and the hero's petals, so a reader who came from the front page is
+ * visibly on the same site.
  */
-import PetalField from './PetalField.astro';
+import PetalScatter from './PetalScatter.astro';
 
 interface Props {
   title: string;
@@ -16,29 +18,35 @@ interface Props {
 const { title, lead } = Astro.props;
 ---
 
-<section class="slab slab-brand">
-  <!--
-    The mark is its ground a shade deeper — the same rule everywhere on the site and
-    in the app, and the reason both values live in `global.css` rather than here.
-    There used to be a lighter tint hardcoded at this spot, and it was still yellow a
-    whole rebrand later.
-  -->
-    <PetalField tile={320} background="var(--brand-main)" petal="var(--brand-main-motif)" />
-  <div class="wrap section-pad head">
+<section class="slab slab-pale head">
+  <div class="wrap section-pad">
+    <PetalScatter
+      fill="var(--petal-on-peach)"
+      petals={[
+        { shape: 'spoon', size: 110, rotate: 24, right: '9%', top: '28px', only: 'wide' },
+        { shape: 'spoon', size: 64, rotate: 24, right: '14px', top: '14px', only: 'narrow' },
+        { shape: 'curl', size: 120, rotate: -30, right: '26%', bottom: '-44px', only: 'wide' },
+      ]}
+    />
     <h1 class="display-mid">{title}</h1>
     <p class="lede">{lead}</p>
   </div>
 </section>
 
 <style>
-  .head > * + * {
-    margin-top: var(--pad-medium);
+  /* The head sits a little tighter under the header than a section under another. */
+  .head {
+    padding-top: clamp(4px, 1.52vw - 2px, 16px);
   }
 
-  /* Narrower than the ledes further down a page. This one sits under a display
-     title with nothing beside it, and at the full measure it runs wider than the
-     title it belongs to. */
-  .head .lede {
+  /* Room on the right for the petal, so a long title never runs under it. */
+  h1 {
+    max-width: min(18ch, calc(100% - 64px));
+    font-size: clamp(2.5rem, 2.67vw + 1.85rem, 4.25rem);
+  }
+
+  .lede {
+    margin-top: clamp(12px, 0.76vw + 9px, 20px);
     max-width: 44ch;
   }
 </style>

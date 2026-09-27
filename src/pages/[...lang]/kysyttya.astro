@@ -54,21 +54,26 @@ const faq = [
 </Base>
 
 <style>
+  /* One soft card per answer, as the front page draws each of its claims: a reader
+     scanning for their question reads the bold lines down the cards. */
   .faq {
     margin: 0;
+    max-width: 52rem;
     display: grid;
-    gap: var(--pad-large);
+    gap: 12px;
   }
 
   .qa {
-    border-top: var(--edge) solid var(--ink);
-    padding-top: var(--pad-medium);
+    padding: clamp(20px, 1.5vw + 14px, 28px);
+    background: var(--ground);
+    border-radius: var(--radius-card);
   }
 
   dt {
-    font-family: var(--font-body);
-    font-weight: 800;
-    font-size: 1.125rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.25rem, 0.38vw + 1.16rem, 1.5rem);
+    line-height: 1.2;
   }
 
   dd {
@@ -78,6 +83,5 @@ const faq = [
 
   .back {
     margin-top: clamp(2rem, 5vw, 3rem);
-    max-width: none;
   }
 </style>

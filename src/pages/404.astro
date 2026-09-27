@@ -1,0 +1,49 @@
+---
+/**
+ * The page GitHub Pages serves for any address it has no file for.
+ *
+ * One file at `/404.html` for both languages, because Pages serves the same one
+ * whatever the path was. It is written in Finnish, the product's language, and says
+ * the same in a line of English under it, so a reader who followed a broken `/en`
+ * link is not left guessing. The language switch in the header and the footer points
+ * at the English front page: this page has no English twin to switch to.
+ */
+import PageHead from '../components/PageHead.astro';
+import { localePath, useTranslations } from '../i18n/ui';
+import Base from '../layouts/Base.astro';
+
+const t = useTranslations('fi');
+const en = useTranslations('en');
+---
+
+<Base lang="fi" alternate={localePath('en')}>
+  <PageHead title={t('notfound.title')} lead={t('notfound.lead')} />
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      <p><a class="go" href={localePath('fi')}>{t('notfound.home')}</a></p>
+
+      <div class="other" lang="en">
+        <h2>{en('notfound.title')}</h2>
+        <p>{en('notfound.lead')}</p>
+        <p><a class="go ghost" href={localePath('en')}>{en('notfound.home')}</a></p>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .other {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .other > * + * {
+    margin-top: var(--pad-normal);
+  }
+
+  .other h2 {
+    font-size: clamp(1.375rem, 0.38vw + 1.28rem, 1.625rem);
+  }
+</style>

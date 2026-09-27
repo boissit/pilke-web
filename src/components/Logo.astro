@@ -8,7 +8,7 @@
  * the same drawing at two sizes rather than two drawings.
  *
  * Not an SVG of the whole lockup: the word is live text in Courgette, which the site
- * already loads. Converting it to paths would give a second copy of the wordmark to
+ * already loads for this and nothing else. Converting it to paths would give a second copy of the wordmark to
  * keep in step with the app, and would stop the mark being selectable or readable.
  */
 import RoseMark from './RoseMark.astro';
@@ -62,10 +62,10 @@ const { size = 28, class: className } = Astro.props;
   }
 
   .word {
-    font-family: var(--font-display);
+    font-family: var(--font-wordmark);
     font-size: var(--size);
     line-height: 1;
-    color: var(--ink);
+    color: var(--text);
     /* Courgette's own side bearing is enough; a letter-spacing here would be a
        departure from the app, which sets none. */
     letter-spacing: 0;
