@@ -45,7 +45,9 @@ The calendar pays for how long free time stays marked. {{calendar.petal_week_hou
 
 ## The cap
 
-You can earn up to {{petals.cap}} petals, which is {{petals.cap_roses}} roses. Anything earned beyond that waits, and arrives once you spend petals and there is room under the cap. The {{petals.per_date}} petals for feedback only arrive when they all fit at once.
+You can hold up to {{petals.cap}} petals at a time, which is {{petals.cap_roses}} roses. When you are full, new petals wait. They arrive as soon as you send an invitation and make room, so a full balance is worth spending.
+
+For example: you have {{petals.cap}} petals, and your calendar earns 2 more in a week. Those 2 wait. When you send an invitation, {{petals.set_cost}} leave your balance and the 2 that were waiting arrive. The {{petals.per_date}} petals for feedback only arrive when they all fit at once.
 
 Refunds arrive whatever your balance, so it can sometimes be above {{petals.cap}}.
 

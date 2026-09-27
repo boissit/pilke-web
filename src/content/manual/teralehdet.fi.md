@@ -45,7 +45,9 @@ Kalenteri maksaa siitä, kuinka kauan vapaa aika pysyy merkittynä. {{calendar.p
 
 ## Yläraja
 
-Terälehtiä voi ansaita enintään {{petals.cap}}, eli {{petals.cap_roses}} ruusua. Rajan yli ansaitut odottavat ja tulevat tilille, kun käytät terälehtiä ja rajan alle jää tilaa. Palautteen {{petals.per_date}} terälehteä tulevat vasta, kun ne mahtuvat kaikki kerralla.
+Tilillä voi olla kerrallaan enintään {{petals.cap}} terälehteä, eli {{petals.cap_roses}} ruusua. Kun tili on täynnä, uudet terälehdet jäävät odottamaan. Ne tulevat heti, kun lähetät kutsun ja tilille vapautuu tilaa, joten täyttä tiliä kannattaa käyttää.
+
+Esimerkiksi: tililläsi on {{petals.cap}} terälehteä, ja kalenterisi ansaitsee viikossa 2 lisää. Ne odottavat. Kun lähetät kutsun, tililtä lähtee {{petals.set_cost}}, ja odottaneet 2 tulevat perille. Palautteen {{petals.per_date}} terälehteä tulevat vasta, kun ne mahtuvat tilille kaikki kerralla.
 
 Palautukset tulevat perille rajasta riippumatta, joten saldo voi joskus olla yli {{petals.cap}}.
 
