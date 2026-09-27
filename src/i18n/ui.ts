@@ -53,8 +53,8 @@ const fi = {
   // The owner's own words, negations included: this one line is the exception to
   // the house rule against opening with what something is not. The soft hyphen is
   // where the compound may break when a phone is too narrow for it whole.
-  'hero.title': 'Vihdoin, treffailu\u00adsovellus',
-  'hero.lead': 'Ei swaippailua, ei chättäilyä. Pilke sopii treffit, kun sinulle sopii.',
+  'hero.title': 'Vihdoin, treffi\u00adsovellus',
+  'hero.lead': 'Ei swaippailua, ei chättäilyä. Pilke järjestää treffit silloin, kun sinulle sopii.',
 
   // The three cards under the hero. One line of body each: the headline has
   // already made the argument, and these are the three things to remember of it.
@@ -388,7 +388,7 @@ const en: Record<keyof typeof fi, string> = {
   'nav.menu': 'Menu',
 
   'hero.title': 'Finally, a dating app',
-  'hero.lead': 'No swiping, no chatting. Pilke sets up your dates when it suits you.',
+  'hero.lead': 'No swiping, no chatting. Pilke arranges your dates for when it suits you.',
 
   'fact.one.title': 'Invite, and be invited',
   'fact.one.body':

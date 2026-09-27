@@ -13,12 +13,12 @@
 # ──────────────────────────────────────────────────────────────────────────
 
 'hero.title':
-  fi: "Vihdoin, treffailu\u00adsovellus"
+  fi: "Vihdoin, treffi\u00adsovellus"
   en: 'Finally, a dating app'
 
 'hero.lead':
-  fi: 'Ei swaippailua, ei chättäilyä. Pilke sopii treffit, kun sinulle sopii.'
-  en: 'No swiping, no chatting. Pilke sets up your dates when it suits you.'
+  fi: 'Ei swaippailua, ei chättäilyä. Pilke järjestää treffit silloin, kun sinulle sopii.'
+  en: 'No swiping, no chatting. Pilke arranges your dates for when it suits you.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # The three cards under the hero
