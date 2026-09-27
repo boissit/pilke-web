@@ -7,23 +7,18 @@ draft: true
 
 Sovitut treffit ovat kahden ihmisen yhteinen päätös. Toinen on varannut aikaa sinulle, eikä hän voi kysyä sinulta mitään, koska sovelluksessa ei ole keskusteluyhteyttä. Peruminen on siksi epäkohteliasta häntä kohtaan, ja siitä saa jäähyn. Jäähy ei vie terälehtiä, ja se päättyy itsestään.
 
-## Kolme jäähyä
+## Kaksi jäähyä
 
 | Jäähy | Mitä et voi tehdä | Ilmoitus alkaa |
 |---|---|---|
 | Molemmat | Et näy muiden ehdokkaissa etkä voi hakea uusia ehdokkaita. | *Et näy juuri nyt muiden treffiehdokkaissa etkä voi hakea uusia ehdokkaita …* |
 | Ei hakua | Et voi hakea uusia ehdokkaita. Näyt muille. | *Et voi hakea uusia ehdokkaita …* |
-| Et näy | Et näy muiden ehdokkaissa. Voit hakea ehdokkaita. | *Et näy juuri nyt muiden treffiehdokkaissa …* |
 
 Jäähyn aikana voit silti vastata saamiisi kutsuihin ja käydä sovituilla treffeillä. Avoimet kutsusi ja sovitut treffisi pysyvät ennallaan. Jos olit jo löytänyt ehdokkaat, voit silti lähettää kutsun jollekulle heistä.
 
 ![Ilmoitus Treffit-sivulla: et näy muiden ehdokkaissa etkä voi hakea uusia ehdokkaita](shot:cooldown-blocked#cooldown-notice)
 
 Jäähyn aikana Treffit-sivun yläosassa on ilmoitus (1): mitä se estää, mihin asti ja miksi. Sama teksti näkyy, jos yrität hakea ehdokkaita. Jos voimassa on useampi jäähy, ilmoitus kertoo viimeisenä päättyvän syyn ja päättymisajan.
-
-<!-- hidden-cooldown: pending owner decision -->
-
-Kolmas jäähy piilottaisi sinut muiden ehdokkaista, jos saamiasi kutsuja jäisi toistuvasti hyväksymättä. Sääntö ei ole tällä hetkellä käytössä, joten kutsujen hylkääminen tai vastaamatta jättäminen ei piilota sinua.
 
 ## Mistä jäähy alkaa
 
