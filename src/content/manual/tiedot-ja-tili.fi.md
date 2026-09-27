@@ -17,15 +17,17 @@ Taulukossa on kaikki, mitä sinusta näytetään muille. Sähköpostiosoitettasi
 
 ## Ilmoitukset
 
-![Ilmoitusasetukset: ylimpänä kolme aina päällä olevaa ilmoitusta](shot:asetukset-ilmoitukset#notification-reveal_prompt-push,notification-party_arrived-push,notification-date_cancelled-push)
+![Ilmoitusasetukset: jokaiselle ilmoitukselle valitaan puhelin, sähköposti tai molemmat](shot:asetukset-ilmoitukset#notification-new_date-push,notification-new_date-email)
 
-Kolme ilmoitusta tulee aina puhelimeen, eikä niitä voi kytkeä pois, koska niistä on hyötyä vain ajoissa:
+Valitset jokaiselle ilmoitukselle, tuleeko se puhelimeen (1), sähköpostiin (2), molempiin vai ei kumpaankaan. Esimerkiksi **Uudet treffikutsut** kertoo, kun joku kutsuu sinut treffeille. Sähköposti toimii, kun osoitteesi on vahvistettu.
 
-- **Treffien alku** (1): sijaintia voi nyt näyttää, {{sharing.lead_minutes}} minuuttia ennen treffejä.
-- **Kun toinen on paikalla** (2): treffikumppanisi on näyttänyt sijaintinsa treffipaikalla.
-- **Perutut treffit** (3): ilman tätä lähtisit odottamaan ihmistä, joka ei tule.
+Kolme ilmoitusta tulee aina puhelimeen, koska niistä on hyötyä vain ajoissa:
 
-Muille ilmoituksille valitset puhelimen, sähköpostin, molemmat tai ei kumpaakaan. Sähköposti toimii vasta, kun osoitteesi on vahvistettu. Muistutus tyhjästä kalenterista tulee sunnuntaisin noin kello {{notifications.calendar_nudge_hour}}, jos seuraavalle viikolle ei ole merkitty aikoja.
+- **Treffien alku**: sijaintia voi nyt näyttää, {{sharing.lead_minutes}} minuuttia ennen treffejä.
+- **Kun toinen on paikalla**: treffikumppanisi on näyttänyt sijaintinsa treffipaikalla.
+- **Perutut treffit**: ilman tätä lähtisit odottamaan ihmistä, joka ei tule.
+
+Muistutus tyhjästä kalenterista tulee sunnuntaisin noin kello {{notifications.calendar_nudge_hour}}, jos seuraavalle viikolle ei ole merkitty aikoja.
 
 ## Tili
 

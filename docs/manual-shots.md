@@ -52,7 +52,7 @@ Only the stills the manual draws are listed. Each one is there because it shows 
 | date-location-consent | the location-sharing consent | |
 | date-noshow-not-at-venue | no-show report refused: not at the venue | `no-show-report` |
 | feedback | post-date feedback, first question | `feedback-when` |
-| asetukset-ilmoitukset | settings: notifications open, the three always-on rows in view | `notification-reveal_prompt-push`, `notification-party_arrived-push`, `notification-date_cancelled-push` |
+| asetukset-ilmoitukset | settings: notifications open, the three always-on rows in view | `notification-new_date-push`, `notification-new_date-email` |
 | asetukset-tili | settings: account open (sign out everywhere, delete) | `sign-out-everywhere`, `delete-account` |
 
 Two callouts need a word on where their bounds come from:

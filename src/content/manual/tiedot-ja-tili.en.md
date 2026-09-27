@@ -17,15 +17,17 @@ The table is everything other people see about you. Nobody but you sees your ema
 
 ## Notifications
 
-![Notification settings: the three that are always on, at the top](shot:asetukset-ilmoitukset#notification-reveal_prompt-push,notification-party_arrived-push,notification-date_cancelled-push)
+![Notification settings: each notification can come to your phone, your email or both](shot:asetukset-ilmoitukset#notification-new_date-push,notification-new_date-email)
 
-Three notifications always come to your phone and cannot be switched off, because they are only any use on time:
+For each notification you choose whether it comes to your phone (1), your email (2), both or neither. **New invitations**, for example, tells you when someone invites you on a date. Email works once your address is confirmed.
 
-- **A date starting** (1): you can now show your position, {{sharing.lead_minutes}} minutes before the start.
-- **When the other person arrives** (2): your date has shown their position at the venue.
-- **Cancelled dates** (3): without it you would go and wait for someone who is not coming.
+Three notifications always come to your phone, because they are only any use on time:
 
-For the rest you choose the phone, email, both or neither. Email only works once your address is confirmed. The empty-calendar reminder comes on Sundays at about {{notifications.calendar_nudge_hour}}:00, if you have nothing marked for the week ahead.
+- **A date starting**: you can now show your position, {{sharing.lead_minutes}} minutes before the start.
+- **When the other person arrives**: your date has shown their position at the venue.
+- **Cancelled dates**: without it you would go and wait for someone who is not coming.
+
+The empty-calendar reminder comes on Sundays at about {{notifications.calendar_nudge_hour}}:00, if you have nothing marked for the week ahead.
 
 ## Your account
 
