@@ -1,0 +1,4 @@
+full/
+*.jpg
+*.png
+__pycache__/

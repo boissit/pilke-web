@@ -1,7 +1,12 @@
 ---
 /**
- * The front page, in the Pehmeä direction: rounded cards on a blush page, the phone
- * on a coral disc, and the app's own card tints carrying the loop.
+ * The front page, in the Pehmeä direction: rounded cards on a blush page, a hand
+ * holding the phone on a coral disc, and the app's own card tints carrying the loop.
+ *
+ * Three photographs, each a stock photo with a real still of the app set into its
+ * phone: the home screen in the hero, the personality quiz on a sofa in the start
+ * card, and an agreed date at a café in the safety card. A still in a photograph
+ * goes stale with the app like any other, so `docs/pictures.md` accounts for them.
  *
  * The order is the argument, and it runs: what Pilke is, the three things to
  * remember of it, how a date comes about in four steps, what the currency is, and
@@ -21,6 +26,11 @@
  * earned week to week, and a link to `nain-se-toimii` for the whole ledger. A full
  * price list reads as a game to be played, which is the opposite of what this is.
  */
+import { getImage, Image } from 'astro:assets';
+import heroPhoto from '../../assets/photos/hero-treffit.jpg';
+import safetyPhoto from '../../assets/photos/safety-date.jpg';
+import startNarrow from '../../assets/photos/start-story-narrow.jpg';
+import startWide from '../../assets/photos/start-story-wide.jpg';
 import { grounds, shots } from '../../assets/screens';
 import Icon from '../../components/Icon.astro';
 import PetalScatter from '../../components/PetalScatter.astro';
@@ -73,6 +83,16 @@ const earnings = [
   they will be sent; the trusted person and the button are one card, because the
   button does nothing until the number is saved.
 */
+/*
+  The start card's photograph is cut twice. Wide, it fills the card's right side and
+  the whole sofa can be in it; stacked, the same width of photo is a strip 300px
+  tall, and the phone would be a stamp in it, so the narrow cut is tight on the hands.
+*/
+const startSources = {
+  wide: await getImage({ src: startWide, widths: [700, 1400], format: 'webp' }),
+  narrow: await getImage({ src: startNarrow, widths: [450, 900], format: 'webp' }),
+};
+
 const safetyCards = [
   { title: t('safety.card.places.title'), body: t('safety.card.places.body'), icon: 'map-pin' },
   { title: t('safety.card.button.title'), body: t('safety.card.button.body'), icon: 'shield' },
@@ -111,13 +131,16 @@ const safetyCards = [
       </div>
 
       <!--
-        The phone on a coral disc. The disc is the brand's colour at full strength,
-        and the one place on the first screen it is: it is what the eye lands on, and
-        the screen on it is the app's home, so that is what the eye lands on too.
+        A hand holding the phone, on a coral disc. The disc is the brand's colour at
+        full strength and the one place on the first screen it is; the photograph
+        stands on it in an arch, the disc's own curve, and the screen in the hand is
+        the app's home, so that is what the eye lands on.
       -->
       <div class="hero-art">
         <div class="disc" aria-hidden="true"></div>
-        <Phone src={shots.treffit} ground={grounds.treffit} alt={t('shot.treffit')} width={310} tilt={4} lifted class="art-phone" />
+        <figure class="hero-photo">
+          <Image src={heroPhoto} alt={t('photo.hero')} widths={[420, 620, 840, 1240]} sizes="(min-width: 69rem) 410px, 80vw" loading="eager" />
+        </figure>
       </div>
     </div>
 
@@ -147,17 +170,15 @@ const safetyCards = [
 
       <!--
         What happens once, before the loop: its own white card above the four steps,
-        because it is not one of them. On a white card a white shell vanishes, and
-        this screen is peach at the top, so the shell is the mint of the card's own
-        label: a colour the phone does not share with either.
+        because it is not one of them. The photograph is somebody at home doing it,
+        which is where it is done: fourteen questions on the sofa, not at a venue.
       -->
       <div class="start">
         <PetalScatter
           fill="var(--brand-background)"
           petals={[
             { shape: 'fan', size: 110, rotate: -18, right: '440px', bottom: '-20px', only: 'wide' },
-            { shape: 'spoon', size: 70, rotate: 30, left: '52%', top: '36px', only: 'wide' },
-            { shape: 'curl', size: 70, rotate: -20, right: '18px', top: '22px', only: 'wide' },
+            { shape: 'spoon', size: 70, rotate: 30, left: '44%', top: '36px', only: 'wide' },
             { shape: 'spoon', size: 56, rotate: -28, left: '-10px', bottom: '60px', only: 'narrow' },
           ]}
         />
@@ -166,9 +187,10 @@ const safetyCards = [
           <h3>{t('how.start.title')}</h3>
           <p>{t('how.start.body')}</p>
         </div>
-        <div class="start-phone">
-          <Phone src={shots.story} ground={grounds.story} alt={t('shot.story')} width={260} tilt={-4} shell="var(--success)" />
-        </div>
+        <picture class="start-photo">
+          <source media="(min-width: 64rem)" srcset={startSources.wide.srcSet.attribute} sizes="45vw" />
+          <img src={startSources.narrow.src} srcset={startSources.narrow.srcSet.attribute} sizes="100vw" alt={t('photo.start')} width={900} height={755} loading="lazy" decoding="async" />
+        </picture>
       </div>
 
       <!--
@@ -279,7 +301,9 @@ const safetyCards = [
       </div>
 
       <div class="safety-aside">
-        <Phone src={shots.asetukset} ground={grounds.asetukset} alt={t('shot.asetukset')} width={290} tilt={3} class="aside-phone" />
+        <figure class="safety-photo">
+          <Image src={safetyPhoto} alt={t('photo.safety')} widths={[360, 720, 1100]} sizes="(min-width: 75rem) 360px, 90vw" />
+        </figure>
       </div>
     </div>
   </section>
@@ -370,11 +394,26 @@ const safetyCards = [
     background: var(--brand-main);
   }
 
-  .hero-art :global(.art-phone) {
-    --phone-width: 71.4cqi;
+  /* An arch: the top is a half circle of the photo's own width, so it repeats the
+     disc behind it, and the foot has the cards' corner. */
+  .hero-photo {
     position: absolute;
-    left: 14.3%;
-    top: 2%;
+    left: 10%;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 40cqi 40cqi var(--radius-card) var(--radius-card);
+    box-shadow: 0 2px 4px rgb(58 46 43 / 0.08), 0 24px 48px rgb(58 46 43 / 0.16);
+  }
+
+  .hero-photo :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
   }
 
   @media (min-width: 40rem) {
@@ -421,10 +460,10 @@ const safetyCards = [
       width: 92.6%;
     }
 
-    .hero-art :global(.art-phone) {
-      --phone-width: 57.4cqi;
-      left: 21.3%;
-      top: 6.6%;
+    .hero-photo {
+      left: 12%;
+      width: 76%;
+      border-radius: 38cqi 38cqi var(--radius-card) var(--radius-card);
     }
   }
 
@@ -583,46 +622,44 @@ const safetyCards = [
     line-height: 1.6;
   }
 
-  .start-phone {
-    position: relative;
+  /* Stacked, a strip across the card's foot, out to its edges; the card's own
+     corners round it. */
+  .start-photo {
+    display: block;
     height: 300px;
-    margin-top: 12px;
-    --phone-width: 220px;
+    margin: 12px -24px 0;
   }
 
-  .start-phone :global(.phone) {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    margin-left: calc(var(--phone-width) / -2);
+  .start-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 45%;
   }
 
   @media (min-width: 64rem) {
     .start {
       flex-direction: row;
       align-items: center;
-      min-height: 400px;
+      min-height: 480px;
       padding: 56px 64px;
     }
 
-    /* Clear of the phone at every width: the card's padding plus the room from
-       the phone's right offset, its 260px and a gap. */
+    /* The left 55% of the card, less its padding and a gap to the photograph. */
     .start-copy {
       flex: 0 1 560px;
-      max-width: calc(100% + 64px - clamp(40px, 8.3vw, 120px) - 292px);
+      max-width: calc(55% - 64px - 40px);
     }
 
-    .start > .start-phone {
+    /* Wide, the right 45% of the card, top to bottom. */
+    .start > .start-photo {
       position: absolute;
-      right: clamp(40px, 8.3vw, 120px);
-      top: 48px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 45%;
       height: auto;
-      margin: 0;
-      --phone-width: 260px;
-    }
-
-    .start-phone :global(.phone) {
-      position: static;
       margin: 0;
     }
   }
@@ -1056,10 +1093,19 @@ const safetyCards = [
     font-weight: 700;
   }
 
-  .safety :global(.aside-phone) {
-    --phone-width: 230px;
-    align-self: center;
-    margin-top: 12px;
+  .safety-photo {
+    margin: 12px 0 0;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: 26px;
+  }
+
+  .safety-photo :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 55% 55%;
   }
 
   @media (min-width: 75rem) {
@@ -1110,9 +1156,11 @@ const safetyCards = [
       align-self: flex-start;
     }
 
-    .safety :global(.aside-phone) {
-      --phone-width: 290px;
-      margin-top: 0;
+    .safety-photo {
+      width: 100%;
+      margin: 0;
+      aspect-ratio: 3 / 4;
+      border-radius: var(--radius-card);
     }
   }
 </style>

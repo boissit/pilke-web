@@ -283,6 +283,16 @@ const fi = {
     'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.',
   'shot.date': 'Sovitut treffit puhelimessa: aika, paikka kartalla ja turvapainike.',
 
+  // The front page's photographs. Each is a stock photo with a real still of the
+  // app set into its phone, so the alt says both what the scene is and what the
+  // screen shows.
+  'photo.hero':
+    'Käsi pitelee puhelinta, jossa on Pilkkeen etusivu: saapunut treffikutsu, sovitut treffit ja lähetetty kutsu.',
+  'photo.start':
+    'Sohvalla kissan vieressä vastataan puhelimessa persoonallisuuskyselyn ensimmäiseen kysymykseen.',
+  'photo.safety':
+    'Puhelin kahvilan sisäpihalla, näytöllä sovitut treffit: paikka, aika ja kartta.',
+
   // The legal documents. Their titles and ledes live in their own frontmatter,
   // in the document's language, so they are not repeated here; these are the
   // strings the pages around them need.
@@ -587,6 +597,13 @@ const en: Record<keyof typeof fi, string> = {
   'shot.asetukset':
     'The Safety section of the settings, open, with the field for a trusted person’s number.',
   'shot.date': 'An agreed date on a phone: the time, the venue on a map, and the safety button.',
+
+  'photo.hero':
+    'A hand holding a phone with the Pilke home screen: an invitation received, a date agreed and an invitation sent.',
+  'photo.start':
+    'On a sofa beside a sleeping cat, someone answers the first question of the personality quiz on their phone.',
+  'photo.safety':
+    'A phone held up in a café courtyard, showing an agreed date: the venue, the time and a map.',
 
   'legal.effective': 'In effect from {date}',
   'legal.draft.title': 'This text is unfinished',
