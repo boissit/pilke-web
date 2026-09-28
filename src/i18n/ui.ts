@@ -290,8 +290,6 @@ const fi = {
     'Käsi pitelee puhelinta, jossa on Pilkkeen etusivu: saapunut treffikutsu, sovitut treffit ja lähetetty kutsu.',
   'photo.start':
     'Sohvalla kissan vieressä vastataan puhelimessa persoonallisuuskyselyn ensimmäiseen kysymykseen.',
-  'photo.safety':
-    'Puhelin kahvilan sisäpihalla, näytöllä sovitut treffit: paikka, aika ja kartta.',
   'photo.beta':
     'Puhelin kädessä persikanvärisen talon edessä, näytöllä saapunut treffikutsu: kutsuja, ajat ja paikat.',
   'photo.loop':
@@ -606,8 +604,6 @@ const en: Record<keyof typeof fi, string> = {
     'A hand holding a phone with the Pilke home screen: a date invitation received and a date agreed.',
   'photo.start':
     'On a sofa beside a sleeping cat, someone answers the first question of the personality quiz on their phone.',
-  'photo.safety':
-    'A phone held up in a café courtyard, showing an agreed date: the venue, the time and a map.',
   'photo.beta':
     'A phone held up in front of a peach-coloured house, showing a date invitation received: who sent it, the times and the places.',
   'photo.loop':

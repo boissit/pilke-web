@@ -65,7 +65,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`start-story-narrow-en` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`loop-calendar-en` 1800px<br>`safety-date-en` 1100px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`start-story-narrow-en` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`loop-calendar-en` 1800px<br>`asetukset` 580px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kutsut.html/` | `en/invitation` 560px<br>`en/sent` 560px |
@@ -84,7 +84,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset` 520px |
-| `/` | `hero-cutout-fi` 1400px<br>`start-story-narrow-fi` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar-fi` 1800px<br>`safety-date-fi` 1100px<br>`beta-invitation-fi` 1000px |
+| `/` | `hero-cutout-fi` 1400px<br>`start-story-narrow-fi` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar-fi` 1800px<br>`asetukset` 580px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
@@ -120,8 +120,8 @@ that are visible, so a change to any of them can be traced back to the pictures 
 | `treffit` | Home, populated | `screenshots.yaml` | **The balance counter: the rose slots and the `n/5` figure.** The wordmark, three stacks of match cards with partner photos, names, ages, venues and timeslot chips, the `Loyda treffit!` button, the tab bar. The only picture on this site with the currency in it |
 | `platter` | Candidates | `screenshotPlatter.yaml` | A candidate's photo card, name and age, the times both people share, the activity chips, the `Ehdota!` button, the pager dots. Drawn on the brand yellow, so a change to that colour shows here |
 | `invitation` | Invitation received | `screenshots.yaml` | The sender's photo card, the timeslots offered as chips, the venue, the map, and the two answers: `Hylkaa` and `Sovittu!` |
-| `date` | An agreed date, upcoming | `pilke-app/.maestro/manual/dateUpcoming.yaml`, the same still as `scripts/photos/stills/date-fi.png` | The partner card, the venue and its description, the map, the location-sharing line, `Peru treffit` and the back control |
-| `date-en` | An agreed date, upcoming, English | `manual/dateUpcomingEn.yaml`, the same still as `scripts/photos/stills/date-en.png` | The same date in English, `Cancel the date` and `Back`. Drawn on `/en` in place of `date` |
+| `date` | An agreed date, upcoming | `pilke-app/.maestro/manual/dateUpcoming.yaml` | The partner card, the venue and its description, the map, the location-sharing line, `Peru treffit` and the back control |
+| `date-en` | An agreed date, upcoming, English | `pilke-app/.maestro/manual/dateUpcomingEn.yaml` | The same date in English, `Cancel the date` and `Back`. Drawn on `/en` in place of `date` |
 | `story-en` | Story test, first question, English | the same still as `scripts/photos/stills/story-en.png` | The first question in English and `Continue`. Drawn on `/en` in place of `story` |
 | `feedback` | Date feedback | `screenshotFeedback.yaml` | The partner card with the date's time, one feedback question and its `Kylla` / `Ei` answers |
 | `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress dots, the question and its options, `Jatka` |
@@ -134,12 +134,10 @@ that are visible, so a change to any of them can be traced back to the pictures 
 | `beta-invitation-en` | Invitation received, English, **inside a photograph** | the manual's `manual/en/invitation.png`, read where it is, composited by `beta.py en` | Owen Sims's invitation with four times and three places; a thumb covers `Decline`. A reshoot of the manual's still changes this picture too |
 | `start-story-narrow-fi` | Story test, first question, **inside a photograph** | `screens/story.png` composited by `scripts/photos/ex2.py fi` | What `story` shows, under a drawn iOS status bar and home indicator; a thumb covers the third option and half of `Jatka`. Its wide cut `start-story-wide-fi` is the same composite, drawn from 64rem through a `<source>`, so it has no row of its own in the inventory |
 | `start-story-narrow-en` | Story test, English, **inside a photograph** | `scripts/photos/stills/story-en.png` composited by `ex2.py en` | The first question in English, `Continue` half under the thumb; its wide cut is `start-story-wide-en` |
-| `safety-date-fi` | An agreed date, upcoming, **inside a photograph** | `scripts/photos/stills/date-fi.png` composited by `scripts/photos/ex3.py fi` | The date with Aleksi Rantala on 29.9. at 17.00 at Café Aalto, its Finnish description, when the map will show your position, the map and `Peru treffit` |
-| `safety-date-en` | An agreed date, upcoming, English, **inside a photograph** | `scripts/photos/stills/date-en.png` composited by `ex3.py en` | The same date in English, `Cancel the date` and `Back` |
 
 ## The photographs
 
-Five pictures on the front page are stock photos from Unsplash with a still set into
+Four pictures on the front page are stock photos from Unsplash with a still set into
 the phone in them, each made once per language so that `/en` shows the English app. A
 still in a photograph goes stale with the app like any other, and more quietly, because
 nobody reads a photograph for its UI. The stills the photographs alone use are kept in
@@ -155,10 +153,9 @@ same device profile needs nothing else.
 | `hero-cutout-*` | [Ebb8fe-NZtM](https://unsplash.com/photos/Ebb8fe-NZtM) | Georgia de Lotz | https://images.unsplash.com/photo-1622782914767-404fb9ab3f57?fm=jpg&q=85 |
 | `loop-calendar-*` | [-piUPY2-44A](https://unsplash.com/photos/-piUPY2-44A) | Daniel Romero | https://images.unsplash.com/photo-1749650646156-452624a35dbd?fm=jpg&q=85 |
 | `start-story-*` | [h2z7CB0its4](https://unsplash.com/photos/h2z7CB0its4) | Jakub Żerdzicki | https://images.unsplash.com/photo-1736146725579-c8a37dd0217f?fm=jpg&q=85 |
-| `safety-date-*` | [kljagr9EGSc](https://unsplash.com/photos/kljagr9EGSc) | abillion | https://images.unsplash.com/photo-1609405979808-08669e982546?fm=jpg&q=85 |
 | `beta-invitation-*` | [q_lCo82aXeo](https://unsplash.com/photos/q_lCo82aXeo) | Job Vermeulen | https://images.unsplash.com/photo-1739638726828-d0f3df0dcde1?fm=jpg&q=85 |
 
-All five are under the Unsplash License: free for commercial use, credit not
+All four are under the Unsplash License: free for commercial use, credit not
 required. It does not cover the likeness of people in them, so none of them shows a
 face (the beta card's crop leaves out the right fifth of its original, where a
 blurred cheek is), and none may be captioned as a Pilke user.

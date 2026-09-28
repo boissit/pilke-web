@@ -1,6 +1,6 @@
 """Cut the site's pictures out of the composites, into src/assets/photos.
 
-Run after hero.py, loop.py, ex2.py, ex3.py and beta.py, each for fi and for en,
+Run after hero.py, loop.py, ex2.py and beta.py, each for fi and for en,
 and cutout.py, from this directory."""
 import os
 from PIL import Image
@@ -26,7 +26,6 @@ for lang in LANGS:
         os.path.join(WEB, f'loop-calendar-{lang}.jpg'), quality=88, subsampling=0, optimize=True, progressive=True)
     web(f'ex2-{lang}-full.jpg', (570, 0, 2490, 1600), 1400, f'start-story-wide-{lang}.jpg')
     web(f'ex2-{lang}-full.jpg', (880, 165, 2180, 1255), 900, f'start-story-narrow-{lang}.jpg')
-    web(f'ex3-{lang}-full.jpg', (1150, 1500, 3445, 4560), 1100, f'safety-date-{lang}.jpg')
     # The right fifth of the original is left out: a blurred cheek and sunglasses.
     web(f'beta-{lang}-full.jpg', (970, 1650, 3050, 4250), 1000, f'beta-invitation-{lang}.jpg')
 

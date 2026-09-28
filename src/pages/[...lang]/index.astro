@@ -3,11 +3,11 @@
  * The front page, in the Pehmeä direction: rounded cards on a blush page, a hand
  * holding the phone on a coral disc, and the app's own card tints carrying the loop.
  *
- * Five photographs, each a stock photo with a real still of the app set into its
- * phone: the home screen in the hero, cut out of its photograph, the personality quiz on a sofa in the start
- * card, the calendar against an orange wall in the loop card that closes the steps,
- * an agreed date at a café in the safety card, and an invitation received in the
- * footer's beta card, which only this page hands a photograph. A still in a photograph
+ * Four photographs, each a stock photo with a real still of the app set into its
+ * phone: the home screen in the hero, cut out of its photograph, the personality quiz
+ * on a sofa in the start card, the calendar against an orange wall in the loop card
+ * that closes the steps, and an invitation received in the footer's beta card, which
+ * only this page hands a photograph. A still in a photograph
  * goes stale with the app like any other, so `docs/pictures.md` accounts for them.
  *
  * The order is the argument, and it runs: what Pilke is, the three things to
@@ -36,8 +36,6 @@ import heroFi from '../../assets/photos/hero-cutout-fi.png';
 import heroPhoneMask from '../../assets/photos/hero-cutout-phone.png';
 import loopEn from '../../assets/photos/loop-calendar-en.jpg';
 import loopFi from '../../assets/photos/loop-calendar-fi.jpg';
-import safetyEn from '../../assets/photos/safety-date-en.jpg';
-import safetyFi from '../../assets/photos/safety-date-fi.jpg';
 import startNarrowEn from '../../assets/photos/start-story-narrow-en.jpg';
 import startNarrowFi from '../../assets/photos/start-story-narrow-fi.jpg';
 import startWideEn from '../../assets/photos/start-story-wide-en.jpg';
@@ -61,8 +59,8 @@ const t = useTranslations(lang);
   and the page draws the one in its own: the English page shows the English app.
 */
 const photos = {
-  fi: { hero: heroFi, startWide: startWideFi, startNarrow: startNarrowFi, loop: loopFi, safety: safetyFi, beta: betaFi },
-  en: { hero: heroEn, startWide: startWideEn, startNarrow: startNarrowEn, loop: loopEn, safety: safetyEn, beta: betaEn },
+  fi: { hero: heroFi, startWide: startWideFi, startNarrow: startNarrowFi, loop: loopFi, beta: betaFi },
+  en: { hero: heroEn, startWide: startWideEn, startNarrow: startNarrowEn, loop: loopEn, beta: betaEn },
 }[lang];
 
 /*
@@ -351,9 +349,7 @@ const safetyCards = [
       </div>
 
       <div class="safety-aside">
-        <figure class="safety-photo">
-          <Image src={photos.safety} alt={t('photo.safety')} widths={[360, 720, 1100]} sizes="(min-width: 75rem) 360px, 90vw" />
-        </figure>
+        <Phone src={shots.asetukset} ground={grounds.asetukset} alt={t('shot.asetukset')} width={290} tilt={3} class="aside-phone" />
       </div>
     </div>
   </section>
@@ -1175,19 +1171,10 @@ const safetyCards = [
     font-weight: 700;
   }
 
-  .safety-photo {
-    margin: 12px 0 0;
-    aspect-ratio: 4 / 5;
-    overflow: hidden;
-    border-radius: 26px;
-  }
-
-  .safety-photo :global(img) {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 55% 55%;
+  .safety :global(.aside-phone) {
+    --phone-width: 230px;
+    align-self: center;
+    margin-top: 12px;
   }
 
   @media (min-width: 75rem) {
@@ -1238,11 +1225,9 @@ const safetyCards = [
       align-self: flex-start;
     }
 
-    .safety-photo {
-      width: 100%;
-      margin: 0;
-      aspect-ratio: 3 / 4;
-      border-radius: var(--radius-card);
+    .safety :global(.aside-phone) {
+      --phone-width: 290px;
+      margin-top: 0;
     }
   }
 </style>

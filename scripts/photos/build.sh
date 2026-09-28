@@ -4,7 +4,7 @@
 set -e
 PY=${PYTHON:-python3}
 for lang in fi en; do
-  for s in hero loop ex2 ex3 beta; do "$PY" $s.py $lang > /dev/null; done
+  for s in hero loop ex2 beta; do "$PY" $s.py $lang > /dev/null; done
 done
 "$PY" cutout.py > /dev/null
 "$PY" crops.py

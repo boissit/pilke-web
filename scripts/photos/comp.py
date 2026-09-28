@@ -1,7 +1,7 @@
 """Composite a Pilke app still onto a photographed phone screen.
 
-Run from this directory: hero.py (then cutout.py), loop.py, ex2.py, ex3.py and
-beta.py write the full-size composites (all but ex2.py and ex3.py through
+Run from this directory: hero.py (then cutout.py), loop.py, ex2.py and
+beta.py write the full-size composites (all but ex2.py through
 comp2.py), and crops.py cuts the site's
 pictures from them. The originals go in full/, fetched
 from the Unsplash URLs in docs/pictures.md. Needs numpy, opencv-python-headless and
