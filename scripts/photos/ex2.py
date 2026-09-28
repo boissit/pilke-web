@@ -5,7 +5,7 @@ quad=[(1375.01,314.93),(1739.04,309.20),(1690.18,1115.31),(1318.97,1107.59)]
 photo=cv2.cvtColor(cv2.imread(P),cv2.COLOR_BGR2RGB).astype(np.float32)/255
 shape=photo.shape[:2]
 LANG=lang_arg()
-STILL={'fi': 'screens/story.png', 'en': 'stills/story-en.png'}[LANG]
+STILL={'fi': 'screens/story.png', 'en': 'screens/story-en.png'}[LANG]
 scr=ios_screen(load_still(STILL), 2.164, clock=CLOCK[LANG])
 scr.save('screen-story-ios.png')
 rgb,rq=warp_screen(scr,quad,shape,0.13)

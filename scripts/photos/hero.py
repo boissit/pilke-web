@@ -5,6 +5,7 @@ The outline is the photo's own lit screen, fitted sub-pixel and clipped to the
 fitted quad so the rim's highlight stays the photo's; the app is bent round the
 curved edges, and laid between the old screen's measured black and white in
 linear light, with the glass's highlights kept in the curved bands."""
+import json
 import sys
 sys.path.insert(0, __file__.rsplit('/', 1)[0])
 from comp2 import *
@@ -26,6 +27,8 @@ E = np.clip((L - Lb) / np.maximum(Ls - Lb, 0.05), 0, 1) * region
 
 quad, spread = subpixel_quad(E, rough, t_ranges=[(0.3, 0.7), (0.2, 0.8), (0.3, 0.7), (0.2, 0.8)], reach=40)
 print('quad', [tuple(round(v, 2) for v in p) for p in quad], 'spread px', [round(s, 2) for s in spread])
+# cutout.py carries this fit as numbers; it reads this to check they still agree.
+open('hero-quad.json', 'w').write(json.dumps(quad))
 
 # Alpha: the photo's own outline. Inside the lit silhouette (text holes filled)
 # it is 1; across the boundary it is the normalised luminance ramp.

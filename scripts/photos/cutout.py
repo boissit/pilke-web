@@ -19,6 +19,7 @@ The cut is made once, on the Finnish composite, and the same alpha is laid on
 each language's: the phone is opaque, so what its screen shows cannot move the
 edge. Reads hero-<lang>-full.jpg (hero.py fi, hero.py en), writes
 cutout-<lang>-full.png."""
+import json
 import sys
 
 import cv2
@@ -37,6 +38,10 @@ L = I.mean(2)
 
 # The screen as fitted by hero.py, and the phone's body round it.
 screen = np.float32([(1352.36, 1421.98), (2256.93, 1500.17), (2036.83, 3363.11), (1157.08, 3253.44)])
+# The fit is the photograph's, so it moves only if the original does; the check is
+# for that day, when this cut would otherwise be laid a pixel or more off the phone.
+fitted = np.float32(json.load(open('hero-quad.json')))
+assert np.abs(fitted - screen).max() < 1.0, f'hero.py now fits the screen at {fitted.tolist()}; update `screen`'
 phone = np.float32([(1320, 1360), (2290, 1440), (2080, 3430), (1175, 3310)])
 hand = np.float32([(0, 2860), (600, 2480), (950, 1930), (1150, 1360), (1210, 1285), (1270, 1265), (1320, 1290),
                    (1330, 1340), (2290, 1420), (2400, 1850), (2410, 2760), (2250, 2800), (2100, 3450), (1150, 3310),

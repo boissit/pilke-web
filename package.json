@@ -10,7 +10,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "pictures": "node scripts/pictures.mjs"
+    "pictures": "node scripts/pictures.mjs",
+    "pictures:build": "bash scripts/photos/build.sh && rm -rf node_modules/.astro && astro build && npm run pictures && npm run pictures -- --check"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "0.3.5",

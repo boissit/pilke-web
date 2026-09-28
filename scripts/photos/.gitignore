@@ -5,3 +5,5 @@ __pycache__/
 cutout-box.txt
 !stills/
 !stills/*.png
+.venv/
+hero-quad.json

@@ -1,0 +1,7 @@
+# The composites' Python, pinned to the versions the committed pictures were made
+# with: a different numpy, OpenCV or Pillow is a different picture, a few levels
+# off in places nobody would notice and a diff on every file. Python 3.9, for the
+# same reason; build.sh finds or makes one.
+numpy==2.0.2
+opencv-python-headless==5.0.0.93
+pillow==11.3.0

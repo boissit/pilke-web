@@ -4,6 +4,10 @@ This file is shared by three pieces of work: the capture pipeline in `pilke-app`
 
 ## Where a still lives
 
+Written by pilke-app's `scripts/capture-site-pictures.sh`, whose `manual` step runs
+`capture-screens.sh --manual`, and never by hand: "When the app changes" in
+`docs/pictures.md` is the runbook.
+
     src/assets/manual/fi/<name>.png
     src/assets/manual/fi/<name>.json
     src/assets/manual/en/<name>.png
@@ -57,7 +61,7 @@ Only the stills the manual draws are listed. Each one is there because it shows 
 
 Two callouts need a word on where their bounds come from:
 
-- `calendar-density`: the first shaded hour on screen, one cell of the yellow density shading drawn by `src/components/calendar/density.tsx`. The shading is one view per hour and day, with no wrapper around a band, so each hour row marks its first shaded cell and the sidecar keeps the first one on screen. The capture needs at least five people free at the same hours, which `make seed-density` in the backend provides.
+- `calendar-density`: the first shaded hour on screen, one cell of the yellow density shading drawn by `src/components/calendar/density.tsx`. The shading is one view per hour and day, with no wrapper around a band, so each hour row marks its first shaded cell and the sidecar keeps the first one on screen. The capture needs at least five people free at the same hours; it seeds them (`make seed-density`'s command) before the walk that takes this still, since every fixture reset clears them.
 - `calendar-menu` on `kalenteri-valikko`: the menu is a modal, its own window, and the menu's view hierarchy has nothing behind the scrim in it. The flow photographs the calendar just before opening the menu, and the capture lays that hierarchy under the menu's.
 
 In `asetukset-ilmoitukset` the "Aina päällä" heading is scrolled off the top of the current capture. The next capture should scroll so the heading and its three rows are both in view.

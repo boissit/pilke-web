@@ -1,11 +1,10 @@
 """Composite a Pilke app still onto a photographed phone screen.
 
-Run from this directory: hero.py (then cutout.py), loop.py, ex2.py and
-beta.py write the full-size composites (all but ex2.py through
-comp2.py), and crops.py cuts the site's
-pictures from them. The originals go in full/, fetched
-from the Unsplash URLs in docs/pictures.md. Needs numpy, opencv-python-headless and
-Pillow.
+hero.py (then cutout.py), loop.py, ex2.py and beta.py write the full-size
+composites (all but ex2.py through comp2.py), and crops.py cuts the site's
+pictures from them. `npm run pictures:build` runs them all through build.sh, in
+the pinned environment of requirements.txt, with the originals originals.json
+names fetched into full/.
 
 The screen is warped from a canonical upright rectangle onto the four fitted
 screen corners with a homography. The rounded-corner mask goes through the
@@ -20,8 +19,13 @@ import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
+import stills
+
 ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../src/assets') + '/'
+# The iOS status bar's clock is drawn in the system's San Francisco, so the build
+# runs on macOS; a missing font would otherwise fall through to a silent default.
 SF = '/System/Library/Fonts/SFNS.ttf'
+assert os.path.exists(SF), f'{SF} is missing: the iOS bars are drawn in it, so this runs on macOS'
 
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -41,9 +45,13 @@ def lang_arg():
 
 def load_still(name):
     """A still by its path under src/assets (screens/, manual/), or under this
-    directory for the stills taken for the photographs alone (stills/)."""
+    directory for the stills taken for the photographs alone (stills/). Checked
+    against the capture profile first (stills.py): the bars below are cut at fixed
+    rows, and a still they do not fit stops the build instead of compositing."""
     base = HERE + '/' if name.startswith('stills/') else ASSETS
-    return Image.open(base + name).convert('RGB')
+    img = Image.open(base + name)
+    stills.check(img, name, grounds=True)
+    return img.convert('RGB')
 
 
 # ── Building the screen at the device's own proportions ──────────────────────
@@ -56,25 +64,25 @@ def android_screen(still, aspect):
     cut = h - target
     if cut <= 0:
         return still
-    top, nav = still.crop((0, 0, w, 2144)), still.crop((0, 2144, w, h))
+    top, nav = still.crop((0, 0, w, stills.NAV)), still.crop((0, stills.NAV, w, h))
     half = cut // 2
     nav = nav.crop((0, half, w, nav.height - (cut - half)))
     out = Image.new('RGB', (w, target))
     out.paste(top, (0, 0))
-    out.paste(nav, (0, 2144))
+    out.paste(nav, (0, stills.NAV))
     return out
 
 
 def ios_screen(still, aspect, notch_frac=0.415, clock='9.41', ink=(28, 24, 24)):
     """An Android still for an iPhone: the Android status bar and navigation bar
-    go, the app's own band 96..2144 stays untouched, and an iOS status bar and
+    go, the app's own band (stills.STATUS..stills.NAV) stays untouched, and an iOS status bar and
     home indicator are drawn on the app's own ground colour above and below."""
     w = still.width
     H = round(w * aspect)
     status = round(w * 47 / 390)
-    app = still.crop((0, 96, w, 2144))
-    top_c = still.getpixel((w // 2, 97))
-    bot_c = still.getpixel((w // 2, 2142))
+    app = still.crop((0, stills.STATUS, w, stills.NAV))
+    top_c = still.getpixel((w // 2, stills.STATUS + 1))
+    bot_c = still.getpixel((w // 2, stills.NAV - 2))
     out = Image.new('RGB', (w, H), bot_c)
     ImageDraw.Draw(out).rectangle((0, 0, w, status), fill=top_c)
     out.paste(app, (0, status))
