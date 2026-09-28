@@ -65,7 +65,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-treffit` 1240px<br>`start-story-narrow` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`safety-date` 1100px<br>`beta-invitation` 1000px |
+| `/en.html/` | `hero-treffit` 2800px<br>`start-story-narrow` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`safety-date` 1100px<br>`beta-invitation` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kutsut.html/` | `en/invitation` 560px<br>`en/sent` 560px |
@@ -84,7 +84,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset` 520px |
-| `/` | `hero-treffit` 1240px<br>`start-story-narrow` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`safety-date` 1100px<br>`beta-invitation` 1000px |
+| `/` | `hero-treffit` 2800px<br>`start-story-narrow` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`safety-date` 1100px<br>`beta-invitation` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
@@ -141,7 +141,7 @@ script, so a reshoot at the same device profile needs nothing else.
 
 | Picture | Unsplash photo | Photographer | Original |
 | --- | --- | --- | --- |
-| `hero-treffit` | [uD5SvzjOsgY](https://unsplash.com/photos/uD5SvzjOsgY) | Kelly Sikkema | https://images.unsplash.com/photo-1663524789649-c7abbb378561?fm=jpg&q=85 |
+| `hero-treffit` | [-piUPY2-44A](https://unsplash.com/photos/-piUPY2-44A) | Daniel Romero | https://images.unsplash.com/photo-1749650646156-452624a35dbd?fm=jpg&q=85 |
 | `start-story-*` | [h2z7CB0its4](https://unsplash.com/photos/h2z7CB0its4) | Jakub Żerdzicki | https://images.unsplash.com/photo-1736146725579-c8a37dd0217f?fm=jpg&q=85 |
 | `safety-date` | [kljagr9EGSc](https://unsplash.com/photos/kljagr9EGSc) | abillion | https://images.unsplash.com/photo-1609405979808-08669e982546?fm=jpg&q=85 |
 | `beta-invitation` | [q_lCo82aXeo](https://unsplash.com/photos/q_lCo82aXeo) | Job Vermeulen | https://images.unsplash.com/photo-1739638726828-d0f3df0dcde1?fm=jpg&q=85 |

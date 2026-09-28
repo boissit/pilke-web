@@ -13,7 +13,9 @@ def web(src, box, width, name):
     c.save(os.path.join(WEB, name), quality=88, subsampling=0, optimize=True, progressive=True)
 
 
-web('hero-full.jpg', (1920, 150, 4428, 3950), 1240, 'hero-treffit.jpg')
+hero = Image.open('hero-full.jpg')
+hero.resize((2800, round(hero.height * 2800 / hero.width)), Image.LANCZOS).save(
+    os.path.join(WEB, 'hero-treffit.jpg'), quality=86, subsampling=0, optimize=True, progressive=True)
 web('ex2-full.jpg', (570, 0, 2490, 1600), 1400, 'start-story-wide.jpg')
 web('ex2-full.jpg', (880, 165, 2180, 1255), 900, 'start-story-narrow.jpg')
 web('ex3-full.jpg', (1150, 1500, 3445, 4560), 1100, 'safety-date.jpg')
