@@ -1,8 +1,8 @@
 {
   "name": "date-noshow-not-at-venue",
   "language": "fi",
-  "commit": "516747dd3f41cea83482480d8e1da286fdd840ac-dirty",
-  "takenAt": "2026-09-27T12:55:11Z",
+  "commit": "e794229db3519fb65bf69597514ce363df29df59-dirty",
+  "takenAt": "2026-09-28T13:31:22Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -18,19 +18,19 @@
       "x": 33,
       "y": 948,
       "width": 1014,
-      "height": 711
+      "height": 714
     },
     "no-show-report": {
       "x": 33,
-      "y": 1692,
+      "y": 1695,
       "width": 1014,
-      "height": 218
+      "height": 215
     },
     "no-show-explainer": {
       "x": 970,
-      "y": 1714,
+      "y": 1717,
       "width": 55,
-      "height": 58
+      "height": 55
     }
   }
 }

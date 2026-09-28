@@ -1,8 +1,8 @@
 {
   "name": "asetukset-tili",
   "language": "fi",
-  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
-  "takenAt": "2026-09-24T17:31:46Z",
+  "commit": "e794229db3519fb65bf69597514ce363df29df59-dirty",
+  "takenAt": "2026-09-28T12:16:15Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -10,19 +10,19 @@
   "elements": {
     "sign-out": {
       "x": 257,
-      "y": 813,
+      "y": 814,
       "width": 566,
       "height": 172
     },
     "sign-out-everywhere": {
       "x": 88,
-      "y": 1106,
+      "y": 1107,
       "width": 904,
       "height": 247
     },
     "delete-account": {
       "x": 311,
-      "y": 1474,
+      "y": 1475,
       "width": 458,
       "height": 172
     }

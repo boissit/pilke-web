@@ -1,8 +1,8 @@
 {
   "name": "sent",
   "language": "en",
-  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
-  "takenAt": "2026-09-24T17:09:24Z",
+  "commit": "e794229db3519fb65bf69597514ce363df29df59-dirty",
+  "takenAt": "2026-09-28T12:45:51Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -10,9 +10,9 @@
   "elements": {
     "waiting-explainer": {
       "x": 992,
-      "y": 302,
+      "y": 303,
       "width": 55,
-      "height": 58
+      "height": 55
     },
     "venue-map": {
       "x": 33,

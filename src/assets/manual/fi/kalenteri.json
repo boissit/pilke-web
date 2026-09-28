@@ -1,8 +1,8 @@
 {
   "name": "kalenteri",
   "language": "fi",
-  "commit": "c0d7c2c7174871ecdacfcc54009468dc6dfc0a3e-dirty",
-  "takenAt": "2026-09-27T11:14:49Z",
+  "commit": "e794229db3519fb65bf69597514ce363df29df59-dirty",
+  "takenAt": "2026-09-28T11:36:50Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -10,19 +10,19 @@
   "elements": {
     "calendar-menu": {
       "x": 805,
-      "y": 109,
+      "y": 111,
       "width": 99,
-      "height": 91
+      "height": 88
     },
     "calendar-explainer": {
       "x": 937,
-      "y": 126,
+      "y": 128,
       "width": 55,
-      "height": 58
+      "height": 55
     },
     "calendar-density": {
       "x": 386,
-      "y": 1274,
+      "y": 509,
       "width": 301,
       "height": 143
     }

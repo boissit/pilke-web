@@ -1,8 +1,8 @@
 {
   "name": "treffit",
   "language": "fi",
-  "commit": "0cd017d7e0f2f2bea52c492edd978e135fb63e74-dirty",
-  "takenAt": "2026-09-24T19:26:31Z",
+  "commit": "e794229db3519fb65bf69597514ce363df29df59-dirty",
+  "takenAt": "2026-09-28T11:57:59Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -16,9 +16,9 @@
     },
     "tip-bank": {
       "x": 33,
-      "y": 1739,
+      "y": 1741,
       "width": 197,
-      "height": 178
+      "height": 176
     },
     "find-dates": {
       "x": 487,
@@ -38,13 +38,13 @@
       "width": 444,
       "height": 117
     },
-    "match-card-224": {
+    "match-card-245": {
       "x": 33,
       "y": 463,
       "width": 1014,
       "height": 307
     },
-    "match-card-223": {
+    "match-card-244": {
       "x": 33,
       "y": 951,
       "width": 1014,

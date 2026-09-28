@@ -20,6 +20,7 @@ import feedback from './screens/feedback.png';
 import platter from './screens/platter.png';
 import story from './screens/story.png';
 import treffit from './screens/treffit.png';
+import asetuksetEn from './screens/asetukset-en.png';
 import dateEn from './screens/date-en.png';
 import feedbackEn from './manual/en/feedback.png';
 import invitationEn from './manual/en/invitation.png';
@@ -38,11 +39,13 @@ export const shots = {
 
 /**
  * The English app, for `/en`, where there is an English still of the screen. A screen
- * missing here falls back to the Finnish one: `asetukset` and `treffit` have no English
- * still yet. Three are the manual's own English stills, read where they are, so a
- * reshoot of the manual reaches the front page too.
+ * missing here falls back to the Finnish one: `treffit` has none, because no page draws
+ * it in a phone frame -- the English home is in the hero's photograph. Three are the
+ * manual's own English stills, read where they are, so a reshoot of the manual reaches
+ * the front page too.
  */
 const shotsEn: Partial<Record<keyof typeof shots, ImageMetadata>> = {
+  asetukset: asetuksetEn,
   story: storyEn,
   platter: platterEn,
   invitation: invitationEn,
