@@ -104,7 +104,9 @@ Wc = np.percentile(Pl[inside], 99.8, axis=0)
 Wc = np.full(3, Wc.mean()) * 0.5 + Wc * 0.5          # the camera UI's white text, not the tinted view
 print('white (sRGB)', srgb(Wc).round(3), 'black (sRGB)', srgb(B).round(3))
 
-still = c1.ios_screen(c1.load_still('screens/invitation.png'), ASPECT, notch_frac=0.32)
+LANG = c1.lang_arg()
+STILL = {'fi': 'screens/invitation.png', 'en': 'manual/en/invitation.png'}[LANG]
+still = c1.ios_screen(c1.load_still(STILL), ASPECT, notch_frac=0.32, clock=c1.CLOCK[LANG])
 content = np.asarray(still.resize((W, Hc), Image.LANCZOS)).astype(np.float32) / 255
 Cl = to_photo(lin(content), quad, W, Hc, shape)
 room = cv2.GaussianBlur(cv2.resize(cv2.flip(Pl, 1), (shape[1], shape[0])), (0, 0), 40)
@@ -127,5 +129,5 @@ edge = (t > 0.02) & (t < 0.98) & (a > 0.5)
 res[edge] = (photo_ip + (1 - t[..., None]) * (out - old))[edge]
 # The camera-in-use dot goes: the island is plain black.
 res[green] = isl_col
-save(res, 'beta-full.jpg', 95)
+save(res, f'beta-{LANG}-full.jpg', 95)
 

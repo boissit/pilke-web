@@ -24,8 +24,26 @@ ASSETS = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../src/ass
 SF = '/System/Library/Fonts/SFNS.ttf'
 
 
+HERE = os.path.dirname(os.path.abspath(__file__))
+
+# The page's two languages, and the clock each one's iOS status bar reads.
+LANGS = ('fi', 'en')
+CLOCK = {'fi': '9.41', 'en': '9:41'}
+
+
+def lang_arg():
+    """The language to composite, from the command line: fi unless told en."""
+    import sys
+    lang = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith('-') else 'fi'
+    assert lang in LANGS, lang
+    return lang
+
+
 def load_still(name):
-    return Image.open(ASSETS + name).convert('RGB')
+    """A still by its path under src/assets (screens/, manual/), or under this
+    directory for the stills taken for the photographs alone (stills/)."""
+    base = HERE + '/' if name.startswith('stills/') else ASSETS
+    return Image.open(base + name).convert('RGB')
 
 
 # ── Building the screen at the device's own proportions ──────────────────────

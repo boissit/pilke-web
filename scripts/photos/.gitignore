@@ -3,3 +3,5 @@ full/
 *.png
 __pycache__/
 cutout-box.txt
+!stills/
+!stills/*.png

@@ -4,7 +4,9 @@ P='full/h2z7CB0its4.jpg'
 quad=[(1375.01,314.93),(1739.04,309.20),(1690.18,1115.31),(1318.97,1107.59)]
 photo=cv2.cvtColor(cv2.imread(P),cv2.COLOR_BGR2RGB).astype(np.float32)/255
 shape=photo.shape[:2]
-scr=ios_screen(load_still('screens/story.png'), 2.164)
+LANG=lang_arg()
+STILL={'fi': 'screens/story.png', 'en': 'stills/story-en.png'}[LANG]
+scr=ios_screen(load_still(STILL), 2.164, clock=CLOCK[LANG])
 scr.save('screen-story-ios.png')
 rgb,rq=warp_screen(scr,quad,shape,0.13)
 # Bound: the fitted quad, grown a few pixels, so the photo's own corners decide.
@@ -28,5 +30,5 @@ ring=(A>0.01)&(A<0.99)
 w=near_skin[...,None]
 out=np.where(ring[...,None], w*unmix_thumb+(1-w)*unmix_bezel, unmix_thumb)
 out=np.clip(out,0,1)
-save(out,'ex2-full.jpg',94)
+save(out,f'ex2-{LANG}-full.jpg',94)
 cv2.imwrite('ex2-A.png',(A*255).astype(np.uint8))

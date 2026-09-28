@@ -54,7 +54,9 @@ B = np.percentile(Pl[dark], 8, axis=0)                     # the glass: black as
 print('white (sRGB) median', srgb(np.median(S[bg > 0.5], 0)).round(3), 'black (sRGB)', srgb(B).round(3))
 
 # The app, bent round the edges.
-still = c1.android_screen(c1.load_still('screens/treffit.png'), 2.056)
+LANG = c1.lang_arg()
+STILL = {'fi': 'screens/treffit.png', 'en': 'stills/treffit-en.png'}[LANG]
+still = c1.android_screen(c1.load_still(STILL), 2.056)
 content = np.asarray(still.resize((int(round(W / total)), Hc), Image.LANCZOS)).astype(np.float32) / 255
 content, cos = curved_remap(content, W, EDGE, THETA)
 Cl = lin(content)
@@ -87,5 +89,5 @@ print('grain', round(g, 4))
 
 a = cv2.GaussianBlur(alpha, (0, 0), 0.4)[..., None]
 out = photo * (1 - a) + np.clip(comp_p, 0, 1) * a
-save(out, 'hero-full.jpg', 95)
+save(out, f'hero-{LANG}-full.jpg', 95)
 

@@ -1,5 +1,6 @@
 """The loop card in Näin se toimii: -piUPY2-44A, an iPhone with a Dynamic Island
-held up against an orange wall, with the calendar still and iOS bars drawn.
+held up against an orange wall, with the calendar (stills/kalenteri-<lang>.png)
+and iOS bars drawn.
 
 The screen's edges are fitted sub-pixel where the old screen was lit against
 the unlit glass round it; the Dynamic Island stays the photo's own. The app's white is the old screen's brightest broad white, its
@@ -57,7 +58,8 @@ Wf = np.broadcast_to(Wc, photo.shape).astype(np.float32)
 print('white (sRGB)', srgb(np.median(Wf[inside], 0)).round(3), 'black (sRGB)', srgb(B).round(3))
 
 W, Hc = canon_size(quad, T['aspect'])
-still = c1.ios_screen(c1.load_still('manual/fi/kalenteri.png'), T['aspect'], notch_frac=T['island'])
+LANG = c1.lang_arg()
+still = c1.ios_screen(c1.load_still(f'stills/kalenteri-{LANG}.png'), T['aspect'], notch_frac=T['island'], clock=c1.CLOCK[LANG])
 content = np.asarray(still.resize((W, Hc), Image.LANCZOS)).astype(np.float32) / 255
 Cl = to_photo(lin(content), quad, W, Hc, shape)
 
@@ -73,4 +75,4 @@ print('grain', round(g, 4))
 
 a = alpha[..., None]
 res = photo * (1 - a) + np.clip(out, 0, 1) * a
-save(res, 'loop-full.jpg', 95)
+save(res, f'loop-{LANG}-full.jpg', 95)

@@ -65,7 +65,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout` 1400px<br>`start-story-narrow` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar` 1800px<br>`safety-date` 1100px<br>`beta-invitation` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`start-story-narrow-en` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar-en` 1800px<br>`safety-date-en` 1100px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kutsut.html/` | `en/invitation` 560px<br>`en/sent` 560px |
@@ -84,7 +84,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset` 520px |
-| `/` | `hero-cutout` 1400px<br>`start-story-narrow` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar` 1800px<br>`safety-date` 1100px<br>`beta-invitation` 1000px |
+| `/` | `hero-cutout-fi` 1400px<br>`start-story-narrow-fi` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar-fi` 1800px<br>`safety-date-fi` 1100px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
@@ -124,30 +124,37 @@ that are visible, so a change to any of them can be traced back to the pictures 
 | `feedback` | Date feedback | `screenshotFeedback.yaml` | The partner card with the date's time, one feedback question and its `Kylla` / `Ei` answers |
 | `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress dots, the question and its options, `Jatka` |
 | `asetukset` | Settings, Safety open | `screenshots.yaml` | The Safety section's whole explanation, the trusted-contact field and its save button, the tab bar. The most copy of any picture here, so it goes stale on wording as well as on layout |
-| `hero-cutout` | Home, populated, **inside a photograph, cut out** | `screens/treffit.png` composited by `scripts/photos/hero.py`, cut out by `scripts/photos/cutout.py` | Everything `treffit` shows, both Android bars included (the phone in the photo is an Android), bent round the phone's curved edges; the hand and phone only, transparent, on the page's coral disc. A reshoot of `treffit` reaches the page only through this composite |
-| `loop-calendar` | Calendar week, **inside a photograph** | `manual/fi/kalenteri.png` composited by `scripts/photos/loop.py` | What the manual's `kalenteri` still shows, under a drawn iOS status bar and home indicator: the week, its booked slots and the density shading. A reshoot of that still changes this picture too |
-| `beta-invitation` | Invitation received, **inside a photograph** | `screens/invitation.png` composited by `scripts/photos/beta.py` | What `invitation` shows, under a drawn iOS status bar and home indicator; a thumb covers `Hylkää` and half of `Päätä myöhemmin`. Drawn in the footer's beta card on the front page only |
-| `start-story-narrow` | Story test, first question, **inside a photograph** | `screens/story.png` composited by `scripts/photos/ex2.py` | What `story` shows, under a drawn iOS status bar and home indicator; a thumb covers the third option and half of `Jatka`. Its wide cut `start-story-wide` is the same composite, drawn from 64rem through a `<source>`, so it has no row of its own in the inventory |
-| `safety-date` | An agreed date, **inside a photograph** | `screens/date.png` composited by `scripts/photos/ex3.py` | What `date` shows, under a drawn iOS status bar and home indicator, including the past-date footnote `Nämä treffit ovat jo olleet` |
+| `hero-cutout-fi` | Home, populated, **inside a photograph, cut out** | `screens/treffit.png` composited by `scripts/photos/hero.py fi`, cut out by `scripts/photos/cutout.py` | Everything `treffit` shows, both Android bars included (the phone in the photo is an Android), bent round the phone's curved edges; the hand and phone only, transparent, on the page's coral disc. A reshoot of `treffit` reaches the page only through this composite |
+| `hero-cutout-en` | Home, English, **inside a photograph, cut out** | `scripts/photos/stills/treffit-en.png` composited by `hero.py en`, cut out with the Finnish one's alpha | The English home: Ben Sorsa's invitation, the date agreed with Aleksi Rantala, the petal count, both Android bars |
+| `loop-calendar-fi` | Calendar week, **inside a photograph** | `scripts/photos/stills/kalenteri-fi.png` composited by `scripts/photos/loop.py fi` | The week centred on Tuesday: free date slots (`Treffivaraus`) and your own plans (`Palaveri`, `Sali`, `Hammaslääkäri`), under a drawn iOS status bar and home indicator |
+| `loop-calendar-en` | Calendar week, English, **inside a photograph** | `scripts/photos/stills/kalenteri-en.png` composited by `loop.py en` | The same week in English: `Date slot`, `Meeting`, `Gym`, `Dentist` |
+| `beta-invitation-fi` | Invitation received, **inside a photograph** | `screens/invitation.png` composited by `scripts/photos/beta.py fi` | What `invitation` shows, under a drawn iOS status bar and home indicator; a thumb covers `Hylkää` and half of `Päätä myöhemmin`. Drawn in the footer's beta card on the front page only |
+| `beta-invitation-en` | Invitation received, English, **inside a photograph** | the manual's `manual/en/invitation.png`, read where it is, composited by `beta.py en` | Owen Sims's invitation with four times and three places; a thumb covers `Decline`. A reshoot of the manual's still changes this picture too |
+| `start-story-narrow-fi` | Story test, first question, **inside a photograph** | `screens/story.png` composited by `scripts/photos/ex2.py fi` | What `story` shows, under a drawn iOS status bar and home indicator; a thumb covers the third option and half of `Jatka`. Its wide cut `start-story-wide-fi` is the same composite, drawn from 64rem through a `<source>`, so it has no row of its own in the inventory |
+| `start-story-narrow-en` | Story test, English, **inside a photograph** | `scripts/photos/stills/story-en.png` composited by `ex2.py en` | The first question in English, `Continue` half under the thumb; its wide cut is `start-story-wide-en` |
+| `safety-date-fi` | An agreed date, upcoming, **inside a photograph** | `scripts/photos/stills/date-fi.png` composited by `scripts/photos/ex3.py fi` | The date with Aleksi Rantala on 29.9. at 17.00 at Café Aalto, its Finnish description, when the map will show your position, the map and `Peru treffit` |
+| `safety-date-en` | An agreed date, upcoming, English, **inside a photograph** | `scripts/photos/stills/date-en.png` composited by `ex3.py en` | The same date in English, `Cancel the date` and `Back` |
 
 ## The photographs
 
 Five pictures on the front page are stock photos from Unsplash with a still set into
-the phone in them. A still in a photograph goes stale with the app like any other, and
-more quietly, because nobody reads a photograph for its UI. After a reshoot of
-`treffit`, `story`, `date`, `invitation` or the manual's `kalenteri`, rerun the
-composite from `scripts/photos/`: fetch the originals into `scripts/photos/full/`, run
-`hero.py` and `cutout.py`, `loop.py`, `ex2.py`, `ex3.py` and `beta.py`, then `crops.py`, which writes
-`src/assets/photos/`. The screen corners are fixed in each
-script, so a reshoot at the same device profile needs nothing else.
+the phone in them, each made once per language so that `/en` shows the English app. A
+still in a photograph goes stale with the app like any other, and more quietly, because
+nobody reads a photograph for its UI. The stills the photographs alone use are kept in
+`scripts/photos/stills/`; the rest are read from `src/assets/screens/` and
+`src/assets/manual/`, never copied. After a reshoot of any of them, fetch the originals
+into `scripts/photos/full/` and run `scripts/photos/build.sh`: every composite in both
+languages, the hero's cut-out, and the crops the site draws, into
+`src/assets/photos/`. The screen corners are fixed in each script, so a reshoot at the
+same device profile needs nothing else.
 
 | Picture | Unsplash photo | Photographer | Original |
 | --- | --- | --- | --- |
-| `hero-cutout` | [Ebb8fe-NZtM](https://unsplash.com/photos/Ebb8fe-NZtM) | Georgia de Lotz | https://images.unsplash.com/photo-1622782914767-404fb9ab3f57?fm=jpg&q=85 |
-| `loop-calendar` | [-piUPY2-44A](https://unsplash.com/photos/-piUPY2-44A) | Daniel Romero | https://images.unsplash.com/photo-1749650646156-452624a35dbd?fm=jpg&q=85 |
+| `hero-cutout-*` | [Ebb8fe-NZtM](https://unsplash.com/photos/Ebb8fe-NZtM) | Georgia de Lotz | https://images.unsplash.com/photo-1622782914767-404fb9ab3f57?fm=jpg&q=85 |
+| `loop-calendar-*` | [-piUPY2-44A](https://unsplash.com/photos/-piUPY2-44A) | Daniel Romero | https://images.unsplash.com/photo-1749650646156-452624a35dbd?fm=jpg&q=85 |
 | `start-story-*` | [h2z7CB0its4](https://unsplash.com/photos/h2z7CB0its4) | Jakub Żerdzicki | https://images.unsplash.com/photo-1736146725579-c8a37dd0217f?fm=jpg&q=85 |
-| `safety-date` | [kljagr9EGSc](https://unsplash.com/photos/kljagr9EGSc) | abillion | https://images.unsplash.com/photo-1609405979808-08669e982546?fm=jpg&q=85 |
-| `beta-invitation` | [q_lCo82aXeo](https://unsplash.com/photos/q_lCo82aXeo) | Job Vermeulen | https://images.unsplash.com/photo-1739638726828-d0f3df0dcde1?fm=jpg&q=85 |
+| `safety-date-*` | [kljagr9EGSc](https://unsplash.com/photos/kljagr9EGSc) | abillion | https://images.unsplash.com/photo-1609405979808-08669e982546?fm=jpg&q=85 |
+| `beta-invitation-*` | [q_lCo82aXeo](https://unsplash.com/photos/q_lCo82aXeo) | Job Vermeulen | https://images.unsplash.com/photo-1739638726828-d0f3df0dcde1?fm=jpg&q=85 |
 
 All five are under the Unsplash License: free for commercial use, credit not
 required. It does not cover the likeness of people in them, so none of them shows a

@@ -11,7 +11,10 @@ the hand's own, spread in from inside, so no fringe of the room shows on the
 coral. The arm fades
 out towards the left, where the photograph cuts it.
 
-Reads hero-full.jpg (hero.py), writes cutout-full.png."""
+The cut is made once, on the Finnish composite, and the same alpha is laid on
+each language's: the phone is opaque, so what its screen shows cannot move the
+edge. Reads hero-<lang>-full.jpg (hero.py fi, hero.py en), writes
+cutout-<lang>-full.png."""
 import sys
 
 import cv2
@@ -19,9 +22,10 @@ import numpy as np
 from PIL import Image
 
 sys.path.insert(0, __file__.rsplit('/', 1)[0])
+from comp import LANGS
 from comp2 import filled_blur
 
-im = cv2.imread('hero-full.jpg')
+im = cv2.imread('hero-fi-full.jpg')
 H, W = im.shape[:2]
 I = cv2.cvtColor(im, cv2.COLOR_BGR2RGB).astype(np.float32) / 255
 L = I.mean(2)
@@ -122,14 +126,16 @@ a *= np.clip((x - 350) / 650, 0, 1)[None, :] ** 1.5
 
 # 6. The band takes the hand's own colour, spread in from inside, fading to the
 # photo's where the alpha is nearly whole: none of the room's colour is left at
-# the edge to show against the coral.
+# the edge to show against the coral. The same for each language's composite.
 t = np.clip((a - 0.7) / 0.3, 0, 1)[..., None]
-col = np.where((band > 0)[..., None], I * t + F * (1 - t), I)
-col = np.clip(col, 0, 1)
-
-rgba = np.dstack([(col * 255 + 0.5).astype(np.uint8), (np.clip(a, 0, 1) * 255 + 0.5).astype(np.uint8)])
-ys, xs = np.nonzero(rgba[..., 3] > 2)
+alpha8 = (np.clip(a, 0, 1) * 255 + 0.5).astype(np.uint8)
+ys, xs = np.nonzero(alpha8 > 2)
 box = (int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1)
 print('bbox', box)
-Image.fromarray(rgba).crop(box).save('cutout-full.png', optimize=True)
+for lang in LANGS:
+    Il = cv2.cvtColor(cv2.imread(f'hero-{lang}-full.jpg'), cv2.COLOR_BGR2RGB).astype(np.float32) / 255
+    Fl = F if lang == 'fi' else filled_blur(Il, fg_sure.astype(np.float32), sigmas=(3, 8, 24, 80))
+    col = np.clip(np.where((band > 0)[..., None], Il * t + Fl * (1 - t), Il), 0, 1)
+    rgba = np.dstack([(col * 255 + 0.5).astype(np.uint8), alpha8])
+    Image.fromarray(rgba).crop(box).save(f'cutout-{lang}-full.png', optimize=True)
 open('cutout-box.txt', 'w').write(' '.join(map(str, box)))

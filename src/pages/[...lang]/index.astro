@@ -29,12 +29,18 @@
  * price list reads as a game to be played, which is the opposite of what this is.
  */
 import { getImage, Image, Picture } from 'astro:assets';
-import betaPhoto from '../../assets/photos/beta-invitation.jpg';
-import heroCutout from '../../assets/photos/hero-cutout.png';
-import loopPhoto from '../../assets/photos/loop-calendar.jpg';
-import safetyPhoto from '../../assets/photos/safety-date.jpg';
-import startNarrow from '../../assets/photos/start-story-narrow.jpg';
-import startWide from '../../assets/photos/start-story-wide.jpg';
+import betaEn from '../../assets/photos/beta-invitation-en.jpg';
+import betaFi from '../../assets/photos/beta-invitation-fi.jpg';
+import heroEn from '../../assets/photos/hero-cutout-en.png';
+import heroFi from '../../assets/photos/hero-cutout-fi.png';
+import loopEn from '../../assets/photos/loop-calendar-en.jpg';
+import loopFi from '../../assets/photos/loop-calendar-fi.jpg';
+import safetyEn from '../../assets/photos/safety-date-en.jpg';
+import safetyFi from '../../assets/photos/safety-date-fi.jpg';
+import startNarrowEn from '../../assets/photos/start-story-narrow-en.jpg';
+import startNarrowFi from '../../assets/photos/start-story-narrow-fi.jpg';
+import startWideEn from '../../assets/photos/start-story-wide-en.jpg';
+import startWideFi from '../../assets/photos/start-story-wide-fi.jpg';
 import { grounds, shots } from '../../assets/screens';
 import Icon from '../../components/Icon.astro';
 import PetalScatter from '../../components/PetalScatter.astro';
@@ -47,6 +53,15 @@ export const getStaticPaths = () => localeRoutes();
 
 const lang = localeOf(Astro.params);
 const t = useTranslations(lang);
+
+/*
+  Each photograph carries a still of the app, so each is made once per language
+  and the page draws the one in its own: the English page shows the English app.
+*/
+const photos = {
+  fi: { hero: heroFi, startWide: startWideFi, startNarrow: startNarrowFi, loop: loopFi, safety: safetyFi, beta: betaFi },
+  en: { hero: heroEn, startWide: startWideEn, startNarrow: startNarrowEn, loop: loopEn, safety: safetyEn, beta: betaEn },
+}[lang];
 
 /*
   Each icon is Lucide's, the app's own set, in the page's ink at one stroke weight, on
@@ -93,8 +108,8 @@ const earnings = [
   tall, and the phone would be a stamp in it, so the narrow cut is tight on the hands.
 */
 const startSources = {
-  wide: await getImage({ src: startWide, widths: [700, 1400], format: 'webp' }),
-  narrow: await getImage({ src: startNarrow, widths: [450, 900], format: 'webp' }),
+  wide: await getImage({ src: photos.startWide, widths: [700, 1400], format: 'webp' }),
+  narrow: await getImage({ src: photos.startNarrow, widths: [450, 900], format: 'webp' }),
 };
 
 const safetyCards = [
@@ -103,7 +118,7 @@ const safetyCards = [
 ];
 ---
 
-<Base lang={lang} betaPhoto={{ src: betaPhoto, alt: t('photo.beta') }}>
+<Base lang={lang} betaPhoto={{ src: photos.beta, alt: t('photo.beta') }}>
   <section class="hero-section">
     <div class="wrap hero">
       <PetalScatter
@@ -148,7 +163,7 @@ const safetyCards = [
       <div class="hero-art">
         <div class="disc" aria-hidden="true"></div>
         <Picture
-          src={heroCutout}
+          src={photos.hero}
           formats={['avif', 'webp']}
           alt={t('photo.hero')}
           widths={[420, 600, 840, 1124, 1400]}
@@ -242,7 +257,7 @@ const safetyCards = [
           <a class="go ghost" href={localePath(lang, 'nain-se-toimii')}>{t('how.more')}</a>
         </div>
         <figure class="loop-photo">
-          <Image src={loopPhoto} alt={t('photo.loop')} widths={[800, 1200, 1800]} sizes="(min-width: 64rem) 760px, 178vw" />
+          <Image src={photos.loop} alt={t('photo.loop')} widths={[800, 1200, 1800]} sizes="(min-width: 64rem) 760px, 178vw" />
         </figure>
       </div>
     </div>
@@ -327,7 +342,7 @@ const safetyCards = [
 
       <div class="safety-aside">
         <figure class="safety-photo">
-          <Image src={safetyPhoto} alt={t('photo.safety')} widths={[360, 720, 1100]} sizes="(min-width: 75rem) 360px, 90vw" />
+          <Image src={photos.safety} alt={t('photo.safety')} widths={[360, 720, 1100]} sizes="(min-width: 75rem) 360px, 90vw" />
         </figure>
       </div>
     </div>

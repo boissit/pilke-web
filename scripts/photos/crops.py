@@ -1,9 +1,11 @@
 """Cut the site's pictures out of the composites, into src/assets/photos.
 
-Run after hero.py and cutout.py, loop.py, ex2.py, ex3.py and beta.py, from this
-directory."""
+Run after hero.py, loop.py, ex2.py, ex3.py and beta.py, each for fi and for en,
+and cutout.py, from this directory."""
 import os
 from PIL import Image
+
+from comp import LANGS
 
 WEB = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../src/assets/photos')
 
@@ -14,14 +16,16 @@ def web(src, box, width, name):
     c.save(os.path.join(WEB, name), quality=88, subsampling=0, optimize=True, progressive=True)
 
 
-# The hero's cut-out, transparent, at 1400 wide: the widest the page asks for.
-cut = Image.open('cutout-full.png')
-cut.resize((1400, round(cut.height * 1400 / cut.width)), Image.LANCZOS).save(os.path.join(WEB, 'hero-cutout.png'), optimize=True)
-loop = Image.open('loop-full.jpg')
-loop.resize((1800, round(loop.height * 1800 / loop.width)), Image.LANCZOS).save(
-    os.path.join(WEB, 'loop-calendar.jpg'), quality=88, subsampling=0, optimize=True, progressive=True)
-web('ex2-full.jpg', (570, 0, 2490, 1600), 1400, 'start-story-wide.jpg')
-web('ex2-full.jpg', (880, 165, 2180, 1255), 900, 'start-story-narrow.jpg')
-web('ex3-full.jpg', (1150, 1500, 3445, 4560), 1100, 'safety-date.jpg')
-# The right fifth of the original is left out: a blurred cheek and sunglasses.
-web('beta-full.jpg', (970, 1650, 3050, 4250), 1000, 'beta-invitation.jpg')
+for lang in LANGS:
+    # The hero's cut-out, transparent, at 1400 wide: the widest the page asks for.
+    cut = Image.open(f'cutout-{lang}-full.png')
+    cut.resize((1400, round(cut.height * 1400 / cut.width)), Image.LANCZOS).save(
+        os.path.join(WEB, f'hero-cutout-{lang}.png'), optimize=True)
+    loop = Image.open(f'loop-{lang}-full.jpg')
+    loop.resize((1800, round(loop.height * 1800 / loop.width)), Image.LANCZOS).save(
+        os.path.join(WEB, f'loop-calendar-{lang}.jpg'), quality=88, subsampling=0, optimize=True, progressive=True)
+    web(f'ex2-{lang}-full.jpg', (570, 0, 2490, 1600), 1400, f'start-story-wide-{lang}.jpg')
+    web(f'ex2-{lang}-full.jpg', (880, 165, 2180, 1255), 900, f'start-story-narrow-{lang}.jpg')
+    web(f'ex3-{lang}-full.jpg', (1150, 1500, 3445, 4560), 1100, f'safety-date-{lang}.jpg')
+    # The right fifth of the original is left out: a blurred cheek and sunglasses.
+    web(f'beta-{lang}-full.jpg', (970, 1650, 3050, 4250), 1000, f'beta-invitation-{lang}.jpg')

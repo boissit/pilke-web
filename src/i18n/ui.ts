@@ -295,7 +295,7 @@ const fi = {
   'photo.beta':
     'Puhelin kädessä persikanvärisen talon edessä, näytöllä saapunut treffikutsu: kutsuja, ajat ja paikat.',
   'photo.loop':
-    'Puhelin kädessä oranssia seinää vasten, näytöllä Pilkkeen kalenteri ja viikon varatut ja vapaat ajat.',
+    'Puhelin kädessä oranssia seinää vasten, näytöllä Pilkkeen kalenteri: viikon vapaat treffiajat ja omat menot.',
 
   // The legal documents. Their titles and ledes live in their own frontmatter,
   // in the document's language, so they are not repeated here; these are the
@@ -603,7 +603,7 @@ const en: Record<keyof typeof fi, string> = {
   'shot.date': 'An agreed date on a phone: the time, the venue on a map, and the safety button.',
 
   'photo.hero':
-    'A hand holding a phone with the Pilke home screen: an invitation received, a date agreed and an invitation sent.',
+    'A hand holding a phone with the Pilke home screen: a date invitation received and a date agreed.',
   'photo.start':
     'On a sofa beside a sleeping cat, someone answers the first question of the personality quiz on their phone.',
   'photo.safety':
@@ -611,7 +611,7 @@ const en: Record<keyof typeof fi, string> = {
   'photo.beta':
     'A phone held up in front of a peach-coloured house, showing a date invitation received: who sent it, the times and the places.',
   'photo.loop':
-    'A phone held up against an orange wall, showing the Pilke calendar with the week’s booked and free times.',
+    'A phone held up against an orange wall, showing the Pilke calendar: the week’s free date slots and your own plans.',
 
   'legal.effective': 'In effect from {date}',
   'legal.draft.title': 'This text is unfinished',
