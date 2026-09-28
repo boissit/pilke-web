@@ -11,9 +11,9 @@ the hand's own, spread in from inside, so no fringe of the room shows on the
 coral.
 
 The page clips the hand and arm with the disc and lets the phone stand over the
-disc's edge; the phone's part is a second file, a mask of the same size. The
-page places the disc so the thumb and the fingers holding the phone fall inside
-it, so outside it there is only the phone.
+disc's edge; the phone's part is a second file, a mask of the same size. Outside
+the disc the mask is the phone's body and the fingers gripping it, their own
+contour; see step 8.
 
 The cut is made once, on the Finnish composite, and the same alpha is laid on
 each language's: the phone is opaque, so what its screen shows cannot move the
@@ -136,28 +136,7 @@ room = np.clip((Ib.mean(2) - 0.45) / 0.1, 0, 1) * np.clip((0.06 - (Ib[..., 0] - 
 a = np.where(strip, a * (1 - room), a)
 a = a * (1 - poly(fgap))
 
-# 5. A smooth edge, anti-aliased and no softer.
-a = cv2.GaussianBlur(a, (0, 0), 0.8)
-
-# 6. The band takes the hand's own colour, spread in from inside, fading to the
-# photo's where the alpha is nearly whole: none of the room's colour is left at
-# the edge to show against the coral. The same for each language's composite.
-t = np.clip((a - 0.7) / 0.3, 0, 1)[..., None]
-alpha8 = (np.clip(a, 0, 1) * 255 + 0.5).astype(np.uint8)
-ys, xs = np.nonzero(alpha8 > 2)
-# The arm runs out to the photograph's left edge, well past the disc, which
-# clips it; the image keeps it so that the clip, not the crop, ends it.
-box = (0, int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1)
-print('bbox', box)
-for lang in LANGS:
-    Il = cv2.cvtColor(cv2.imread(f'hero-{lang}-full.jpg'), cv2.COLOR_BGR2RGB).astype(np.float32) / 255
-    Fl = F if lang == 'fi' else filled_blur(Il, fg_sure.astype(np.float32), sigmas=(3, 8, 24, 80))
-    col = np.clip(np.where((band > 0)[..., None], Il * t + Fl * (1 - t), Il), 0, 1)
-    rgba = np.dstack([(col * 255 + 0.5).astype(np.uint8), alpha8])
-    Image.fromarray(rgba).crop(box).save(f'cutout-{lang}-full.png', optimize=True)
-open('cutout-box.txt', 'w').write(' '.join(map(str, box)))
-
-# 7. The phone's part: its body, and nothing beside it. The body's outer edges
+# The phone's body, and nothing beside it. The body's outer edges
 # are fitted where its dark rim meets the lighter room or palm, clear of the
 # thumb and fingers; its corners are rounded less than the phone's own, and it
 # is grown by 10px past the rim's light outer edge, so the outline drawn outside
@@ -170,10 +149,92 @@ rough = [TL - u * 26 - v * 70, TR + u * 26 - v * 70, BR + u * 26 + v * 75, BL - 
 dark = np.clip((0.42 - cv2.GaussianBlur(L, (0, 0), 1.0)) / 0.2, 0, 1).astype(np.float32)
 body, spread = subpixel_quad(dark, rough, t_ranges=[(0.45, 0.85), (0.72, 0.9), (0.2, 0.8), (0.1, 0.25)], reach=30)
 print('body', [tuple(round(x, 1) for x in p) for p in body], 'spread', [round(x, 2) for x in spread])
+# The page's disc, in this image's pixels: the page draws x 380 to the right
+# edge 100% of the art box wide (0.049702 of the box per pixel), x 380 4% left of
+# the box, and the disc's centre 63.52% of the box below y 1323, its radius 50%:
+# the disc 54% right of x 380.
+#
+# Outside the disc the page shows the phone and the fingers gripping it, over
+# the pale card, so there the picture holds those and nothing else, each by its
+# own edge in the photo. The phone is told from the room behind it by colour:
+# its frame, rim and glass are neutral or lavender (g - b at most 0.01), the
+# room green, olive or brown (g - b at least 0.03). So the phone is the region
+# of those colours joined to its screen, and its edge is where that colour
+# ends. The fingers are the pieces of the hand that touch it and are skin by
+# their colour (r - g at least 0.04 on average), after the plant's green is
+# taken out of them (skin's r - g is at least 0.03, the plant's at most 0.012).
+# The cut is made 6px outside the circle, so that on the page the disc's own
+# mask, not this, is the arc.
+S = 0.049702
+TOP = 1310       # the image's top: y 1323, the page's reference, less 13px of margin
+cx, cy, r = 380 + 54 / S, 1323 + 63.52 / S, 50 / S
+outside = np.hypot(xx - cx, yy - cy) > r + 6
+bw = int(round(np.linalg.norm(np.float64(body[1]) - np.float64(body[0]))))
+bh = int(round(np.linalg.norm(np.float64(body[3]) - np.float64(body[0]))))
+_, body_a = c1.warp_screen(Image.new('RGB', (bw, bh)), body, (H, W), 0.10)
+body_bin = (body_a > 0.5).astype(np.uint8)
+grown = cv2.dilate(body_bin, ell(13))
+
+Ic = cv2.GaussianBlur(I, (0, 0), 1.0)
+phone_col = np.clip((0.03 - (Ic[..., 1] - Ic[..., 2])) / 0.02, 0, 1)
+scr = poly(screen)
+vicinity = cv2.dilate(scr, ell(161))
+n, lab, st, _ = cv2.connectedComponentsWithStats(((phone_col > 0.5) & (vicinity > 0) | (scr > 0)).astype(np.uint8))
+region = np.isin(lab, np.unique(lab[scr > 0]))
+# Its outline smoothed, the photo's grain taken out of it, then anti-aliased.
+region = cv2.morphologyEx(region.astype(np.uint8), cv2.MORPH_CLOSE, ell(9))
+region = cv2.morphologyEx(region, cv2.MORPH_OPEN, ell(7))
+soft = cv2.GaussianBlur(region.astype(np.float32), (0, 0), 2.0)
+phone_a = np.maximum(scr.astype(np.float32), np.clip((soft - 0.5) * 2.5 + 0.5, 0, 1))
+
+near_phone = cv2.dilate(region, ell(81)) > 0
+notgreen2 = np.clip((Ib[..., 0] - Ib[..., 1] - 0.012) / 0.02, 0, 1)
+a_hand = np.where(near_phone & (poly(nail) == 0), a * notgreen2, a)
+hand_out = ((a_hand > 0.5) & outside & (region == 0)).astype(np.uint8)
+n, lab, st, _ = cv2.connectedComponentsWithStats(hand_out)
+keep = np.zeros((H, W), np.uint8)
+rg = Ib[..., 0] - Ib[..., 1]
+touch = cv2.dilate(region, ell(41)) > 0
+for i in range(1, n):
+    part = lab == i
+    if st[i, 4] > 200 and (touch & part).any() and rg[part].mean() > 0.04:
+        keep[part] = 1
+print('fingers kept outside the disc:', int(keep.sum()), 'px')
+fingers = a_hand * (cv2.dilate(keep, ell(5)) > 0)
+a_out = np.maximum(phone_a, fingers)
+
+# 5. A smooth edge, anti-aliased and no softer.
+a = np.where(outside, a_out, cv2.GaussianBlur(a, (0, 0), 0.8))
+
+# 6. The band takes the hand's own colour, spread in from inside, fading to the
+# photo's where the alpha is nearly whole: none of the room's colour is left at
+# the edge to show against the coral. The same for each language's composite.
+t = np.clip((a - 0.7) / 0.3, 0, 1)
+# The dark junction of rim and finger keeps its own colour, not the hand's.
+t = np.maximum(t, np.clip((0.45 - Ib.mean(2)) / 0.1, 0, 1) * (cv2.dilate(grown, ell(41)) > 0))[..., None]
+alpha8 = (np.clip(a, 0, 1) * 255 + 0.5).astype(np.uint8)
+ys, xs = np.nonzero(alpha8 > 2)
+# The arm runs out to the photograph's left edge, well past the disc, which
+# clips it; the image keeps it so that the clip, not the crop, ends it.
+box = (0, TOP, int(xs.max()) + 1, int(ys.max()) + 1)
+assert ys.min() >= TOP, ys.min()
+print('bbox', box)
+for lang in LANGS:
+    Il = cv2.cvtColor(cv2.imread(f'hero-{lang}-full.jpg'), cv2.COLOR_BGR2RGB).astype(np.float32) / 255
+    Fl = F if lang == 'fi' else filled_blur(Il, fg_sure.astype(np.float32), sigmas=(3, 8, 24, 80))
+    col = np.clip(np.where((band > 0)[..., None], Il * t + Fl * (1 - t), Il), 0, 1)
+    rgba = np.dstack([(col * 255 + 0.5).astype(np.uint8), alpha8])
+    Image.fromarray(rgba).crop(box).save(f'cutout-{lang}-full.png', optimize=True)
+open('cutout-box.txt', 'w').write(' '.join(map(str, box)))
+
 bw = int(round(np.linalg.norm(np.float64(body[1]) - np.float64(body[0]))))
 bh = int(round(np.linalg.norm(np.float64(body[3]) - np.float64(body[0]))))
 _, m = c1.warp_screen(Image.new('RGB', (bw, bh)), body, (H, W), 0.06)
-m = cv2.dilate((m > 0.5).astype(np.uint8), ell(21)).astype(np.float32)
+body_m = cv2.dilate((m > 0.5).astype(np.uint8), ell(21))
+
+# 8. The fingers holding it: the phone's part of the mask is what the picture
+# holds outside the disc, grown a little so the picture's own edge shows.
+m = np.maximum(body_m, cv2.dilate((a_out > 0.02).astype(np.uint8), ell(9))).astype(np.float32)
 m = cv2.GaussianBlur(m, (0, 0), 0.7)
 mask = np.dstack([np.full((H, W, 3), 255, np.uint8), (m * 255 + 0.5).astype(np.uint8)])
 Image.fromarray(mask).crop(box).save('cutout-phone-full.png', optimize=True)
