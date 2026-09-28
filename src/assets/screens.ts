@@ -20,6 +20,11 @@ import feedback from './screens/feedback.png';
 import platter from './screens/platter.png';
 import story from './screens/story.png';
 import treffit from './screens/treffit.png';
+import dateEn from './screens/date-en.png';
+import feedbackEn from './manual/en/feedback.png';
+import invitationEn from './manual/en/invitation.png';
+import platterEn from './manual/en/platter.png';
+import storyEn from './screens/story-en.png';
 
 export const shots = {
   treffit,
@@ -30,6 +35,25 @@ export const shots = {
   asetukset,
   date,
 } as const;
+
+/**
+ * The English app, for `/en`, where there is an English still of the screen. A screen
+ * missing here falls back to the Finnish one: `asetukset` and `treffit` have no English
+ * still yet. Three are the manual's own English stills, read where they are, so a
+ * reshoot of the manual reaches the front page too.
+ */
+const shotsEn: Partial<Record<keyof typeof shots, ImageMetadata>> = {
+  story: storyEn,
+  platter: platterEn,
+  invitation: invitationEn,
+  feedback: feedbackEn,
+  date: dateEn,
+};
+
+/** The screens in a page's language, Finnish where English has none. */
+export function shotsFor(lang: string): Record<keyof typeof shots, ImageMetadata> {
+  return lang === 'en' ? { ...shots, ...shotsEn } : shots;
+}
 
 /**
  * The colour the app paints behind each screen, for the phone frame to inset it on.

@@ -65,7 +65,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`start-story-narrow-en` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar-en` 1800px<br>`safety-date-en` 1100px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`start-story-narrow-en` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`loop-calendar-en` 1800px<br>`safety-date-en` 1100px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kutsut.html/` | `en/invitation` 560px<br>`en/sent` 560px |
@@ -80,7 +80,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/kayttoehdot.html/` | none |
 | `/en/kysyttya.html/` | none |
 | `/en/lapsiturvallisuus.html/` | none |
-| `/en/nain-se-toimii.html/` | `story` 500px<br>`platter` 500px<br>`date` 500px |
+| `/en/nain-se-toimii.html/` | `story-en` 500px<br>`platter` 500px<br>`date-en` 500px |
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset` 520px |
@@ -120,7 +120,9 @@ that are visible, so a change to any of them can be traced back to the pictures 
 | `treffit` | Home, populated | `screenshots.yaml` | **The balance counter: the rose slots and the `n/5` figure.** The wordmark, three stacks of match cards with partner photos, names, ages, venues and timeslot chips, the `Loyda treffit!` button, the tab bar. The only picture on this site with the currency in it |
 | `platter` | Candidates | `screenshotPlatter.yaml` | A candidate's photo card, name and age, the times both people share, the activity chips, the `Ehdota!` button, the pager dots. Drawn on the brand yellow, so a change to that colour shows here |
 | `invitation` | Invitation received | `screenshots.yaml` | The sender's photo card, the timeslots offered as chips, the venue, the map, and the two answers: `Hylkaa` and `Sovittu!` |
-| `date` | An agreed date | `screenshotDate.yaml` | The partner card, the venue and its description, the map, the location-sharing line, the back control |
+| `date` | An agreed date, upcoming | `pilke-app/.maestro/manual/dateUpcoming.yaml`, the same still as `scripts/photos/stills/date-fi.png` | The partner card, the venue and its description, the map, the location-sharing line, `Peru treffit` and the back control |
+| `date-en` | An agreed date, upcoming, English | `manual/dateUpcomingEn.yaml`, the same still as `scripts/photos/stills/date-en.png` | The same date in English, `Cancel the date` and `Back`. Drawn on `/en` in place of `date` |
+| `story-en` | Story test, first question, English | the same still as `scripts/photos/stills/story-en.png` | The first question in English and `Continue`. Drawn on `/en` in place of `story` |
 | `feedback` | Date feedback | `screenshotFeedback.yaml` | The partner card with the date's time, one feedback question and its `Kylla` / `Ei` answers |
 | `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress dots, the question and its options, `Jatka` |
 | `asetukset` | Settings, Safety open | `screenshots.yaml` | The Safety section's whole explanation, the trusted-contact field and its save button, the tab bar. The most copy of any picture here, so it goes stale on wording as well as on layout |
