@@ -3,9 +3,10 @@
  * The front page, in the Pehmeä direction: rounded cards on a blush page, a hand
  * holding the phone on a coral disc, and the app's own card tints carrying the loop.
  *
- * Three photographs, each a stock photo with a real still of the app set into its
+ * Four photographs, each a stock photo with a real still of the app set into its
  * phone: the home screen in the hero, the personality quiz on a sofa in the start
- * card, and an agreed date at a café in the safety card. A still in a photograph
+ * card, an agreed date at a café in the safety card, and an invitation received in
+ * the footer's beta card, which only this page hands a photograph. A still in a photograph
  * goes stale with the app like any other, so `docs/pictures.md` accounts for them.
  *
  * The order is the argument, and it runs: what Pilke is, the three things to
@@ -27,6 +28,7 @@
  * price list reads as a game to be played, which is the opposite of what this is.
  */
 import { getImage, Image } from 'astro:assets';
+import betaPhoto from '../../assets/photos/beta-invitation.jpg';
 import heroPhoto from '../../assets/photos/hero-treffit.jpg';
 import safetyPhoto from '../../assets/photos/safety-date.jpg';
 import startNarrow from '../../assets/photos/start-story-narrow.jpg';
@@ -99,7 +101,7 @@ const safetyCards = [
 ];
 ---
 
-<Base lang={lang}>
+<Base lang={lang} betaPhoto={{ src: betaPhoto, alt: t('photo.beta') }}>
   <section class="hero-section">
     <div class="wrap hero">
       <PetalScatter

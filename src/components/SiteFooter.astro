@@ -18,11 +18,18 @@
  * willing to collect an address against it — and clearing `draft` is the act of
  * signing the text off, so it cannot double as the thing that opens a form.
  *
+ * A page can hand the card a photograph, `photo`, and the front page does: from 64rem
+ * it stands beside the copy, and on a phone above it. Every other page's card is the
+ * copy alone, because the copy is wrapped in a box that lays out as nothing
+ * (`display: contents`) until there is a photograph to sit beside.
+ *
  * The submit handler and the header's hide-on-scroll are this site's only scripts.
  * Both are first-party and bundled with the page, so
  * *no analytics, no cookies, no third-party script* stays true as `README.md` §2
  * and the legal pages both claim.
  */
+import type { ComponentProps } from 'astro/types';
+import { Image } from 'astro:assets';
 import Logo from './Logo.astro';
 import PetalScatter from './PetalScatter.astro';
 import RoseMark from './RoseMark.astro';
@@ -35,9 +42,11 @@ interface Props {
   lang: Lang;
   /** Where the language switch goes, when this page has no twin in the other language. */
   alternate?: string;
+  /** A photograph for the card, beside the copy. Only the front page passes one. */
+  photo?: { src: ImageMetadata; alt: string };
 }
 
-const { lang, alternate } = Astro.props;
+const { lang, alternate, photo } = Astro.props;
 const t = useTranslations(lang);
 
 const other = otherLanguage(lang);
@@ -86,6 +95,29 @@ const signupForms: Record<Lang, string> = {
 */
 const waitlistOpen = true;
 
+type Petals = ComponentProps<typeof PetalScatter>['petals'];
+
+const petals: Petals = [
+  { shape: 'curl', size: 120, rotate: -24, left: '48px', top: '28px', only: 'wide' },
+  { shape: 'spoon', size: 110, rotate: 30, right: '40px', bottom: '40px', only: 'wide' },
+  { shape: 'comma', size: 90, rotate: 36, right: '90px', top: '50px', only: 'wide' },
+  { shape: 'fan', size: 96, rotate: -14, left: '36px', bottom: '36px', only: 'wide' },
+  { shape: 'curl', size: 100, rotate: 30, right: '-20px', top: '30px', only: 'narrow' },
+  { shape: 'spoon', size: 70, rotate: -30, left: '-16px', top: '24px', only: 'narrow' },
+];
+
+/*
+  Beside a photograph the petals keep to the coral the photograph leaves: the left
+  side when wide, and the foot of the card when stacked, where the photograph at
+  the top would otherwise cut them off at its corners.
+*/
+const photoPetals: Petals = [
+  { shape: 'curl', size: 120, rotate: -24, left: '48px', top: '28px', only: 'wide' },
+  { shape: 'fan', size: 96, rotate: -14, left: '36px', bottom: '36px', only: 'wide' },
+  { shape: 'curl', size: 100, rotate: 30, right: '-20px', bottom: '40px', only: 'narrow' },
+  { shape: 'spoon', size: 70, rotate: -30, left: '-16px', bottom: '120px', only: 'narrow' },
+];
+
 const legal = [
   ...documents.map((document) => ({
     href: legalHref(document.slug, lang),
@@ -97,24 +129,23 @@ const legal = [
 
 
 <section class="beta" id="beta" aria-labelledby="beta-title">
-  <div class="wrap card">
+  <div class:list={['wrap', 'card', photo && 'with-photo']}>
     <!--
       The wide petals keep to the card's corners. Where they first appear the card is
       not much wider than its headline and its 600px form, and a petal set further
       in lies under the headline or the field.
     -->
-    <PetalScatter
-      fill="var(--petal-on-coral)"
-      petals={[
-        { shape: 'curl', size: 120, rotate: -24, left: '48px', top: '28px', only: 'wide' },
-        { shape: 'spoon', size: 110, rotate: 30, right: '40px', bottom: '40px', only: 'wide' },
-        { shape: 'comma', size: 90, rotate: 36, right: '90px', top: '50px', only: 'wide' },
-        { shape: 'fan', size: 96, rotate: -14, left: '36px', bottom: '36px', only: 'wide' },
-        { shape: 'curl', size: 100, rotate: 30, right: '-20px', top: '30px', only: 'narrow' },
-        { shape: 'spoon', size: 70, rotate: -30, left: '-16px', top: '24px', only: 'narrow' },
-      ]}
-    />
+    <PetalScatter fill="var(--petal-on-coral)" petals={photo ? photoPetals : petals} />
 
+    {
+      photo && (
+        <figure class="beta-photo">
+          <Image src={photo.src} alt={photo.alt} widths={[360, 720, 1000]} sizes="(min-width: 64rem) 420px, 90vw" />
+        </figure>
+      )
+    }
+
+    <div class="beta-copy">
     <div class="rose"><RoseMark size={80} /></div>
     <h2 id="beta-title">{t('cta.title')}</h2>
     <p class="body">{t('cta.body')}</p>
@@ -206,6 +237,7 @@ const legal = [
         });
       }
     </script>
+    </div>
   </div>
 </section>
 
@@ -272,6 +304,52 @@ const legal = [
 
   .card > :not(.petals) {
     position: relative;
+  }
+
+  .beta-copy {
+    display: contents;
+  }
+
+  /* Stacked, the photograph comes first, a 4:5 of the card's width; wide, it is a
+     column to the right of the copy, and the copy keeps its centred run. */
+  .beta-photo {
+    width: 100%;
+    max-width: 360px;
+    margin: 0;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+  }
+
+  .beta-photo :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 45%;
+  }
+
+  @media (min-width: 64rem) {
+    .card.with-photo {
+      flex-direction: row;
+      align-items: center;
+      gap: clamp(40px, 5vw, 80px);
+    }
+
+    .with-photo .beta-copy {
+      display: flex;
+      flex: 1;
+      min-width: 0;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(16px, 0.76vw + 13px, 24px);
+    }
+
+    .with-photo .beta-photo {
+      order: 1;
+      flex: 0 0 clamp(300px, 29vw, 420px);
+      max-width: none;
+    }
   }
 
   .rose :global(svg) {

@@ -20,9 +20,11 @@ interface Props {
    * a page with no twin there — the 404, which is one file for both — names one.
    */
   alternate?: string;
+  /** A photograph for the beta card in the footer; see `SiteFooter.astro`. */
+  betaPhoto?: { src: ImageMetadata; alt: string };
 }
 
-const { lang, alternate } = Astro.props;
+const { lang, alternate, betaPhoto } = Astro.props;
 const t = useTranslations(lang);
 ---
 
@@ -64,7 +66,7 @@ const t = useTranslations(lang);
       <slot />
     </main>
 
-    <SiteFooter lang={lang} alternate={alternate} />
+    <SiteFooter lang={lang} alternate={alternate} photo={betaPhoto} />
   </body>
 </html>
 
