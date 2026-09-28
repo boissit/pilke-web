@@ -1,6 +1,6 @@
 """Cut the site's pictures out of the composites, into src/assets/photos.
 
-Run after hero.py, ex2.py, ex3.py and beta.py, from this directory."""
+Run after hero.py, loop.py, ex2.py, ex3.py and beta.py, from this directory."""
 import os
 from PIL import Image
 
@@ -13,9 +13,12 @@ def web(src, box, width, name):
     c.save(os.path.join(WEB, name), quality=88, subsampling=0, optimize=True, progressive=True)
 
 
-hero = Image.open('hero-full.jpg')
-hero.resize((2800, round(hero.height * 2800 / hero.width)), Image.LANCZOS).save(
-    os.path.join(WEB, 'hero-treffit.jpg'), quality=86, subsampling=0, optimize=True, progressive=True)
+# The pill's own proportion, placed so neither round end reaches the phone, the
+# thumb or the fingertips (see the hero's comment in the front page).
+web('hero-full.jpg', (990, 1059, 2440, 3653), 1200, 'hero-treffit.jpg')
+loop = Image.open('loop-full.jpg')
+loop.resize((1800, round(loop.height * 1800 / loop.width)), Image.LANCZOS).save(
+    os.path.join(WEB, 'loop-calendar.jpg'), quality=88, subsampling=0, optimize=True, progressive=True)
 web('ex2-full.jpg', (570, 0, 2490, 1600), 1400, 'start-story-wide.jpg')
 web('ex2-full.jpg', (880, 165, 2180, 1255), 900, 'start-story-narrow.jpg')
 web('ex3-full.jpg', (1150, 1500, 3445, 4560), 1100, 'safety-date.jpg')

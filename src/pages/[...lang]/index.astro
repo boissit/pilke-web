@@ -1,13 +1,14 @@
 ---
 /**
  * The front page, in the Pehmeä direction: rounded cards on a blush page, a hand
- * holding the phone as the hero card's right half, and the app's own card tints
- * carrying the loop.
+ * holding the phone in a pill on a coral disc, and the app's own card tints carrying
+ * the loop.
  *
  * Four photographs, each a stock photo with a real still of the app set into its
  * phone: the home screen in the hero, the personality quiz on a sofa in the start
- * card, an agreed date at a café in the safety card, and an invitation received in
- * the footer's beta card, which only this page hands a photograph. A still in a photograph
+ * card, the calendar against an orange wall in the loop card that closes the steps,
+ * an agreed date at a café in the safety card, and an invitation received in the
+ * footer's beta card, which only this page hands a photograph. A still in a photograph
  * goes stale with the app like any other, so `docs/pictures.md` accounts for them.
  *
  * The order is the argument, and it runs: what Pilke is, the three things to
@@ -31,6 +32,7 @@
 import { getImage, Image } from 'astro:assets';
 import betaPhoto from '../../assets/photos/beta-invitation.jpg';
 import heroPhoto from '../../assets/photos/hero-treffit.jpg';
+import loopPhoto from '../../assets/photos/loop-calendar.jpg';
 import safetyPhoto from '../../assets/photos/safety-date.jpg';
 import startNarrow from '../../assets/photos/start-story-narrow.jpg';
 import startWide from '../../assets/photos/start-story-wide.jpg';
@@ -112,7 +114,10 @@ const safetyCards = [
           { shape: 'spoon', size: 90, rotate: 24, left: '36%', top: '40px', only: 'wide' },
           { shape: 'curl', size: 120, rotate: -30, left: '40px', bottom: '30px', only: 'wide' },
           { shape: 'comma', size: 70, rotate: 60, left: '41.5%', bottom: '90px', only: 'wide' },
+          { shape: 'backroll', size: 80, rotate: 18, right: '40px', top: '30px', only: 'wide' },
+          { shape: 'split', size: 60, rotate: -40, right: '40px', bottom: '30px', only: 'wide' },
           { shape: 'spoon', size: 54, rotate: 24, right: '16px', top: '12px', only: 'narrow' },
+          { shape: 'comma', size: 48, rotate: 40, right: '16px', bottom: '16px', only: 'narrow' },
         ]}
       />
 
@@ -131,17 +136,21 @@ const safetyCards = [
       </div>
 
       <!--
-        A hand holding the phone, with no frame of its own: the photograph is the
-        card's right half, or its foot when stacked, and only the card's corners
-        round it. The screen in the hand is the app's home, so that is what the eye
-        lands on. The photograph is landscape and drawn to cover a box taller than
-        it is wide, so what is drawn is 1.78 times the box's height across: 1390px
-        beside the copy, where the card is 780 tall, and 222vw stacked, where the
-        box is 4:5 of the card's width.
+        A hand holding the phone, in a pill on a coral disc. The disc is the brand's
+        colour at full strength and the one place on the first screen it is; the
+        pill stands on it, and the screen in the hand is the app's home, so that is
+        what the eye lands on.
+
+        The picture is cut to the pill's own proportion, 1450 by 2594 of the
+        original, placed so that neither round end reaches the phone, the thumb or
+        the fingertips: each clears them by 50px. The phone is too tall a part of
+        this photograph to sit in the pill's straight middle alone, so it reaches
+        into the ends, inside them.
       -->
       <div class="hero-art">
+        <div class="disc" aria-hidden="true"></div>
         <figure class="hero-photo">
-          <Image src={heroPhoto} alt={t('photo.hero')} widths={[800, 1200, 1800, 2800]} sizes="(min-width: 69rem) 1390px, 222vw" loading="eager" />
+          <Image src={heroPhoto} alt={t('photo.hero')} widths={[560, 760, 1200]} sizes="(min-width: 69rem) 380px, 80vw" loading="eager" />
         </figure>
       </div>
     </div>
@@ -218,9 +227,19 @@ const safetyCards = [
         }
       </ol>
 
+      <!--
+        The loop's closing line is about the calendar, so its card carries the
+        calendar: in a hand against an orange wall, a landscape photograph that keeps
+        its width beside the line, and becomes the card's foot on a phone.
+      -->
       <div class="loop">
-        <p>{t('how.loop')}</p>
-        <a class="go ghost" href={localePath(lang, 'nain-se-toimii')}>{t('how.more')}</a>
+        <div class="loop-copy">
+          <p>{t('how.loop')}</p>
+          <a class="go ghost" href={localePath(lang, 'nain-se-toimii')}>{t('how.more')}</a>
+        </div>
+        <figure class="loop-photo">
+          <Image src={loopPhoto} alt={t('photo.loop')} widths={[800, 1200, 1800]} sizes="(min-width: 64rem) 760px, 178vw" />
+        </figure>
       </div>
     </div>
   </section>
@@ -373,21 +392,44 @@ const safetyCards = [
   }
 
   /*
-    Stacked, the photograph is the card's foot: out to its sides and down to its
-    bottom edge, a 4:5 of its width on a phone and 4:3 on a tablet, where 4:5 of the
-    width would be taller than the screen.
+    The pill on its disc, drawn in fractions of the art box so it is one picture at
+    any size: a full circle behind, and the pill standing in the middle of it,
+    taller than the disc, so the coral shows either side of its straight part.
+    Stacked the pill takes more of the box than beside the copy, 80% of the width
+    rather than 70%: there it is the only thing across the screen.
   */
   .hero-art {
     position: relative;
-    aspect-ratio: 4 / 5;
-    margin: 8px -22px -28px;
+    width: min(100%, 400px);
+    aspect-ratio: 100 / 146;
+    margin: 8px auto 0;
+    container-type: inline-size;
+    --pill: 80cqi;
   }
 
+  .disc {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--brand-main);
+    transform: translateY(-50%);
+  }
+
+  /* A capsule: its width's half as the radius, so both ends are half circles. */
   .hero-photo {
     position: absolute;
-    inset: 0;
+    left: 50%;
+    top: 50%;
+    width: var(--pill);
+    aspect-ratio: 1450 / 2594;
     margin: 0;
     overflow: hidden;
+    border-radius: 9999px;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 4px rgb(58 46 43 / 0.08), 0 24px 48px rgb(58 46 43 / 0.16);
   }
 
   .hero-photo :global(img) {
@@ -395,7 +437,6 @@ const safetyCards = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 50% 50%;
   }
 
   @media (min-width: 40rem) {
@@ -414,9 +455,6 @@ const safetyCards = [
       max-width: calc(100% - 56px);
     }
 
-    .hero-art {
-      aspect-ratio: 4 / 3;
-    }
   }
 
   @media (min-width: 69rem) {
@@ -433,16 +471,12 @@ const safetyCards = [
       flex: 0 1 580px;
     }
 
-    /* Out of the row: the copy keeps the card's left, and this the right half.
-       `.hero > .hero-art` because `.hero > :not(.petals)` sets every child relative. */
-    .hero > .hero-art {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 48%;
-      aspect-ratio: auto;
+    .hero-art {
+      flex: 0 0 auto;
+      width: clamp(400px, 37.5vw, 540px);
+      aspect-ratio: 540 / 700;
       margin: 0;
+      --pill: 70cqi;
     }
   }
 
@@ -742,18 +776,30 @@ const safetyCards = [
     }
   }
 
+  /* The loop card: the closing line and its link, and the calendar in a hand.
+     Stacked, the photograph is the card's square foot; wide, the right 55%, out
+     to the card's edges, and the line sits in the left. */
   .loop {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: clamp(0px, 2.3vw - 9px, 24px);
+    background: var(--surface);
+    border-radius: clamp(32px, 0.76vw + 29px, 40px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .loop-copy {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
-    margin-top: clamp(0px, 2.3vw - 9px, 24px);
+    padding: 32px 24px 28px;
     text-align: center;
   }
 
   .loop p {
     max-width: 36ch;
-    padding-inline: 8px;
     font-family: var(--font-display);
     font-weight: 500;
     font-size: clamp(1.375rem, 0.38vw + 1.28rem, 1.625rem);
@@ -764,16 +810,42 @@ const safetyCards = [
     white-space: nowrap;
   }
 
+  .loop-photo {
+    margin: 0;
+    aspect-ratio: 1;
+  }
+
+  .loop-photo :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+  }
+
   @media (min-width: 64rem) {
     .loop {
       flex-direction: row;
+      min-height: 420px;
+    }
+
+    .loop-copy {
+      flex: 1;
+      align-items: flex-start;
       justify-content: center;
       gap: 24px;
+      padding: 56px 64px;
+      text-align: left;
     }
 
     .loop p {
-      max-width: none;
-      padding: 0;
+      max-width: 22ch;
+      font-size: clamp(1.625rem, 0.8vw + 1.2rem, 2rem);
+    }
+
+    .loop-photo {
+      flex: 0 0 55%;
+      aspect-ratio: auto;
     }
   }
 

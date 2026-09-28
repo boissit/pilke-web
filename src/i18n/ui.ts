@@ -294,6 +294,8 @@ const fi = {
     'Puhelin kahvilan sisäpihalla, näytöllä sovitut treffit: paikka, aika ja kartta.',
   'photo.beta':
     'Puhelin kädessä persikanvärisen talon edessä, näytöllä saapunut treffikutsu: kutsuja, ajat ja paikat.',
+  'photo.loop':
+    'Puhelin kädessä oranssia seinää vasten, näytöllä Pilkkeen kalenteri ja viikon varatut ja vapaat ajat.',
 
   // The legal documents. Their titles and ledes live in their own frontmatter,
   // in the document's language, so they are not repeated here; these are the
@@ -608,6 +610,8 @@ const en: Record<keyof typeof fi, string> = {
     'A phone held up in a café courtyard, showing an agreed date: the venue, the time and a map.',
   'photo.beta':
     'A phone held up in front of a peach-coloured house, showing a date invitation received: who sent it, the times and the places.',
+  'photo.loop':
+    'A phone held up against an orange wall, showing the Pilke calendar with the week’s booked and free times.',
 
   'legal.effective': 'In effect from {date}',
   'legal.draft.title': 'This text is unfinished',
