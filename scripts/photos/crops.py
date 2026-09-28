@@ -29,3 +29,8 @@ for lang in LANGS:
     web(f'ex3-{lang}-full.jpg', (1150, 1500, 3445, 4560), 1100, f'safety-date-{lang}.jpg')
     # The right fifth of the original is left out: a blurred cheek and sunglasses.
     web(f'beta-{lang}-full.jpg', (970, 1650, 3050, 4250), 1000, f'beta-invitation-{lang}.jpg')
+
+# The phone's part of the cut-out, as a mask of the same size, for both languages.
+phone = Image.open('cutout-phone-full.png')
+phone.resize((1400, round(phone.height * 1400 / phone.width)), Image.LANCZOS).save(
+    os.path.join(WEB, 'hero-cutout-phone.png'), optimize=True)

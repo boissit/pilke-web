@@ -8,8 +8,11 @@ in from the certain pixels nearest; the room behind is out of focus, so its
 colour under the edge is well estimated. The phone's rim is dark and the room
 round it light, so dark pixels by the phone stay. The colours in the band are
 the hand's own, spread in from inside, so no fringe of the room shows on the
-coral. The arm fades
-out towards the left, where the photograph cuts it.
+coral.
+
+The page clips the hand and arm with the disc and lets the phone, with the
+fingers and thumb holding it, stand over the disc's edge; the phone's part is a
+second file, a mask of the same size.
 
 The cut is made once, on the Finnish composite, and the same alpha is laid on
 each language's: the phone is opaque, so what its screen shows cannot move the
@@ -119,10 +122,8 @@ thumb[1260:1480, 1140:1400] = 1
 thumb = cv2.GaussianBlur(thumb, (0, 0), 8)
 a = np.where(band > 0, a * (1 - thumb + thumb * np.maximum(notgreen, rim)), a)
 
-# 5. Feather: a smooth, slightly soft edge, then the arm's fade.
+# 5. A smooth edge, anti-aliased and no softer.
 a = cv2.GaussianBlur(a, (0, 0), 0.8)
-x = np.arange(W, dtype=np.float32)
-a *= np.clip((x - 350) / 650, 0, 1)[None, :] ** 1.5
 
 # 6. The band takes the hand's own colour, spread in from inside, fading to the
 # photo's where the alpha is nearly whole: none of the room's colour is left at
@@ -130,7 +131,8 @@ a *= np.clip((x - 350) / 650, 0, 1)[None, :] ** 1.5
 t = np.clip((a - 0.7) / 0.3, 0, 1)[..., None]
 alpha8 = (np.clip(a, 0, 1) * 255 + 0.5).astype(np.uint8)
 ys, xs = np.nonzero(alpha8 > 2)
-box = (int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1)
+# Left of x 380 the arm is left of the disc at every width, so it is never drawn.
+box = (380, int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1)
 print('bbox', box)
 for lang in LANGS:
     Il = cv2.cvtColor(cv2.imread(f'hero-{lang}-full.jpg'), cv2.COLOR_BGR2RGB).astype(np.float32) / 255
@@ -139,3 +141,14 @@ for lang in LANGS:
     rgba = np.dstack([(col * 255 + 0.5).astype(np.uint8), alpha8])
     Image.fromarray(rgba).crop(box).save(f'cutout-{lang}-full.png', optimize=True)
 open('cutout-box.txt', 'w').write(' '.join(map(str, box)))
+
+# 7. The phone's part: the phone and a margin round it, the thumb over its top
+# corner and the fingers over its right edge. Its edges run through the room, or
+# through the palm where it is solid, so laid over the disc-clipped hand it adds
+# the phone and nothing else.
+m = cv2.dilate(poly(phone), ell(81))
+m[1250:1600, 1150:1420] = 1
+m[1830:2800, 2180:2450] = 1
+m = cv2.GaussianBlur(m.astype(np.float32), (0, 0), 0.7)
+mask = np.dstack([np.full((H, W, 3), 255, np.uint8), (m * 255 + 0.5).astype(np.uint8)])
+Image.fromarray(mask).crop(box).save('cutout-phone-full.png', optimize=True)

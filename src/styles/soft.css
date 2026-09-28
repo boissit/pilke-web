@@ -41,6 +41,7 @@
 .slab > .wrap {
   position: relative;
   overflow: hidden;
+  isolation: isolate;
   border-radius: var(--radius-panel);
 }
 
@@ -61,10 +62,6 @@
   background: var(--mint-ground);
 }
 
-/* Anything laid over the scattered petals needs a layer above them. */
-.slab > .wrap > :not(.petals) {
-  position: relative;
-}
 
 /* The padding inside a card, as a straight line from the phone artboard's to the
    desktop's. Block and inline differ because a phone needs its side room for the

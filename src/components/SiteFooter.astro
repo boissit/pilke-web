@@ -292,6 +292,7 @@ const legal = [
   .card {
     position: relative;
     overflow: hidden;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -300,10 +301,6 @@ const legal = [
     background: var(--brand-main);
     border-radius: var(--radius-panel);
     text-align: center;
-  }
-
-  .card > :not(.petals) {
-    position: relative;
   }
 
   .beta-copy {

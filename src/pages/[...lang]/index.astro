@@ -33,6 +33,7 @@ import betaEn from '../../assets/photos/beta-invitation-en.jpg';
 import betaFi from '../../assets/photos/beta-invitation-fi.jpg';
 import heroEn from '../../assets/photos/hero-cutout-en.png';
 import heroFi from '../../assets/photos/hero-cutout-fi.png';
+import heroPhoneMask from '../../assets/photos/hero-cutout-phone.png';
 import loopEn from '../../assets/photos/loop-calendar-en.jpg';
 import loopFi from '../../assets/photos/loop-calendar-fi.jpg';
 import safetyEn from '../../assets/photos/safety-date-en.jpg';
@@ -154,13 +155,18 @@ const safetyCards = [
         disc. The disc is the brand's colour at full strength and the one place on
         the first screen it is; the screen in the hand is the app's home, so that is
         what the eye lands on. The cut-out is transparent, served as AVIF or WebP
-        with the PNG as the fallback; the arm fades out to the left, where the
-        photograph cut it. `scripts/photos/cutout.py` makes it.
+        with the PNG as the fallback. `scripts/photos/cutout.py` makes it.
+
+        The disc clips the hand and the arm: they end on its outline, crisp. The
+        phone, with the thumb and fingers holding it, stands over the disc's edge.
+        Both are one mask on the one picture, the disc's circle and the phone's part
+        (`hero-cutout-phone.png`, the same size) added together, so nothing is drawn
+        twice.
 
         Drawn 104% of the art box's width: 562px beside the copy, and at most 416px
         stacked; the widths are those at 1x and 2x.
       -->
-      <div class="hero-art">
+      <div class="hero-art" style={`--phone-mask: url(${heroPhoneMask.src})`}>
         <div class="disc" aria-hidden="true"></div>
         <Picture
           src={photos.hero}
@@ -359,16 +365,13 @@ const safetyCards = [
   .hero {
     position: relative;
     overflow: hidden;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 28px 22px;
     background: var(--brand-background);
     border-radius: clamp(36px, 1.14vw + 31.5px, 48px);
-  }
-
-  .hero > :not(.petals) {
-    position: relative;
   }
 
   /* A size container, so the headline can be set in the column's own width: the
@@ -412,9 +415,15 @@ const safetyCards = [
 
   /*
     The hand and phone on the disc, drawn in fractions of the art box so it is one
-    picture at any size. The disc is centred on the phone, which sits right of the
-    cut-out's middle and a little below it; the cut-out stands on the art box's
-    foot, a little wider than the box so the fading arm runs out past its left.
+    picture at any size. Two numbers place it: the disc's centre, `--disc-y`, and the
+    cut-out's top, `--cut-top`; the cut-out is 104% of the box wide and 4% of it
+    left of the box, the disc the box's width.
+
+    The mask is the disc's own circle, in the cut-out's coordinates: its centre is
+    the disc's centre less the cut-out's offset, and its radius the disc's, half a
+    pixel wider at the edge so the hand covers the disc's anti-aliased rim and no
+    coral shows between them. Added to it is the phone's part, which is outside the
+    circle only where the phone and the fingers holding it are.
   */
   .hero-art {
     position: relative;
@@ -422,13 +431,15 @@ const safetyCards = [
     aspect-ratio: 100 / 120;
     margin: 8px auto 0;
     container-type: inline-size;
+    --disc-y: 62cqi;
+    --cut-top: 6.85cqi;
   }
 
   .disc {
     position: absolute;
     left: 0;
-    top: 62cqi;
-    width: 100%;
+    top: var(--disc-y);
+    width: 100cqi;
     aspect-ratio: 1;
     border-radius: 50%;
     background: var(--brand-main);
@@ -436,12 +447,24 @@ const safetyCards = [
   }
 
   .hero-art :global(.hero-cut) {
+    --circle: radial-gradient(
+      circle 50cqi at 54cqi calc(var(--disc-y) - var(--cut-top)),
+      #000 50cqi,
+      transparent calc(50cqi + 1px)
+    );
     position: absolute;
     left: -4cqi;
-    bottom: 0;
+    top: var(--cut-top);
     width: 104cqi;
     height: auto;
-    filter: drop-shadow(0 18px 28px rgb(58 46 43 / 0.16));
+    -webkit-mask-image: var(--circle), var(--phone-mask);
+    mask-image: var(--circle), var(--phone-mask);
+    -webkit-mask-size: 100% 100%, 100% 100%;
+    mask-size: 100% 100%, 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-composite: source-over;
+    mask-composite: add;
   }
 
   @media (min-width: 40rem) {
@@ -481,10 +504,8 @@ const safetyCards = [
       width: clamp(400px, 37.5vw, 540px);
       aspect-ratio: 540 / 700;
       margin: 0;
-    }
-
-    .disc {
-      top: 80cqi;
+      --disc-y: 80cqi;
+      --cut-top: 16.48cqi;
     }
   }
 
@@ -605,6 +626,7 @@ const safetyCards = [
   .start {
     position: relative;
     overflow: hidden;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -614,9 +636,6 @@ const safetyCards = [
     box-shadow: var(--shadow-card);
   }
 
-  .start > :not(.petals) {
-    position: relative;
-  }
 
   .start-copy {
     display: flex;
@@ -876,6 +895,7 @@ const safetyCards = [
   .rose-panel {
     position: relative;
     overflow: hidden;
+    isolation: isolate;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -888,9 +908,6 @@ const safetyCards = [
     text-align: center;
   }
 
-  .rose-panel > :not(.petals) {
-    position: relative;
-  }
 
   .rose :global(svg) {
     height: 200px;

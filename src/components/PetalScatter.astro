@@ -11,10 +11,13 @@
  * card's ground a shade deeper — `--petal-on-peach`, `--petal-on-coral` — so the marks
  * sit in the surface rather than on it.
  *
- * The parent positions and clips: it has to be `position: relative` with
- * `overflow: hidden`, so a petal set half off an edge is cut by the card's own
- * rounded corner. Everything else on the card needs a layer above this one, which
- * `.slab > .wrap > :not(.petals)` in `soft.css` gives a slab's content.
+ * The parent positions, clips and isolates: it has to be `position: relative`,
+ * `overflow: hidden` and `isolation: isolate`. The overflow cuts a petal set half
+ * off an edge at the card's own rounded corner. The isolation makes the card its own
+ * stacking context, and the petals sit at the bottom of it, `z-index: -1`: above the
+ * card's background and under everything else on it, however that is wrapped. A
+ * sibling given its own position no longer needs lifting over them, and one wrapped
+ * in `display: contents` no longer slips under them. They never take a click.
  */
 import { PETAL_VIEWBOX, petalSilhouette } from './petalArtwork';
 
@@ -80,6 +83,7 @@ const place = ({ top, right, bottom, left, size, rotate }: Placement) =>
   .petals {
     position: absolute;
     inset: 0;
+    z-index: -1;
     pointer-events: none;
   }
 
