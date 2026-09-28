@@ -65,7 +65,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-treffit` 1200px<br>`start-story-narrow` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar` 1800px<br>`safety-date` 1100px<br>`beta-invitation` 1000px |
+| `/en.html/` | `hero-cutout` 1400px<br>`start-story-narrow` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar` 1800px<br>`safety-date` 1100px<br>`beta-invitation` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kutsut.html/` | `en/invitation` 560px<br>`en/sent` 560px |
@@ -84,7 +84,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset` 520px |
-| `/` | `hero-treffit` 1200px<br>`start-story-narrow` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar` 1800px<br>`safety-date` 1100px<br>`beta-invitation` 1000px |
+| `/` | `hero-cutout` 1400px<br>`start-story-narrow` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar` 1800px<br>`safety-date` 1100px<br>`beta-invitation` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
@@ -124,7 +124,7 @@ that are visible, so a change to any of them can be traced back to the pictures 
 | `feedback` | Date feedback | `screenshotFeedback.yaml` | The partner card with the date's time, one feedback question and its `Kylla` / `Ei` answers |
 | `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress dots, the question and its options, `Jatka` |
 | `asetukset` | Settings, Safety open | `screenshots.yaml` | The Safety section's whole explanation, the trusted-contact field and its save button, the tab bar. The most copy of any picture here, so it goes stale on wording as well as on layout |
-| `hero-treffit` | Home, populated, **inside a photograph** | `screens/treffit.png` composited by `scripts/photos/hero.py` | Everything `treffit` shows, both Android bars included (the phone in the photo is an Android), bent round the phone's curved edges. A reshoot of `treffit` reaches the page only through this composite |
+| `hero-cutout` | Home, populated, **inside a photograph, cut out** | `screens/treffit.png` composited by `scripts/photos/hero.py`, cut out by `scripts/photos/cutout.py` | Everything `treffit` shows, both Android bars included (the phone in the photo is an Android), bent round the phone's curved edges; the hand and phone only, transparent, on the page's coral disc. A reshoot of `treffit` reaches the page only through this composite |
 | `loop-calendar` | Calendar week, **inside a photograph** | `manual/fi/kalenteri.png` composited by `scripts/photos/loop.py` | What the manual's `kalenteri` still shows, under a drawn iOS status bar and home indicator: the week, its booked slots and the density shading. A reshoot of that still changes this picture too |
 | `beta-invitation` | Invitation received, **inside a photograph** | `screens/invitation.png` composited by `scripts/photos/beta.py` | What `invitation` shows, under a drawn iOS status bar and home indicator; a thumb covers `Hylkää` and half of `Päätä myöhemmin`. Drawn in the footer's beta card on the front page only |
 | `start-story-narrow` | Story test, first question, **inside a photograph** | `screens/story.png` composited by `scripts/photos/ex2.py` | What `story` shows, under a drawn iOS status bar and home indicator; a thumb covers the third option and half of `Jatka`. Its wide cut `start-story-wide` is the same composite, drawn from 64rem through a `<source>`, so it has no row of its own in the inventory |
@@ -137,13 +137,13 @@ the phone in them. A still in a photograph goes stale with the app like any othe
 more quietly, because nobody reads a photograph for its UI. After a reshoot of
 `treffit`, `story`, `date`, `invitation` or the manual's `kalenteri`, rerun the
 composite from `scripts/photos/`: fetch the originals into `scripts/photos/full/`, run
-`hero.py`, `loop.py`, `ex2.py`, `ex3.py` and `beta.py`, then `crops.py`, which writes
+`hero.py` and `cutout.py`, `loop.py`, `ex2.py`, `ex3.py` and `beta.py`, then `crops.py`, which writes
 `src/assets/photos/`. The screen corners are fixed in each
 script, so a reshoot at the same device profile needs nothing else.
 
 | Picture | Unsplash photo | Photographer | Original |
 | --- | --- | --- | --- |
-| `hero-treffit` | [Ebb8fe-NZtM](https://unsplash.com/photos/Ebb8fe-NZtM) | Georgia de Lotz | https://images.unsplash.com/photo-1622782914767-404fb9ab3f57?fm=jpg&q=85 |
+| `hero-cutout` | [Ebb8fe-NZtM](https://unsplash.com/photos/Ebb8fe-NZtM) | Georgia de Lotz | https://images.unsplash.com/photo-1622782914767-404fb9ab3f57?fm=jpg&q=85 |
 | `loop-calendar` | [-piUPY2-44A](https://unsplash.com/photos/-piUPY2-44A) | Daniel Romero | https://images.unsplash.com/photo-1749650646156-452624a35dbd?fm=jpg&q=85 |
 | `start-story-*` | [h2z7CB0its4](https://unsplash.com/photos/h2z7CB0its4) | Jakub Żerdzicki | https://images.unsplash.com/photo-1736146725579-c8a37dd0217f?fm=jpg&q=85 |
 | `safety-date` | [kljagr9EGSc](https://unsplash.com/photos/kljagr9EGSc) | abillion | https://images.unsplash.com/photo-1609405979808-08669e982546?fm=jpg&q=85 |
