@@ -10,9 +10,10 @@ round it light, so dark pixels by the phone stay. The colours in the band are
 the hand's own, spread in from inside, so no fringe of the room shows on the
 coral.
 
-The page clips the hand and arm with the disc and lets the phone, with the
-fingers and thumb holding it, stand over the disc's edge; the phone's part is a
-second file, a mask of the same size.
+The page clips the hand and arm with the disc and lets the phone stand over the
+disc's edge; the phone's part is a second file, a mask of the same size. The
+page places the disc so the thumb and the fingers holding the phone fall inside
+it, so outside it there is only the phone.
 
 The cut is made once, on the Finnish composite, and the same alpha is laid on
 each language's: the phone is opaque, so what its screen shows cannot move the
@@ -26,7 +27,8 @@ from PIL import Image
 
 sys.path.insert(0, __file__.rsplit('/', 1)[0])
 from comp import LANGS
-from comp2 import filled_blur
+import comp as c1
+from comp2 import filled_blur, subpixel_quad
 
 im = cv2.imread('hero-fi-full.jpg')
 H, W = im.shape[:2]
@@ -40,6 +42,7 @@ hand = np.float32([(0, 2860), (600, 2480), (950, 1930), (1150, 1360), (1210, 128
                    (1330, 1340), (2290, 1420), (2400, 1850), (2410, 2760), (2250, 2800), (2100, 3450), (1150, 3310),
                    (1170, 3100), (1000, 3205), (850, 3275), (700, 3335), (0, 3570)])
 wedge = np.float32([(1148, 3120), (1150, 3292), (700, 3345), (1000, 3212)])          # table under the palm
+fgap = np.float32([(2167, 2505), (2262, 2505), (2262, 2562), (2200, 2563), (2182, 2568), (2168, 2583)])  # room between two fingertips
 nail = np.float32([(1246, 1341), (1261, 1328), (1279, 1327), (1289, 1337), (1300, 1420), (1244, 1440)])  # thumbnail, certain
 
 
@@ -60,6 +63,7 @@ mask[pf > 0] = cv2.GC_PR_FGD
 mask[poly(phone, s, shp) > 0] = cv2.GC_FGD
 mask[poly(nail, s, shp) > 0] = cv2.GC_FGD
 mask[poly(wedge, s, shp) > 0] = cv2.GC_BGD
+mask[poly(fgap, s, shp) > 0] = cv2.GC_BGD
 cv2.setRNGSeed(7)
 bgd = np.zeros((1, 65), np.float64)
 fgd = np.zeros((1, 65), np.float64)
@@ -76,6 +80,7 @@ screen_in = cv2.dilate(poly(screen), ell(21))
 fg_sure = np.maximum(np.maximum(cv2.erode(m, ell(19)), screen_in), poly(nail))
 bg_sure = cv2.erode(1 - m, ell(19))
 bg_sure[poly(wedge) > 0] = 1
+bg_sure[poly(fgap) > 0] = 1
 bg_sure[fg_sure > 0] = 0
 band = (1 - fg_sure) * (1 - bg_sure)
 
@@ -122,6 +127,15 @@ thumb[1260:1480, 1140:1400] = 1
 thumb = cv2.GaussianBlur(thumb, (0, 0), 8)
 a = np.where(band > 0, a * (1 - thumb + thumb * np.maximum(notgreen, rim)), a)
 
+# The room seen between the fingers, right against the phone's glass edge, is
+# light and cool, green or lavender, where the fingers are warm (skin's r - b is
+# at least 0.08 on this hand): gone. The strip starts at the glass's edge, so
+# the screen is never tested.
+strip = (xx > edge - 24) & (xx < edge + 45) & (yy > 1850) & (yy < 2800)
+room = np.clip((Ib.mean(2) - 0.45) / 0.1, 0, 1) * np.clip((0.06 - (Ib[..., 0] - Ib[..., 2])) / 0.03, 0, 1)
+a = np.where(strip, a * (1 - room), a)
+a = a * (1 - poly(fgap))
+
 # 5. A smooth edge, anti-aliased and no softer.
 a = cv2.GaussianBlur(a, (0, 0), 0.8)
 
@@ -131,8 +145,9 @@ a = cv2.GaussianBlur(a, (0, 0), 0.8)
 t = np.clip((a - 0.7) / 0.3, 0, 1)[..., None]
 alpha8 = (np.clip(a, 0, 1) * 255 + 0.5).astype(np.uint8)
 ys, xs = np.nonzero(alpha8 > 2)
-# Left of x 380 the arm is left of the disc at every width, so it is never drawn.
-box = (380, int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1)
+# The arm runs out to the photograph's left edge, well past the disc, which
+# clips it; the image keeps it so that the clip, not the crop, ends it.
+box = (0, int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1)
 print('bbox', box)
 for lang in LANGS:
     Il = cv2.cvtColor(cv2.imread(f'hero-{lang}-full.jpg'), cv2.COLOR_BGR2RGB).astype(np.float32) / 255
@@ -142,13 +157,23 @@ for lang in LANGS:
     Image.fromarray(rgba).crop(box).save(f'cutout-{lang}-full.png', optimize=True)
 open('cutout-box.txt', 'w').write(' '.join(map(str, box)))
 
-# 7. The phone's part: the phone and a margin round it, the thumb over its top
-# corner and the fingers over its right edge. Its edges run through the room, or
-# through the palm where it is solid, so laid over the disc-clipped hand it adds
-# the phone and nothing else.
-m = cv2.dilate(poly(phone), ell(81))
-m[1250:1600, 1150:1420] = 1
-m[1830:2800, 2180:2450] = 1
-m = cv2.GaussianBlur(m.astype(np.float32), (0, 0), 0.7)
+# 7. The phone's part: its body, and nothing beside it. The body's outer edges
+# are fitted where its dark rim meets the lighter room or palm, clear of the
+# thumb and fingers; its corners are rounded less than the phone's own, and it
+# is grown by 10px past the rim's light outer edge, so the outline drawn outside
+# the disc is the cut-out's own edge of the phone. Everything the growing takes
+# in outside the disc is room the cut-out already left transparent.
+TL, TR, BR, BL = [np.float64(p) for p in screen]
+u = (TR - TL) / np.linalg.norm(TR - TL)
+v = (BL - TL) / np.linalg.norm(BL - TL)
+rough = [TL - u * 26 - v * 70, TR + u * 26 - v * 70, BR + u * 26 + v * 75, BL - u * 26 + v * 75]
+dark = np.clip((0.42 - cv2.GaussianBlur(L, (0, 0), 1.0)) / 0.2, 0, 1).astype(np.float32)
+body, spread = subpixel_quad(dark, rough, t_ranges=[(0.45, 0.85), (0.72, 0.9), (0.2, 0.8), (0.1, 0.25)], reach=30)
+print('body', [tuple(round(x, 1) for x in p) for p in body], 'spread', [round(x, 2) for x in spread])
+bw = int(round(np.linalg.norm(np.float64(body[1]) - np.float64(body[0]))))
+bh = int(round(np.linalg.norm(np.float64(body[3]) - np.float64(body[0]))))
+_, m = c1.warp_screen(Image.new('RGB', (bw, bh)), body, (H, W), 0.06)
+m = cv2.dilate((m > 0.5).astype(np.uint8), ell(21)).astype(np.float32)
+m = cv2.GaussianBlur(m, (0, 0), 0.7)
 mask = np.dstack([np.full((H, W, 3), 255, np.uint8), (m * 255 + 0.5).astype(np.uint8)])
 Image.fromarray(mask).crop(box).save('cutout-phone-full.png', optimize=True)
