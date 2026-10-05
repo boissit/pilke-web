@@ -157,16 +157,16 @@
   en: 'An invitation goes unanswered for a day'
 
 'detail.changes.expired.note':
-  fi: 'Kutsu raukeaa itsestään ja saat terälehtesi takaisin.'
-  en: 'It lapses by itself and your petals come back.'
+  fi: 'Kutsu raukeaa itsestään ja saat terälehtesi takaisin. Vastaamatta jättänyt ei voi hakea uusia ehdokkaita {{cooldown.no_answer_hours}} tuntiin.'
+  en: 'It lapses by itself and your petals come back. The person who did not answer cannot look for new candidates for {{cooldown.no_answer_hours}} hours.'
 
 'detail.changes.declined':
   fi: 'Kutsu hylätään'
   en: 'An invitation is turned down'
 
 'detail.changes.declined.note':
-  fi: 'Saat terälehtesi takaisin. Hylkääminen on aina ilmaista, eikä siitä seuraa hylkääjälle mitään.'
-  en: 'Your petals come back. Turning one down is always free and costs the person doing it nothing.'
+  fi: 'Saat terälehtesi takaisin. Hylkääjä ei voi hakea uusia ehdokkaita {{cooldown.decline_hours}} tuntiin.'
+  en: 'Your petals come back. The person who declined cannot look for new candidates for {{cooldown.decline_hours}} hours.'
 
 'detail.changes.withdrawn':
   fi: 'Perut oman kutsusi'

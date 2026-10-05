@@ -43,8 +43,8 @@
   en: 'Can the other person see where I am?'
 
 'faq.safety.a':
-  fi: 'Vain jos valitset niin. Sijainti näkyy kymmenen minuuttia sovitun alun molemmin puolin ja vain 300 metrin säteellä treffipaikasta, ja voit lopettaa näyttämisen milloin tahansa. Se poistetaan kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun.'
-  en: 'Only if you choose to show them. It runs for ten minutes either side of the agreed start and only within 300 metres of the venue, and you can stop at any time. It is deleted when the window closes, and nothing else reads it.'
+  fi: 'Vain jos valitset niin. Sijainti näkyy {{sharing.lead_minutes}} minuuttia ennen sovittua alkua ja {{sharing.trail_minutes}} minuuttia sen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta, ja voit lopettaa jakamisen milloin tahansa. Se poistetaan kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun.'
+  en: 'Only if you choose to share your location. It runs from {{sharing.lead_minutes}} minutes before the agreed start to {{sharing.trail_minutes}} minutes after it, and only within {{sharing.radius_m}} metres of the venue, and you can stop at any time. It is deleted when the window closes, and nothing else reads it.'
 
 'faq.cost.q':
   fi: 'Mitä se maksaa?'
@@ -59,8 +59,8 @@
   en: 'What if a date falls through?'
 
 'faq.cancel.a':
-  fi: 'Kutsun hylkääminen on ilmaista, eikä siitä seuraa jäähyä. Sovitut treffit voit perua sovelluksessa, mutta se on toiselle epäkohteliasta, ja siitä seuraa jäähy: hetken aikaa et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Sama koskee saapumatta jättämistä.'
-  en: 'Turning down an invitation is free and brings no cooldown. You can call off an agreed date in the app, but it is rude to the other person, and it brings a cooldown: for a while you do not appear among other people’s candidates and cannot find new ones. The same goes for not turning up.'
+  fi: 'Kutsun hylkääminen ei vie terälehtiä, mutta siitä seuraa {{cooldown.decline_hours}} tunnin jäähy, jonka aikana et voi hakea uusia ehdokkaita. Sama koskee kutsua, johon et vastaa. Sovitut treffit voit perua sovelluksessa, mutta se on toiselle epäkohteliasta, ja siitä seuraa jäähy: hetken aikaa et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Sama koskee saapumatta jättämistä.'
+  en: 'Declining an invitation costs no petals, but it brings a {{cooldown.decline_hours}}-hour cooldown during which you cannot look for new candidates. The same goes for an invitation you leave unanswered. You can call off an agreed date in the app, but it is rude to the other person, and it brings a cooldown: for a while you do not appear among other people’s candidates and cannot find new ones. The same goes for not turning up.'
 
 'faq.delete.q':
   fi: 'Voinko poistaa tilini?'

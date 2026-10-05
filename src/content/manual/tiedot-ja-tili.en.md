@@ -11,7 +11,7 @@ draft: true
 |---|---|---|
 | Your first name, age and photo, and the times and places you share | The candidate, or the person invited | You are one of their candidates, or in an invitation |
 | Your first name and phone number | Your date | You both chose to share your number in the feedback |
-| Your position on a map, for {{sharing.window_minutes}} minutes | Your date | Around the start of a date, if you choose to show your position |
+| Your location on a map, for {{sharing.window_minutes}} minutes | Your date | Around the start of a date, if you choose to share your location |
 
 The table is everything other people see about you. Nobody but you sees your email address or your trusted person's number. Your date does not see your feedback. If Pilke puts your dates in your own calendar, such as your Google or Apple calendar, anyone who can see that calendar sees the entry. See [Your free times](/en/guide/vapaat-ajat).
 
@@ -23,8 +23,8 @@ For each notification you choose whether it comes to your phone (1), your email 
 
 Three notifications always come to your phone, because they are only any use on time:
 
-- **A date starting**: you can now show your position, {{sharing.lead_minutes}} minutes before the start.
-- **When the other person arrives**: your date has shown their position at the venue.
+- **A date starting**: you can now share your location, {{sharing.lead_minutes}} minutes before the start.
+- **When the other person arrives**: your date has shared their location at the venue.
 - **Cancelled dates**: without it you would go and wait for someone who is not coming.
 
 The empty-calendar reminder comes on Sundays at about {{notifications.calendar_nudge_hour}}:00, if you have nothing marked for the week ahead.

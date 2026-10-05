@@ -39,8 +39,8 @@ Kun kutsu hyväksytään, vain sovittu aika jää varatuksi ja muut vapautuvat. 
 | Loppu | Kutsujalle | Vastaajalle |
 |---|---|---|
 | **Hyväksytty.** Treffit on sovittu. | Terälehdet jäävät käytetyiksi. Saat ilmoituksen. | Ei terälehtiä eikä jäähyä. |
-| **Hylätty.** | {{petals.refund}} terälehteä takaisin. Saat ilmoituksen. | Ei terälehtiä eikä jäähyä. |
-| **Rauennut.** Kukaan ei vastannut {{invitation.answer_hours}} tunnissa. | {{petals.refund}} terälehteä takaisin. Saat ilmoituksen. | Ei terälehtiä eikä jäähyä. |
+| **Hylätty.** | {{petals.refund}} terälehteä takaisin. Saat ilmoituksen. | Ei terälehtiä. Et voi hakea uusia ehdokkaita {{cooldown.decline_hours}} tuntiin. |
+| **Rauennut.** Kukaan ei vastannut {{invitation.answer_hours}} tunnissa. | {{petals.refund}} terälehteä takaisin. Saat ilmoituksen. | Ei terälehtiä. Et voi hakea uusia ehdokkaita {{cooldown.no_answer_hours}} tuntiin. |
 | **Peruutettu.** Kutsuja perui ennen vastausta. | Ei palautusta. Et voi hakea uusia ehdokkaita {{cooldown.withdrawal_hours}} tuntiin. | Jos hän oli jo saanut ilmoituksen kutsusta, hän saa ilmoituksen myös peruutuksesta. |
 
 Ilmoitukset tulevat, jos ne ovat päällä asetuksissa.

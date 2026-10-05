@@ -48,7 +48,7 @@ answers: yes and my phone number may be shared with them, yes but only through P
 no. We store your answer with that date.
 
 If you both choose to share the number, each of you is given the other's nickname and
-phone number: in a push notification and on that date in the app. If you both answer yes
+phone number: in a push notification and on that date in the app's date history. If you both answer yes
 but either of you chose through Pilke, the two of you can be offered to each other again,
 and nothing is disclosed. If either of you answers no, nothing happens and nothing is
 disclosed.
@@ -101,31 +101,32 @@ yourself, and it does not come from your device's positioning. We use it to deci
 venues are within reach and who we can offer you. Other users cannot see it, and you can
 change it in settings at any time.
 
-### Your position at the venue
+### Your location at the venue
 
-When a date is about to start, you can show your position to the person you are meeting so
-that the two of you can find each other. The position is exact, and we ask for permission
+When a date is about to start, you can share your location with the person you are meeting so
+that the two of you can find each other. The location is exact, and we ask for permission
 separately.
 
 Sharing is limited in five ways:
 
 1. The date has been agreed and has a venue.
-2. The window is twenty minutes: ten minutes either side of the agreed start.
-3. You are within 300 metres of the venue. Your device checks the distance before it sends
+2. The window is {{sharing.window_minutes}} minutes: from {{sharing.lead_minutes}} minutes before the agreed start to
+   {{sharing.trail_minutes}} minutes after it.
+3. You are within {{sharing.radius_m}} metres of the venue. Your device checks the distance before it sends
    anything, and the server checks it again.
 4. Only the person you are meeting can see it. No other user can, and it does not appear in
    our admin views.
-5. The position is deleted when the window closes. If you stop sharing yourself, it is
+5. The location is deleted when the window closes. If you stop sharing yourself, it is
    deleted immediately and no record of it is kept.
 
 Sharing continues if you leave the app or put the phone in your pocket. We say so in the
-app as well, when we ask for permission. The position is not used for anything other than
+app as well, when we ask for permission. The location is not used for anything other than
 helping the two of you find each other.
 
 ## 4. What other users see about you
 
 Another user sees your nickname, age, gender and photograph. They also see the agreed time
-and venue, the times you have offered them, and your position at the venue if you share
+and venue, the times you have offered them, and your location at the venue if you share
 it.
 
 Another user does not see your email address, your date of birth, your trusted contact's
@@ -145,7 +146,7 @@ to nobody. Section 2 says how that question works.
 | Finding candidates from your preferences, area and calendar | Contract |
 | Invitations, agreeing a time and venue, and cancellations | Contract |
 | Notifications about invitations, arrivals and feedback requests | Contract |
-| Showing your position at the venue | Consent, which you can withdraw by stopping sharing |
+| Sharing your location at the venue | Consent, which you can withdraw by stopping sharing |
 | Answers to question sets | Consent, given by answering |
 | Exchanging phone numbers after a date | Consent, given by choosing that answer |
 | Safety: blocks, reports, the safety button and restrictions | Legitimate interest — the safety of our users |
@@ -190,7 +191,7 @@ You can ask us for an account of that assessment at the address in section 1.
 | GatewayAPI (Denmark) | The recipient's phone number and the content of the message, when we send a login code or a safety message. |
 | OpenFreeMap (Hyperknot Software Kft., Hungary) | Your device's IP address and which map tiles it requests. The request comes from your device, not from our server. Its own policy says it does not log IP addresses. |
 | Our hosting provider, **[TO FILL IN: provider]**, Finland | All data in the service sits on its servers. |
-| Pilke staff | What the admin view shows, where that is needed for support or to deal with a safety report. Shared positions do not appear in the admin view. |
+| Pilke staff | What the admin view shows, where that is needed for support or to deal with a safety report. Shared locations do not appear in the admin view. |
 | Google Play | What the app store receives as the distributor of the app. |
 
 We do not sell your data and we do not release it for marketing.
@@ -209,7 +210,7 @@ Finland.
 | Data | Retention |
 | --- | --- |
 | Account and profile | As long as your account exists. |
-| A position you have shared at a venue | Deleted when the window closes, or immediately when you stop sharing. |
+| A location you have shared at a venue | Deleted when the window closes, at the latest {{sharing.trail_minutes}} minutes after the agreed start, or immediately when you stop sharing. |
 | Signed-in devices | 90 days from when the device was last used. |
 | Calendar entries and answers to question sets | For the life of the account; deleted with it. |
 | Dates, invitations and cancellations | 12 months from the date. |
@@ -281,12 +282,12 @@ You have the right to
 - not be subject to a decision based solely on automated processing (section 10).
 
 Some of this you do yourself: you change your profile and preferences in settings, you stop
-sharing your position with one tap, and you delete your account in settings. Send other
+sharing your location with one tap, and you delete your account in settings. Send other
 requests to the address in section 1. We will confirm that the request comes from you and
 answer within one month. If the request is extensive we may extend that by two months, and
 we will tell you if we do.
 
-Withdrawing consent affects processing from then on. You stop sharing your position with
+Withdrawing consent affects processing from then on. You stop sharing your location with
 one tap, and you can change your date preferences at any time. The answer about meeting
 again cannot be withdrawn: once the numbers have been exchanged, withdrawing does not get
 them back. Section 5 says what withdrawing means in that situation.
@@ -308,7 +309,7 @@ code, and each device signs in separately. We store only a hash of the session t
 the phone the token is held in the operating system's secure store.
 
 Connections between the app and the server are encrypted. Admin access is limited to those
-who need it for their work, and shared positions do not appear in the admin view at all.
+who need it for their work, and shared locations do not appear in the admin view at all.
 
 ## 13. When we change this policy
 

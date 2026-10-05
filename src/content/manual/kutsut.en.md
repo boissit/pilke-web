@@ -39,8 +39,8 @@ When the invitation is accepted, only the agreed time stays held and the rest ar
 | Ending | For the one who invited | For the one invited |
 |---|---|---|
 | **Accepted.** The date is agreed. | The petals stay spent. You are told. | No petals, no cooldown. |
-| **Declined.** | {{petals.refund}} petals back. You are told. | No petals, no cooldown. |
-| **Lapsed.** Nobody answered within {{invitation.answer_hours}} hours. | {{petals.refund}} petals back. You are told. | No petals, no cooldown. |
+| **Declined.** | {{petals.refund}} petals back. You are told. | No petals. You cannot look for new candidates for {{cooldown.decline_hours}} hours. |
+| **Lapsed.** Nobody answered within {{invitation.answer_hours}} hours. | {{petals.refund}} petals back. You are told. | No petals. You cannot look for new candidates for {{cooldown.no_answer_hours}} hours. |
 | **Withdrawn.** Taken back before an answer. | No refund. You cannot look for new candidates for {{cooldown.withdrawal_hours}} hours. | If they had already been told about the invitation, they are told it was withdrawn. |
 
 You are told if the notification is on in Settings.

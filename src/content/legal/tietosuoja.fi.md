@@ -51,7 +51,7 @@ kolme: kyllä ja puhelinnumeroni saa jakaa hänelle, kyllä mutta vain Pilkkeen 
 en. Tallennamme vastauksesi näiden treffien tietoihin.
 
 Jos te molemmat valitsette numeron jakamisen, kumpikin saa toisen nimimerkin ja
-puhelinnumeron: push-ilmoituksena ja näiden treffien kohdalla sovelluksessa. Jos molemmat
+puhelinnumeron: push-ilmoituksena ja sovelluksen treffihistoriassa näiden treffien kohdalla. Jos molemmat
 vastaatte kyllä mutta toinen teistä valitsi Pilkkeen kautta, teidät voidaan ehdottaa
 toisillenne uudelleen, eikä mitään luovuteta. Jos jompikumpi vastaa en, mitään ei tapahdu
 eikä mitään luovuteta.
@@ -108,20 +108,20 @@ voit muuttaa sitä asetuksissa milloin tahansa.
 
 ### Sijainti treffipaikalla
 
-Kun treffit ovat alkamassa, voit näyttää sijaintisi sille, jonka kanssa olet menossa
+Kun treffit ovat alkamassa, voit jakaa sijaintisi sille, jonka kanssa olet menossa
 treffeille, jotta löydätte toisenne. Sijainti on tarkka, ja pyydämme siihen erikseen
 luvan.
 
-Voit näyttää sijaintisi vain näissä rajoissa:
+Voit jakaa sijaintisi vain näissä rajoissa:
 
 1. Treffit on sovittu ja niillä on paikka.
-2. Aikaikkuna on kaksikymmentä minuuttia: kymmenen minuuttia sovitun alun kummallakin
-   puolella.
-3. Olet enintään 300 metrin päässä treffipaikasta. Laitteesi tarkistaa etäisyyden ennen
+2. Aikaikkuna on {{sharing.window_minutes}} minuuttia: {{sharing.lead_minutes}} minuuttia ennen sovittua alkua ja
+   {{sharing.trail_minutes}} minuuttia sen jälkeen.
+3. Olet enintään {{sharing.radius_m}} metrin päässä treffipaikasta. Laitteesi tarkistaa etäisyyden ennen
    kuin lähettää mitään, ja palvelin tarkistaa sen uudelleen.
 4. Sijainnin näkee vain se, jonka kanssa olet menossa treffeille. Kukaan muu käyttäjä ei
    näe sitä, eikä se näy ylläpidon näkymissä.
-5. Sijainti poistetaan, kun aikaikkuna sulkeutuu. Jos lopetat näyttämisen itse, se
+5. Sijainti poistetaan, kun aikaikkuna sulkeutuu. Jos lopetat jakamisen itse, se
    poistetaan heti, eikä siitä jää merkintää.
 
 Sijaintisi näkyy edelleen, vaikka siirryt sovelluksesta pois tai laitat puhelimen
@@ -132,7 +132,7 @@ mihinkään muuhun kuin siihen, että löydätte toisenne.
 
 Toinen käyttäjä näkee nimimerkkisi, ikäsi, sukupuolesi ja valokuvasi. Lisäksi hän näkee
 sovitun ajan ja paikan, ne ajat, joita olet tarjonnut hänelle, ja treffipaikalla
-sijaintisi, jos näytät sen.
+sijaintisi, jos jaat sen.
 
 Toinen käyttäjä ei näe sähköpostiosoitettasi, syntymäaikaasi, luotettavan henkilön
 numeroa, treffialuettasi, treffitoiveitasi, sinulle asetettuja rajoituksia eikä
@@ -151,7 +151,7 @@ kerrota kenellekään. Luvussa 2 kerromme, miten tämä kysymys toimii.
 | Treffiehdokkaiden etsiminen toiveidesi, alueesi ja kalenterisi perusteella | Sopimus |
 | Kutsut, ajan ja paikan sopiminen sekä perumiset | Sopimus |
 | Ilmoitukset kutsuista, saapumisesta ja palautepyynnöistä | Sopimus |
-| Sijaintisi näyttäminen treffipaikalla | Suostumus, jonka voit perua lopettamalla näyttämisen |
+| Sijaintisi jakaminen treffipaikalla | Suostumus, jonka voit perua lopettamalla jakamisen |
 | Vastaukset kysymyssarjoihin | Suostumus, jonka annat vastaamalla |
 | Puhelinnumeroiden vaihto treffien jälkeen | Suostumus, jonka annat valitsemalla sen vastauksen |
 | Turvallisuus: estot, ilmoitukset, turvapainike ja rajoitukset | Oikeutettu etu — käyttäjien turvallisuus |
@@ -195,7 +195,7 @@ punninnasta selvityksen luvun 1 osoitteesta.
 | GatewayAPI (Tanska) | Puhelinnumeron ja viestin sisällön, kun lähetämme kirjautumiskoodin tai turvaviestin. |
 | OpenFreeMap (Hyperknot Software Kft., Unkari) | Laitteesi IP-osoitteen ja sen, mitä karttaruutuja se pyytää. Pyyntö lähtee laitteeltasi, ei palvelimeltamme. Palvelun oman selosteen mukaan se ei tallenna IP-osoitteita. |
 | Palvelinsalimme, **[TÄYDENNÄ: palveluntarjoaja]**, Suomi | Kaikki palvelun tiedot ovat sen palvelimilla. |
-| Pilkkeen henkilöstö | Sen, mitä ylläpitonäkymä näyttää, kun se on tarpeen käyttäjätuen tai turvallisuusilmoituksen käsittelyn vuoksi. Näytettyjä sijainteja ylläpitonäkymä ei näytä. |
+| Pilkkeen henkilöstö | Sen, mitä ylläpitonäkymä näyttää, kun se on tarpeen käyttäjätuen tai turvallisuusilmoituksen käsittelyn vuoksi. Jaettuja sijainteja ylläpitonäkymä ei näytä. |
 | Google Play | Sen, mitä sovelluskauppa saa sovelluksen jakelijana. |
 
 Emme myy tietojasi emmekä luovuta niitä markkinointiin.
@@ -213,7 +213,7 @@ Suomessa.
 | Tieto | Säilytysaika |
 | --- | --- |
 | Tili ja profiili | Niin kauan kuin tilisi on olemassa. |
-| Sijainti, jonka olet näyttänyt treffipaikalla | Poistetaan, kun aikaikkuna sulkeutuu, tai heti, kun lopetat näyttämisen. |
+| Sijainti, jonka olet jakanut treffipaikalla | Poistetaan, kun aikaikkuna sulkeutuu eli viimeistään {{sharing.trail_minutes}} minuuttia sovitun alun jälkeen, tai heti, kun lopetat jakamisen. |
 | Kirjautuneet laitteet | 90 päivää siitä, kun laitetta on viimeksi käytetty. |
 | Kalenterimerkinnät ja vastaukset kysymyssarjoihin | Tilin ajan; poistetaan tilin mukana. |
 | Treffit, kutsut ja perumiset | 12 kuukautta treffien ajankohdasta. |
@@ -287,12 +287,12 @@ Sinulla on oikeus
   kohteeksi (luku 10).
 
 Osan näistä hoidat itse: muutat profiilin ja toiveet asetuksissa, lopetat sijainnin
-näyttämisen yhdellä painalluksella ja poistat tilin asetuksissa. Muut pyynnöt lähetät
+jakamisen yhdellä painalluksella ja poistat tilin asetuksissa. Muut pyynnöt lähetät
 luvun 1 osoitteeseen. Varmistamme, että pyyntö tulee sinulta, ja vastaamme kuukauden
 kuluessa. Jos pyyntö on laaja, voimme jatkaa määräaikaa kahdella kuukaudella ja kerromme
 siitä sinulle.
 
-Suostumuksen peruminen vaikuttaa vain tulevaan käsittelyyn. Sijainnin näyttämisen lopetat
+Suostumuksen peruminen vaikuttaa vain tulevaan käsittelyyn. Sijainnin jakamisen lopetat
 yhdellä painalluksella, ja treffitoiveita voit muuttaa milloin tahansa. Vastausta siihen,
 haluatko tavata uudelleen, ei sen sijaan voi perua: jos numerot on jo vaihdettu, peruminen
 ei saa niitä takaisin. Luvussa 5 kerromme, mitä peruminen tässä tilanteessa tarkoittaa.
@@ -315,7 +315,7 @@ laite kirjautuu erikseen. Istuntotunnuksesta tallennamme vain tiivisteen, ja puh
 tunnus on käyttöjärjestelmän suojatussa säilössä.
 
 Yhteydet sovelluksen ja palvelimen välillä on salattu. Ylläpito-oikeudet on rajattu
-niihin, jotka tarvitsevat niitä työssään, ja näytettyjä sijainteja ylläpitonäkymä ei näytä
+niihin, jotka tarvitsevat niitä työssään, ja jaettuja sijainteja ylläpitonäkymä ei näytä
 lainkaan.
 
 ## 13. Kun muutamme tätä selostetta

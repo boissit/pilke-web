@@ -11,7 +11,7 @@ draft: true
 |---|---|---|
 | Kutsumanimi, ikä ja kuva sekä yhteiset aikanne ja paikkanne | Ehdokas tai kutsuttu | Olet hänen ehdokkaidensa joukossa tai kutsussa |
 | Kutsumanimi ja puhelinnumero | Treffikumppani | Olette molemmat valinneet palautteessa numeron jakamisen |
-| Sijaintisi kartalla, {{sharing.window_minutes}} minuutin ajan | Treffikumppani | Treffien alun ympärillä, jos itse näytät sijaintisi |
+| Sijaintisi kartalla, {{sharing.window_minutes}} minuutin ajan | Treffikumppani | Treffien alun ympärillä, jos itse jaat sijaintisi |
 
 Taulukossa on kaikki, mitä sinusta näytetään muille. Sähköpostiosoitettasi ja luotettavan henkilön numeroa ei näe kukaan muu kuin sinä. Palautettasi ei näe treffikumppanisi. Jos Pilke merkitsee treffit sinun kalenteriisi, esimerkiksi Google- tai Apple-kalenteriisi, merkinnän näkevät kaikki, jotka näkevät sen kalenterin. Katso [Vapaat aikasi](/ohje/vapaat-ajat).
 
@@ -23,8 +23,8 @@ Valitset jokaiselle ilmoitukselle, tuleeko se puhelimeen (1), sähköpostiin (2)
 
 Kolme ilmoitusta tulee aina puhelimeen, koska niistä on hyötyä vain ajoissa:
 
-- **Treffien alku**: sijaintia voi nyt näyttää, {{sharing.lead_minutes}} minuuttia ennen treffejä.
-- **Kun toinen on paikalla**: treffikumppanisi on näyttänyt sijaintinsa treffipaikalla.
+- **Treffien alku**: sijainnin voi nyt jakaa, {{sharing.lead_minutes}} minuuttia ennen treffejä.
+- **Kun toinen on paikalla**: treffikumppanisi on jakanut sijaintinsa treffipaikalla.
 - **Perutut treffit**: ilman tätä lähtisit odottamaan ihmistä, joka ei tule.
 
 Muistutus tyhjästä kalenterista tulee sunnuntaisin noin kello {{notifications.calendar_nudge_hour}}, jos seuraavalle viikolle ei ole merkitty aikoja.

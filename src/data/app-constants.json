@@ -48,9 +48,9 @@
     "reminder_hours": 1
   },
   "sharing": {
-    "lead_minutes": 10,
-    "trail_minutes": 10,
-    "window_minutes": 20,
+    "lead_minutes": 20,
+    "trail_minutes": 20,
+    "window_minutes": 40,
     "radius_m": 300
   },
   "noshow": {
@@ -59,6 +59,8 @@
   },
   "cooldown": {
     "withdrawal_hours": 12,
+    "decline_hours": 12,
+    "no_answer_hours": 12,
     "cancel_long_notice_days": 3,
     "cancel_long_notice_hours": 24,
     "cancel_short_notice_hours": 12,

@@ -1,4 +1,7 @@
+import { createSatteriMarkdownProcessor } from '@astrojs/markdown-satteri';
 import { getCollection, type CollectionEntry } from 'astro:content';
+
+import { resolveTokens } from '../manual/constants';
 
 import { defaultLang, languages, localePath, type Lang } from './ui';
 
@@ -122,4 +125,24 @@ export function formatEffective(date: Date, lang: Lang): string {
     month: lang === 'fi' ? 'numeric' : 'long',
     year: 'numeric',
   });
+}
+
+let renderer: Awaited<ReturnType<typeof createSatteriMarkdownProcessor>> | undefined;
+
+/**
+ * A document's body as HTML, with every `{{area.name}}` token filled in from the app's
+ * constants. The privacy statement states how long a location may be shared, and that
+ * figure is the backend's, so it is a token there as it is in the manual.
+ *
+ * Rendered here when the page is built rather than by the content layer, for the reason
+ * `src/manual/body.ts` gives: the layer caches an entry's HTML against its own text, so
+ * a constant changed afterwards would never reach the page, and an unknown token would
+ * be a line in a log rather than a failed build. The same Sätteri processor Astro's own
+ * render uses, so headings, quotes and dashes come out the same.
+ */
+export async function renderLegalBody(entry: LegalEntry): Promise<string> {
+  renderer ??= await createSatteriMarkdownProcessor({ syntaxHighlight: false });
+  const where = `src/content/legal/${entry.id}.md`;
+  const rendered = await renderer.render(resolveTokens(entry.body ?? '', where), {});
+  return rendered.code;
 }

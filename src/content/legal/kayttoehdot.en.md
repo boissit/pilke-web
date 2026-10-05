@@ -92,7 +92,7 @@ below:
   button, it is your responsibility that they know about it and accept it; the number is
   their data, not yours. The safety button is not an emergency number: when you need help
   now, call 112.
-- **Sharing your position at the venue**, limited as set out in section 3 of the
+- **Sharing your location at the venue**, limited as set out in section 3 of the
   [privacy policy](/en/tietosuoja).
 - **A safety report** you can file after a date. Only Pilke staff can see it.
 - **A block.** When you file a safety report after a date, the two of you are never

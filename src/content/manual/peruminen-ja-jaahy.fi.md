@@ -1,6 +1,6 @@
 ---
 title: Peruminen ja jäähy
-lead: Jos perut sovitut treffit, peruutat lähettämäsi kutsun tai jätät saapumatta treffeille, saat jäähyn. Tältä sivulta näet, mistä jäähyn saa, kuinka kauan se kestää ja mitä sen aikana ei voi tehdä.
+lead: Jos perut sovitut treffit, peruutat lähettämäsi kutsun, hylkäät saamasi kutsun, jätät sen vastaamatta tai jätät saapumatta treffeille, saat jäähyn. Tältä sivulta näet, mistä jäähyn saa, kuinka kauan se kestää ja mitä sen aikana ei voi tehdä.
 order: 60
 draft: true
 ---
@@ -25,12 +25,18 @@ Jäähyn aikana Treffit-sivun yläosassa on ilmoitus (1): mitä se estää, mihi
 | Mitä teit | Jäähy | Kesto |
 |---|---|---|
 | Peruutit lähettämäsi kutsun ennen vastausta | Ei hakua | {{cooldown.withdrawal_hours}} tuntia |
+| Hylkäsit saamasi kutsun | Ei hakua | {{cooldown.decline_hours}} tuntia |
+| Jätit saamasi kutsun vastaamatta | Ei hakua | {{cooldown.no_answer_hours}} tuntia |
 | Peruit sovitut treffit vähintään {{cooldown.cancel_long_notice_days}} päivää ennen | Molemmat | {{cooldown.cancel_long_notice_hours}} tuntia |
 | Peruit sovitut treffit vähintään {{cooldown.cancel_short_notice_hours}} tuntia ennen | Molemmat | {{cooldown.cancel_short_notice_days}} päivää |
 | Peruit sovitut treffit myöhemmin | Molemmat | {{cooldown.cancel_late_days}} päivää |
 | Toinen kertoi, ettet saapunut | Molemmat | {{cooldown.noshow_days}} päivää |
 
-Toistuva peruminen pidentää jäähyä. Jokainen aiempi sovittujen treffien peruminen viimeisen {{cooldown.repeat_window_days}} päivän ajalta kertoo seuraavan perumisen keston {{cooldown.repeat_multiplier}}:lla. Jäähy kestää kuitenkin enintään {{cooldown.ceiling_days}} päivää. Kutsujen peruutukset ja saapumatta jäämiset eivät kasvata kerrointa.
+Toistuva peruminen pidentää jäähyä. Jokainen aiempi sovittujen treffien peruminen viimeisen {{cooldown.repeat_window_days}} päivän ajalta kertoo seuraavan perumisen keston {{cooldown.repeat_multiplier}}:lla. Jäähy kestää kuitenkin enintään {{cooldown.ceiling_days}} päivää. Kutsujen peruutukset, hylkäämiset, vastaamatta jättämiset ja saapumatta jäämiset eivät kasvata kerrointa.
+
+![Ilmoitus Treffit-sivulla: et voi hakea uusia ehdokkaita, koska hylkäsit saamasi treffikutsun](shot:cooldown-decline#cooldown-notice)
+
+Kutsun voi hylätä perustelematta, ja hylkäys on kutsujalle parempi vastaus kuin hiljaisuus. Hylkäämisestä ja vastaamatta jättämisestä seuraa lyhyt jäähy (1): toinen käytti kutsuun terälehtiä ja odotti vastaustasi. Jäähyn aikana näyt edelleen muiden ehdokkaissa ja voit vastata saamiisi kutsuihin.
 
 ## Mitä perumisesta seuraa toiselle
 

@@ -1,6 +1,6 @@
 ---
 title: Cancelling and cooldowns
-lead: If you call off an agreed date, withdraw an invitation you sent or don’t turn up to a date, you get a cooldown. This page shows what causes one, how long it lasts and what you can’t do during it.
+lead: If you call off an agreed date, withdraw an invitation you sent, decline or leave unanswered an invitation you received, or don’t turn up to a date, you get a cooldown. This page shows what causes one, how long it lasts and what you can’t do during it.
 order: 60
 draft: true
 ---
@@ -25,12 +25,18 @@ During a cooldown the top of the Dates page carries a notice (1): what it stops,
 | What you did | Cooldown | How long |
 |---|---|---|
 | Withdrew an invitation you sent before it was answered | No looking | {{cooldown.withdrawal_hours}} hours |
+| Declined an invitation you received | No looking | {{cooldown.decline_hours}} hours |
+| Left an invitation you received unanswered | No looking | {{cooldown.no_answer_hours}} hours |
 | Called off an agreed date at least {{cooldown.cancel_long_notice_days}} days ahead | Both | {{cooldown.cancel_long_notice_hours}} hours |
 | Called off an agreed date at least {{cooldown.cancel_short_notice_hours}} hours ahead | Both | {{cooldown.cancel_short_notice_days}} days |
 | Called off an agreed date any later | Both | {{cooldown.cancel_late_days}} days |
 | The other person told us you did not turn up | Both | {{cooldown.noshow_days}} days |
 
-Calling off dates again and again makes the cooldown longer. Each date you called off in the last {{cooldown.repeat_window_days}} days multiplies the next one's length by {{cooldown.repeat_multiplier}}, up to a ceiling of {{cooldown.ceiling_days}} days. Withdrawn invitations and no-shows do not add to the multiplier.
+Calling off dates again and again makes the cooldown longer. Each date you called off in the last {{cooldown.repeat_window_days}} days multiplies the next one's length by {{cooldown.repeat_multiplier}}, up to a ceiling of {{cooldown.ceiling_days}} days. Withdrawn, declined and unanswered invitations and no-shows do not add to the multiplier.
+
+![A notice on the Dates page: you cannot look for new candidates because you declined a date invitation you received](shot:cooldown-decline#cooldown-notice)
+
+You can decline without giving a reason, and a no is a better answer for the one who invited than silence. Declining or leaving an invitation unanswered gives you a short cooldown (1): they spent petals on the invitation and waited for your answer. During it you still show up in other people's candidates and can answer the invitations you receive.
 
 ## What calling off means for the other person
 

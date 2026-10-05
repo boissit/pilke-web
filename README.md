@@ -171,9 +171,12 @@ it is a `{{area.name}}` token, and `src/data/app-constants.json` is what fills t
 in. That file is generated, not edited: `make export-constants` in
 `treffit-backend` (containers up) reads each value off the setting or constant the
 backend enforces and writes it here. Rerun it whenever one of those rules changes
-and commit the result; a token the file does not hold fails the build. The pages
-elsewhere on this site still carry their numbers as prose, so a change the export
-picks up has to be checked against them by hand.
+and commit the result; a token the file does not hold fails the build. The same
+tokens work in `src/i18n/ui.ts`, whose `t()` fills them in, and in the legal
+documents, which `renderLegalBody()` in `src/i18n/legal.ts` renders. Most of those
+pages still carry their numbers as prose, so a change the export picks up has to be
+checked against them by hand; the location-sharing window and the decline and
+no-answer cooldowns are tokens everywhere they appear.
 
 The load-bearing numbers:
 
@@ -195,10 +198,10 @@ The load-bearing numbers:
   voisit lähteä treffeille?"* with the sublabel *"Ehdotamme treffipaikkoja ympyrän
   sisältä"*. The site said "Pilke kysyy suunnilleen missä asut" for a while and
   that was invented; `privacy.area` now says what the screen says.
-- Position sharing runs ten minutes either side of the agreed start
-  (`POSITION_SHARING_LEAD` and `POSITION_SHARING_TRAIL`, both 10 minutes), only
-  within 300 m of the venue (`POSITION_PROXIMITY_RADIUS`), and only to the other
-  party.
+- Location sharing runs from twenty minutes before the agreed start to twenty
+  after it (`POSITION_SHARING_LEAD` and `POSITION_SHARING_TRAIL`), only within
+  300 m of the venue (`POSITION_PROXIMITY_RADIUS`), and only to the other party.
+  The copy says *jakaa sijainti* and *share your location*, as the app does.
 - **Do not write that Pilke cannot see a shared position.** It is a row in the
   database until `core.tasks.sweep_closed_positions` deletes it, so "ei meille" and
   "Pilke itself does not see it" were both overclaims and are gone. What is true

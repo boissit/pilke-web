@@ -105,8 +105,8 @@
   en: 'Go on the date'
 
 'how.three.body':
-  fi: 'Pilke kertoo ajan, paikan ja reitin. Paikan päällä voitte näyttää sijaintinne, niin löydätte toisenne.'
-  en: 'Pilke gives you the time, the place and the way there. At the venue you can show each other where you are, so you find one another.'
+  fi: 'Pilke kertoo ajan, paikan ja reitin. Paikan päällä voitte jakaa sijaintinne, niin löydätte toisenne.'
+  en: 'Pilke gives you the time, the place and the way there. At the venue you can share your locations, so you find one another.'
 
 'how.four.title':
   fi: 'Kerro miten meni'

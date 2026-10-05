@@ -25,6 +25,8 @@
  * one, and a paragraph says its point in its first six words.
  */
 
+import { resolveTokens } from '../manual/constants';
+
 export const languages = {
   fi: 'Suomi',
   en: 'English',
@@ -85,7 +87,7 @@ const fi = {
   'how.two.body': 'Näet, kuka kutsui ja milloin. Valitse aika ja paikka, niin treffit on sovittu.',
   'how.three.title': 'Menkää treffeille',
   'how.three.body':
-    'Pilke kertoo ajan, paikan ja reitin. Paikan päällä voitte näyttää sijaintinne, niin löydätte toisenne.',
+    'Pilke kertoo ajan, paikan ja reitin. Paikan päällä voitte jakaa sijaintinne, niin löydätte toisenne.',
   'how.four.title': 'Kerro miten meni',
   'how.four.body':
     'Vastaa treffien jälkeen pariin kysymykseen. Saat terälehtiä, ja seuraavat ehdokkaat osuvat paremmin.',
@@ -157,7 +159,7 @@ const fi = {
   'privacy.area':
     'Pilke ei kysy kotiosoitettasi eikä sitä, missä asut. Valitset kartalta alueen ja sen, kuinka kauas voisit lähteä treffeille, ja treffipaikkoja ehdotetaan tuon ympyrän sisältä.',
   'privacy.body':
-    'Laitteesi sijaintia luetaan vain treffeillä ja vain jos itse valitset näyttää sen. Näyttäminen toimii kymmenen minuuttia sovitun alkamisajan molemmin puolin ja vain 300 metrin säteellä treffipaikasta, joten kotoa sinua ei voi paikantaa. Sijainnin näkee vain toinen osapuoli, ei luotettava läheisesi. Se poistetaan heti kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun: se ei vaikuta terälehtiin, hidastuksiin eikä ilmoituksiin. Voit lopettaa näyttämisen milloin tahansa.',
+    'Laitteesi sijaintia luetaan vain treffeillä ja vain jos itse valitset jakaa sen. Jakaminen toimii {{sharing.lead_minutes}} minuuttia ennen sovittua alkamisaikaa ja {{sharing.trail_minutes}} minuuttia sen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta, joten kotoa sinua ei voi paikantaa. Sijainnin näkee vain toinen osapuoli, ei luotettava läheisesi. Se poistetaan heti kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun: se ei vaikuta terälehtiin, hidastuksiin eikä ilmoituksiin. Voit lopettaa jakamisen milloin tahansa.',
 
   'safety.more': 'Lue turvallisuudesta',
   'safety.page.lead':
@@ -205,10 +207,11 @@ const fi = {
 
   'detail.changes.title': 'Jos suunnitelmat muuttuvat',
   'detail.changes.expired': 'Kutsuun ei vastata vuorokaudessa',
-  'detail.changes.expired.note': 'Kutsu raukeaa itsestään ja saat terälehtesi takaisin.',
+  'detail.changes.expired.note':
+    'Kutsu raukeaa itsestään ja saat terälehtesi takaisin. Vastaamatta jättänyt ei voi hakea uusia ehdokkaita {{cooldown.no_answer_hours}} tuntiin.',
   'detail.changes.declined': 'Kutsu hylätään',
   'detail.changes.declined.note':
-    'Saat terälehtesi takaisin. Hylkääminen on aina ilmaista, eikä siitä seuraa hylkääjälle mitään.',
+    'Saat terälehtesi takaisin. Hylkääjä ei voi hakea uusia ehdokkaita {{cooldown.decline_hours}} tuntiin.',
   'detail.changes.withdrawn': 'Perut oman kutsusi',
   'detail.changes.withdrawn.note':
     'Terälehdet on käytetty, ja uusia ehdokkaita pääset löytämään vasta hetken päästä.',
@@ -258,13 +261,13 @@ const fi = {
     'Ehdokas näkee nimesi, kuvasi ja sen, mitä teillä on yhteistä. Puhelinnumeroasi ei näytetä kenellekään — yhtä poikkeusta lukuun ottamatta: jos te molemmat treffien jälkeen valitsette, että numerot saa jakaa, välitämme ne. Tarkemmin tietosuojaselosteessa.',
   'faq.safety.q': 'Näkeekö toinen, missä olen?',
   'faq.safety.a':
-    'Vain jos valitset niin. Sijainti näkyy kymmenen minuuttia sovitun alun molemmin puolin ja vain 300 metrin säteellä treffipaikasta, ja voit lopettaa näyttämisen milloin tahansa. Se poistetaan kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun.',
+    'Vain jos valitset niin. Sijainti näkyy {{sharing.lead_minutes}} minuuttia ennen sovittua alkua ja {{sharing.trail_minutes}} minuuttia sen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta, ja voit lopettaa jakamisen milloin tahansa. Se poistetaan kun aika umpeutuu, eikä sitä käytetä mihinkään muuhun.',
   'faq.cost.q': 'Mitä se maksaa?',
   'faq.cost.a':
     'Pilke on maksuton. Terälehdet ovat Pilkkeen valuutta: ansaitset niitä käymällä treffeillä ja pitämällä kalenterisi ajan tasalla, ja treffikutsu maksaa viisi. Sovelluksessa ei ole rahamaksuja.',
   'faq.cancel.q': 'Entä jos treffit peruuntuvat?',
   'faq.cancel.a':
-    'Kutsun hylkääminen on ilmaista, eikä siitä seuraa jäähyä. Sovitut treffit voit perua sovelluksessa, mutta se on toiselle epäkohteliasta, ja siitä seuraa jäähy: hetken aikaa et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Sama koskee saapumatta jättämistä.',
+    'Kutsun hylkääminen ei vie terälehtiä, mutta siitä seuraa {{cooldown.decline_hours}} tunnin jäähy, jonka aikana et voi hakea uusia ehdokkaita. Sama koskee kutsua, johon et vastaa. Sovitut treffit voit perua sovelluksessa, mutta se on toiselle epäkohteliasta, ja siitä seuraa jäähy: hetken aikaa et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Sama koskee saapumatta jättämistä.',
   'faq.delete.q': 'Voinko poistaa tilini?',
   'faq.delete.a':
     'Kyllä, asetuksista. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Menneet treffit ja niistä annetut palautteet jäävät talteen, koska ne ovat yhtä lailla toisen osapuolen tietoja.',
@@ -427,7 +430,7 @@ const en: Record<keyof typeof fi, string> = {
   'how.two.body': 'You see who invited you and when. Pick a time and a place, and the date is set.',
   'how.three.title': 'Go on the date',
   'how.three.body':
-    'Pilke gives you the time, the place and the way there. At the venue you can show each other where you are, so you find one another.',
+    'Pilke gives you the time, the place and the way there. At the venue you can share your locations, so you find one another.',
   'how.four.title': 'Say how it went',
   'how.four.body':
     'Answer a couple of questions after the date. You earn petals, and your next candidates fit better.',
@@ -485,7 +488,7 @@ const en: Record<keyof typeof fi, string> = {
   'privacy.area':
     'Pilke does not ask for your home address, or where you live at all. You choose an area on a map and how far you would travel for a date, and venues are suggested inside that circle.',
   'privacy.body':
-    'Your device location is read only on a date, and only if you choose to show it. Sharing works for ten minutes either side of the agreed start and only within 300 metres of the venue, so you cannot be located from home. Only the other person sees it, not your trusted contact. It is deleted as soon as the window closes, and it is not used for anything else: it feeds no petals, no slowdown and no report. You can stop at any time.',
+    'Your device location is read only on a date, and only if you choose to share it. Sharing works from {{sharing.lead_minutes}} minutes before the agreed start to {{sharing.trail_minutes}} minutes after it, and only within {{sharing.radius_m}} metres of the venue, so you cannot be located from home. Only the other person sees it, not your trusted contact. It is deleted as soon as the window closes, and it is not used for anything else: it feeds no petals, no slowdown and no report. You can stop at any time.',
 
   'safety.more': 'Read about safety',
   'safety.page.lead':
@@ -530,10 +533,11 @@ const en: Record<keyof typeof fi, string> = {
 
   'detail.changes.title': 'If plans change',
   'detail.changes.expired': 'An invitation goes unanswered for a day',
-  'detail.changes.expired.note': 'It lapses by itself and your petals come back.',
+  'detail.changes.expired.note':
+    'It lapses by itself and your petals come back. The person who did not answer cannot look for new candidates for {{cooldown.no_answer_hours}} hours.',
   'detail.changes.declined': 'An invitation is turned down',
   'detail.changes.declined.note':
-    'Your petals come back. Turning one down is always free and costs the person doing it nothing.',
+    'Your petals come back. The person who declined cannot look for new candidates for {{cooldown.decline_hours}} hours.',
   'detail.changes.withdrawn': 'You withdraw your own invitation',
   'detail.changes.withdrawn.note':
     'The petals are spent, and you can only find new candidates again after a little while.',
@@ -573,13 +577,13 @@ const en: Record<keyof typeof fi, string> = {
     'A candidate sees your name, your photo and what the two of you have in common. Your phone number is not shown to anybody — with one exception: if you both choose, after a date, to share the numbers, we pass them on. The privacy policy has the detail.',
   'faq.safety.q': 'Can the other person see where I am?',
   'faq.safety.a':
-    'Only if you choose to show them. It runs for ten minutes either side of the agreed start and only within 300 metres of the venue, and you can stop at any time. It is deleted when the window closes, and nothing else reads it.',
+    'Only if you choose to share your location. It runs from {{sharing.lead_minutes}} minutes before the agreed start to {{sharing.trail_minutes}} minutes after it, and only within {{sharing.radius_m}} metres of the venue, and you can stop at any time. It is deleted when the window closes, and nothing else reads it.',
   'faq.cost.q': 'What does it cost?',
   'faq.cost.a':
     'Pilke is free. Petals are Pilke’s currency: you earn them by going on dates and keeping your calendar up to date, and a date invitation costs five. There are no payments in the app.',
   'faq.cancel.q': 'What if a date falls through?',
   'faq.cancel.a':
-    'Turning down an invitation is free and brings no cooldown. You can call off an agreed date in the app, but it is rude to the other person, and it brings a cooldown: for a while you do not appear among other people’s candidates and cannot find new ones. The same goes for not turning up.',
+    'Declining an invitation costs no petals, but it brings a {{cooldown.decline_hours}}-hour cooldown during which you cannot look for new candidates. The same goes for an invitation you leave unanswered. You can call off an agreed date in the app, but it is rude to the other person, and it brings a cooldown: for a while you do not appear among other people’s candidates and cannot find new ones. The same goes for not turning up.',
   'faq.delete.q': 'Can I delete my account?',
   'faq.delete.a':
     'Yes, from the settings. Your name, photo and contact details go straight away. Past dates and the feedback written about them stay, because those belong to the other person as much as to you.',
@@ -697,9 +701,15 @@ export const ui = { fi, en } as const;
 export type UiKey = keyof typeof fi;
 
 /** Returns a lookup that falls back to Finnish, so a gap is visible, not blank. */
+/**
+ * A string in `lang`, with every `{{area.name}}` token filled in from the app's
+ * constants, as the manual's are (`src/manual/constants.ts`). A figure the backend
+ * owns, like how long location sharing runs, is written as a token rather than as
+ * prose, so it moves when the backend's value does.
+ */
 export function useTranslations(lang: Lang) {
   return function t(key: UiKey): string {
-    return ui[lang][key] ?? ui[defaultLang][key];
+    return resolveTokens(ui[lang][key] ?? ui[defaultLang][key], `src/i18n/ui.ts (${lang}.${key})`);
   };
 }
 

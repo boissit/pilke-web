@@ -13,10 +13,8 @@
  * has not been through review cannot be read as if it had. Clearing it is part of
  * finishing the text, not a separate step.
  */
-import { render } from 'astro:content';
-
 import PageHead from '../../components/PageHead.astro';
-import { formatEffective, legalDocuments } from '../../i18n/legal';
+import { formatEffective, legalDocuments, renderLegalBody } from '../../i18n/legal';
 import { defaultLang, languages, localePath, useTranslations, type Lang } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
@@ -40,7 +38,7 @@ const { legal, lang } = Astro.props;
 const t = useTranslations(lang);
 
 const entry = legal.entries[lang];
-const { Content } = await render(entry);
+const body = await renderLegalBody(entry);
 ---
 
 <Base lang={lang}>
@@ -63,7 +61,7 @@ const { Content } = await render(entry);
       }
 
       <div class="legal">
-        <Content />
+        <Fragment set:html={body} />
       </div>
 
       <p class="back"><a class="go" href={localePath(lang)}>{t('nav.back')}</a></p>
