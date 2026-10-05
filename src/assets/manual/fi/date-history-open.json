@@ -1,0 +1,48 @@
+{
+  "name": "date-history-open",
+  "language": "fi",
+  "commit": "44180e3d9c4bebb4ebfa3a09eed1e6887d22b841-dirty",
+  "takenAt": "2026-10-05T22:28:42Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "economy-explainer": {
+      "x": 603,
+      "y": 116,
+      "width": 444,
+      "height": 117
+    },
+    "tip-bank": {
+      "x": 33,
+      "y": 1741,
+      "width": 197,
+      "height": 176
+    },
+    "find-dates": {
+      "x": 487,
+      "y": 1745,
+      "width": 560,
+      "height": 172
+    },
+    "balance-counter": {
+      "x": 603,
+      "y": 116,
+      "width": 444,
+      "height": 117
+    },
+    "balance-counter-0": {
+      "x": 603,
+      "y": 116,
+      "width": 444,
+      "height": 117
+    },
+    "open-date-history": {
+      "x": 258,
+      "y": 620,
+      "width": 564,
+      "height": 172
+    }
+  }
+}

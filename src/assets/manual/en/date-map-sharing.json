@@ -1,0 +1,48 @@
+{
+  "name": "date-map-sharing",
+  "language": "en",
+  "commit": "181706f4c064bba04969ee637779f244efb288dd-dirty",
+  "takenAt": "2026-10-05T21:44:49Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "live-map": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 2280
+    },
+    "meet-up-status": {
+      "x": 44,
+      "y": 1394,
+      "width": 992,
+      "height": 106
+    },
+    "meet-up-refused-too_far": {
+      "x": 44,
+      "y": 1533,
+      "width": 992,
+      "height": 106
+    },
+    "meet-up-stop": {
+      "x": 44,
+      "y": 1672,
+      "width": 992,
+      "height": 172
+    },
+    "date-map-directions": {
+      "x": 44,
+      "y": 1932,
+      "width": 360,
+      "height": 172
+    },
+    "date-map-back": {
+      "x": 708,
+      "y": 1932,
+      "width": 328,
+      "height": 172
+    }
+  }
+}

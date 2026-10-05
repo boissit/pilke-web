@@ -26,9 +26,9 @@ Jakaminen alkaa kartan painikkeesta **Jaa sijaintini** (1).
 
 Ennen kuin mitään jaetaan, sovellus kertoo vielä, mitä tapahtuu, ja kysyy luvan.
 
-![Kartta, kun jaatte molemmat sijaintianne: treffikumppanin tieto ja Lopeta sijainnin jakaminen -painike](shot:date-map-sharing#meet-up-status,meet-up-stop)
+![Kartta, kun jaatte molemmat sijaintianne: molempien nastat, treffikumppanin sijainnin päivitysaika ja Lopeta sijainnin jakaminen -painike](shot:date-map-sharing#meet-up-stop)
 
-Kun jaat sijaintiasi, näet kartalla itsesi, treffipaikan ja treffikumppanisi, jos hänkin jakaa sijaintinsa. Kartan alla lukee, milloin hänen sijaintinsa viimeksi päivittyi (1). Sijaintisi päivittyy itsestään, vaikka puhelin olisi taskussa. Jakaminen päättyy, kun aika loppuu tai kun painat **Lopeta sijainnin jakaminen** (2).
+Kun jaat sijaintiasi, näet kartalla itsesi, treffipaikan ja treffikumppanisi, jos hänkin jakaa sijaintinsa. Kartan alla lukee, milloin hänen sijaintinsa viimeksi päivittyi. Sijaintisi päivittyy itsestään, vaikka puhelin olisi taskussa. Jakaminen päättyy, kun aika loppuu tai kun painat **Lopeta sijainnin jakaminen** (1).
 
 ## Jos toinen ei tule
 

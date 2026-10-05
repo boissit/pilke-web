@@ -52,9 +52,9 @@ Only the stills the manual draws are listed. Each one is there because it shows 
 | cooldown-decline | Treffit tab with the no-draw cooldown notice for a declined invitation | `cooldown-notice` |
 | invitation | received invitation, several times and venues | `timeslot-0`, `venue-0` |
 | sent | sent invitation, waiting for an answer, several venues | `withdraw-invitation-open` |
-| date | the agreed date screen once it has started, the live map under Löydättekö toisenne? | `agreed-time`, `live-map` |
+| date | the agreed date screen inside the sharing window, the live map under Löydättekö toisenne? | `agreed-time`, `live-map` |
 | date-map | the date map inside the sharing window, not yet sharing | `meet-up-reveal` |
-| date-map-sharing | the date map while you and your date are both sharing your locations | `meet-up-status`, `meet-up-stop` |
+| date-map-sharing | the date map while you and your date are both sharing your locations | `meet-up-stop` |
 | date-location-consent | the location-sharing consent | |
 | date-noshow-not-at-venue | no-show report refused: not at the venue | `no-show-report` |
 | feedback | post-date feedback, first question | `feedback-when` |
@@ -63,10 +63,11 @@ Only the stills the manual draws are listed. Each one is there because it shows 
 | asetukset-ilmoitukset | settings: notifications open, the three always-on rows in view | `notification-new_date-push`, `notification-new_date-email` |
 | asetukset-tili | settings: account open (sign out everywhere, delete) | `sign-out-everywhere`, `delete-account` |
 
-Three callouts need a word on where their bounds come from:
+Four callouts need a word on where their bounds come from:
 
 - `calendar-density`: the first shaded hour on screen, one cell of the yellow density shading drawn by `src/components/calendar/density.tsx`. The shading is one view per hour and day, with no wrapper around a band, so each hour row marks its first shaded cell and the sidecar keeps the first one on screen. The capture needs at least five people free at the same hours; it seeds them (`make seed-density`'s command) before the walk that takes this still, since every fixture reset clears them.
 - `date-history-row-number` on `date-history`: the app's testID is `date-history-row-<match id>-number`, and the fixture makes new matches every run. `manual-shots.py` records the first such row on screen under this stable name as well (`ALIASES`), and the capture seeds the swapped number on the newest date so that row is the first.
+- `meet-up-stop` on `date-map-sharing`, and no marker on the sentence about the other person's pin above it: the emulator's location provider sometimes answers with its own default place between two fixes, and the `too_far` line that brings is drawn between the sentence and the button. It came and went between the still and its hierarchy, which moved the sentence's bounds off the sentence in the picture. The button is anchored to the foot of the panel and stays put.
 - `calendar-menu` on `kalenteri-valikko`: the menu is a modal, its own window, and the menu's view hierarchy has nothing behind the scrim in it. The flow photographs the calendar just before opening the menu, and the capture lays that hierarchy under the menu's.
 
 In `asetukset-ilmoitukset` the "Aina päällä" heading is scrolled off the top of the current capture. The next capture should scroll so the heading and its three rows are both in view.

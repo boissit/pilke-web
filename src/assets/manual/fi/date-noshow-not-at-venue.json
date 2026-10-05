@@ -1,8 +1,8 @@
 {
   "name": "date-noshow-not-at-venue",
   "language": "fi",
-  "commit": "e794229db3519fb65bf69597514ce363df29df59-dirty",
-  "takenAt": "2026-09-28T13:31:22Z",
+  "commit": "181706f4c064bba04969ee637779f244efb288dd-dirty",
+  "takenAt": "2026-10-05T20:46:16Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -10,7 +10,7 @@
   "elements": {
     "agreed-time": {
       "x": 534,
-      "y": 544,
+      "y": 454,
       "width": 316,
       "height": 74
     },

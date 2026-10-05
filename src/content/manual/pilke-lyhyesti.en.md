@@ -13,7 +13,7 @@ Using Pilke comes down to three things, and they matter equally: leave any one o
 
 ![The Dates page: petals at the top, invitations and dates in the middle, Find a date! at the bottom](shot:treffit#balance-counter,find-dates)
 
-The Dates page is where all three come together. At the top are your petals (1). Petals are Pilke's currency: you earn them by going on dates and spend them by sending date invitations. In the middle are the invitations waiting for your answer, the ones you have sent and your agreed dates. Press **Find a date!** (2) to find new candidates. See [Petals](/en/guide/teralehdet).
+The Dates page is where all three come together. At the top are your petals (1). Petals are Pilke's currency: you earn them by going on dates and spend them by sending date invitations. In the middle are the invitations waiting for your answer, the ones you have sent and your agreed dates. Under them is **Date history**, with the dates you have been on. Press **Find a date!** (2) to find new candidates. See [Petals](/en/guide/teralehdet).
 
 ## No messaging
 

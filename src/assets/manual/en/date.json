@@ -1,8 +1,8 @@
 {
   "name": "date",
   "language": "en",
-  "commit": "e794229db3519fb65bf69597514ce363df29df59-dirty",
-  "takenAt": "2026-09-28T13:41:26Z",
+  "commit": "d691099ce3032b03093817a27bd01b4bdb55c6a3-dirty",
+  "takenAt": "2026-10-05T23:32:04Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -10,7 +10,7 @@
   "elements": {
     "agreed-time": {
       "x": 534,
-      "y": 544,
+      "y": 454,
       "width": 279,
       "height": 74
     },

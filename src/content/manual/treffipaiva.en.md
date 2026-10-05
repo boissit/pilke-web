@@ -26,9 +26,9 @@ Sharing starts from **Share my location** (1) on the map.
 
 Before anything is shared, the app tells you what will happen and asks.
 
-![The map while you are both sharing: what your date's pin says, and the Stop sharing my location button](shot:date-map-sharing#meet-up-status,meet-up-stop)
+![The map while you are both sharing: both pins, when your date's location last updated, and the Stop sharing my location button](shot:date-map-sharing#meet-up-stop)
 
-While you are sharing, the map shows you, the venue and your date, if they are sharing too. Under the map is when their location last updated (1). Your location keeps updating by itself, even with the phone in your pocket. Sharing stops when the time runs out or when you press **Stop sharing my location** (2).
+While you are sharing, the map shows you, the venue and your date, if they are sharing too. Under the map is when their location last updated. Your location keeps updating by itself, even with the phone in your pocket. Sharing stops when the time runs out or when you press **Stop sharing my location** (1).
 
 ## If the other person does not come
 

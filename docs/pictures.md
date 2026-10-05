@@ -103,12 +103,12 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kutsut.html/` | `en/invitation` 560px<br>`en/sent` 560px |
-| `/en/guide/peruminen-ja-jaahy.html/` | `en/cooldown-blocked` 560px |
+| `/en/guide/peruminen-ja-jaahy.html/` | `en/cooldown-blocked` 560px<br>`en/cooldown-decline` 560px |
 | `/en/guide/pilke-lyhyesti.html/` | `en/treffit` 560px |
 | `/en/guide/teralehdet.html/` | `en/date-wizard-petals` 560px |
 | `/en/guide/tiedot-ja-tili.html/` | `en/asetukset-ilmoitukset` 560px<br>`en/asetukset-tili` 560px |
-| `/en/guide/treffien-jalkeen.html/` | `en/feedback` 560px |
-| `/en/guide/treffipaiva.html/` | `en/date` 560px<br>`en/date-map` 560px<br>`en/date-location-consent` 560px<br>`en/date-noshow-not-at-venue` 560px |
+| `/en/guide/treffien-jalkeen.html/` | `en/feedback` 560px<br>`en/date-history-open` 560px<br>`en/date-history` 560px |
+| `/en/guide/treffipaiva.html/` | `en/date` 560px<br>`en/date-map` 560px<br>`en/date-location-consent` 560px<br>`en/date-map-sharing` 560px<br>`en/date-noshow-not-at-venue` 560px |
 | `/en/guide/turvallisuus.html/` | none |
 | `/en/guide/vapaat-ajat.html/` | `en/kalenteri` 560px<br>`en/kalenteri-valikko` 560px<br>`en/kalenteri-toistuva` 560px |
 | `/en/kayttoehdot.html/` | none |
@@ -126,12 +126,12 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/ohje.html/` | none |
 | `/ohje/ehdokkaat.html/` | `fi/platter` 560px<br>`fi/cooldown-nodraw` 560px |
 | `/ohje/kutsut.html/` | `fi/invitation` 560px<br>`fi/sent` 560px |
-| `/ohje/peruminen-ja-jaahy.html/` | `fi/cooldown-blocked` 560px |
+| `/ohje/peruminen-ja-jaahy.html/` | `fi/cooldown-blocked` 560px<br>`fi/cooldown-decline` 560px |
 | `/ohje/pilke-lyhyesti.html/` | `fi/treffit` 560px |
 | `/ohje/teralehdet.html/` | `fi/date-wizard-petals` 560px |
 | `/ohje/tiedot-ja-tili.html/` | `fi/asetukset-ilmoitukset` 560px<br>`fi/asetukset-tili` 560px |
-| `/ohje/treffien-jalkeen.html/` | `fi/feedback` 560px |
-| `/ohje/treffipaiva.html/` | `fi/date` 560px<br>`fi/date-map` 560px<br>`fi/date-location-consent` 560px<br>`fi/date-noshow-not-at-venue` 560px |
+| `/ohje/treffien-jalkeen.html/` | `fi/feedback` 560px<br>`fi/date-history-open` 560px<br>`fi/date-history` 560px |
+| `/ohje/treffipaiva.html/` | `fi/date` 560px<br>`fi/date-map` 560px<br>`fi/date-location-consent` 560px<br>`fi/date-map-sharing` 560px<br>`fi/date-noshow-not-at-venue` 560px |
 | `/ohje/turvallisuus.html/` | none |
 | `/ohje/vapaat-ajat.html/` | `fi/kalenteri` 560px<br>`fi/kalenteri-valikko` 560px<br>`fi/kalenteri-toistuva` 560px |
 | `/tietojen-poisto.html/` | none |

@@ -13,7 +13,7 @@ Pilkkeessä teet kolmea asiaa. Ne ovat yhtä tärkeitä: jos yksikin jää tekem
 
 ![Treffit-sivu: terälehdet ylhäällä, kutsut ja treffit keskellä, Löydä treffit! alhaalla](shot:treffit#balance-counter,find-dates)
 
-Treffit-sivu kokoaa kaiken kolmen tuloksen. Ylhäällä ovat terälehtesi (1). Terälehdet ovat Pilkkeen valuutta: ansaitset niitä käymällä treffeillä ja kulutat niitä lähettämällä treffikutsuja. Keskellä ovat kutsut, joihin sinun pitää vastata, lähettämäsi kutsut ja sovitut treffit. Painamalla **Löydä treffit!** (2) löydät uudet ehdokkaat. Katso [Terälehdet](/ohje/teralehdet).
+Treffit-sivu kokoaa kaiken kolmen tuloksen. Ylhäällä ovat terälehtesi (1). Terälehdet ovat Pilkkeen valuutta: ansaitset niitä käymällä treffeillä ja kulutat niitä lähettämällä treffikutsuja. Keskellä ovat kutsut, joihin sinun pitää vastata, lähettämäsi kutsut ja sovitut treffit. Niiden alla on **Treffihistoria**, jossa ovat treffit, joilla olet käynyt. Painamalla **Löydä treffit!** (2) löydät uudet ehdokkaat. Katso [Terälehdet](/ohje/teralehdet).
 
 ## Ei keskusteluyhteyttä
 

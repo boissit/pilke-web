@@ -1,0 +1,54 @@
+{
+  "name": "cooldown-decline",
+  "language": "fi",
+  "commit": "181706f4c064bba04969ee637779f244efb288dd-dirty",
+  "takenAt": "2026-10-05T20:32:56Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "economy-explainer": {
+      "x": 603,
+      "y": 116,
+      "width": 444,
+      "height": 117
+    },
+    "cooldown-notice": {
+      "x": 33,
+      "y": 357,
+      "width": 1014,
+      "height": 242
+    },
+    "tip-bank": {
+      "x": 33,
+      "y": 1741,
+      "width": 197,
+      "height": 176
+    },
+    "find-dates": {
+      "x": 487,
+      "y": 1745,
+      "width": 560,
+      "height": 172
+    },
+    "balance-counter": {
+      "x": 603,
+      "y": 116,
+      "width": 444,
+      "height": 117
+    },
+    "balance-counter-0": {
+      "x": 603,
+      "y": 116,
+      "width": 444,
+      "height": 117
+    },
+    "open-date-history": {
+      "x": 258,
+      "y": 950,
+      "width": 564,
+      "height": 172
+    }
+  }
+}

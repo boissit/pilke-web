@@ -1,8 +1,8 @@
 {
   "name": "cooldown-blocked",
   "language": "fi",
-  "commit": "e794229db3519fb65bf69597514ce363df29df59-dirty",
-  "takenAt": "2026-09-28T12:00:50Z",
+  "commit": "181706f4c064bba04969ee637779f244efb288dd-dirty",
+  "takenAt": "2026-10-05T20:27:46Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -43,6 +43,12 @@
       "y": 116,
       "width": 444,
       "height": 117
+    },
+    "open-date-history": {
+      "x": 258,
+      "y": 1003,
+      "width": 564,
+      "height": 172
     }
   }
 }

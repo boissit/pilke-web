@@ -1,8 +1,8 @@
 {
   "name": "invitation",
   "language": "fi",
-  "commit": "e794229db3519fb65bf69597514ce363df29df59-dirty",
-  "takenAt": "2026-09-28T11:45:40Z",
+  "commit": "181706f4c064bba04969ee637779f244efb288dd-dirty",
+  "takenAt": "2026-10-05T20:00:29Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -20,41 +20,29 @@
       "width": 316,
       "height": 74
     },
-    "timeslot-2": {
-      "x": 534,
-      "y": 624,
-      "width": 316,
-      "height": 74
-    },
-    "timeslot-3": {
-      "x": 534,
-      "y": 709,
-      "width": 316,
-      "height": 74
-    },
     "venue-0": {
       "x": 33,
-      "y": 901,
+      "y": 878,
       "width": 299,
       "height": 74
     },
     "venue-1": {
       "x": 343,
-      "y": 901,
+      "y": 878,
       "width": 356,
       "height": 74
     },
     "venue-2": {
       "x": 33,
-      "y": 986,
+      "y": 963,
       "width": 390,
       "height": 74
     },
     "venue-map": {
       "x": 33,
-      "y": 1093,
+      "y": 1070,
       "width": 1014,
-      "height": 725
+      "height": 748
     },
     "invitation-decline": {
       "x": 33,
