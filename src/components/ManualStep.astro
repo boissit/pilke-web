@@ -13,6 +13,16 @@
  * looking at it; the alt text and the step's own words carry the same thing for
  * somebody who is not, and a stray "1" read out after the alt would be noise.
  *
+ * How the still sits in its phone is still being chosen, so each candidate is a
+ * `frame` here and the build draws one of them on every page, `MANUAL_FRAME` in the
+ * environment naming which (`MANUAL_FRAME=device npm run build`):
+ *
+ * - `inset`, the default: the phone the marketing pages draw, with the bars kept.
+ * - `rounded`: the picture fills the shell and is cut to its inner corner.
+ * - `cropped`: the marketing treatment entire, bars cut and inset on the still's ground.
+ * - `device`: `rounded` in a thin ink bezel, with a punch-hole camera.
+ * - `card`: no phone, the cropped picture as a card of the site's own.
+ *
  * The slot is the step's text as HTML, and it is styled by `.manual` in `soft.css`
  * rather than here, because Markdown output carries no scope attribute.
  */
@@ -20,11 +30,30 @@ import Phone from './Phone.astro';
 import { useTranslations } from '../i18n/ui';
 import { BADGE_SHARE, type Marker, type Still } from '../manual/stills';
 
+const FRAMES = {
+  inset: { frame: 'inset', bars: 'keep' },
+  rounded: { frame: 'rounded', bars: 'keep' },
+  cropped: { frame: 'inset', bars: 'crop' },
+  device: { frame: 'device', bars: 'keep' },
+  card: { frame: 'card', bars: 'crop' },
+} as const;
+
+type Frame = keyof typeof FRAMES;
+
 interface Props {
   still: Still;
+  frame?: Frame;
 }
 
-const { still } = Astro.props;
+const chosen = import.meta.env.MANUAL_FRAME ?? 'inset';
+if (!(chosen in FRAMES)) {
+  throw new Error(`MANUAL_FRAME is ${chosen}, which is not a frame. It is one of ${Object.keys(FRAMES).join(', ')}.`);
+}
+
+const { still, frame = chosen as Frame } = Astro.props;
+const { frame: shape, bars } = FRAMES[frame];
+const markers = bars === 'crop' ? still.cropped : still.markers;
+const ground = bars === 'crop' ? still.ground : undefined;
 const t = useTranslations(still.lang);
 
 const id = `${still.lang}/${still.name}`;
@@ -44,16 +73,25 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
 <div class="step">
   {
     still.image ? (
-      <Phone src={still.image} alt={still.alt} width={280} still={id} bars="keep" shell="var(--brand-background)">
-        {still.markers.length > 0 && (
+      <Phone
+        src={still.image}
+        alt={still.alt}
+        width={280}
+        still={id}
+        bars={bars}
+        frame={shape}
+        ground={ground}
+        shell="var(--brand-background)"
+      >
+        {markers.length > 0 && (
           <svg class="leaders" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            {still.markers.map((marker) => {
+            {markers.map((marker) => {
               const end = leaderEnd(marker);
               return <line x1={marker.badgeLeft} y1={marker.badgeTop} x2={end.x} y2={end.y} />;
             })}
           </svg>
         )}
-        {still.markers.map((marker) => (
+        {markers.map((marker) => (
           <>
             <span
               class="marker"

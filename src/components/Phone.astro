@@ -26,18 +26,35 @@
  * marketing shot `crop`s them — the clock and the Android back button say nothing
  * about Pilke, and the Pehmeä artboards draw the screens without them. The crop is
  * the same on every still because every still is captured on the same emulator
- * profile: 96px off the top and 136px off the bottom of 2280. The manual `keep`s
- * them, because its markers are positioned in percentages of the whole picture and a
- * reader matching the manual to their own phone sees those bars too.
+ * profile: 96px off the top and 136px off the bottom of 2280, `BARS` in
+ * `src/manual/stills.ts`. The manual `keep`s them by default, because a reader
+ * matching the manual to their own phone sees those bars too.
  *
  * Anything in the slot is laid over the picture, in a box exactly its size, so a
- * child positioned in percentages lands on the same pixels at any width. The manual
- * draws its numbered markers there, and only uses `keep`.
+ * child positioned in percentages lands on the same pixels at any width. With `crop`
+ * the box is the band between the bars, so the manual draws its numbered markers
+ * from `cropped`, the same bounds measured on that band, and from `markers` with
+ * `keep`.
  *
  * `still` is the manual's name for the picture, `fi/kalenteri`, carried on the
  * `<img>` as `data-still`. `npm run pictures` reads the build, and in the build a
  * manual still and a marketing screenshot of the same screen share a file stem; this
  * is how it tells `treffit` the manual step from `treffit` the front page.
+ *
+ * `frame` is how the screen meets the shell, and the manual is where the choice is
+ * still open:
+ *
+ * - `inset`, the default and the marketing treatment: the picture square inside a
+ *   margin of `ground`, the rounding in the margin, as described above.
+ * - `rounded`: no margin. The picture fills the shell's opening and is clipped to its
+ *   inner radius, the way a phone's display follows its body. Meant for `keep`, where
+ *   the corners fall on the status bar and the navigation bar and so cut nothing the
+ *   app drew.
+ * - `device`: `rounded` in a thin bezel of the app's ink, the colour of every border
+ *   its buttons and cards have, with a punch-hole camera drawn in the middle of the
+ *   status bar. With `keep`, that is where a reader's own phone has one.
+ * - `card`: no phone at all. The picture is a card of the site's own, its corner and
+ *   shadow, on the page. Meant for `crop`, so the card is the app and nothing else.
  *
  * The drawn width is the page's to set, through `--phone-width` on any ancestor, so a
  * phone can follow its card's layout. `width` is the fallback and what the image is
@@ -53,6 +70,7 @@ interface Props {
   tilt?: 'left' | 'right' | 'none' | number;
   ground?: string;
   bars?: 'crop' | 'keep';
+  frame?: 'inset' | 'rounded' | 'device' | 'card';
   /**
    * The shell's colour. White by default, for a phone on a tinted card. On a white
    * card a white shell disappears and the phone reads as a hole, so those pass the
@@ -72,6 +90,7 @@ const {
   tilt = 'none',
   ground = 'var(--white)',
   bars = 'crop',
+  frame = 'inset',
   shell = 'var(--surface)',
   lifted = false,
   class: className,
@@ -86,13 +105,14 @@ const rendered = width * 2;
 ---
 
 <figure
-  class:list={['phone', bars, lifted && 'lifted', className]}
+  class:list={['phone', bars, frame, lifted && 'lifted', className]}
   style={`--w:${width}px; --tilt:${rotation}deg; --ground:${ground}; --shell:${shell}`}
 >
   <div class="shell">
     <div class="screen">
       <div class="window">
         <Image src={src} alt={alt} width={rendered} densities={[1, 2]} loading="lazy" data-still={still} />
+        {frame === 'device' && bars === 'keep' && <span class="camera" aria-hidden="true" />}
         {Astro.slots.has('default') && <div class="overlay"><slot /></div>}
       </div>
     </div>
@@ -162,6 +182,60 @@ const rendered = width * 2;
 
   .crop .window :global(img) {
     margin-top: -8.889%;
+  }
+
+  /*
+    `rounded` and `device`: the screen is the shell's opening, its corner the shell's
+    less the shell's padding so the two curves run parallel, and the picture is cut
+    to it. `overflow` clips the overlay with it, which only ever takes the very
+    corners: the badges are placed inside the picture, never on its edge.
+  */
+  .phone.rounded .screen,
+  .phone.device .screen {
+    padding: 0;
+    border-radius: 12.7cqi;
+    overflow: hidden;
+  }
+
+  /* The app's own border: ink, as thin a band as a phone's bezel is, and the soft
+     shadow the site gives anything that floats. 2.4 + 12.7 keeps the curves
+     parallel, as above. */
+  .phone.device .shell {
+    padding: 2.4cqi;
+    background: var(--ink);
+    border-radius: 15.1cqi;
+  }
+
+  /* The front camera, in the middle of the status bar where the clock and the
+     icons leave room: 48 of the bar's 96 pixels down, 2.1% of 2280. A shade darker
+     than the bezel, as a lens is. */
+  .camera {
+    position: absolute;
+    left: 50%;
+    top: 2.1%;
+    width: 3%;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #1d1d1d;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 0.08);
+  }
+
+  /* `card`: the shell is the card. No padding and no colour of its own, the site's
+     card corner in the phone's own units (28 of 280) and the shadow of a phone. The
+     app's white is all but the page's, so a hairline of the ink at a whisper says
+     where the card ends. */
+  .phone.card .shell {
+    padding: 0;
+    background: none;
+    border-radius: 10cqi;
+    overflow: hidden;
+    box-shadow: 0 0 0 1px rgb(58 46 43 / 0.08), var(--shadow-float);
+  }
+
+  .phone.card .screen {
+    padding: 0;
+    border-radius: 0;
   }
 
   .overlay {
