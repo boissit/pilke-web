@@ -75,45 +75,7 @@ export interface Still {
 
   /** In the order the text listed them, numbered from 1. */
   markers: Marker[];
-
-  /**
-   * The same markers in percentages of the picture with its bars cut, for a phone
-   * drawn with `bars="crop"`. An element that lies wholly in a bar has no marker
-   * here, and the others keep the number they have in `markers`, which is the one
-   * the text refers to.
-   */
-  cropped: Marker[];
-
-  /** The colour behind the app on this still, for a frame that insets it. */
-  ground: string;
 }
-
-/**
- * The device's status bar and navigation bar, in the stills' pixels. Every still is
- * captured on the same emulator profile, so this is the same on all of them, and it is
- * the crop `Phone.astro` makes with `bars="crop"`.
- */
-export const BARS = { top: 96, bottom: 136 } as const;
-
-/**
- * The colour the app paints behind a still, for a frame that sets the picture in a
- * margin, as `grounds` in `src/assets/screens.ts` is for the marketing shots. Sampled
- * from the stills: the app's `white` unless named here. A modal's scrim is the
- * dimmed white it is drawn over, so the margin is dimmed with the screen. A map runs
- * to the screen's edges, so its margin is the map's grey down to where the map ends:
- * 1160 of the still on `date-map`, which is 51.8% of the inset screen once the bars
- * are cut, and 1213 on `date-map-sharing`, 54.1%.
- *
- * WARNING: **A reshoot that changes a screen's background has to change it here**, or
- * the frame draws a band of the old colour round the new picture.
- */
-const stillGrounds: Record<string, string> = {
-  platter: 'var(--brand-background)',
-  'kalenteri-valikko': '#979394',
-  'date-location-consent': 'linear-gradient(#8c8c8c 51.8%, #979394 51.8%)',
-  'date-map': 'linear-gradient(#ebebeb 51.8%, var(--white) 51.8%)',
-  'date-map-sharing': 'linear-gradient(#ebebeb 54.1%, var(--white) 54.1%)',
-};
 
 /** What a paragraph of the form `![alt](shot:name#id1,id2)` asked for. */
 export interface ShotReference {
@@ -148,8 +110,8 @@ export const BADGE_SHARE = 0.11;
 const RING_PADDING_SHARE = 0.018;
 
 /**
- * The roundest corner any frame in `Phone.astro` cuts the picture to, as a share of its
- * width: a `rounded` screen's 12.7 of the 93.4 the picture is wide is 0.136.
+ * The corner `Phone.astro` cuts the manual's still to, as a share of its width, a
+ * little over: the screen's 12.7 of the 95.2 the picture is wide is 0.133.
  */
 const CORNER_SHARE = 0.14;
 
@@ -186,9 +148,9 @@ function overlaps(a: Box, b: Box): boolean {
  * header are the common case that rules out left and right. Where nothing fits, the
  * badge sits on the element's top-left corner, which at least leaves most of it visible.
  *
- * Every badge is inside the picture and clear of its rounded corners, whatever the
- * frame: a phone whose screen is cut to the shell's corner, or a card, clips anything
- * past the picture's edge, and half a numeral is no numeral.
+ * Every badge is inside the picture and clear of its rounded corners: the manual's
+ * phone cuts the still to the bezel's opening, and clips anything past it, so a badge
+ * hanging off the edge would be drawn as half a numeral.
  */
 function placeBadges(elements: Box[], image: { width: number; height: number }): { x: number; y: number }[] {
   const size = image.width * BADGE_SHARE;
@@ -255,7 +217,7 @@ export function resolveStill(reference: ShotReference, lang: Lang, draft: boolea
   const image = pngs[`/${png}`];
 
   if (!image) {
-    if (draft) return { name, lang, alt, markers: [], cropped: [], ground: 'var(--white)' };
+    if (draft) return { name, lang, alt, markers: [] };
     throw new Error(
       `${where} shows shot:${name}, but ${png} does not exist. Capture it, or keep the page at draft: true until it is.`,
     );
@@ -287,42 +249,20 @@ export function resolveStill(reference: ShotReference, lang: Lang, draft: boolea
     }
     return padded(element, image);
   });
-  const numbered = elements.map((box, index) => ({ box, number: index + 1, testID: testIDs[index] }));
+  const badges = placeBadges(elements, image);
 
-  // The band between the bars, with every box moved up by the status bar and cut to
-  // the band. One that has nothing left is in a bar, out of the picture, and goes.
-  const band = { width: image.width, height: image.height - BARS.top - BARS.bottom };
-  const inBand = numbered.flatMap((marker) => {
-    const top = Math.max(marker.box.y - BARS.top, 0);
-    const bottom = Math.min(marker.box.y + marker.box.height - BARS.top, band.height);
-    return bottom > top ? [{ ...marker, box: { ...marker.box, y: top, height: bottom - top } }] : [];
-  });
-
-  const ground = stillGrounds[name] ?? 'var(--white)';
-  return { name, lang, alt, image, markers: markersOn(numbered, image), cropped: markersOn(inBand, band), ground };
-}
-
-/**
- * Badges placed for these boxes on a picture of this size, and the lot in its
- * percentages. The bounds are in the PNG's pixels, which is what the image metadata
- * measures, so the markers land on the same spot at whatever size the phone is drawn.
- */
-function markersOn(
-  numbered: { box: Box; number: number; testID: string }[],
-  picture: { width: number; height: number },
-): Marker[] {
-  const badges = placeBadges(
-    numbered.map(({ box }) => box),
-    picture,
-  );
-  return numbered.map(({ box, number, testID }, index) => ({
-    number,
-    testID,
-    left: percent(box.x, picture.width),
-    top: percent(box.y, picture.height),
-    width: percent(box.width, picture.width),
-    height: percent(box.height, picture.height),
-    badgeLeft: percent(badges[index].x, picture.width),
-    badgeTop: percent(badges[index].y, picture.height),
+  // The bounds are in the PNG's pixels, which is what the image metadata measures, so
+  // the markers land on the same spot at whatever size the phone is drawn.
+  const markers = elements.map((element, index) => ({
+    number: index + 1,
+    testID: testIDs[index],
+    left: percent(element.x, image.width),
+    top: percent(element.y, image.height),
+    width: percent(element.width, image.width),
+    height: percent(element.height, image.height),
+    badgeLeft: percent(badges[index].x, image.width),
+    badgeTop: percent(badges[index].y, image.height),
   }));
+
+  return { name, lang, alt, image, markers };
 }

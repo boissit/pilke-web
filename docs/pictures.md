@@ -78,7 +78,8 @@ still matches `hero.py`'s.
 **What a reader sees of a marketing shot is less than the file.** `Phone.astro` crops the
 device's status bar and navigation bar off every picture in `src/assets/screens`, so a
 change that only touches those bars changes nothing on the site. The manual's stills are
-drawn whole, bars included.
+drawn whole, bars included, in an ink bezel whose rounded corners fall on the bars, so a
+change to a bar shows in the manual.
 
 Not every screen the flows take is carried here. `screenshots.yaml` also shoots the
 calendar and the question sets, and neither has a place on the site; the way to bring

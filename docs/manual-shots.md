@@ -26,6 +26,16 @@ The sidecar `<name>.json`:
 
 Element bounds are in the PNG's own pixels. Only the testIDs listed under **Callouts** are required. Others may be present.
 
+## How a still is drawn
+
+Whole, in the device frame `ManualStep.astro` asks `Phone.astro` for: a thin bezel in the app's ink, the colour of every border its buttons and cards have, with the still cut to the bezel's rounded opening and a punch-hole camera in the middle of the status bar. Nothing is cropped, for three reasons:
+
+- The status bar and the navigation bar are what the reader sees on their own phone.
+- The rounded corners fall on the bars, where the app draws nothing, so a map, a photo or a dimmed modal reaching the edge of the screen is never cut, and no margin of a single colour shows a square picture corner inside a round frame.
+- The markers are drawn from the bounds below as they stand, in percentages of the whole still. Every badge is placed inside the picture and clear of its rounded corners.
+
+The camera is drawn over the middle of the status bar, which is empty on the capture's Pixel 4 profile. A still with a notification icon or a clock there would have it covered.
+
 ## How the text points at a still
 
 A paragraph that contains only an image:

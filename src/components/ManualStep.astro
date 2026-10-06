@@ -7,21 +7,20 @@
  * flex-wrap `nain-se-toimii` sets its phones and columns with: the text column has a
  * basis, and when the row cannot fit it beside the phone it wraps under. No breakpoint,
  * so it is right at whatever width a phone in portrait or a tablet in landscape is.
+ * Side by side, the text is centred against the phone when it is the shorter of the
+ * two; a longer text starts level with the phone's top, which stays put rather than
+ * sinking to the middle of a long column.
+ *
+ * The phone is `Phone`'s `device` frame: the whole still, status bar and navigation
+ * bar included, cut to the corner of a thin bezel in the app's ink. The bars are what
+ * a reader sees on their own phone, the rounded corners fall on them and so cut
+ * nothing the app drew, and the markers stay on the sidecar's bounds as measured on
+ * the whole still.
  *
  * The markers are drawn over the picture from the sidecar's bounds and hidden from
  * assistive technology. They are a way to point at part of an image for somebody
  * looking at it; the alt text and the step's own words carry the same thing for
  * somebody who is not, and a stray "1" read out after the alt would be noise.
- *
- * How the still sits in its phone is still being chosen, so each candidate is a
- * `frame` here and the build draws one of them on every page, `MANUAL_FRAME` in the
- * environment naming which (`MANUAL_FRAME=device npm run build`):
- *
- * - `inset`, the default: the phone the marketing pages draw, with the bars kept.
- * - `rounded`: the picture fills the shell and is cut to its inner corner.
- * - `cropped`: the marketing treatment entire, bars cut and inset on the still's ground.
- * - `device`: `rounded` in a thin ink bezel, with a punch-hole camera.
- * - `card`: no phone, the cropped picture as a card of the site's own.
  *
  * The slot is the step's text as HTML, and it is styled by `.manual` in `soft.css`
  * rather than here, because Markdown output carries no scope attribute.
@@ -30,30 +29,11 @@ import Phone from './Phone.astro';
 import { useTranslations } from '../i18n/ui';
 import { BADGE_SHARE, type Marker, type Still } from '../manual/stills';
 
-const FRAMES = {
-  inset: { frame: 'inset', bars: 'keep' },
-  rounded: { frame: 'rounded', bars: 'keep' },
-  cropped: { frame: 'inset', bars: 'crop' },
-  device: { frame: 'device', bars: 'keep' },
-  card: { frame: 'card', bars: 'crop' },
-} as const;
-
-type Frame = keyof typeof FRAMES;
-
 interface Props {
   still: Still;
-  frame?: Frame;
 }
 
-const chosen = import.meta.env.MANUAL_FRAME ?? 'inset';
-if (!(chosen in FRAMES)) {
-  throw new Error(`MANUAL_FRAME is ${chosen}, which is not a frame. It is one of ${Object.keys(FRAMES).join(', ')}.`);
-}
-
-const { still, frame = chosen as Frame } = Astro.props;
-const { frame: shape, bars } = FRAMES[frame];
-const markers = bars === 'crop' ? still.cropped : still.markers;
-const ground = bars === 'crop' ? still.ground : undefined;
+const { still } = Astro.props;
 const t = useTranslations(still.lang);
 
 const id = `${still.lang}/${still.name}`;
@@ -73,25 +53,16 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
 <div class="step">
   {
     still.image ? (
-      <Phone
-        src={still.image}
-        alt={still.alt}
-        width={280}
-        still={id}
-        bars={bars}
-        frame={shape}
-        ground={ground}
-        shell="var(--brand-background)"
-      >
-        {markers.length > 0 && (
+      <Phone src={still.image} alt={still.alt} width={280} still={id} frame="device">
+        {still.markers.length > 0 && (
           <svg class="leaders" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-            {markers.map((marker) => {
+            {still.markers.map((marker) => {
               const end = leaderEnd(marker);
               return <line x1={marker.badgeLeft} y1={marker.badgeTop} x2={end.x} y2={end.y} />;
             })}
           </svg>
         )}
-        {markers.map((marker) => (
+        {still.markers.map((marker) => (
           <>
             <span
               class="marker"
@@ -139,9 +110,13 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
     gap: clamp(28px, 3vw, 48px);
   }
 
+  /* Centred in the row, whose height is the taller of the two: beside the phone that
+     centres a short text on it and leaves a long one where it is. Stacked, the text
+     is a row of its own and this changes nothing. */
   .step-text {
     flex: 1 1 22rem;
     min-width: 0;
+    align-self: center;
   }
 
   /*
@@ -213,7 +188,7 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
   }
 
   /* The phone is 280 wide by the 1080 × 2280 the stills are captured at, with the
-     frame's corner. */
+     bezel's corner, 15.1% of 280. */
   .missing {
     flex: 0 0 auto;
     width: 280px;
@@ -228,7 +203,7 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
     text-align: center;
     background: var(--ground);
     border: 2px dashed var(--brand-main);
-    border-radius: 45px;
+    border-radius: 42px;
   }
 
   .missing-title {
