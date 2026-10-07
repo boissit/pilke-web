@@ -1,0 +1,119 @@
+---
+/**
+ * Sparkles scattered behind a card, the way the app now dresses its cards, its calendar
+ * and its onboarding: the logo's sparkle again and again, every one a different size
+ * and turned its own way (`pilke-app/src/components/svgs/SparkleField.tsx`).
+ *
+ * Placed by hand rather than tiled. The app tiles because its surfaces come in every
+ * size; a card here is one size at each width, and a tile repeated over it reads as
+ * wallpaper. A handful of marks, a large one or two and a few small ones near them,
+ * read as the card having sparks on it, which is the whole of the effect.
+ *
+ * A sparkle is a thin, concave star that lays down little ink for its box, so the
+ * marks are drawn larger than a solid shape would be to weigh the same.
+ *
+ * Drawn flat in `fill`. Pass the card's ground a shade deeper — `--sparkle-on-peach`,
+ * `--sparkle-on-coral` — so the marks sit in the surface rather than on it, as the
+ * app's `cardMotif` does on its tints.
+ *
+ * The parent positions, clips and isolates: it has to be `position: relative`,
+ * `overflow: hidden` and `isolation: isolate`. The overflow cuts a sparkle set half
+ * off an edge at the card's own rounded corner. The isolation makes the card its own
+ * stacking context, and the sparkles sit at the bottom of it, `z-index: -1`: above
+ * the card's background and under everything else on it. They never take a click.
+ */
+import { SPARKLE_PATH, SPARKLE_VIEWBOX } from './sparkleArtwork';
+
+interface Placement {
+  /** The edge of the sparkle's square box, in px. */
+  size: number;
+  /** Degrees, clockwise, about the box's centre. */
+  rotate: number;
+  top?: string;
+  right?: string;
+  bottom?: string;
+  left?: string;
+  /**
+   * Drawn only where the page is laid out `wide`, or only where it is `narrow`. A
+   * phone keeps fewer marks per card than a desktop: at 390 wide a second cluster
+   * lands behind the text it was meant to sit beside.
+   */
+  only?: 'wide' | 'narrow';
+}
+
+interface Props {
+  fill: string;
+  sparkles: Placement[];
+  /**
+   * The width at which `wide` sparkles replace the `narrow` ones: the line the header
+   * folds its links at, unless the card lays itself out side by side somewhere else.
+   * The hero stacks its copy over the phone until 69rem, so it passes `hero`.
+   */
+  fold?: 'header' | 'hero';
+}
+
+const { fill, sparkles, fold = 'header' } = Astro.props;
+
+const place = ({ top, right, bottom, left, size, rotate }: Placement) =>
+  [
+    top && `top:${top}`,
+    right && `right:${right}`,
+    bottom && `bottom:${bottom}`,
+    left && `left:${left}`,
+    `width:${size}px`,
+    `height:${size}px`,
+    `transform:rotate(${rotate}deg)`,
+  ]
+    .filter(Boolean)
+    .join(';');
+---
+
+<div class:list={['sparkles', `fold-${fold}`]} aria-hidden="true">
+  {
+    sparkles.map((sparkle) => (
+      <svg class:list={[sparkle.only]} viewBox={SPARKLE_VIEWBOX} style={place(sparkle)} focusable="false">
+        <path d={SPARKLE_PATH} fill={fill} />
+      </svg>
+    ))
+  }
+</div>
+
+<style>
+  .sparkles {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  svg {
+    position: absolute;
+    display: block;
+  }
+
+  /* The same line the header folds its links at. */
+  @media (max-width: 63.99rem) {
+    .fold-header .wide {
+      display: none;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .fold-header .narrow {
+      display: none;
+    }
+  }
+
+  /* The line the hero puts its copy beside the phone at. */
+  @media (max-width: 68.99rem) {
+    .fold-hero .wide {
+      display: none;
+    }
+  }
+
+  @media (min-width: 69rem) {
+    .fold-hero .narrow {
+      display: none;
+    }
+  }
+</style>

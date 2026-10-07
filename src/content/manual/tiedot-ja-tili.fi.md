@@ -40,8 +40,8 @@ Kirjaudut puhelinnumeroosi tulevalla kertakoodilla, eikä salasanaa ole. Kirjaut
 **Poista tili** (2) poistaa tilisi heti, eikä sitä voi perua:
 
 - Nimesi, kuvasi, yhteystietosi, toiveesi, kalenterisi ja vastauksesi poistetaan heti.
-- Tulevat sovitut treffit perutaan, ja toinen saa siitä ilmoituksen. Jos hän lähetti kutsun, hän saa terälehtensä takaisin. Jo alkaneet treffit jäävät ennalleen.
-- Lähettämäsi kutsut peruutetaan ja saamasi kutsut hylätään. Kutsun lähettäjä saa terälehtensä takaisin.
+- Tulevat sovitut treffit perutaan, ja toinen saa siitä ilmoituksen. Jos hän lähetti kutsun, hän saa kipinänsä takaisin. Jo alkaneet treffit jäävät ennalleen.
+- Lähettämäsi kutsut peruutetaan ja saamasi kutsut hylätään. Kutsun lähettäjä saa kipinänsä takaisin.
 - Menneet treffit, niistä annetut palautteet ja turvallisuusilmoitukset jäävät talteen. Nimesi tilalla näkyy *Poistunut käyttäjä*.
 
 Voit rekisteröityä myöhemmin samalla numerolla, mutta aloitat silloin tyhjältä tililtä. Kuinka kauan mitäkin säilytetään, kerrotaan [tietosuojaselosteessa](/tietosuoja).

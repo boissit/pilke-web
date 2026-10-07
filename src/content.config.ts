@@ -68,7 +68,7 @@ const legal = defineCollection({
 
 /**
  * The user manual: the rules of the app a user cannot see on its screens — why a
- * candidate appeared, where the petals went, why a report was refused — one system
+ * candidate appeared, where the sparks went, why a report was refused — one system
  * to a page.
  *
  * Named and paired exactly as `legal` is — `<slug>.<lang>.md`, a Finnish slug in

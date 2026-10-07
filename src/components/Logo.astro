@@ -1,73 +1,55 @@
 ---
 /**
- * The wordmark, drawn from the same numbers the app draws it from.
+ * The wordmark: the letters and their rose sparkle, the owner's release
+ * artwork drawn as it is (`src/assets/brand/`), the same drawing the app draws in its
+ * Treffit bar (`pilke-app/src/components/svgs/Wordmark.tsx`).
  *
- * A port of `pilke-app/src/components/Logo.tsx`, and the two constants below are that
- * file's rather than new ones. It composes the word in Courgette with the rose beside
- * it, and everything scales with the font size, so the header mark and a hero mark are
- * the same drawing at two sizes rather than two drawings.
+ * Inlined rather than linked, so it is drawn with the page and never flashes in, and
+ * sized by its **height**: the lockup is wider than tall, and the artwork's own
+ * viewBox owns the other side. `tone="white"` is the variant for dark grounds.
  *
- * Not an SVG of the whole lockup: the word is live text in Courgette, which the site
- * already loads for this and nothing else. Converting it to paths would give a second copy of the wordmark to
- * keep in step with the app, and would stop the mark being selectable or readable.
+ * Decorative here: every place that draws it is a link that names itself (*Pilke,
+ * etusivu*), so the drawing takes `aria-hidden` rather than a second name. Pass
+ * `label` where the wordmark stands alone.
  */
-import RoseMark from './RoseMark.astro';
-
-/**
- * The mark's **height**, as a multiple of the word's font size.
- *
- * A height rather than a width because a height is the one dimension `RoseMark` takes:
- * the rose is not square and `ROSE_ASPECT` owns the other side. At the header's 30 that
- * is 32 tall by 23 across.
- */
-const MARK_HEIGHT = 1.05;
-
-/**
- * The gap between the word and the mark, as a multiple of the font size.
- *
- * ⚠️ **A real gap, and the mark may not overlap the type.** A filled rose pulled over
- * the final *e* covers the *e*. So the mark is a sibling of the word laid out in flow
- * with this between them, and nothing in this file positions one against the other.
- */
-const MARK_GAP = 0.18;
+import ink from '../assets/brand/pilke-wordmark.svg?raw';
+import white from '../assets/brand/pilke-wordmark-white.svg?raw';
 
 interface Props {
-  /** Font size of the word. The mark and the gap are derived, as in the app. */
-  size?: number;
+  /** The wordmark's height in px. The width follows the artwork's aspect. */
+  height: number;
+  tone?: 'ink' | 'white';
+  label?: string;
   class?: string;
 }
 
-const { size = 28, class: className } = Astro.props;
+const { height, tone = 'ink', label, class: className } = Astro.props;
+
+const source = tone === 'white' ? white : ink;
+const viewBox = source.match(/viewBox="([^"]+)"/)?.[1];
+const body = source.match(/<svg[^>]*>([\s\S]*)<\/svg>/)?.[1]?.replace(/<title>[\s\S]*?<\/title>/, '').trim();
+if (!viewBox || !body) throw new Error('Logo: the wordmark artwork has no viewBox or no paths.');
+
+const [, , w, h] = viewBox.split(/\s+/).map(Number);
+const width = Math.round(((height * w) / h) * 100) / 100;
 ---
 
-<span
+<svg
   class:list={['logo', className]}
-  style={`--size:${size}px; --gap:${MARK_GAP * size}px;`}
->
-  <span class="word">Pilke</span>
-  <RoseMark size={MARK_HEIGHT * size} />
-</span>
+  width={width}
+  height={height}
+  viewBox={viewBox}
+  role={label ? 'img' : undefined}
+  aria-label={label}
+  aria-hidden={label ? undefined : 'true'}
+  focusable="false"
+  set:html={body}
+/>
 
 <style>
-  /*
-    One row: the word, a gap, the mark, bottom-aligned so the rose's stem finishes where
-    the letters do. Not centred: the mark is a plant with a stem, and centring it
-    against the line box leaves the stem ending in mid air with the drawing floating off
-    its own ground.
-  */
+  /* Block, so the mark takes no descender space under it. A caller that scales it
+     with the viewport sets `height` on its class and `width: auto`. */
   .logo {
-    display: inline-flex;
-    align-items: flex-end;
-    column-gap: var(--gap);
-  }
-
-  .word {
-    font-family: var(--font-wordmark);
-    font-size: var(--size);
-    line-height: 1;
-    color: var(--text);
-    /* Courgette's own side bearing is enough; a letter-spacing here would be a
-       departure from the app, which sets none. */
-    letter-spacing: 0;
+    display: block;
   }
 </style>

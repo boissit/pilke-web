@@ -34,20 +34,3 @@
 'unmanaged.languages.en':
   fi: 'English'
   en: 'English'
-
-# ──────────────────────────────────────────────────────────────────────────
-# The number beside the rose
-#
-# `src/pages/[...lang]/nain-se-toimii.astro`, written as a literal `<b>5</b>` on
-# the price line.
-#
-# WARNING: **This is a backend constant rendered as a hand-typed digit.** The cost
-# of opening a set appears three times on that page — here, in
-# `economy.amount.five` ('5 terälehteä'), and in the prose of
-# `detail.economy.spend.body` — and this is the copy of it that no dictionary and
-# no review would catch if the price changed.
-# ──────────────────────────────────────────────────────────────────────────
-
-'unmanaged.economy.price.digit':
-  fi: '5'
-  en: '5'

@@ -316,7 +316,7 @@ p:has(> .go) {
 
 /* Retention periods and the like arrive as tables, and a wide one scrolls in its
    own box rather than pushing the page sideways. The manual's tables — what earns
-   petals, how long a jäähy lasts — are drawn the same way. */
+   sparks, how long a jäähy lasts — are drawn the same way. */
 .legal .table-scroll,
 .legal table,
 .manual table {

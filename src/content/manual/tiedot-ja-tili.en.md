@@ -40,8 +40,8 @@ You sign in with a one-time code sent to your phone number, and there is no pass
 **Delete account** (2) deletes your account straight away, and it cannot be undone:
 
 - Your name, photo, contact details, wishes, calendar and answers are deleted at once.
-- Upcoming agreed dates are called off, and the other person is told. If they sent the invitation, they get their petals back. A date that has already started is left as it is.
-- Invitations you sent are withdrawn and invitations you received are declined. Whoever sent one gets their petals back.
+- Upcoming agreed dates are called off, and the other person is told. If they sent the invitation, they get their sparks back. A date that has already started is left as it is.
+- Invitations you sent are withdrawn and invitations you received are declined. Whoever sent one gets their sparks back.
 - Past dates, the feedback given on them and safety reports are kept. Where your name was, people see *Deleted user*.
 
 You can sign up again later with the same number, but you start from an empty account. How long each thing is kept is in the [privacy policy](/en/tietosuoja).

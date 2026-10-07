@@ -1,11 +1,11 @@
 ---
 title: Peruminen ja jäähy
-lead: Jos perut sovitut treffit, peruutat lähettämäsi kutsun, hylkäät saamasi kutsun, jätät sen vastaamatta tai jätät saapumatta treffeille, saat jäähyn. Tältä sivulta näet, mistä jäähyn saa, kuinka kauan se kestää ja mitä sen aikana ei voi tehdä.
+lead: Jäähyn saa, jos perut sovitut treffit, peruutat kutsusi, hylkäät saamasi kutsun tai jätät sen vastaamatta tai et saavu treffeille. Tältä sivulta näet, kuinka kauan jäähy kestää ja mitä sen aikana voi tehdä.
 order: 60
 draft: true
 ---
 
-Sovitut treffit ovat kahden ihmisen yhteinen päätös. Toinen on varannut aikaa sinulle, eikä hän voi kysyä sinulta mitään, koska sovelluksessa ei ole keskusteluyhteyttä. Peruminen on siksi epäkohteliasta häntä kohtaan, ja siitä saa jäähyn. Jäähy ei vie terälehtiä, ja se päättyy itsestään.
+Sovitut treffit ovat kahden ihmisen yhteinen päätös. Toinen on varannut aikaa sinulle, eikä hän voi kysyä sinulta mitään, koska sovelluksessa ei ole keskusteluyhteyttä. Peruminen on siksi epäkohteliasta häntä kohtaan, ja siitä saa jäähyn. Jäähy päättyy itsestään, ja kipinäsi pysyvät ennallaan.
 
 ## Kaksi jäähyä
 
@@ -36,11 +36,11 @@ Toistuva peruminen pidentää jäähyä. Jokainen aiempi sovittujen treffien per
 
 ![Ilmoitus Treffit-sivulla: et voi hakea uusia ehdokkaita, koska hylkäsit saamasi treffikutsun](shot:cooldown-decline#cooldown-notice)
 
-Kutsun voi hylätä perustelematta, ja hylkäys on kutsujalle parempi vastaus kuin hiljaisuus. Hylkäämisestä ja vastaamatta jättämisestä seuraa lyhyt jäähy (1): toinen käytti kutsuun terälehtiä ja odotti vastaustasi. Jäähyn aikana näyt edelleen muiden ehdokkaissa ja voit vastata saamiisi kutsuihin.
+Kutsun voi hylätä perustelematta, ja hylkäys on kutsujalle parempi vastaus kuin hiljaisuus. Hylkäämisestä ja vastaamatta jättämisestä seuraa lyhyt jäähy (1): toinen käytti kutsuun kipinöitä ja odotti vastaustasi. Jäähyn aikana näyt edelleen muiden ehdokkaissa ja voit vastata saamiisi kutsuihin.
 
 ## Mitä perumisesta seuraa toiselle
 
-Kun perut sovitut treffit, toinen saa siitä heti ilmoituksen. Ilmoitusta ei voi kytkeä pois, koska ilman sitä hän lähtisi odottamaan ihmistä, joka ei tule. Sovittu aika vapautuu teiltä molemmilta. Jos kutsuit hänet itse, käyttämiäsi terälehtiä ei palauteta. Jos hän kutsui sinut, hän saa takaisin {{petals.refund}} terälehteä, jotka hän käytti kutsuun.
+Kun perut sovitut treffit, toinen saa siitä heti ilmoituksen. Ilmoitusta ei voi kytkeä pois, koska ilman sitä hän lähtisi odottamaan ihmistä, joka ei tule. Sovittu aika vapautuu teiltä molemmilta. Jos kutsuit hänet itse, käyttämäsi kipinät jäävät käytetyiksi. Jos hän kutsui sinut, {{petals.refund}} kipinää palaa hänelle.
 
 Sovitut treffit perutaan treffisivun **Peru treffit** -painikkeella. Kun treffien alkamisaika on ohi, painiketta ei enää ole.
 

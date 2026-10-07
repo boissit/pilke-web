@@ -49,7 +49,7 @@ const current = (href: string) => here === href || here.startsWith(`${href}/`);
 <header class="site-head" data-site-head>
   <div class="wrap pill">
     <a class="brand" href={localePath(lang)} aria-label={t('nav.home')}>
-      <Logo size={32} />
+      <Logo height={44} />
     </a>
 
     <nav class="inline" aria-label={t('nav.main')}>
@@ -157,7 +157,7 @@ const current = (href: string) => here === href || here.startsWith(`${href}/`);
     box-shadow: 0 1px 2px rgb(58 46 43 / 0.06), 0 10px 30px rgb(58 46 43 / 0.07);
   }
 
-  /* `Logo` carries its own geometry, so the anchor only has to not interfere with
+  /* `Logo` carries its own size, so the anchor only has to not interfere with
      it. `inline-flex` rather than `inline-block`: an inline-block anchor round a
      flex row adds a line box under the mark that the pill would centre against. */
   .brand {

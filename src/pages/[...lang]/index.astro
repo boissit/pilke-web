@@ -11,7 +11,7 @@
  * goes stale with the app like any other, so `docs/pictures.md` accounts for them.
  *
  * The order is the argument, and it runs: what Pilke is, the three things to
- * remember of it, how a date comes about in four steps, what the currency is, and
+ * remember of it, how a date comes about in four steps, what sparks are, and
  * that meeting a stranger through it is looked after.
  *
  * One page at every width. The 1440 artboard and the 390 artboard are the two ends
@@ -24,8 +24,8 @@
  * a reader who came to `turvallisuus` can join from where they are; the hero's button
  * and the header's are anchors down to it.
  *
- * The currency is here in two lines and no more: what a petal is, the two ways it is
- * earned week to week, and a link to `nain-se-toimii` for the whole ledger. A full
+ * Sparks are here in two lines and no more: what they are for, the two ways they
+ * build up week to week, and a link to `nain-se-toimii` for the whole ledger. A full
  * price list reads as a game to be played, which is the opposite of what this is.
  */
 import { getImage, Image, Picture } from 'astro:assets';
@@ -42,9 +42,9 @@ import startWideEn from '../../assets/photos/start-story-wide-en.jpg';
 import startWideFi from '../../assets/photos/start-story-wide-fi.jpg';
 import { grounds, shotsFor } from '../../assets/screens';
 import Icon from '../../components/Icon.astro';
-import PetalScatter from '../../components/PetalScatter.astro';
+import SparkleScatter from '../../components/SparkleScatter.astro';
 import Phone from '../../components/Phone.astro';
-import RoseMark from '../../components/RoseMark.astro';
+import Sparkle from '../../components/Sparkle.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
@@ -69,15 +69,14 @@ const photos = {
   an invitation you sent. The stroke is 1.8 of Lucide's 24 units rather than its 2:
   at 20 to 22px the full weight is a shade darker than the text beside it.
 
-  The currency's icon is `rose`. The app's currency is petals that fill a rose, and of
-  Lucide's three flowers `rose` is the only one that is that flower: a bloom wound
-  from layered petals on a stem with a leaf, as the mark is. `flower` is a daisy seen
-  from above and `flower-2` a tulip; both say *a flower* and neither says *the rose*.
+  The sparks' icon is `spark`, the logo's own sparkle outlined at Lucide's weight, as
+  the app's Treffit tab draws it. Lucide's `sparkle` is a different star, and beside
+  the wordmark in the header a second star would read as a second mark.
 */
 const facts = [
   { title: t('fact.one.title'), body: t('fact.one.body'), tint: 'var(--card-sent)', icon: 'send' },
   { title: t('fact.two.title'), body: t('fact.two.body'), tint: 'var(--card-feedback)', icon: 'calendar' },
-  { title: t('fact.three.title'), body: t('fact.three.body'), tint: 'var(--card-received)', icon: 'rose' },
+  { title: t('fact.three.title'), body: t('fact.three.body'), tint: 'var(--card-received)', icon: 'spark' },
 ];
 
 /*
@@ -93,8 +92,8 @@ const steps = [
 ];
 
 const earnings = [
-  { amount: t('petals.calendar.amount'), what: t('detail.earn.calendar'), note: t('petals.calendar.note') },
-  { amount: t('petals.date.amount'), what: t('detail.earn.date'), note: t('petals.date.note') },
+  { amount: t('sparks.calendar.amount'), what: t('detail.earn.calendar'), note: t('sparks.calendar.note') },
+  { amount: t('sparks.date.amount'), what: t('detail.earn.date'), note: t('sparks.date.note') },
 ];
 
 /*
@@ -121,17 +120,21 @@ const safetyCards = [
 <Base lang={lang} betaPhoto={{ src: photos.beta, alt: t('photo.beta') }}>
   <section class="hero-section">
     <div class="wrap hero">
-      <PetalScatter
-        fill="var(--petal-on-peach)"
+      <SparkleScatter
+        fill="var(--sparkle-on-peach)"
         fold="hero"
-        petals={[
-          { shape: 'spoon', size: 90, rotate: 24, left: '36%', top: '40px', only: 'wide' },
-          { shape: 'curl', size: 120, rotate: -30, left: '40px', bottom: '30px', only: 'wide' },
-          { shape: 'comma', size: 70, rotate: 60, left: '41.5%', bottom: '90px', only: 'wide' },
-          { shape: 'backroll', size: 80, rotate: 18, right: '40px', top: '30px', only: 'wide' },
-          { shape: 'split', size: 60, rotate: -40, right: '40px', bottom: '30px', only: 'wide' },
-          { shape: 'spoon', size: 54, rotate: 24, right: '16px', top: '12px', only: 'narrow' },
-          { shape: 'comma', size: 48, rotate: 40, right: '16px', bottom: '16px', only: 'narrow' },
+        sparkles={[
+          { size: 100, rotate: 14, left: '36%', top: '40px', only: 'wide' },
+          { size: 38, rotate: -26, left: 'calc(36% + 116px)', top: '120px', only: 'wide' },
+          { size: 132, rotate: -18, left: '40px', bottom: '30px', only: 'wide' },
+          { size: 44, rotate: 30, left: '190px', bottom: '130px', only: 'wide' },
+          { size: 76, rotate: 36, left: '41.5%', bottom: '90px', only: 'wide' },
+          { size: 90, rotate: 10, right: '40px', top: '30px', only: 'wide' },
+          { size: 34, rotate: -32, right: '150px', top: '56px', only: 'wide' },
+          { size: 66, rotate: -38, right: '40px', bottom: '30px', only: 'wide' },
+          { size: 60, rotate: 14, right: '16px', top: '12px', only: 'narrow' },
+          { size: 26, rotate: -28, right: '84px', top: '22px', only: 'narrow' },
+          { size: 52, rotate: 38, right: '16px', bottom: '16px', only: 'narrow' },
         ]}
       />
 
@@ -212,12 +215,14 @@ const safetyCards = [
         which is where it is done: fourteen questions on the sofa, not at a venue.
       -->
       <div class="start">
-        <PetalScatter
+        <SparkleScatter
           fill="var(--brand-background)"
-          petals={[
-            { shape: 'fan', size: 110, rotate: -18, right: '440px', bottom: '-20px', only: 'wide' },
-            { shape: 'spoon', size: 70, rotate: 30, left: '44%', top: '36px', only: 'wide' },
-            { shape: 'spoon', size: 56, rotate: -28, left: '-10px', bottom: '60px', only: 'narrow' },
+          sparkles={[
+            { size: 120, rotate: -16, right: '440px', bottom: '-20px', only: 'wide' },
+            { size: 40, rotate: 26, right: '580px', bottom: '90px', only: 'wide' },
+            { size: 76, rotate: 30, left: '44%', top: '36px', only: 'wide' },
+            { size: 62, rotate: -24, left: '-10px', bottom: '60px', only: 'narrow' },
+            { size: 24, rotate: 30, left: '58px', bottom: '40px', only: 'narrow' },
           ]}
         />
         <div class="start-copy">
@@ -271,31 +276,36 @@ const safetyCards = [
     </div>
   </section>
 
-  <section class="petals-section" aria-labelledby="petals-title">
-    <div class="wrap petals-card">
-      <div class="rose-panel">
-        <PetalScatter
-          fill="var(--petal-on-peach)"
-          petals={[
-            { shape: 'spoon', size: 80, rotate: -24, left: '36px', top: '40px' },
-            { shape: 'comma', size: 64, rotate: 40, right: '36px', bottom: '24px', only: 'wide' },
-            { shape: 'curl', size: 70, rotate: 20, right: '28px', top: '56px', only: 'wide' },
-            { shape: 'backroll', size: 56, rotate: -16, left: '40px', bottom: '28px', only: 'wide' },
-            { shape: 'comma', size: 48, rotate: 50, right: '20px', top: '24px', only: 'narrow' },
+  <section class="sparks-section" aria-labelledby="sparks-title">
+    <div class="wrap sparks-card">
+      <div class="spark-panel">
+        <SparkleScatter
+          fill="var(--sparkle-on-peach)"
+          sparkles={[
+            { size: 90, rotate: -16, left: '36px', top: '40px' },
+            { size: 34, rotate: 24, left: '132px', top: '104px', only: 'wide' },
+            { size: 70, rotate: 34, right: '36px', bottom: '24px', only: 'wide' },
+            { size: 80, rotate: 14, right: '28px', top: '56px', only: 'wide' },
+            { size: 30, rotate: -30, right: '120px', top: '40px', only: 'wide' },
+            { size: 62, rotate: -12, left: '40px', bottom: '28px', only: 'wide' },
+            { size: 26, rotate: 40, left: '124px', bottom: '36px', only: 'wide' },
+            { size: 52, rotate: 40, right: '20px', top: '24px', only: 'narrow' },
+            { size: 22, rotate: -20, right: '82px', top: '30px', only: 'narrow' },
           ]}
         />
         <!--
-          Two petals of five, because two is what a date pays, and a rose part way
-          open is the currency's own picture of "on the way to an invitation".
+          Two sparks, because two is what a date brings, drawn as the app's counter
+          draws two: the pale sparkle with its rose core part grown, the counter's own
+          picture of "on the way to an invitation".
         -->
-        <span class="rose" role="img" aria-label={t('petals.rose.alt')}><RoseMark size={330} petals={2} /></span>
-        <p>{t('petals.highlight')}</p>
+        <span class="counter" role="img" aria-label={t('sparks.art.alt')}><Sparkle size={300} count={2} /></span>
+        <p>{t('sparks.highlight')}</p>
       </div>
 
-      <div class="petals-copy">
-        <h2 id="petals-title">{t('petals.title')}</h2>
-        <p class="body">{t('petals.body')}</p>
-        <h3>{t('petals.earn')}</h3>
+      <div class="sparks-copy">
+        <h2 id="sparks-title">{t('sparks.title')}</h2>
+        <p class="body">{t('sparks.body')}</p>
+        <h3>{t('sparks.earn')}</h3>
         <ul class="earn">
           {
             earnings.map((row) => (
@@ -309,7 +319,7 @@ const safetyCards = [
             ))
           }
         </ul>
-        <p class="more"><a href={localePath(lang, 'nain-se-toimii')}>{t('petals.more')}</a></p>
+        <p class="more"><a href={localePath(lang, 'nain-se-toimii')}>{t('sparks.more')}</a></p>
       </div>
     </div>
   </section>
@@ -479,7 +489,7 @@ const safetyCards = [
   }
 
   /* Stacked on a tablet the headline has the card's whole width, and a line of it
-     runs under the petal in the top corner. It stops short of the petal instead;
+     runs under the sparkle in the top corner. It stops short of the sparkle instead;
      the size stays the column's, so only where a line breaks changes. */
   @media (min-width: 40rem) and (max-width: 68.99rem) {
     h1 {
@@ -878,13 +888,13 @@ const safetyCards = [
     }
   }
 
-  /* ─── Petals ───────────────────────────────────────────────────────────── */
+  /* ─── Sparks ───────────────────────────────────────────────────────────── */
 
-  .petals-section {
+  .sparks-section {
     padding: 0 var(--gutter) var(--section-space);
   }
 
-  .petals-card {
+  .sparks-card {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -894,7 +904,7 @@ const safetyCards = [
     box-shadow: var(--shadow-card);
   }
 
-  .rose-panel {
+  .spark-panel {
     position: relative;
     overflow: hidden;
     isolation: isolate;
@@ -911,12 +921,12 @@ const safetyCards = [
   }
 
 
-  .rose :global(svg) {
-    height: 200px;
+  .counter :global(svg) {
+    height: 190px;
     width: auto;
   }
 
-  .rose-panel p {
+  .spark-panel p {
     max-width: 320px;
     font-family: var(--font-display);
     font-weight: 500;
@@ -924,26 +934,26 @@ const safetyCards = [
     line-height: 1.3;
   }
 
-  .petals-copy {
+  .sparks-copy {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
 
-  .petals-copy h2 {
+  .sparks-copy h2 {
     margin-top: 8px;
     font-size: clamp(2.375rem, 1.71vw + 1.96rem, 3.5rem);
     line-height: 1.03;
     letter-spacing: -0.02em;
   }
 
-  .petals-copy .body {
+  .sparks-copy .body {
     max-width: 560px;
     font-size: clamp(1rem, 0.29vw + 0.93rem, 1.1875rem);
     line-height: 1.6;
   }
 
-  .petals-copy h3 {
+  .sparks-copy h3 {
     margin-top: 4px;
     font-size: 0.9375rem;
   }
@@ -1027,7 +1037,7 @@ const safetyCards = [
   }
 
   @media (min-width: 75rem) {
-    .petals-card {
+    .sparks-card {
       flex-direction: row;
       align-items: center;
       gap: clamp(48px, 5.5vw, 80px);
@@ -1035,23 +1045,23 @@ const safetyCards = [
       padding: 80px;
     }
 
-    .rose-panel {
+    .spark-panel {
       flex: 0 0 clamp(380px, 32vw, 460px);
       min-height: 620px;
       gap: 28px;
       border-radius: 40px;
     }
 
-    .rose :global(svg) {
-      height: 330px;
+    .counter :global(svg) {
+      height: 290px;
     }
 
-    .petals-copy {
+    .sparks-copy {
       flex: 1;
       gap: 24px;
     }
 
-    .petals-copy h2 {
+    .sparks-copy h2 {
       margin-top: 0;
     }
 

@@ -31,8 +31,7 @@
 import type { ComponentProps } from 'astro/types';
 import { Image } from 'astro:assets';
 import Logo from './Logo.astro';
-import PetalScatter from './PetalScatter.astro';
-import RoseMark from './RoseMark.astro';
+import SparkleScatter from './SparkleScatter.astro';
 import { legalDocuments, legalHref } from '../i18n/legal';
 import { manualHref } from '../i18n/manual';
 import { otherLanguage, otherLanguageHref } from '../i18n/switch';
@@ -95,27 +94,33 @@ const signupForms: Record<Lang, string> = {
 */
 const waitlistOpen = true;
 
-type Petals = ComponentProps<typeof PetalScatter>['petals'];
+type Sparkles = ComponentProps<typeof SparkleScatter>['sparkles'];
 
-const petals: Petals = [
-  { shape: 'curl', size: 120, rotate: -24, left: '48px', top: '28px', only: 'wide' },
-  { shape: 'spoon', size: 110, rotate: 30, right: '40px', bottom: '40px', only: 'wide' },
-  { shape: 'comma', size: 90, rotate: 36, right: '90px', top: '50px', only: 'wide' },
-  { shape: 'fan', size: 96, rotate: -14, left: '36px', bottom: '36px', only: 'wide' },
-  { shape: 'curl', size: 100, rotate: 30, right: '-20px', top: '30px', only: 'narrow' },
-  { shape: 'spoon', size: 70, rotate: -30, left: '-16px', top: '24px', only: 'narrow' },
+const sparkles: Sparkles = [
+  { size: 130, rotate: -16, left: '48px', top: '28px', only: 'wide' },
+  { size: 48, rotate: 28, left: '184px', top: '120px', only: 'wide' },
+  { size: 120, rotate: 22, right: '40px', bottom: '40px', only: 'wide' },
+  { size: 96, rotate: 36, right: '90px', top: '50px', only: 'wide' },
+  { size: 40, rotate: -30, right: '50px', top: '170px', only: 'wide' },
+  { size: 104, rotate: -10, left: '36px', bottom: '36px', only: 'wide' },
+  { size: 108, rotate: 24, right: '-20px', top: '30px', only: 'narrow' },
+  { size: 76, rotate: -22, left: '-16px', top: '24px', only: 'narrow' },
+  { size: 30, rotate: 40, left: '56px', top: '108px', only: 'narrow' },
 ];
 
 /*
-  Beside a photograph the petals keep to the coral the photograph leaves: the left
+  Beside a photograph the sparkles keep to the coral the photograph leaves: the left
   side when wide, and the foot of the card when stacked, where the photograph at
   the top would otherwise cut them off at its corners.
 */
-const photoPetals: Petals = [
-  { shape: 'curl', size: 120, rotate: -24, left: '48px', top: '28px', only: 'wide' },
-  { shape: 'fan', size: 96, rotate: -14, left: '36px', bottom: '36px', only: 'wide' },
-  { shape: 'curl', size: 100, rotate: 30, right: '-20px', bottom: '40px', only: 'narrow' },
-  { shape: 'spoon', size: 70, rotate: -30, left: '-16px', bottom: '120px', only: 'narrow' },
+const photoSparkles: Sparkles = [
+  { size: 130, rotate: -16, left: '48px', top: '28px', only: 'wide' },
+  { size: 48, rotate: 28, left: '184px', top: '120px', only: 'wide' },
+  { size: 104, rotate: -10, left: '36px', bottom: '36px', only: 'wide' },
+  { size: 38, rotate: 30, left: '150px', bottom: '150px', only: 'wide' },
+  { size: 108, rotate: 24, right: '-20px', bottom: '40px', only: 'narrow' },
+  { size: 76, rotate: -22, left: '-16px', bottom: '120px', only: 'narrow' },
+  { size: 30, rotate: 40, left: '60px', bottom: '60px', only: 'narrow' },
 ];
 
 const legal = [
@@ -131,11 +136,11 @@ const legal = [
 <section class="beta" id="beta" aria-labelledby="beta-title">
   <div class:list={['wrap', 'card', photo && 'with-photo']}>
     <!--
-      The wide petals keep to the card's corners. Where they first appear the card is
-      not much wider than its headline and its 600px form, and a petal set further
+      The wide sparkles keep to the card's corners. Where they first appear the card is
+      not much wider than its headline and its 600px form, and a sparkle set further
       in lies under the headline or the field.
     -->
-    <PetalScatter fill="var(--petal-on-coral)" petals={photo ? photoPetals : petals} />
+    <SparkleScatter fill="var(--sparkle-on-coral)" sparkles={photo ? photoSparkles : sparkles} />
 
     {
       photo && (
@@ -146,7 +151,7 @@ const legal = [
     }
 
     <div class="beta-copy">
-    <div class="rose"><RoseMark size={80} /></div>
+    <div class="mark"><Logo height={88} class="beta-logo" /></div>
     <h2 id="beta-title">{t('cta.title')}</h2>
     <p class="body">{t('cta.body')}</p>
 
@@ -245,7 +250,7 @@ const legal = [
   <div class="wrap">
     <div class="foot-top">
       <a class="brand" href={localePath(lang)} aria-label={t('nav.home')}>
-        <Logo size={56} class="foot-logo" />
+        <Logo height={64} class="foot-logo" />
       </a>
 
       <div class="foot-links">
@@ -349,8 +354,9 @@ const legal = [
     }
   }
 
-  .rose :global(svg) {
-    height: clamp(64px, 1.52vw + 58px, 80px);
+  /* The wordmark over the headline, smaller on a phone. */
+  .mark :global(.beta-logo) {
+    height: clamp(72px, 1.52vw + 66px, 88px);
     width: auto;
   }
 
@@ -492,16 +498,9 @@ const legal = [
     text-decoration: none;
   }
 
-  /* The lockup at the footer's size on a desktop and the smaller one on a phone:
-     `Logo` takes a font size, so the word is scaled here and the mark, drawn in em
-     from it, follows. */
+  /* The wordmark at the footer's size on a desktop and the smaller one on a phone. */
   .brand :global(.foot-logo) {
-    --size: clamp(44px, 1.14vw + 39.5px, 56px) !important;
-    --gap: calc(var(--size) * 0.18) !important;
-  }
-
-  .brand :global(.foot-logo svg) {
-    height: calc(var(--size) * 1.05);
+    height: clamp(52px, 1.14vw + 47.5px, 64px);
     width: auto;
   }
 

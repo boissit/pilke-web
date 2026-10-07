@@ -44,12 +44,12 @@
   en: 'Your calendar arranges the date for you.'
 
 'fact.three.title':
-  fi: 'Terälehdet ovat Pilkkeen valuutta'
-  en: 'Petals are Pilke’s currency'
+  fi: 'Anna kipinöiden lentää'
+  en: 'Let the sparks fly'
 
 'fact.three.body':
-  fi: 'Ansaitset niitä käymällä treffeillä ja pitämällä kalenterisi ajan tasalla. Treffikutsu maksaa viisi.'
-  en: 'You earn them by going on dates and keeping your calendar up to date. A date invitation costs five.'
+  fi: 'Ylläpidetty kalenteri ja käydyt treffit tuovat kipinöitä. Niillä lähetät treffikutsuja.'
+  en: 'A calendar kept up to date and the dates you go on bring sparks. Sparks send date invitations.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # How it works
@@ -63,8 +63,8 @@
   en: 'How it works'
 
 'how.lead':
-  fi: 'Ensin persoonallisuuskysely ja kalenteri. Sen jälkeen tapaat ihmisiä.'
-  en: 'First the personality quiz and your calendar. Then you meet people.'
+  fi: 'Ensin persoonallisuuskysely ja kalenteri. Sitten treffeille!'
+  en: 'First the personality quiz and your calendar. Then you’re off on dates!'
 
 'how.more':
   fi: 'Lue tarkemmin'
@@ -81,8 +81,8 @@
   en: 'Start with the personality quiz'
 
 'how.start.body':
-  fi: 'Neljätoista tilannetta, joissa valitset mitä tekisit. Yksi kysymys kerrallaan, ja voit jatkaa myöhemmin siitä mihin jäit. Sitten kerrot toiveesi ja merkitset kalenteriin ajat, jolloin sinulle sopii.'
-  en: 'Fourteen situations where you choose what you would do. One question at a time, and you can pick up later where you left off. Then you say what you are looking for and mark the times that suit you in your calendar.'
+  fi: '{{profile.story_questions}} pientä tilannetta, joissa valitset, mitä tekisit. Kysely etenee kysymys kerrallaan, ja voit jatkaa myöhemmin siitä, mihin jäit. Sitten kerrot toiveesi ja merkitset kalenteriin ajat, jolloin sinulle sopii käydä treffeillä.'
+  en: '{{profile.story_questions}} little situations where you choose what you would do. It goes one question at a time, and you can pick up later where you left off. Then you say what you are looking for and mark the times that suit you for a date.'
 
 'how.one.title':
   fi: 'Lähetä treffikutsu'
@@ -97,8 +97,8 @@
   en: 'Answer invitations'
 
 'how.two.body':
-  fi: 'Näet, kuka kutsui ja milloin. Valitse aika ja paikka, niin treffit on sovittu.'
-  en: 'You see who invited you and when. Pick a time and a place, and the date is set.'
+  fi: 'Näet, kuka kutsui ja mitä hän ehdottaa. Valitse aika ja paikka, niin treffit on sovittu.'
+  en: 'You see who invited you and what they suggest. Pick a time and a place, and the date is set.'
 
 'how.three.title':
   fi: 'Menkää treffeille'
@@ -109,66 +109,66 @@
   en: 'Pilke gives you the time, the place and the way there. At the venue you can share your locations, so you find one another.'
 
 'how.four.title':
-  fi: 'Kerro miten meni'
+  fi: 'Kerro, miten meni'
   en: 'Say how it went'
 
 'how.four.body':
-  fi: 'Vastaa treffien jälkeen pariin kysymykseen. Saat terälehtiä, ja seuraavat ehdokkaat osuvat paremmin.'
-  en: 'Answer a couple of questions after the date. You earn petals, and your next candidates fit better.'
+  fi: 'Vastaa treffien jälkeen pariin kysymykseen. Saat kipinöitä, ja seuraavat ehdokkaat osuvat paremmin.'
+  en: 'Answer a couple of questions after the date. You earn sparks, and your next candidates fit better.'
 
 'how.loop':
-  fi: 'Pidä kalenterisi ajan tasalla, niin seuraavat treffit löytyvät helpommin.'
-  en: 'Keep your calendar up to date, and your next date is easier to find.'
+  fi: 'Ylläpidetty kalenteri tuo uusia ehdokkaita ja lisää kipinöitä.'
+  en: 'A calendar kept up to date brings new candidates and more sparks.'
 
 # ──────────────────────────────────────────────────────────────────────────
-# Petals
+# Sparks
 #
-# The currency, on the front page in two lines and no more: what it is, the two ways
-# it is earned week to week, and a link to the rest. The full ledger — registration,
-# the ceiling, refunds — is `nain-se-toimii`'s. The calendar row's label is
+# Sparks, on the front page in two lines and no more: what they are for, the two ways
+# they build up week to week, and a link to the rest. The full ledger — the welcome
+# sparks, the ceiling, refunds — is `nain-se-toimii`'s. The calendar row's label is
 # `detail.earn.calendar` and the date row's `detail.earn.date`, shared with that
 # page so the two cannot name one way of earning differently.
 # ──────────────────────────────────────────────────────────────────────────
 
-'petals.title':
-  fi: 'Terälehdet ovat Pilkkeen valuutta.'
-  en: 'Petals are Pilke’s currency.'
+'sparks.title':
+  fi: 'Pilke pyörii kipinöiden ympärillä.'
+  en: 'Pilke runs on sparks.'
 
-'petals.body':
-  fi: 'Ansaitset niitä käymällä treffeillä ja pitämällä kalenterisi ajan tasalla. Viidellä terälehdellä lähetät treffikutsun.'
-  en: 'You earn them by going on dates and keeping your calendar up to date. Five petals send a date invitation.'
+'sparks.body':
+  fi: 'Kipinöitä kertyy, kun merkitset kalenteriin vapaita aikoja ja käyt treffeillä. Kun niitä on {{petals.set_cost}}, voit lähettää treffikutsun.'
+  en: 'Sparks build up as you mark free time in your calendar and go on dates. Once you have {{petals.set_cost}}, you can send a date invitation.'
 
-'petals.earn':
+'sparks.earn':
   fi: 'Näin niitä kertyy'
   en: 'How they add up'
 
-'petals.calendar.amount':
+'sparks.calendar.amount':
   fi: '+1'
   en: '+1'
 
-'petals.calendar.note':
-  fi: 'enintään 4 viikossa'
-  en: 'at most 4 a week'
+'sparks.calendar.note':
+  fi: 'enintään {{calendar.max_petals_per_week}} viikossa'
+  en: 'at most {{calendar.max_petals_per_week}} a week'
 
-'petals.date.amount':
-  fi: '+2'
-  en: '+2'
+'sparks.date.amount':
+  fi: '+{{petals.per_date}}'
+  en: '+{{petals.per_date}}'
 
-'petals.date.note':
-  fi: 'kun olet kertonut miten meni'
+'sparks.date.note':
+  fi: 'kun olet kertonut, miten meni'
   en: 'once you have said how it went'
 
-'petals.highlight':
-  fi: 'Käy treffeillä ja pidä kalenterisi ajan tasalla, niin pääset kutsumaan itse.'
-  en: 'Go on dates and keep your calendar up to date, and you get to invite someone yourself.'
+'sparks.highlight':
+  fi: 'Kun toinen sanoo kutsullesi kyllä, kipinöitä lentää.'
+  en: 'And when they say yes to your invitation, sparks fly.'
 
-'petals.rose.alt':
-  fi: 'Ruusu, jonka viidestä terälehdestä kaksi on kerätty.'
-  en: 'A rose with two of its five petals collected.'
+'sparks.art.alt':
+  fi: 'Pilkkeen kipinälaskuri, jossa on kaksi kipinää.'
+  en: 'Pilke’s spark counter, showing two sparks.'
 
-'petals.more':
-  fi: 'Terälehdet ja koko kierto tarkemmin'
-  en: 'Petals and the whole loop in detail'
+'sparks.more':
+  fi: 'Kipinät ja koko kierto tarkemmin'
+  en: 'Sparks and the whole loop in detail'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Safety

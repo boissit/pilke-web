@@ -5,7 +5,7 @@ order: 40
 draft: true
 ---
 
-Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joiden kanssa treffit olisivat mahdollisia, ja valitsee heistä {{candidates.per_set}} sinulle sopivinta. Jos heitä ei löydy {{candidates.per_set}}, terälehtiä ei veloiteta.
+Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joiden kanssa treffit olisivat mahdollisia, ja valitsee heistä {{candidates.per_set}} sinulle sopivinta. Jos heitä ei löydy {{candidates.per_set}}, kipinäsi pysyvät tallessa.
 
 ![Ehdokkaat-näkymä: keskimmäisen ehdokkaan kortti, yhteiset ajat ja yhteinen tekeminen](shot:platter#timeslot-chip-0,activity-chip-0)
 
@@ -36,9 +36,9 @@ Järjestykseen vaikuttaa persoonallisuuskysely: mitä useampaan sen kysymykseen 
 
 ## Kuinka kauan ehdokkaat odottavat
 
-Ehdokkaasi odottavat sinua {{candidates.set_hours}} tuntia. Jos poistut, Treffit-sivun painikkeessa lukee **Viimeistele kutsu**, ja se vie sinut maksutta takaisin samojen ehdokkaiden luo. Uusia ehdokkaita löydät vasta, kun olet lähettänyt kutsun tai nämä ehdokkaat ovat vanhentuneet.
+Ehdokkaasi odottavat sinua {{candidates.set_hours}} tuntia. Jos poistut, Treffit-sivun painikkeessa lukee **Viimeistele kutsu**, ja se vie sinut samoilla kipinöillä takaisin samojen ehdokkaiden luo. Uusia ehdokkaita löydät vasta, kun olet lähettänyt kutsun tai nämä ehdokkaat ovat vanhentuneet.
 
-Ehdokkaat vanhenevat jo aiemmin, jos yhdellekin heistä ei voi enää lähettää kutsua: kortin ajat ovat menneet ohi tai varautuneet toiseen kutsuun. Silloin vanhenevat kaikki, eikä terälehtiä palauteta.
+Ehdokkaat vanhenevat jo aiemmin, jos yhdellekin heistä ei voi enää lähettää kutsua: kortin ajat ovat menneet ohi tai varautuneet toiseen kutsuun. Silloin vanhenevat kaikki, eikä kipinöitä palauteta.
 
 Kun lähetät kutsun, kaksi muuta ehdokasta poistuvat.
 
@@ -48,7 +48,7 @@ Jos et pääse juuri nyt löytämään ehdokkaita, Treffit-sivulla on ilmoitus (
 
 ## Kysyttyä
 
-**Miksi ehdokkaita ei löytynyt?** Sopivia ehdokkaita oli alle {{candidates.per_set}}. Sovellus kertoo, mikä ehto karsi viimeisetkin: toiveet, tekeminen, treffialueet, yhteinen aika tai se, että sopivia ihmisiä on juuri nyt vähän. Useimmiten apu on merkitä kalenteriin lisää aikaa, erityisesti kellertäville tunneille. Terälehtiä ei veloiteta.
+**Miksi ehdokkaita ei löytynyt?** Sopivia ehdokkaita oli alle {{candidates.per_set}}. Sovellus kertoo, mikä ehto karsi viimeisetkin: toiveet, tekeminen, treffialueet, yhteinen aika tai se, että sopivia ihmisiä on juuri nyt vähän. Useimmiten apu on merkitä kalenteriin lisää aikaa, erityisesti kellertäville tunneille. Kipinäsi pysyvät tallessa.
 
 **Näkeekö joku, että hän oli ehdokkaani?** Ei. Ehdokas saa tietää sinusta vasta, kun lähetät hänelle kutsun.
 

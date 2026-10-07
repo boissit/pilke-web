@@ -2,7 +2,7 @@
  * `{{area.name}}` in manual text: a number the app actually uses, spelled out on the
  * page from the same source the app reads it from.
  *
- * A manual is full of figures — how many petals a rose is, how long a cooldown lasts,
+ * A manual is full of figures — how many sparks an invitation takes, how long a cooldown lasts,
  * how far ahead the calendar goes — and every one written by hand is one the backend
  * can change without the page noticing. `src/data/app-constants.json` is generated from
  * the backend's own values, so a token here is a figure that moves when they do.

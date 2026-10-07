@@ -5,7 +5,7 @@ order: 50
 draft: true
 ---
 
-Lähetät kutsun yhdelle ehdokkaistasi. Kutsu maksaa {{petals.set_cost}} terälehteä, ja ne kuluivat jo, kun painoit **Lähetä treffikutsu!** ja löysit ehdokkaat. Katso [Terälehdet](/ohje/teralehdet).
+Lähetät kutsun yhdelle ehdokkaistasi. Kutsuun kului {{petals.set_cost}} kipinää jo silloin, kun painoit **Lähetä treffikutsu!** ja löysit ehdokkaat. Katso [Kipinät](/ohje/kipinat).
 
 ## Mitä tarjoat
 
@@ -38,12 +38,12 @@ Kun kutsu hyväksytään, vain sovittu aika jää varatuksi ja muut vapautuvat. 
 
 | Loppu | Kutsujalle | Vastaajalle |
 |---|---|---|
-| **Hyväksytty.** Treffit on sovittu. | Terälehdet jäävät käytetyiksi. Saat ilmoituksen. | Ei terälehtiä eikä jäähyä. |
-| **Hylätty.** | {{petals.refund}} terälehteä takaisin. Saat ilmoituksen. | Ei terälehtiä. Et voi hakea uusia ehdokkaita {{cooldown.decline_hours}} tuntiin. |
-| **Rauennut.** Kukaan ei vastannut {{invitation.answer_hours}} tunnissa. | {{petals.refund}} terälehteä takaisin. Saat ilmoituksen. | Ei terälehtiä. Et voi hakea uusia ehdokkaita {{cooldown.no_answer_hours}} tuntiin. |
-| **Peruutettu.** Kutsuja perui ennen vastausta. | Ei palautusta. Et voi hakea uusia ehdokkaita {{cooldown.withdrawal_hours}} tuntiin. | Jos hän oli jo saanut ilmoituksen kutsusta, hän saa ilmoituksen myös peruutuksesta. |
+| **Hyväksytty.** Treffit on sovittu. | Kipinät jäävät käytetyiksi. Saat ilmoituksen. | Ei jäähyä. |
+| **Hylätty.** | {{petals.refund}} kipinää palaa sinulle. Saat ilmoituksen. | Et voi löytää uusia ehdokkaita {{cooldown.decline_hours}} tuntiin. |
+| **Rauennut.** Kukaan ei vastannut {{invitation.answer_hours}} tunnissa. | {{petals.refund}} kipinää palaa sinulle. Saat ilmoituksen. | Et voi löytää uusia ehdokkaita {{cooldown.no_answer_hours}} tuntiin. |
+| **Peruutettu.** Kutsuja perui ennen vastausta. | Ei palautusta. Et voi löytää uusia ehdokkaita {{cooldown.withdrawal_hours}} tuntiin. | Jos hän oli jo saanut ilmoituksen kutsusta, hän saa ilmoituksen myös peruutuksesta. |
 
-Ilmoitukset tulevat, jos ne ovat päällä asetuksissa.
+Vastaajan kipinät pysyvät ennallaan, päättyipä kutsu miten tahansa. Ilmoitukset tulevat, jos ne ovat päällä asetuksissa.
 
 Päättyipä kutsu miten tahansa, teitä kahta ei sen jälkeen enää ehdoteta toisillenne. Ainoa poikkeus on, jos kävitte treffeillä ja vastasitte molemmat haluavanne tavata uudelleen.
 

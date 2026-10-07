@@ -7,7 +7,7 @@ draft: true
 
 Kalenteriin merkitset ajat, jolloin voisit lähteä treffeille. Ehdokas on joku, jonka kanssa teillä on vähintään {{calendar.min_shared_hours}} tunnin yhteinen vapaa aika. Sama pätee toisin päin: muut saavat sinut ehdokkaaksi vain aikoihin, jotka olet merkinnyt. Mitä enemmän aikaa merkitset, sitä useammille voit olla ehdokas, ja sitä paremmin yhteensopivia ihmisiä voimme löytää.
 
-Ylläpidetty kalenteri myös kerryttää terälehtiä. Katso [Terälehdet](/ohje/teralehdet).
+Ylläpidetty kalenteri kerryttää myös kipinöitä. Katso [Kipinät](/ohje/kipinat).
 
 ## Mitä voi merkitä
 

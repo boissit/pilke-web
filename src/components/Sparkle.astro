@@ -1,0 +1,49 @@
+---
+/**
+ * One spark, drawn the way the app's counter draws one at the size of a single glyph.
+ *
+ * `count` is how many sparks the drawing stands for, from 0 to `SPARKS_PER_GLYPH`:
+ * five or more is a lit sparkle, the rose of the brand; fewer is the pale sparkle with
+ * a rose core that grows step by step, `CORE_STEPS`, until it lights. The app draws the
+ * same states from the same numbers (`pilke-app/src/utils/sparks.ts`).
+ *
+ * Decorative by itself — it takes `aria-hidden`, and anything that means something by
+ * drawing one labels the drawing from outside.
+ */
+import { CORE_STEPS, SPARK_COLORS, SPARKLE_CENTRE, SPARKLE_PATH, SPARKLE_VIEWBOX, SPARKS_PER_GLYPH } from './sparkleArtwork';
+
+interface Props {
+  /** The edge of the square the sparkle is drawn in, in px. */
+  size: number;
+  /** How many sparks it shows: lit at five, a growing core below. Lit by default. */
+  count?: number;
+  class?: string;
+}
+
+const { size, count = SPARKS_PER_GLYPH, class: className } = Astro.props;
+
+if (!Number.isInteger(count) || count < 0) {
+  throw new Error(`Sparkle: ${count} is not a count of sparks. A whole number from 0 up.`);
+}
+
+const lit = count >= SPARKS_PER_GLYPH;
+const core = lit ? 1 : CORE_STEPS[count];
+const { x, y } = SPARKLE_CENTRE;
+---
+
+<svg class={className} width={size} height={size} viewBox={SPARKLE_VIEWBOX} aria-hidden="true" focusable="false">
+  {lit ? (
+    <path d={SPARKLE_PATH} fill={SPARK_COLORS.lit} />
+  ) : (
+    <>
+      <path d={SPARKLE_PATH} fill={SPARK_COLORS.unlit} />
+      <path d={SPARKLE_PATH} fill={SPARK_COLORS.lit} transform={`translate(${x} ${y}) scale(${core}) translate(${-x} ${-y})`} />
+    </>
+  )}
+</svg>
+
+<style>
+  svg {
+    display: block;
+  }
+</style>

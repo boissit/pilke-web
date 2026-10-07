@@ -1,14 +1,14 @@
 ---
 /**
- * The card a subpage opens with: title, lede, and a few petals behind them.
+ * The card a subpage opens with: title, lede, and a few sparkles behind them.
  *
  * The front page opens with the hero instead, which is a different arrangement — a
  * headline beside a phone. Every other page opens identically, so they open from here,
  * and the peach card at the top of one of them cannot drift from the rest. It is the
- * hero's ground and the hero's petals, so a reader who came from the front page is
+ * hero's ground and the hero's sparkles, so a reader who came from the front page is
  * visibly on the same site.
  */
-import PetalScatter from './PetalScatter.astro';
+import SparkleScatter from './SparkleScatter.astro';
 
 interface Props {
   title: string;
@@ -20,12 +20,15 @@ const { title, lead } = Astro.props;
 
 <section class="slab slab-pale head">
   <div class="wrap section-pad">
-    <PetalScatter
-      fill="var(--petal-on-peach)"
-      petals={[
-        { shape: 'spoon', size: 110, rotate: 24, right: '9%', top: '28px', only: 'wide' },
-        { shape: 'spoon', size: 64, rotate: 24, right: '14px', top: '14px', only: 'narrow' },
-        { shape: 'curl', size: 120, rotate: -30, right: '26%', bottom: '-44px', only: 'wide' },
+    <SparkleScatter
+      fill="var(--sparkle-on-peach)"
+      sparkles={[
+        { size: 120, rotate: 14, right: '9%', top: '28px', only: 'wide' },
+        { size: 46, rotate: -24, right: 'calc(9% + 140px)', top: '40px', only: 'wide' },
+        { size: 64, rotate: 14, right: '14px', top: '14px', only: 'narrow' },
+        { size: 26, rotate: -24, right: '86px', top: '22px', only: 'narrow' },
+        { size: 130, rotate: -20, right: '26%', bottom: '-48px', only: 'wide' },
+        { size: 38, rotate: 32, right: 'calc(26% - 50px)', bottom: '40px', only: 'wide' },
       ]}
     />
     <h1 class="display-mid">{title}</h1>
@@ -39,7 +42,7 @@ const { title, lead } = Astro.props;
     padding-top: clamp(4px, 1.52vw - 2px, 16px);
   }
 
-  /* Room on the right for the petal, so a long title never runs under it. */
+  /* Room on the right for the sparkle, so a long title never runs under it. */
   h1 {
     max-width: min(18ch, calc(100% - 64px));
     font-size: clamp(2.5rem, 2.67vw + 1.85rem, 4.25rem);

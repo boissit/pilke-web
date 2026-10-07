@@ -10,24 +10,16 @@
 */
 
 /*
-  Three faces, each with one job. Courgette is the wordmark and nothing else: at
-  heading sizes on a page of rounded cards it read as decoration rather than as a
-  name. Fredoka carries the display type, round like the cards it sits in. Figtree
-  is the body, chosen for an open, friendly lowercase that stays legible at 14px.
+  Two faces, each with one job. Fredoka carries the display type, round like the
+  cards it sits in. Figtree is the body, chosen for an open, friendly lowercase that
+  stays legible at 14px. The wordmark is no face at all: it is the owner's artwork,
+  drawn as paths by `Logo.astro`.
 
-  Self-hosted from `public/fonts`, as Courgette always was, so no page asks a third
-  party for anything. Fredoka and Figtree are the variable files Google Fonts
+  Self-hosted from `public/fonts`, so no page asks a third party for anything. Fredoka and Figtree are the variable files Google Fonts
   serves, split into its latin and latin-ext subsets: latin holds every letter
   Finnish uses, and a browser only fetches latin-ext when a page needs a glyph
   from it, a name with a háček or an ogonek.
 */
-@font-face {
-  font-family: 'Courgette';
-  src: url('/fonts/Courgette-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
-}
-
 @font-face {
   font-family: 'Fredoka';
   src: url('/fonts/Fredoka-latin.woff2') format('woff2');
@@ -117,11 +109,11 @@
   --surface: #ffffff;
   --rule: #f0ddd5;
 
-  /* The petals scattered behind a card: each is its ground a shade deeper, by the
+  /* The sparkles scattered behind a card: each is its ground a shade deeper, by the
      same rule `colors.cardMotif` applies in the app, so a mark never reads as a
      wash lighter than what it sits on. */
-  --petal-on-peach: #fcd1c3;
-  --petal-on-coral: #ffbda6;
+  --sparkle-on-peach: #fcd1c3;
+  --sparkle-on-coral: #ffbda6;
 
   /* The safety card's ground, and the dashed edge of the one thing on it that has
      not shipped. Mint because the app draws its confirming controls in `--success`,
@@ -162,7 +154,6 @@
 
   --measure: 34rem;
 
-  --font-wordmark: 'Courgette', 'Segoe Script', cursive;
   --font-display: 'Fredoka', 'Trebuchet MS', sans-serif;
   --font-body: 'Figtree', 'Trebuchet MS', system-ui, sans-serif;
 }
@@ -181,7 +172,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  /* A tilted phone or a petal hanging off a card must never widen the page. `clip`
+  /* A tilted phone or a sparkle hanging off a card must never widen the page. `clip`
      rather than `hidden`, because `hidden` makes the body a scroll container and
      breaks `position: sticky` anywhere below it. */
   overflow-x: clip;

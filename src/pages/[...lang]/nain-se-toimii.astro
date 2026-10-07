@@ -4,11 +4,11 @@
  *
  * The front page gives the loop in four steps and stops. This page carries what
  * a reader who wants the whole picture needs: what happens before the first
- * invitation, where candidates come from, the whole of the petal economy, and
+ * invitation, where candidates come from, everything about sparks, and
  * what happens when plans change.
  *
- * WARNING: **Every number on this page is a backend constant.** Five petals for
- * a set, fifteen earnable at a time, one hour of shared calendar, at least two
+ * WARNING: **Every number on this page is a backend constant.** Five sparks for
+ * an invitation, fifteen held at a time, one hour of shared calendar, at least two
  * times offered, a day to answer. The size of a set is deliberately not one of
  * them: what the copy emphasises is that the reader picks who the invitation goes
  * to, not how many faces they are picking from. They are cited in the
@@ -16,9 +16,9 @@
  * worse than a page that stays vague.
  */
 import { grounds, shotsFor } from '../../assets/screens';
-import RoseCount from '../../components/RoseCount.astro';
 import PageHead from '../../components/PageHead.astro';
 import Phone from '../../components/Phone.astro';
+import Sparkle from '../../components/Sparkle.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
@@ -77,7 +77,7 @@ const changes = [
       <p class="lede">{t('detail.economy.body')}</p>
 
       <p class="price">
-        <span class="price-mark"><RoseCount height={120} petals={5} alt={t('economy.rose.alt')} /><b>5</b></span>
+        <span class="price-mark" role="img" aria-label={t('economy.spark.alt')}><Sparkle size={104} /></span>
         <span>{t('economy.lead')}</span>
       </p>
 
@@ -195,22 +195,13 @@ const changes = [
     max-width: none;
   }
 
-  /* The mark and the price it carries, with no chip around them: the rose brings
-     its own outline, and a pill would be a second ring on the first. */
+  /* The mark beside the line that names its count, with no chip around it: a lit
+     sparkle is the app's picture of an invitation's worth, and the line beside it
+     says the number from its token, so there is no hand-typed digit to go stale. */
   .price-mark {
     display: flex;
     align-items: center;
     gap: var(--pad-small);
-  }
-
-  /* Sized against the rose rather than against the running text: the figure is
-     half of the mark, and at body size it reads as a caption under a picture
-     instead of as the price the rose is. */
-  .price-mark b {
-    font-family: var(--font-display);
-    font-size: clamp(2.25rem, 1vw + 2rem, 3rem);
-    font-weight: 600;
-    line-height: 1;
   }
 
   /* Each row a soft pill on the card, as the front page draws its two earning

@@ -25,14 +25,17 @@
 # the collection, and is the first thing to add if the site is ever rewired to
 # read these files.
 #
-# Product vocabulary is the app's own spelling: teralehdet are what the product
-# calls its currency, and five of them make a ruusu. The site should not invent a
-# softer word for either.
+# Product vocabulary is the app's own spelling: the tokens are kipinät, one kipinä,
+# in English sparks, and five of them send a treffikutsu. They are never called a
+# currency: Pilke pyörii kipinöiden ympärillä, runs on sparks. A zero balance is
+# never "ei kipinää", which means no chemistry, and "kipinöitä lentää" belongs to the
+# moment two people say yes. The constants keep their old names, `{{petals.*}}`,
+# because the backend does.
 #
 # The front page argues one thing: there is no chat, and the shortest path to
-# meeting somebody is a kutsu with the time already in it. The currency belongs to
-# `nain-se-toimii`, because a price list on a front page reads as a game to be
-# played rather than as an app for meeting people.
+# meeting somebody is a kutsu with the time already in it. The whole ledger of
+# sparks belongs to `nain-se-toimii`, because a price list on a front page reads as
+# a game to be played rather than as an app for meeting people.
 #
 # Sentences here are short on purpose. A clause that can be its own sentence is one,
 # and a paragraph says its point in its first six words.
@@ -50,8 +53,8 @@
   en: 'Pilke'
 
 'meta.description':
-  fi: 'Pilke on suomalainen deittisovellus ilman chattia. Saat kutsun, jossa on jo aika ja paikka, ja menet treffeille.'
-  en: 'Pilke is a Finnish dating app with no chat. An invitation arrives with the time and place already in it, and you go on the date.'
+  fi: 'Pilke on suomalainen treffisovellus ilman swaippailua ja chättäilyä. Saat kutsun, jossa on jo aika ja paikka, ja menet treffeille.'
+  en: 'Pilke is a Finnish dating app with no swiping and no chatting. An invitation arrives with the time and place already in it, and you go on the date.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # The bar at the top, and the link that skips it
@@ -127,8 +130,8 @@
 # ──────────────────────────────────────────────────────────────────────────
 
 'notfound.title':
-  fi: 'Hups, väärä osoite'
-  en: 'Oops, wrong address'
+  fi: 'Hups, tämä sivu jäi saapumatta'
+  en: 'Oops, this page didn’t turn up'
 
 'notfound.lead':
   fi: 'Linkki on ehkä vanhentunut. Etusivulta pääset jatkamaan.'

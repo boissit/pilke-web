@@ -1,6 +1,6 @@
 ---
 title: After the date
-lead: Feedback says how the date went, decides whether you meet again, and earns petals.
+lead: Feedback says how the date went, decides whether you meet again, and earns sparks.
 order: 80
 draft: true
 ---
@@ -12,7 +12,7 @@ You can give feedback as soon as the date has ended, {{date.length_hours}} hour 
 At the top is the date it is about (1). The questions ask whether your date matched what you were hoping for, whether you enjoyed it, whether you would like to meet again and what the venue was like.
 
 - **What happens to your answers.** Your date does not see them. The only thing that can reach them is your phone number, and only in the way described below.
-- **Petals.** When you send your feedback you get {{petals.per_date}} petals. Each of you gets your own once you have answered. No feedback, no petals. See [Petals](/en/guide/teralehdet).
+- **Sparks.** When you send your feedback you get {{petals.per_date}} sparks. Each of you gets your own once you have answered. See [Sparks](/en/guide/kipinat).
 
 ## Meeting again
 

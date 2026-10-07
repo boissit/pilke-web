@@ -5,7 +5,7 @@ order: 50
 draft: true
 ---
 
-You send an invitation to one of your candidates. It costs {{petals.set_cost}} petals, and they went when you pressed **Send an invitation!** and found your candidates. See [Petals](/en/guide/teralehdet).
+You send an invitation to one of your candidates. It took {{petals.set_cost}} sparks, and they went when you pressed **Send an invitation!** and found your candidates. See [Sparks](/en/guide/kipinat).
 
 ## What you offer
 
@@ -38,12 +38,12 @@ When the invitation is accepted, only the agreed time stays held and the rest ar
 
 | Ending | For the one who invited | For the one invited |
 |---|---|---|
-| **Accepted.** The date is agreed. | The petals stay spent. You are told. | No petals, no cooldown. |
-| **Declined.** | {{petals.refund}} petals back. You are told. | No petals. You cannot look for new candidates for {{cooldown.decline_hours}} hours. |
-| **Lapsed.** Nobody answered within {{invitation.answer_hours}} hours. | {{petals.refund}} petals back. You are told. | No petals. You cannot look for new candidates for {{cooldown.no_answer_hours}} hours. |
-| **Withdrawn.** Taken back before an answer. | No refund. You cannot look for new candidates for {{cooldown.withdrawal_hours}} hours. | If they had already been told about the invitation, they are told it was withdrawn. |
+| **Accepted.** The date is agreed. | The sparks stay spent. You are told. | No cooldown. |
+| **Declined.** | {{petals.refund}} sparks come back to you. You are told. | You cannot find new candidates for {{cooldown.decline_hours}} hours. |
+| **Lapsed.** Nobody answered within {{invitation.answer_hours}} hours. | {{petals.refund}} sparks come back to you. You are told. | You cannot find new candidates for {{cooldown.no_answer_hours}} hours. |
+| **Withdrawn.** Taken back before an answer. | No refund. You cannot find new candidates for {{cooldown.withdrawal_hours}} hours. | If they had already been told about the invitation, they are told it was withdrawn. |
 
-You are told if the notification is on in Settings.
+The sparks of the one invited stay as they are, whatever the outcome. You are told if the notification is on in Settings.
 
 However an invitation ends, the two of you are not suggested to each other again. The only exception is when you went on the date and both said you would like to meet again.
 

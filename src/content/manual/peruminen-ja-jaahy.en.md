@@ -1,11 +1,11 @@
 ---
 title: Cancelling and cooldowns
-lead: If you call off an agreed date, withdraw an invitation you sent, decline or leave unanswered an invitation you received, or don’t turn up to a date, you get a cooldown. This page shows what causes one, how long it lasts and what you can’t do during it.
+lead: You get a cooldown if you call off an agreed date, withdraw your invitation, decline one or leave it unanswered, or don’t turn up. This page shows how long it lasts and what you can still do during it.
 order: 60
 draft: true
 ---
 
-An agreed date is something two people decided together. The other person has set time aside for you, and there is no messaging in the app, so they cannot ask you anything. Calling it off decides for both of you, which is rude to them, and it earns you a cooldown. A cooldown takes no petals and ends on its own.
+An agreed date is something two people decided together. The other person has set time aside for you, and there is no messaging in the app, so they cannot ask you anything. Calling it off decides for both of you, which is rude to them, and it earns you a cooldown. A cooldown ends on its own, and your sparks stay as they are.
 
 ## Two kinds of cooldown
 
@@ -36,11 +36,11 @@ Calling off dates again and again makes the cooldown longer. Each date you calle
 
 ![A notice on the Dates page: you cannot look for new candidates because you declined a date invitation you received](shot:cooldown-decline#cooldown-notice)
 
-You can decline without giving a reason, and a no is a better answer for the one who invited than silence. Declining or leaving an invitation unanswered gives you a short cooldown (1): they spent petals on the invitation and waited for your answer. During it you still show up in other people's candidates and can answer the invitations you receive.
+You can decline without giving a reason, and a no is a better answer for the one who invited than silence. Declining or leaving an invitation unanswered gives you a short cooldown (1): they spent sparks on the invitation and waited for your answer. During it you still show up in other people's candidates and can answer the invitations you receive.
 
 ## What calling off means for the other person
 
-When you call off an agreed date, the other person is told straight away. That notification cannot be switched off, because without it they would go and wait for someone who is not coming. The agreed time is freed for both of you. If you were the one who invited, the petals you spent do not come back. If they invited you, they get back the {{petals.refund}} petals they spent on the invitation.
+When you call off an agreed date, the other person is told straight away. That notification cannot be switched off, because without it they would go and wait for someone who is not coming. The agreed time is freed for both of you. If you were the one who invited, the sparks you spent stay spent. If they invited you, {{petals.refund}} sparks go back to them.
 
 You call off an agreed date with **Cancel the date** on its screen. Once the start time has passed, the button is gone.
 

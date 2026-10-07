@@ -19,6 +19,13 @@ export default defineConfig({
     format: 'file',
   },
 
+  // The manual's page on sparks had the old slug, `teralehdet`.
+  // Links to the old address land on the new one rather than on the 404 page.
+  redirects: {
+    '/ohje/teralehdet': '/ohje/kipinat',
+    '/en/guide/teralehdet': '/en/guide/kipinat',
+  },
+
   // Finnish is the product's language and sits at the root; English is the
   // secondary locale under /en. `prefixDefaultLocale: false` is what keeps
   // pilke.app/ Finnish rather than redirecting to pilke.app/fi/, so a shared

@@ -5,7 +5,7 @@ order: 40
 draft: true
 ---
 
-You find {{candidates.per_set}} candidates at a time. Pilke goes through everyone you could have a date with and picks the {{candidates.per_set}} who suit you best. If there are not {{candidates.per_set}} of them, no petals are charged.
+You find {{candidates.per_set}} candidates at a time. Pilke goes through everyone you could have a date with and picks the {{candidates.per_set}} who suit you best. If there are not {{candidates.per_set}} of them, your sparks stay put.
 
 ![The Candidates screen: the middle candidate's card, the times you both have and something to do together](shot:platter#timeslot-chip-0,activity-chip-0)
 
@@ -36,9 +36,9 @@ The personality quiz shapes the order: the more of its questions you have both a
 
 ## How long your candidates wait
 
-Your candidates wait for you for {{candidates.set_hours}} hours. If you leave, the button on the Dates page reads **Finish your invitation** and takes you back to the same candidates at no cost. You can find new candidates once you have sent an invitation or these candidates have expired.
+Your candidates wait for you for {{candidates.set_hours}} hours. If you leave, the button on the Dates page reads **Finish your invitation** and takes you back to the same candidates on the same sparks. You can find new candidates once you have sent an invitation or these candidates have expired.
 
-Your candidates expire sooner if any one of them can no longer be sent an invitation: the card's times have passed, or they have been taken by another invitation. Then they all expire, and no petals come back.
+Your candidates expire sooner if any one of them can no longer be sent an invitation: the card's times have passed, or they have been taken by another invitation. Then they all expire, and no sparks come back.
 
 When you send an invitation, the other two candidates go.
 
@@ -48,7 +48,7 @@ If you cannot find candidates right now, the Dates page carries a notice (1) wit
 
 ## Questions
 
-**Why were no candidates found?** There were fewer than {{candidates.per_set}} suitable candidates. The app says which condition ruled out the last of them: your wishes, things to do, date areas, shared time, or simply too few suitable people right now. Marking more time usually helps most, especially in the yellow hours. No petals are charged.
+**Why were no candidates found?** There were fewer than {{candidates.per_set}} suitable candidates. The app says which condition ruled out the last of them: your wishes, things to do, date areas, shared time, or simply too few suitable people right now. Marking more time usually helps most, especially in the yellow hours. Your sparks stay put.
 
 **Can someone see they were my candidate?** No. A candidate only learns about you when you send them an invitation.
 

@@ -7,7 +7,7 @@ draft: true
 
 In the calendar you mark the times you could go on a date. A candidate is someone you share at least {{calendar.min_shared_hours}} hour of free time with. It works the other way too: other people only get you as a candidate for times you have marked. The more time you mark, the more people you can be a candidate for, and the better the matches we can find.
 
-A calendar you keep up to date also earns petals. See [Petals](/en/guide/teralehdet).
+A calendar you keep up to date also earns sparks. See [Sparks](/en/guide/kipinat).
 
 ## What you can mark
 

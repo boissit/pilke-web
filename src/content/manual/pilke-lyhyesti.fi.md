@@ -1,6 +1,6 @@
 ---
 title: Pilke lyhyesti
-lead: Pilke on treffailusovellus, jossa ei swaippailla eikä chattailla. Pidä kalenterisi ajan tasalla, lähetä kutsuja, vastaa niihin ja käy treffeillä!
+lead: Pilke on treffisovellus ilman swaippailua ja chättäilyä. Pidä kalenterisi ajan tasalla, lähetä kutsuja, vastaa saamiisi ja käy treffeillä!
 order: 10
 draft: true
 ---
@@ -11,13 +11,13 @@ Pilkkeessä teet kolmea asiaa. Ne ovat yhtä tärkeitä: jos yksikin jää tekem
 - **Kutsut jonkun treffeille.** Löydät {{candidates.per_set}} ehdokasta ja lähetät yhdelle heistä kutsun. Katso [Ketä sinulle näytetään](/ohje/ehdokkaat) ja [Kutsut](/ohje/kutsut).
 - **Vastaat kutsuihin ja menet treffeille.** Kun joku kutsuu sinut, valitset ajan ja paikan tai hylkäät kutsun. Sovitut treffit pidetään. Katso [Treffipäivä](/ohje/treffipaiva).
 
-![Treffit-sivu: terälehdet ylhäällä, kutsut ja treffit keskellä, Löydä treffit! alhaalla](shot:treffit#balance-counter,find-dates)
+![Treffit-sivu: kipinät ylhäällä, kutsut ja treffit keskellä, Löydä treffit! alhaalla](shot:treffit#balance-counter,find-dates)
 
-Treffit-sivu kokoaa kaiken kolmen tuloksen. Ylhäällä ovat terälehtesi (1). Terälehdet ovat Pilkkeen valuutta: ansaitset niitä käymällä treffeillä ja kulutat niitä lähettämällä treffikutsuja. Keskellä ovat kutsut, joihin sinun pitää vastata, lähettämäsi kutsut ja sovitut treffit. Niiden alla on **Treffihistoria**, jossa ovat treffit, joilla olet käynyt. Painamalla **Löydä treffit!** (2) löydät uudet ehdokkaat. Katso [Terälehdet](/ohje/teralehdet).
+Treffit-sivu kokoaa kaiken kolmen tuloksen. Ylhäällä ovat kipinäsi (1). Pilke pyörii niiden ympärillä: kipinöitä kertyy kalenterista ja treffeiltä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun. Keskellä ovat kutsut, joihin sinun pitää vastata, lähettämäsi kutsut ja sovitut treffit. Niiden alla on **Treffihistoria**, jossa ovat treffit, joilla olet käynyt. Painamalla **Löydä treffit!** (2) löydät uudet ehdokkaat. Katso [Kipinät](/ohje/kipinat).
 
-## Ei keskusteluyhteyttä
+## Kaikki sanotaan kasvokkain
 
-Sovelluksessa ei lähetetä viestejä. Pilke hoitaa treffien sopimisen, joten sinun tarvitsee vain saapua paikalle ja tutustua toiseen.
+Pilke hoitaa treffien sopimisen, joten viestejä ei tarvita. Sinä saavut paikalle ja tutustut toiseen.
 
 Toiseen ihmiseen tutustuu kunnolla vain kasvokkain. Viesteissä on helppo antaa itsestään hiottu kuva, ja pitkä kirjoittelu luo odotuksia, joihin ensimmäinen tapaaminen ei välttämättä vastaa. Siksi Pilke vie teidät suoraan treffeille, ja tutustuminen alkaa vasta siellä.
 
@@ -33,4 +33,4 @@ Profiilin luonti kestää noin vartin. Pilke kysyy puhelinnumerosi (se vahvistet
 - **Treffialueet ja tekeminen**, vähintään {{profile.min_categories}} vaihtoehtoa. Treffipaikat valitaan näiden perusteella.
 - **Vapaat aikasi.** Mitä useampia vapaita aikoja merkitset, sitä parempia ehdokkaita löydämme. Alkuun riittää yksi {{calendar.min_slot_hours}} tunnin aika.
 
-Kun vahvistat puhelinnumerosi, saat {{petals.signup_bonus}} terälehteä. Se on yhden treffikutsun hinta, joten voit kutsua jonkun heti, kun profiili on valmis.
+Kun vahvistat puhelinnumerosi, saat {{petals.signup_bonus}} tervetuliaiskipinää. Ne riittävät yhteen treffikutsuun, joten voit kutsua jonkun heti, kun profiili on valmis.

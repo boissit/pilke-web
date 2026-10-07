@@ -13,9 +13,14 @@
  * announced both would say the one thing twice.
  */
 import * as icons from 'lucide-static';
+import { SPARKLE_BOX, SPARKLE_PATH } from './sparkleArtwork';
 
 interface Props {
-  /** The icon's Lucide name, as lucide.dev spells it: `map-pin`, not `MapPin`. */
+  /**
+   * The icon's Lucide name, as lucide.dev spells it: `map-pin`, not `MapPin`. One name
+   * is not Lucide's: `spark` is the logo's sparkle, outlined at the same weight, the
+   * way the app's Treffit tab draws it.
+   */
   name: string;
   /** Width and height in px. Lucide draws in a 24-unit box, so 24 is one unit a pixel. */
   size?: number;
@@ -38,15 +43,30 @@ const { name, size = 24, strokeWidth = 2, label, class: className } = Astro.prop
 */
 const exportName = name.replace(/(^|-)([a-z0-9])/g, (_, _dash, c: string) => c.toUpperCase());
 const svg: unknown = (icons as Record<string, unknown>)[exportName];
-const paths = typeof svg === 'string' ? svg.match(/<svg[^>]*>([\s\S]*)<\/svg>/)?.[1] : undefined;
+const paths =
+  name === 'spark'
+    ? `<path d="${SPARKLE_PATH}" />`
+    : typeof svg === 'string'
+      ? svg.match(/<svg[^>]*>([\s\S]*)<\/svg>/)?.[1]
+      : undefined;
 if (paths === undefined) throw new Error(`Lucide has no icon called "${name}"`);
+
+/*
+  The sparkle is drawn in the logo's coordinates, so its box is padded out to the 24
+  units a Lucide icon has, which keeps `strokeWidth` meaning the same thing for both.
+*/
+const pad = (24 - SPARKLE_BOX.width) / 2;
+const viewBox =
+  name === 'spark'
+    ? `${SPARKLE_BOX.x - pad} ${SPARKLE_BOX.y - (24 - SPARKLE_BOX.height) / 2} 24 24`
+    : '0 0 24 24';
 ---
 
 <svg
   class={className}
   width={size}
   height={size}
-  viewBox="0 0 24 24"
+  viewBox={viewBox}
   fill="none"
   stroke="currentColor"
   stroke-width={strokeWidth}

@@ -27,10 +27,11 @@ bilingual site drifts, and the English routes keep the Finnish slug so a languag
 switch is the prefix and nothing else.
 
 A page holds its own sections, its own lists and its own styles. `src/components/`
-is what more than one page draws: `Phone`, `PetalScatter`, `RoseMark`, `Logo`,
-`RoseCount`, the `PageHead` card every subpage opens with, and the
+is what more than one page draws: `Phone`, `SparkleScatter`, `Sparkle`, `Logo`,
+the `PageHead` card every subpage opens with, and the
 `SiteHeader` and `SiteFooter` that `Base.astro` puts around every page.
-`roseArtwork.ts` and `petalArtwork.ts` hold the geometry those three draw from.
+`sparkleArtwork.ts` holds the sparkle those draw from, and `src/assets/brand/` the
+owner's wordmark.
 `src/assets/screens.ts` is the table of screenshots, and is the only thing the
 pages share besides the dictionary.
 
@@ -88,11 +89,10 @@ pill, with `.ghost` for the white one and `.coral` for the header's.
 `src/styles/global.css` carries the app's design tokens under the same names they
 have in `pilke-app/src/constants/`, so a change on either side is traceable to
 the other, and beside them the site's own: the blush ground, the warm ink, the
-soft rules and shadows. Courgette and the currency mark are copied from
-`pilke-app/assets/`; Courgette sets the wordmark and nothing else. Fredoka, the
+soft rules and shadows. The wordmark and the favicons are the owner's release
+artwork, drawn as paths, and the sparkle is the wordmark's own. Fredoka, the
 display face, and Figtree, the body, are Google Fonts' variable files,
-self-hosted in `public/fonts` the same way so no page asks a third party for
-anything.
+self-hosted in `public/fonts` so no page asks a third party for anything.
 
 **The look is the Pehmeä direction**: rounded cards with soft shadows on a blush
 page, a floating pill for the header, the phone on a coral disc, and the app's
@@ -117,16 +117,16 @@ meeting a stranger through it is looked after.
 - **The hero** is the owner's headline and lead beside the app's home screen on a
   coral disc, with two buttons: down to the waitlist, and down to the steps.
 - **Three cards under it**: inviting and being invited, time and place already
-  set, and the petals as Pilke's currency. One line of body each.
+  set, and the sparks Pilke runs on. One line of body each.
 - **How it works** opens with the one thing done once — the personality quiz and
   the calendar — on its own white card, then the four steps on the four card
   tints, each with its screen running off the bottom of the card: the top of a
   screen is what says which screen it is.
-- **The petals** get one short section: what a petal is, the two ways it is
-  earned week to week (+1 for ten hours kept in the calendar for a week, +2 for a
-  date once feedback is given) and a link on. The whole ledger — registration,
-  the fifteen-petal ceiling, refunds — stays on `nain-se-toimii`, because a full
-  price list on a front page reads as a game to be played.
+- **The sparks** get one short section: what they are for, the two ways they
+  build up week to week (+1 for ten hours kept in the calendar for a week, +2 for a
+  date once feedback is given) and a link on. The whole ledger — the welcome
+  sparks, the fifteen-spark ceiling, refunds — stays on `nain-se-toimii`, because a
+  full price list on a front page reads as a game to be played.
 - **Safety** is two cards, venues first and then the trusted person and the
   button as one card, because the button does nothing until the number is saved.
   Venues lead because a reader who has not used the app yet is better served by
@@ -140,7 +140,7 @@ meeting a stranger through it is looked after.
 a second column and the eye does not know which to follow first, so every section
 head stacks: title, then lede under it.
 
-Astro scopes every compound selector, so a rule like `.start > :not(.petals)`
+Astro scopes every compound selector, so a rule like `.start > :not(.sparkles)`
 carries more attribute selectors than a bare `.start-phone` and wins on
 specificity; a later override of a child has to be written with the same parent
 (`.start > .start-phone`) or it silently does nothing.
@@ -180,24 +180,24 @@ no-answer cooldowns are tokens everywhere they appear.
 
 The load-bearing numbers:
 
-- A set of three candidates costs five petals, and there is no other price.
-- The petals are spent when the set is drawn, not when the invitation is sent.
-- One petal per ten hours of availability kept marked for a week
+- A set of three candidates takes five sparks, and nothing else spends them.
+- The sparks are spent when the set is drawn, not when the invitation is sent.
+- One spark per ten hours of availability kept marked for a week
   (`PETAL_HOUR_DAYS`, 70 hour-days), counting only the next 14 days
   (`CALENDAR_EARNING_HORIZON`) and at most 40 hours at once
   (`CALENDAR_PENDING_HOURS_CAP`), so at most four a week. Two for a date once
   feedback is given, and five for finishing registration.
 - The five a set cost come back if the invitation is declined, lapses, or is
   accepted and then called off by the person invited.
-- Earning stops at fifteen petals, which is three invitations' worth. Refunds are
+- Earning stops at fifteen sparks, which is three invitations' worth. Refunds are
   uncapped, so a balance can legitimately pass it.
 - **Pilke never asks where anybody lives.** There is no home address and no
-  device-location read outside a date. `User.date_location_preference` is a point
-  plus `date_location_preference_radius`, written from `MapInput` — a map the user
-  pans, defaulting to Helsinki — and the app's own label for it is *"Kuinka kauas
-  voisit lähteä treffeille?"* with the sublabel *"Ehdotamme treffipaikkoja ympyrän
-  sisältä"*. The site said "Pilke kysyy suunnilleen missä asut" for a while and
-  that was invented; `privacy.area` now says what the screen says.
+  device-location read outside a date. The date area is a choice of the server's
+  drawn segments (`date_areas`, `pilke-app#81`, treffit-backend#39), picked on a
+  map in onboarding — *"Missä voisit käydä treffeillä?"*, *"Ehdotamme
+  treffipaikkoja vain valituilta alueilta"*. It used to be a circle the user
+  dragged; the server still fills the old point and radius in from the selection
+  for older builds. `privacy.area` says what the screen says.
 - Location sharing runs from twenty minutes before the agreed start to twenty
   after it (`POSITION_SHARING_LEAD` and `POSITION_SHARING_TRAIL`), only within
   300 m of the venue (`POSITION_PROXIMITY_RADIUS`), and only to the other party.
@@ -206,7 +206,7 @@ The load-bearing numbers:
   database until `core.tasks.sweep_closed_positions` deletes it, so "ei meille" and
   "Pilke itself does not see it" were both overclaims and are gone. What is true
   and worth saying instead is that nothing reads it: no penalty, no report and no
-  petals depend on it, which is what `test_positions.TestLocationIsNeverEvidence`
+  sparks depend on it, which is what `test_positions.TestLocationIsNeverEvidence`
   exists to keep true.
 - The safety button texts the trusted contact and nobody else. The message names no
   location, no venue and no partner.
@@ -222,18 +222,18 @@ The load-bearing numbers:
   safety section says so in the copy itself — *tulossa*, and we will say when it
   is in use — and it is the only forward-looking statement on the site. If it ships, that note
   becomes a card; if it is dropped, the note goes.
-- There is no way to buy a petal, no paid visibility, no boost and no ranking.
+- There is no way to buy a spark, no paid visibility, no boost and no ranking.
   `TokenGrantReason` in `users/models.py` declares nine reasons and not one of
   them is a purchase, and there is no billing, in-app-purchase, boost or ranking
-  code in either repository. The front page's petals, earned and never bought, and
+  code in either repository. The front page's sparks, earned and never bought, and
   the *what does it cost* answer both rest on that. Ship any of those four and both
   have to change.
 
-The backend calls the unit a **token** in code; `petal` and `terälehti` are the
-words users read, and five of them make a `rose` — a `ruusu` — which is what the
-mark draws. `PetalScatter.astro` is decoration behind a card and is unrelated to
-the currency; `RoseCount.astro` and a `RoseMark` with a petal count are the
-currency.
+The backend calls the unit a **token** in code, and its exported constants keep
+the old name, `{{petals.*}}`; `kipinä` and `spark` are the words users read, and
+they are never called a currency. `SparkleScatter.astro` is decoration behind a
+card and stands for no amount; a `Sparkle` with a count is the app's counter,
+lit at five.
 
 ## Copy that needs a human before this goes public
 

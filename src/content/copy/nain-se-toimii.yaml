@@ -3,8 +3,8 @@
 # WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
 # every page renders from.
 #
-# WARNING: **Every number on this page is a backend constant.** Five terälehteä for a
-# set, fifteen earnable at a time, one hour of shared calendar, at least two times
+# WARNING: **Every number on this page is a backend constant.** Five kipinää for an
+# invitation, fifteen held at a time, one hour of shared calendar, at least two times
 # offered, a day to answer. The size of a set is deliberately not one of them: what
 # the copy emphasises is that the reader picks who the invitation goes to, not how
 # many faces they are picking from. They are cited in `README.md`, and a marketing
@@ -22,8 +22,8 @@
   en: 'How Pilke works'
 
 'detail.lead':
-  fi: 'Etusivu kertoo kierron neljässä vaiheessa. Tällä sivulla on sama tarkemmin: mistä ehdokkaat tulevat, mistä terälehdet tulevat ja mitä tapahtuu kun suunnitelmat muuttuvat.'
-  en: 'The front page gives the loop in four steps. This page is the same thing in detail: where candidates come from, where petals come from, and what happens when plans change.'
+  fi: 'Mistä ehdokkaat tulevat, miten kipinät kertyvät ja mitä tapahtuu, kun suunnitelmat muuttuvat. Tässä koko kierto tarkemmin.'
+  en: 'Where candidates come from, how sparks build up, and what happens when plans change: the whole loop, in detail.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Before the first invitation
@@ -42,16 +42,16 @@
   en: 'The personality quiz'
 
 'detail.story.body':
-  fi: 'Neljätoista tilannetta, joissa valitset mitä tekisit. Yksi kysymys kerrallaan, ja voit jatkaa myöhemmin siitä mihin jäit. Kysymyssarjoihin voit vastata omaan tahtiisi myös myöhemmin.'
-  en: 'Fourteen situations where you choose what you would do, one question at a time, and you can pick up where you left off. The question sets are there to answer at your own pace later on.'
+  fi: '{{profile.story_questions}} pientä tilannetta, joissa valitset, mitä tekisit. Vastauksesi vaikuttavat siihen, missä järjestyksessä ehdokkaasi näytetään. Kysely etenee kysymys kerrallaan, ja voit jatkaa siitä, mihin jäit. Kysymyssarjoihin voit vastata myöhemmin omaan tahtiisi.'
+  en: '{{profile.story_questions}} little situations where you choose what you would do. Your answers shape the order your candidates are shown in. It goes one question at a time, and you can pick up where you left off. The question sets are there to answer later, at your own pace.'
 
 'detail.prefs.title':
   fi: 'Toiveet ja kalenteri'
   en: 'Preferences and calendar'
 
 'detail.prefs.body':
-  fi: 'Kerrot kenen kanssa haluat tavata, minkä ikäisiä ehdokkaita otat vastaan ja millaisia treffejä etsit. Kartalta valitset, kuinka kauas lähdet. Lopuksi merkitset kalenteriin ajat, jolloin sinulle sopii: vähintään yksi tunnin mittainen aika tarvitaan, jotta sinulle voi ehdottaa ketään.'
-  en: 'You say who you want to meet, what ages you will consider and what kind of date you are looking for. On a map you set how far you will travel. Then you mark the times that suit you: at least one hour-long slot is needed before anybody can be suggested to you.'
+  fi: 'Kerrot, kenen kanssa haluat tavata, minkä ikäisiä ehdokkaita otat vastaan ja millaisia treffejä etsit. Kartalta valitset alueet, joilla voisit käydä treffeillä. Lopuksi merkitset kalenteriin ajat, jolloin sinulle sopii. Alkuun riittää yksi aika, joka on vähintään {{calendar.min_slot_hours}} tunnin mittainen.'
+  en: 'You say who you want to meet, what ages you will consider and what kind of date you are looking for. On a map you choose the areas where you could go on a date. Then you mark the times that suit you. A single slot of {{calendar.min_slot_hours}} hour or more is enough to start.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Where candidates come from, and the invitation
@@ -70,79 +70,79 @@
   en: 'The invitation and the answer'
 
 'detail.invite.body':
-  fi: 'Tarjoat vähintään kaksi aikaa ja yhden tekemisen. Toinen valitsee niistä yhden, ja treffit on sovittu. Kutsu on voimassa vuorokauden.'
-  en: 'You offer at least two times and one thing to do. The other person picks one of them, and the date is set. An invitation stands for a day.'
+  fi: 'Tarjoat kortin yhteisistä ajoista ja paikoista ne, jotka sopivat sinulle. Jotta toinen voi valita, kutsussa on vähintään {{invitation.choice_threshold}} aikaa tai {{invitation.choice_threshold}} paikkaa. Hän valitsee yhden kumpaakin, ja treffit on sovittu. Kutsuun on vastattava {{invitation.answer_hours}} tunnissa.'
+  en: 'You offer the shared times and places on the card that suit you. So that the other person has a choice, an invitation holds at least {{invitation.choice_threshold}} times or {{invitation.choice_threshold}} places. They pick one of each, and the date is set. An invitation has to be answered within {{invitation.answer_hours}} hours.'
 
 # ──────────────────────────────────────────────────────────────────────────
-# Teralehdet
+# Kipinät
 #
 # `economy.amount.*` are the amounts in the earning table, and `economy.lead`
-# and `economy.rose.alt` belong to the rose drawn beside it.
+# and `economy.spark.alt` belong to the lit sparkle drawn beside it.
 # ──────────────────────────────────────────────────────────────────────────
 
 'detail.economy.title':
-  fi: 'Terälehdet'
-  en: 'Petals'
+  fi: 'Kipinät'
+  en: 'Sparks'
 
 'detail.economy.body':
-  fi: 'Terälehdet ovat Pilkkeen valuutta. Ansaitset niitä käymällä treffeillä ja kulutat niitä lähettämällä treffikutsuja. Viisi terälehteä tekee ruusun, ja ruusu on yhden kutsun hinta.'
-  en: 'Petals are Pilke’s currency: you earn them by going on dates and spend them by sending date invitations. Five petals make a rose, and a rose is the price of one invitation.'
+  fi: 'Pilke pyörii kipinöiden ympärillä. Niitä kertyy ylläpidetystä kalenterista ja käydyistä treffeistä, ja niillä lähetät treffikutsuja.'
+  en: 'Pilke runs on sparks. They build up from a calendar kept up to date and from the dates you go on, and they are what you send invitations with.'
 
 'detail.economy.earn':
-  fi: 'Näin terälehtiä kertyy'
-  en: 'How petals add up'
+  fi: 'Näin kipinöitä kertyy'
+  en: 'How sparks add up'
 
 'detail.earn.signup':
-  fi: 'Rekisteröinnin viimeistely'
-  en: 'Finishing your registration'
+  fi: 'Tervetuliaiskipinät'
+  en: 'Welcome sparks'
 
 'detail.earn.signup.note':
-  fi: 'Kerran tilin elinkaaressa, koodin vahvistamisen jälkeen.'
-  en: 'Once in the life of an account, after the code is confirmed.'
+  fi: 'Kerran, kun vahvistat puhelinnumerosi. Ne riittävät ensimmäiseen kutsuun.'
+  en: 'Once, when you confirm your phone number. Enough for your first invitation.'
 
 'detail.earn.calendar':
-  fi: 'Kymmenen tuntia kalenterissa viikon ajan'
-  en: 'Ten hours in your calendar, kept for a week'
+  fi: '{{calendar.petal_week_hours}} tuntia kalenterissa viikon ajan'
+  en: '{{calendar.petal_week_hours}} hours in your calendar, kept for a week'
 
 'detail.earn.calendar.note':
-  fi: 'Lasketaan vain seuraavan 14 päivän ajat ja niistä enintään 40 tuntia kerrallaan. Viikossa voi siis kertyä enintään neljä terälehteä.'
-  en: 'Only times in the next 14 days count, and at most 40 hours of them at once, so a week earns four petals at most.'
+  fi: 'Mukaan lasketaan seuraavan {{calendar.earning_horizon_days}} päivän ajat, kerrallaan enintään {{calendar.counted_hours_cap}} tuntia. Viikossa kipinöitä kertyy siis enintään {{calendar.max_petals_per_week}}.'
+  en: 'Times in the next {{calendar.earning_horizon_days}} days count, up to {{calendar.counted_hours_cap}} hours at once, so a week brings at most {{calendar.max_petals_per_week}} sparks.'
 
 'detail.earn.date':
   fi: 'Käydyt treffit'
   en: 'A date you went on'
 
 'detail.earn.date.note':
-  fi: 'Maksetaan, kun olet kertonut miten meni. Molemmat saavat omansa erikseen.'
-  en: 'Paid once you have said how it went. Each of you gets your own.'
+  fi: 'Kipinät tulevat, kun olet kertonut, miten meni. Kumpikin saa omansa.'
+  en: 'The sparks arrive once you have said how it went. Each of you gets your own.'
 
 'detail.economy.spend':
-  fi: 'Näin terälehdet kuluvat'
-  en: 'How petals go'
+  fi: 'Näin kipinät kuluvat'
+  en: 'How sparks are spent'
 
 'detail.economy.spend.body':
-  fi: 'Treffikutsu maksaa viisi terälehteä. Ne kuluvat heti, kun aloitat kutsun, eli jo ennen kuin valitset, kenelle se lähtee. Jos sopivia ehdokkaita ei löydy, terälehtiä ei kulu. Terälehtiä voi ansaita viisitoista kerrallaan, eli kolmen treffikutsun verran: kun raja tulee vastaan, ansaitut terälehdet odottavat, kunnes käytät niitä. Palautukset, kuten rauenneen kutsun terälehdet, tulevat perille rajasta riippumatta.'
-  en: 'A date invitation costs five petals. They go as soon as you start the invitation, before you choose who it goes to. If no suitable candidates can be found, no petals go. You can earn fifteen at a time, which is three invitations worth: once you reach that, what you have earned waits until you spend some. Refunds, such as the petals returned when an invitation lapses, arrive regardless of the limit.'
+  fi: 'Treffikutsuun kuluu {{petals.set_cost}} kipinää. Ne kuluvat heti, kun aloitat kutsun, eli jo ennen kuin valitset, kenet kutsut. Jos sopivia ehdokkaita ei löydy, kipinäsi pysyvät tallessa. Kipinöitä mahtuu kerrallaan {{petals.cap}}, eli {{petals.cap_roses}} kutsun verran, ja sen jälkeen uudet odottavat, kunnes lähetät kutsun. Palautukset tulevat perille, vaikka kipinöitä olisi jo {{petals.cap}}.'
+  en: 'A date invitation takes {{petals.set_cost}} sparks. They go as soon as you start the invitation, before you choose who to invite. If no suitable candidates can be found, your sparks stay put. You can hold {{petals.cap}} sparks at a time, enough for {{petals.cap_roses}} invitations, and after that new ones wait until you send one. Refunds arrive even when you already have {{petals.cap}}.'
 
 'economy.lead':
-  fi: 'Viisi terälehteä, yksi treffikutsu.'
-  en: 'Five petals, one date invitation.'
+  fi: '{{petals.set_cost}} kipinää, yksi treffikutsu.'
+  en: '{{petals.set_cost}} sparks, one date invitation.'
 
-'economy.rose.alt':
-  fi: 'Ruusu, jonka kaikki viisi terälehteä on kerätty.'
-  en: 'A rose with all five of its petals collected.'
+'economy.spark.alt':
+  fi: 'Pilkkeen kipinälaskuri, jossa on viisi kipinää, yhden treffikutsun verran.'
+  en: 'Pilke’s spark counter with five sparks, enough for one date invitation.'
 
 'economy.amount.one':
-  fi: '1 terälehti'
-  en: '1 petal'
+  fi: '1 kipinä'
+  en: '1 spark'
 
 'economy.amount.two':
-  fi: '2 terälehteä'
-  en: '2 petals'
+  fi: '2 kipinää'
+  en: '2 sparks'
 
 'economy.amount.five':
-  fi: '5 terälehteä'
-  en: '5 petals'
+  fi: '5 kipinää'
+  en: '5 sparks'
 
 # ──────────────────────────────────────────────────────────────────────────
 # When plans change
@@ -157,32 +157,32 @@
   en: 'An invitation goes unanswered for a day'
 
 'detail.changes.expired.note':
-  fi: 'Kutsu raukeaa itsestään ja saat terälehtesi takaisin. Vastaamatta jättänyt ei voi hakea uusia ehdokkaita {{cooldown.no_answer_hours}} tuntiin.'
-  en: 'It lapses by itself and your petals come back. The person who did not answer cannot look for new candidates for {{cooldown.no_answer_hours}} hours.'
+  fi: 'Kutsu raukeaa itsestään, ja kipinäsi palaavat sinulle. Vastaamatta jättänyt saa {{cooldown.no_answer_hours}} tunnin jäähyn, jonka aikana hän ei voi löytää uusia ehdokkaita.'
+  en: 'It lapses by itself and your sparks come back to you. Whoever left it unanswered gets a {{cooldown.no_answer_hours}}-hour cooldown, during which they cannot find new candidates.'
 
 'detail.changes.declined':
   fi: 'Kutsu hylätään'
   en: 'An invitation is turned down'
 
 'detail.changes.declined.note':
-  fi: 'Saat terälehtesi takaisin. Hylkääjä ei voi hakea uusia ehdokkaita {{cooldown.decline_hours}} tuntiin.'
-  en: 'Your petals come back. The person who declined cannot look for new candidates for {{cooldown.decline_hours}} hours.'
+  fi: 'Kipinäsi palaavat sinulle. Kutsun hylännyt saa {{cooldown.decline_hours}} tunnin jäähyn, jonka aikana hän ei voi löytää uusia ehdokkaita.'
+  en: 'Your sparks come back to you. Whoever declined gets a {{cooldown.decline_hours}}-hour cooldown, during which they cannot find new candidates.'
 
 'detail.changes.withdrawn':
   fi: 'Perut oman kutsusi'
   en: 'You withdraw your own invitation'
 
 'detail.changes.withdrawn.note':
-  fi: 'Terälehdet on käytetty, ja uusia ehdokkaita pääset löytämään vasta hetken päästä.'
-  en: 'The petals are spent, and you can only find new candidates again after a little while.'
+  fi: 'Kipinät jäävät käytetyiksi, ja saat {{cooldown.withdrawal_hours}} tunnin jäähyn, jonka aikana et voi löytää uusia ehdokkaita.'
+  en: 'The sparks stay spent, and you get a {{cooldown.withdrawal_hours}}-hour cooldown, during which you cannot find new candidates.'
 
 'detail.changes.canceled':
   fi: 'Sovitut treffit perutaan'
   en: 'An agreed date is called off'
 
 'detail.changes.canceled.note':
-  fi: 'Voit perua, mutta se on toiselle epäkohteliasta: hän on varannut aikaa sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa terälehtensä takaisin.'
-  en: 'You can, but it is rude to the other person: they have set time aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The closer the date and the more often you call dates off, the longer it lasts. If the person invited calls it off, the sender gets their petals back.'
+  fi: 'Voit perua, mutta se on toiselle epäkohteliasta: hän on varannut aikaa sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa kipinänsä takaisin.'
+  en: 'You can, but it is rude to the other person: they have set time aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The closer the date and the more often you call dates off, the longer it lasts. If the person invited calls it off, the sender gets their sparks back.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Why there is no chat
@@ -193,5 +193,5 @@
   en: 'Why there is no chat'
 
 'detail.chat.body':
-  fi: 'Kutsussa on jo aika ja paikka, joten sopimiseen ei tarvita keskustelua. Se on koko idea: Pilke vie teidät samaan pöytään sen sijaan, että korvaisi sen. Treffipäivänä kartta kertoo, missä toinen on, jotta löydätte perille ilman viestittelyä.'
-  en: 'An invitation already carries the time and the place, so arranging it needs no conversation. That is the whole idea: Pilke takes you to the same table rather than standing in for it. On the day, the map shows where the other person is so you find each other without messaging.'
+  fi: 'Chättäily sovelluksessa on oikeastaan turha rituaali ennen treffejä, joilla vasta pääsee tapaamaan toisen ja juttelemaan kunnolla. Pilke hyppää suoraan siihen: kutsussa on jo aika ja paikka, ja juttu alkaa samassa pöydässä. Treffipäivänä kartta näyttää, missä toinen on, joten löydätte toisenne ilman viestejä.'
+  en: 'Chatting in an app is really just an unnecessary ritual before the date, which is where you actually get to meet and talk. Pilke skips straight to the good part: the invitation already has the time and the place, and the talking starts at the same table. On the day, the map shows where the other person is, so you find each other without messaging.'

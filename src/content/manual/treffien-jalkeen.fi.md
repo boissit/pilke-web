@@ -1,6 +1,6 @@
 ---
 title: Treffien jälkeen
-lead: Palaute kertoo, miten treffit menivät, ratkaisee, näettekö toisenne uudelleen, ja tuo terälehtiä.
+lead: Palaute kertoo, miten treffit menivät, ratkaisee, näettekö toisenne uudelleen, ja tuo kipinöitä.
 order: 80
 draft: true
 ---
@@ -12,7 +12,7 @@ Palautteen voi antaa heti, kun treffit ovat päättyneet, eli {{date.length_hour
 Ylhäällä näkyy, mistä treffeistä on kyse (1). Kysymykset koskevat sitä, vastasiko treffipari toiveitasi, viihdyitkö, haluaisitko tavata uudelleen ja millainen paikka oli.
 
 - **Mitä vastauksillesi tapahtuu.** Treffikumppanisi ei näe niitä. Ainoa asia, joka voi välittyä hänelle, on puhelinnumerosi, ja vain alla kerrotulla tavalla.
-- **Terälehdet.** Kun lähetät palautteen, saat {{petals.per_date}} terälehteä. Kumpikin saa omansa, kun on itse vastannut. Ilman palautetta terälehtiä ei tule. Katso [Terälehdet](/ohje/teralehdet).
+- **Kipinät.** Kun lähetät palautteen, saat {{petals.per_date}} kipinää. Kumpikin saa omansa, kun on itse vastannut. Katso [Kipinät](/ohje/kipinat).
 
 ## Tapaatteko uudelleen
 
