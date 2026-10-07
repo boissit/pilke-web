@@ -1,8 +1,8 @@
 {
   "name": "sent",
   "language": "en",
-  "commit": "181706f4c064bba04969ee637779f244efb288dd-dirty",
-  "takenAt": "2026-10-05T21:39:54Z",
+  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
+  "takenAt": "2026-10-06T22:05:41Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -16,9 +16,9 @@
     },
     "venue-map": {
       "x": 33,
-      "y": 1294,
+      "y": 1322,
       "width": 1014,
-      "height": 616
+      "height": 588
     },
     "withdraw-invitation-open": {
       "x": 33,

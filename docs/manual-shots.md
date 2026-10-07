@@ -51,11 +51,11 @@ Only the stills the manual draws are listed. Each one is there because it shows 
 
 | name | screen and state | callouts (testIDs) |
 |---|---|---|
-| treffit | home screen with petals, a received invitation and an agreed date | `balance-counter`, `find-dates` |
+| treffit | home screen with the spark counter, a received invitation and an agreed date | `balance-counter`, `find-dates` |
 | kalenteri | calendar week with own free slots and the yellow density shading visible on several hours | `calendar-density` |
 | kalenteri-valikko | the calendar's quick-actions menu open over the calendar, the ⋮ button still in view behind it | `calendar-menu`, `repeat-week` |
 | kalenteri-toistuva | the repeat-week proposal, drawn dashed, with its summary bar | `repeat-proposal`, `repeat-save` |
-| date-wizard-petals | date wizard, petal balance step, before the set is drawn | `wizard-balance`, `date-wizard-send` |
+| date-wizard-petals | date wizard, spark balance step (`Kipinät`), before the set is drawn | `wizard-balance`, `date-wizard-send` |
 | platter | a drawn set of candidates, centred card | `timeslot-chip-0`, `activity-chip-0` |
 | cooldown-blocked | Treffit tab with the blocked (hidden and no-draw) cooldown notice | `cooldown-notice` |
 | cooldown-nodraw | Treffit tab with the no-draw cooldown notice | `cooldown-notice` |

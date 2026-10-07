@@ -110,7 +110,7 @@ still = c1.ios_screen(c1.load_still(STILL), ASPECT, notch_frac=0.32, clock=c1.CL
 content = np.asarray(still.resize((W, Hc), Image.LANCZOS)).astype(np.float32) / 255
 Cl = to_photo(lin(content), quad, W, Hc, shape)
 room = cv2.GaussianBlur(cv2.resize(cv2.flip(Pl, 1), (shape[1], shape[0])), (0, 0), 40)
-out_l = B + (Wc * 0.95 - B) * Cl + room * 0.015
+out_l = B + (screen_white(Wc, Wc) - B) * Cl + room * 0.015
 out = srgb(out_l)
 out = cv2.GaussianBlur(out, (0, 0), 1.0)
 flat = inside & (cv2.Laplacian(L, cv2.CV_32F, ksize=3) ** 2 < 1e-4)

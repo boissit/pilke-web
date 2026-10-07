@@ -55,7 +55,7 @@ ones you think the change touched: that guess is how a page ships a stale screen
      showing round them.
    - `start-story-*` and `beta-invitation-*`: a thumb lies over the lower screen.
      If the app's layout moved, it may now cover something it should not.
-   - `loop-calendar-*`: the week should sit mid-screen with no petal over a slot's
+   - `loop-calendar-*`: the week should sit mid-screen with no sparkle over a slot's
      text, and today's column carry both kinds of block.
    - The phone frames on `/` and `/en`: each in its page's language, the dates
      ahead of today, and no *Nämä treffit ovat jo olleet* under the date.
@@ -103,10 +103,11 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en.html/` | `hero-cutout-en` 1400px<br>`start-story-narrow-en` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`loop-calendar-en` 1800px<br>`asetukset-en` 580px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
+| `/en/guide/kipinat.html/` | `en/date-wizard-petals` 560px |
 | `/en/guide/kutsut.html/` | `en/invitation` 560px<br>`en/sent` 560px |
 | `/en/guide/peruminen-ja-jaahy.html/` | `en/cooldown-blocked` 560px<br>`en/cooldown-decline` 560px |
 | `/en/guide/pilke-lyhyesti.html/` | `en/treffit` 560px |
-| `/en/guide/teralehdet.html/` | `en/date-wizard-petals` 560px |
+| `/en/guide/teralehdet.html/` | none |
 | `/en/guide/tiedot-ja-tili.html/` | `en/asetukset-ilmoitukset` 560px<br>`en/asetukset-tili` 560px |
 | `/en/guide/treffien-jalkeen.html/` | `en/feedback` 560px<br>`en/date-history-open` 560px<br>`en/date-history` 560px |
 | `/en/guide/treffipaiva.html/` | `en/date` 560px<br>`en/date-map` 560px<br>`en/date-location-consent` 560px<br>`en/date-map-sharing` 560px<br>`en/date-noshow-not-at-venue` 560px |
@@ -126,10 +127,11 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/nain-se-toimii.html/` | `story` 500px<br>`platter` 500px<br>`date` 500px |
 | `/ohje.html/` | none |
 | `/ohje/ehdokkaat.html/` | `fi/platter` 560px<br>`fi/cooldown-nodraw` 560px |
+| `/ohje/kipinat.html/` | `fi/date-wizard-petals` 560px |
 | `/ohje/kutsut.html/` | `fi/invitation` 560px<br>`fi/sent` 560px |
 | `/ohje/peruminen-ja-jaahy.html/` | `fi/cooldown-blocked` 560px<br>`fi/cooldown-decline` 560px |
 | `/ohje/pilke-lyhyesti.html/` | `fi/treffit` 560px |
-| `/ohje/teralehdet.html/` | `fi/date-wizard-petals` 560px |
+| `/ohje/teralehdet.html/` | none |
 | `/ohje/tiedot-ja-tili.html/` | `fi/asetukset-ilmoitukset` 560px<br>`fi/asetukset-tili` 560px |
 | `/ohje/treffien-jalkeen.html/` | `fi/feedback` 560px<br>`fi/date-history-open` 560px<br>`fi/date-history` 560px |
 | `/ohje/treffipaiva.html/` | `fi/date` 560px<br>`fi/date-map` 560px<br>`fi/date-location-consent` 560px<br>`fi/date-map-sharing` 560px<br>`fi/date-noshow-not-at-venue` 560px |
@@ -154,7 +156,7 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 
 | Picture | App screen | Taken by | What is visible in it |
 | --- | --- | --- | --- |
-| `treffit` | Home, populated | `screenshots.yaml` | **The balance counter: the rose slots and the `n/5` figure.** The wordmark, three stacks of match cards with partner photos, names, ages, venues and timeslot chips, the `Loyda treffit!` button, the tab bar. The only picture on this site with the currency in it |
+| `treffit` | Home, populated | `screenshots.yaml` | **The spark counter: three sparkle slots beside `Kipinät:` and the count.** The wordmark (ink letters, rose sparkle), three stacks of match cards with partner photos, names, ages, venues and timeslot chips, the `Loyda treffit!` button, the tab bar. The only marketing picture with the spark counter in it |
 | `platter` | Candidates | `screenshotPlatter.yaml` | A candidate's photo card, name and age, the times both people share, the activity chips, the `Ehdota!` button, the pager dots. Drawn on the brand yellow, so a change to that colour shows here |
 | `invitation` | Invitation received | `screenshots.yaml` | The sender's photo card, the timeslots offered as chips, the venue, the map, and the two answers: `Hylkaa` and `Sovittu!` |
 | `date` | An agreed date, upcoming | `.maestro/manual/dateUpcoming.yaml`, as the seeded home account with its language set to Finnish | The partner card, the venue and its description, the map, the location-sharing line, `Peru treffit` and the back control |
@@ -165,7 +167,7 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `asetukset` | Settings, Safety open | `screenshots.yaml` | The Safety section's whole explanation, the trusted-contact field and its save button, the tab bar. The most copy of any picture here, so it goes stale on wording as well as on layout |
 | `asetukset-en` | Settings, Safety open, English | `screenshots.yaml` in English | The same section in English, `Save number`. Drawn on `/en` in place of `asetukset` |
 | `hero-cutout-fi` | Home, populated, **inside a photograph, cut out** | `screens/treffit.png` composited by `scripts/photos/hero.py fi`, cut out by `scripts/photos/cutout.py` | Everything `treffit` shows, both Android bars included (the phone in the photo is an Android), bent round the phone's curved edges; the hand and phone only, transparent, on the page's coral disc, which clips the hand and arm; `hero-cutout-phone.png`, a mask of the same size, lets the phone and the fingers gripping it stand over the disc's edge, each by its own contour; the disc's circle is baked into both, so the page's geometry and `scripts/photos/cutout.py` change together. A reshoot of `treffit` reaches the page only through this composite |
-| `hero-cutout-en` | Home, English, **inside a photograph, cut out** | `scripts/photos/stills/treffit-en.png`, `screenshots.yaml` in English, composited by `hero.py en`, cut out with the Finnish one's alpha | The same fixture as `treffit`, in English: the three stacks, the petal count, `Find a date!`, both Android bars |
+| `hero-cutout-en` | Home, English, **inside a photograph, cut out** | `scripts/photos/stills/treffit-en.png`, `screenshots.yaml` in English, composited by `hero.py en`, cut out with the Finnish one's alpha | The same fixture as `treffit`, in English: the three stacks, the spark counter (`Sparks:`), `Find a date!`, both Android bars |
 | `loop-calendar-fi` | Calendar week, **inside a photograph** | `scripts/photos/stills/kalenteri-fi.png`, from `capture-kalenteri-busy.sh` at a pinned 10:00, composited by `scripts/photos/loop.py fi` | The week centred on Tuesday: free date slots (`Treffivaraus`) and your own plans (`Palaveri`, `Sali`, `Hammaslääkäri`), under a drawn iOS status bar and home indicator |
 | `loop-calendar-en` | Calendar week, English, **inside a photograph** | `scripts/photos/stills/kalenteri-en.png` composited by `loop.py en` | The same week in English: `Date slot`, `Meeting`, `Gym`, `Dentist` |
 | `beta-invitation-fi` | Invitation received, **inside a photograph** | `screens/invitation.png` composited by `scripts/photos/beta.py fi` | What `invitation` shows, under a drawn iOS status bar and home indicator; a thumb covers `Hylkää` and half of `Päätä myöhemmin`. Drawn in the footer's beta card on the front page only |
@@ -197,10 +199,11 @@ required. It does not cover the likeness of people in them, so none of them show
 face (the beta card's crop leaves out the right fifth of its original, where a
 blurred cheek is), and none may be captioned as a Pilke user.
 
-## The currency
+## The sparks
 
-The currency in the price lines is not a picture and not a screenshot: `RoseCount.astro`
-draws it as vector SVG from `roseArtwork.ts`, whose paths are the app's own. So it cannot
-go stale against the app's mark the way a render could, and it needs no file per amount —
-`PetalCount` bounds what can be asked for, and an amount outside it fails the build rather
-than drawing a different one.
+The sparks in the price lines and the front page's spark card are not pictures and not
+screenshots: `Sparkle.astro` draws them as vector SVG from `sparkleArtwork.ts`, whose path
+is the wordmark's own sparkle and whose colours and core steps are the app's counter's. So
+they cannot go stale against the app's mark the way a render could, and they need no file
+per amount. The sparkles scattered behind the cards are the same path, drawn flat by
+`SparkleScatter.astro`.

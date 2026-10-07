@@ -1,8 +1,8 @@
 {
   "name": "date-history",
   "language": "fi",
-  "commit": "44180e3d9c4bebb4ebfa3a09eed1e6887d22b841-dirty",
-  "takenAt": "2026-10-05T22:29:31Z",
+  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
+  "takenAt": "2026-10-06T21:24:41Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -26,7 +26,7 @@
       "width": 428,
       "height": 172
     },
-    "date-history-row-305": {
+    "date-history-row-371": {
       "x": 33,
       "y": 292,
       "width": 1014,
@@ -38,19 +38,19 @@
       "width": 1014,
       "height": 349
     },
-    "date-history-row-306": {
+    "date-history-row-372": {
       "x": 33,
       "y": 674,
       "width": 1014,
       "height": 263
     },
-    "date-history-row-307": {
+    "date-history-row-373": {
       "x": 33,
       "y": 970,
       "width": 1014,
       "height": 264
     },
-    "date-history-row-305-number": {
+    "date-history-row-371-number": {
       "x": 341,
       "y": 542,
       "width": 422,

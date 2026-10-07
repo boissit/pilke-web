@@ -20,6 +20,9 @@ near_skin=cv2.GaussianBlur(cv2.dilate((skin>0.3).astype(np.uint8),np.ones((7,7),
 bezel=np.float32([0.045,0.06,0.07])
 pure=(A>0.985).astype(np.float32)
 shade=masked_blur(photo,pure,8)
+# The white the app is laid on, lifted to a screen's own light (comp2.screen_white_srgb).
+from comp2 import screen_white_srgb
+shade=screen_white_srgb(shade,np.median(shade[pure>0.5],0))
 lit=rgb*shade
 g=estimate_grain(P,(1450,500,1600,650)); print('grain',g)
 rng=np.random.default_rng(1); n=cv2.GaussianBlur(rng.normal(0,g,shape).astype(np.float32),(0,0),0.6)*1.5

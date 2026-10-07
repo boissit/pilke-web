@@ -1,17 +1,17 @@
 {
   "name": "date-history-open",
   "language": "en",
-  "commit": "44180e3d9c4bebb4ebfa3a09eed1e6887d22b841-dirty",
-  "takenAt": "2026-10-05T23:12:45Z",
+  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
+  "takenAt": "2026-10-06T22:17:20Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
     "economy-explainer": {
-      "x": 676,
+      "x": 726,
       "y": 116,
-      "width": 371,
+      "width": 321,
       "height": 117
     },
     "tip-bank": {
@@ -27,22 +27,46 @@
       "height": 172
     },
     "balance-counter": {
-      "x": 676,
+      "x": 726,
       "y": 116,
-      "width": 371,
+      "width": 321,
       "height": 117
     },
     "balance-counter-0": {
-      "x": 676,
+      "x": 726,
       "y": 116,
-      "width": 371,
+      "width": 321,
       "height": 117
     },
     "open-date-history": {
-      "x": 270,
-      "y": 620,
-      "width": 540,
+      "x": 223,
+      "y": 618,
+      "width": 634,
       "height": 172
+    },
+    "balance-sparks": {
+      "x": 726,
+      "y": 128,
+      "width": 198,
+      "height": 93
+    },
+    "balance-sparks-slot-2-lit": {
+      "x": 734,
+      "y": 152,
+      "width": 59,
+      "height": 59
+    },
+    "balance-sparks-slot-1-lit": {
+      "x": 797,
+      "y": 138,
+      "width": 56,
+      "height": 56
+    },
+    "balance-sparks-slot-0-lit": {
+      "x": 857,
+      "y": 146,
+      "width": 63,
+      "height": 63
     }
   }
 }

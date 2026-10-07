@@ -10,7 +10,9 @@ What changed from comp.py, after the owner's review of the first hero:
 - The light is measured, in linear light, from the photo's own screen: what a
   black pixel looks like there (the glass: reflection and flare) and what a
   white one does (emission, falloff, white balance). The app is laid between the
-  two, so its blacks are as lifted as the photo's and its whites as dim.
+  two, so its blacks are as lifted as the photo's; its white is the measured one
+  lifted to a screen's own light, `screen_white`, keeping the falloff and some of
+  the cast.
 - A curved-edge display gets its content bent round the edge, compressed and
   shaded as the glass does it.
 """
@@ -162,6 +164,36 @@ def curved_remap(img, W, edge=0.045, theta_max=np.radians(62)):
 
 def masked_blur(img, mask, sigma):
     return c1.masked_blur(img, mask.astype(np.float32), sigma)
+
+
+# ── The screen's white ──────────────────────────────────────────────────────
+# What the old screen measured is the white of a phone photographed in a room,
+# exposed for the room: 0.66 to 0.85 in sRGB, and laid under the app as it was,
+# the owner found every screen dim. A phone screen lights itself and is normally
+# the brightest thing in the shot, so the measured white is lifted towards a
+# clean one: scaled in sRGB until its median reaches `SCREEN_WHITE`, by at most
+# `SCREEN_GAIN`, and its colour cast kept at `SCREEN_CAST` of its strength, so
+# the screen still sits in the scene's light without reading as a grey card.
+# The falloff across the screen is kept, being a scale rather than a level.
+SCREEN_WHITE = 0.955
+SCREEN_GAIN = 1.4
+SCREEN_CAST = 0.4
+
+
+def screen_white_srgb(ws, ref):
+    """The lifted white in sRGB. `ws` is the measured white in sRGB, one colour
+    or a field of them; `ref` is its median colour, which sets the gain."""
+    ws = np.asarray(ws, np.float32)
+    level = float(np.mean(ref))
+    gain = float(np.clip(SCREEN_WHITE / max(level, 1e-3), 1.0, SCREEN_GAIN))
+    lifted = ws * gain
+    grey = lifted.mean(-1, keepdims=True)
+    return np.clip(grey + (lifted - grey) * SCREEN_CAST, 0, 1).astype(np.float32)
+
+
+def screen_white(Wl, ref):
+    """The same in linear light: `Wl` and `ref` are linear, and so is the result."""
+    return lin(screen_white_srgb(srgb(Wl), srgb(np.asarray(ref, np.float32)))).astype(np.float32)
 
 
 def grain_like(photo_path, box, shape, seed):

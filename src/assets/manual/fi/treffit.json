@@ -1,17 +1,17 @@
 {
   "name": "treffit",
   "language": "fi",
-  "commit": "181706f4c064bba04969ee637779f244efb288dd-dirty",
-  "takenAt": "2026-10-05T20:21:58Z",
+  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
+  "takenAt": "2026-10-06T23:57:56Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
     "economy-explainer": {
-      "x": 603,
+      "x": 721,
       "y": 116,
-      "width": 444,
+      "width": 326,
       "height": 117
     },
     "tip-bank": {
@@ -27,34 +27,64 @@
       "height": 172
     },
     "balance-counter": {
-      "x": 603,
+      "x": 721,
       "y": 116,
-      "width": 444,
+      "width": 326,
       "height": 117
     },
     "balance-counter-0": {
-      "x": 603,
+      "x": 721,
       "y": 116,
-      "width": 444,
+      "width": 326,
       "height": 117
     },
-    "match-card-281": {
-      "x": 33,
-      "y": 463,
-      "width": 1014,
-      "height": 307
+    "balance-sparks": {
+      "x": 721,
+      "y": 128,
+      "width": 198,
+      "height": 93
     },
-    "match-card-280": {
+    "balance-sparks-slot-2-lit": {
+      "x": 729,
+      "y": 152,
+      "width": 59,
+      "height": 59
+    },
+    "balance-sparks-slot-1-lit": {
+      "x": 792,
+      "y": 138,
+      "width": 56,
+      "height": 56
+    },
+    "balance-sparks-slot-0-lit": {
+      "x": 852,
+      "y": 146,
+      "width": 63,
+      "height": 63
+    },
+    "match-card-398": {
       "x": 33,
-      "y": 951,
+      "y": 461,
+      "width": 1014,
+      "height": 308
+    },
+    "match-card-317": {
+      "x": 33,
+      "y": 949,
+      "width": 1014,
+      "height": 263
+    },
+    "match-card-395": {
+      "x": 33,
+      "y": 1392,
       "width": 1014,
       "height": 264
     },
-    "open-date-history": {
-      "x": 258,
-      "y": 1302,
-      "width": 564,
-      "height": 172
+    "match-card-397": {
+      "x": 33,
+      "y": 1689,
+      "width": 1014,
+      "height": 256
     }
   }
 }

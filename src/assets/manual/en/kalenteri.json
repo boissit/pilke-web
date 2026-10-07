@@ -1,8 +1,8 @@
 {
   "name": "kalenteri",
   "language": "en",
-  "commit": "181706f4c064bba04969ee637779f244efb288dd-dirty",
-  "takenAt": "2026-10-05T20:57:59Z",
+  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
+  "takenAt": "2026-10-06T21:32:22Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -21,9 +21,9 @@
       "height": 55
     },
     "calendar-density": {
-      "x": 85,
+      "x": 86,
       "y": 822,
-      "width": 301,
+      "width": 302,
       "height": 143
     }
   }

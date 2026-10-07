@@ -14,7 +14,7 @@ T = dict(
     rough=[(1402, 157), (2212, 165), (2205, 1852), (1410, 1852)],
     top=[(0.08, 0.3), (0.7, 0.92)], sides=(0.12, 0.6), bottom=(0.2, 0.8),
     cutout=(0.3, 0.0, 0.7, 0.07), aspect=2.168, island=0.32,
-    blur=0.9, seed=31, radius=0.14, dim=0.92,
+    blur=0.9, seed=31, radius=0.14,
 )
 photo = read(T['photo'])
 shape = photo.shape[:2]
@@ -64,7 +64,7 @@ content = np.asarray(still.resize((W, Hc), Image.LANCZOS)).astype(np.float32) / 
 Cl = to_photo(lin(content), quad, W, Hc, shape)
 
 room = cv2.GaussianBlur(cv2.resize(cv2.flip(Pl, 1), (shape[1], shape[0])), (0, 0), 40)
-out_l = B + (Wf * T.get('dim', 1.0) - B) * Cl + room * 0.012
+out_l = B + (screen_white(Wf, Wc) - B) * Cl + room * 0.012
 
 out = srgb(out_l)
 out = cv2.GaussianBlur(out, (0, 0), T['blur'])

@@ -64,7 +64,9 @@ content = np.asarray(still.resize((int(round(W / total)), Hc), Image.LANCZOS)).a
 content, cos = curved_remap(content, W, EDGE, THETA)
 Cl = lin(content)
 
-out_l = B + (S - B) * Cl
+# The white the app is laid on: the measured one, lifted to a screen's own light.
+Sw = screen_white(S, np.median(S[bg > 0.5], 0))
+out_l = B + (Sw - B) * Cl
 
 # A reflection of the room, faint, stronger where the glass bends away.
 room = lin(photo[200:1400, 400:3000])
