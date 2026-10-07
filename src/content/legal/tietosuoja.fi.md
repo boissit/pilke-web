@@ -35,7 +35,7 @@ Samaan osoitteeseen lähetät myös oikeuksiasi koskevat pyynnöt (luku 11).
 | Syntymäaika | Tarkistamme, että olet täyttänyt 18 vuotta. Muille näytämme vain iän vuosina. |
 | Kieli | Ratkaisee, millä kielellä ilmoitukset ja tekstiviestit tulevat. |
 | Treffitoiveet | Kenestä olet kiinnostunut, minkälaisia treffejä haet, minkä ikäisiä ehdokkaita toivot ja millä kielillä haluat keskustella. |
-| Treffialue | Piste kartalla ja säde kilometreinä: kuinka kauas voit lähteä treffeille. |
+| Treffialue | Pilkkeen valmiiksi rajaamat alueet, jotka olet valinnut kartalta: missä voit käydä treffeillä. Lisäksi niistä johdettu piste ja säde. |
 | Luotettavan henkilön puhelinnumero | Vapaaehtoinen. Turvapainike lähettää viestin tähän numeroon. |
 
 ### Treffit
@@ -101,9 +101,12 @@ Sijainti tarkoittaa Pilkkeessä kahta eri asiaa.
 
 ### Treffialue
 
-Valitset kartalta pisteen ja säteen: kuinka kauas voisit lähteä treffeille. Asetat sen
-itse, eikä se tule laitteesi paikannuksesta. Sen perusteella päätämme, mitkä treffipaikat
-ovat ulottuvillasi ja keitä voimme ehdottaa sinulle. Muut käyttäjät eivät näe aluetta, ja
+Valitset kartalta Pilkkeen valmiiksi rajaamista alueista ne, joilla voisit käydä
+treffeillä. Valitset ne itse, eikä valinta tule laitteesi paikannuksesta. Sen perusteella
+päätämme, mitkä treffipaikat ovat ulottuvillasi ja keitä voimme ehdottaa sinulle:
+treffipaikka valitaan alueelta, jonka olette molemmat valinneet. Tallennamme valitsemasi
+alueet sekä niistä johdetun pisteen ja säteen, jotka kattavat ne ja joita sovelluksen
+vanhemmat versiot käyttävät kartan näyttämiseen. Muut käyttäjät eivät näe aluetta, ja
 voit muuttaa sitä asetuksissa milloin tahansa.
 
 ### Sijainti treffipaikalla

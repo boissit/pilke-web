@@ -32,7 +32,7 @@ concerning your rights go to the same address (section 11).
 | Date of birth | We check that you are 18. Others are shown your age in years only. |
 | Language | Decides which language your notifications and text messages are in. |
 | Date preferences | Who you are interested in, what kind of date you are looking for, the ages you want to be offered, and the languages you want to speak. |
-| Date area | A point on the map and a radius in kilometres: how far you could travel for a date. |
+| Date area | The areas, drawn in advance by Pilke, that you have chosen on the map: where you could go on a date. Also a point and a radius derived from them. |
 | Trusted contact's phone number | Optional. The safety button sends a message to this number. |
 
 ### Dates
@@ -96,10 +96,12 @@ Location means two different things in Pilke.
 
 ### Your date area
 
-You pick a point and a radius on the map: how far you could travel for a date. You set it
-yourself, and it does not come from your device's positioning. We use it to decide which
-venues are within reach and who we can offer you. Other users cannot see it, and you can
-change it in settings at any time.
+You choose, on a map, which of the areas drawn in advance by Pilke you could go on a date
+in. You choose them yourself, and the choice does not come from your device's positioning.
+We use it to decide which venues are within reach and who we can offer you: a venue is
+picked from an area you have both chosen. We store the areas you chose, and a point and a
+radius derived from them that cover them, which older versions of the app use to draw the
+map. Other users cannot see your area, and you can change it in settings at any time.
 
 ### Your location at the venue
 
