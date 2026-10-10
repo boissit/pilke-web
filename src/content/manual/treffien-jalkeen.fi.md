@@ -11,7 +11,7 @@ Palautteen voi antaa heti, kun treffit ovat päättyneet, eli {{date.length_hour
 
 Ylhäällä näkyy, mistä treffeistä on kyse (1). Ensimmäinen kysymys on *Miten treffit sujuivat?*, ja vastauksesi ratkaisee, mitä kysytään seuraavaksi. Kun treffit sujuivat hyvin, kysymme, vastasiko treffipari kumppanitoiveitasi, mikä teillä klikkasi, millainen sovittu treffipaikka oli ja haluaisitko tavata hänet uudelleen.
 
-Jos treffit menivät huonosti, kysymme seuraavaksi, tuntuiko olosi turvalliselta treffeillä. Saman kysymyksen saat, jos valitset vaihtoehdon *Jokin jäi vaivaamaan*. Sen voi valita muiden vastausten lisäksi. Katso [Turvallisuus](/ohje/turvallisuus).
+Jos treffit menivät huonosti, kysymme seuraavaksi, tuntuiko olosi turvalliselta treffeillä. Katso [Turvallisuus](/ohje/turvallisuus).
 
 Kysymys treffipaikasta on vapaaehtoinen, ja siinä voit kertoa myös, että *Paikka oli kiinni tai täynnä*. Palaute lähtee viimeisestä vastauksesta, ja palaat Treffit-sivulle, jossa näet saamasi kipinät.
 

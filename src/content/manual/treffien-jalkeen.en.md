@@ -11,7 +11,7 @@ You can give feedback as soon as the date has ended, {{date.length_hours}} hour 
 
 At the top is the date it is about (1). The first question is *How did the date go?*, and your answer decides what comes next. When the date went well, we ask whether your date matched what you were hoping for, what clicked between you, what the booked place was like and whether you would like to meet them again.
 
-If the date went badly, we ask next whether you felt safe on the date. You get the same question if you choose *Something bothered me*, which you can pick alongside your other answers. See [Safety](/en/guide/turvallisuus).
+If the date went badly, we ask next whether you felt safe on the date. See [Safety](/en/guide/turvallisuus).
 
 The question about the place is optional, and it lets you say *The place was closed or full*. Your feedback goes with your last answer, and you are back on the Dates page, where you see the sparks you got.
 
