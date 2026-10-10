@@ -77,9 +77,10 @@ yhdeltä laitteelta kerrallaan.
 
 ### Kysymyssarjat
 
-Vastaat kysymyssarjoihin valitsemalla vaihtoehdon; vapaata tekstiä niihin ei voi
-kirjoittaa. Vastaat vain jos haluat, ja vastaukset eivät tällä hetkellä vaikuta siihen,
-keitä sinulle ehdotetaan.
+Persoonallisuuskyselyyn vastaat, kun luot profiilin, ja sen vastaukset vaikuttavat
+ehdokkaidesi järjestykseen. Lisäksi voit vastata vapaaehtoisiin kysymyssarjoihin, joiden
+vastauksia käytämme samaan tarkoitukseen. Kaikkiin kysymyssarjoihin vastaat valitsemalla
+vaihtoehdon; vapaata tekstiä niihin ei voi kirjoittaa.
 
 ### Turvallisuustiedot
 

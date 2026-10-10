@@ -74,8 +74,10 @@ device at a time.
 
 ### Question sets
 
-You answer question sets by picking an option; there is no free text in them. Answering is
-voluntary, and the answers currently have no effect on who you are offered.
+You answer the personality quiz when you create your profile, and its answers affect the
+order your candidates come in. You can also answer optional question sets, whose answers we
+use for the same purpose. You answer every question set by picking an option; there is no
+free text in them.
 
 ### Safety records
 
