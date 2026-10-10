@@ -111,17 +111,17 @@ jollekulle, minne menet, ja lähde pois, jos olo ei tunnu hyvältä.
 Treffien jälkeen kysymme, miten teillä meni. Vastaat valitsemalla vaihtoehdon, ja
 vastauksesi koskee kyseistä treffikumppania. Treffiparisi ei näe vastaustasi.
 
-Viimeinen kysymys on tästä poikkeus. Siinä kysymme, haluaisitko tavata uudelleen ja saako
+Tästä on yksi poikkeus: kysymys siitä, haluaisitko tavata uudelleen ja saako
 puhelinnumerosi antaa toiselle. Jos te molemmat haluatte numeroiden vaihtoa, välitämme ne
 toisillenne, ja silloin toinen näkee, että vastasit myöntävästi. Muuten emme kerro
 hänelle vastauksestasi mitään. Vastaus on lopullinen, eikä sitä voi perua, sillä toinen
 on voinut nähdä ja tallentaa numerosi heti vastauksesi jälkeen. Lue
 [tietosuojaselosteen](/tietosuoja) luku 5.
 
-Turvallisuusilmoitukseen voit kirjoittaa vapaasti. Ilmoitus ei näy koskaan toiselle
+Turvallisuus- ja käytösilmoitukseen voit kirjoittaa vapaasti. Ilmoitus ei näy koskaan toiselle
 käyttäjälle. Kirjoita siihen, mitä on tapahtunut. Ilmoitus säilytetään, ja se voi johtaa
-toista käyttäjää koskeviin toimiin, joten tieten väärän ilmoituksen tekeminen on näiden
-ehtojen rikkomista.
+toista käyttäjää koskeviin toimiin, joten tietoisesti väärän turvallisuus- tai
+käytösilmoituksen tekeminen on näiden ehtojen rikkomista.
 
 ## 8. Käytön rajoittaminen
 

@@ -111,16 +111,16 @@ it does not feel right.
 After a date we ask how it went for the two of you. You answer by picking an option, and your
 answer concerns that date partner. They cannot see your answer.
 
-The last question is an exception. It asks whether you would like to meet again and whether
-your phone number may be given to the other person. If you both want to exchange numbers, we
+There is one exception: the question whether you would like to meet again and whether your
+phone number may be given to the other person. If you both want to exchange numbers, we
 pass them on, and the other person then sees that your answer was yes. Otherwise we tell them
 nothing about your answer. The answer is final and cannot be taken back, because the other
 person may have seen and saved your number the moment you answered. See section 5 of the
 [privacy policy](/en/tietosuoja).
 
-A safety report is free text. It is never shown to the other user. Write down what happened.
+You can write freely in a safety or conduct report. It is never shown to the other user. Write down what happened.
 The report is kept and may lead to action concerning the other user, so knowingly filing a
-false report is a breach of these terms.
+false safety or conduct report is a breach of these terms.
 
 ## 8. Restrictions on use
 

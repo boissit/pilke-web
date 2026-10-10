@@ -42,7 +42,8 @@ Samaan osoitteeseen lähetät myös oikeuksiasi koskevat pyynnöt (luku 11).
 
 Käsittelemme kalenteriin merkitsemäsi vapaat ajat, sinulle tarjotut ehdokkaat ja
 valintasi niistä, lähetetyt ja saadut kutsut, sovitut ajat ja paikat, perumiset ja niiden
-syyt sekä treffien jälkeen annetut palautteet.
+syyt sekä treffien jälkeen annetut palautteet. Käytämme palautevastauksiasi, kun valitsemme
+sinulle tulevia ehdokkaita. Ne kertovat omista toiveistasi, eivätkä ne ole arvio treffiparistasi.
 
 ### Haluatteko tavata uudelleen
 
@@ -162,7 +163,7 @@ kerrota kenellekään. Luvussa 2 kerromme, miten tämä kysymys toimii.
 | Tarkoitus | Oikeusperuste |
 | --- | --- |
 | Tilin luonti ja kirjautuminen | Sopimus |
-| Treffiehdokkaiden etsiminen toiveidesi, alueesi ja kalenterisi perusteella | Sopimus |
+| Treffiehdokkaiden etsiminen toiveidesi, palautteesi, alueesi ja kalenterisi perusteella | Sopimus |
 | Kutsut, ajan ja paikan sopiminen sekä perumiset | Sopimus |
 | Ilmoitukset kutsuista, saapumisesta ja palautepyynnöistä | Sopimus |
 | Sijaintisi jakaminen treffipaikalla | Suostumus, jonka voit perua lopettamalla jakamisen |

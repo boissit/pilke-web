@@ -39,7 +39,9 @@ concerning your rights go to the same address (section 11).
 
 We process the times you mark as free in the calendar, the candidates offered to you and
 which of them you chose, invitations sent and received, agreed times and venues,
-cancellations and their reasons, and the feedback given after a date.
+cancellations and their reasons, and the feedback given after a date. We use your feedback
+answers when we pick your future candidates. They say what you are looking for, and they are
+not a rating of the person you met.
 
 ### Whether you want to meet again
 
@@ -155,7 +157,7 @@ to nobody. Section 2 says how that question works.
 | Purpose | Lawful basis |
 | --- | --- |
 | Creating your account and signing you in | Contract |
-| Finding candidates from your preferences, area and calendar | Contract |
+| Finding candidates from your preferences, feedback, area and calendar | Contract |
 | Invitations, agreeing a time and venue, and cancellations | Contract |
 | Notifications about invitations, arrivals and feedback requests | Contract |
 | Sharing your location at the venue | Consent, which you can withdraw by stopping sharing |
