@@ -82,12 +82,23 @@ keitä sinulle ehdotetaan.
 
 ### Turvallisuustiedot
 
-Käsittelemme turvallisuusilmoituksen ja sen vapaan tekstin, ilmoituksen siitä, ettei
-toinen osapuoli saapunut treffeille, merkinnän turvapainikkeen painalluksesta ja sen,
-kenelle viesti lähti, sekä eston, joka syntyy turvallisuusilmoituksesta.
+Käsittelemme turvallisuusilmoituksen, siihen valitut vaihtoehdot ja sen vapaan tekstin,
+käytösilmoituksen, ilmoituksen siitä, ettei toinen osapuoli saapunut treffeille,
+merkinnän turvapainikkeen painalluksesta ja sen, kenelle viesti lähti, sekä
+merkinnän siitä, että teitä ei turvallisuusilmoituksen jälkeen enää ehdoteta toisillenne.
 
-Turvallisuusilmoitus on palvelun ainoa kohta, johon voi kirjoittaa vapaata tekstiä
-toisesta ihmisestä. Kirjoita siihen vain se, mitä on tapahtunut.
+Käytösilmoituksen teet vain, jos haluat: treffien palautteessa voit kertoa Pilkkeen
+henkilöstölle treffiparisi käytöksestä. Tallennamme, kuka ilmoituksen teki ja kenestä,
+mitä treffejä se koskee, valitsemasi vaihtoehdot, vapaan tekstin, jos kirjoitit sitä, ja
+sen, missä vaiheessa ilmoituksen käsittely on. Ilmoituksen näkee vain Pilkkeen henkilöstö.
+
+Jos kerrot treffien palautteessa, ettei treffiparisi tullut paikalle, tallennamme sen
+ilmoituksena saapumatta jättämisestä. Sen näkee vain Pilkkeen henkilöstö, eikä toinen
+osapuoli näe sitä koskaan. Siitä ei seuraa rajoitusta: rajoitus seuraa vain ilmoituksesta,
+joka tehdään treffien aikana treffipaikalla (luku 10).
+
+Turvallisuus- ja käytösilmoitus ovat palvelun ainoat kohdat, joihin voi kirjoittaa vapaata
+tekstiä toisesta ihmisestä. Kirjoita niihin vain se, mitä on tapahtunut.
 
 ### Mitä emme kerää
 
@@ -157,7 +168,7 @@ kerrota kenellekään. Luvussa 2 kerromme, miten tämä kysymys toimii.
 | Sijaintisi jakaminen treffipaikalla | Suostumus, jonka voit perua lopettamalla jakamisen |
 | Vastaukset kysymyssarjoihin | Suostumus, jonka annat vastaamalla |
 | Puhelinnumeroiden vaihto treffien jälkeen | Suostumus, jonka annat valitsemalla sen vastauksen |
-| Turvallisuus: estot, ilmoitukset, turvapainike ja rajoitukset | Oikeutettu etu — käyttäjien turvallisuus |
+| Turvallisuus: ilmoitukset, merkintä siitä, ettei teitä ehdoteta toisillenne turvallisuusilmoituksen jälkeen, turvapainike ja rajoitukset | Oikeutettu etu — käyttäjien turvallisuus |
 | Luotettavan henkilön puhelinnumero | Oikeutettu etu — käyttäjän turvallisuus |
 | Käyttäjätuki ja väärinkäytösten selvitys | Oikeutettu etu — palvelun asianmukainen käyttö |
 
@@ -169,10 +180,10 @@ Vastausta ei voi muuttaa eikä perua sen jälkeen, kun olet lähettänyt palautt
 peruut suostumuksesi, peruutus vaikuttaa siihen, mitä teemme tästä eteenpäin, eikä se
 kumoa jo tehtyä luovutusta: lähetettyä numeroa ei saa pois toisen puhelimesta.
 
-Vaihtoa ei siis voi pysäyttää jälkikäteen. Ennen vaihtoa sen estää
-turvallisuusilmoituksesta syntyvä esto — estetylle parille numeroita ei vaihdeta, vaikka
-molemmat olisivat niin valinneet — mutta ilmoituksen voi tehdä vain treffien palautteessa,
-ei myöhemmin. Kun numerot on vaihdettu, voit poistaa tilisi: numerosi katoaa toisen
+Vaihtoa ei siis voi pysäyttää jälkikäteen. Ennen vaihtoa sen pysäyttää
+turvallisuusilmoitus — kun jompikumpi teistä on tehnyt toisesta turvallisuusilmoituksen,
+numeroita ei vaihdeta, vaikka molemmat olisivat niin valinneet — mutta ilmoituksen voi
+tehdä vain treffien palautteessa, ei myöhemmin. Kun numerot on vaihdettu, voit poistaa tilisi: numerosi katoaa toisen
 sovelluksesta, mutta jo saapunutta ilmoitusta sekään ei tavoita (luku 9).
 
 Treffitoiveistasi voi ilmetä, oletko kiinnostunut samasta vai eri sukupuolesta ja haetko
@@ -180,7 +191,7 @@ seksiä. Nämä ovat erityisiin henkilötietoryhmiin kuuluvia tietoja, ja käsit
 vain nimenomaisella suostumuksellasi, jonka annat, kun asetat toiveet. Voit muuttaa
 toiveita tai poistaa tilisi milloin tahansa.
 
-Turvallisuusilmoituksen vapaa teksti voi kuvata tekoja, jotka ovat rikoksia. Käsittelemme
+Turvallisuus- ja käytösilmoituksen vapaa teksti voi kuvata tekoja, jotka ovat rikoksia. Käsittelemme
 tällaista tietoa vain käyttäjien suojaamiseksi ja tarvittaessa oikeudellisen vaateen
 esittämiseksi tai siihen vastaamiseksi.
 
@@ -198,7 +209,7 @@ punninnasta selvityksen luvun 1 osoitteesta.
 | GatewayAPI (Tanska) | Puhelinnumeron ja viestin sisällön, kun lähetämme kirjautumiskoodin tai turvaviestin. |
 | OpenFreeMap (Hyperknot Software Kft., Unkari) | Laitteesi IP-osoitteen ja sen, mitä karttaruutuja se pyytää. Pyyntö lähtee laitteeltasi, ei palvelimeltamme. Palvelun oman selosteen mukaan se ei tallenna IP-osoitteita. |
 | Palvelinsalimme, **[TÄYDENNÄ: palveluntarjoaja]**, Suomi | Kaikki palvelun tiedot ovat sen palvelimilla. |
-| Pilkkeen henkilöstö | Sen, mitä ylläpitonäkymä näyttää, kun se on tarpeen käyttäjätuen tai turvallisuusilmoituksen käsittelyn vuoksi. Jaettuja sijainteja ylläpitonäkymä ei näytä. |
+| Pilkkeen henkilöstö | Sen, mitä ylläpitonäkymä näyttää, kun se on tarpeen käyttäjätuen tai turvallisuus- tai käytösilmoituksen käsittelyn vuoksi. Jaettuja sijainteja ylläpitonäkymä ei näytä. |
 | Google Play | Sen, mitä sovelluskauppa saa sovelluksen jakelijana. |
 
 Emme myy tietojasi emmekä luovuta niitä markkinointiin.
@@ -222,14 +233,14 @@ Suomessa.
 | Treffit, kutsut ja perumiset | 12 kuukautta treffien ajankohdasta. |
 | Palautteet | 12 kuukautta treffien ajankohdasta. |
 | Vastaus siihen, haluatko tavata uudelleen, ja vaihdettu puhelinnumero | 12 kuukautta treffien ajankohdasta, treffien mukana. Kopio numerosta on lähetetyssä push-ilmoituksessa, ja se poistuu 90 päivässä. |
-| Ilmoitukset saapumatta jättämisestä ja niistä seuraavat rajoitukset | 12 kuukautta ilmoituksesta. |
+| Ilmoitukset saapumatta jättämisestä, myös palautteessa kerrotut, ja niistä seuraavat rajoitukset | 12 kuukautta ilmoituksesta. |
 | Lähetetyt ilmoitukset ja tekstiviestien lähetystiedot | 90 päivää. |
-| Turvallisuusilmoitukset, niiden vapaa teksti ja merkinnät turvapainikkeen painalluksista | 5 vuotta ilmoituksesta. |
-| Esto, joka on syntynyt turvallisuussyystä | Toistaiseksi. Se ei purkaudu ajan kuluessa eikä sillä, että jompikumpi poistaa tilinsä. |
+| Turvallisuus- ja käytösilmoitukset, niiden vapaa teksti ja merkinnät turvapainikkeen painalluksista | 5 vuotta ilmoituksesta. |
+| Merkintä siitä, että teitä ei turvallisuusilmoituksen jälkeen enää ehdoteta toisillenne | Toistaiseksi. Se ei poistu ajan kuluessa eikä sillä, että jompikumpi poistaa tilinsä. |
 | Merkintä siitä, minkä version ehdoista olet hyväksynyt | Niin kauan kuin voimme joutua osoittamaan, mihin käsittely on perustunut. |
 
 Poistamme tiedot tai muutamme ne tunnistamattomiksi määräajan päätyttyä. Jos meillä on
-kesken käyttäjätukiasia, turvallisuusilmoituksen selvitys tai oikeudellinen vaade,
+kesken käyttäjätukiasia, turvallisuus- tai käytösilmoituksen selvitys tai oikeudellinen vaade,
 säilytämme siihen liittyvät tiedot niin kauan kuin asian hoito vaatii.
 
 ## 9. Kun poistat tilisi
@@ -252,8 +263,9 @@ Kaksi ryhmää jää:
 - **Tiedot, jotka ovat yhtä lailla toisen osapuolen tietoja.** Menneet treffit, niistä
   annetut palautteet ja ilmoitukset saapumatta jättämisestä. Toinen osapuoli näkee sinun
   tilallasi merkinnän *Joku*.
-- **Turvallisuuspäätökset, joita lähteminen ei kumoa.** Turvallisuusilmoitukset ja
-  niistä syntyvä esto.
+- **Turvallisuuspäätökset, joita lähteminen ei kumoa.** Turvallisuus- ja
+  käytösilmoitukset sekä merkintä siitä, että teitä ei turvallisuusilmoituksen jälkeen
+  enää ehdoteta toisillenne.
 
 Molempia säilytetään luvun 8 mukaisen ajan, ja nimesi ei ole niissä enää kiinni. Jäljelle
 jää myös merkintä siitä, että tili on ollut olemassa, jotta emme luo samalle numerolle
@@ -274,7 +286,13 @@ ettet saapunut, rajoitus tulee automaattisesti. Voit tehdä oman ilmoituksen vuo
 sisällä, jolloin rajoitus purkautuu. Voit myös pyytää, että päätös arvioidaan uudelleen,
 kirjoittamalla luvun 1 osoitteeseen. Silloin asian käy läpi ihminen.
 
-Turvallisuusilmoitus ei aiheuta rajoitusta automaattisesti.
+Turvallisuusilmoitus ei aiheuta rajoitusta automaattisesti. Käytösilmoituksesta ja
+palautteessa kerrotusta saapumatta jättämisestä ei seuraa rajoitusta.
+
+Jos kaksi eri käyttäjää kertoo treffien palautteessa 90 päivän sisällä samasta ihmisestä,
+ettei hän tullut paikalle tai että hänen kuvansa antoivat erilaisen kuvan, Pilkkeen
+henkilöstö saa siitä tiedon. Asian käy läpi ihminen, eikä tieto itsessään johda mihinkään
+automaattisesti.
 
 ## 11. Mitä oikeuksia sinulla on
 
@@ -300,7 +318,8 @@ yhdellä painalluksella, ja treffitoiveita voit muuttaa milloin tahansa. Vastaus
 haluatko tavata uudelleen, ei sen sijaan voi perua: jos numerot on jo vaihdettu, peruminen
 ei saa niitä takaisin. Luvussa 5 kerromme, mitä peruminen tässä tilanteessa tarkoittaa.
 
-Jos joku toinen käyttäjä on tehnyt sinusta turvallisuusilmoituksen, et näe sen sisältöä.
+Jos joku toinen käyttäjä on tehnyt sinusta turvallisuus- tai käytösilmoituksen, et näe
+sen sisältöä.
 Muuten ilmoituksen tekijä olisi tunnistettavissa ja ilmoituksen tekeminen kävisi
 mahdottomaksi. Voit silti pyytää, että selvitämme, käsittelemmekö sinusta tällaista
 tietoa.

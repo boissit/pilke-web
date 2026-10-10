@@ -95,8 +95,9 @@ below:
 - **Sharing your location at the venue**, limited as set out in section 3 of the
   [privacy policy](/en/tietosuoja).
 - **A safety report** you can file after a date. Only Pilke staff can see it.
-- **A block.** When you file a safety report after a date, the two of you are never
-  suggested to each other again, and the other person is not told why.
+- **Suggestions after a safety report.** When you file a safety report after a date, the
+  two of you are never suggested to each other again, and the other person is not told
+  why.
 - **Predetermined, public venues.** Dates are arranged only at venues chosen by Pilke, and
   users cannot propose other venues.
 

@@ -347,10 +347,10 @@ const fi = {
   'legal.deletion.kept.one':
     'Sovitut ja menneet treffit sekä niistä annetut palautteet. Toinen osapuoli näkee sinun tilallasi ”Joku”.',
   'legal.deletion.kept.two':
-    'Turvallisuusilmoitukset ja niiden vapaa teksti, sekä sinun kirjoittamat että sinusta kirjoitetut.',
+    'Turvallisuus- ja käytösilmoitukset ja niiden vapaa teksti, sekä sinun kirjoittamat että sinusta kirjoitetut.',
   'legal.deletion.kept.three': 'Merkintä siitä, että olet painanut turvapainiketta.',
   'legal.deletion.kept.four':
-    'Esto, joka syntyy turvallisuusilmoituksesta. Sitä ei voi purkaa lähtemällä.',
+    'Merkintä siitä, että teitä ei turvallisuusilmoituksen jälkeen enää ehdoteta toisillenne. Lähteminen ei muuta sitä.',
   'legal.deletion.kept.five': 'Ilmoitukset saapumatta jättämisestä, molempiin suuntiin.',
   'legal.deletion.kept.six': 'Kipinähistoria, jotta saldot täsmäävät.',
   'legal.deletion.kept.seven':
@@ -662,10 +662,10 @@ const en: Record<keyof typeof fi, string> = {
   'legal.deletion.kept.one':
     'Dates agreed and past, and the feedback given about them. The other person sees ”Someone” where you were.',
   'legal.deletion.kept.two':
-    'Safety reports and the free text in them, both what you wrote about somebody and what somebody wrote about you.',
+    'Safety and conduct reports and the free text in them, both what you wrote about somebody and what somebody wrote about you.',
   'legal.deletion.kept.three': 'The fact that you pressed the safety button.',
   'legal.deletion.kept.four':
-    'The block created by a safety report. Leaving does not lift it.',
+    'The record that, after a safety report, the two of you are never suggested to each other again. Leaving does not change it.',
   'legal.deletion.kept.five': 'Reports of not turning up, in both directions.',
   'legal.deletion.kept.six': 'Your spark history, so that balances still add up.',
   'legal.deletion.kept.seven':

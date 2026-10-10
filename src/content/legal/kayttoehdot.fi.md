@@ -95,8 +95,9 @@ luetelluin keinoin:
   kuvatuin rajoituksin.
 - **Turvallisuusilmoitus**, jonka voit tehdä treffien jälkeen. Sen näkevät vain Pilkkeen
   työntekijät.
-- **Esto.** Kun teet treffien jälkeen turvallisuusilmoituksen, emme ehdota teitä enää
-  koskaan toisillenne emmekä kerro toiselle syytä.
+- **Ehdotukset turvallisuusilmoituksen jälkeen.** Kun teet treffien jälkeen
+  turvallisuusilmoituksen, emme ehdota teitä enää koskaan toisillenne emmekä kerro
+  toiselle syytä.
 - **Ennalta valitut, julkiset treffipaikat.** Treffit sovitaan vain Pilkkeen valitsemiin
   julkisiin paikkoihin, eivätkä käyttäjät voi ehdottaa muita paikkoja.
 

@@ -77,12 +77,22 @@ voluntary, and the answers currently have no effect on who you are offered.
 
 ### Safety records
 
-We process a safety report and the free text in it, a report that the other person did not
-turn up, a record that you pressed the safety button and who the message went to, and the
-block created by a safety report.
+We process a safety report, the options chosen in it and its free text, a conduct report,
+a report that the other person did not turn up, a record that you pressed the safety button
+and who the message went to, and the record that, after a safety report, the two of you are never suggested to each other again.
 
-A safety report is the only place in the service where free text can be written about
-another person. Write down only what happened.
+A conduct report is filed only if you choose to: in the feedback after a date you can tell
+Pilke staff how the person you met behaved. We store who filed it and about whom, which date
+it concerns, the options you chose, any free text you wrote, and how far its handling has
+got. Only Pilke staff can see it.
+
+If you say in the feedback after a date that the other person did not turn up, we store it
+as a no-show report. Only Pilke staff can see it, and the other person never sees it. It
+brings no restriction: a restriction follows only from a report made during the date, at the
+venue (section 10).
+
+Safety and conduct reports are the only places in the service where free text can be written
+about another person. Write down only what happened.
 
 ### What we do not collect
 
@@ -151,7 +161,7 @@ to nobody. Section 2 says how that question works.
 | Sharing your location at the venue | Consent, which you can withdraw by stopping sharing |
 | Answers to question sets | Consent, given by answering |
 | Exchanging phone numbers after a date | Consent, given by choosing that answer |
-| Safety: blocks, reports, the safety button and restrictions | Legitimate interest — the safety of our users |
+| Safety: reports, the record that two people are not suggested to each other after a safety report, the safety button and restrictions | Legitimate interest — the safety of our users |
 | Your trusted contact's phone number | Legitimate interest — the user's safety |
 | Support and investigating misuse | Legitimate interest — proper use of the service |
 
@@ -164,9 +174,9 @@ withdraw your consent, the withdrawal affects what we do from then on, and it do
 undo a disclosure already made: a number that has been sent cannot be taken off the other
 person's phone.
 
-So an exchange cannot be stopped afterwards. Before it happens, a block created by a
-safety report stops it — a blocked pair never exchanges numbers, even if both of them
-chose to — but a report can only be filed in the feedback for that date, not later. Once
+So an exchange cannot be stopped afterwards. Before it happens, a safety report stops it
+— once one of you has filed a safety report about the other, no numbers are exchanged, even
+if both of you chose to — but a report can only be filed in the feedback for that date, not later. Once
 the numbers have been exchanged you can delete your account: your number disappears from
 the other person's app, but that does not reach a notification that has already arrived
 either (section 9).
@@ -176,7 +186,7 @@ gender and whether you are looking for sex. That is special category data, and w
 it only with your explicit consent, which you give when you set those preferences. You can
 change your preferences or delete your account at any time.
 
-The free text of a safety report may describe acts that are criminal offences. We process
+The free text of a safety or conduct report may describe acts that are criminal offences. We process
 such data only to protect users and, where necessary, to bring or answer a legal claim.
 
 Where the basis is legitimate interest, we have weighed our interest against your rights.
@@ -193,7 +203,7 @@ You can ask us for an account of that assessment at the address in section 1.
 | GatewayAPI (Denmark) | The recipient's phone number and the content of the message, when we send a login code or a safety message. |
 | OpenFreeMap (Hyperknot Software Kft., Hungary) | Your device's IP address and which map tiles it requests. The request comes from your device, not from our server. Its own policy says it does not log IP addresses. |
 | Our hosting provider, **[TO FILL IN: provider]**, Finland | All data in the service sits on its servers. |
-| Pilke staff | What the admin view shows, where that is needed for support or to deal with a safety report. Shared locations do not appear in the admin view. |
+| Pilke staff | What the admin view shows, where that is needed for support or to deal with a safety or conduct report. Shared locations do not appear in the admin view. |
 | Google Play | What the app store receives as the distributor of the app. |
 
 We do not sell your data and we do not release it for marketing.
@@ -218,14 +228,14 @@ Finland.
 | Dates, invitations and cancellations | 12 months from the date. |
 | Feedback | 12 months from the date. |
 | Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. A copy of the number sits in the push notification that was sent, and that goes after 90 days. |
-| No-show reports and the restrictions that follow from them | 12 months from the report. |
+| No-show reports, including those made in the feedback, and the restrictions that follow from them | 12 months from the report. |
 | Notifications sent, and delivery records for text messages | 90 days. |
-| Safety reports, their free text, and records of safety button presses | 5 years from the report. |
-| A block created for a safety reason | Indefinitely. It does not lapse with time, and it is not undone by either person deleting their account. |
+| Safety and conduct reports, their free text, and records of safety button presses | 5 years from the report. |
+| The record that, after a safety report, the two of you are never suggested to each other again | Indefinitely. It does not lapse with time, and it is not undone by either person deleting their account. |
 | A record of which version of the terms you accepted | As long as we may have to show what the processing was based on. |
 
 At the end of a retention period we delete the data or make it non-identifiable. If a
-support matter, a safety report or a legal claim is open, we keep what relates to it for as
+support matter, a safety or conduct report or a legal claim is open, we keep what relates to it for as
 long as handling it requires.
 
 ## 9. When you delete your account
@@ -247,8 +257,9 @@ Two groups remain:
 
 - **Data that belongs as much to the other person.** Past dates, the feedback given about
   them, and no-show reports. The other person sees *Somebody* where you used to be.
-- **Safety decisions that leaving must not undo.** Safety reports, and the block they
-  create.
+- **Safety decisions that leaving must not undo.** Safety and conduct reports, and the
+  record that, after a safety report, the two of you are never suggested to each other
+  again.
 
 Both are kept for the period set out in section 8, and your name is no longer attached to
 them. A record that the account existed also remains, so that we do not create two
@@ -269,7 +280,12 @@ you did not turn up, the restriction follows automatically. You can file your ow
 within 24 hours, which lifts it. You can also ask for the decision to be looked at again by
 writing to the address in section 1, and a person will then review it.
 
-A safety report never triggers a restriction automatically.
+A safety report never triggers a restriction automatically. A conduct report or a no-show
+reported in the feedback brings no restriction.
+
+If two different users say in their feedback within 90 days that the same person did not
+turn up, or that their photos gave a different impression, Pilke staff are told. A person
+looks into it, and the alert by itself leads to nothing automatically.
 
 ## 11. Your rights
 
@@ -294,7 +310,7 @@ one tap, and you can change your date preferences at any time. The answer about 
 again cannot be withdrawn: once the numbers have been exchanged, withdrawing does not get
 them back. Section 5 says what withdrawing means in that situation.
 
-If another user has filed a safety report about you, you cannot see what it says. Otherwise
+If another user has filed a safety or conduct report about you, you cannot see what it says. Otherwise
 the person who filed it would be identifiable and reporting would become impossible. You
 can still ask us to confirm whether we hold such data about you.
 

@@ -115,16 +115,16 @@
   en: 'Dates agreed and past, and the feedback given about them. The other person sees ”Someone” where you were.'
 
 'legal.deletion.kept.two':
-  fi: 'Turvallisuusilmoitukset ja niiden vapaa teksti, sekä sinun kirjoittamat että sinusta kirjoitetut.'
-  en: 'Safety reports and the free text in them, both what you wrote about somebody and what somebody wrote about you.'
+  fi: 'Turvallisuus- ja käytösilmoitukset ja niiden vapaa teksti, sekä sinun kirjoittamat että sinusta kirjoitetut.'
+  en: 'Safety and conduct reports and the free text in them, both what you wrote about somebody and what somebody wrote about you.'
 
 'legal.deletion.kept.three':
   fi: 'Merkintä siitä, että olet painanut turvapainiketta.'
   en: 'The fact that you pressed the safety button.'
 
 'legal.deletion.kept.four':
-  fi: 'Esto, joka syntyy turvallisuusilmoituksesta. Sitä ei voi purkaa lähtemällä.'
-  en: 'The block created by a safety report. Leaving does not lift it.'
+  fi: 'Merkintä siitä, että teitä ei turvallisuusilmoituksen jälkeen enää ehdoteta toisillenne. Lähteminen ei muuta sitä.'
+  en: 'The record that, after a safety report, the two of you are never suggested to each other again. Leaving does not change it.'
 
 'legal.deletion.kept.five':
   fi: 'Ilmoitukset saapumatta jättämisestä, molempiin suuntiin.'
