@@ -13,7 +13,7 @@ Kipinäsi näkyvät Treffit-sivun ylälaidassa. Tältä sivulta näet, mistä ni
 |---|---|
 | Vahvistat puhelinnumerosi, kun luot profiilin | +{{petals.signup_bonus}}, kerran |
 | Kalenterissasi on {{calendar.petal_week_hours}} tuntia vapaata aikaa viikon ajan | +1 |
-| Käyt treffeillä ja kerrot, miten meni | +{{petals.per_date}}, kun lähetät palautteen |
+| Käyt treffeillä ja kerrot, miten meni | +{{sparks.per_date}}, kun lähetät palautteen |
 | Lähetät treffikutsun | −{{petals.set_cost}}, kun painat **Lähetä treffikutsu!** |
 | Kutsusi hylätään | +{{petals.refund}} takaisin |
 | Kutsusi raukeaa, koska siihen ei vastattu {{invitation.answer_hours}} tunnissa | +{{petals.refund}} takaisin |

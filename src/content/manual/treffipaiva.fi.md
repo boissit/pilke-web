@@ -47,7 +47,9 @@ Näin ilmoitat:
 
 Jos et ole treffipaikalla, ilmoitusta ei tehdä, ja sovellus kertoo sen (1).
 
-Kerran tehtyä ilmoitusta ei voi perua. Emme kysy sinulta enää palautetta näistä treffeistä. Toinen ei näy muiden ehdokkaissa eikä voi hakea uusia ehdokkaita {{cooldown.noshow_days}} päivään, ja hän näkee Treffit-sivulla, että hänestä on tehty ilmoitus. Jos hänkin kertoo treffien aikana treffipaikalta, ettet sinä saapunut, kumpaakaan ei rangaista ja Pilkkeen työntekijä käy tapauksen läpi.
+Kerran tehtyä ilmoitusta ei voi perua. Palautteeksi riittää sen jälkeen yksi painallus: Treffit-sivulla vahvistat, että treffipari ei tullut paikalle, ja saat siitä {{sparks.per_date}} kipinää. Toinen ei näy muiden ehdokkaissa eikä voi hakea uusia ehdokkaita {{cooldown.noshow_days}} päivään, ja hän näkee Treffit-sivulla, että hänestä on tehty ilmoitus. Jos hänkin kertoo treffien aikana treffipaikalta, ettet sinä saapunut, kumpaakaan ei rangaista ja Pilkkeen työntekijä käy tapauksen läpi.
+
+Jos et voinut tehdä ilmoitusta treffipaikalla, voit kertoa asiasta treffien jälkeen palautteessa: vastaa kysymykseen *Miten treffit sujuivat?* vaihtoehdolla *Treffit eivät toteutuneet* ja sitten *Treffipari ei tullut paikalle*. Kirjaamme sen Pilkkeen työntekijöille, ja siitä ei seuraa jäähyä. Katso [Treffien jälkeen](/ohje/treffien-jalkeen).
 
 ## Kysyttyä
 

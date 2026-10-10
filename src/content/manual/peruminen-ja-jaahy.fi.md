@@ -30,7 +30,7 @@ Jäähyn aikana Treffit-sivun yläosassa on ilmoitus (1): mitä se estää, mihi
 | Peruit sovitut treffit vähintään {{cooldown.cancel_long_notice_days}} päivää ennen | Molemmat | {{cooldown.cancel_long_notice_hours}} tuntia |
 | Peruit sovitut treffit vähintään {{cooldown.cancel_short_notice_hours}} tuntia ennen | Molemmat | {{cooldown.cancel_short_notice_days}} päivää |
 | Peruit sovitut treffit myöhemmin | Molemmat | {{cooldown.cancel_late_days}} päivää |
-| Toinen kertoi, ettet saapunut | Molemmat | {{cooldown.noshow_days}} päivää |
+| Toinen kertoi treffipaikalta, ettet saapunut | Molemmat | {{cooldown.noshow_days}} päivää |
 
 Toistuva peruminen pidentää jäähyä. Jokainen aiempi sovittujen treffien peruminen viimeisen {{cooldown.repeat_window_days}} päivän ajalta kertoo seuraavan perumisen keston {{cooldown.repeat_multiplier}}:lla. Jäähy kestää kuitenkin enintään {{cooldown.ceiling_days}} päivää. Kutsujen peruutukset, hylkäämiset, vastaamatta jättämiset ja saapumatta jäämiset eivät kasvata kerrointa.
 

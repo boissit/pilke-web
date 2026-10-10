@@ -5,8 +5,10 @@
     "cap": 15,
     "cap_roses": 3,
     "signup_bonus": 5,
-    "per_date": 2,
     "refund": 5
+  },
+  "sparks": {
+    "per_date": 2
   },
   "calendar": {
     "min_shared_hours": 1,

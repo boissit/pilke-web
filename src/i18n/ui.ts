@@ -10,7 +10,7 @@
  * never called a currency: Pilke *pyörii kipinöillä*, runs on sparks.
  * A zero balance is never *ei kipinää*, which means no chemistry, and *kipinöitä
  * lentää* belongs to the moment two people say yes. The constants keep their old
- * names, `{{petals.*}}`, because the backend does.
+ * names, `{{petals.*}}`, because the backend does, except `{{sparks.per_date}}`.
  *
  * The front page argues one thing: the shortest path to meeting somebody is a
  * kutsu with the time already in it. Sparks get one short section there — what
@@ -105,7 +105,7 @@ const fi = {
   'sparks.earn': 'Näin niitä kertyy',
   'sparks.calendar.amount': '+1',
   'sparks.calendar.note': 'enintään {{calendar.max_petals_per_week}} viikossa',
-  'sparks.date.amount': '+{{petals.per_date}}',
+  'sparks.date.amount': '+{{sparks.per_date}}',
   'sparks.date.note': 'kun olet kertonut, miten meni',
   'sparks.highlight': 'Kun toinen sanoo kutsullesi kyllä, kipinöitä lentää.',
   'sparks.art.alt': 'Pilkkeen kipinälaskuri, jossa on kaksi kipinää.',
@@ -448,7 +448,7 @@ const en: Record<keyof typeof fi, string> = {
   'sparks.earn': 'How they add up',
   'sparks.calendar.amount': '+1',
   'sparks.calendar.note': 'at most {{calendar.max_petals_per_week}} a week',
-  'sparks.date.amount': '+{{petals.per_date}}',
+  'sparks.date.amount': '+{{sparks.per_date}}',
   'sparks.date.note': 'once you have said how it went',
   'sparks.highlight': 'And when they say yes to your invitation, sparks fly.',
   'sparks.art.alt': 'Pilke’s spark counter, showing two sparks.',

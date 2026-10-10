@@ -9,14 +9,18 @@ You can give feedback as soon as the date has ended, {{date.length_hours}} hour 
 
 ![Date feedback: your date, when it was, and the first question](shot:feedback#feedback-when)
 
-At the top is the date it is about (1). The questions ask whether your date matched what you were hoping for, whether you enjoyed it, whether you would like to meet again and what the venue was like.
+At the top is the date it is about (1). The first question is *How did the date go?*, and your answer decides what comes next. When the date went well, we ask whether your date matched what you were hoping for, what clicked between you, what the booked place was like and whether you would like to meet them again.
 
-- **What happens to your answers.** Your date does not see them. The only thing that can reach them is your phone number, and only in the way described below.
-- **Sparks.** When you send your feedback you get {{petals.per_date}} sparks. Each of you gets your own once you have answered. See [Sparks](/en/guide/kipinat).
+If the date went badly, we ask next whether you felt safe on the date. You get the same question if you choose *Something bothered me*, which you can pick alongside your other answers. See [Safety](/en/guide/turvallisuus).
+
+The question about the place is optional, and it lets you say *The place was closed or full*. Your feedback goes with your last answer, and you are back on the Dates page, where you see the sparks you got.
+
+- **What happens to your answers.** Only Pilke's staff see your answers. The only thing that can reach your date is your phone number, and only in the way described below.
+- **Sparks.** Your feedback gets you {{sparks.per_date}} sparks when the date happened or your date did not turn up. Each of you gets your own once you have answered. See [Sparks](/en/guide/kipinat).
 
 ## Meeting again
 
-*Would you like to meet your date again?* has three answers: *Yes, and my phone number may be shared with them*, *Yes, but only through Pilke* and *No*. What follows depends on what you both say:
+When the date went well, we ask last *Would you like to meet your date again?* It has three answers: *Yes, and my phone number may be shared with them*, *Yes, but only through Pilke* and *No*. What follows depends on what you both say:
 
 - **You both share your number.** Your phone numbers are exchanged. You are both told, and the number appears in your date history.
 - **You both say yes, but at least one of you only through Pilke.** No numbers are exchanged. You can become candidates for each other again.
@@ -24,11 +28,18 @@ At the top is the date it is about (1). The questions ask whether your date matc
 
 Saying no and not answering look the same to the other person.
 
+## If the date did not happen
+
+When you answer *How did the date go?* with *The date didn't happen*, we ask what happened.
+
+- **My date didn't turn up.** We record it for Pilke's staff, and your feedback gets you {{sparks.per_date}} sparks. A cooldown follows only from the report you make during the date, at the venue. See [The day of the date](/en/guide/treffipaiva).
+- **I couldn't make it.** You can say what got in the way. This feedback brings no sparks. Next time you know you cannot make it, call the date off in the app straight away, so your date's time is freed. See [Cancelling and cooldowns](/en/guide/peruminen-ja-jaahy).
+
 ## Date history
 
 ![The foot of the Dates page and the Date history button](shot:date-history-open#open-date-history)
 
-**Date history** (1), the last button on the Dates page, opens a list of the dates you have been on, newest first. Cancelled dates and dates where someone reported the other did not turn up are left out.
+**Date history** (1), the last button on the Dates page, opens a list of the dates you have been on, newest first. Cancelled dates and dates where someone reported from the venue that the other did not turn up are left out.
 
 ![Date history: past dates and a phone number you exchanged](shot:date-history#date-history-row-number)
 
@@ -36,4 +47,4 @@ Each row has your date's photo and name, and when and where you met. If you exch
 
 ## If something went wrong
 
-If you felt unsafe on the date, you can tell us in your feedback. See [Safety](/en/guide/turvallisuus).
+If you felt unsafe on the date, or want to tell us how your date behaved, you can tell us in your feedback. See [Safety](/en/guide/turvallisuus).

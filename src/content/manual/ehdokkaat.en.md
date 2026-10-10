@@ -28,7 +28,6 @@ A candidate has to meet every one of these, and each is checked both ways: you h
 
 - **One of you has already sent the other an invitation.** Once there has been an invitation between two people, either way and however it ended, they are not suggested to each other again. The exception is when you both said after a date that you would like to meet again. See [After the date](/en/guide/treffien-jalkeen).
 - **They were shown to you recently.** A recently shown candidate moves down the order, and the effect halves every {{candidates.exposure_half_life_days}} days. Once someone has been among your candidates {{candidates.max_appearances}} times, they are not shown to you again.
-- **One of you made a safety report.** Then you are never suggested to each other again.
 
 ## In what order
 

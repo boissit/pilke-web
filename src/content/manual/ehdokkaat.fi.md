@@ -28,7 +28,6 @@ Lisäksi vaikuttaa **treffitahti**, Omien tietojen kohta *Kuinka usein haluaisit
 
 - **Toinen on lähettänyt toiselle kutsun.** Kun kahden ihmisen välillä on ollut kutsu, kumpaan suuntaan tahansa ja miten tahansa se päättyi, heitä ei enää ehdoteta toisilleen. Poikkeus on, jos te molemmat vastasitte treffien jälkeen haluavanne tavata uudelleen. Katso [Treffien jälkeen](/ohje/treffien-jalkeen).
 - **Hänet on näytetty sinulle äskettäin.** Äskettäin näytetty ehdokas laskee järjestyksessä. Vaikutus puolittuu {{candidates.exposure_half_life_days}} päivässä. Kun sama ihminen on ollut ehdokkaanasi {{candidates.max_appearances}} kertaa, häntä ei näytetä sinulle enää.
-- **Toinen teistä on tehnyt turvallisuusilmoituksen.** Silloin teitä ei ehdoteta toisillenne koskaan.
 
 ## Missä järjestyksessä
 

@@ -30,7 +30,7 @@ During a cooldown the top of the Dates page carries a notice (1): what it stops,
 | Called off an agreed date at least {{cooldown.cancel_long_notice_days}} days ahead | Both | {{cooldown.cancel_long_notice_hours}} hours |
 | Called off an agreed date at least {{cooldown.cancel_short_notice_hours}} hours ahead | Both | {{cooldown.cancel_short_notice_days}} days |
 | Called off an agreed date any later | Both | {{cooldown.cancel_late_days}} days |
-| The other person told us you did not turn up | Both | {{cooldown.noshow_days}} days |
+| The other person reported from the venue that you did not turn up | Both | {{cooldown.noshow_days}} days |
 
 Calling off dates again and again makes the cooldown longer. Each date you called off in the last {{cooldown.repeat_window_days}} days multiplies the next one's length by {{cooldown.repeat_multiplier}}, up to a ceiling of {{cooldown.ceiling_days}} days. Withdrawn, declined and unanswered invitations and no-shows do not add to the multiplier.
 

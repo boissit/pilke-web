@@ -13,7 +13,7 @@ Your sparks are at the top of the Dates page. This page covers where they come f
 |---|---|
 | You confirm your phone number when you sign up | +{{petals.signup_bonus}}, once |
 | You keep {{calendar.petal_week_hours}} hours of free time marked for a week | +1 |
-| You go on a date and say how it went | +{{petals.per_date}}, when you send the feedback |
+| You go on a date and say how it went | +{{sparks.per_date}}, when you send the feedback |
 | You send a date invitation | −{{petals.set_cost}}, when you press **Send an invitation!** |
 | Your invitation is declined | +{{petals.refund}} back |
 | Your invitation lapses because nobody answered within {{invitation.answer_hours}} hours | +{{petals.refund}} back |

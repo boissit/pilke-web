@@ -230,7 +230,7 @@ The load-bearing numbers:
   have to change.
 
 The backend calls the unit a **token** in code, and its exported constants keep
-the old name, `{{petals.*}}`; `kipinä` and `spark` are the words users read, and
+the old name, `{{petals.*}}`, except `{{sparks.per_date}}`; `kipinä` and `spark` are the words users read, and
 they are never called a currency. `SparkleScatter.astro` is decoration behind a
 card and stands for no amount; a `Sparkle` with a count is the app's counter,
 lit at five.

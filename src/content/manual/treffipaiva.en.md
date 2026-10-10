@@ -47,7 +47,9 @@ To report:
 
 If you are not at the venue, no report is made, and the app says so (1).
 
-A report cannot be taken back, and we stop asking you for feedback on this date. The other person is left out of other people's candidates and cannot look for new ones for {{cooldown.noshow_days}} days, and their Dates page tells them a report has been made. If they too report, during the date and from the venue, that you did not turn up, neither of you is penalised and a member of Pilke's staff looks into it.
+A report cannot be taken back. After it, your feedback is a single press: on the Dates page you confirm your date did not turn up, and you get {{sparks.per_date}} sparks for it. The other person is left out of other people's candidates and cannot look for new ones for {{cooldown.noshow_days}} days, and their Dates page tells them a report has been made. If they too report, during the date and from the venue, that you did not turn up, neither of you is penalised and a member of Pilke's staff looks into it.
+
+If you could not make the report at the venue, you can tell us in the feedback after the date: answer *How did the date go?* with *The date didn't happen*, then *My date didn't turn up*. We record it for Pilke's staff, and no cooldown follows from it. See [After the date](/en/guide/treffien-jalkeen).
 
 ## Questions
 
