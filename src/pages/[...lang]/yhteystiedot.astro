@@ -1,0 +1,46 @@
+---
+/**
+ * How to reach us: one address, nothing else.
+ *
+ * The App Store's support URL points here, and a store reviewer reads it as the
+ * promise that a person answers. That is why the page carries the address and not a
+ * form: mail to it lands with the owner, and a form would need a backend of its own
+ * to mean the same thing.
+ */
+import PageHead from '../../components/PageHead.astro';
+import { contactEmail } from '../../data/contact';
+import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
+import Base from '../../layouts/Base.astro';
+
+export const getStaticPaths = () => localeRoutes();
+
+const lang = localeOf(Astro.params);
+const t = useTranslations(lang);
+---
+
+<Base lang={lang}>
+  <PageHead title={t('contact.title')} lead={t('contact.lead')} />
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      <p class="address"><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+
+      <p class="onward">
+        <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .address {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 1.33vw + 1.2rem, 2.25rem);
+    overflow-wrap: anywhere;
+  }
+
+  .onward {
+    margin-top: var(--pad-large);
+  }
+</style>

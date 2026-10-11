@@ -24,6 +24,7 @@
  * which is exactly why nothing but this list tells the reader they stay.
  */
 import PageHead from '../../components/PageHead.astro';
+import { contactEmail } from '../../data/contact';
 import { legalHref } from '../../i18n/legal';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
@@ -32,6 +33,9 @@ export const getStaticPaths = () => localeRoutes();
 
 const lang = localeOf(Astro.params);
 const t = useTranslations(lang);
+
+// The address is a link inside the sentence, so the sentence is cut where it goes.
+const gone = t('legal.deletion.gone.body').split('{email}');
 
 const removed = [
   t('legal.deletion.removed.one'),
@@ -61,19 +65,13 @@ const kept = [
 
   <section class="slab slab-white">
     <div class="wrap section-pad">
-      <!-- Dashed and unshadowed, as the safety page draws something that is not
-           settled: the address this page needs does not exist yet, and a reader
-           should be told that rather than shown a paragraph with a hole in it. -->
-      <aside class="block provisional">
-        <h2>{t('legal.deletion.pending.title')}</h2>
-        <p>{t('legal.deletion.pending.body')}</p>
-      </aside>
-
       <h2 class="display-mid">{t('legal.deletion.app.title')}</h2>
       <p class="prose">{t('legal.deletion.app.body')}</p>
 
       <h2 class="display-mid">{t('legal.deletion.gone.title')}</h2>
-      <p class="prose">{t('legal.deletion.gone.body')}</p>
+      <p class="prose">
+        {gone[0]}<a href={`mailto:${contactEmail}`}>{contactEmail}</a>{gone[1]}
+      </p>
     </div>
   </section>
 
@@ -123,12 +121,6 @@ const kept = [
 
   .wrap > .prose + .display-mid {
     margin-top: 40px;
-  }
-
-  /* The provisional notice opens this card, so it has no gap of its own above. */
-  .wrap > .provisional {
-    margin-top: 0;
-    margin-bottom: var(--pad-medium);
   }
 
   .display-mid {

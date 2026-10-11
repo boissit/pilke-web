@@ -27,22 +27,6 @@
   en: 'You delete your account yourself, in the app. This page says what goes straight away and what stays.'
 
 # ──────────────────────────────────────────────────────────────────────────
-# The address that does not exist yet
-#
-# Drawn as a dashed, unshadowed block, which is how this site says something is
-# not settled. A reader should be told the page has a hole in it rather than
-# shown a paragraph with one.
-# ──────────────────────────────────────────────────────────────────────────
-
-'legal.deletion.pending.title':
-  fi: 'Sähköpostiosoite puuttuu vielä'
-  en: 'There is no email address yet'
-
-'legal.deletion.pending.body':
-  fi: 'Tälle sivulle tulee osoite, johon voit kirjoittaa, jos et enää pääse sovellukseen. Osoitetta ei ole vielä hankittu, joten sivu on siltä osin kesken.'
-  en: 'An address for people who can no longer reach the app belongs on this page. It has not been bought yet, so the page is unfinished in that respect.'
-
-# ──────────────────────────────────────────────────────────────────────────
 # How to delete
 # ──────────────────────────────────────────────────────────────────────────
 
@@ -59,8 +43,8 @@
   en: 'If you can no longer reach the app'
 
 'legal.deletion.gone.body':
-  fi: 'Kirjoita meille, niin poistamme tilin puolestasi. Kerro se puhelinnumero, jolla olet kirjautunut, jotta löydämme oikean tilin.'
-  en: 'Write to us and we will delete the account for you. Tell us the phone number you signed in with, so we find the right account.'
+  fi: 'Kirjoita meille osoitteeseen {email}, niin poistamme tilin puolestasi. Kerro se puhelinnumero, jolla olet kirjautunut, jotta löydämme oikean tilin.'
+  en: 'Write to us at {email} and we will delete the account for you. Tell us the phone number you signed in with, so we find the right account.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # What goes straight away

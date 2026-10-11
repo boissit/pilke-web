@@ -318,9 +318,6 @@ const fi = {
   'legal.deletion.lead':
     'Poistat tilisi itse sovelluksesta. Tällä sivulla kerromme, mikä poistuu heti ja mikä jää talteen.',
 
-  'legal.deletion.pending.title': 'Sähköpostiosoite puuttuu vielä',
-  'legal.deletion.pending.body':
-    'Tälle sivulle tulee osoite, johon voit kirjoittaa, jos et enää pääse sovellukseen. Osoitetta ei ole vielä hankittu, joten sivu on siltä osin kesken.',
 
   'legal.deletion.app.title': 'Poista tili sovelluksessa',
   'legal.deletion.app.body':
@@ -328,7 +325,7 @@ const fi = {
 
   'legal.deletion.gone.title': 'Jos et enää pääse sovellukseen',
   'legal.deletion.gone.body':
-    'Kirjoita meille, niin poistamme tilin puolestasi. Kerro se puhelinnumero, jolla olet kirjautunut, jotta löydämme oikean tilin.',
+    'Kirjoita meille osoitteeseen {email}, niin poistamme tilin puolestasi. Kerro se puhelinnumero, jolla olet kirjautunut, jotta löydämme oikean tilin.',
 
   'legal.deletion.removed.title': 'Mikä poistuu heti',
   'legal.deletion.removed.one': 'Puhelinnumero ja sähköpostiosoite.',
@@ -384,6 +381,10 @@ const fi = {
 
   'footer.rights': 'Pilke',
   'footer.pages': 'Sivut',
+
+  'contact.nav': 'Yhteystiedot',
+  'contact.title': 'Yhteystiedot',
+  'contact.lead': 'Kysymykset, palaute ja avunpyynnöt: kirjoita meille sähköpostia.',
 
   // The page GitHub Pages serves for any address it has no file for. One file for
   // both languages, so it carries a line of English under the Finnish.
@@ -633,9 +634,6 @@ const en: Record<keyof typeof fi, string> = {
   'legal.deletion.lead':
     'You delete your account yourself, in the app. This page says what goes straight away and what stays.',
 
-  'legal.deletion.pending.title': 'There is no email address yet',
-  'legal.deletion.pending.body':
-    'An address for people who can no longer reach the app belongs on this page. It has not been bought yet, so the page is unfinished in that respect.',
 
   'legal.deletion.app.title': 'Delete your account in the app',
   'legal.deletion.app.body':
@@ -643,7 +641,7 @@ const en: Record<keyof typeof fi, string> = {
 
   'legal.deletion.gone.title': 'If you can no longer reach the app',
   'legal.deletion.gone.body':
-    'Write to us and we will delete the account for you. Tell us the phone number you signed in with, so we find the right account.',
+    'Write to us at {email} and we will delete the account for you. Tell us the phone number you signed in with, so we find the right account.',
 
   'legal.deletion.removed.title': 'What goes straight away',
   'legal.deletion.removed.one': 'Your phone number and email address.',
@@ -699,6 +697,10 @@ const en: Record<keyof typeof fi, string> = {
 
   'footer.rights': 'Pilke',
   'footer.pages': 'Pages',
+
+  'contact.nav': 'Contact',
+  'contact.title': 'Contact',
+  'contact.lead': 'Questions, feedback and requests for help: write to us by email.',
 
   'notfound.title': 'Oops, this page didn’t turn up',
   'notfound.lead': 'The link may be out of date. Carry on from the front page.',
