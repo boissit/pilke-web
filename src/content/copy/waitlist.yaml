@@ -19,9 +19,11 @@
 # ──────────────────────────────────────────────────────────────────────────
 
 # The waitlist. TODO(pilke-web): the form posts nowhere yet — see README.
+# "Olemme" rather than "Pilke on": the wordmark stands right above the title in the
+# footer's card, and the name twice in a row reads as a stutter.
 'cta.title':
-  fi: 'Pilke on suljetussa betassa'
-  en: 'Pilke is in closed beta'
+  fi: 'Olemme suljetussa betassa'
+  en: 'We''re in closed beta'
 
 'cta.body':
   fi: 'Jätä sähköpostiosoitteesi, niin kerromme heti, kun pääset mukaan.'

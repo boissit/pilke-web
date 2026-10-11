@@ -2,12 +2,6 @@
 #
 # WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
 # every page renders from.
-#
-# WARNING: **The `pitch.` entries have no `en:` yet.** The front page's pitch was
-# written in Finnish ahead of its translation, and in `ui.ts` the English page falls
-# back to the Finnish line for each of them. Here that is a missing key, which this
-# format would ship as a blank if the site were rewired to read it before they are
-# translated.
 
 # ──────────────────────────────────────────────────────────────────────────
 # Hero
@@ -24,9 +18,11 @@
 
 'pitch.hero.lead':
   fi: 'Pilke etsii puolestasi ehdokkaat, yhteisen ajan ja treffipaikan. Sinä menet treffeille.'
+  en: 'Pilke finds your candidates, a time you both have free and a place to meet. You go on the date.'
 
 'pitch.hero.more':
   fi: 'Miksi Pilke?'
+  en: 'Why Pilke?'
 
 # ──────────────────────────────────────────────────────────────────────────
 # What is wrong with the other apps
@@ -37,24 +33,31 @@
 
 'pitch.problem.title':
   fi: 'Muissa sovelluksissa treffeille on pitkä matka.'
+  en: 'In other apps, a date is a long way off.'
 
 'pitch.problem.swipe.title':
   fi: 'Ensin swaippailet'
+  en: 'First you swipe'
 
 'pitch.problem.swipe.body':
   fi: 'Selaat profiileja, luet esittelyjä ja yrität löytää joukosta sopivia ihmisiä.'
+  en: 'You scroll through profiles, read bios and try to spot the people who might suit you.'
 
 'pitch.problem.chat.title':
   fi: 'Sitten chättäilet'
+  en: 'Then you chat'
 
 'pitch.problem.chat.body':
   fi: 'Jutustelet niitä näitä, tulet ghostatuksi, chättäilet lisää ja yrität sopia treffit.'
+  en: 'You make small talk, get ghosted, chat some more and try to set up a date.'
 
 'pitch.problem.date.title':
   fi: 'Vasta sitten tapaatte'
+  en: 'Only then do you meet'
 
 'pitch.problem.date.body':
   fi: 'Treffeillä näet toisen ja pääset kunnolla arvioimaan, voisiko teistä tulla jotain.'
+  en: 'On the date you finally see each other, and can properly tell whether anything could come of it.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # What Pilke does instead
@@ -69,36 +72,47 @@
 
 'pitch.instead.title':
   fi: 'Pilkkeessä ei swaippailla eikä chättäillä.'
+  en: 'No swiping and no chatting on Pilke.'
 
 'pitch.instead.lead':
   fi: 'Pilke hoitaa nämä puolestasi ja tarjoaa sinulle käytännössä valmiit treffit.'
+  en: 'Pilke takes care of all that for you and hands you a date that is practically ready.'
 
 'pitch.instead.match.title':
   fi: 'Ehdokkaat toiveidesi mukaan'
+  en: 'Candidates who fit what you want'
 
 'pitch.instead.match.body':
   fi: 'Toiveesi rajaavat ehdokkaat, ja persoonallisuuskysely järjestää heidät. Mitä enemmän Pilkkeessä on käyttäjiä, sitä paremmin järjestys osuu.'
+  en: 'Your wishes narrow down the candidates, and the personality quiz puts them in order. The more people use Pilke, the better that order gets.'
 
 'pitch.instead.invite.title':
   fi: 'Saat kutsun tai lähetät sen'
+  en: 'Get an invitation, or send one'
 
 'pitch.instead.invite.body':
   fi: 'Joko treffikutsu tulee suoraan sinulle, tai löydät {{candidates.per_set}} ehdokasta ja valitset, kenelle lähetät kutsun.'
+  en: 'Either a date invitation comes straight to you, or you find {{candidates.per_set}} candidates and choose who to invite.'
 
 'pitch.instead.ready.title':
   fi: 'Aika ja paikka valmiina'
+  en: 'Time and place already set'
 
 'pitch.instead.ready.body':
   fi: 'Jokaisen ehdokkaan kanssa kalentereissanne on vähintään {{calendar.min_shared_hours}} tunnin yhteinen aika, ja löytyy paikka, johon pääsette molemmat. Kutsussa ovat valmiina ajat ja paikat, ja toinen valitsee niistä yhden kumpaakin.'
+  en: 'With every candidate, your calendars share at least {{calendar.min_shared_hours}} hour, and there is a place you can both get to. The invitation comes with the times and places, and the other person picks one of each.'
 
 'pitch.instead.after.title':
   fi: 'Treffien jälkeen'
+  en: 'After the date'
 
 'pitch.instead.after.body':
   fi: 'Jos treffit menivät hyvin ja haluatte molemmat, vaihdatte puhelinnumerot ja jatkatte Pilkkeen ulkopuolella. Jos eivät menneet nappiin, palautteesi auttaa meitä löytämään sinulle osuvampia ehdokkaita seuraaville treffeille.'
+  en: 'If it went well and you both want to, you swap phone numbers and carry on outside Pilke. If it didn’t quite click, your feedback helps us find you better-suited candidates for your next dates.'
 
 'pitch.instead.more':
   fi: 'Lue, miten Pilke toimii'
+  en: 'Read how Pilke works'
 
 # ──────────────────────────────────────────────────────────────────────────
 # In practice
@@ -109,55 +123,57 @@
 
 'pitch.practice.title':
   fi: 'Näin se menee käytännössä'
+  en: 'How it goes in practice'
 
 'pitch.practice.lead':
   fi: 'Tilin luonti vie noin vartin. Sitten treffeille!'
+  en: 'Setting up takes about fifteen minutes. Then you’re off on dates!'
 
 'pitch.practice.one.title':
   fi: 'Luo tili'
+  en: 'Create an account'
 
 'pitch.practice.one.body':
   fi: 'Kerro toiveesi, vastaa persoonallisuuskyselyyn ja merkitse kalenteriin ajat, jolloin sinulle sopii käydä treffeillä. Kyselyn {{profile.story_questions}} kysymyksen perusteella järjestämme ehdokkaasi.'
+  en: 'Say what you are looking for, answer the personality quiz and mark the times in your calendar when you could go on a date. The quiz’s {{profile.story_questions}} questions decide the order your candidates are shown in.'
 
 'pitch.practice.two.title':
   fi: 'Kutsu tai tule kutsutuksi'
+  en: 'Invite, or be invited'
 
 'pitch.practice.two.body':
   fi: 'Löydä ehdokkaat ja lähetä treffikutsu sille, joka tuntuu omalta tyypiltäsi. Kun sinut kutsutaan, valitset ajan ja paikan, ja treffit on sovittu.'
+  en: 'Find candidates and send a date invitation to the one who feels like your type. When someone invites you, you pick a time and a place, and the date is set.'
 
 'pitch.practice.three.title':
   fi: 'Käy treffeillä'
+  en: 'Go on the date'
 
 'pitch.practice.three.body':
   fi: 'Treffisivulla näet ajan ja paikan kartalla. Paikan päällä voitte jakaa sijaintinne, niin löydätte toisenne.'
+  en: 'The date page shows you the time, and the place on a map. At the venue you can share your locations, so you find each other.'
 
 'pitch.practice.four.title':
   fi: 'Anna palautetta'
+  en: 'Give feedback'
 
 'pitch.practice.four.body':
-  fi: 'Vastaa treffien jälkeen lyhyeen kyselyyn, niin saat kipinöitä. Sitten sovitaan uudet treffit.'
+  fi: 'Vastaa treffien jälkeen lyhyeen kyselyyn. Sitten sovitaan uudet treffit.'
+  en: 'Answer a short quiz after the date. Then you set up the next one.'
 
 'pitch.practice.more':
   fi: 'Käyttöohje vaihe vaiheelta'
+  en: 'The guide, step by step'
 
 # ──────────────────────────────────────────────────────────────────────────
-# Sparks and safety, a line each
+# Safety, in a line
 #
-# Each is a line and a link. The ledger of sparks is the manual's page on them, and
-# the safety line's link is `safety.more`, in `turvallisuus.yaml`.
+# The safety line's link is `safety.more`, in `turvallisuus.yaml`.
 # ──────────────────────────────────────────────────────────────────────────
-
-'pitch.sparks.title':
-  fi: 'Pilke pyörii kipinöillä.'
-
-'pitch.sparks.body':
-  fi: 'Treffikutsuun kuluu {{petals.set_cost}} kipinää. Niitä kertyy ylläpidetystä kalenterista ja käydyistä treffeistä.'
-
-'pitch.sparks.more':
-  fi: 'Lue kipinöistä'
 
 'pitch.safety.body':
   fi: 'Treffit ovat julkisissa paikoissa, jotka olemme itse valinneet, ja turvapainikkeella pyydät luotettavaa läheistäsi ottamaan yhteyttä.'
+  en: 'Dates are in public places we have chosen ourselves, and with the safety button you ask a trusted person to get in touch.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Who Pilke is not for
@@ -170,36 +186,48 @@
 
 'pitch.notfor.title':
   fi: 'Kenelle Pilke sopii?'
+  en: 'Who is Pilke for?'
 
 'pitch.notfor.lead':
   fi: 'Pilke tekee yhden asian: vie sinut treffeille. Muuhun on parempia sovelluksia.'
+  en: 'Pilke does one thing: it gets you on a date. For anything else, there are better apps.'
 
 'pitch.notfor.more.q':
   fi: 'Entä jos haluan nähdä enemmän ehdokkaita?'
+  en: 'What if I want to see more candidates?'
 
 'pitch.notfor.more.a':
   fi: 'Silloin kannattaa varmaan käyttää Tinderiä.'
+  en: 'Then you’d probably be better off with Tinder.'
 
 'pitch.notfor.chat.q':
   fi: 'Entä jos haluan jutella ennen treffejä?'
+  en: 'What if I want to chat before the date?'
 
 'pitch.notfor.chat.a':
   fi: 'Silloin kannattaa varmaan käyttää Bumblea.'
+  en: 'Then you’d probably be better off with Bumble.'
 
 'pitch.notfor.phone.q':
   fi: 'Entä jos en halua käyttää puhelinta?'
+  en: 'What if I don’t want to use my phone?'
 
 'pitch.notfor.phone.a':
   fi: 'Silloin kannattaa varmaan käyttää OkCupidia.'
+  en: 'Then you’d probably be better off with OkCupid.'
 
 'pitch.notfor.algorithm.q':
   fi: 'Entä jos algoritmit ovat mielestäni paholaisen keksintö?'
+  en: 'What if I think algorithms are the devil’s work?'
 
 'pitch.notfor.algorithm.a':
   fi: 'Silloin kannattaa varmaan käyttää Valoa.'
+  en: 'Then you’d probably be better off with Valo.'
 
 'pitch.notfor.questions':
   fi: 'Lisää kysyttyä'
+  en: 'More questions'
 
 'pitch.notfor.contact':
   fi: 'Kysy meiltä'
+  en: 'Ask us'

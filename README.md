@@ -131,18 +131,15 @@ on to the page that says it in full.
 - **In practice** is the owner's four steps: the account, on its own white card
   because it is done once, then three on the card tints, each with its screen
   running off the bottom of the card. It links to the manual.
-- **Sparks** are one card closing the steps, with the calendar photograph: five
-  for an invitation, earned from a calendar kept up and from dates, and a link to
-  the manual's page on them.
 - **Safety** is one line on mint, the venues and the button, and a link to
   `turvallisuus`.
-- **Who it is not for** is the owner's four questions, each answered with the app
-  that does that one thing — Tinder, Bumble, OkCupid, Valo — as a friend's tip and
-  never a dig. It links to `kysyttya` and `yhteystiedot`.
+- **Who it is not for** is the owner's four questions, set large, each answered
+  under it with the app that does that one thing — Tinder, Bumble, OkCupid, Valo —
+  as a friend's tip and never a dig. It links to `kysyttya` and `yhteystiedot`.
 
-The pitch is Finnish only for now: its keys are `pitch.*` in `ui.ts`, the one
-group `en` may leave out, and the English front page shows them in Finnish until
-they are translated.
+**Sparks are not on the front page.** They are how an invitation is paid for, which
+matters once somebody is using the app, and `nain-se-toimii` carries the whole of
+it; on a front page even one line of them reads as a game to be played.
 
 **Never set body text beside a title.** A lede to the right of a heading reads as
 a second column and the eye does not know which to follow first, so every section

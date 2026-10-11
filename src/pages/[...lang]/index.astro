@@ -3,11 +3,10 @@
  * The front page, in the Pehmeä direction: rounded cards on a blush page, a hand
  * holding the phone on a coral disc, and the app's own card tints carrying the loop.
  *
- * Four photographs, each a stock photo with a real still of the app set into its
+ * Three photographs, each a stock photo with a real still of the app set into its
  * phone: the home screen in the hero, cut out of its photograph, the personality quiz
- * on a sofa in the first step, the calendar against an orange wall in the sparks card
- * that closes the steps, and an invitation received in the footer's beta card, which
- * only this page hands a photograph. A still in a photograph
+ * on a sofa in the first step, and an invitation received in the footer's beta card,
+ * which only this page hands a photograph. A still in a photograph
  * goes stale with the app like any other, so `docs/pictures.md` accounts for them.
  *
  * The order is the argument, and it is the owner's pitch: what is wrong with the
@@ -17,8 +16,8 @@
  * where the case ends.
  *
  * The page says each thing once and points to where it is said in full: the loop to
- * `nain-se-toimii`, the steps to the manual, sparks to the manual's own page,
- * safety to `turvallisuus`, the rest of the questions to `kysyttya`. A front page
+ * `nain-se-toimii`, the steps to the manual, safety to `turvallisuus`, the rest of
+ * the questions to `kysyttya`. A front page
  * that explains everything is a page nobody reads to the end.
  *
  * One page at every width. The 1440 artboard and the 390 artboard are the two ends
@@ -31,18 +30,17 @@
  * a reader who came to `turvallisuus` can join from where they are; the hero's button
  * and the header's are anchors down to it.
  *
- * Sparks are one line and a link here. They are how an invitation is paid for, which
- * matters once somebody is using the app, and a ledger on the front page reads as a
- * game to be played, which is the opposite of what this is.
+ * Sparks are not on this page. They are how an invitation is paid for, which matters
+ * once somebody is using the app and is `nain-se-toimii`'s to explain, and on a front
+ * page even a line of them reads as a game to be played, which is the opposite of
+ * what this is.
  */
-import { getImage, Image, Picture } from 'astro:assets';
+import { getImage, Picture } from 'astro:assets';
 import betaEn from '../../assets/photos/beta-invitation-en.jpg';
 import betaFi from '../../assets/photos/beta-invitation-fi.jpg';
 import heroEn from '../../assets/photos/hero-cutout-en.png';
 import heroFi from '../../assets/photos/hero-cutout-fi.png';
 import heroPhoneMask from '../../assets/photos/hero-cutout-phone.png';
-import loopEn from '../../assets/photos/loop-calendar-en.jpg';
-import loopFi from '../../assets/photos/loop-calendar-fi.jpg';
 import startNarrowEn from '../../assets/photos/start-story-narrow-en.jpg';
 import startNarrowFi from '../../assets/photos/start-story-narrow-fi.jpg';
 import startWideEn from '../../assets/photos/start-story-wide-en.jpg';
@@ -66,8 +64,8 @@ const t = useTranslations(lang);
   and the page draws the one in its own: the English page shows the English app.
 */
 const photos = {
-  fi: { hero: heroFi, startWide: startWideFi, startNarrow: startNarrowFi, loop: loopFi, beta: betaFi },
-  en: { hero: heroEn, startWide: startWideEn, startNarrow: startNarrowEn, loop: loopEn, beta: betaEn },
+  fi: { hero: heroFi, startWide: startWideFi, startNarrow: startNarrowFi, beta: betaFi },
+  en: { hero: heroEn, startWide: startWideEn, startNarrow: startNarrowEn, beta: betaEn },
 }[lang];
 
 /*
@@ -336,23 +334,6 @@ const startSources = {
       <p class="how-more">
         <a class="go ghost" href={manualHref(lang)}>{t('pitch.practice.more')}</a>
       </p>
-
-      <!--
-        Sparks, closing the steps because they are what keeps the steps going round:
-        the calendar earns them and an invitation spends them. Its card carries the
-        calendar, in a hand against an orange wall, a landscape photograph that keeps
-        its width beside the line, and becomes the card's foot on a phone.
-      -->
-      <div class="loop">
-        <div class="loop-copy">
-          <h3>{t('pitch.sparks.title')}</h3>
-          <p>{t('pitch.sparks.body')}</p>
-          <a class="go ghost" href={manualHref(lang, 'kipinat')}>{t('pitch.sparks.more')}</a>
-        </div>
-        <figure class="loop-photo">
-          <Image src={photos.loop} alt={t('photo.loop')} widths={[800, 1200, 1800]} sizes="(min-width: 64rem) 760px, 178vw" />
-        </figure>
-      </div>
     </div>
   </section>
 
@@ -374,8 +355,8 @@ const startSources = {
   <!--
     Who Pilke is not for, last before the waitlist: a reader who has come this far
     and still wants to swipe is told where to, kindly, and everybody else is one
-    card from joining. The answers are the punchline, so they are set heavier than
-    the questions.
+    card from joining. The question is the big line, because it is the reader's own
+    doubt in their own words, and the answer under it is said quietly, as a tip.
   -->
   <section class="slab slab-white not-for" aria-labelledby="notfor-title">
     <div class="wrap section-pad">
@@ -710,8 +691,8 @@ const startSources = {
 
   /* ─── In practice ──────────────────────────────────────────────────────── */
 
-  /* No room under the steps: the safety line follows the sparks card at the air
-     between any two cards, as the next card in the same run. */
+  /* No room of its own under the steps: the safety line follows them as the next
+     card in the same run. */
   .how {
     padding: var(--section-space) var(--gutter) 0;
   }
@@ -775,8 +756,7 @@ const startSources = {
   }
 
   .start h3,
-  .steps h3,
-  .loop h3 {
+  .steps h3 {
     font-family: var(--font-display);
     font-weight: 600;
     line-height: 1.05;
@@ -963,92 +943,13 @@ const startSources = {
     margin-top: clamp(0px, 1.14vw - 4.5px, 8px);
   }
 
-  /* The sparks card: the line, its body and its link, and the calendar in a hand.
-     Stacked, the photograph is the card's square foot; wide, the right 55%, out to
-     the card's edges, and the copy sits in the left. */
-  .loop {
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    margin-top: clamp(16px, 1.52vw + 10px, 32px);
-    background: var(--surface);
-    border-radius: clamp(32px, 0.76vw + 29px, 40px);
-    box-shadow: var(--shadow-card);
-  }
-
-  .loop-copy {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 14px;
-    padding: 32px 24px 28px;
-    text-align: center;
-  }
-
-  .loop h3 {
-    font-size: clamp(1.875rem, 0.57vw + 1.74rem, 2.25rem);
-  }
-
-  .loop p {
-    max-width: 36ch;
-    font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
-    line-height: 1.6;
-  }
-
-  .loop .go {
-    margin-top: 6px;
-    white-space: nowrap;
-  }
-
-  .loop-photo {
-    margin: 0;
-    aspect-ratio: 1;
-  }
-
-  .loop-photo :global(img) {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
-  }
-
-  @media (min-width: 64rem) {
-    .loop {
-      flex-direction: row;
-      min-height: 400px;
-    }
-
-    .loop-copy {
-      flex: 1;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 18px;
-      padding: 56px 64px;
-      text-align: left;
-    }
-
-    .loop h3 {
-      font-size: clamp(2.25rem, 1vw + 1.6rem, 2.75rem);
-    }
-
-    .loop p {
-      max-width: 34ch;
-    }
-
-    .loop-photo {
-      flex: 0 0 55%;
-      aspect-ratio: auto;
-    }
-  }
-
   /* ─── Safety, in a line ────────────────────────────────────────────────── */
 
   /* A strip rather than a section: one sentence and its link on the mint the safety
      page is drawn on. Stacked on a phone, in a row once the line fits beside its
      icon and its button. */
   .safety-line {
-    margin-top: 24px;
+    margin-top: clamp(24px, 1.52vw + 18px, 40px);
   }
 
   .safety-line > .wrap {
@@ -1110,17 +1011,18 @@ const startSources = {
   }
 
   dt {
-    font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
-    line-height: 1.4;
-    color: var(--text-soft);
-  }
-
-  dd {
-    margin: 0;
     font-family: var(--font-display);
     font-weight: 600;
     font-size: clamp(1.375rem, 0.38vw + 1.28rem, 1.625rem);
     line-height: 1.2;
+    text-wrap: balance;
+  }
+
+  dd {
+    margin: 0;
+    font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
+    line-height: 1.5;
+    color: var(--text-soft);
   }
 
   .not-for-more {

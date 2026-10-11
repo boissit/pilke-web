@@ -55,8 +55,6 @@ ones you think the change touched: that guess is how a page ships a stale screen
      showing round them.
    - `start-story-*` and `beta-invitation-*`: a thumb lies over the lower screen.
      If the app's layout moved, it may now cover something it should not.
-   - `loop-calendar-*`: the week should sit mid-screen with no sparkle over a slot's
-     text, and today's column carry both kinds of block.
    - The phone frames on `/` and `/en`: each in its page's language, the dates
      ahead of today, and no *Nämä treffit ovat jo olleet* under the date.
    - If a screen's background colour changed, its entry in `grounds` in
@@ -100,7 +98,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`platter` 520px<br>`start-story-narrow-en` 900px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`loop-calendar-en` 1800px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`platter` 520px<br>`start-story-narrow-en` 900px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kipinat.html/` | `en/date-wizard-petals` 560px |
@@ -121,7 +119,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset-en` 520px |
 | `/en/yhteystiedot.html/` | none |
-| `/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`start-story-narrow-fi` 900px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar-fi` 1800px<br>`beta-invitation-fi` 1000px |
+| `/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`start-story-narrow-fi` 900px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
@@ -170,8 +168,6 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `asetukset-en` | Settings, Safety open, English | `screenshots.yaml` in English | The same section in English, `Save number`. Drawn on `/en` in place of `asetukset` |
 | `hero-cutout-fi` | Home, populated, **inside a photograph, cut out** | `screens/treffit.png` composited by `scripts/photos/hero.py fi`, cut out by `scripts/photos/cutout.py` | Everything `treffit` shows, both Android bars included (the phone in the photo is an Android), bent round the phone's curved edges; the hand and phone only, transparent, on the page's coral disc, which clips the hand and arm; `hero-cutout-phone.png`, a mask of the same size, lets the phone and the fingers gripping it stand over the disc's edge, each by its own contour; the disc's circle is baked into both, so the page's geometry and `scripts/photos/cutout.py` change together. A reshoot of `treffit` reaches the page only through this composite |
 | `hero-cutout-en` | Home, English, **inside a photograph, cut out** | `scripts/photos/stills/treffit-en.png`, `screenshots.yaml` in English, composited by `hero.py en`, cut out with the Finnish one's alpha | The same fixture as `treffit`, in English: the three stacks, the spark counter (`Sparks:`), `Find a date!`, both Android bars |
-| `loop-calendar-fi` | Calendar week, **inside a photograph** | `scripts/photos/stills/kalenteri-fi.png`, from `capture-kalenteri-busy.sh` at a pinned 10:00, composited by `scripts/photos/loop.py fi` | The week centred on Tuesday: free date slots (`Treffivaraus`) and your own plans (`Palaveri`, `Sali`, `Hammaslääkäri`), under a drawn iOS status bar and home indicator |
-| `loop-calendar-en` | Calendar week, English, **inside a photograph** | `scripts/photos/stills/kalenteri-en.png` composited by `loop.py en` | The same week in English: `Date slot`, `Meeting`, `Gym`, `Dentist` |
 | `beta-invitation-fi` | Invitation received, **inside a photograph** | `screens/invitation.png` composited by `scripts/photos/beta.py fi` | What `invitation` shows, under a drawn iOS status bar and home indicator; a thumb covers `Hylkää` and half of `Päätä myöhemmin`. Drawn in the footer's beta card on the front page only |
 | `beta-invitation-en` | Invitation received, English, **inside a photograph** | the manual's `manual/en/invitation.png`, read where it is, composited by `beta.py en` | Owen Sims's invitation with four times and three places; a thumb covers `Decline`. A reshoot of the manual's still changes this picture too |
 | `start-story-narrow-fi` | Story test, first question, **inside a photograph** | `screens/story.png` composited by `scripts/photos/ex2.py fi` | What `story` shows, under a drawn iOS status bar and home indicator; a thumb covers the third option and half of `Jatka`. Its wide cut `start-story-wide-fi` is the same composite, drawn from 64rem through a `<source>`, so it has no row of its own in the inventory |
@@ -179,7 +175,7 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 
 ## The photographs
 
-Four pictures on the front page are stock photos from Unsplash with a still set into
+Three pictures on the front page are stock photos from Unsplash with a still set into
 the phone in them, each made once per language so that `/en` shows the English app. A
 still in a photograph goes stale with the app like any other, and more quietly, because
 nobody reads a photograph for its UI. The stills the photographs alone use are kept in
@@ -192,11 +188,10 @@ a changed original stops the build.
 | Picture | Unsplash photo | Photographer |
 | --- | --- | --- |
 | `hero-cutout-*` | [Ebb8fe-NZtM](https://unsplash.com/photos/Ebb8fe-NZtM) | Georgia de Lotz |
-| `loop-calendar-*` | [-piUPY2-44A](https://unsplash.com/photos/-piUPY2-44A) | Daniel Romero |
 | `start-story-*` | [h2z7CB0its4](https://unsplash.com/photos/h2z7CB0its4) | Jakub Żerdzicki |
 | `beta-invitation-*` | [q_lCo82aXeo](https://unsplash.com/photos/q_lCo82aXeo) | Job Vermeulen |
 
-All four are under the Unsplash License: free for commercial use, credit not
+All three are under the Unsplash License: free for commercial use, credit not
 required. It does not cover the likeness of people in them, so none of them shows a
 face (the beta card's crop leaves out the right fifth of its original, where a
 blurred cheek is), and none may be captioned as a Pilke user.

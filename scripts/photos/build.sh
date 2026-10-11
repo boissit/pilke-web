@@ -80,7 +80,7 @@ EOF
 "$PY" stills.py
 
 for lang in fi en; do
-  for s in hero loop ex2 beta; do
+  for s in hero ex2 beta; do
     echo "→ $s.py $lang"
     "$PY" -W ignore::RuntimeWarning $s.py $lang >/dev/null
   done

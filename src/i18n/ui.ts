@@ -3,10 +3,7 @@
  *
  * Finnish is the product's language and the one written first; English is a full
  * translation rather than a fallback set, so a key missing from `en` is a type
- * error here in the same way it is in the app's own dictionaries. The one exception
- * is the front page's `pitch.` group, written in Finnish ahead of its translation;
- * the type of `en` says so, and the English front page shows those lines in Finnish
- * until it has its own.
+ * error here in the same way it is in the app's own dictionaries.
  *
  * Product vocabulary is the app's own spelling: the tokens are *kipinät*, one
  * *kipinä*, in English *sparks*, and five of them send a treffikutsu. They are
@@ -17,9 +14,9 @@
  *
  * The front page is the owner's pitch, and it answers why anybody should care in
  * four parts: what is wrong with the other apps, what Pilke does instead, how it
- * goes in practice, and who would be better off elsewhere. Sparks get one line
- * there and a link to the manual, because a full price list on a front page reads
- * as a game to be played rather than as an app for meeting people.
+ * goes in practice, and who would be better off elsewhere. Sparks are left to
+ * `nain-se-toimii`, because a price list on a front page reads as a game to be
+ * played rather than as an app for meeting people.
  *
  * The owner's rules for new copy: short, warm, direct and in the second person.
  * A sentence opens with what something is, never with what it is not, and carries
@@ -67,10 +64,6 @@ const fi = {
     other apps, what Pilke does instead, how it goes in practice, and who would be
     better off elsewhere. Every claim in it is one the app keeps today, and each
     part says its point and links on to the page that says it in full.
-
-    Finnish only for now. The English page draws the same layout and falls back to
-    these lines until `en` has its own, which is why the `pitch.` keys are the one
-    group `en` may leave out; see its type below.
   */
   'pitch.hero.lead':
     'Pilke etsii puolestasi ehdokkaat, yhteisen ajan ja treffipaikan. Sinä menet treffeille.',
@@ -130,16 +123,8 @@ const fi = {
   'pitch.practice.three.body':
     'Treffisivulla näet ajan ja paikan kartalla. Paikan päällä voitte jakaa sijaintinne, niin löydätte toisenne.',
   'pitch.practice.four.title': 'Anna palautetta',
-  'pitch.practice.four.body':
-    'Vastaa treffien jälkeen lyhyeen kyselyyn, niin saat kipinöitä. Sitten sovitaan uudet treffit.',
+  'pitch.practice.four.body': 'Vastaa treffien jälkeen lyhyeen kyselyyn. Sitten sovitaan uudet treffit.',
   'pitch.practice.more': 'Käyttöohje vaihe vaiheelta',
-
-  // Sparks in one line: what an invitation takes and where they come from. The
-  // ledger is the manual's page on them.
-  'pitch.sparks.title': 'Pilke pyörii kipinöillä.',
-  'pitch.sparks.body':
-    'Treffikutsuun kuluu {{petals.set_cost}} kipinää. Niitä kertyy ylläpidetystä kalenterista ja käydyistä treffeistä.',
-  'pitch.sparks.more': 'Lue kipinöistä',
 
   // Safety in one line, the venues first and the button second, as the safety page
   // orders them. `safety.more` is its link.
@@ -267,7 +252,9 @@ const fi = {
   'economy.amount.five': '5 kipinää',
 
   // The waitlist. TODO(pilke-web): the form posts nowhere yet — see README.
-  'cta.title': 'Pilke on suljetussa betassa',
+  // "Olemme" rather than "Pilke on": the wordmark stands right above the title in
+  // the footer's card, and the name twice in a row reads as a stutter.
+  'cta.title': 'Olemme suljetussa betassa',
   'cta.body': 'Jätä sähköpostiosoitteesi, niin kerromme heti, kun pääset mukaan.',
   'cta.label': 'Sähköpostiosoite',
   'cta.placeholder': 'sina@esimerkki.fi',
@@ -335,8 +322,6 @@ const fi = {
     'Sohvalla kissan vieressä vastataan puhelimessa persoonallisuuskyselyn ensimmäiseen kysymykseen.',
   'photo.beta':
     'Puhelin kädessä persikanvärisen talon edessä, näytöllä saapunut treffikutsu: kutsuja, ajat ja paikat.',
-  'photo.loop':
-    'Puhelin kädessä oranssia seinää vasten, näytöllä Pilkkeen kalenteri: viikon vapaat treffiajat ja omat menot.',
 
   // The legal documents. Their titles and ledes live in their own frontmatter,
   // in the document's language, so they are not repeated here; these are the
@@ -437,16 +422,7 @@ const fi = {
   'notfound.home': 'Etusivulle',
 } as const;
 
-/*
-  The front page's pitch is the one group `en` may leave out: it was written in
-  Finnish first and is not translated yet, so `useTranslations` falls back to the
-  Finnish line, visibly, rather than the English page keeping a pitch the Finnish
-  one no longer makes. Every other key is still required. When the pitch has its
-  English, this type goes back to `Record<keyof typeof fi, string>`.
-*/
-type PitchKey = Extract<keyof typeof fi, `pitch.${string}`>;
-
-const en: Record<Exclude<keyof typeof fi, PitchKey>, string> & Partial<Record<PitchKey, string>> = {
+const en: Record<keyof typeof fi, string> = {
   'meta.title': 'Pilke',
   'meta.description':
     'Pilke is a Finnish dating app with no swiping and no chatting. An invitation arrives with the time and place already in it, and you go on the date.',
@@ -463,6 +439,68 @@ const en: Record<Exclude<keyof typeof fi, PitchKey>, string> & Partial<Record<Pi
   'nav.menu': 'Menu',
 
   'hero.title': 'Finally, a dating app',
+
+  'pitch.hero.lead':
+    'Pilke finds your candidates, a time you both have free and a place to meet. You go on the date.',
+  'pitch.hero.more': 'Why Pilke?',
+
+  'pitch.problem.title': 'In other apps, a date is a long way off.',
+  'pitch.problem.swipe.title': 'First you swipe',
+  'pitch.problem.swipe.body':
+    'You scroll through profiles, read bios and try to spot the people who might suit you.',
+  'pitch.problem.chat.title': 'Then you chat',
+  'pitch.problem.chat.body':
+    'You make small talk, get ghosted, chat some more and try to set up a date.',
+  'pitch.problem.date.title': 'Only then do you meet',
+  'pitch.problem.date.body':
+    'On the date you finally see each other, and can properly tell whether anything could come of it.',
+
+  'pitch.instead.title': 'No swiping and no chatting on Pilke.',
+  'pitch.instead.lead': 'Pilke takes care of all that for you and hands you a date that is practically ready.',
+  'pitch.instead.match.title': 'Candidates who fit what you want',
+  'pitch.instead.match.body':
+    'Your wishes narrow down the candidates, and the personality quiz puts them in order. The more people use Pilke, the better that order gets.',
+  'pitch.instead.invite.title': 'Get an invitation, or send one',
+  'pitch.instead.invite.body':
+    'Either a date invitation comes straight to you, or you find {{candidates.per_set}} candidates and choose who to invite.',
+  'pitch.instead.ready.title': 'Time and place already set',
+  'pitch.instead.ready.body':
+    'With every candidate, your calendars share at least {{calendar.min_shared_hours}} hour, and there is a place you can both get to. The invitation comes with the times and places, and the other person picks one of each.',
+  'pitch.instead.after.title': 'After the date',
+  'pitch.instead.after.body':
+    'If it went well and you both want to, you swap phone numbers and carry on outside Pilke. If it didn’t quite click, your feedback helps us find you better-suited candidates for your next dates.',
+  'pitch.instead.more': 'Read how Pilke works',
+
+  'pitch.practice.title': 'How it goes in practice',
+  'pitch.practice.lead': 'Setting up takes about fifteen minutes. Then you’re off on dates!',
+  'pitch.practice.one.title': 'Create an account',
+  'pitch.practice.one.body':
+    'Say what you are looking for, answer the personality quiz and mark the times in your calendar when you could go on a date. The quiz’s {{profile.story_questions}} questions decide the order your candidates are shown in.',
+  'pitch.practice.two.title': 'Invite, or be invited',
+  'pitch.practice.two.body':
+    'Find candidates and send a date invitation to the one who feels like your type. When someone invites you, you pick a time and a place, and the date is set.',
+  'pitch.practice.three.title': 'Go on the date',
+  'pitch.practice.three.body':
+    'The date page shows you the time, and the place on a map. At the venue you can share your locations, so you find each other.',
+  'pitch.practice.four.title': 'Give feedback',
+  'pitch.practice.four.body': 'Answer a short quiz after the date. Then you set up the next one.',
+  'pitch.practice.more': 'The guide, step by step',
+
+  'pitch.safety.body':
+    'Dates are in public places we have chosen ourselves, and with the safety button you ask a trusted person to get in touch.',
+
+  'pitch.notfor.title': 'Who is Pilke for?',
+  'pitch.notfor.lead': 'Pilke does one thing: it gets you on a date. For anything else, there are better apps.',
+  'pitch.notfor.more.q': 'What if I want to see more candidates?',
+  'pitch.notfor.more.a': 'Then you’d probably be better off with Tinder.',
+  'pitch.notfor.chat.q': 'What if I want to chat before the date?',
+  'pitch.notfor.chat.a': 'Then you’d probably be better off with Bumble.',
+  'pitch.notfor.phone.q': 'What if I don’t want to use my phone?',
+  'pitch.notfor.phone.a': 'Then you’d probably be better off with OkCupid.',
+  'pitch.notfor.algorithm.q': 'What if I think algorithms are the devil’s work?',
+  'pitch.notfor.algorithm.a': 'Then you’d probably be better off with Valo.',
+  'pitch.notfor.questions': 'More questions',
+  'pitch.notfor.contact': 'Ask us',
 
   'safety.title': 'Safety',
   'safety.contact.title': 'A trusted person',
@@ -557,7 +595,7 @@ const en: Record<Exclude<keyof typeof fi, PitchKey>, string> & Partial<Record<Pi
   'economy.amount.two': '2 sparks',
   'economy.amount.five': '5 sparks',
 
-  'cta.title': 'Pilke is in closed beta',
+  'cta.title': 'We’re in closed beta',
   'cta.body': 'Leave your email address and we will tell you as soon as you can get in.',
   'cta.label': 'Email address',
   'cta.placeholder': 'you@example.com',
@@ -615,8 +653,6 @@ const en: Record<Exclude<keyof typeof fi, PitchKey>, string> & Partial<Record<Pi
     'On a sofa beside a sleeping cat, someone answers the first question of the personality quiz on their phone.',
   'photo.beta':
     'A phone held up in front of a peach-coloured house, showing a date invitation received: who sent it, the times and the places.',
-  'photo.loop':
-    'A phone held up against an orange wall, showing the Pilke calendar: the week’s free date slots and your own plans.',
 
   'legal.effective': 'In effect from {date}',
   'legal.draft.title': 'This text is unfinished',

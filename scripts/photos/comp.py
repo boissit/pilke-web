@@ -1,6 +1,6 @@
 """Composite a Pilke app still onto a photographed phone screen.
 
-hero.py (then cutout.py), loop.py, ex2.py and beta.py write the full-size
+hero.py (then cutout.py), ex2.py and beta.py write the full-size
 composites (all but ex2.py through comp2.py), and crops.py cuts the site's
 pictures from them. `npm run pictures:build` runs them all through build.sh, in
 the pinned environment of requirements.txt, with the originals originals.json
