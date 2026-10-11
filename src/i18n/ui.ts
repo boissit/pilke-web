@@ -13,7 +13,7 @@
  * names, `{{petals.*}}`, because the backend does, except `{{sparks.per_date}}`.
  *
  * The front page is the owner's pitch, and it answers why anybody should care in
- * four parts: what is wrong with the other apps, what Pilke does instead, how it
+ * three parts: what Pilke does instead of what the other apps make you do, how it
  * goes in practice, and who would be better off elsewhere. Sparks are left to
  * `nain-se-toimii`, because a price list on a front page reads as a game to be
  * played rather than as an app for meeting people.
@@ -60,8 +60,8 @@ const fi = {
   'hero.title': 'Vihdoin, treffi\u00adsovellus',
 
   /*
-    The front page's pitch, in the order the page makes it: what is wrong with the
-    other apps, what Pilke does instead, how it goes in practice, and who would be
+    The front page's pitch, in the order the page makes it: what Pilke does instead
+    of what the other apps make you do, how it goes in practice, and who would be
     better off elsewhere. Every claim in it is one the app keeps today, and each
     part says its point and links on to the page that says it in full.
   */
@@ -69,23 +69,10 @@ const fi = {
     'Pilke etsii puolestasi ehdokkaat, yhteisen ajan ja treffipaikan. Sinä menet treffeille.',
   'pitch.hero.more': 'Miksi Pilke?',
 
-  // The other apps, in the order a reader has lived them. Nothing in it is about any
-  // one app: it is the routine they share, and the reader has done it.
-  'pitch.problem.title': 'Muissa sovelluksissa treffeille on pitkä matka.',
-  'pitch.problem.swipe.title': 'Ensin swaippailet',
-  'pitch.problem.swipe.body':
-    'Selaat profiileja, luet esittelyjä ja yrität löytää joukosta sopivia ihmisiä.',
-  'pitch.problem.chat.title': 'Sitten chättäilet',
-  'pitch.problem.chat.body':
-    'Jutustelet niitä näitä, tulet ghostatuksi, chättäilet lisää ja yrität sopia treffit.',
-  'pitch.problem.date.title': 'Vasta sitten tapaatte',
-  'pitch.problem.date.body':
-    'Treffeillä näet toisen ja pääset kunnolla arvioimaan, voisiko teistä tulla jotain.',
-
   /*
-    What Pilke does instead. The title is the owner's own contrast line, and like the
-    hero's it is allowed to open with a negation, because it answers the three cards
-    above it point for point.
+    What Pilke does instead. The title is the owner's own contrast line, the one
+    sentence on the site allowed to open with a negation, because the contrast is
+    the point: it is what the other apps make you do, and what Pilke does not.
 
     `match.body` is careful on purpose. Wishes filter and the persoonallisuuskysely
     orders, and an order is only as good as what there is to order, so the copy
@@ -109,8 +96,32 @@ const fi = {
     'Jos treffit menivät hyvin ja haluatte molemmat, vaihdatte puhelinnumerot ja jatkatte Pilkkeen ulkopuolella. Jos eivät menneet nappiin, palautteesi auttaa meitä löytämään sinulle osuvampia ehdokkaita seuraaville treffeille.',
   'pitch.instead.more': 'Lue, miten Pilke toimii',
 
-  // The owner's four steps. The first is done once and has its own card; the other
-  // three go round, and the manual carries each of them screen by screen.
+  /*
+    The drafts of the Pilke section the owner is choosing between; the front page's
+    comment on `variant` has what each one is. The two that are not chosen go, with
+    their keys. A puts each step of the other apps opposite Pilke's answer to it,
+    B strikes the other apps' routine through in a strip, and C says the contrast
+    in its lead alone.
+  */
+  'pitch.a.lead':
+    'Muissa sovelluksissa treffeille on pitkä matka. Pilke kulkee sen puolestasi ja tarjoaa sinulle käytännössä valmiit treffit.',
+  'pitch.a.elsewhere': 'Muualla',
+  'pitch.a.swipe': 'Swaippailet, luet profiileja ja yrität löytää joukosta sopivia ihmisiä.',
+  'pitch.a.chat': 'Jutustelet niitä näitä, tulet ghostatuksi ja chättäilet lisää.',
+  'pitch.a.arrange': 'Yrität sopia treffit viestien lomassa.',
+  'pitch.a.meet':
+    'Vasta treffeillä näet, voisiko teistä tulla jotain. Jos ei, takaisin swaippailemaan.',
+  'pitch.b.label': 'Muualla',
+  'pitch.b.swipe': 'swaippailua',
+  'pitch.b.chat': 'chättäilyä',
+  'pitch.b.ghost': 'ghostausta',
+  'pitch.b.maybe': 'ehkä treffit',
+  'pitch.b.here': 'Pilkkeessä suoraan treffeille.',
+  'pitch.c.lead':
+    'Muissa sovelluksissa treffeille pääsee vasta swaippailun ja chättäilyn jälkeen. Pilke hoitaa ne puolestasi ja tarjoaa sinulle käytännössä valmiit treffit.',
+
+  // The owner's four steps, each a card with its screen. The manual carries each of
+  // them screen by screen.
   'pitch.practice.title': 'Näin se menee käytännössä',
   'pitch.practice.lead': 'Tilin luonti vie noin vartin. Sitten treffeille!',
   'pitch.practice.one.title': 'Luo tili',
@@ -125,11 +136,6 @@ const fi = {
   'pitch.practice.four.title': 'Anna palautetta',
   'pitch.practice.four.body': 'Vastaa treffien jälkeen lyhyeen kyselyyn. Sitten sovitaan uudet treffit.',
   'pitch.practice.more': 'Käyttöohje vaihe vaiheelta',
-
-  // Safety in one line, the venues first and the button second, as the safety page
-  // orders them. `safety.more` is its link.
-  'pitch.safety.body':
-    'Treffit ovat julkisissa paikoissa, jotka olemme itse valinneet, ja turvapainikkeella pyydät luotettavaa läheistäsi ottamaan yhteyttä.',
 
   /*
     Who Pilke is not for, in the owner's words: four questions, each answered with
@@ -318,8 +324,6 @@ const fi = {
   // screen shows.
   'photo.hero':
     'Käsi pitelee puhelinta, jossa on Pilkkeen etusivu: saapunut treffikutsu, sovitut treffit ja lähetetty kutsu.',
-  'photo.start':
-    'Sohvalla kissan vieressä vastataan puhelimessa persoonallisuuskyselyn ensimmäiseen kysymykseen.',
   'photo.beta':
     'Puhelin kädessä persikanvärisen talon edessä, näytöllä saapunut treffikutsu: kutsuja, ajat ja paikat.',
 
@@ -336,7 +340,6 @@ const fi = {
   'legal.deletion.title': 'Näin poistat tietosi',
   'legal.deletion.lead':
     'Poistat tilisi itse sovelluksesta. Tällä sivulla kerromme, mikä poistuu heti ja mikä jää talteen.',
-
 
   'legal.deletion.app.title': 'Poista tili sovelluksessa',
   'legal.deletion.app.body':
@@ -444,17 +447,6 @@ const en: Record<keyof typeof fi, string> = {
     'Pilke finds your candidates, a time you both have free and a place to meet. You go on the date.',
   'pitch.hero.more': 'Why Pilke?',
 
-  'pitch.problem.title': 'In other apps, a date is a long way off.',
-  'pitch.problem.swipe.title': 'First you swipe',
-  'pitch.problem.swipe.body':
-    'You scroll through profiles, read bios and try to spot the people who might suit you.',
-  'pitch.problem.chat.title': 'Then you chat',
-  'pitch.problem.chat.body':
-    'You make small talk, get ghosted, chat some more and try to set up a date.',
-  'pitch.problem.date.title': 'Only then do you meet',
-  'pitch.problem.date.body':
-    'On the date you finally see each other, and can properly tell whether anything could come of it.',
-
   'pitch.instead.title': 'No swiping and no chatting on Pilke.',
   'pitch.instead.lead': 'Pilke takes care of all that for you and hands you a date that is practically ready.',
   'pitch.instead.match.title': 'Candidates who fit what you want',
@@ -471,6 +463,22 @@ const en: Record<keyof typeof fi, string> = {
     'If it went well and you both want to, you swap phone numbers and carry on outside Pilke. If it didn’t quite click, your feedback helps us find you better-suited candidates for your next dates.',
   'pitch.instead.more': 'Read how Pilke works',
 
+  'pitch.a.lead':
+    'In other apps, a date is a long way off. Pilke makes the trip for you and hands you a date that is practically ready.',
+  'pitch.a.elsewhere': 'Elsewhere',
+  'pitch.a.swipe': 'You swipe, read profiles and try to spot the people who might suit you.',
+  'pitch.a.chat': 'You make small talk, get ghosted and chat some more.',
+  'pitch.a.arrange': 'You try to set up a date between messages.',
+  'pitch.a.meet': 'Only on the date do you see whether anything could come of it. If not, back to swiping.',
+  'pitch.b.label': 'Elsewhere',
+  'pitch.b.swipe': 'swiping',
+  'pitch.b.chat': 'chatting',
+  'pitch.b.ghost': 'ghosting',
+  'pitch.b.maybe': 'maybe a date',
+  'pitch.b.here': 'On Pilke, straight to the date.',
+  'pitch.c.lead':
+    'In other apps, you only get to a date after the swiping and the chatting. Pilke takes care of those for you and hands you a date that is practically ready.',
+
   'pitch.practice.title': 'How it goes in practice',
   'pitch.practice.lead': 'Setting up takes about fifteen minutes. Then you’re off on dates!',
   'pitch.practice.one.title': 'Create an account',
@@ -485,9 +493,6 @@ const en: Record<keyof typeof fi, string> = {
   'pitch.practice.four.title': 'Give feedback',
   'pitch.practice.four.body': 'Answer a short quiz after the date. Then you set up the next one.',
   'pitch.practice.more': 'The guide, step by step',
-
-  'pitch.safety.body':
-    'Dates are in public places we have chosen ourselves, and with the safety button you ask a trusted person to get in touch.',
 
   'pitch.notfor.title': 'Who is Pilke for?',
   'pitch.notfor.lead': 'Pilke does one thing: it gets you on a date. For anything else, there are better apps.',
@@ -649,8 +654,6 @@ const en: Record<keyof typeof fi, string> = {
 
   'photo.hero':
     'A hand holding a phone with the Pilke home screen: a date invitation received and a date agreed.',
-  'photo.start':
-    'On a sofa beside a sleeping cat, someone answers the first question of the personality quiz on their phone.',
   'photo.beta':
     'A phone held up in front of a peach-coloured house, showing a date invitation received: who sent it, the times and the places.',
 
@@ -664,7 +667,6 @@ const en: Record<keyof typeof fi, string> = {
   'legal.deletion.title': 'How to delete your data',
   'legal.deletion.lead':
     'You delete your account yourself, in the app. This page says what goes straight away and what stays.',
-
 
   'legal.deletion.app.title': 'Delete your account in the app',
   'legal.deletion.app.body':

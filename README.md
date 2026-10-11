@@ -95,12 +95,13 @@ display face, and Figtree, the body, are Google Fonts' variable files,
 self-hosted in `public/fonts` so no page asks a third party for anything.
 
 **The look is the Pehmeä direction**: rounded cards with soft shadows on a blush
-page, a floating pill for the header, the phone on a coral disc, and the app's
-own card tints — blue for an invitation sent, pink for one received, peach for a
+page, a floating pill for the header, the phone on a coral disc, and the app's own
+card tints — blue for an invitation sent, pink for one received, peach for a
 confirmed date, yellow for the feedback after it — carrying the four steps of the
 loop. It is light only, as the site has always been. The front page is one
 composition at every width: every measure is a straight line between the 390 and
-the 1440 artboard, and the layout changes shape only at 40rem, 64rem and 69rem.
+the 1440 artboard, and the layout changes shape only at 40rem, 64rem, 69rem and
+75rem.
 
 `Phone.astro` never lets a rounded corner cut into a screenshot. The picture is
 inset on the colour the app paints behind that screen (`grounds` in
@@ -110,36 +111,38 @@ positioned on the whole picture.
 
 ## What the front page argues
 
-The order of the sections is the argument, and it is the owner's pitch: what is
-wrong with the other apps, what Pilke does instead, how it goes in practice, and
-who would be better off with another app. Each part says its point once and links
-on to the page that says it in full.
+The order of the sections is the argument, and it is the owner's pitch: what Pilke
+does instead of what the other apps make you do, how it goes in practice, and who
+would be better off with another app. Each part says its point once and links on
+to the page that says it in full.
 
 - **The hero** is the owner's headline and a two-sentence lead beside the app's
   home screen on a coral disc, with two buttons: down to the waitlist, and down to
   the next card.
-- **The other apps**: swiping, chatting, and only then the date, as three cards
-  in the order a reader has lived them. The date's card is peach, the one part of
-  the three anybody wanted.
 - **What Pilke does instead** opens with the owner's line *Pilkkeessä ei
   swaippailla eikä chättäillä*, the one sentence on the site allowed to open with
-  a negation, then four cards beside the candidates screen: candidates by your
-  wishes and ordered by the persoonallisuuskysely, an invitation received or sent
-  to one of three, time and place already set, and what happens after the date.
-  The ordering is claimed carefully — it gets better as there are more users — and
-  the feedback claim rests on the privacy statement. It links to `nain-se-toimii`.
-- **In practice** is the owner's four steps: the account, on its own white card
-  because it is done once, then three on the card tints, each with its screen
-  running off the bottom of the card. It links to the manual.
-- **Safety** is one line on mint, the venues and the button, and a link to
-  `turvallisuus`.
+  a negation, then the owner's four points: candidates by your wishes and ordered
+  by the persoonallisuuskysely, an invitation received or sent to one of three,
+  time and place already set, and what happens after the date. The ordering is
+  claimed carefully — it gets better as there are more users — and the feedback
+  claim rests on the privacy statement. It links to `nain-se-toimii`.
+
+  How it sets the other apps against Pilke is still being chosen. Three drafts are
+  built, as `variant` on the page and as the temporary pages `etusivu-a`, `-b` and
+  `-c`: A sets each of the other apps' steps opposite Pilke's answer to it, B adds
+  the other apps' routine as a struck-through strip under the section, and C says
+  the contrast in the lead alone. The page draws A until the owner picks.
+- **In practice** is the owner's four steps on the app's four card tints, each
+  with its screen running off the bottom of the card: the persoonallisuuskysely,
+  an invitation, the date and the feedback. It links to the manual.
 - **Who it is not for** is the owner's four questions, set large, each answered
   under it with the app that does that one thing — Tinder, Bumble, OkCupid, Valo —
   as a friend's tip and never a dig. It links to `kysyttya` and `yhteystiedot`.
 
-**Sparks are not on the front page.** They are how an invitation is paid for, which
-matters once somebody is using the app, and `nain-se-toimii` carries the whole of
-it; on a front page even one line of them reads as a game to be played.
+**Sparks and safety are not on the front page.** Sparks are how an invitation is
+paid for, which matters once somebody is using the app, and `nain-se-toimii`
+carries the whole of it; on a front page even one line of them reads as a game to
+be played. Safety has its own page, `turvallisuus`, in the header.
 
 **Never set body text beside a title.** A lede to the right of a heading reads as
 a second column and the eye does not know which to follow first, so every section
@@ -153,7 +156,7 @@ specificity; a later override of a child has to be written with the same parent
 Two deliberate omissions:
 
 - **The report and the meeting-safely advice are not on the front page.** Both
-  are on `turvallisuus`, which the safety section links to.
+  are on `turvallisuus`, which the header links to.
 - **The questions are their own page** at `kysyttya`, which the header points at.
   Somebody arriving with one question is a different visit from reading the front
   page top to bottom, and a stack of six answers has no business being the last

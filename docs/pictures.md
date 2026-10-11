@@ -53,7 +53,7 @@ ones you think the change touched: that guess is how a page ships a stale screen
      what stands over the coral disc's edge. On the front page at 1440 and 390,
      the phone's outline and the fingers over it should be clean, with no room
      showing round them.
-   - `start-story-*` and `beta-invitation-*`: a thumb lies over the lower screen.
+   - `beta-invitation-*`: a thumb lies over the lower screen.
      If the app's layout moved, it may now cover something it should not.
    - The phone frames on `/` and `/en`: each in its page's language, the dates
      ahead of today, and no *Nämä treffit ovat jo olleet* under the date.
@@ -98,7 +98,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`platter` 520px<br>`start-story-narrow-en` 900px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`story-en` 460px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kipinat.html/` | `en/date-wizard-petals` 560px |
@@ -119,7 +119,10 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset-en` 520px |
 | `/en/yhteystiedot.html/` | none |
-| `/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`start-story-narrow-fi` 900px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/etusivu-a.html/` | `hero-cutout-fi` 1400px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/etusivu-b.html/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/etusivu-c.html/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/` | `hero-cutout-fi` 1400px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
@@ -170,12 +173,10 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `hero-cutout-en` | Home, English, **inside a photograph, cut out** | `scripts/photos/stills/treffit-en.png`, `screenshots.yaml` in English, composited by `hero.py en`, cut out with the Finnish one's alpha | The same fixture as `treffit`, in English: the three stacks, the spark counter (`Sparks:`), `Find a date!`, both Android bars |
 | `beta-invitation-fi` | Invitation received, **inside a photograph** | `screens/invitation.png` composited by `scripts/photos/beta.py fi` | What `invitation` shows, under a drawn iOS status bar and home indicator; a thumb covers `Hylkää` and half of `Päätä myöhemmin`. Drawn in the footer's beta card on the front page only |
 | `beta-invitation-en` | Invitation received, English, **inside a photograph** | the manual's `manual/en/invitation.png`, read where it is, composited by `beta.py en` | Owen Sims's invitation with four times and three places; a thumb covers `Decline`. A reshoot of the manual's still changes this picture too |
-| `start-story-narrow-fi` | Story test, first question, **inside a photograph** | `screens/story.png` composited by `scripts/photos/ex2.py fi` | What `story` shows, under a drawn iOS status bar and home indicator; a thumb covers the third option and half of `Jatka`. Its wide cut `start-story-wide-fi` is the same composite, drawn from 64rem through a `<source>`, so it has no row of its own in the inventory |
-| `start-story-narrow-en` | Story test, English, **inside a photograph** | `screens/story-en.png` composited by `ex2.py en` | The first question in English, `Continue` half under the thumb; its wide cut is `start-story-wide-en` |
 
 ## The photographs
 
-Three pictures on the front page are stock photos from Unsplash with a still set into
+Two pictures on the front page are stock photos from Unsplash with a still set into
 the phone in them, each made once per language so that `/en` shows the English app. A
 still in a photograph goes stale with the app like any other, and more quietly, because
 nobody reads a photograph for its UI. The stills the photographs alone use are kept in
@@ -188,10 +189,9 @@ a changed original stops the build.
 | Picture | Unsplash photo | Photographer |
 | --- | --- | --- |
 | `hero-cutout-*` | [Ebb8fe-NZtM](https://unsplash.com/photos/Ebb8fe-NZtM) | Georgia de Lotz |
-| `start-story-*` | [h2z7CB0its4](https://unsplash.com/photos/h2z7CB0its4) | Jakub Żerdzicki |
 | `beta-invitation-*` | [q_lCo82aXeo](https://unsplash.com/photos/q_lCo82aXeo) | Job Vermeulen |
 
-All three are under the Unsplash License: free for commercial use, credit not
+Both are under the Unsplash License: free for commercial use, credit not
 required. It does not cover the likeness of people in them, so none of them shows a
 face (the beta card's crop leaves out the right fifth of its original, where a
 blurred cheek is), and none may be captioned as a Pilke user.

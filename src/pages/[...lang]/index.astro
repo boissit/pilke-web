@@ -3,48 +3,42 @@
  * The front page, in the Pehmeä direction: rounded cards on a blush page, a hand
  * holding the phone on a coral disc, and the app's own card tints carrying the loop.
  *
- * Three photographs, each a stock photo with a real still of the app set into its
- * phone: the home screen in the hero, cut out of its photograph, the personality quiz
- * on a sofa in the first step, and an invitation received in the footer's beta card,
- * which only this page hands a photograph. A still in a photograph
- * goes stale with the app like any other, so `docs/pictures.md` accounts for them.
+ * Two photographs, each a stock photo with a real still of the app set into its
+ * phone: the home screen in the hero, cut out of its photograph, and an invitation
+ * received in the footer's beta card, which only this page hands a photograph. A
+ * still in a photograph goes stale with the app like any other, so
+ * `docs/pictures.md` accounts for them. Every other screen here is the app's own
+ * still in a `Phone` frame.
  *
- * The order is the argument, and it is the owner's pitch: what is wrong with the
- * other apps, what Pilke does instead, how it goes in practice, and who would be
+ * The order is the argument, and it is the owner's pitch: what Pilke does instead
+ * of what the other apps make you do, how it goes in practice, and who would be
  * better off elsewhere. Each answers why anybody should care before the next one is
  * asked, so the page reads as one case top to bottom and the waitlist under it is
  * where the case ends.
  *
  * The page says each thing once and points to where it is said in full: the loop to
- * `nain-se-toimii`, the steps to the manual, safety to `turvallisuus`, the rest of
- * the questions to `kysyttya`. A front page
- * that explains everything is a page nobody reads to the end.
+ * `nain-se-toimii`, the steps to the manual, the rest of the questions to
+ * `kysyttya`. Sparks and safety are not here at all: sparks are how an invitation is
+ * paid for, which matters once somebody is using the app, and `turvallisuus` is in
+ * the header for anybody who asks. A front page that explains everything is a page
+ * nobody reads to the end.
  *
  * One page at every width. The 1440 artboard and the 390 artboard are the two ends
  * of it, and every size in between is a straight line from one to the other; where
  * a layout changes rather than scales — the hero's phone moving under the copy, the
- * steps going from one column to three — it changes at one of three lines, 40rem,
- * 64rem and 69rem, so the page has a few shapes and not a dozen.
+ * steps going from one column to two — it changes at one of four lines, 40rem,
+ * 64rem, 69rem and 75rem, so the page has a few shapes and not a dozen.
  *
  * The waitlist is not on this page. It is the footer, in `SiteFooter.astro`, so that
  * a reader who came to `turvallisuus` can join from where they are; the hero's button
  * and the header's are anchors down to it.
- *
- * Sparks are not on this page. They are how an invitation is paid for, which matters
- * once somebody is using the app and is `nain-se-toimii`'s to explain, and on a front
- * page even a line of them reads as a game to be played, which is the opposite of
- * what this is.
  */
-import { getImage, Picture } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import betaEn from '../../assets/photos/beta-invitation-en.jpg';
 import betaFi from '../../assets/photos/beta-invitation-fi.jpg';
 import heroEn from '../../assets/photos/hero-cutout-en.png';
 import heroFi from '../../assets/photos/hero-cutout-fi.png';
 import heroPhoneMask from '../../assets/photos/hero-cutout-phone.png';
-import startNarrowEn from '../../assets/photos/start-story-narrow-en.jpg';
-import startNarrowFi from '../../assets/photos/start-story-narrow-fi.jpg';
-import startWideEn from '../../assets/photos/start-story-wide-en.jpg';
-import startWideFi from '../../assets/photos/start-story-wide-fi.jpg';
 import { grounds, shotsFor } from '../../assets/screens';
 import Icon from '../../components/Icon.astro';
 import SparkleScatter from '../../components/SparkleScatter.astro';
@@ -53,7 +47,16 @@ import { manualHref } from '../../i18n/manual';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
-export const getStaticPaths = () => localeRoutes();
+/*
+  Which draft of the Pilke section to draw; see the comment above it. The page draws
+  A, and only the temporary `etusivu-a`, `-b` and `-c` pages pass another. It is a
+  prop of the route, rather than of a component, because those pages render this
+  one: a page's props are typed from what its `getStaticPaths` hands it.
+*/
+export const getStaticPaths = () =>
+  localeRoutes().map((route) => ({ ...route, props: { variant: 'a' as 'a' | 'b' | 'c' } }));
+
+const { variant } = Astro.props;
 
 const lang = localeOf(Astro.params);
 const shots = shotsFor(lang);
@@ -64,32 +67,17 @@ const t = useTranslations(lang);
   and the page draws the one in its own: the English page shows the English app.
 */
 const photos = {
-  fi: { hero: heroFi, startWide: startWideFi, startNarrow: startNarrowFi, beta: betaFi },
-  en: { hero: heroEn, startWide: startWideEn, startNarrow: startNarrowEn, beta: betaEn },
+  fi: { hero: heroFi, beta: betaFi },
+  en: { hero: heroEn, beta: betaEn },
 }[lang];
 
 /*
-  The other apps, in the order a reader has lived them: the swiping, the chatting,
-  and only then the date. Each icon is Lucide's, the app's own set, in the page's
-  ink at 1.8 of Lucide's 24 units rather than its 2: at 20 to 22px the full weight is
-  a shade darker than the text beside it.
-
-  The first two stand on the page's pale ground and the last on the peach a
-  confirmed date has in the app, because the date is the one part of the three
-  anybody wanted, and the card that holds it is the one the eye should end on.
-*/
-const problems = [
-  { title: t('pitch.problem.swipe.title'), body: t('pitch.problem.swipe.body'), icon: 'layers' },
-  { title: t('pitch.problem.chat.title'), body: t('pitch.problem.chat.body'), icon: 'messages-square' },
-  { title: t('pitch.problem.date.title'), body: t('pitch.problem.date.body'), icon: 'coffee' },
-];
-
-/*
-  What Pilke does with each of those, in the same order, and then what happens
-  after the date, which the other apps leave to you. Each disc is one of the app's
-  card tints: blue under the paper plane, because blue is an invitation you sent,
-  peach under the calendar because that is a date confirmed, yellow under what
-  follows it because yellow is the feedback.
+  What Pilke does, the owner's four points. Each icon is Lucide's, the app's own set,
+  in the page's ink at 1.8 of Lucide's 24 units rather than its 2: at 20 to 22px the
+  full weight is a shade darker than the text beside it. Each disc is one of the
+  app's card tints: blue under the paper plane, because blue is an invitation you
+  sent, peach under the calendar because that is a date confirmed, yellow under
+  what follows it because yellow is the feedback.
 */
 const instead = [
   { title: t('pitch.instead.match.title'), body: t('pitch.instead.match.body'), tint: 'var(--card-received)', icon: 'sliders-horizontal' },
@@ -99,12 +87,41 @@ const instead = [
 ];
 
 /*
-  Steps two to four, each on the tint the app gives that stage of a date: an
-  invitation received is pink, a confirmed date peach and the feedback after it
-  yellow. Step one is the white card above them, because it is done once and these
-  three go round. The tilt alternates so the phones do not read as a stamped row.
+  Draft A: the same four points, each opposite the step of the other apps it
+  replaces. The swiping is answered by candidates who fit, the chatting by an
+  invitation, the arranging by a time and place already set, and "back to swiping"
+  by what the feedback does.
+*/
+const elsewhere = [
+  t('pitch.a.swipe'),
+  t('pitch.a.chat'),
+  t('pitch.a.arrange'),
+  t('pitch.a.meet'),
+];
+const compare = instead.map((item, i) => ({ ...item, elsewhere: elsewhere[i] }));
+
+/* Draft B: the other apps' routine, as the path the strip strikes through. */
+const path = [t('pitch.b.swipe'), t('pitch.b.chat'), t('pitch.b.ghost'), t('pitch.b.maybe')];
+
+const insteadSparkles = [
+  { size: 110, rotate: 16, right: '6%', top: '32px', only: 'wide' as const },
+  { size: 40, rotate: -24, right: 'calc(6% + 130px)', top: '48px', only: 'wide' as const },
+  { size: 56, rotate: 14, right: '14px', top: '14px', only: 'narrow' as const },
+  { size: 24, rotate: -26, right: '80px', top: '22px', only: 'narrow' as const },
+];
+
+/*
+  The owner's four steps, each on one of the app's four card tints: an invitation
+  received is pink, a confirmed date peach and the feedback after it yellow, and
+  the account takes the blue, the one left, so the four are the app's whole set.
+  The tilt alternates so the four phones do not read as a stamped row.
+
+  The account's screen is the persoonallisuuskysely's first question, because it
+  is the one part of signing up that is Pilke's own; a form asking for a name and
+  a birthday is every app's.
 */
 const steps = [
+  { title: t('pitch.practice.one.title'), body: t('pitch.practice.one.body'), shot: shots.story, ground: grounds.story, alt: t('shot.story'), tint: 'var(--card-sent)' },
   { title: t('pitch.practice.two.title'), body: t('pitch.practice.two.body'), shot: shots.invitation, ground: grounds.invitation, alt: t('shot.invitation'), tint: 'var(--card-received)' },
   { title: t('pitch.practice.three.title'), body: t('pitch.practice.three.body'), shot: shots.date, ground: grounds.date, alt: t('shot.date'), tint: 'var(--card-confirmed)' },
   { title: t('pitch.practice.four.title'), body: t('pitch.practice.four.body'), shot: shots.feedback, ground: grounds.feedback, alt: t('shot.feedback'), tint: 'var(--card-feedback)' },
@@ -121,16 +138,6 @@ const notFor = [
   { q: t('pitch.notfor.phone.q'), a: t('pitch.notfor.phone.a') },
   { q: t('pitch.notfor.algorithm.q'), a: t('pitch.notfor.algorithm.a') },
 ];
-
-/*
-  The first step's photograph is cut twice. Wide, it fills the card's right side and
-  the whole sofa can be in it; stacked, the same width of photo is a strip 300px
-  tall, and the phone would be a stamp in it, so the narrow cut is tight on the hands.
-*/
-const startSources = {
-  wide: await getImage({ src: photos.startWide, widths: [700, 1400], format: 'webp' }),
-  narrow: await getImage({ src: photos.startNarrow, widths: [450, 900], format: 'webp' }),
-};
 ---
 
 <Base lang={lang} betaPhoto={{ src: photos.beta, alt: t('photo.beta') }}>
@@ -204,75 +211,121 @@ const startSources = {
   </section>
 
   <!--
-    What is wrong with the other apps. Right under the hero, so the headline's
-    "finally" is answered before the reader has scrolled a screen: three cards in
-    the order a reader has lived them, read across on a desktop and down on a phone.
+    What Pilke does, and how that differs from the other apps. Three drafts of this
+    part are on the table, and `variant` picks one: the temporary pages
+    `etusivu-a`, `-b` and `-c` render this page with each, so the owner can read
+    them side by side. Once one is chosen, those pages and the other branches here
+    go.
+
+    A puts each step of the other apps opposite what Pilke does about it, in four
+    rows. B is the Pilke section with a quiet strip after it, the other apps'
+    routine crossed out. C is the Pilke section alone, its lead carrying the
+    contrast in one sentence.
   -->
-  <section class="slab slab-white problem" id="miksi" aria-labelledby="problem-title">
-    <div class="wrap section-pad">
-      <h2 class="display-mid" id="problem-title">{t('pitch.problem.title')}</h2>
-      <ol class="problems">
-        {
-          problems.map((item) => (
-            <li>
-              <span class="icon" aria-hidden="true">
-                <Icon name={item.icon} size={22} strokeWidth={1.8} />
-              </span>
-              <h3>{item.title}</h3>
-              <p>{item.body}</p>
-            </li>
-          ))
-        }
-      </ol>
-    </div>
-  </section>
+  {
+    variant === 'a' ? (
+      <section class="slab slab-pale instead" id="miksi" aria-labelledby="instead-title">
+        <div class="wrap section-pad">
+          <SparkleScatter fill="var(--sparkle-on-peach)" sparkles={insteadSparkles} />
+          <div class="instead-head">
+            <h2 class="display-mid" id="instead-title">{t('pitch.instead.title')}</h2>
+            <p class="lede">{t('pitch.a.lead')}</p>
+          </div>
+
+          <!--
+            One row per step: the other apps' on the left, quiet, and Pilke's on the
+            right as the white card. Stacked on a phone, the other apps' line comes
+            first and the card under it, so the order of reading is still "there, and
+            here instead".
+          -->
+          <ol class="compare">
+            {
+              compare.map((row) => (
+                <li>
+                  <p class="elsewhere">
+                    <span class="elsewhere-label">{t('pitch.a.elsewhere')}</span>
+                    {row.elsewhere}
+                  </p>
+                  <span class="compare-arrow" aria-hidden="true">
+                    <Icon name="arrow-right" size={22} strokeWidth={1.8} />
+                  </span>
+                  <div class="here">
+                    <span class="icon" style={`background:${row.tint}`} aria-hidden="true">
+                      <Icon name={row.icon} size={22} strokeWidth={1.8} />
+                    </span>
+                    <div>
+                      <h3>{row.title}</h3>
+                      <p>{row.body}</p>
+                    </div>
+                  </div>
+                </li>
+              ))
+            }
+          </ol>
+
+          <p class="instead-more">
+            <a class="go" href={localePath(lang, 'nain-se-toimii')}>{t('pitch.instead.more')}</a>
+          </p>
+        </div>
+      </section>
+    ) : (
+      <section class="slab slab-pale instead" id="miksi" aria-labelledby="instead-title">
+        <div class="wrap section-pad">
+          <SparkleScatter fill="var(--sparkle-on-peach)" sparkles={insteadSparkles} />
+          <div class="instead-head">
+            <h2 class="display-mid" id="instead-title">{t('pitch.instead.title')}</h2>
+            <p class="lede">{t(variant === 'c' ? 'pitch.c.lead' : 'pitch.instead.lead')}</p>
+          </div>
+
+          <!--
+            The phone beside the cards is the three candidates a reader picks from,
+            the one screen that shows "no swiping" rather than saying it.
+          -->
+          <div class="instead-body">
+            <ul class="instead-cards">
+              {
+                instead.map((item) => (
+                  <li>
+                    <span class="icon" style={`background:${item.tint}`} aria-hidden="true">
+                      <Icon name={item.icon} size={22} strokeWidth={1.8} />
+                    </span>
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </li>
+                ))
+              }
+            </ul>
+            <div class="instead-phone">
+              <Phone src={shots.platter} ground={grounds.platter} alt={t('shot.platter')} width={260} tilt={3} />
+            </div>
+          </div>
+
+          <p class="instead-more">
+            <a class="go" href={localePath(lang, 'nain-se-toimii')}>{t('pitch.instead.more')}</a>
+          </p>
+        </div>
+      </section>
+    )
+  }
 
   <!--
-    What Pilke does instead. The head is the owner's own contrast line, the one place
-    on the page a sentence opens with what Pilke is not, because it answers the card
-    above it point for point. The phone beside the cards is the three candidates a
-    reader picks from, the one screen that shows "no swiping" rather than saying it.
+    B only: the other apps, after Pilke has had its say. One quiet line on the page's
+    own ground, no card, the routine drawn as a path and struck through, and the line
+    Pilke answers it with in full ink at its end.
   -->
-  <section class="slab slab-pale instead" aria-labelledby="instead-title">
-    <div class="wrap section-pad">
-      <SparkleScatter
-        fill="var(--sparkle-on-peach)"
-        sparkles={[
-          { size: 110, rotate: 16, right: '6%', top: '32px', only: 'wide' },
-          { size: 40, rotate: -24, right: 'calc(6% + 130px)', top: '48px', only: 'wide' },
-          { size: 56, rotate: 14, right: '14px', top: '14px', only: 'narrow' },
-          { size: 24, rotate: -26, right: '80px', top: '22px', only: 'narrow' },
-        ]}
-      />
-      <div class="instead-head">
-        <h2 class="display-mid" id="instead-title">{t('pitch.instead.title')}</h2>
-        <p class="lede">{t('pitch.instead.lead')}</p>
-      </div>
-
-      <div class="instead-body">
-        <ul class="instead-cards">
-          {
-            instead.map((item) => (
-              <li>
-                <span class="icon" style={`background:${item.tint}`} aria-hidden="true">
-                  <Icon name={item.icon} size={22} strokeWidth={1.8} />
-                </span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </li>
-            ))
-          }
-        </ul>
-        <div class="instead-phone">
-          <Phone src={shots.platter} ground={grounds.platter} alt={t('shot.platter')} width={260} tilt={3} />
+  {
+    variant === 'b' && (
+      <section class="elsewhere-strip" aria-label={t('pitch.b.label')}>
+        <div class="wrap">
+          <span class="strip-label">{t('pitch.b.label')}</span>
+          <ol class="path">
+            {path.map((step) => <li><span>{step}</span></li>)}
+          </ol>
+          <p class="strip-here">{t('pitch.b.here')}</p>
         </div>
-      </div>
-
-      <p class="instead-more">
-        <a class="go" href={localePath(lang, 'nain-se-toimii')}>{t('pitch.instead.more')}</a>
-      </p>
-    </div>
-  </section>
+      </section>
+    )
+  }
 
   <section class="how" id="how" aria-labelledby="how-title">
     <div class="wrap">
@@ -282,49 +335,22 @@ const startSources = {
       </div>
 
       <!--
-        The first step, done once: its own white card above the three that go round.
-        The photograph is somebody at home doing it, which is where it is done:
-        the questions on the sofa, not at a venue.
-      -->
-      <div class="start">
-        <SparkleScatter
-          fill="var(--brand-background)"
-          sparkles={[
-            { size: 120, rotate: -16, right: '440px', bottom: '-20px', only: 'wide' },
-            { size: 40, rotate: 26, right: '580px', bottom: '90px', only: 'wide' },
-            { size: 76, rotate: 30, left: '44%', top: '36px', only: 'wide' },
-            { size: 62, rotate: -24, left: '-10px', bottom: '60px', only: 'narrow' },
-            { size: 24, rotate: 30, left: '58px', bottom: '40px', only: 'narrow' },
-          ]}
-        />
-        <div class="start-copy">
-          <span class="numeral start-numeral" aria-hidden="true">1</span>
-          <h3>{t('pitch.practice.one.title')}</h3>
-          <p>{t('pitch.practice.one.body')}</p>
-        </div>
-        <picture class="start-photo">
-          <source media="(min-width: 64rem)" srcset={startSources.wide.srcSet.attribute} sizes="45vw" />
-          <img src={startSources.narrow.src} srcset={startSources.narrow.srcSet.attribute} sizes="100vw" alt={t('photo.start')} width={900} height={755} loading="lazy" decoding="async" />
-        </picture>
-      </div>
-
-      <!--
         The phones run off the bottom of their cards on purpose: the top of a screen
-        is what says which screen it is, and a whole phone in each card made them
-        posters. The card clips its phone; nothing clips the picture inside the
-        phone, which is inset on the app's own ground.
+        is what says which screen it is, and a whole phone in each of four cards made
+        them four posters. The card clips its phone; nothing clips the picture inside
+        the phone, which is inset on the app's own ground.
       -->
-      <ol class="steps" start="2">
+      <ol class="steps">
         {
           steps.map((step, i) => (
             <li style={`background:${step.tint}`}>
               <div class="step-copy">
-                <span class="numeral" aria-hidden="true">{i + 2}</span>
+                <span class="numeral" aria-hidden="true">{i + 1}</span>
                 <h3>{step.title}</h3>
                 <p>{step.body}</p>
               </div>
               <div class="step-phone">
-                <Phone src={step.shot} ground={step.ground} alt={step.alt} width={230} tilt={i % 2 === 0 ? -3 : 3} />
+                <Phone src={step.shot} ground={step.ground} alt={step.alt} width={230} tilt={i % 2 === 0 ? 3 : -3} />
               </div>
             </li>
           ))
@@ -334,21 +360,6 @@ const startSources = {
       <p class="how-more">
         <a class="go ghost" href={manualHref(lang)}>{t('pitch.practice.more')}</a>
       </p>
-    </div>
-  </section>
-
-  <!--
-    Safety, in one line. Going straight to a date with somebody you have not
-    messaged is the moment a reader asks whether that is safe, so the answer sits
-    here, under the steps, and `turvallisuus` has the whole of it.
-  -->
-  <section class="slab slab-mint safety-line" aria-label={t('nav.safety')}>
-    <div class="wrap">
-      <span class="icon" aria-hidden="true">
-        <Icon name="shield" size={20} strokeWidth={1.8} />
-      </span>
-      <p>{t('pitch.safety.body')}</p>
-      <a class="go ghost" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
     </div>
   </section>
 
@@ -554,60 +565,23 @@ const startSources = {
 
   /* A card's lines under its icon: the title in the body face at weight, as every
      card label on the site is, and the body a step softer. */
-  .problems h3,
   .instead-cards h3 {
     font-size: clamp(1.125rem, 0.2vw + 1.08rem, 1.25rem);
   }
 
-  .problems p,
   .instead-cards p {
     font-size: clamp(0.9375rem, 0.1vw + 0.91rem, 1rem);
     line-height: 1.55;
     color: var(--text-soft);
   }
 
-  /* ─── The other apps ───────────────────────────────────────────────────── */
+  /* ─── What Pilke does instead ──────────────────────────────────────────── */
 
   /* Close under the hero, as the cards under any card are: it is the hero's
      headline being explained, not a new subject. */
-  .problem {
+  .instead {
     margin-top: clamp(12px, 1.14vw + 7.5px, 24px);
   }
-
-  .problems {
-    list-style: none;
-    margin: clamp(24px, 1.5vw + 18px, 40px) 0 0;
-    padding: 0;
-    display: grid;
-    gap: 12px;
-  }
-
-  .problems li {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: clamp(22px, 0.57vw + 20px, 28px);
-    background: var(--ground);
-    border-radius: var(--radius-card);
-  }
-
-  .problems li .icon {
-    margin-bottom: 4px;
-    background: var(--surface);
-  }
-
-  .problems li:last-child {
-    background: var(--card-confirmed);
-  }
-
-  @media (min-width: 64rem) {
-    .problems {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
-    }
-  }
-
-  /* ─── What Pilke does instead ──────────────────────────────────────────── */
 
   .instead > .wrap {
     display: flex;
@@ -689,12 +663,178 @@ const startSources = {
     }
   }
 
+  /* ─── Draft A: the other apps opposite Pilke ───────────────────────────── */
+
+  .compare {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+  }
+
+  /* Stacked, the other apps' line over Pilke's card, an arrow turned down between
+     them; wide, a row read left to right. */
+  .compare li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  /* The other apps' step is said quietly: no card of its own, the soft ink, and a
+     small label so a reader who lands mid-list knows which side this is. */
+  .elsewhere {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-width: 40ch;
+    padding-inline: 4px;
+    font-size: clamp(0.9375rem, 0.1vw + 0.91rem, 1rem);
+    line-height: 1.5;
+    color: var(--text-soft);
+  }
+
+  .elsewhere-label {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .compare-arrow {
+    display: grid;
+    place-items: start;
+    padding-left: 12px;
+    color: var(--text-soft);
+  }
+
+  .compare-arrow :global(svg) {
+    transform: rotate(90deg);
+  }
+
+  /* Pilke's side: the same white card as the four points in the other drafts,
+     the icon above the lines on a phone and beside them once there is room. */
+  .here {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(16px, 0.19vw + 15px, 18px);
+    padding: clamp(22px, 0.57vw + 20px, 28px);
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .here > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .here h3 {
+    font-size: clamp(1.125rem, 0.2vw + 1.08rem, 1.25rem);
+  }
+
+  .here p {
+    font-size: clamp(0.9375rem, 0.1vw + 0.91rem, 1rem);
+    line-height: 1.55;
+    color: var(--text-soft);
+  }
+
+  @media (min-width: 40rem) {
+    .here {
+      flex-direction: row;
+    }
+  }
+
+  @media (min-width: 64rem) {
+    .compare {
+      gap: 16px;
+    }
+
+    .compare li {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) auto minmax(0, 8fr);
+      align-items: center;
+      gap: 24px;
+    }
+
+    .compare-arrow {
+      padding: 0;
+    }
+
+    .compare-arrow :global(svg) {
+      transform: none;
+    }
+  }
+
+  /* ─── Draft B: the other apps, struck through ──────────────────────────── */
+
+  /* A line on the page's ground between two cards, centred, so it reads as an
+     aside to the card above rather than as a section of its own. */
+  .elsewhere-strip {
+    padding: clamp(28px, 1.9vw + 20px, 48px) var(--gutter) 0;
+  }
+
+  .elsewhere-strip > .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 14px;
+    text-align: center;
+  }
+
+  .strip-label {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .path {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  /* Each step struck through and faded, with an arrow after it to the next. The
+     arrow is the item's own, outside the struck text, so a wrapped line never
+     starts with one and the arrows themselves are not crossed out. */
+  .path li {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-soft);
+    font-size: clamp(0.9375rem, 0.1vw + 0.91rem, 1rem);
+  }
+
+  .path li span {
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+    opacity: 0.75;
+  }
+
+  .path li:not(:last-child)::after {
+    content: '→';
+    opacity: 0.6;
+  }
+
+  .strip-here {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.125rem, 0.29vw + 1.06rem, 1.3125rem);
+  }
+
   /* ─── In practice ──────────────────────────────────────────────────────── */
 
-  /* No room of its own under the steps: the safety line follows them as the next
-     card in the same run. */
   .how {
-    padding: var(--section-space) var(--gutter) 0;
+    padding: var(--section-space) var(--gutter);
   }
 
   .how .wrap {
@@ -725,105 +865,10 @@ const startSources = {
     color: var(--text-soft);
   }
 
-  /* The first step's numeral is on white, so its disc is the page's peach rather
-     than the white the tinted cards give theirs. */
-  .start-numeral {
-    background: var(--brand-background);
-  }
-
   /*
-    The first step's card. Stacked, the photograph is a strip across its foot; wide,
-    it fills the right 45%, top to bottom. Either way the card's height comes from
-    its copy, never from the photograph.
-  */
-  .start {
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    padding: 28px 24px 0;
-    background: var(--surface);
-    border-radius: clamp(32px, 0.76vw + 29px, 40px);
-    box-shadow: var(--shadow-card);
-  }
-
-  .start-copy {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(14px, 0.19vw + 13px, 16px);
-  }
-
-  .start h3,
-  .steps h3 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    line-height: 1.05;
-    letter-spacing: -0.015em;
-    hyphens: manual;
-  }
-
-  .start h3 {
-    font-size: clamp(1.875rem, 1.33vw + 1.55rem, 2.75rem);
-  }
-
-  .start-copy p {
-    max-width: 560px;
-    font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
-    line-height: 1.6;
-  }
-
-  /* Stacked, a strip across the card's foot, out to its edges; the card's own
-     corners round it. */
-  .start-photo {
-    display: block;
-    height: 300px;
-    margin: 12px -24px 0;
-  }
-
-  .start-photo img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 45%;
-  }
-
-  @media (min-width: 64rem) {
-    .start {
-      flex-direction: row;
-      align-items: center;
-      min-height: 440px;
-      padding: 56px 64px;
-    }
-
-    /* The left 55% of the card, less its padding and a gap to the photograph. */
-    .start-copy {
-      flex: 0 1 560px;
-      max-width: calc(55% - 64px - 40px);
-    }
-
-    /* Wide, the right 45% of the card, top to bottom. */
-    .start > .start-photo {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: 45%;
-      height: auto;
-      margin: 0;
-    }
-  }
-
-  /*
-    Steps two to four. Stacked cards on a phone, each with its phone in a well under
-    the copy; one wide card per row from 40rem, with the phone to the right; three
-    side by side from 64rem, where each is a column again, copy over phone.
-
-    In the row of three the copy runs to different lengths, so each card spans two
-    rows of the list's grid and takes them as a subgrid: the copy row is as tall as
-    the longest copy, and the three phones start on one line.
+    The four steps. Stacked cards on a phone, each with its phone in a well under the
+    copy; one wide card per row from 40rem, with the phone to the right; two by two
+    from 75rem, where the row is wide enough for two of those.
   */
   .steps {
     list-style: none;
@@ -850,7 +895,12 @@ const startSources = {
   }
 
   .steps h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: clamp(1.875rem, 0.57vw + 1.74rem, 2.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    hyphens: manual;
   }
 
   .step-copy p {
@@ -871,7 +921,7 @@ const startSources = {
     margin-left: calc(var(--phone-width) / -2);
   }
 
-  @media (min-width: 40rem) and (max-width: 63.99rem) {
+  @media (min-width: 40rem) {
     .steps li {
       display: grid;
       grid-template-columns: minmax(0, 1fr) var(--phone-width);
@@ -908,83 +958,20 @@ const startSources = {
     }
   }
 
-  @media (min-width: 64rem) {
+  @media (min-width: 75rem) {
     .steps {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      grid-template-rows: auto auto;
-      gap: 0 24px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
     }
 
     .steps li {
-      grid-row: span 2;
-      display: grid;
-      grid-template-rows: subgrid;
-      row-gap: 0;
-      min-height: 0;
-      padding: 40px 32px 0;
-    }
-
-    .step-copy {
-      gap: 16px;
-    }
-
-    .step-copy h3 {
-      margin-top: 8px;
-    }
-
-    .step-phone {
-      height: 330px;
-      --phone-width: clamp(200px, 17vw, 230px);
+      --phone-width: clamp(190px, 16vw, 230px);
     }
   }
 
   .how-more {
     justify-content: center;
     margin-top: clamp(0px, 1.14vw - 4.5px, 8px);
-  }
-
-  /* ─── Safety, in a line ────────────────────────────────────────────────── */
-
-  /* A strip rather than a section: one sentence and its link on the mint the safety
-     page is drawn on. Stacked on a phone, in a row once the line fits beside its
-     icon and its button. */
-  .safety-line {
-    margin-top: clamp(24px, 1.52vw + 18px, 40px);
-  }
-
-  .safety-line > .wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-    padding: clamp(24px, 1.52vw + 18px, 40px) clamp(22px, 2.3vw + 13px, 48px);
-  }
-
-  .safety-line .icon {
-    background: var(--success);
-  }
-
-  .safety-line p {
-    max-width: 60ch;
-    font-size: clamp(1rem, 0.19vw + 0.95rem, 1.125rem);
-    line-height: 1.55;
-  }
-
-  .safety-line .go {
-    white-space: nowrap;
-  }
-
-  @media (min-width: 64rem) {
-    .safety-line > .wrap {
-      flex-direction: row;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .safety-line p {
-      flex: 1;
-      max-width: none;
-    }
   }
 
   /* ─── Who it is not for ────────────────────────────────────────────────── */

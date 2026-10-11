@@ -25,45 +25,10 @@
   en: 'Why Pilke?'
 
 # ──────────────────────────────────────────────────────────────────────────
-# What is wrong with the other apps
-#
-# Three cards, in the order a reader has lived them. Nothing in them is about any
-# one app: it is the routine they share.
-# ──────────────────────────────────────────────────────────────────────────
-
-'pitch.problem.title':
-  fi: 'Muissa sovelluksissa treffeille on pitkä matka.'
-  en: 'In other apps, a date is a long way off.'
-
-'pitch.problem.swipe.title':
-  fi: 'Ensin swaippailet'
-  en: 'First you swipe'
-
-'pitch.problem.swipe.body':
-  fi: 'Selaat profiileja, luet esittelyjä ja yrität löytää joukosta sopivia ihmisiä.'
-  en: 'You scroll through profiles, read bios and try to spot the people who might suit you.'
-
-'pitch.problem.chat.title':
-  fi: 'Sitten chättäilet'
-  en: 'Then you chat'
-
-'pitch.problem.chat.body':
-  fi: 'Jutustelet niitä näitä, tulet ghostatuksi, chättäilet lisää ja yrität sopia treffit.'
-  en: 'You make small talk, get ghosted, chat some more and try to set up a date.'
-
-'pitch.problem.date.title':
-  fi: 'Vasta sitten tapaatte'
-  en: 'Only then do you meet'
-
-'pitch.problem.date.body':
-  fi: 'Treffeillä näet toisen ja pääset kunnolla arvioimaan, voisiko teistä tulla jotain.'
-  en: 'On the date you finally see each other, and can properly tell whether anything could come of it.'
-
-# ──────────────────────────────────────────────────────────────────────────
 # What Pilke does instead
 #
-# The title is the owner's own contrast line, allowed to open with a negation
-# because it answers the three cards above it point for point.
+# The title is the owner's own contrast line, the one sentence on the site allowed
+# to open with a negation, because the contrast is the point.
 #
 # `match.body` says the order gets better with more users rather than that it is
 # good now. `after.body` rests on the privacy statement, which says feedback answers
@@ -117,8 +82,8 @@
 # ──────────────────────────────────────────────────────────────────────────
 # In practice
 #
-# The owner's four steps. The first is done once and has its own card; the other
-# three go round. `practice.more` is the link to the manual.
+# The owner's four steps, each a card with its screen. `practice.more` is the link
+# to the manual.
 # ──────────────────────────────────────────────────────────────────────────
 
 'pitch.practice.title':
@@ -166,14 +131,64 @@
   en: 'The guide, step by step'
 
 # ──────────────────────────────────────────────────────────────────────────
-# Safety, in a line
+# Drafts of the Pilke section
 #
-# The safety line's link is `safety.more`, in `turvallisuus.yaml`.
+# The three drafts the owner is choosing between, A, B and C; the front page's
+# comment on `variant` says what each one is. The two not chosen go, with their
+# entries here.
 # ──────────────────────────────────────────────────────────────────────────
 
-'pitch.safety.body':
-  fi: 'Treffit ovat julkisissa paikoissa, jotka olemme itse valinneet, ja turvapainikkeella pyydät luotettavaa läheistäsi ottamaan yhteyttä.'
-  en: 'Dates are in public places we have chosen ourselves, and with the safety button you ask a trusted person to get in touch.'
+'pitch.a.lead':
+  fi: 'Muissa sovelluksissa treffeille on pitkä matka. Pilke kulkee sen puolestasi ja tarjoaa sinulle käytännössä valmiit treffit.'
+  en: 'In other apps, a date is a long way off. Pilke makes the trip for you and hands you a date that is practically ready.'
+
+'pitch.a.elsewhere':
+  fi: 'Muualla'
+  en: 'Elsewhere'
+
+'pitch.a.swipe':
+  fi: 'Swaippailet, luet profiileja ja yrität löytää joukosta sopivia ihmisiä.'
+  en: 'You swipe, read profiles and try to spot the people who might suit you.'
+
+'pitch.a.chat':
+  fi: 'Jutustelet niitä näitä, tulet ghostatuksi ja chättäilet lisää.'
+  en: 'You make small talk, get ghosted and chat some more.'
+
+'pitch.a.arrange':
+  fi: 'Yrität sopia treffit viestien lomassa.'
+  en: 'You try to set up a date between messages.'
+
+'pitch.a.meet':
+  fi: 'Vasta treffeillä näet, voisiko teistä tulla jotain. Jos ei, takaisin swaippailemaan.'
+  en: 'Only on the date do you see whether anything could come of it. If not, back to swiping.'
+
+'pitch.b.label':
+  fi: 'Muualla'
+  en: 'Elsewhere'
+
+'pitch.b.swipe':
+  fi: 'swaippailua'
+  en: 'swiping'
+
+'pitch.b.chat':
+  fi: 'chättäilyä'
+  en: 'chatting'
+
+'pitch.b.ghost':
+  fi: 'ghostausta'
+  en: 'ghosting'
+
+'pitch.b.maybe':
+  fi: 'ehkä treffit'
+  en: 'maybe a date'
+
+'pitch.b.here':
+  fi: 'Pilkkeessä suoraan treffeille.'
+  en: 'On Pilke, straight to the date.'
+
+'pitch.c.lead':
+  fi: 'Muissa sovelluksissa treffeille pääsee vasta swaippailun ja chättäilyn jälkeen. Pilke hoitaa ne puolestasi ja tarjoaa sinulle käytännössä valmiit treffit.'
+  en: 'In other apps, you only get to a date after the swiping and the chatting. Pilke takes care of those for you and hands you a date that is practically ready.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Who Pilke is not for
