@@ -25,10 +25,43 @@
   en: 'Why Pilke?'
 
 # ──────────────────────────────────────────────────────────────────────────
+# The other apps, struck through
+#
+# The steps between the hero and the Pilke section, each struck through. `swipe`
+# is drawn twice, because it comes round again, and `note` is read only by a
+# screen reader, before the steps.
+# ──────────────────────────────────────────────────────────────────────────
+
+'pitch.elsewhere.note':
+  fi: 'Muissa sovelluksissa, yliviivattuna:'
+  en: 'In other apps, struck through:'
+
+'pitch.elsewhere.swipe':
+  fi: 'Swaippaa.'
+  en: 'Swipe.'
+
+'pitch.elsewhere.chat':
+  fi: 'Chättäile.'
+  en: 'Chat.'
+
+'pitch.elsewhere.ghost':
+  fi: 'Tule ghostatuksi.'
+  en: 'Get ghosted.'
+
+'pitch.elsewhere.more':
+  fi: 'Chättäile lisää.'
+  en: 'Chat some more.'
+
+'pitch.elsewhere.maybe':
+  fi: 'Ehkä treffit.'
+  en: 'Maybe a date.'
+
+# ──────────────────────────────────────────────────────────────────────────
 # What Pilke does instead
 #
 # The title is the owner's own contrast line, the one sentence on the site allowed
-# to open with a negation, because the contrast is the point.
+# to open with a negation, because the contrast is the point. The lead's "nämä"
+# points back at the struck-through steps just above the section.
 #
 # `match.body` says the order gets better with more users rather than that it is
 # good now. `after.body` rests on the privacy statement, which says feedback answers
@@ -129,230 +162,6 @@
 'pitch.practice.more':
   fi: 'Käyttöohje vaihe vaiheelta'
   en: 'The guide, step by step'
-
-# ──────────────────────────────────────────────────────────────────────────
-# Drafts of the Pilke section
-#
-# The drafts the owner is choosing between, A, B to B5 and C; the front page's
-# comment on `variant` says what each one is. The two not chosen go, with their
-# entries here.
-# ──────────────────────────────────────────────────────────────────────────
-
-'pitch.a.lead':
-  fi: 'Muissa sovelluksissa treffeille on pitkä matka. Pilke kulkee sen puolestasi ja tarjoaa sinulle käytännössä valmiit treffit.'
-  en: 'In other apps, a date is a long way off. Pilke makes the trip for you and hands you a date that is practically ready.'
-
-'pitch.a.elsewhere':
-  fi: 'Muualla'
-  en: 'Elsewhere'
-
-'pitch.a.swipe':
-  fi: 'Swaippailet, luet profiileja ja yrität löytää joukosta sopivia ihmisiä.'
-  en: 'You swipe, read profiles and try to spot the people who might suit you.'
-
-'pitch.a.chat':
-  fi: 'Jutustelet niitä näitä, tulet ghostatuksi ja chättäilet lisää.'
-  en: 'You make small talk, get ghosted and chat some more.'
-
-'pitch.a.arrange':
-  fi: 'Yrität sopia treffit viestien lomassa.'
-  en: 'You try to set up a date between messages.'
-
-'pitch.a.meet':
-  fi: 'Vasta treffeillä näet, voisiko teistä tulla jotain. Jos ei, takaisin swaippailemaan.'
-  en: 'Only on the date do you see whether anything could come of it. If not, back to swiping.'
-
-'pitch.b.label':
-  fi: 'Muualla'
-  en: 'Elsewhere'
-
-'pitch.b.swipe':
-  fi: 'swaippailua'
-  en: 'swiping'
-
-'pitch.b.chat':
-  fi: 'chättäilyä'
-  en: 'chatting'
-
-'pitch.b.ghost':
-  fi: 'ghostausta'
-  en: 'ghosting'
-
-'pitch.b.maybe':
-  fi: 'ehkä treffit'
-  en: 'maybe a date'
-
-'pitch.b.here':
-  fi: 'Pilkkeessä suoraan treffeille.'
-  en: 'On Pilke, straight to the date.'
-
-'pitch.c.lead':
-  fi: 'Muissa sovelluksissa treffeille pääsee vasta swaippailun ja chättäilyn jälkeen. Pilke hoitaa ne puolestasi ja tarjoaa sinulle käytännössä valmiit treffit.'
-  en: 'In other apps, you only get to a date after the swiping and the chatting. Pilke takes care of those for you and hands you a date that is practically ready.'
-
-'pitch.b2.title':
-  fi: 'Sama määränpää, vähemmän mutkia.'
-  en: 'Same destination, fewer detours.'
-
-'pitch.b2.elsewhere':
-  fi: 'Muualla'
-  en: 'Elsewhere'
-
-'pitch.b2.swipe':
-  fi: 'Swaippailua'
-  en: 'Swiping'
-
-'pitch.b2.chat':
-  fi: 'Chättäilyä'
-  en: 'Chatting'
-
-'pitch.b2.ghost':
-  fi: 'Ghostausta'
-  en: 'Ghosting'
-
-'pitch.b2.more':
-  fi: 'Lisää chättäilyä'
-  en: 'More chatting'
-
-'pitch.b2.maybe':
-  fi: 'Treffit?'
-  en: 'A date?'
-
-'pitch.b2.here':
-  fi: 'Pilkkeessä'
-  en: 'On Pilke'
-
-'pitch.b2.candidates':
-  fi: 'Ehdokkaat'
-  en: 'Candidates'
-
-'pitch.b2.invite':
-  fi: 'Kutsu'
-  en: 'Invitation'
-
-'pitch.b2.date':
-  fi: 'Treffit'
-  en: 'The date'
-
-'pitch.b3.label':
-  fi: 'Muualla'
-  en: 'Elsewhere'
-
-'pitch.b3.swipe':
-  fi: 'Swaippaa.'
-  en: 'Swipe.'
-
-'pitch.b3.chat':
-  fi: 'Chättäile.'
-  en: 'Chat.'
-
-'pitch.b3.ghost':
-  fi: 'Tule ghostatuksi.'
-  en: 'Get ghosted.'
-
-'pitch.b3.more':
-  fi: 'Chättäile lisää.'
-  en: 'Chat some more.'
-
-'pitch.b3.maybe':
-  fi: 'Ehkä treffit.'
-  en: 'Maybe a date.'
-
-'pitch.b3.here':
-  fi: 'Pilkkeessä suoraan treffeille.'
-  en: 'On Pilke, straight to the date.'
-
-'pitch.b4.title':
-  fi: 'Viestiketjun sijaan treffikutsu.'
-  en: 'A date invitation instead of a message thread.'
-
-'pitch.b4.elsewhere':
-  fi: 'Muualla'
-  en: 'Elsewhere'
-
-'pitch.b4.msg1':
-  fi: 'Moi! Mitä kuuluu?'
-  en: 'Hi! How are you?'
-
-'pitch.b4.msg2':
-  fi: 'Hyvää! Entä sulle?'
-  en: 'Good! You?'
-
-'pitch.b4.msg3':
-  fi: 'Kiva kuulla. Lähdetäänkö joskus kahville?'
-  en: 'Glad to hear it. Coffee sometime?'
-
-'pitch.b4.seen':
-  fi: 'Nähty'
-  en: 'Seen'
-
-'pitch.b4.here':
-  fi: 'Pilkkeessä'
-  en: 'On Pilke'
-
-'pitch.b4.invite.title':
-  fi: 'Treffikutsu!'
-  en: 'A date invitation!'
-
-'pitch.b4.invite.name':
-  fi: 'Lucy Kemp, 28'
-  en: 'Lucy Kemp, 28'
-
-'pitch.b4.invite.time':
-  fi: 'Valitse ajankohta:'
-  en: 'Choose a time:'
-
-'pitch.b4.invite.time1':
-  fi: '8.10. klo 19.00'
-  en: '8/10, 19:00'
-
-'pitch.b4.invite.time2':
-  fi: '9.10. klo 17.30'
-  en: '9/10, 17:30'
-
-'pitch.b4.invite.place':
-  fi: 'Valitse paikka:'
-  en: 'Choose a place:'
-
-'pitch.b4.invite.place1':
-  fi: 'Café Aalto'
-  en: 'Café Aalto'
-
-'pitch.b4.invite.place2':
-  fi: 'Karl Fazer Café'
-  en: 'Karl Fazer Café'
-
-'pitch.b4.invite.decline':
-  fi: 'Hylkää'
-  en: 'Decline'
-
-'pitch.b4.invite.accept':
-  fi: 'Sovittu!'
-  en: 'Agreed!'
-
-'pitch.b5.label':
-  fi: 'Muualla'
-  en: 'Elsewhere'
-
-'pitch.b5.swipe':
-  fi: 'swaippailua'
-  en: 'swiping'
-
-'pitch.b5.chat':
-  fi: 'chättäilyä'
-  en: 'chatting'
-
-'pitch.b5.ghost':
-  fi: 'ghostausta'
-  en: 'ghosting'
-
-'pitch.b5.more':
-  fi: 'lisää chättäilyä'
-  en: 'more chatting'
-
-'pitch.b5.maybe':
-  fi: 'ehkä treffit'
-  en: 'maybe a date'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Who Pilke is not for

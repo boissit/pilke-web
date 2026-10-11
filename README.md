@@ -111,30 +111,27 @@ positioned on the whole picture.
 
 ## What the front page argues
 
-The order of the sections is the argument, and it is the owner's pitch: what Pilke
-does instead of what the other apps make you do, how it goes in practice, and who
+The order of the sections is the argument, and it is the owner's pitch: what the
+other apps make you do, what Pilke does instead, how it goes in practice, and who
 would be better off with another app. Each part says its point once and links on
 to the page that says it in full.
 
 - **The hero** is the owner's headline and a two-sentence lead beside the app's
   home screen on a coral disc, with two buttons: down to the waitlist, and down to
-  the next card.
+  the next part.
+- **The other apps** are one line of steps on the page's own ground, no card,
+  between the hero and the next card: *Swaippaa. Chättäile. Tule ghostatuksi.
+  Swaippaa. Chättäile lisää. Ehkä treffit.*, each struck through in coral, drawn
+  in as it scrolls into view unless the reader asks for less motion. Each step is
+  a `<del>`, and a hidden lead-in tells a screen reader the steps are struck.
 - **What Pilke does instead** opens with the owner's line *Pilkkeessä ei
   swaippailla eikä chättäillä*, the one sentence on the site allowed to open with
-  a negation, then the owner's four points: candidates by your wishes and ordered
-  by the persoonallisuuskysely, an invitation received or sent to one of three,
-  time and place already set, and what happens after the date. The ordering is
-  claimed carefully — it gets better as there are more users — and the feedback
-  claim rests on the privacy statement. It links to `nain-se-toimii`.
-
-  How it sets the other apps against Pilke is still being chosen, as `variant` on
-  the page and the temporary pages `etusivu-*`. The page draws C, which says the
-  contrast in its lead alone. A sets each of the other apps' steps opposite
-  Pilke's answer. B to B5 keep the Pilke section first and show the other apps'
-  route after or inside it: a quiet strip (B), two tracks to the same date (B2),
-  a big card of struck-through steps (B3), a message thread beside a drawn date
-  invitation (B4), and the struck path between the section's heading and its lead
-  (B5). The pages and the unchosen drafts go once the owner picks.
+  a negation, and a lead whose *nämä* points back at the struck steps. Then the
+  owner's four points beside the candidates screen: candidates by your wishes and
+  ordered by the persoonallisuuskysely, an invitation received or sent to one of
+  three, time and place already set, and what happens after the date. The
+  ordering is claimed carefully — it gets better as there are more users — and
+  the feedback claim rests on the privacy statement. It links to `nain-se-toimii`.
 - **In practice** is the owner's four steps on the app's four card tints, each
   with its screen running off the bottom of the card: the persoonallisuuskysely,
   an invitation, the date and the feedback. It links to the manual.
