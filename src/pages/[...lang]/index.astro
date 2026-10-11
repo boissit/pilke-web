@@ -196,15 +196,16 @@ const notFor = [
     its own, on the page's ground, so it reads as the passage from one card to the
     next rather than as a section.
 
-    Each step is a `<del>`, which is what struck-through text is, and a hidden
-    lead-in says the same to a screen reader, since most of them read `<del>` as
-    plain text. The Pilke section's lead, "Pilke hoitaa nämä puolestasi", points
+    Each step is a `<del>`, which is what struck-through text is, with a real space
+    after it so the steps are words apart when read aloud or copied, and a hidden
+    lead-in says they are struck to a screen reader, since most of them read
+    `<del>` as plain text. The Pilke section's lead, "Pilke hoitaa nämä puolestasi", points
     back at these lines.
   -->
   <section class="elsewhere" id="miksi" aria-labelledby="elsewhere-note">
     <p class="wrap">
       <span class="visually-hidden" id="elsewhere-note">{t('pitch.elsewhere.note')}</span>
-      {elsewhereSteps.map((step) => <del>{step}</del>)}
+      {elsewhereSteps.map((step) => <Fragment><del>{step}</del>{' '}</Fragment>)}
     </p>
   </section>
 
@@ -615,7 +616,6 @@ const notFor = [
   .elsewhere del {
     position: relative;
     display: inline-block;
-    margin-right: 0.3em;
     text-decoration: none;
   }
 
