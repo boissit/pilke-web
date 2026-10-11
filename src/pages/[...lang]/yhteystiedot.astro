@@ -1,14 +1,18 @@
 ---
 /**
- * How to reach us: one address, nothing else.
+ * How to reach us: one address, what it is for, and where answers already are.
  *
  * The App Store's support URL points here, and a store reviewer reads it as the
  * promise that a person answers. That is why the page carries the address and not a
  * form: mail to it lands with the owner, and a form would need a backend of its own
  * to mean the same thing.
+ *
+ * Every topic goes to the same address. The cards say what a message is welcome
+ * about, not where to send it, so none of them carries an address of its own.
  */
 import PageHead from '../../components/PageHead.astro';
 import { contactEmail } from '../../data/contact';
+import { manualHref } from '../../i18n/manual';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
@@ -16,6 +20,15 @@ export const getStaticPaths = () => localeRoutes();
 
 const lang = localeOf(Astro.params);
 const t = useTranslations(lang);
+
+// The deletion page's name is a link inside the sentence, so the sentence is cut there.
+const account = t('contact.account.body').split('{link}');
+
+const topics = [
+  { title: t('contact.help.title'), body: t('contact.help.body') },
+  { title: t('contact.feedback.title'), body: t('contact.feedback.body') },
+  { title: t('contact.press.title'), body: t('contact.press.body') },
+];
 ---
 
 <Base lang={lang}>
@@ -23,24 +36,111 @@ const t = useTranslations(lang);
 
   <section class="slab slab-white">
     <div class="wrap section-pad">
+      <p class="label">{t('contact.address')}</p>
       <p class="address"><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+    </div>
+  </section>
 
+  <section class="slab slab-pale">
+    <div class="wrap section-pad">
+      <h2 class="display-mid">{t('contact.topics.title')}</h2>
+      <div class="topics">
+        <div>
+          <h3>{topics[0].title}</h3>
+          <p>{topics[0].body}</p>
+        </div>
+        <div>
+          <h3>{topics[1].title}</h3>
+          <p>{topics[1].body}</p>
+        </div>
+        <div>
+          <h3>{t('contact.account.title')}</h3>
+          <p>
+            {account[0]}<a href={localePath(lang, 'tietojen-poisto')}>{t('legal.deletion.title')}</a>{account[1]}
+          </p>
+        </div>
+        <div>
+          <h3>{topics[2].title}</h3>
+          <p>{topics[2].body}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      <h2 class="display-mid">{t('contact.answers.title')}</h2>
+      <p class="prose">{t('contact.answers.body')}</p>
       <p class="onward">
-        <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
+        <a class="go" href={localePath(lang, 'kysyttya')}>{t('nav.questions')}</a>
+        <a class="go ghost" href={manualHref(lang)}>{t('nav.manual')}</a>
       </p>
     </div>
   </section>
 </Base>
 
 <style>
+  .label {
+    color: var(--text-soft);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+  }
+
   .address {
+    margin-top: var(--pad-normal);
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: clamp(1.5rem, 1.33vw + 1.2rem, 2.25rem);
+    font-size: clamp(1.75rem, 2vw + 1.2rem, 2.75rem);
     overflow-wrap: anywhere;
   }
 
+  .display-mid {
+    font-size: clamp(1.75rem, 1.33vw + 1.43rem, 2.625rem);
+  }
+
+  /* Four equals rather than a list: each is a reason to write, and none outranks
+     another. White cards on the peach section, as the deletion page draws its pair. */
+  .topics {
+    margin-top: var(--pad-medium);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* Two by two on a wide screen, so the four stay a block instead of three and a straggler. */
+  @media (min-width: 720px) {
+    .topics {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .topics > div {
+    padding: clamp(22px, 2vw + 14px, 32px);
+    background: var(--surface);
+    border-radius: var(--radius-card);
+  }
+
+  .topics h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.25rem, 0.38vw + 1.15rem, 1.5rem);
+  }
+
+  .topics p {
+    margin-top: var(--pad-normal);
+    color: var(--text-soft);
+  }
+
+  .prose {
+    margin-top: var(--pad-normal);
+  }
+
   .onward {
-    margin-top: var(--pad-large);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: var(--pad-medium);
   }
 </style>
