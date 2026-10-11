@@ -392,7 +392,7 @@ const fi = {
   'contact.account.title': 'Tili ja tietosi',
   'contact.account.body': 'Kysymykset tilistäsi ja tiedoistasi. Tilin poistamisesta kerromme sivulla {link}.',
   'contact.press.title': 'Media ja yhteistyö',
-  'contact.press.body': 'Toimittajat ja yhteistyökumppanit: kirjoita samaan osoitteeseen.',
+  'contact.press.body': 'Kiinnostaako tarina Pilkkeen takana? Ota yhteyttä, niin kerromme lisää.',
   'contact.answers.title': 'Moneen kysymykseen löytyy jo vastaus',
   'contact.answers.body': 'Kysyttyä-sivulla vastaamme yleisimpiin kysymyksiin, ja Ohjeet kertovat, miten Pilke toimii vaihe vaiheelta.',
 
@@ -718,7 +718,7 @@ const en: Record<keyof typeof fi, string> = {
   'contact.account.title': 'Your account and data',
   'contact.account.body': 'Questions about your account and your data. How to delete your account is on {link}.',
   'contact.press.title': 'Press and partners',
-  'contact.press.body': 'Journalists and partners: write to the same address.',
+  'contact.press.body': "Curious about the story behind Pilke? Get in touch and we'll tell you more.",
   'contact.answers.title': 'Many answers are already here',
   'contact.answers.body': 'The Questions page answers the most common ones, and the Guide explains how Pilke works step by step.',
 

@@ -38,7 +38,7 @@ const topics = [
 ---
 
 <Base lang={lang}>
-  <section class="slab slab-pale">
+  <section class="slab slab-pale head">
     <div class="wrap section-pad letter-wrap">
       <SparkleScatter
         fill="var(--sparkle-on-peach)"
@@ -100,6 +100,11 @@ const topics = [
 </Base>
 
 <style>
+  /* The same gap under the header as every page that opens with `PageHead`. */
+  .head {
+    padding-top: clamp(4px, 1.52vw - 2px, 16px);
+  }
+
   .letter-wrap {
     display: flex;
     justify-content: center;
