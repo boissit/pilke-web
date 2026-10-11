@@ -5,28 +5,35 @@
  *
  * Four photographs, each a stock photo with a real still of the app set into its
  * phone: the home screen in the hero, cut out of its photograph, the personality quiz
- * on a sofa in the start card, the calendar against an orange wall in the loop card
+ * on a sofa in the first step, the calendar against an orange wall in the sparks card
  * that closes the steps, and an invitation received in the footer's beta card, which
  * only this page hands a photograph. A still in a photograph
  * goes stale with the app like any other, so `docs/pictures.md` accounts for them.
  *
- * The order is the argument, and it runs: what Pilke is, the three things to
- * remember of it, how a date comes about in four steps, what sparks are, and
- * that meeting a stranger through it is looked after.
+ * The order is the argument, and it is the owner's pitch: what is wrong with the
+ * other apps, what Pilke does instead, how it goes in practice, and who would be
+ * better off elsewhere. Each answers why anybody should care before the next one is
+ * asked, so the page reads as one case top to bottom and the waitlist under it is
+ * where the case ends.
+ *
+ * The page says each thing once and points to where it is said in full: the loop to
+ * `nain-se-toimii`, the steps to the manual, sparks to the manual's own page,
+ * safety to `turvallisuus`, the rest of the questions to `kysyttya`. A front page
+ * that explains everything is a page nobody reads to the end.
  *
  * One page at every width. The 1440 artboard and the 390 artboard are the two ends
  * of it, and every size in between is a straight line from one to the other; where
  * a layout changes rather than scales — the hero's phone moving under the copy, the
- * steps going from two columns to one — it changes at one of three lines, 40rem,
- * 64rem and 75rem, so the page has three shapes and not a dozen.
+ * steps going from one column to three — it changes at one of three lines, 40rem,
+ * 64rem and 69rem, so the page has a few shapes and not a dozen.
  *
  * The waitlist is not on this page. It is the footer, in `SiteFooter.astro`, so that
  * a reader who came to `turvallisuus` can join from where they are; the hero's button
  * and the header's are anchors down to it.
  *
- * Sparks are here in two lines and no more: what they are for, the two ways they
- * build up week to week, and a link to `nain-se-toimii` for the whole ledger. A full
- * price list reads as a game to be played, which is the opposite of what this is.
+ * Sparks are one line and a link here. They are how an invitation is paid for, which
+ * matters once somebody is using the app, and a ledger on the front page reads as a
+ * game to be played, which is the opposite of what this is.
  */
 import { getImage, Image, Picture } from 'astro:assets';
 import betaEn from '../../assets/photos/beta-invitation-en.jpg';
@@ -44,7 +51,7 @@ import { grounds, shotsFor } from '../../assets/screens';
 import Icon from '../../components/Icon.astro';
 import SparkleScatter from '../../components/SparkleScatter.astro';
 import Phone from '../../components/Phone.astro';
-import Sparkle from '../../components/Sparkle.astro';
+import { manualHref } from '../../i18n/manual';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
@@ -64,45 +71,61 @@ const photos = {
 }[lang];
 
 /*
-  Each icon is Lucide's, the app's own set, in the page's ink at one stroke weight, on
-  a disc of one of the app's card tints: blue under the paper plane, because blue is
-  an invitation you sent. The stroke is 1.8 of Lucide's 24 units rather than its 2:
-  at 20 to 22px the full weight is a shade darker than the text beside it.
+  The other apps, in the order a reader has lived them: the swiping, the chatting,
+  and only then the date. Each icon is Lucide's, the app's own set, in the page's
+  ink at 1.8 of Lucide's 24 units rather than its 2: at 20 to 22px the full weight is
+  a shade darker than the text beside it.
 
-  The sparks' icon is `spark`, the logo's own sparkle outlined at Lucide's weight, as
-  the app's Treffit tab draws it. Lucide's `sparkle` is a different star, and beside
-  the wordmark in the header a second star would read as a second mark.
+  The first two stand on the page's pale ground and the last on the peach a
+  confirmed date has in the app, because the date is the one part of the three
+  anybody wanted, and the card that holds it is the one the eye should end on.
 */
-const facts = [
-  { title: t('fact.one.title'), body: t('fact.one.body'), tint: 'var(--card-sent)', icon: 'send' },
-  { title: t('fact.two.title'), body: t('fact.two.body'), tint: 'var(--card-feedback)', icon: 'calendar' },
-  { title: t('fact.three.title'), body: t('fact.three.body'), tint: 'var(--card-received)', icon: 'spark' },
+const problems = [
+  { title: t('pitch.problem.swipe.title'), body: t('pitch.problem.swipe.body'), icon: 'layers' },
+  { title: t('pitch.problem.chat.title'), body: t('pitch.problem.chat.body'), icon: 'messages-square' },
+  { title: t('pitch.problem.date.title'), body: t('pitch.problem.date.body'), icon: 'coffee' },
 ];
 
 /*
-  The four steps, each on the tint the app gives that stage of a date: an invitation
-  you sent is blue, one you received pink, a confirmed date peach and the feedback
-  after it yellow. The tilt alternates so the four phones do not read as a stamped row.
+  What Pilke does with each of those, in the same order, and then what happens
+  after the date, which the other apps leave to you. Each disc is one of the app's
+  card tints: blue under the paper plane, because blue is an invitation you sent,
+  peach under the calendar because that is a date confirmed, yellow under what
+  follows it because yellow is the feedback.
+*/
+const instead = [
+  { title: t('pitch.instead.match.title'), body: t('pitch.instead.match.body'), tint: 'var(--card-received)', icon: 'sliders-horizontal' },
+  { title: t('pitch.instead.invite.title'), body: t('pitch.instead.invite.body'), tint: 'var(--card-sent)', icon: 'send' },
+  { title: t('pitch.instead.ready.title'), body: t('pitch.instead.ready.body'), tint: 'var(--card-confirmed)', icon: 'calendar-check' },
+  { title: t('pitch.instead.after.title'), body: t('pitch.instead.after.body'), tint: 'var(--card-feedback)', icon: 'heart-handshake' },
+];
+
+/*
+  Steps two to four, each on the tint the app gives that stage of a date: an
+  invitation received is pink, a confirmed date peach and the feedback after it
+  yellow. Step one is the white card above them, because it is done once and these
+  three go round. The tilt alternates so the phones do not read as a stamped row.
 */
 const steps = [
-  { title: t('how.one.title'), body: t('how.one.body'), shot: shots.platter, ground: grounds.platter, alt: t('shot.platter'), tint: 'var(--card-sent)' },
-  { title: t('how.two.title'), body: t('how.two.body'), shot: shots.invitation, ground: grounds.invitation, alt: t('shot.invitation'), tint: 'var(--card-received)' },
-  { title: t('how.three.title'), body: t('how.three.body'), shot: shots.date, ground: grounds.date, alt: t('shot.date'), tint: 'var(--card-confirmed)' },
-  { title: t('how.four.title'), body: t('how.four.body'), shot: shots.feedback, ground: grounds.feedback, alt: t('shot.feedback'), tint: 'var(--card-feedback)' },
-];
-
-const earnings = [
-  { amount: t('sparks.calendar.amount'), what: t('detail.earn.calendar'), note: t('sparks.calendar.note') },
-  { amount: t('sparks.date.amount'), what: t('detail.earn.date'), note: t('sparks.date.note') },
+  { title: t('pitch.practice.two.title'), body: t('pitch.practice.two.body'), shot: shots.invitation, ground: grounds.invitation, alt: t('shot.invitation'), tint: 'var(--card-received)' },
+  { title: t('pitch.practice.three.title'), body: t('pitch.practice.three.body'), shot: shots.date, ground: grounds.date, alt: t('shot.date'), tint: 'var(--card-confirmed)' },
+  { title: t('pitch.practice.four.title'), body: t('pitch.practice.four.body'), shot: shots.feedback, ground: grounds.feedback, alt: t('shot.feedback'), tint: 'var(--card-feedback)' },
 ];
 
 /*
-  Venues first. A reader who has not used the app yet is best served by knowing where
-  they will be sent; the trusted person and the button are one card, because the
-  button does nothing until the number is saved.
+  Who would be better off with another app, and which. The owner's own four, with
+  the competitors named: the joke is that Pilke says so itself, and it only works
+  if the answer is a real app somebody could go and download.
 */
+const notFor = [
+  { q: t('pitch.notfor.more.q'), a: t('pitch.notfor.more.a') },
+  { q: t('pitch.notfor.chat.q'), a: t('pitch.notfor.chat.a') },
+  { q: t('pitch.notfor.phone.q'), a: t('pitch.notfor.phone.a') },
+  { q: t('pitch.notfor.algorithm.q'), a: t('pitch.notfor.algorithm.a') },
+];
+
 /*
-  The start card's photograph is cut twice. Wide, it fills the card's right side and
+  The first step's photograph is cut twice. Wide, it fills the card's right side and
   the whole sofa can be in it; stacked, the same width of photo is a strip 300px
   tall, and the phone would be a stamp in it, so the narrow cut is tight on the hands.
 */
@@ -110,11 +133,6 @@ const startSources = {
   wide: await getImage({ src: photos.startWide, widths: [700, 1400], format: 'webp' }),
   narrow: await getImage({ src: photos.startNarrow, widths: [450, 900], format: 'webp' }),
 };
-
-const safetyCards = [
-  { title: t('safety.card.places.title'), body: t('safety.card.places.body'), icon: 'map-pin' },
-  { title: t('safety.card.button.title'), body: t('safety.card.button.body'), icon: 'shield' },
-];
 ---
 
 <Base lang={lang} betaPhoto={{ src: photos.beta, alt: t('photo.beta') }}>
@@ -140,15 +158,16 @@ const safetyCards = [
 
       <div class="hero-copy">
         <h1>{t('hero.title')}</h1>
-        <p class="lede">{t('hero.lead')}</p>
+        <p class="lede">{t('pitch.hero.lead')}</p>
         <!--
           The footer is the form, so the hero points at it rather than carrying a
           second copy. Two forms on a page are two things to wire up and two places
-          to disagree about what was submitted.
+          to disagree about what was submitted. The second button is the start of
+          the argument, one card down.
         -->
         <p class="actions">
           <a class="go" href="#beta">{t('cta.button')}</a>
-          <a class="go ghost" href="#how">{t('nav.how')}</a>
+          <a class="go ghost" href="#miksi">{t('pitch.hero.more')}</a>
         </p>
       </div>
 
@@ -184,35 +203,90 @@ const safetyCards = [
         />
       </div>
     </div>
+  </section>
 
-    <ul class="wrap facts">
-      {
-        facts.map((fact) => (
-          <li>
-            <span class="icon" style={`background:${fact.tint}`} aria-hidden="true">
-              <Icon name={fact.icon} size={22} strokeWidth={1.8} />
-            </span>
-            <div>
-              <h2>{fact.title}</h2>
-              <p>{fact.body}</p>
-            </div>
-          </li>
-        ))
-      }
-    </ul>
+  <!--
+    What is wrong with the other apps. Right under the hero, so the headline's
+    "finally" is answered before the reader has scrolled a screen: three cards in
+    the order a reader has lived them, read across on a desktop and down on a phone.
+  -->
+  <section class="slab slab-white problem" id="miksi" aria-labelledby="problem-title">
+    <div class="wrap section-pad">
+      <h2 class="display-mid" id="problem-title">{t('pitch.problem.title')}</h2>
+      <ol class="problems">
+        {
+          problems.map((item) => (
+            <li>
+              <span class="icon" aria-hidden="true">
+                <Icon name={item.icon} size={22} strokeWidth={1.8} />
+              </span>
+              <h3>{item.title}</h3>
+              <p>{item.body}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!--
+    What Pilke does instead. The head is the owner's own contrast line, the one place
+    on the page a sentence opens with what Pilke is not, because it answers the card
+    above it point for point. The phone beside the cards is the three candidates a
+    reader picks from, the one screen that shows "no swiping" rather than saying it.
+  -->
+  <section class="slab slab-pale instead" aria-labelledby="instead-title">
+    <div class="wrap section-pad">
+      <SparkleScatter
+        fill="var(--sparkle-on-peach)"
+        sparkles={[
+          { size: 110, rotate: 16, right: '6%', top: '32px', only: 'wide' },
+          { size: 40, rotate: -24, right: 'calc(6% + 130px)', top: '48px', only: 'wide' },
+          { size: 56, rotate: 14, right: '14px', top: '14px', only: 'narrow' },
+          { size: 24, rotate: -26, right: '80px', top: '22px', only: 'narrow' },
+        ]}
+      />
+      <div class="instead-head">
+        <h2 class="display-mid" id="instead-title">{t('pitch.instead.title')}</h2>
+        <p class="lede">{t('pitch.instead.lead')}</p>
+      </div>
+
+      <div class="instead-body">
+        <ul class="instead-cards">
+          {
+            instead.map((item) => (
+              <li>
+                <span class="icon" style={`background:${item.tint}`} aria-hidden="true">
+                  <Icon name={item.icon} size={22} strokeWidth={1.8} />
+                </span>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="instead-phone">
+          <Phone src={shots.platter} ground={grounds.platter} alt={t('shot.platter')} width={260} tilt={3} />
+        </div>
+      </div>
+
+      <p class="instead-more">
+        <a class="go" href={localePath(lang, 'nain-se-toimii')}>{t('pitch.instead.more')}</a>
+      </p>
+    </div>
   </section>
 
   <section class="how" id="how" aria-labelledby="how-title">
     <div class="wrap">
       <div class="section-head">
-        <h2 id="how-title">{t('how.title')}</h2>
-        <p>{t('how.lead')}</p>
+        <h2 id="how-title">{t('pitch.practice.title')}</h2>
+        <p>{t('pitch.practice.lead')}</p>
       </div>
 
       <!--
-        What happens once, before the loop: its own white card above the four steps,
-        because it is not one of them. The photograph is somebody at home doing it,
-        which is where it is done: fourteen questions on the sofa, not at a venue.
+        The first step, done once: its own white card above the three that go round.
+        The photograph is somebody at home doing it, which is where it is done:
+        the questions on the sofa, not at a venue.
       -->
       <div class="start">
         <SparkleScatter
@@ -226,9 +300,9 @@ const safetyCards = [
           ]}
         />
         <div class="start-copy">
-          <p class="tag">{t('how.start.tag')}</p>
-          <h3>{t('how.start.title')}</h3>
-          <p>{t('how.start.body')}</p>
+          <span class="numeral start-numeral" aria-hidden="true">1</span>
+          <h3>{t('pitch.practice.one.title')}</h3>
+          <p>{t('pitch.practice.one.body')}</p>
         </div>
         <picture class="start-photo">
           <source media="(min-width: 64rem)" srcset={startSources.wide.srcSet.attribute} sizes="45vw" />
@@ -238,36 +312,42 @@ const safetyCards = [
 
       <!--
         The phones run off the bottom of their cards on purpose: the top of a screen
-        is what says which screen it is, and a whole phone in each of four cards made
-        them four posters. The card clips its phone; nothing clips the picture inside
-        the phone, which is inset on the app's own ground.
+        is what says which screen it is, and a whole phone in each card made them
+        posters. The card clips its phone; nothing clips the picture inside the
+        phone, which is inset on the app's own ground.
       -->
-      <ol class="steps">
+      <ol class="steps" start="2">
         {
           steps.map((step, i) => (
             <li style={`background:${step.tint}`}>
               <div class="step-copy">
-                <span class="numeral" aria-hidden="true">{i + 1}</span>
+                <span class="numeral" aria-hidden="true">{i + 2}</span>
                 <h3>{step.title}</h3>
                 <p>{step.body}</p>
               </div>
               <div class="step-phone">
-                <Phone src={step.shot} ground={step.ground} alt={step.alt} width={230} tilt={i % 2 === 0 ? 3 : -3} />
+                <Phone src={step.shot} ground={step.ground} alt={step.alt} width={230} tilt={i % 2 === 0 ? -3 : 3} />
               </div>
             </li>
           ))
         }
       </ol>
 
+      <p class="how-more">
+        <a class="go ghost" href={manualHref(lang)}>{t('pitch.practice.more')}</a>
+      </p>
+
       <!--
-        The loop's closing line is about the calendar, so its card carries the
-        calendar: in a hand against an orange wall, a landscape photograph that keeps
+        Sparks, closing the steps because they are what keeps the steps going round:
+        the calendar earns them and an invitation spends them. Its card carries the
+        calendar, in a hand against an orange wall, a landscape photograph that keeps
         its width beside the line, and becomes the card's foot on a phone.
       -->
       <div class="loop">
         <div class="loop-copy">
-          <p>{t('how.loop')}</p>
-          <a class="go ghost" href={localePath(lang, 'nain-se-toimii')}>{t('how.more')}</a>
+          <h3>{t('pitch.sparks.title')}</h3>
+          <p>{t('pitch.sparks.body')}</p>
+          <a class="go ghost" href={manualHref(lang, 'kipinat')}>{t('pitch.sparks.more')}</a>
         </div>
         <figure class="loop-photo">
           <Image src={photos.loop} alt={t('photo.loop')} widths={[800, 1200, 1800]} sizes="(min-width: 64rem) 760px, 178vw" />
@@ -276,91 +356,45 @@ const safetyCards = [
     </div>
   </section>
 
-  <section class="sparks-section" aria-labelledby="sparks-title">
-    <div class="wrap sparks-card">
-      <div class="spark-panel">
-        <SparkleScatter
-          fill="var(--sparkle-on-peach)"
-          sparkles={[
-            { size: 90, rotate: -16, left: '36px', top: '40px' },
-            { size: 34, rotate: 24, left: '132px', top: '104px', only: 'wide' },
-            { size: 70, rotate: 34, right: '36px', bottom: '24px', only: 'wide' },
-            { size: 80, rotate: 14, right: '28px', top: '56px', only: 'wide' },
-            { size: 30, rotate: -30, right: '120px', top: '40px', only: 'wide' },
-            { size: 62, rotate: -12, left: '40px', bottom: '28px', only: 'wide' },
-            { size: 26, rotate: 40, left: '124px', bottom: '36px', only: 'wide' },
-            { size: 52, rotate: 40, right: '20px', top: '24px', only: 'narrow' },
-            { size: 22, rotate: -20, right: '82px', top: '30px', only: 'narrow' },
-          ]}
-        />
-        <!--
-          Two sparks, because two is what a date brings, drawn as the app's counter
-          draws two: the pale sparkle with its rose core part grown, the counter's own
-          picture of "on the way to an invitation".
-        -->
-        <span class="counter" role="img" aria-label={t('sparks.art.alt')}><Sparkle size={300} count={2} /></span>
-        <p>{t('sparks.highlight')}</p>
-      </div>
-
-      <div class="sparks-copy">
-        <h2 id="sparks-title">{t('sparks.title')}</h2>
-        <p class="body">{t('sparks.body')}</p>
-        <h3>{t('sparks.earn')}</h3>
-        <ul class="earn">
-          {
-            earnings.map((row) => (
-              <li>
-                <span class="amount">{row.amount}</span>
-                <span class="what">
-                  <span class="label">{row.what}</span>
-                  <span class="note">{row.note}</span>
-                </span>
-              </li>
-            ))
-          }
-        </ul>
-        <p class="more"><a href={localePath(lang, 'nain-se-toimii')}>{t('sparks.more')}</a></p>
-      </div>
+  <!--
+    Safety, in one line. Going straight to a date with somebody you have not
+    messaged is the moment a reader asks whether that is safe, so the answer sits
+    here, under the steps, and `turvallisuus` has the whole of it.
+  -->
+  <section class="slab slab-mint safety-line" aria-label={t('nav.safety')}>
+    <div class="wrap">
+      <span class="icon" aria-hidden="true">
+        <Icon name="shield" size={20} strokeWidth={1.8} />
+      </span>
+      <p>{t('pitch.safety.body')}</p>
+      <a class="go ghost" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
     </div>
   </section>
 
-  <section class="safety-section" id="safety" aria-labelledby="safety-title">
-    <div class="wrap safety">
-      <div class="safety-copy">
-        <h2 id="safety-title">{t('safety.front.title')}</h2>
-        <p class="body">{t('safety.front.lead')}</p>
-
-        <ul class="safety-cards">
-          {
-            safetyCards.map((card) => (
-              <li>
-                <span class="icon" aria-hidden="true">
-                  <Icon name={card.icon} size={20} strokeWidth={1.8} />
-                </span>
-                <div>
-                  <h3>{card.title}</h3>
-                  <p>{card.body}</p>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
-
-        <!--
-          Dashed, and under the cards rather than one of them: beside two features
-          that ship, a third card reads as a third feature that ships.
-        -->
-        <div class="future">
-          <h3>{t('safety.future.title')}</h3>
-          <p>{t('safety.future.body')}</p>
-        </div>
-
-        <a class="read" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
-      </div>
-
-      <div class="safety-aside">
-        <Phone src={shots.asetukset} ground={grounds.asetukset} alt={t('shot.asetukset')} width={290} tilt={3} class="aside-phone" />
-      </div>
+  <!--
+    Who Pilke is not for, last before the waitlist: a reader who has come this far
+    and still wants to swipe is told where to, kindly, and everybody else is one
+    card from joining. The answers are the punchline, so they are set heavier than
+    the questions.
+  -->
+  <section class="slab slab-white not-for" aria-labelledby="notfor-title">
+    <div class="wrap section-pad">
+      <h2 class="display-mid" id="notfor-title">{t('pitch.notfor.title')}</h2>
+      <p class="lede">{t('pitch.notfor.lead')}</p>
+      <dl class="qas">
+        {
+          notFor.map((item) => (
+            <div class="qa">
+              <dt>{item.q}</dt>
+              <dd>{item.a}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <p class="not-for-more">
+        <a class="go" href={localePath(lang, 'kysyttya')}>{t('pitch.notfor.questions')}</a>
+        <a class="go ghost" href={localePath(lang, 'yhteystiedot')}>{t('pitch.notfor.contact')}</a>
+      </p>
     </div>
   </section>
 </Base>
@@ -405,10 +439,8 @@ const safetyCards = [
     hyphens: manual;
   }
 
-  .lede {
+  .hero .lede {
     max-width: 500px;
-    font-size: clamp(1.0625rem, 0.38vw + 0.97rem, 1.3125rem);
-    line-height: 1.55;
   }
 
   .actions {
@@ -495,7 +527,6 @@ const safetyCards = [
     h1 {
       max-width: calc(100% - 56px);
     }
-
   }
 
   @media (min-width: 69rem) {
@@ -521,26 +552,10 @@ const safetyCards = [
     }
   }
 
-  /* The three facts: white cards under the hero, a column on a phone and a row of
-     three once each can hold its title on one or two lines. */
-  .facts {
-    list-style: none;
-    margin-top: 12px;
-    padding: 0;
-    display: grid;
-    gap: 12px;
-  }
+  /* ─── Shared ───────────────────────────────────────────────────────────── */
 
-  .facts li {
-    display: flex;
-    align-items: flex-start;
-    gap: clamp(16px, 0.19vw + 15px, 18px);
-    padding: clamp(22px, 0.57vw + 20px, 28px);
-    background: var(--surface);
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);
-  }
-
+  /* An icon on a disc, as the app draws one beside a heading: the disc's colour is
+     the card's to set, the stroke is the page's ink. */
   .icon {
     display: grid;
     place-items: center;
@@ -556,38 +571,149 @@ const safetyCards = [
     height: clamp(20px, 0.19vw + 19px, 22px);
   }
 
-  .facts li > div {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(4px, 0.19vw + 3px, 6px);
+  /* A card's lines under its icon: the title in the body face at weight, as every
+     card label on the site is, and the body a step softer. */
+  .problems h3,
+  .instead-cards h3 {
+    font-size: clamp(1.125rem, 0.2vw + 1.08rem, 1.25rem);
   }
 
-  .facts h2 {
-    font-family: var(--font-body);
-    font-size: clamp(1.0625rem, 0.1vw + 1.04rem, 1.125rem);
-    font-weight: 700;
-    line-height: 1.3;
-    letter-spacing: 0;
-  }
-
-  .facts p {
-    font-size: 0.9375rem;
-    line-height: 1.5;
+  .problems p,
+  .instead-cards p {
+    font-size: clamp(0.9375rem, 0.1vw + 0.91rem, 1rem);
+    line-height: 1.55;
     color: var(--text-soft);
   }
 
+  /* ─── The other apps ───────────────────────────────────────────────────── */
+
+  /* Close under the hero, as the cards under any card are: it is the hero's
+     headline being explained, not a new subject. */
+  .problem {
+    margin-top: clamp(12px, 1.14vw + 7.5px, 24px);
+  }
+
+  .problems {
+    list-style: none;
+    margin: clamp(24px, 1.5vw + 18px, 40px) 0 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .problems li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: clamp(22px, 0.57vw + 20px, 28px);
+    background: var(--ground);
+    border-radius: var(--radius-card);
+  }
+
+  .problems li .icon {
+    margin-bottom: 4px;
+    background: var(--surface);
+  }
+
+  .problems li:last-child {
+    background: var(--card-confirmed);
+  }
+
   @media (min-width: 64rem) {
-    .facts {
+    .problems {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
-      margin-top: 24px;
     }
   }
 
-  /* ─── How it works ─────────────────────────────────────────────────────── */
+  /* ─── What Pilke does instead ──────────────────────────────────────────── */
 
+  .instead > .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 1.5vw + 18px, 40px);
+  }
+
+  /* Room on the right for the sparkle in the corner, as `PageHead` leaves it; wide,
+     the line breaks in two well short of it. */
+  .instead-head {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: calc(100% - 56px);
+  }
+
+  .instead-head h2 {
+    max-width: 22ch;
+  }
+
+  .instead-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .instead-cards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .instead-cards li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: clamp(22px, 0.57vw + 20px, 28px);
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .instead-cards li .icon {
+    margin-bottom: 4px;
+  }
+
+  .instead-phone {
+    --phone-width: 230px;
+  }
+
+  @media (min-width: 40rem) {
+    .instead-cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+  }
+
+  /* Wide, the phone stands to the right of the four cards, as tall as two rows of
+     them, so the screen and the claims read as one picture. */
+  @media (min-width: 64rem) {
+    .instead-body {
+      flex-direction: row;
+      align-items: center;
+      gap: clamp(32px, 3vw, 56px);
+    }
+
+    .instead-cards {
+      flex: 1;
+      gap: 20px;
+    }
+
+    .instead-phone {
+      flex: 0 0 auto;
+      --phone-width: clamp(220px, 19vw, 260px);
+    }
+  }
+
+  /* ─── In practice ──────────────────────────────────────────────────────── */
+
+  /* No room under the steps: the safety line follows the sparks card at the air
+     between any two cards, as the next card in the same run. */
   .how {
-    padding: var(--section-space) var(--gutter);
+    padding: var(--section-space) var(--gutter) 0;
   }
 
   .how .wrap {
@@ -618,22 +744,16 @@ const safetyCards = [
     color: var(--text-soft);
   }
 
-  /* A tinted pill for the card's label: the app's confirm green, because this is
-     the part everybody does before anything else. */
-  .tag {
-    align-self: flex-start;
-    padding: 6px 13px;
-    background: var(--success);
-    border-radius: 999px;
-    font-size: clamp(0.8125rem, 0.1vw + 0.79rem, 0.875rem);
-    font-weight: 700;
+  /* The first step's numeral is on white, so its disc is the page's peach rather
+     than the white the tinted cards give theirs. */
+  .start-numeral {
+    background: var(--brand-background);
   }
 
   /*
-    The start card. Stacked, the phone sits under the copy in a well of fixed height
-    and runs off the card's bottom; wide, it stands to the right of the copy and runs
-    off the bottom the same way. Either way the card clips it, and the card's height
-    comes from its copy and the well, never from the phone.
+    The first step's card. Stacked, the photograph is a strip across its foot; wide,
+    it fills the right 45%, top to bottom. Either way the card's height comes from
+    its copy, never from the photograph.
   */
   .start {
     position: relative;
@@ -648,7 +768,6 @@ const safetyCards = [
     box-shadow: var(--shadow-card);
   }
 
-
   .start-copy {
     display: flex;
     flex-direction: column;
@@ -656,7 +775,8 @@ const safetyCards = [
   }
 
   .start h3,
-  .steps h3 {
+  .steps h3,
+  .loop h3 {
     font-family: var(--font-display);
     font-weight: 600;
     line-height: 1.05;
@@ -668,7 +788,7 @@ const safetyCards = [
     font-size: clamp(1.875rem, 1.33vw + 1.55rem, 2.75rem);
   }
 
-  .start-copy p:not(.tag) {
+  .start-copy p {
     max-width: 560px;
     font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
     line-height: 1.6;
@@ -694,7 +814,7 @@ const safetyCards = [
     .start {
       flex-direction: row;
       align-items: center;
-      min-height: 480px;
+      min-height: 440px;
       padding: 56px 64px;
     }
 
@@ -717,9 +837,13 @@ const safetyCards = [
   }
 
   /*
-    The four steps. Stacked cards on a phone, each with its phone in a well under the
-    copy; one wide card per row from 40rem, with the phone to the right; two by two
-    from 75rem, where the row is wide enough for two of those.
+    Steps two to four. Stacked cards on a phone, each with its phone in a well under
+    the copy; one wide card per row from 40rem, with the phone to the right; three
+    side by side from 64rem, where each is a column again, copy over phone.
+
+    In the row of three the copy runs to different lengths, so each card spans two
+    rows of the list's grid and takes them as a subgrid: the copy row is as tall as
+    the longest copy, and the three phones start on one line.
   */
   .steps {
     list-style: none;
@@ -767,7 +891,7 @@ const safetyCards = [
     margin-left: calc(var(--phone-width) / -2);
   }
 
-  @media (min-width: 40rem) {
+  @media (min-width: 40rem) and (max-width: 63.99rem) {
     .steps li {
       display: grid;
       grid-template-columns: minmax(0, 1fr) var(--phone-width);
@@ -804,25 +928,49 @@ const safetyCards = [
     }
   }
 
-  @media (min-width: 75rem) {
+  @media (min-width: 64rem) {
     .steps {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto auto;
+      gap: 0 24px;
     }
 
     .steps li {
-      --phone-width: clamp(190px, 16vw, 230px);
+      grid-row: span 2;
+      display: grid;
+      grid-template-rows: subgrid;
+      row-gap: 0;
+      min-height: 0;
+      padding: 40px 32px 0;
+    }
+
+    .step-copy {
+      gap: 16px;
+    }
+
+    .step-copy h3 {
+      margin-top: 8px;
+    }
+
+    .step-phone {
+      height: 330px;
+      --phone-width: clamp(200px, 17vw, 230px);
     }
   }
 
-  /* The loop card: the closing line and its link, and the calendar in a hand.
-     Stacked, the photograph is the card's square foot; wide, the right 55%, out
-     to the card's edges, and the line sits in the left. */
+  .how-more {
+    justify-content: center;
+    margin-top: clamp(0px, 1.14vw - 4.5px, 8px);
+  }
+
+  /* The sparks card: the line, its body and its link, and the calendar in a hand.
+     Stacked, the photograph is the card's square foot; wide, the right 55%, out to
+     the card's edges, and the copy sits in the left. */
   .loop {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    margin-top: clamp(0px, 2.3vw - 9px, 24px);
+    margin-top: clamp(16px, 1.52vw + 10px, 32px);
     background: var(--surface);
     border-radius: clamp(32px, 0.76vw + 29px, 40px);
     box-shadow: var(--shadow-card);
@@ -832,20 +980,23 @@ const safetyCards = [
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
     padding: 32px 24px 28px;
     text-align: center;
   }
 
+  .loop h3 {
+    font-size: clamp(1.875rem, 0.57vw + 1.74rem, 2.25rem);
+  }
+
   .loop p {
     max-width: 36ch;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: clamp(1.375rem, 0.38vw + 1.28rem, 1.625rem);
-    line-height: 1.3;
+    font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
+    line-height: 1.6;
   }
 
   .loop .go {
+    margin-top: 6px;
     white-space: nowrap;
   }
 
@@ -865,21 +1016,24 @@ const safetyCards = [
   @media (min-width: 64rem) {
     .loop {
       flex-direction: row;
-      min-height: 420px;
+      min-height: 400px;
     }
 
     .loop-copy {
       flex: 1;
       align-items: flex-start;
       justify-content: center;
-      gap: 24px;
+      gap: 18px;
       padding: 56px 64px;
       text-align: left;
     }
 
+    .loop h3 {
+      font-size: clamp(2.25rem, 1vw + 1.6rem, 2.75rem);
+    }
+
     .loop p {
-      max-width: 22ch;
-      font-size: clamp(1.625rem, 0.8vw + 1.2rem, 2rem);
+      max-width: 34ch;
     }
 
     .loop-photo {
@@ -888,356 +1042,95 @@ const safetyCards = [
     }
   }
 
-  /* ─── Sparks ───────────────────────────────────────────────────────────── */
+  /* ─── Safety, in a line ────────────────────────────────────────────────── */
 
-  .sparks-section {
-    padding: 0 var(--gutter) var(--section-space);
+  /* A strip rather than a section: one sentence and its link on the mint the safety
+     page is drawn on. Stacked on a phone, in a row once the line fits beside its
+     icon and its button. */
+  .safety-line {
+    margin-top: 24px;
   }
 
-  .sparks-card {
+  .safety-line > .wrap {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 16px;
-    padding: 24px;
-    background: var(--surface);
-    border-radius: var(--radius-panel);
-    box-shadow: var(--shadow-card);
+    padding: clamp(24px, 1.52vw + 18px, 40px) clamp(22px, 2.3vw + 13px, 48px);
   }
 
-  .spark-panel {
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 18px;
-    min-height: 340px;
-    padding: 24px;
-    background: var(--brand-background);
-    border-radius: var(--radius-card);
-    text-align: center;
-  }
-
-
-  .counter :global(svg) {
-    height: 190px;
-    width: auto;
-  }
-
-  .spark-panel p {
-    max-width: 320px;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: clamp(1.1875rem, 0.29vw + 1.12rem, 1.375rem);
-    line-height: 1.3;
-  }
-
-  .sparks-copy {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .sparks-copy h2 {
-    margin-top: 8px;
-    font-size: clamp(2.375rem, 1.71vw + 1.96rem, 3.5rem);
-    line-height: 1.03;
-    letter-spacing: -0.02em;
-  }
-
-  .sparks-copy .body {
-    max-width: 560px;
-    font-size: clamp(1rem, 0.29vw + 0.93rem, 1.1875rem);
-    line-height: 1.6;
-  }
-
-  .sparks-copy h3 {
-    margin-top: 4px;
-    font-size: 0.9375rem;
-  }
-
-  .earn {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .earn li {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px;
-    background: var(--ground);
-    border-radius: 22px;
-  }
-
-  .amount {
-    display: grid;
-    place-items: center;
-    min-width: 52px;
-    height: 44px;
-    flex: 0 0 auto;
-    background: var(--brand-main);
-    border-radius: 999px;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(1.1875rem, 0.1vw + 1.16rem, 1.25rem);
-  }
-
-  .what {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .label {
-    font-size: 0.9375rem;
-    font-weight: 600;
-  }
-
-  .note {
-    font-size: 0.8125rem;
-    color: var(--text-soft);
-  }
-
-  .more {
-    margin-top: 4px;
-    font-size: 0.875rem;
-  }
-
-  .more a {
-    font-weight: 600;
-  }
-
-  /* Once a row has room for the note beside its label, it becomes a pill with the
-     note pushed to the far end, as the desktop artboard draws it. */
-  @media (min-width: 40rem) {
-    .earn li {
-      padding: 14px 20px 14px 14px;
-      border-radius: 999px;
-    }
-
-    .what {
-      flex: 1;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: baseline;
-      justify-content: space-between;
-      column-gap: 16px;
-    }
-
-    .note {
-      font-size: 0.875rem;
-    }
-  }
-
-  @media (min-width: 75rem) {
-    .sparks-card {
-      flex-direction: row;
-      align-items: center;
-      gap: clamp(48px, 5.5vw, 80px);
-      min-height: 820px;
-      padding: 80px;
-    }
-
-    .spark-panel {
-      flex: 0 0 clamp(380px, 32vw, 460px);
-      min-height: 620px;
-      gap: 28px;
-      border-radius: 40px;
-    }
-
-    .counter :global(svg) {
-      height: 290px;
-    }
-
-    .sparks-copy {
-      flex: 1;
-      gap: 24px;
-    }
-
-    .sparks-copy h2 {
-      margin-top: 0;
-    }
-
-    .more {
-      font-size: 0.9375rem;
-    }
-  }
-
-  /* ─── Safety ───────────────────────────────────────────────────────────── */
-
-  .safety-section {
-    padding-inline: var(--gutter);
-  }
-
-  .safety {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    padding: 28px 20px;
-    background: var(--mint-ground);
-    border-radius: var(--radius-panel);
-  }
-
-  /*
-    Stacked, the column and the aside dissolve into one run so the phone can come
-    straight after the dashed note and the link can close the card, as the phone
-    artboard orders them. Wide, they are two columns again and the link sits under
-    the note where the reader's eye already is.
-  */
-  .safety-copy,
-  .safety-aside {
-    display: contents;
-  }
-
-  .safety h2 {
-    font-size: clamp(2.375rem, 2.1vw + 1.86rem, 3.75rem);
-    line-height: 1.03;
-    letter-spacing: -0.02em;
-  }
-
-  .safety .body {
-    max-width: 600px;
-    font-size: clamp(1rem, 0.29vw + 0.93rem, 1.1875rem);
-    line-height: 1.6;
-  }
-
-  .safety-cards {
-    list-style: none;
-    margin: 4px 0 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .safety-cards li {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 22px;
-    background: var(--surface);
-    border-radius: 26px;
-  }
-
-  .safety-cards .icon {
-    width: 44px;
-    height: 44px;
+  .safety-line .icon {
     background: var(--success);
   }
 
-  .safety-cards .icon :global(svg) {
-    width: 20px;
-    height: 20px;
-  }
-
-  .safety-cards li > div {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .safety-cards h3 {
-    font-size: clamp(1.125rem, 0.1vw + 1.1rem, 1.1875rem);
-  }
-
-  .safety-cards p {
+  .safety-line p {
     max-width: 60ch;
-    font-size: clamp(0.9375rem, 0.1vw + 0.91rem, 1rem);
+    font-size: clamp(1rem, 0.19vw + 0.95rem, 1.125rem);
     line-height: 1.55;
   }
 
-  .future {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    padding: 20px 22px;
-    border: 2px dashed var(--mint-edge);
-    border-radius: 26px;
+  .safety-line .go {
+    white-space: nowrap;
   }
 
-  .future h3 {
-    font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
-  }
-
-  .future p {
-    max-width: 60ch;
-    font-size: 0.9375rem;
-    line-height: 1.55;
-  }
-
-  .read {
-    order: 1;
-    align-self: center;
-    display: flex;
-    align-items: center;
-    min-height: 44px;
-    font-weight: 700;
-  }
-
-  .safety :global(.aside-phone) {
-    --phone-width: 230px;
-    align-self: center;
-    margin-top: 12px;
-  }
-
-  @media (min-width: 75rem) {
-    .safety {
+  @media (min-width: 64rem) {
+    .safety-line > .wrap {
       flex-direction: row;
-      align-items: flex-start;
-      gap: 72px;
-      padding: 80px;
-    }
-
-    .safety-copy,
-    .safety-aside {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .safety-copy {
-      flex: 1;
-      gap: 20px;
-    }
-
-    .safety-aside {
-      flex: 0 0 clamp(300px, 25vw, 360px);
       align-items: center;
       gap: 24px;
     }
 
-    .safety-cards {
-      margin-top: 12px;
-      gap: 14px;
+    .safety-line p {
+      flex: 1;
+      max-width: none;
     }
+  }
 
-    .safety-cards li {
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 18px;
-      padding: 24px 28px;
-      border-radius: var(--radius-card);
-    }
+  /* ─── Who it is not for ────────────────────────────────────────────────── */
 
-    .future {
-      padding: 20px 28px;
-      border-radius: var(--radius-card);
-    }
+  .not-for > .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 
-    .read {
-      order: 0;
-      align-self: flex-start;
-    }
+  .qas {
+    margin: clamp(8px, 1.52vw + 2px, 24px) 0 0;
+    display: grid;
+    gap: 12px;
+  }
 
-    .safety :global(.aside-phone) {
-      --phone-width: 290px;
-      margin-top: 0;
+  .qa {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: clamp(20px, 1.5vw + 14px, 28px);
+    background: var(--ground);
+    border-radius: var(--radius-card);
+  }
+
+  dt {
+    font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
+    line-height: 1.4;
+    color: var(--text-soft);
+  }
+
+  dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.375rem, 0.38vw + 1.28rem, 1.625rem);
+    line-height: 1.2;
+  }
+
+  .not-for-more {
+    margin-top: clamp(8px, 1.52vw + 2px, 24px);
+  }
+
+  @media (min-width: 64rem) {
+    .qas {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
   }
 </style>

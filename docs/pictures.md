@@ -100,7 +100,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`start-story-narrow-en` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`loop-calendar-en` 1800px<br>`asetukset-en` 580px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`platter` 520px<br>`start-story-narrow-en` 900px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`loop-calendar-en` 1800px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kipinat.html/` | `en/date-wizard-petals` 560px |
@@ -120,7 +120,8 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset-en` 520px |
-| `/` | `hero-cutout-fi` 1400px<br>`start-story-narrow-fi` 900px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar-fi` 1800px<br>`asetukset` 580px<br>`beta-invitation-fi` 1000px |
+| `/en/yhteystiedot.html/` | none |
+| `/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`start-story-narrow-fi` 900px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`loop-calendar-fi` 1800px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
@@ -140,6 +141,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/tietojen-poisto.html/` | none |
 | `/tietosuoja.html/` | none |
 | `/turvallisuus.html/` | `asetukset` 520px |
+| `/yhteystiedot.html/` | none |
 
 Carried but drawn on no page: `treffit`.
 
@@ -201,7 +203,7 @@ blurred cheek is), and none may be captioned as a Pilke user.
 
 ## The sparks
 
-The sparks in the price lines and the front page's spark card are not pictures and not
+The sparks in the price lines on `nain-se-toimii` are not pictures and not
 screenshots: `Sparkle.astro` draws them as vector SVG from `sparkleArtwork.ts`, whose path
 is the wordmark's own sparkle and whose colours and core steps are the app's counter's. So
 they cannot go stale against the app's mark the way a render could, and they need no file

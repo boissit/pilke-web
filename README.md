@@ -100,7 +100,7 @@ own card tints — blue for an invitation sent, pink for one received, peach for
 confirmed date, yellow for the feedback after it — carrying the four steps of the
 loop. It is light only, as the site has always been. The front page is one
 composition at every width: every measure is a straight line between the 390 and
-the 1440 artboard, and the layout changes shape only at 40rem, 64rem and 75rem.
+the 1440 artboard, and the layout changes shape only at 40rem, 64rem and 69rem.
 
 `Phone.astro` never lets a rounded corner cut into a screenshot. The picture is
 inset on the colour the app paints behind that screen (`grounds` in
@@ -110,31 +110,39 @@ positioned on the whole picture.
 
 ## What the front page argues
 
-The order of the sections is the argument, and it runs: what Pilke is, the three
-things to remember of it, how a date comes about, what the currency is, and that
-meeting a stranger through it is looked after.
+The order of the sections is the argument, and it is the owner's pitch: what is
+wrong with the other apps, what Pilke does instead, how it goes in practice, and
+who would be better off with another app. Each part says its point once and links
+on to the page that says it in full.
 
-- **The hero** is the owner's headline and lead beside the app's home screen on a
-  coral disc, with two buttons: down to the waitlist, and down to the steps.
-- **Three cards under it**: inviting and being invited, time and place already
-  set, and the sparks Pilke runs on. One line of body each.
-- **How it works** opens with the one thing done once — the personality quiz and
-  the calendar — on its own white card, then the four steps on the four card
-  tints, each with its screen running off the bottom of the card: the top of a
-  screen is what says which screen it is.
-- **The sparks** get one short section: what they are for, the two ways they
-  build up week to week (+1 for ten hours kept in the calendar for a week, +2 for a
-  date once feedback is given) and a link on. The whole ledger — the welcome
-  sparks, the fifteen-spark ceiling, refunds — stays on `nain-se-toimii`, because a
-  full price list on a front page reads as a game to be played.
-- **Safety** is two cards, venues first and then the trusted person and the
-  button as one card, because the button does nothing until the number is saved.
-  Venues lead because a reader who has not used the app yet is better served by
-  knowing where they will be sent than by knowing how to complain afterwards.
-  The forward-looking note about *vahva tunnistautuminen* sits under the cards and
-  is drawn dashed, not as a third card: beside features that ship, a card reads as
-  a feature that ships. The phone beside them is the settings screen where the
-  trusted person's number is saved; the location window is on `turvallisuus`.
+- **The hero** is the owner's headline and a two-sentence lead beside the app's
+  home screen on a coral disc, with two buttons: down to the waitlist, and down to
+  the next card.
+- **The other apps**: swiping, chatting, and only then the date, as three cards
+  in the order a reader has lived them. The date's card is peach, the one part of
+  the three anybody wanted.
+- **What Pilke does instead** opens with the owner's line *Pilkkeessä ei
+  swaippailla eikä chättäillä*, the one sentence on the site allowed to open with
+  a negation, then four cards beside the candidates screen: candidates by your
+  wishes and ordered by the persoonallisuuskysely, an invitation received or sent
+  to one of three, time and place already set, and what happens after the date.
+  The ordering is claimed carefully — it gets better as there are more users — and
+  the feedback claim rests on the privacy statement. It links to `nain-se-toimii`.
+- **In practice** is the owner's four steps: the account, on its own white card
+  because it is done once, then three on the card tints, each with its screen
+  running off the bottom of the card. It links to the manual.
+- **Sparks** are one card closing the steps, with the calendar photograph: five
+  for an invitation, earned from a calendar kept up and from dates, and a link to
+  the manual's page on them.
+- **Safety** is one line on mint, the venues and the button, and a link to
+  `turvallisuus`.
+- **Who it is not for** is the owner's four questions, each answered with the app
+  that does that one thing — Tinder, Bumble, OkCupid, Valo — as a friend's tip and
+  never a dig. It links to `kysyttya` and `yhteystiedot`.
+
+The pitch is Finnish only for now: its keys are `pitch.*` in `ui.ts`, the one
+group `en` may leave out, and the English front page shows them in Finnish until
+they are translated.
 
 **Never set body text beside a title.** A lede to the right of a heading reads as
 a second column and the eye does not know which to follow first, so every section
@@ -152,7 +160,9 @@ Two deliberate omissions:
 - **The questions are their own page** at `kysyttya`, which the header points at.
   Somebody arriving with one question is a different visit from reading the front
   page top to bottom, and a stack of six answers has no business being the last
-  thing a front-page reader meets before the waitlist.
+  thing a front-page reader meets before the waitlist. The four questions the front
+  page does carry are part of the pitch — who Pilke is not for — and are answered
+  in a line each.
 
 ## Where the claims come from
 
@@ -218,10 +228,8 @@ The load-bearing numbers:
   not.** No field records it, so that half of the *Paikat valitsemme itse* card is
   a promise about how the team fills the table, and it is the only claim on the
   site that rests on a practice rather than on a constant. Keep it true.
-- **Strong electronic identification does not exist in either repository.** The
-  safety section says so in the copy itself — *tulossa*, and we will say when it
-  is in use — and it is the only forward-looking statement on the site. If it ships, that note
-  becomes a card; if it is dropped, the note goes.
+- **Strong electronic identification does not exist in either repository**, and
+  the site says nothing about it. If it ships, it belongs on `turvallisuus`.
 - There is no way to buy a spark, no paid visibility, no boost and no ranking.
   `TokenGrantReason` in `users/models.py` declares nine reasons and not one of
   them is a purchase, and there is no billing, in-app-purchase, boost or ranking
