@@ -51,7 +51,7 @@
   en: 'What does it cost?'
 
 'faq.cost.a':
-  fi: 'Pilke on maksuton. Se pyörii kipinöiden ympärillä: niitä kertyy, kun pidät kalenterisi ajan tasalla ja käyt treffeillä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun. Kipinöitä ei voi ostaa.'
+  fi: 'Pilke on maksuton. Se pyörii kipinöillä: niitä kertyy, kun pidät kalenterisi ajan tasalla ja käyt treffeillä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun. Kipinöitä ei voi ostaa.'
   en: 'Pilke is free. It runs on sparks: you collect them by keeping your calendar up to date and going on dates, and {{petals.set_cost}} sparks send a date invitation. Sparks cannot be bought.'
 
 'faq.refund.q':

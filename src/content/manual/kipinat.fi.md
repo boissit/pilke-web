@@ -1,6 +1,6 @@
 ---
 title: Kipinät
-lead: Pilke pyörii kipinöiden ympärillä. Niitä kertyy ylläpidetystä kalenterista ja käydyistä treffeistä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun.
+lead: Pilke pyörii kipinöillä. Niitä kertyy ylläpidetystä kalenterista ja käydyistä treffeistä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun.
 order: 30
 draft: true
 ---

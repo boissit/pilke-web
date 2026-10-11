@@ -7,7 +7,7 @@
  *
  * Product vocabulary is the app's own spelling: the tokens are *kipinät*, one
  * *kipinä*, in English *sparks*, and five of them send a treffikutsu. They are
- * never called a currency: Pilke *pyörii kipinöiden ympärillä*, runs on sparks.
+ * never called a currency: Pilke *pyörii kipinöillä*, runs on sparks.
  * A zero balance is never *ei kipinää*, which means no chemistry, and *kipinöitä
  * lentää* belongs to the moment two people say yes. The constants keep their old
  * names, `{{petals.*}}`, because the backend does.
@@ -99,7 +99,7 @@ const fi = {
   // Sparks, on the front page in two lines and no more: what they are for, the two
   // ways they build up week to week, and a link to the rest. The full ledger —
   // the welcome sparks, the ceiling, refunds — is `nain-se-toimii`'s.
-  'sparks.title': 'Pilke pyörii kipinöiden ympärillä.',
+  'sparks.title': 'Pilke pyörii kipinöillä.',
   'sparks.body':
     'Kipinöitä kertyy, kun merkitset kalenteriin vapaita aikoja ja käyt treffeillä. Kun niitä on {{petals.set_cost}}, voit lähettää treffikutsun.',
   'sparks.earn': 'Näin niitä kertyy',
@@ -193,7 +193,7 @@ const fi = {
 
   'detail.economy.title': 'Kipinät',
   'detail.economy.body':
-    'Pilke pyörii kipinöiden ympärillä. Niitä kertyy ylläpidetystä kalenterista ja käydyistä treffeistä, ja niillä lähetät treffikutsuja.',
+    'Pilke pyörii kipinöillä. Niitä kertyy ylläpidetystä kalenterista ja käydyistä treffeistä, ja niillä lähetät treffikutsuja.',
   'detail.economy.earn': 'Näin kipinöitä kertyy',
   'detail.earn.signup': 'Tervetuliaiskipinät',
   'detail.earn.signup.note': 'Kerran, kun vahvistat puhelinnumerosi. Ne riittävät ensimmäiseen kutsuun.',
@@ -267,7 +267,7 @@ const fi = {
     'Vain jos valitset niin. Sijainti näkyy {{sharing.lead_minutes}} minuuttia ennen sovittua alkua ja {{sharing.trail_minutes}} minuuttia sen jälkeen, ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta. Voit lopettaa jakamisen milloin tahansa, ja sijainti poistetaan, kun aika umpeutuu.',
   'faq.cost.q': 'Mitä se maksaa?',
   'faq.cost.a':
-    'Pilke on maksuton. Se pyörii kipinöiden ympärillä: niitä kertyy, kun pidät kalenterisi ajan tasalla ja käyt treffeillä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun. Kipinöitä ei voi ostaa.',
+    'Pilke on maksuton. Se pyörii kipinöillä: niitä kertyy, kun pidät kalenterisi ajan tasalla ja käyt treffeillä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun. Kipinöitä ei voi ostaa.',
   'faq.refund.q': 'Milloin kipinät palaavat?',
   'faq.refund.a':
     'Kun kutsusi hylätään, kun se raukeaa vastaamattomana {{invitation.answer_hours}} tunnissa tai kun kutsumasi henkilö peruu sovitut treffit, {{petals.refund}} kipinää palaa sinulle. Jos peruutat kutsun itse tai perut sovitut treffit, kipinät jäävät käytetyiksi.',

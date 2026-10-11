@@ -27,7 +27,7 @@
 #
 # Product vocabulary is the app's own spelling: the tokens are kipinät, one kipinä,
 # in English sparks, and five of them send a treffikutsu. They are never called a
-# currency: Pilke pyörii kipinöiden ympärillä, runs on sparks. A zero balance is
+# currency: Pilke pyörii kipinöillä, runs on sparks. A zero balance is
 # never "ei kipinää", which means no chemistry, and "kipinöitä lentää" belongs to the
 # moment two people say yes. The constants keep their old names, `{{petals.*}}`,
 # because the backend does.
