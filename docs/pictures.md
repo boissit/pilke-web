@@ -98,7 +98,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`story-en` 460px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`platter` 520px<br>`story-en` 460px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kipinat.html/` | `en/date-wizard-petals` 560px |
@@ -121,8 +121,12 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/yhteystiedot.html/` | none |
 | `/etusivu-a.html/` | `hero-cutout-fi` 1400px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
 | `/etusivu-b.html/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/etusivu-b2.html/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/etusivu-b3.html/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/etusivu-b4.html/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/etusivu-b5.html/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
 | `/etusivu-c.html/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
-| `/` | `hero-cutout-fi` 1400px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/` | `hero-cutout-fi` 1400px<br>`platter` 520px<br>`story` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |

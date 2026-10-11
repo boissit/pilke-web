@@ -127,11 +127,14 @@ to the page that says it in full.
   claimed carefully — it gets better as there are more users — and the feedback
   claim rests on the privacy statement. It links to `nain-se-toimii`.
 
-  How it sets the other apps against Pilke is still being chosen. Three drafts are
-  built, as `variant` on the page and as the temporary pages `etusivu-a`, `-b` and
-  `-c`: A sets each of the other apps' steps opposite Pilke's answer to it, B adds
-  the other apps' routine as a struck-through strip under the section, and C says
-  the contrast in the lead alone. The page draws A until the owner picks.
+  How it sets the other apps against Pilke is still being chosen, as `variant` on
+  the page and the temporary pages `etusivu-*`. The page draws C, which says the
+  contrast in its lead alone. A sets each of the other apps' steps opposite
+  Pilke's answer. B to B5 keep the Pilke section first and show the other apps'
+  route after or inside it: a quiet strip (B), two tracks to the same date (B2),
+  a big card of struck-through steps (B3), a message thread beside a drawn date
+  invitation (B4), and the struck path between the section's heading and its lead
+  (B5). The pages and the unchosen drafts go once the owner picks.
 - **In practice** is the owner's four steps on the app's four card tints, each
   with its screen running off the bottom of the card: the persoonallisuuskysely,
   an invitation, the date and the feedback. It links to the manual.

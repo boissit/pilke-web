@@ -49,12 +49,12 @@ import Base from '../../layouts/Base.astro';
 
 /*
   Which draft of the Pilke section to draw; see the comment above it. The page draws
-  A, and only the temporary `etusivu-a`, `-b` and `-c` pages pass another. It is a
+  C, and only the temporary `etusivu-*` pages pass another. It is a
   prop of the route, rather than of a component, because those pages render this
   one: a page's props are typed from what its `getStaticPaths` hands it.
 */
 export const getStaticPaths = () =>
-  localeRoutes().map((route) => ({ ...route, props: { variant: 'a' as 'a' | 'b' | 'c' } }));
+  localeRoutes().map((route) => ({ ...route, props: { variant: 'c' as 'a' | 'b' | 'c' | 'b2' | 'b3' | 'b4' | 'b5' } }));
 
 const { variant } = Astro.props;
 
@@ -102,6 +102,26 @@ const compare = instead.map((item, i) => ({ ...item, elsewhere: elsewhere[i] }))
 
 /* Draft B: the other apps' routine, as the path the strip strikes through. */
 const path = [t('pitch.b.swipe'), t('pitch.b.chat'), t('pitch.b.ghost'), t('pitch.b.maybe')];
+
+/*
+  Drafts B2 to B5: the other apps' routine drawn four more ways after, or in, the
+  Pilke section. B2's stops each carry Lucide's icon for the step; Pilke's carry the
+  app's tints, in the order a date goes through them.
+*/
+const b2Elsewhere = [
+  { label: t('pitch.b2.swipe'), icon: 'layers' },
+  { label: t('pitch.b2.chat'), icon: 'messages-square' },
+  { label: t('pitch.b2.ghost'), icon: 'ghost' },
+  { label: t('pitch.b2.more'), icon: 'messages-square' },
+  { label: t('pitch.b2.maybe'), icon: 'circle-help' },
+];
+const b2Pilke = [
+  { label: t('pitch.b2.candidates'), icon: 'users-round', tint: 'var(--card-received)' },
+  { label: t('pitch.b2.invite'), icon: 'send', tint: 'var(--card-sent)' },
+  { label: t('pitch.b2.date'), icon: 'coffee', tint: 'var(--brand-main)' },
+];
+const b3Lines = [t('pitch.b3.swipe'), t('pitch.b3.chat'), t('pitch.b3.ghost'), t('pitch.b3.more'), t('pitch.b3.maybe')];
+const b5Path = [t('pitch.b5.swipe'), t('pitch.b5.chat'), t('pitch.b5.ghost'), t('pitch.b5.more'), t('pitch.b5.maybe')];
 
 const insteadSparkles = [
   { size: 110, rotate: 16, right: '6%', top: '32px', only: 'wide' as const },
@@ -218,9 +238,12 @@ const notFor = [
     go.
 
     A puts each step of the other apps opposite what Pilke does about it, in four
-    rows. B is the Pilke section with a quiet strip after it, the other apps'
-    routine crossed out. C is the Pilke section alone, its lead carrying the
-    contrast in one sentence.
+    rows. C is the Pilke section alone, its lead carrying the contrast in one
+    sentence, and is the one the page draws. B and its successors keep the Pilke
+    section first and show the other apps' route after it: B as a quiet strip, B2
+    as two tracks to the same date, B3 as one big card of struck-through steps, B4
+    as a message thread beside a date invitation, and B5 as the struck-through
+    path inside the section, between its heading and its lead.
   -->
   {
     variant === 'a' ? (
@@ -274,6 +297,16 @@ const notFor = [
           <SparkleScatter fill="var(--sparkle-on-peach)" sparkles={insteadSparkles} />
           <div class="instead-head">
             <h2 class="display-mid" id="instead-title">{t('pitch.instead.title')}</h2>
+          {
+            variant === 'b5' && (
+              <div class="lead-path" aria-label={t('pitch.b5.label')}>
+                <span class="strip-label">{t('pitch.b5.label')}</span>
+                <ol class="path path-large">
+                  {b5Path.map((step) => <li><span>{step}</span></li>)}
+                </ol>
+              </div>
+            )
+          }
             <p class="lede">{t(variant === 'c' ? 'pitch.c.lead' : 'pitch.instead.lead')}</p>
           </div>
 
@@ -322,6 +355,107 @@ const notFor = [
             {path.map((step) => <li><span>{step}</span></li>)}
           </ol>
           <p class="strip-here">{t('pitch.b.here')}</p>
+        </div>
+      </section>
+    )
+  }
+
+  <!--
+    B2: two tracks to the same place. The other apps' route in grey, five stops with
+    a question mark at the end; Pilke's under it in the app's tints, three stops
+    ending in the date itself.
+  -->
+  {
+    variant === 'b2' && (
+      <section class="slab slab-white after-pilke" aria-labelledby="b2-title">
+        <div class="wrap section-pad tracks">
+          <h2 class="display-mid" id="b2-title">{t('pitch.b2.title')}</h2>
+          <div class="track track-elsewhere">
+            <span class="track-label">{t('pitch.b2.elsewhere')}</span>
+            <ol>
+              {b2Elsewhere.map((stop) => (
+                <li>
+                  <span class="stop-icon" aria-hidden="true"><Icon name={stop.icon} size={20} strokeWidth={1.8} /></span>
+                  {stop.label}
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div class="track track-pilke">
+            <span class="track-label">{t('pitch.b2.here')}</span>
+            <ol>
+              {b2Pilke.map((stop) => (
+                <li>
+                  <span class="stop-icon" style={`background:${stop.tint}`} aria-hidden="true"><Icon name={stop.icon} size={20} strokeWidth={1.8} /></span>
+                  {stop.label}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <!--
+    B3: the other apps' routine as one big card of display type, each step struck
+    through. Where the browser can tie an animation to scrolling and the reader has
+    not asked for less motion, the strikes are drawn as the card comes into view;
+    everywhere else they are simply there.
+  -->
+  {
+    variant === 'b3' && (
+      <section class="slab slab-white after-pilke" aria-labelledby="b3-here">
+        <div class="wrap section-pad big-strike">
+          <span class="strip-label">{t('pitch.b3.label')}</span>
+          <ol>
+            {b3Lines.map((line) => <li><span>{line}</span></li>)}
+          </ol>
+          <p class="big-here" id="b3-here">{t('pitch.b3.here')}</p>
+        </div>
+      </section>
+    )
+  }
+
+  <!--
+    B4: show it rather than say it. A message thread that trails off into "seen" and
+    a ghost, faded, beside a date invitation drawn as the app draws one: its title,
+    who it is from, the times and places to pick from, and its two answers. The
+    invitation is a drawing, not a screenshot, so it is hidden from screen readers
+    and the heading says what it is.
+  -->
+  {
+    variant === 'b4' && (
+      <section class="slab slab-white after-pilke" aria-labelledby="b4-title">
+        <div class="wrap section-pad show">
+          <h2 class="display-mid" id="b4-title">{t('pitch.b4.title')}</h2>
+          <div class="show-pair">
+            <figure class="thread" aria-hidden="true">
+              <figcaption class="track-label">{t('pitch.b4.elsewhere')}</figcaption>
+              <p class="bubble mine">{t('pitch.b4.msg1')}</p>
+              <p class="bubble theirs">{t('pitch.b4.msg2')}</p>
+              <p class="bubble mine">{t('pitch.b4.msg3')}</p>
+              <p class="seen">{t('pitch.b4.seen')}</p>
+              <p class="ghosted"><Icon name="ghost" size={28} strokeWidth={1.6} /><span>…</span></p>
+            </figure>
+            <figure class="invite" aria-hidden="true">
+              <figcaption class="track-label">{t('pitch.b4.here')}</figcaption>
+              <div class="invite-card">
+                <p class="invite-title">{t('pitch.b4.invite.title')}</p>
+                <div class="invite-who">
+                  <span class="invite-photo"><Icon name="user-round" size={34} strokeWidth={1.6} /></span>
+                  <div>
+                    <p class="invite-name">{t('pitch.b4.invite.name')}</p>
+                    <p class="invite-ask">{t('pitch.b4.invite.time')}</p>
+                    <p class="chips"><span>{t('pitch.b4.invite.time1')}</span><span>{t('pitch.b4.invite.time2')}</span></p>
+                  </div>
+                </div>
+                <p class="invite-ask">{t('pitch.b4.invite.place')}</p>
+                <p class="chips"><span>{t('pitch.b4.invite.place1')}</span><span>{t('pitch.b4.invite.place2')}</span></p>
+                <p class="invite-answers"><span>{t('pitch.b4.invite.decline')}</span><span class="yes">{t('pitch.b4.invite.accept')}</span></p>
+              </div>
+            </figure>
+          </div>
         </div>
       </section>
     )
@@ -829,6 +963,356 @@ const notFor = [
     font-family: var(--font-display);
     font-weight: 600;
     font-size: clamp(1.125rem, 0.29vw + 1.06rem, 1.3125rem);
+  }
+
+  /* ─── Drafts B2 to B5 ──────────────────────────────────────────────────── */
+
+  /* B2 to B4 are a card of their own after the Pilke section, at the air between
+     any two cards. */
+  .after-pilke {
+    margin-top: 24px;
+  }
+
+  /* The small label a draft opens with, "Muualla" or "Pilkkeessä": the strip's
+     label, shared. */
+  .track-label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  /* B2: two tracks. Each is a row of stops, wrapping on a phone, with an arrow
+     after every stop but the last, so a wrapped line never starts with one. */
+  .tracks {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 1.5vw + 14px, 32px);
+  }
+
+  .track {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .track ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 8px;
+  }
+
+  .track li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+  }
+
+  .track li:not(:last-child)::after {
+    content: '→';
+    margin-left: 2px;
+    color: var(--text-soft);
+    font-weight: 400;
+  }
+
+  .stop-icon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--ground);
+  }
+
+  .stop-icon :global(svg) {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* The other apps' track in grey and a size down; Pilke's at the size of a card
+     title, with the date at the end on the brand's own coral. */
+  .track-elsewhere li {
+    color: var(--text-soft);
+    font-size: clamp(0.9375rem, 0.1vw + 0.91rem, 1rem);
+    opacity: 0.8;
+  }
+
+  .track-elsewhere .stop-icon {
+    filter: grayscale(1);
+  }
+
+  .track-pilke li {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 0.57vw + 1.11rem, 1.625rem);
+  }
+
+  .track-pilke .stop-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* B3: the routine in display type, a line a step, each struck through. */
+  .big-strike {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .big-strike ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 0.45em;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 2.67vw + 1.35rem, 3.75rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text-soft);
+  }
+
+  /* The strike is a bar drawn over each line rather than `line-through`, so it can
+     be drawn in: it sits a little below the middle of the lowercase, in coral. */
+  .big-strike li span {
+    position: relative;
+    display: inline-block;
+  }
+
+  .big-strike li span::after {
+    content: '';
+    position: absolute;
+    left: -0.04em;
+    right: -0.04em;
+    top: 54%;
+    height: 0.09em;
+    border-radius: 999px;
+    background: var(--brand-main);
+    transform-origin: left center;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .big-strike li span::after {
+        animation: strike linear both;
+        animation-timeline: view();
+        animation-range: entry 60% cover 45%;
+      }
+
+      .big-strike li:nth-child(2) span::after { animation-range: entry 70% cover 48%; }
+      .big-strike li:nth-child(3) span::after { animation-range: entry 80% cover 51%; }
+      .big-strike li:nth-child(4) span::after { animation-range: entry 90% cover 54%; }
+      .big-strike li:nth-child(5) span::after { animation-range: entry 100% cover 57%; }
+    }
+  }
+
+  @keyframes strike {
+    from {
+      transform: scaleX(0);
+    }
+
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  .big-here {
+    margin-top: clamp(8px, 1.5vw + 2px, 24px);
+    max-width: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 2.67vw + 1.35rem, 3.75rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+
+  /* B4: the thread and the invitation, stacked on a phone and side by side from
+     40rem, each a column under its label. */
+  .show {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 1.5vw + 14px, 32px);
+  }
+
+  .show-pair {
+    display: grid;
+    gap: 28px;
+    align-items: start;
+  }
+
+  .show-pair figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  @media (min-width: 40rem) {
+    .show-pair {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: clamp(24px, 4vw, 64px);
+    }
+  }
+
+  /* The thread, faded: grey bubbles, the reader's own on the right, and the reply
+     that never comes drawn as a ghost and an ellipsis. */
+  .thread {
+    opacity: 0.7;
+  }
+
+  .bubble {
+    max-width: 80%;
+    padding: 10px 16px;
+    border-radius: 20px;
+    background: var(--ground);
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .bubble.mine {
+    align-self: flex-end;
+    border-bottom-right-radius: 6px;
+    background: var(--rule);
+  }
+
+  .bubble.theirs {
+    align-self: flex-start;
+    border-bottom-left-radius: 6px;
+  }
+
+  .seen {
+    align-self: flex-end;
+    margin-top: -4px;
+    font-size: 0.75rem;
+    color: var(--text-soft);
+  }
+
+  .ghosted {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-soft);
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  /* The invitation, as the app draws it: the heavy title, ink borders two pixels
+     wide, square-cornered chips, and answers that sit on a hard shadow. Its ground
+     is the app's white. */
+  .invite-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: var(--white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-float);
+    color: var(--ink);
+  }
+
+  .invite-title {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 1.75rem;
+    line-height: 1.1;
+  }
+
+  .invite-who {
+    display: flex;
+    gap: 14px;
+  }
+
+  .invite-photo {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 84px;
+    height: 84px;
+    border: 2px solid var(--ink);
+    border-radius: 14px;
+    background: var(--card-received);
+  }
+
+  .invite-name {
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+
+  .invite-ask {
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+  }
+
+  .chips span {
+    padding: 2px 10px;
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-small);
+    font-size: 0.875rem;
+  }
+
+  .invite-answers {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 8px;
+    max-width: none;
+  }
+
+  .invite-answers span {
+    flex: 1;
+    padding: 8px 0;
+    border: 2px solid var(--ink);
+    border-radius: var(--radius-normal);
+    box-shadow: 0 4px 0 var(--ink);
+    background: var(--white);
+    text-align: center;
+    font-weight: 700;
+  }
+
+  .invite-answers .yes {
+    background: var(--success);
+  }
+
+  /* B5: the struck path inside the Pilke section, between its heading and its lead,
+     at the size of a card title so it reads as part of the argument. */
+  .lead-path {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-block: 4px;
+  }
+
+  .path-large {
+    justify-content: flex-start;
+    gap: 8px 10px;
+  }
+
+  .path-large li {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.25rem, 0.76vw + 1.07rem, 1.75rem);
+    gap: 10px;
+  }
+
+  .path-large li span {
+    text-decoration-thickness: 2.5px;
+    text-decoration-color: var(--brand-main);
+    opacity: 0.85;
   }
 
   /* ─── In practice ──────────────────────────────────────────────────────── */
