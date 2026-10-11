@@ -67,7 +67,6 @@ const fi = {
   */
   'pitch.hero.lead':
     'Pilke etsii puolestasi ehdokkaat, yhteisen ajan ja treffipaikan. Sinä menet treffeille.',
-  'pitch.hero.more': 'Miksi Pilke?',
 
   /*
     What Pilke does instead. The title is the owner's own contrast line, the one
@@ -432,7 +431,6 @@ const en: Record<keyof typeof fi, string> = {
 
   'pitch.hero.lead':
     'Pilke finds your candidates, a time you both have free and a place to meet. You go on the date.',
-  'pitch.hero.more': 'Why Pilke?',
 
   'pitch.instead.title': 'No swiping and no chatting on Pilke.',
   'pitch.instead.lead': 'Pilke takes care of all that for you and hands you a date that is practically ready.',

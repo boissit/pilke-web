@@ -147,12 +147,10 @@ const notFor = [
         <!--
           The footer is the form, so the hero points at it rather than carrying a
           second copy. Two forms on a page are two things to wire up and two places
-          to disagree about what was submitted. The second button is the start of
-          the argument, the struck-through steps under the hero.
+          to disagree about what was submitted.
         -->
         <p class="actions">
           <a class="go" href="#beta">{t('cta.button')}</a>
-          <a class="go ghost" href="#miksi">{t('pitch.hero.more')}</a>
         </p>
       </div>
 
@@ -202,7 +200,7 @@ const notFor = [
     `<del>` as plain text. The Pilke section's lead, "Pilke hoitaa nämä puolestasi", points
     back at these lines.
   -->
-  <section class="elsewhere" id="miksi" aria-labelledby="elsewhere-note">
+  <section class="elsewhere" aria-labelledby="elsewhere-note">
     <p class="wrap">
       <span class="visually-hidden" id="elsewhere-note">{t('pitch.elsewhere.note')}</span>
       {elsewhereSteps.map((step) => <Fragment><del>{step}</del>{' '}</Fragment>)}
@@ -591,11 +589,12 @@ const notFor = [
     The lines between the hero and the Pilke section, on the page's own ground. Set
     in the display face at the size of a section head's second rank, left-aligned
     with the cards' content so the eye runs down one edge from the hero's headline
-    to the Pilke section's, and with the air of a section break above and below.
+    to the Pilke section's, and with a full section's space above and below, so the
+    lines stand alone between the two slabs instead of reading as either one's caption.
     The words wrap freely on a phone; each step keeps its own strike.
   */
   .elsewhere {
-    padding: clamp(36px, 3.05vw + 24px, 72px) var(--gutter);
+    padding: var(--section-space) var(--gutter);
   }
 
   /* The inline padding is `.section-pad`'s, so the first word stands on the same
