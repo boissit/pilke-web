@@ -135,12 +135,12 @@ function leaderEnd(marker: Marker): { x: number; y: number } {
 
   /* The bounds of the element, so a big one reads as an area and a small one as
      a target. Dashed, because a solid ring round a card reads as the card's own
-     border. */
+     border. No fill: any wash tints what it marks, and on the calendar's pale
+     yellow shading a blue one turned the very thing being pointed at green. */
   .marker {
     position: absolute;
     border: 2px dashed var(--annotation);
     border-radius: var(--radius-small);
-    background: var(--annotation-wash);
     box-shadow:
       0 0 0 1.5px var(--annotation-halo),
       inset 0 0 0 1.5px var(--annotation-halo);
