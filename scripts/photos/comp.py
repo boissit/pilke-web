@@ -76,7 +76,12 @@ def android_screen(still, aspect):
 def ios_screen(still, aspect, notch_frac=0.415, clock='9.41', ink=(28, 24, 24)):
     """An Android still for an iPhone: the Android status bar and navigation bar
     go, the app's own band (stills.STATUS..stills.NAV) stays untouched, and an iOS status bar and
-    home indicator are drawn on the app's own ground colour above and below."""
+    home indicator are drawn on the app's own ground colour above and below.
+
+    A screen drawn edge to edge -- the invitation's map runs up under the status bar --
+    has no ground colour at the top, so there the iOS bar is drawn over the screen's
+    own picture: the still's status rows with the Android clock and icons inpainted
+    out, and the rows the taller iOS bar needs above them mirrored from the top edge."""
     w = still.width
     H = round(w * aspect)
     status = round(w * 47 / 390)
@@ -84,7 +89,10 @@ def ios_screen(still, aspect, notch_frac=0.415, clock='9.41', ink=(28, 24, 24)):
     top_c = still.getpixel((w // 2, stills.STATUS + 1))
     bot_c = still.getpixel((w // 2, stills.NAV - 2))
     out = Image.new('RGB', (w, H), bot_c)
-    ImageDraw.Draw(out).rectangle((0, 0, w, status), fill=top_c)
+    if stills.plain_row(np.asarray(still.convert('RGB')).astype(int)[stills.STATUS + 1]):
+        ImageDraw.Draw(out).rectangle((0, 0, w, status), fill=top_c)
+    else:
+        out.paste(_under_bar(still, status), (0, 0))
     out.paste(app, (0, status))
     d = ImageDraw.Draw(out)
     # Clock, centred in the left ear.
@@ -115,6 +123,23 @@ def ios_screen(still, aspect, notch_frac=0.415, clock='9.41', ink=(28, 24, 24)):
     hw, hh = 134 * s, 5 * s
     d.rounded_rectangle(((w - hw) / 2, H - 8 * s - hh, (w + hw) / 2, H - 8 * s), radius=hh / 2, fill=ink)
     return out
+
+
+def _under_bar(still, height):
+    """`height` rows of the picture under an edge-to-edge screen's status bar: the
+    still's own status rows, the Android glyphs inpainted from the picture round them,
+    over as many rows mirrored from the top edge as the iOS bar is taller."""
+    a = np.asarray(still.convert('RGB'))[:stills.STATUS].copy()
+    below = a[-6:].reshape(-1, 3)
+    ref = np.median(below, 0)
+    # The glyphs are the bar's ink: whatever stands clearly off the picture's own
+    # colours, grown a little so the inpaint takes their antialiased edge too.
+    mask = (np.abs(a.astype(int) - ref).sum(2) > 120).astype(np.uint8) * 255
+    mask = cv2.dilate(mask, np.ones((7, 7), np.uint8))
+    clean = cv2.inpaint(a, mask, 9, cv2.INPAINT_TELEA)
+    extra = height - stills.STATUS
+    band = np.concatenate([clean[:extra][::-1], clean], 0) if extra > 0 else clean[-height:]
+    return Image.fromarray(band)
 
 
 # ── Warping ─────────────────────────────────────────────────────────────────

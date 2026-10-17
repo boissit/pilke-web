@@ -46,8 +46,8 @@ def _ink(band, ref):
 
 def check(img, name, grounds=False):
     """Raises StillError unless `img` has the capture profile's size and bars.
-    `grounds` also checks the rows `comp.ios_screen` samples for the colour of the
-    iOS bars it draws: they must be the app's plain ground, not a card or photo."""
+    `grounds` also checks the row `comp.ios_screen` samples for the colour of the
+    home indicator's band: it must be the app's plain ground, not a card or photo."""
     if img.size != (WIDTH, HEIGHT):
         raise StillError(f'{name} is {img.size[0]} x {img.size[1]}, not the capture profile\'s '
                          f'{WIDTH} x {HEIGHT}: the bar crops ({STATUS} and {HEIGHT - NAV} px) are '
@@ -80,14 +80,17 @@ def check(img, name, grounds=False):
         raise StillError(f'{name}: no clock centred at y {CLOCK_CENTRE} in the status bar (rows 0-{STATUS}); '
                          'the bar is not the height the crop assumes')
 
-    if grounds:
-        for y in (STATUS + 1, NAV - 2):
-            row = a[y]
-            share = (np.abs(row - row[WIDTH // 2]).max(1) <= 12).mean()
-            if share < 0.85:
-                raise StillError(f'{name}: row {y} is only {share:.0%} one colour. comp.ios_screen takes '
-                                 'the colour of the iOS bar it draws from the middle of this row, so the '
-                                 'app has to stand on its plain ground there')
+    # The foot only: a screen drawn edge to edge under the status bar has no ground at
+    # its top, and `comp.ios_screen` draws the bar over its picture instead.
+    if grounds and not plain_row(a[NAV - 2]):
+        raise StillError(f'{name}: row {NAV - 2} is not one colour. comp.ios_screen takes the colour '
+                         'of the home indicator\'s band from the middle of this row, so the app has to '
+                         'stand on its plain ground there')
+
+
+def plain_row(row):
+    """Whether a row of pixels is the app's plain ground: 85% of it one colour."""
+    return (np.abs(row - row[WIDTH // 2]).max(1) <= 12).mean() >= 0.85
 
 
 def check_phone_astro():
