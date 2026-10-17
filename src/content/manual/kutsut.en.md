@@ -16,7 +16,7 @@ From the times and venues on a card you pick the ones that suit you. An invitati
 
 The other person picks exactly one of your times and one venue. The date starts at the beginning of the chosen time and, as far as Pilke is concerned, lasts {{date.length_hours}} hour.
 
-![A received invitation: the times and venues offered, and the Decline and Agreed! buttons](shot:invitation#timeslot-0,venue-0)
+![A received invitation: the times and venues offered, and the Decline and Agreed! buttons](shot:invitation#timeslot-*,venue-*)
 
 On an invitation you receive, you pick one time (1) and, if there is more than one venue, one venue (2). **Decide later** only closes the screen: the invitation waits, but the clock keeps running.
 

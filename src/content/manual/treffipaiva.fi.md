@@ -5,7 +5,7 @@ order: 70
 draft: true
 ---
 
-![Sovitut treffit: ajankohta, paikka ja Löydättekö toisenne? -kartta](shot:date#agreed-time,live-map)
+![Sovitut treffit: ajankohta, paikka ja Löydättekö toisenne? -kartta](shot:date#agreed-time,live-map..date-map-directions)
 
 Treffisivulla on sovittu ajankohta (1), paikka ja kartta (2). Muistutus tulee {{date.reminder_hours}} h ennen treffejä, jos se on päällä asetuksissa.
 

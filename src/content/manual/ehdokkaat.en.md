@@ -7,7 +7,7 @@ draft: true
 
 You find {{candidates.per_set}} candidates at a time. Pilke goes through everyone you could have a date with and picks the {{candidates.per_set}} who suit you best. If there are not {{candidates.per_set}} of them, your sparks stay put.
 
-![The Candidates screen: the middle candidate's card, the times you both have and something to do together](shot:platter#timeslot-chip-0,activity-chip-0)
+![The Candidates screen: the middle candidate's card, the times you both have and something to do together](shot:platter#timeslot-chip-*,activity-chip-*)
 
 Each card shows the candidate's photo, name and age, up to {{candidates.times_per_card}} of the soonest times you both have free (1), and up to {{candidates.venues_per_card}} venues that suit you both (2). Those are what you build an invitation from. See [Invitations](/en/guide/kutsut).
 

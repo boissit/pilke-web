@@ -5,7 +5,7 @@ order: 70
 draft: true
 ---
 
-![An agreed date: the time, the place and the Finding each other map](shot:date#agreed-time,live-map)
+![An agreed date: the time, the place and the Finding each other map](shot:date#agreed-time,live-map..date-map-directions)
 
 The date's screen holds the agreed time (1), the place and a map (2). A reminder comes {{date.reminder_hours}} hour before, if it is on in Settings.
 
