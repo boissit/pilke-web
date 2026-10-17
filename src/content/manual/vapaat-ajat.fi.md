@@ -20,7 +20,7 @@ Eleet: paina ruudukkoa pitkään ja vedä, niin syntyy merkintä. Napauta merkin
 
 ## Kellertävät tunnit
 
-![Kalenteri: omat merkinnät koralleina ja maanantain ja tiistain iltapäivän tunnit kellertävinä](shot:kalenteri#calendar-density)
+![Kalenteri: omat merkinnät koralleina ja niiden välissä iltapäivän tunteja kellertävinä](shot:kalenteri#calendar-density)
 
 Kellertävä sävy (1) näyttää tunnit, joille moni sinulle sopiva ihminen on merkinnyt vapaata aikaa. Mitä tummempi sävy, sitä enemmän heitä on verrattuna muihin näkyviin tunteihin.
 
