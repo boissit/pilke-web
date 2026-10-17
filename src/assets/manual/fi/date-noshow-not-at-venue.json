@@ -1,36 +1,48 @@
 {
   "name": "date-noshow-not-at-venue",
   "language": "fi",
-  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
-  "takenAt": "2026-10-07T09:25:31Z",
+  "commit": "0eed37c9cb105d95399252727790a8cbe49b8f0b-dirty",
+  "takenAt": "2026-10-17T00:29:41Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
-    "agreed-time": {
-      "x": 534,
-      "y": 454,
-      "width": 316,
-      "height": 74
+    "live-map": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 2280
     },
-    "venue-map": {
-      "x": 33,
-      "y": 948,
-      "width": 1014,
-      "height": 714
+    "date-map-directions": {
+      "x": 784,
+      "y": 1131,
+      "width": 263,
+      "height": 137
     },
     "no-show-report": {
-      "x": 33,
-      "y": 1695,
-      "width": 1014,
-      "height": 215
+      "x": 41,
+      "y": 1601,
+      "width": 998,
+      "height": 280
     },
     "no-show-explainer": {
-      "x": 970,
-      "y": 1717,
+      "x": 942,
+      "y": 1644,
       "width": 55,
       "height": 55
+    },
+    "date-underway": {
+      "x": 41,
+      "y": 1925,
+      "width": 537,
+      "height": 172
+    },
+    "agreed-time": {
+      "x": 250,
+      "y": 1441,
+      "width": 316,
+      "height": 74
     }
   }
 }

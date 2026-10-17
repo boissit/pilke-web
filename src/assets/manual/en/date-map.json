@@ -1,8 +1,8 @@
 {
   "name": "date-map",
   "language": "en",
-  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
-  "takenAt": "2026-10-07T09:32:42Z",
+  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
+  "takenAt": "2026-10-16T23:55:48Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -14,29 +14,47 @@
       "width": 1080,
       "height": 2280
     },
+    "date-map-directions": {
+      "x": 774,
+      "y": 892,
+      "width": 273,
+      "height": 137
+    },
+    "meet-up-block": {
+      "x": 41,
+      "y": 1362,
+      "width": 998,
+      "height": 518
+    },
+    "meet-up-explainer": {
+      "x": 984,
+      "y": 1368,
+      "width": 55,
+      "height": 55
+    },
+    "agreed-time": {
+      "x": 250,
+      "y": 1202,
+      "width": 279,
+      "height": 74
+    },
     "meet-up-status": {
-      "x": 44,
-      "y": 1533,
-      "width": 992,
-      "height": 106
+      "x": 236,
+      "y": 1575,
+      "width": 761,
+      "height": 53
+    },
+    "meet-up-own-status": {
+      "x": 236,
+      "y": 1779,
+      "width": 431,
+      "height": 53
     },
     "meet-up-reveal": {
-      "x": 44,
-      "y": 1672,
-      "width": 992,
-      "height": 172
-    },
-    "date-map-directions": {
-      "x": 44,
-      "y": 1932,
-      "width": 360,
-      "height": 172
-    },
-    "date-map-back": {
-      "x": 708,
-      "y": 1932,
-      "width": 328,
-      "height": 172
+      "x": 700,
+      "y": 1713,
+      "width": 297,
+      "height": 138
     }
   }
 }

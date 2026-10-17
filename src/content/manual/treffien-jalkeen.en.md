@@ -7,9 +7,9 @@ draft: true
 
 You can give feedback as soon as the date has ended, {{date.length_hours}} hour after the start. If you have not answered, a reminder comes the next day at about {{feedback.prompt_hour}}:00, if it is on in Settings. Feedback can be given once.
 
-![Date feedback: your date, when it was, and the first question](shot:feedback#feedback-when)
+![Date feedback: your date, when it was, and the first question](shot:feedback)
 
-At the top is the date it is about (1). The first question is *How did the date go?*, and your answer decides what comes next. When the date went well, we ask whether your date matched what you were hoping for, what clicked between you, what the booked place was like and whether you would like to meet them again.
+At the top is the date it is about. The first question is *How did the date go?*, and your answer decides what comes next. When the date went well, we ask whether your date matched what you were hoping for, what clicked between you, what the booked place was like and whether you would like to meet them again.
 
 If the date went badly, we ask next whether you felt safe on the date. See [Safety](/en/guide/turvallisuus).
 

@@ -67,7 +67,7 @@ Only the stills the manual draws are listed. Each one is there because it shows 
 | date-map-sharing | the date map while you and your date are both sharing your locations | `meet-up-stop` |
 | date-location-consent | the location-sharing consent | |
 | date-noshow-not-at-venue | no-show report refused: not at the venue | `no-show-report` |
-| feedback | post-date feedback, first question | `feedback-when` |
+| feedback | post-date feedback, first question, *Miten treffit sujuivat?*, under the date's own card | |
 | date-history-open | the foot of the Treffit tab, with the Treffihistoria button | `open-date-history` |
 | date-history | Treffihistoria: past dates, the newest with a swapped number in its row | `date-history-row-number` |
 | asetukset-ilmoitukset | settings: notifications open, the three always-on rows in view | `notification-new_date-push`, `notification-new_date-email` |

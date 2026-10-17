@@ -1,8 +1,8 @@
 {
   "name": "cooldown-decline",
   "language": "fi",
-  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
-  "takenAt": "2026-10-07T06:21:21Z",
+  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
+  "takenAt": "2026-10-16T20:31:48Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -10,15 +10,15 @@
   "elements": {
     "economy-explainer": {
       "x": 721,
-      "y": 116,
+      "y": 121,
       "width": 326,
       "height": 117
     },
     "cooldown-notice": {
       "x": 33,
-      "y": 355,
+      "y": 360,
       "width": 1014,
-      "height": 242
+      "height": 295
     },
     "tip-bank": {
       "x": 33,
@@ -34,43 +34,43 @@
     },
     "balance-counter": {
       "x": 721,
-      "y": 116,
+      "y": 121,
       "width": 326,
       "height": 117
     },
     "balance-counter-0": {
       "x": 721,
-      "y": 116,
+      "y": 121,
       "width": 326,
       "height": 117
     },
     "open-date-history": {
       "x": 212,
-      "y": 948,
+      "y": 1006,
       "width": 657,
       "height": 172
     },
     "balance-sparks": {
       "x": 721,
-      "y": 128,
+      "y": 133,
       "width": 198,
       "height": 93
     },
     "balance-sparks-slot-2-lit": {
       "x": 729,
-      "y": 152,
+      "y": 157,
       "width": 59,
       "height": 59
     },
     "balance-sparks-slot-1-lit": {
       "x": 792,
-      "y": 138,
+      "y": 143,
       "width": 56,
       "height": 56
     },
     "balance-sparks-slot-0-lit": {
       "x": 852,
-      "y": 146,
+      "y": 151,
       "width": 63,
       "height": 63
     }

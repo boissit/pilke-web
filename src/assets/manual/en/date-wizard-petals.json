@@ -1,8 +1,8 @@
 {
   "name": "date-wizard-petals",
   "language": "en",
-  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
-  "takenAt": "2026-10-06T21:41:44Z",
+  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
+  "takenAt": "2026-10-16T21:38:30Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -28,7 +28,7 @@
     },
     "date-wizard-send": {
       "x": 179,
-      "y": 1976,
+      "y": 1910,
       "width": 722,
       "height": 172
     },

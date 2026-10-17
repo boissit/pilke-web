@@ -1,66 +1,96 @@
 {
   "name": "invitation",
   "language": "en",
-  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
-  "takenAt": "2026-10-06T21:46:37Z",
+  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
+  "takenAt": "2026-10-16T21:54:00Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
-    "timeslot-0": {
-      "x": 534,
-      "y": 454,
-      "width": 279,
-      "height": 74
+    "invitation-screen": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 2280
     },
-    "timeslot-1": {
-      "x": 534,
-      "y": 539,
-      "width": 279,
-      "height": 74
+    "invite-map": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 2280
     },
-    "timeslot-2": {
-      "x": 534,
-      "y": 624,
-      "width": 279,
-      "height": 74
-    },
-    "venue-0": {
-      "x": 33,
-      "y": 878,
-      "width": 218,
-      "height": 74
-    },
-    "venue-1": {
-      "x": 262,
-      "y": 878,
-      "width": 304,
-      "height": 74
-    },
-    "venue-2": {
-      "x": 577,
-      "y": 878,
-      "width": 390,
-      "height": 74
-    },
-    "venue-map": {
-      "x": 33,
-      "y": 985,
-      "width": 1014,
-      "height": 833
+    "invitation-explainer": {
+      "x": 984,
+      "y": 1043,
+      "width": 55,
+      "height": 55
     },
     "invitation-decline": {
-      "x": 33,
-      "y": 1851,
-      "width": 402,
+      "x": 41,
+      "y": 1992,
+      "width": 152,
+      "height": 59
+    },
+    "invitation-back": {
+      "x": 446,
+      "y": 1935,
+      "width": 240,
       "height": 172
     },
     "invitation-accept": {
-      "x": 640,
-      "y": 1851,
-      "width": 407,
+      "x": 720,
+      "y": 1935,
+      "width": 320,
       "height": 172
+    },
+    "deadline-hours": {
+      "x": 250,
+      "y": 888,
+      "width": 454,
+      "height": 74
+    },
+    "timeslot-0": {
+      "x": 49,
+      "y": 1145,
+      "width": 487,
+      "height": 149
+    },
+    "timeslot-1": {
+      "x": 537,
+      "y": 1145,
+      "width": 494,
+      "height": 149
+    },
+    "timeslot-2": {
+      "x": 49,
+      "y": 1300,
+      "width": 487,
+      "height": 149
+    },
+    "timeslot-3": {
+      "x": 537,
+      "y": 1300,
+      "width": 494,
+      "height": 149
+    },
+    "venue-0": {
+      "x": 49,
+      "y": 1497,
+      "width": 981,
+      "height": 132
+    },
+    "venue-1": {
+      "x": 49,
+      "y": 1629,
+      "width": 981,
+      "height": 132
+    },
+    "venue-2": {
+      "x": 49,
+      "y": 1761,
+      "width": 981,
+      "height": 132
     }
   }
 }

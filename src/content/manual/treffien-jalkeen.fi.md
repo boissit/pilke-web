@@ -7,9 +7,9 @@ draft: true
 
 Palautteen voi antaa heti, kun treffit ovat päättyneet, eli {{date.length_hours}} tunnin kuluttua alkamisajasta. Jos et ole vastannut, saat seuraavana päivänä noin kello {{feedback.prompt_hour}} muistutuksen, jos se on päällä asetuksissa. Palautteen voi antaa kerran.
 
-![Treffipalaute: treffikumppani, treffien aika ja ensimmäinen kysymys](shot:feedback#feedback-when)
+![Treffipalaute: treffikumppani, treffien aika ja ensimmäinen kysymys](shot:feedback)
 
-Ylhäällä näkyy, mistä treffeistä on kyse (1). Ensimmäinen kysymys on *Miten treffit sujuivat?*, ja vastauksesi ratkaisee, mitä kysytään seuraavaksi. Kun treffit sujuivat hyvin, kysymme, vastasiko treffipari kumppanitoiveitasi, mikä teillä klikkasi, millainen sovittu treffipaikka oli ja haluaisitko tavata hänet uudelleen.
+Ylhäällä näkyy, mistä treffeistä on kyse. Ensimmäinen kysymys on *Miten treffit sujuivat?*, ja vastauksesi ratkaisee, mitä kysytään seuraavaksi. Kun treffit sujuivat hyvin, kysymme, vastasiko treffipari kumppanitoiveitasi, mikä teillä klikkasi, millainen sovittu treffipaikka oli ja haluaisitko tavata hänet uudelleen.
 
 Jos treffit menivät huonosti, kysymme seuraavaksi, tuntuiko olosi turvalliselta treffeillä. Katso [Turvallisuus](/ohje/turvallisuus).
 

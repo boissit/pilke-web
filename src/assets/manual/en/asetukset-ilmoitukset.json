@@ -1,135 +1,135 @@
 {
   "name": "asetukset-ilmoitukset",
   "language": "en",
-  "commit": "7a21a2b08066709aa28b0993ab54e2798712dcda-dirty",
-  "takenAt": "2026-10-06T23:10:09Z",
+  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
+  "takenAt": "2026-10-17T00:08:33Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
     "notification-reveal_prompt-push": {
-      "x": 783,
+      "x": 838,
       "y": 101,
       "width": 176,
       "height": 55
     },
     "notification-party_arrived-push": {
-      "x": 783,
+      "x": 838,
       "y": 200,
       "width": 176,
       "height": 55
     },
     "notification-date_cancelled-push": {
-      "x": 783,
+      "x": 838,
       "y": 299,
       "width": 176,
       "height": 55
     },
     "notification-new_date-push": {
-      "x": 587,
+      "x": 642,
       "y": 592,
       "width": 177,
       "height": 55
     },
     "notification-new_date-email": {
-      "x": 797,
+      "x": 852,
       "y": 592,
       "width": 162,
       "height": 55
     },
     "notification-date_accepted-push": {
-      "x": 587,
+      "x": 642,
       "y": 691,
       "width": 177,
       "height": 55
     },
     "notification-date_accepted-email": {
-      "x": 797,
+      "x": 852,
       "y": 691,
       "width": 162,
       "height": 55
     },
     "notification-date_declined-push": {
-      "x": 587,
+      "x": 642,
       "y": 790,
       "width": 177,
       "height": 55
     },
     "notification-date_declined-email": {
-      "x": 797,
+      "x": 852,
       "y": 790,
       "width": 162,
       "height": 55
     },
     "notification-date_withdrawn-push": {
-      "x": 587,
+      "x": 642,
       "y": 889,
       "width": 177,
       "height": 55
     },
     "notification-date_withdrawn-email": {
-      "x": 797,
+      "x": 852,
       "y": 889,
       "width": 162,
       "height": 55
     },
     "notification-date_expiring-push": {
-      "x": 587,
+      "x": 642,
       "y": 988,
       "width": 177,
       "height": 55
     },
     "notification-date_expiring-email": {
-      "x": 797,
+      "x": 852,
       "y": 988,
       "width": 162,
       "height": 55
     },
     "notification-date_expired-push": {
-      "x": 587,
+      "x": 642,
       "y": 1087,
       "width": 177,
       "height": 55
     },
     "notification-date_expired-email": {
-      "x": 797,
+      "x": 852,
       "y": 1087,
       "width": 162,
       "height": 55
     },
     "notification-date_reminder-push": {
-      "x": 587,
+      "x": 642,
       "y": 1186,
       "width": 177,
       "height": 55
     },
     "notification-date_reminder-email": {
-      "x": 797,
+      "x": 852,
       "y": 1186,
       "width": 162,
       "height": 55
     },
     "notification-post_date-push": {
-      "x": 587,
+      "x": 642,
       "y": 1285,
       "width": 177,
       "height": 55
     },
     "notification-post_date-email": {
-      "x": 797,
+      "x": 852,
       "y": 1285,
       "width": 162,
       "height": 55
     },
     "notification-no_slots-push": {
-      "x": 587,
+      "x": 642,
       "y": 1486,
       "width": 177,
       "height": 55
     },
     "notification-no_slots-email": {
-      "x": 797,
+      "x": 852,
       "y": 1486,
       "width": 162,
       "height": 55
