@@ -1,8 +1,8 @@
 {
   "name": "invitation",
   "language": "fi",
-  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
-  "takenAt": "2026-10-16T20:17:21Z",
+  "commit": "2b76ce5d570e5b7e7686f99a3728a6f9e0e966ae-dirty",
+  "takenAt": "2026-10-17T05:44:09Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -20,76 +20,76 @@
       "width": 1080,
       "height": 2280
     },
+    "sheet-card": {
+      "x": 33,
+      "y": 936,
+      "width": 1014,
+      "height": 222
+    },
+    "deadline-hours": {
+      "x": 341,
+      "y": 1060,
+      "width": 445,
+      "height": 74
+    },
     "invitation-explainer": {
-      "x": 984,
-      "y": 1043,
+      "x": 992,
+      "y": 1198,
       "width": 55,
       "height": 55
     },
     "invitation-decline": {
-      "x": 41,
+      "x": 33,
       "y": 1992,
       "width": 138,
       "height": 59
     },
     "invitation-back": {
-      "x": 344,
+      "x": 352,
       "y": 1935,
-      "width": 339,
+      "width": 340,
       "height": 172
     },
     "invitation-accept": {
-      "x": 717,
+      "x": 725,
       "y": 1935,
-      "width": 323,
+      "width": 322,
       "height": 172
     },
-    "deadline-hours": {
-      "x": 250,
-      "y": 888,
-      "width": 445,
-      "height": 74
-    },
     "timeslot-0": {
-      "x": 49,
-      "y": 1145,
-      "width": 487,
-      "height": 149
+      "x": 41,
+      "y": 1300,
+      "width": 329,
+      "height": 148
     },
     "timeslot-1": {
-      "x": 537,
-      "y": 1145,
-      "width": 494,
-      "height": 149
+      "x": 370,
+      "y": 1300,
+      "width": 334,
+      "height": 148
     },
     "timeslot-2": {
-      "x": 49,
+      "x": 704,
       "y": 1300,
-      "width": 487,
-      "height": 149
-    },
-    "timeslot-3": {
-      "x": 537,
-      "y": 1300,
-      "width": 494,
-      "height": 149
+      "width": 335,
+      "height": 148
     },
     "venue-0": {
-      "x": 49,
-      "y": 1497,
-      "width": 981,
+      "x": 41,
+      "y": 1498,
+      "width": 998,
       "height": 132
     },
     "venue-1": {
-      "x": 49,
-      "y": 1629,
-      "width": 981,
+      "x": 41,
+      "y": 1630,
+      "width": 998,
       "height": 132
     },
     "venue-2": {
-      "x": 49,
-      "y": 1761,
-      "width": 981,
+      "x": 41,
+      "y": 1762,
+      "width": 998,
       "height": 132
     }
   }

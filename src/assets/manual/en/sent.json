@@ -1,8 +1,8 @@
 {
   "name": "sent",
   "language": "en",
-  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
-  "takenAt": "2026-10-16T23:52:04Z",
+  "commit": "2b76ce5d570e5b7e7686f99a3728a6f9e0e966ae-dirty",
+  "takenAt": "2026-10-17T06:10:08Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -20,83 +20,77 @@
       "width": 1080,
       "height": 2280
     },
+    "sheet-card": {
+      "x": 33,
+      "y": 936,
+      "width": 1014,
+      "height": 222
+    },
+    "sent-twinkle": {
+      "x": 937,
+      "y": 936,
+      "width": 110,
+      "height": 110
+    },
+    "deadline-hours": {
+      "x": 341,
+      "y": 1060,
+      "width": 623,
+      "height": 74
+    },
     "waiting-explainer": {
-      "x": 984,
-      "y": 1043,
+      "x": 992,
+      "y": 1198,
       "width": 55,
       "height": 55
     },
     "withdraw-invitation-open": {
-      "x": 41,
+      "x": 33,
       "y": 1992,
       "width": 480,
       "height": 59
     },
     "sent-back": {
-      "x": 710,
+      "x": 719,
       "y": 1935,
-      "width": 329,
+      "width": 328,
       "height": 172
     },
-    "deadline-hours": {
-      "x": 250,
-      "y": 888,
-      "width": 623,
-      "height": 74
-    },
     "timeslot-0": {
-      "x": 49,
-      "y": 1145,
-      "width": 323,
-      "height": 149
+      "x": 41,
+      "y": 1300,
+      "width": 329,
+      "height": 148
     },
     "timeslot-1": {
-      "x": 372,
-      "y": 1145,
-      "width": 329,
-      "height": 149
+      "x": 370,
+      "y": 1300,
+      "width": 334,
+      "height": 148
     },
     "timeslot-2": {
-      "x": 701,
-      "y": 1145,
-      "width": 329,
-      "height": 149
-    },
-    "timeslot-3": {
-      "x": 49,
+      "x": 704,
       "y": 1300,
-      "width": 323,
-      "height": 149
-    },
-    "timeslot-4": {
-      "x": 372,
-      "y": 1300,
-      "width": 329,
-      "height": 149
+      "width": 335,
+      "height": 148
     },
     "venue-0": {
-      "x": 49,
-      "y": 1497,
-      "width": 981,
+      "x": 41,
+      "y": 1498,
+      "width": 998,
       "height": 132
     },
     "venue-1": {
-      "x": 49,
-      "y": 1629,
-      "width": 981,
+      "x": 41,
+      "y": 1630,
+      "width": 998,
       "height": 132
     },
     "venue-2": {
-      "x": 49,
-      "y": 1761,
-      "width": 981,
+      "x": 41,
+      "y": 1762,
+      "width": 998,
       "height": 132
-    },
-    "sent-twinkle": {
-      "x": 896,
-      "y": 773,
-      "width": 110,
-      "height": 110
     }
   }
 }

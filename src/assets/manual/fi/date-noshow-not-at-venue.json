@@ -1,8 +1,8 @@
 {
   "name": "date-noshow-not-at-venue",
   "language": "fi",
-  "commit": "0eed37c9cb105d95399252727790a8cbe49b8f0b-dirty",
-  "takenAt": "2026-10-17T00:29:41Z",
+  "commit": "2b76ce5d570e5b7e7686f99a3728a6f9e0e966ae-dirty",
+  "takenAt": "2026-10-17T06:01:43Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -16,33 +16,39 @@
     },
     "date-map-directions": {
       "x": 784,
-      "y": 1131,
+      "y": 1071,
       "width": 263,
       "height": 137
     },
+    "sheet-card": {
+      "x": 33,
+      "y": 1293,
+      "width": 1014,
+      "height": 263
+    },
+    "agreed-time": {
+      "x": 341,
+      "y": 1479,
+      "width": 682,
+      "height": 52
+    },
     "no-show-report": {
-      "x": 41,
+      "x": 33,
       "y": 1601,
-      "width": 998,
+      "width": 1014,
       "height": 280
     },
     "no-show-explainer": {
-      "x": 942,
+      "x": 951,
       "y": 1644,
       "width": 55,
       "height": 55
     },
     "date-underway": {
-      "x": 41,
-      "y": 1925,
-      "width": 537,
+      "x": 33,
+      "y": 1924,
+      "width": 553,
       "height": 172
-    },
-    "agreed-time": {
-      "x": 250,
-      "y": 1441,
-      "width": 316,
-      "height": 74
     }
   }
 }
