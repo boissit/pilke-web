@@ -1,60 +1,84 @@
 {
   "name": "date-wizard-petals",
   "language": "fi",
-  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
-  "takenAt": "2026-10-16T20:10:59Z",
+  "commit": "47d283aca17eca7252eb9a77561806ec825a68f3-dirty",
+  "takenAt": "2026-10-18T04:22:20Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
+    "date-wizard-send": {
+      "x": 154,
+      "y": 1910,
+      "width": 772,
+      "height": 172
+    },
     "wizard-balance": {
       "x": 88,
-      "y": 796,
+      "y": 380,
       "width": 904,
-      "height": 400
+      "height": 310
     },
     "wizard-balance-0": {
-      "x": 256,
-      "y": 796,
-      "width": 568,
-      "height": 400
+      "x": 214,
+      "y": 432,
+      "width": 652,
+      "height": 206
     },
     "date-wizard-balance-body": {
       "x": 88,
-      "y": 1284,
+      "y": 1042,
       "width": 904,
-      "height": 122
+      "height": 116
     },
-    "date-wizard-send": {
-      "x": 178,
-      "y": 1910,
-      "width": 724,
-      "height": 172
+    "wizard-row-draw": {
+      "x": 96,
+      "y": 742,
+      "width": 888,
+      "height": 121
+    },
+    "wizard-row-after": {
+      "x": 96,
+      "y": 869,
+      "width": 888,
+      "height": 121
     },
     "wizard-sparks": {
-      "x": 256,
-      "y": 796,
-      "width": 568,
-      "height": 268
+      "x": 214,
+      "y": 432,
+      "width": 436,
+      "height": 206
     },
     "wizard-sparks-slot-2-lit": {
-      "x": 278,
-      "y": 865,
-      "width": 169,
-      "height": 170
+      "x": 231,
+      "y": 485,
+      "width": 130,
+      "height": 130
     },
     "wizard-sparks-slot-1-lit": {
-      "x": 459,
-      "y": 826,
-      "width": 162,
-      "height": 162
+      "x": 370,
+      "y": 455,
+      "width": 124,
+      "height": 124
     },
     "wizard-sparks-slot-0-lit": {
-      "x": 631,
-      "y": 847,
-      "width": 181,
-      "height": 182
+      "x": 501,
+      "y": 471,
+      "width": 139,
+      "height": 139
+    },
+    "wizard-row-draw-value": {
+      "x": 786,
+      "y": 776,
+      "width": 164,
+      "height": 53
+    },
+    "wizard-row-after-value": {
+      "x": 905,
+      "y": 903,
+      "width": 45,
+      "height": 53
     }
   }
 }

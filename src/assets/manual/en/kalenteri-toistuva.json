@@ -1,8 +1,8 @@
 {
   "name": "kalenteri-toistuva",
   "language": "en",
-  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
-  "takenAt": "2026-10-16T23:43:29Z",
+  "commit": "47d283aca17eca7252eb9a77561806ec825a68f3-dirty",
+  "takenAt": "2026-10-18T05:36:20Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -37,6 +37,24 @@
       "y": 323,
       "width": 197,
       "height": 81
+    },
+    "calendar-block-0": {
+      "x": 100,
+      "y": 853,
+      "width": 303,
+      "height": 560
+    },
+    "calendar-block-1": {
+      "x": 735,
+      "y": 853,
+      "width": 304,
+      "height": 416
+    },
+    "calendar-block-2": {
+      "x": 417,
+      "y": 1139,
+      "width": 304,
+      "height": 559
     }
   }
 }

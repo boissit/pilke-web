@@ -1,60 +1,60 @@
 {
   "name": "feedback",
   "language": "fi",
-  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
-  "takenAt": "2026-10-16T20:23:19Z",
+  "commit": "58ca6163d9c63dd7df02b0625d3f5a28c38fb386-dirty",
+  "takenAt": "2026-10-18T07:39:47Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
-    "feedback": {
-      "x": 33,
-      "y": 1247,
-      "width": 1014,
-      "height": 608
-    },
     "feedback-back": {
       "x": 33,
-      "y": 1944,
-      "width": 226,
-      "height": 171
+      "y": 1979,
+      "width": 149,
+      "height": 165
     },
     "feedback-continue": {
       "x": 708,
-      "y": 1944,
+      "y": 1976,
       "width": 339,
-      "height": 171
+      "height": 172
+    },
+    "feedback": {
+      "x": 33,
+      "y": 553,
+      "width": 1014,
+      "height": 732
     },
     "feedback-option-0": {
-      "x": 47,
-      "y": 1261,
-      "width": 986,
-      "height": 103
+      "x": 41,
+      "y": 561,
+      "width": 998,
+      "height": 143
     },
     "feedback-option-1": {
-      "x": 47,
-      "y": 1375,
-      "width": 986,
-      "height": 103
+      "x": 41,
+      "y": 704,
+      "width": 998,
+      "height": 143
     },
     "feedback-option-2": {
-      "x": 47,
-      "y": 1489,
-      "width": 986,
-      "height": 103
+      "x": 41,
+      "y": 847,
+      "width": 998,
+      "height": 143
     },
     "feedback-option-3": {
-      "x": 47,
-      "y": 1603,
-      "width": 986,
-      "height": 103
+      "x": 41,
+      "y": 990,
+      "width": 998,
+      "height": 143
     },
     "feedback-option-4": {
-      "x": 47,
-      "y": 1717,
-      "width": 986,
-      "height": 103
+      "x": 41,
+      "y": 1133,
+      "width": 998,
+      "height": 143
     }
   }
 }

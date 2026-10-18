@@ -1,8 +1,8 @@
 {
   "name": "cooldown-blocked",
   "language": "fi",
-  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
-  "takenAt": "2026-10-16T20:28:21Z",
+  "commit": "58ca6163d9c63dd7df02b0625d3f5a28c38fb386-dirty",
+  "takenAt": "2026-10-18T07:26:01Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -18,7 +18,13 @@
       "x": 33,
       "y": 360,
       "width": 1014,
-      "height": 348
+      "height": 308
+    },
+    "cooldown-explainer": {
+      "x": 951,
+      "y": 401,
+      "width": 55,
+      "height": 55
     },
     "tip-bank": {
       "x": 33,
@@ -44,11 +50,29 @@
       "width": 326,
       "height": 117
     },
+    "cooldown-notice-title": {
+      "x": 228,
+      "y": 401,
+      "width": 690,
+      "height": 61
+    },
+    "cooldown-notice-line": {
+      "x": 228,
+      "y": 467,
+      "width": 690,
+      "height": 159
+    },
+    "dates-empty": {
+      "x": 33,
+      "y": 770,
+      "width": 1014,
+      "height": 636
+    },
     "open-date-history": {
-      "x": 212,
-      "y": 1059,
-      "width": 657,
-      "height": 172
+      "x": 33,
+      "y": 1494,
+      "width": 1014,
+      "height": 121
     },
     "balance-sparks": {
       "x": 721,
@@ -73,6 +97,18 @@
       "y": 151,
       "width": 63,
       "height": 63
+    },
+    "dates-empty-title": {
+      "x": 196,
+      "y": 1155,
+      "width": 687,
+      "height": 94
+    },
+    "dates-empty-line": {
+      "x": 75,
+      "y": 1260,
+      "width": 930,
+      "height": 58
     }
   }
 }

@@ -1,8 +1,8 @@
 {
   "name": "date-history-open",
   "language": "fi",
-  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
-  "takenAt": "2026-10-16T20:39:50Z",
+  "commit": "58ca6163d9c63dd7df02b0625d3f5a28c38fb386-dirty",
+  "takenAt": "2026-10-18T07:34:58Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -38,11 +38,17 @@
       "width": 326,
       "height": 117
     },
+    "dates-empty": {
+      "x": 33,
+      "y": 374,
+      "width": 1014,
+      "height": 636
+    },
     "open-date-history": {
-      "x": 212,
-      "y": 623,
-      "width": 657,
-      "height": 172
+      "x": 33,
+      "y": 1098,
+      "width": 1014,
+      "height": 121
     },
     "balance-sparks": {
       "x": 721,
@@ -67,6 +73,18 @@
       "y": 151,
       "width": 63,
       "height": 63
+    },
+    "dates-empty-title": {
+      "x": 196,
+      "y": 759,
+      "width": 687,
+      "height": 94
+    },
+    "dates-empty-line": {
+      "x": 75,
+      "y": 864,
+      "width": 930,
+      "height": 58
     }
   }
 }

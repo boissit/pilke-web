@@ -1,8 +1,8 @@
 {
   "name": "kalenteri-valikko",
   "language": "fi",
-  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
-  "takenAt": "2026-10-17T00:17:58Z",
+  "commit": "47d283aca17eca7252eb9a77561806ec825a68f3-dirty",
+  "takenAt": "2026-10-18T04:37:39Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -45,10 +45,16 @@
       "height": 55
     },
     "calendar-density": {
-      "x": 727,
-      "y": 1829,
-      "width": 317,
-      "height": 83
+      "x": 410,
+      "y": 1399,
+      "width": 318,
+      "height": 143
+    },
+    "calendar-block-0": {
+      "x": 100,
+      "y": 929,
+      "width": 304,
+      "height": 273
     }
   }
 }

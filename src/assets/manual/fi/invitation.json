@@ -1,8 +1,8 @@
 {
   "name": "invitation",
   "language": "fi",
-  "commit": "2b76ce5d570e5b7e7686f99a3728a6f9e0e966ae-dirty",
-  "takenAt": "2026-10-17T05:44:09Z",
+  "commit": "47d283aca17eca7252eb9a77561806ec825a68f3-dirty",
+  "takenAt": "2026-10-18T04:28:37Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -22,19 +22,19 @@
     },
     "sheet-card": {
       "x": 33,
-      "y": 936,
+      "y": 782,
       "width": 1014,
       "height": 222
     },
     "deadline-hours": {
       "x": 341,
-      "y": 1060,
+      "y": 906,
       "width": 445,
       "height": 74
     },
     "invitation-explainer": {
       "x": 992,
-      "y": 1198,
+      "y": 1044,
       "width": 55,
       "height": 55
     },
@@ -58,20 +58,32 @@
     },
     "timeslot-0": {
       "x": 41,
-      "y": 1300,
+      "y": 1146,
       "width": 329,
       "height": 148
     },
     "timeslot-1": {
       "x": 370,
-      "y": 1300,
+      "y": 1146,
       "width": 334,
       "height": 148
     },
     "timeslot-2": {
       "x": 704,
-      "y": 1300,
+      "y": 1146,
       "width": 335,
+      "height": 148
+    },
+    "timeslot-3": {
+      "x": 41,
+      "y": 1301,
+      "width": 329,
+      "height": 148
+    },
+    "timeslot-4": {
+      "x": 370,
+      "y": 1301,
+      "width": 334,
       "height": 148
     },
     "venue-0": {

@@ -93,6 +93,6 @@ Four callouts need a word on where their bounds come from:
 - `meet-up-stop` on `date-map-sharing`, and no marker on the sentence about the other person's pin above it: the emulator's location provider sometimes answers with its own default place between two fixes, and the `too_far` line that brings is drawn between the sentence and the button. It came and went between the still and its hierarchy, which moved the sentence's bounds off the sentence in the picture. The button is anchored to the foot of the panel and stays put.
 - `calendar-menu` on `kalenteri-valikko`: the menu is a modal, its own window, and the menu's view hierarchy has nothing behind the scrim in it. The flow photographs the calendar just before opening the menu, and the capture lays that hierarchy under the menu's.
 
-In `asetukset-ilmoitukset` the "Aina päällä" heading is scrolled off the top of the current capture. The next capture should scroll so the heading and its three rows are both in view.
+In `asetukset-ilmoitukset` the flow centres the first editable row, so the channels' column headings and the three "Aina päällä" rows are in view above it.
 
 Callouts are filled in by whoever writes the text. When the text needs a new callout, add the testID in the table above. The capture pipeline then records its bounds on the next run. If a testID does not exist in the app yet, the capture work adds it.

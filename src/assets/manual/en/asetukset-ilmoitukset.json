@@ -1,144 +1,144 @@
 {
   "name": "asetukset-ilmoitukset",
   "language": "en",
-  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
-  "takenAt": "2026-10-17T00:08:33Z",
+  "commit": "47d283aca17eca7252eb9a77561806ec825a68f3-dirty",
+  "takenAt": "2026-10-18T06:01:49Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
     "notification-reveal_prompt-push": {
+      "x": 629,
+      "y": 296,
+      "width": 209,
+      "height": 121
+    },
+    "notification-reveal_prompt-email": {
       "x": 838,
-      "y": 101,
-      "width": 176,
-      "height": 55
+      "y": 296,
+      "width": 209,
+      "height": 121
     },
     "notification-party_arrived-push": {
+      "x": 629,
+      "y": 417,
+      "width": 209,
+      "height": 121
+    },
+    "notification-party_arrived-email": {
       "x": 838,
-      "y": 200,
-      "width": 176,
-      "height": 55
+      "y": 417,
+      "width": 209,
+      "height": 121
     },
     "notification-date_cancelled-push": {
+      "x": 629,
+      "y": 538,
+      "width": 209,
+      "height": 121
+    },
+    "notification-date_cancelled-email": {
       "x": 838,
-      "y": 299,
-      "width": 176,
-      "height": 55
+      "y": 538,
+      "width": 209,
+      "height": 121
     },
     "notification-new_date-push": {
-      "x": 642,
-      "y": 592,
-      "width": 177,
-      "height": 55
+      "x": 629,
+      "y": 920,
+      "width": 209,
+      "height": 121
     },
     "notification-new_date-email": {
-      "x": 852,
-      "y": 592,
-      "width": 162,
-      "height": 55
+      "x": 838,
+      "y": 920,
+      "width": 209,
+      "height": 121
     },
     "notification-date_accepted-push": {
-      "x": 642,
-      "y": 691,
-      "width": 177,
-      "height": 55
+      "x": 629,
+      "y": 1041,
+      "width": 209,
+      "height": 121
     },
     "notification-date_accepted-email": {
-      "x": 852,
-      "y": 691,
-      "width": 162,
-      "height": 55
+      "x": 838,
+      "y": 1041,
+      "width": 209,
+      "height": 121
     },
     "notification-date_declined-push": {
-      "x": 642,
-      "y": 790,
-      "width": 177,
-      "height": 55
+      "x": 629,
+      "y": 1162,
+      "width": 209,
+      "height": 121
     },
     "notification-date_declined-email": {
-      "x": 852,
-      "y": 790,
-      "width": 162,
-      "height": 55
+      "x": 838,
+      "y": 1162,
+      "width": 209,
+      "height": 121
     },
     "notification-date_withdrawn-push": {
-      "x": 642,
-      "y": 889,
-      "width": 177,
-      "height": 55
+      "x": 629,
+      "y": 1283,
+      "width": 209,
+      "height": 121
     },
     "notification-date_withdrawn-email": {
-      "x": 852,
-      "y": 889,
-      "width": 162,
-      "height": 55
+      "x": 838,
+      "y": 1283,
+      "width": 209,
+      "height": 121
     },
     "notification-date_expiring-push": {
-      "x": 642,
-      "y": 988,
-      "width": 177,
-      "height": 55
+      "x": 629,
+      "y": 1404,
+      "width": 209,
+      "height": 121
     },
     "notification-date_expiring-email": {
-      "x": 852,
-      "y": 988,
-      "width": 162,
-      "height": 55
+      "x": 838,
+      "y": 1404,
+      "width": 209,
+      "height": 121
     },
     "notification-date_expired-push": {
-      "x": 642,
-      "y": 1087,
-      "width": 177,
-      "height": 55
+      "x": 629,
+      "y": 1525,
+      "width": 209,
+      "height": 121
     },
     "notification-date_expired-email": {
-      "x": 852,
-      "y": 1087,
-      "width": 162,
-      "height": 55
+      "x": 838,
+      "y": 1525,
+      "width": 209,
+      "height": 121
     },
     "notification-date_reminder-push": {
-      "x": 642,
-      "y": 1186,
-      "width": 177,
-      "height": 55
+      "x": 629,
+      "y": 1646,
+      "width": 209,
+      "height": 121
     },
     "notification-date_reminder-email": {
-      "x": 852,
-      "y": 1186,
-      "width": 162,
-      "height": 55
+      "x": 838,
+      "y": 1646,
+      "width": 209,
+      "height": 121
     },
     "notification-post_date-push": {
-      "x": 642,
-      "y": 1285,
-      "width": 177,
-      "height": 55
+      "x": 629,
+      "y": 1767,
+      "width": 209,
+      "height": 121
     },
     "notification-post_date-email": {
-      "x": 852,
-      "y": 1285,
-      "width": 162,
-      "height": 55
-    },
-    "notification-no_slots-push": {
-      "x": 642,
-      "y": 1486,
-      "width": 177,
-      "height": 55
-    },
-    "notification-no_slots-email": {
-      "x": 852,
-      "y": 1486,
-      "width": 162,
-      "height": 55
-    },
-    "save-notification-preferences": {
-      "x": 267,
-      "y": 1615,
-      "width": 546,
-      "height": 172
+      "x": 838,
+      "y": 1767,
+      "width": 209,
+      "height": 121
     }
   }
 }

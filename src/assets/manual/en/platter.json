@@ -1,78 +1,90 @@
 {
   "name": "platter",
   "language": "en",
-  "commit": "da50e6e9c8017380bca4e8fb3800cb2b236531f1-dirty",
-  "takenAt": "2026-10-16T21:50:16Z",
+  "commit": "47d283aca17eca7252eb9a77561806ec825a68f3-dirty",
+  "takenAt": "2026-10-18T05:20:41Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
-    "__CAROUSEL_ITEM_1__": {
-      "x": 108,
-      "y": 376,
-      "width": 865,
-      "height": 1462
-    },
     "__CAROUSEL_ITEM_0__": {
       "x": 0,
-      "y": 467,
-      "width": 59,
-      "height": 1280
+      "y": 342,
+      "width": 109,
+      "height": 1602
+    },
+    "__CAROUSEL_ITEM_1__": {
+      "x": 0,
+      "y": 253,
+      "width": 1080,
+      "height": 1780
     },
     "__CAROUSEL_ITEM_2__": {
-      "x": 1022,
-      "y": 467,
-      "width": 58,
-      "height": 1280
+      "x": 972,
+      "y": 342,
+      "width": 108,
+      "height": 1602
     },
     "card-map-toggle": {
-      "x": 823,
-      "y": 409,
-      "width": 117,
-      "height": 65
+      "x": 0,
+      "y": 390,
+      "width": 6,
+      "height": 52
     },
     "propose": {
-      "x": 366,
-      "y": 1669,
-      "width": 349,
-      "height": 137
+      "x": 322,
+      "y": 1803,
+      "width": 437,
+      "height": 172
     },
     "timeslot-chip-0": {
-      "x": 141,
-      "y": 1289,
-      "width": 386,
-      "height": 59
+      "x": 126,
+      "y": 1052,
+      "width": 389,
+      "height": 121
     },
     "timeslot-chip-1": {
-      "x": 141,
-      "y": 1357,
-      "width": 386,
-      "height": 59
-    },
-    "activity-chip-0": {
-      "x": 554,
-      "y": 1337,
-      "width": 386,
-      "height": 59
+      "x": 126,
+      "y": 1173,
+      "width": 389,
+      "height": 121
     },
     "timeslot-chip-2": {
-      "x": 141,
-      "y": 1425,
-      "width": 386,
-      "height": 59
+      "x": 126,
+      "y": 1294,
+      "width": 389,
+      "height": 121
+    },
+    "timeslot-chip-3": {
+      "x": 126,
+      "y": 1415,
+      "width": 389,
+      "height": 121
+    },
+    "timeslot-chip-4": {
+      "x": 126,
+      "y": 1536,
+      "width": 389,
+      "height": 121
+    },
+    "activity-chip-0": {
+      "x": 565,
+      "y": 1052,
+      "width": 389,
+      "height": 121
     },
     "activity-chip-1": {
-      "x": 554,
-      "y": 1405,
-      "width": 386,
-      "height": 59
+      "x": 565,
+      "y": 1173,
+      "width": 389,
+      "height": 121
     },
     "activity-chip-2": {
-      "x": 554,
-      "y": 1473,
-      "width": 386,
-      "height": 59
+      "x": 565,
+      "y": 1294,
+      "width": 389,
+      "height": 121
     }
   }
 }
