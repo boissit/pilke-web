@@ -31,8 +31,9 @@ NAV = 2144               # first row of the navigation bar
 # recents, each inside its window, vertically centred on this row.
 NAV_GLYPHS = ((220, 300), (500, 580), (780, 860))
 NAV_CENTRE = 2214
-# The clock's text in the status bar, vertically centred on this row.
+# The clock's text in the status bar, vertically centred on this row, and its height.
 CLOCK_CENTRE = 42
+CLOCK_ROWS = 30
 
 
 class StillError(Exception):
@@ -73,12 +74,19 @@ def check(img, name, grounds=False):
         raise StillError(f'{name}: {int(stray.sum())} px of something other than the three buttons in '
                          f'the navigation bar (rows {NAV}-{HEIGHT}), which the crop would cut through')
 
+    # The clock is the densest band of ink on the left of the bar, a line of text 30
+    # rows tall. Judged by that band rather than by the mean of every inked row, because
+    # a map drawn under the bar (the date screens) streaks it with streets and labels
+    # that pulled the mean off the clock; app content in the bar's last rows -- a card
+    # the crop would cut -- is denser than the clock and still fails.
     status = a[:STATUS]
     sref = np.median(status[:, 400:680].reshape(-1, 3), 0)
-    ys, _ = np.nonzero(_ink(status[:, 40:300], sref))
-    if len(ys) < 100 or abs(ys.mean() - CLOCK_CENTRE) > 10:
+    rows = _ink(status[:, 40:300], sref).sum(1)
+    band = np.convolve(rows, np.ones(CLOCK_ROWS, int), 'valid')
+    centre = int(band.argmax()) + (CLOCK_ROWS - 1) / 2
+    if band.max() < 100 or abs(centre - CLOCK_CENTRE) > 10:
         raise StillError(f'{name}: no clock centred at y {CLOCK_CENTRE} in the status bar (rows 0-{STATUS}); '
-                         'the bar is not the height the crop assumes')
+                         'the bar is not the height the crop assumes, or the app draws into its last rows')
 
     # The foot only: a screen drawn edge to edge under the status bar has no ground at
     # its top, and `comp.ios_screen` draws the bar over its picture instead.
