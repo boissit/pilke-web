@@ -14,28 +14,27 @@
  * one would be worse than the caller writing it.
  *
  * `frame` is one of two drawings, one for the marketing pages and one for the manual.
+ * Both show the screen edge to edge, cut to a rounded opening with a punch-hole
+ * camera in the middle of the status bar, which is empty on the capture's Pixel 4
+ * profile. Neither paints a margin round the picture: a band of one colour inside
+ * the opening reads as empty app, not as the phone.
  *
- * **`inset`, the default, is the marketing phone: bars cut, the screen inset.** The
- * device's status bar and navigation bar come off — the clock and the Android back
- * button say nothing about Pilke, and the Pehmeä artboards draw the screens without
- * them. The crop is the same on every still because every still is captured on the
- * same emulator profile: 96px off the top and 136px off the bottom of 2280. With the
- * bars gone the app's own content runs to the picture's corners, so a screen rounded
- * to the shell's radius would clip a card's border, a photo, the tab bar. Instead the
- * picture sits square inside a margin of `ground`, the colour the app itself paints
- * behind that screen, and the rounding happens in that margin. Pass the screen's own
- * entry from `grounds` in `src/assets/screens.ts`; the app's `white` is the default
- * because most screens stand on it.
+ * **`marketing`, the default: the navigation bar cut, the status bar kept.** The
+ * three Android buttons say nothing about Pilke, so the bottom 136 of the 2280 rows
+ * come off and the app's own content runs to the foot of the opening, where its
+ * button rows already leave a gutter clear of the rounded corners. The status bar
+ * stays, because it is what keeps the top of a screen off the top corners: a card or
+ * a back button drawn just under the bar would be cut by the curve without it. The
+ * marketing stills are taken with SystemUI's demo mode on
+ * (`pilke-app/scripts/capture-site-pictures.sh`), so the bar holds only the clock
+ * and full signal. The crop is the same on every still because every still is
+ * captured on the same emulator profile, and `scripts/photos/stills.py` checks both.
  *
- * **`device` is the manual's phone: bars kept, the screen rounded into an ink bezel.**
- * A reader matching the manual to their own phone sees the status bar and the
- * navigation bar too, so they stay, and because they stay the picture can fill the
- * opening and be cut to its corner: the curves fall on the bars, where the app draws
- * nothing. A margin of one ground round a map, a photo or a dimmed modal would show
- * the picture's square corner, which is why the manual does not inset. The bezel is
- * the app's ink, the colour of every border its buttons and cards have, and a
- * punch-hole camera sits in the middle of the status bar, where the clock and the
- * icons leave room. `ground` and `shell` are the inset's and do nothing here.
+ * **`device` is the manual's phone: both bars kept, in an ink bezel.** A reader
+ * matching the manual to their own phone sees the navigation bar too, so it stays,
+ * and the screen's corners are the larger curve of a phone's display. The bezel is
+ * the app's ink, the colour of every border its buttons and cards have. `shell`
+ * is the marketing frame's and does nothing here.
  *
  * Anything in the slot is laid over the picture, in a box exactly its size, so a
  * child positioned in percentages lands on the same pixels at any width. The manual
@@ -59,8 +58,7 @@ interface Props {
   width?: number;
   /** Degrees clockwise, or a named lean of three degrees. */
   tilt?: 'left' | 'right' | 'none' | number;
-  frame?: 'inset' | 'device';
-  ground?: string;
+  frame?: 'marketing' | 'device';
   /**
    * The shell's colour. White by default, for a phone on a tinted card. On a white
    * card a white shell disappears and the phone reads as a hole, so those pass the
@@ -78,8 +76,7 @@ const {
   alt,
   width = 260,
   tilt = 'none',
-  frame = 'inset',
-  ground = 'var(--white)',
+  frame = 'marketing',
   shell = 'var(--surface)',
   lifted = false,
   class: className,
@@ -95,13 +92,13 @@ const rendered = width * 2;
 
 <figure
   class:list={['phone', frame, lifted && 'lifted', className]}
-  style={`--w:${width}px; --tilt:${rotation}deg; --ground:${ground}; --shell:${shell}`}
+  style={`--w:${width}px; --tilt:${rotation}deg; --shell:${shell}`}
 >
   <div class="shell">
     <div class="screen">
       <div class="window">
         <Image src={src} alt={alt} width={rendered} densities={[1, 2]} loading="lazy" data-still={still} />
-        {frame === 'device' && <span class="camera" aria-hidden="true" />}
+        <span class="camera" aria-hidden="true" />
         {Astro.slots.has('default') && <div class="overlay"><slot /></div>}
       </div>
     </div>
@@ -120,11 +117,13 @@ const rendered = width * 2;
     transform: rotate(var(--tilt));
   }
 
-  /* The artboards' proportions: a 10px shell and a 50px corner on a 310px phone. */
+  /* A white shell, about as thin as a phone's bezel, with the soft shadow the site
+     gives anything that floats. Its corner is the screen's plus its own padding,
+     8 + 3.3, so the two curves run parallel. */
   .shell {
     padding: 3.3cqi;
     background: var(--shell);
-    border-radius: 16cqi;
+    border-radius: 11.3cqi;
     box-shadow: var(--shadow-float);
   }
 
@@ -133,26 +132,24 @@ const rendered = width * 2;
   }
 
   /*
-    The screen: the app's ground, rounded, with the picture held off its edges. The
-    margins are the artboards' padded crops — 36 by 68 on a 792-wide screen — so the
-    content sits where those put it, and that is enough margin that the picture's
-    square corner falls inside the screen's rounded one rather than across it.
+    The opening, and the picture cut to it. `overflow` clips the overlay with it.
+    The corner is 8.6% of the screen's width, 92 of its 1080 pixels, small enough
+    to clear the controls the marketing stills draw nearest their corners: the
+    feedback quiz's back button and the tab bar, 23 rows above the cut.
   */
   .screen {
-    background: var(--ground);
-    border-radius: 12.9cqi;
-    padding: 8.59% 4.55%;
+    border-radius: 8cqi;
+    overflow: hidden;
   }
 
   .window {
     position: relative;
   }
 
-  /* The status bar and the navigation bar, cut: the window is the 1080 × 2048 band
-     between them, and the picture is pulled up by the 96 pixels above it. Vertical
-     margins in percent are of the width, which is what makes this exact. */
-  .inset .window {
-    aspect-ratio: 1080 / 2048;
+  /* The navigation bar, cut: the window is the 1080 × 2144 above it, and the
+     picture hangs from the window's top, so its last 136 rows fall outside. */
+  .marketing .window {
+    aspect-ratio: 1080 / 2144;
     overflow: hidden;
   }
 
@@ -162,40 +159,37 @@ const rendered = width * 2;
     height: auto;
   }
 
-  .inset .window :global(img) {
-    margin-top: -8.889%;
-  }
-
-  /* The bezel: the app's ink, about as thin as a phone's, and the soft shadow the
-     site gives anything that floats. Its corner is the screen's plus its own
-     padding, 12.7 + 2.4, so the two curves run parallel. */
+  /* The bezel: the app's ink. Its corner is the screen's plus its own padding,
+     12.7 + 2.4. */
   .device .shell {
     padding: 2.4cqi;
     background: var(--ink);
     border-radius: 15.1cqi;
   }
 
-  /* The whole still, cut to the bezel's opening. `overflow` clips the overlay with
-     it, which takes nothing: `placeBadges` in `stills.ts` keeps every badge inside
-     the picture and clear of this corner. */
+  /* The whole still, cut to the bezel's opening. `placeBadges` in `stills.ts` keeps
+     every badge inside the picture and clear of this corner. */
   .device .screen {
-    padding: 0;
     border-radius: 12.7cqi;
-    overflow: hidden;
   }
 
   /* The front camera, in the middle of the status bar: 48 of the bar's 96 pixels
-     down, 2.1% of 2280. A shade darker than the bezel, as a lens is. */
+     down, which is 2.1% of the manual's 2280 rows and 2.24% of the marketing
+     frame's 2144. A shade darker than the bezel, as a lens is. */
   .camera {
     position: absolute;
     left: 50%;
-    top: 2.1%;
+    top: 2.24%;
     width: 3%;
     aspect-ratio: 1;
     transform: translate(-50%, -50%);
     border-radius: 50%;
     background: #1d1d1d;
     box-shadow: 0 0 0 1px rgb(255 255 255 / 0.08);
+  }
+
+  .device .camera {
+    top: 2.1%;
   }
 
   .overlay {

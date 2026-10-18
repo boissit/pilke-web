@@ -39,7 +39,7 @@ import betaFi from '../../assets/photos/beta-invitation-fi.jpg';
 import heroEn from '../../assets/photos/hero-cutout-en.png';
 import heroFi from '../../assets/photos/hero-cutout-fi.png';
 import heroPhoneMask from '../../assets/photos/hero-cutout-phone.png';
-import { grounds, shotsFor } from '../../assets/screens';
+import { shotsFor } from '../../assets/screens';
 import Icon from '../../components/Icon.astro';
 import SparkleScatter from '../../components/SparkleScatter.astro';
 import Phone from '../../components/Phone.astro';
@@ -101,10 +101,10 @@ const elsewhereSteps = [
   a birthday is every app's.
 */
 const steps = [
-  { title: t('pitch.practice.one.title'), body: t('pitch.practice.one.body'), shot: shots.story, ground: grounds.story, alt: t('shot.story'), tint: 'var(--card-sent)' },
-  { title: t('pitch.practice.two.title'), body: t('pitch.practice.two.body'), shot: shots.invitation, ground: grounds.invitation, alt: t('shot.invitation'), tint: 'var(--card-received)' },
-  { title: t('pitch.practice.three.title'), body: t('pitch.practice.three.body'), shot: shots.date, ground: grounds.date, alt: t('shot.date'), tint: 'var(--card-confirmed)' },
-  { title: t('pitch.practice.four.title'), body: t('pitch.practice.four.body'), shot: shots.feedback, ground: grounds.feedback, alt: t('shot.feedback'), tint: 'var(--card-feedback)' },
+  { title: t('pitch.practice.one.title'), body: t('pitch.practice.one.body'), shot: shots.story, alt: t('shot.story'), tint: 'var(--card-sent)' },
+  { title: t('pitch.practice.two.title'), body: t('pitch.practice.two.body'), shot: shots.invitation, alt: t('shot.invitation'), tint: 'var(--card-received)' },
+  { title: t('pitch.practice.three.title'), body: t('pitch.practice.three.body'), shot: shots.date, alt: t('shot.date'), tint: 'var(--card-confirmed)' },
+  { title: t('pitch.practice.four.title'), body: t('pitch.practice.four.body'), shot: shots.feedback, alt: t('shot.feedback'), tint: 'var(--card-feedback)' },
 ];
 
 /*
@@ -243,7 +243,7 @@ const notFor = [
           }
         </ul>
         <div class="instead-phone">
-          <Phone src={shots.platter} ground={grounds.platter} alt={t('shot.platter')} width={260} tilt={3} />
+          <Phone src={shots.platter} alt={t('shot.platter')} width={260} tilt={3} />
         </div>
       </div>
 
@@ -263,8 +263,8 @@ const notFor = [
       <!--
         The phones run off the bottom of their cards on purpose: the top of a screen
         is what says which screen it is, and a whole phone in each of four cards made
-        them four posters. The card clips its phone; nothing clips the picture inside
-        the phone, which is inset on the app's own ground.
+        them four posters. The card clips its phone; inside the phone the screen runs
+        edge to edge.
       -->
       <ol class="steps">
         {
@@ -276,7 +276,7 @@ const notFor = [
                 <p>{step.body}</p>
               </div>
               <div class="step-phone">
-                <Phone src={step.shot} ground={step.ground} alt={step.alt} width={230} tilt={i % 2 === 0 ? 3 : -3} />
+                <Phone src={step.shot} alt={step.alt} width={230} tilt={i % 2 === 0 ? 3 : -3} />
               </div>
             </li>
           ))

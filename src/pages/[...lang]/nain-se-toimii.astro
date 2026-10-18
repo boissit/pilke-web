@@ -15,7 +15,7 @@
  * README, and a marketing page stating a price the product does not charge is
  * worse than a page that stays vague.
  */
-import { grounds, shotsFor } from '../../assets/screens';
+import { shotsFor } from '../../assets/screens';
 import PageHead from '../../components/PageHead.astro';
 import Phone from '../../components/Phone.astro';
 import Sparkle from '../../components/Sparkle.astro';
@@ -55,13 +55,13 @@ const changes = [
         <h2 class="display-mid small">{t('detail.prefs.title')}</h2>
         <p class="prose">{t('detail.prefs.body')}</p>
       </div>
-      <Phone src={shots.story} ground={grounds.story} alt={t('shot.story')} width={250} tilt="right" shell="var(--success)" />
+      <Phone src={shots.story} alt={t('shot.story')} width={250} tilt="right" shell="var(--success)" />
     </div>
   </section>
 
   <section class="slab slab-pale">
     <div class="wrap section-pad split">
-      <Phone src={shots.platter} ground={grounds.platter} alt={t('shot.platter')} width={250} tilt="left" />
+      <Phone src={shots.platter} alt={t('shot.platter')} width={250} tilt="left" />
       <div class="col">
         <h2 class="display-mid small">{t('detail.draw.title')}</h2>
         <p class="prose">{t('detail.draw.body')}</p>
@@ -134,7 +134,7 @@ const changes = [
           <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
         </p>
       </div>
-      <Phone src={shots.date} ground={grounds.date} alt={t('shot.date')} width={250} tilt="right" shell="var(--brand-background)" />
+      <Phone src={shots.date} alt={t('shot.date')} width={250} tilt="right" shell="var(--brand-background)" />
     </div>
   </section>
 </Base>

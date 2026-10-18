@@ -14,7 +14,7 @@
  * advice below is ordinary meeting-safely sense rather than anything the product
  * enforces. Read `README.md` before adding a claim here.
  */
-import { grounds, shotsFor } from '../../assets/screens';
+import { shotsFor } from '../../assets/screens';
 import PageHead from '../../components/PageHead.astro';
 import Phone from '../../components/Phone.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
@@ -50,7 +50,7 @@ const tips = [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('
           ))
         }
       </ul>
-      <Phone src={shots.asetukset} ground={grounds.asetukset} alt={t('shot.asetukset')} width={260} tilt="right" shell="var(--brand-background)" />
+      <Phone src={shots.asetukset} alt={t('shot.asetukset')} width={260} tilt="right" shell="var(--brand-background)" />
     </div>
   </section>
 

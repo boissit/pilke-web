@@ -44,7 +44,7 @@ def lang_arg():
 
 
 def load_still(name):
-    """A still by its path under src/assets (screens/, manual/), or under this
+    """A still by its path under src/assets (screens/), or under this
     directory for the stills taken for the photographs alone (stills/). Checked
     against the capture profile first (stills.py): the bars below are cut at fixed
     rows, and a still they do not fit stops the build instead of compositing."""
@@ -75,25 +75,36 @@ def android_screen(still, aspect):
 
 def ios_screen(still, aspect, notch_frac=0.415, clock='9.41', ink=(28, 24, 24)):
     """An Android still for an iPhone: the Android status bar and navigation bar
-    go, the app's own band (stills.STATUS..stills.NAV) stays untouched, and an iOS status bar and
-    home indicator are drawn on the app's own ground colour above and below.
+    go, the app's own band (stills.STATUS..stills.NAV) stays untouched, and an iOS
+    status bar and home indicator are drawn over it.
 
-    A screen drawn edge to edge -- the invitation's map runs up under the status bar --
-    has no ground colour at the top, so there the iOS bar is drawn over the screen's
-    own picture: the still's status rows with the Android clock and icons inpainted
-    out, and the rows the taller iOS bar needs above them mirrored from the top edge."""
+    The band stands on the screen's foot, as the app lays itself out on an iPhone:
+    a sheet's button row keeps its 24pt gutter on Android and 34pt, the home
+    indicator's keep-out, on iOS (`sheetGap` in pilke-app's `utils/safeArea.ts`), so
+    the band ends the 10pt between the two above the bottom, and the indicator is
+    drawn in the gutter under the buttons. The iPhone is taller than the Pixel, and
+    what the band does not fill is left at the top, where the app gives the room to
+    whatever stretches: the status bar's height and the rest.
+
+    A screen with plain ground at its top gets that ground there. A screen drawn edge
+    to edge -- the invitation's map runs up under the status bar -- gets its own
+    picture: the still's status rows with the Android clock and icons inpainted out,
+    and above them the top of the map mirrored, which the status bar stands over."""
     w = still.width
     H = round(w * aspect)
-    status = round(w * 47 / 390)
+    s = w / 390
+    status = round(47 * s)
+    foot = round(10 * s)
     app = still.crop((0, stills.STATUS, w, stills.NAV))
+    top = H - foot - app.height
     top_c = still.getpixel((w // 2, stills.STATUS + 1))
     bot_c = still.getpixel((w // 2, stills.NAV - 2))
     out = Image.new('RGB', (w, H), bot_c)
     if stills.plain_row(np.asarray(still.convert('RGB')).astype(int)[stills.STATUS + 1]):
-        ImageDraw.Draw(out).rectangle((0, 0, w, status), fill=top_c)
+        ImageDraw.Draw(out).rectangle((0, 0, w, top), fill=top_c)
     else:
-        out.paste(_under_bar(still, status), (0, 0))
-    out.paste(app, (0, status))
+        out.paste(_under_bar(still, top), (0, 0))
+    out.paste(app, (0, top))
     d = ImageDraw.Draw(out)
     # Clock, centred in the left ear.
     f = ImageFont.truetype(SF, round(w * 17 / 390))
@@ -126,19 +137,22 @@ def ios_screen(still, aspect, notch_frac=0.415, clock='9.41', ink=(28, 24, 24)):
 
 
 def _under_bar(still, height):
-    """`height` rows of the picture under an edge-to-edge screen's status bar: the
-    still's own status rows, the Android glyphs inpainted from the picture round them,
-    over as many rows mirrored from the top edge as the iOS bar is taller."""
-    a = np.asarray(still.convert('RGB'))[:stills.STATUS].copy()
-    below = a[-6:].reshape(-1, 3)
+    """`height` rows of the picture above an edge-to-edge screen's app band: the
+    still's own status rows, the Android glyphs inpainted from the picture round
+    them, under as many rows as the iPhone is taller, mirrored from the top of the
+    picture. The mirrored rows are the map's streets: its first pins and labels are
+    further down than the iOS bar reaches."""
+    a = np.asarray(still.convert('RGB'))[:stills.NAV].copy()
+    bar = a[:stills.STATUS]
+    below = bar[-6:].reshape(-1, 3)
     ref = np.median(below, 0)
     # The glyphs are the bar's ink: whatever stands clearly off the picture's own
     # colours, grown a little so the inpaint takes their antialiased edge too.
-    mask = (np.abs(a.astype(int) - ref).sum(2) > 120).astype(np.uint8) * 255
+    mask = (np.abs(bar.astype(int) - ref).sum(2) > 120).astype(np.uint8) * 255
     mask = cv2.dilate(mask, np.ones((7, 7), np.uint8))
-    clean = cv2.inpaint(a, mask, 9, cv2.INPAINT_TELEA)
+    a[:stills.STATUS] = cv2.inpaint(bar, mask, 9, cv2.INPAINT_TELEA)
     extra = height - stills.STATUS
-    band = np.concatenate([clean[:extra][::-1], clean], 0) if extra > 0 else clean[-height:]
+    band = np.concatenate([a[:extra][::-1], a[:stills.STATUS]], 0) if extra > 0 else a[stills.STATUS - height:stills.STATUS]
     return Image.fromarray(band)
 
 

@@ -105,7 +105,7 @@ Wc = np.full(3, Wc.mean()) * 0.5 + Wc * 0.5          # the camera UI's white tex
 print('white (sRGB)', srgb(Wc).round(3), 'black (sRGB)', srgb(B).round(3))
 
 LANG = c1.lang_arg()
-STILL = {'fi': 'screens/invitation.png', 'en': 'manual/en/invitation.png'}[LANG]
+STILL = {'fi': 'screens/invitation.png', 'en': 'screens/invitation-en.png'}[LANG]
 still = c1.ios_screen(c1.load_still(STILL), ASPECT, notch_frac=0.32, clock=c1.CLOCK[LANG])
 content = np.asarray(still.resize((W, Hc), Image.LANCZOS)).astype(np.float32) / 255
 Cl = to_photo(lin(content), quad, W, Hc, shape)

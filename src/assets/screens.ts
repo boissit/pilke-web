@@ -22,9 +22,9 @@ import story from './screens/story.png';
 import treffit from './screens/treffit.png';
 import asetuksetEn from './screens/asetukset-en.png';
 import dateEn from './screens/date-en.png';
-import feedbackEn from './manual/en/feedback.png';
-import invitationEn from './manual/en/invitation.png';
-import platterEn from './manual/en/platter.png';
+import feedbackEn from './screens/feedback-en.png';
+import invitationEn from './screens/invitation-en.png';
+import platterEn from './screens/platter-en.png';
 import storyEn from './screens/story-en.png';
 
 export const shots = {
@@ -38,11 +38,9 @@ export const shots = {
 } as const;
 
 /**
- * The English app, for `/en`, where there is an English still of the screen. A screen
- * missing here falls back to the Finnish one: `treffit` has none, because no page draws
- * it in a phone frame -- the English home is in the hero's photograph. Three are the
- * manual's own English stills, read where they are, so a reshoot of the manual reaches
- * the front page too.
+ * The English app, for `/en`. A screen missing here falls back to the Finnish one:
+ * `treffit` has none, because no page draws it in a phone frame -- the English home is
+ * in the hero's photograph.
  */
 const shotsEn: Partial<Record<keyof typeof shots, ImageMetadata>> = {
   asetukset: asetuksetEn,
@@ -57,26 +55,3 @@ const shotsEn: Partial<Record<keyof typeof shots, ImageMetadata>> = {
 export function shotsFor(lang: string): Record<keyof typeof shots, ImageMetadata> {
   return lang === 'en' ? { ...shots, ...shotsEn } : shots;
 }
-
-/**
- * The colour the app paints behind each screen, for the phone frame to inset it on.
- *
- * `Phone.astro` crops a marketing shot's status bar and navigation bar and sets what
- * is left inside a margin of this colour, so the frame's rounded corner falls on the
- * app's own background and never on a photo or a button. Sampled from the stills:
- * most screens stand on the app's `white`, the two onboarding-coloured ones on
- * `brandBackground`. The questionnaire's card runs off the bottom of its screen, so its
- * margin is peach down the sides and white along the bottom, where the card is cut.
- *
- * WARNING: **A reshoot that changes a screen's background has to change it here**, or
- * the frame draws a band of the old colour round the new picture.
- */
-export const grounds: Record<keyof typeof shots, string> = {
-  treffit: 'var(--white)',
-  story: 'linear-gradient(var(--brand-background) 95.5%, var(--white) 95.5%)',
-  platter: 'var(--brand-background)',
-  invitation: 'var(--white)',
-  feedback: 'var(--white)',
-  asetukset: 'var(--white)',
-  date: 'var(--white)',
-};

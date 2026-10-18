@@ -1,8 +1,8 @@
 """What every picture made from an app still assumes about it, checked before use.
 
 A still is cropped and composited by fixed pixel rows: `Phone.astro` cuts the
-status bar (the top 96 rows) and the navigation bar (the bottom 136) off every
-marketing shot, and `comp.py` keeps or replaces the same two bars when it puts a
+navigation bar (the bottom 136 rows) off every marketing shot and keeps the status
+bar (the top 96), and `comp.py` keeps or replaces the same two bars when it puts a
 still into a photograph. Those rows are right only for the capture profile, a
 Pixel 4 at 1080 x 2280 with three-button navigation. A still from another profile,
 or one where the app has started drawing into a bar, would still composite -- into a
@@ -102,10 +102,11 @@ def plain_row(row):
 
 
 def check_phone_astro():
-    """`Phone.astro` crops the same rows in CSS; the two have to agree."""
+    """`Phone.astro` crops the same rows in CSS, and draws its camera in the middle
+    of the status bar it keeps; the two have to agree."""
     css = open(os.path.join(WEB, 'src/components/Phone.astro')).read()
-    band = HEIGHT - STATUS - (HEIGHT - NAV)
-    want = [f'aspect-ratio: {WIDTH} / {band}', f'margin-top: -{STATUS / WIDTH * 100:.3f}%']
+    want = [f'aspect-ratio: {WIDTH} / {NAV}', f'top: {STATUS / 2 / NAV * 100:.2f}%',
+            f'top: {STATUS / 2 / HEIGHT * 100:.1f}%']
     missing = [w for w in want if w not in css]
     if missing:
         raise StillError('src/components/Phone.astro does not crop the rows this checks: '
@@ -113,17 +114,15 @@ def check_phone_astro():
 
 
 # Every still a picture on the site is made from, and whether it goes through
-# `ios_screen`. The manual's stills are drawn whole, bars and all, and only those
-# the photographs read are here.
+# `ios_screen`. The manual's stills are drawn whole, bars and all, and no picture
+# made here reads one.
 def stills():
     screens = os.path.join(WEB, 'src/assets/screens')
     out = [(os.path.join(screens, f), False) for f in sorted(os.listdir(screens)) if f.endswith('.png')]
     out += [(os.path.join(HERE, 'stills', f), False) for f in sorted(os.listdir(os.path.join(HERE, 'stills')))
             if f.endswith('.png')]
-    ios = {'invitation.png', 'kalenteri-fi.png', 'kalenteri-en.png'}
-    out = [(p, os.path.basename(p) in ios) for p, _ in out]
-    out.append((os.path.join(WEB, 'src/assets/manual/en/invitation.png'), True))
-    return out
+    ios = {'invitation.png', 'invitation-en.png', 'kalenteri-fi.png', 'kalenteri-en.png'}
+    return [(p, os.path.basename(p) in ios) for p, _ in out]
 
 
 if __name__ == '__main__':

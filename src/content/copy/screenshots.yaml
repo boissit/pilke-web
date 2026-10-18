@@ -42,8 +42,8 @@
   en: 'A date invitation received: who sent it, with their photo, the times offered and the place.'
 
 'shot.feedback':
-  fi: 'Treffipalaute puhelimessa: kuka oli treffeillä, milloin, ja ensimmäinen kysymys vastausvaihtoehtoineen.'
-  en: 'Date feedback on a phone: who the date was with, when it was, and the first question with its options.'
+  fi: 'Treffipalaute puhelimessa: kuka oli treffeillä ja milloin, ja kysymys siitä, haluaisitko tavata treffiparisi uudelleen, vastausvaihtoehtoineen.'
+  en: 'Date feedback on a phone: who the date was with and when, and the question of whether you would like to meet them again, with its options.'
 
 'shot.asetukset':
   fi: 'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.'

@@ -27,7 +27,8 @@ ones you think the change touched: that guess is how a page ships a stale screen
    that fails if any file is missing, was not rewritten, or is not 1080 x 2280.
    It also fails on a manual sidecar missing a callout the contract asks for: a
    date's first minutes are timed, and a slow run can photograph the next state.
-   `--list` shows what each step writes; `--only <step>` re-runs one.
+   `--list` shows what each step writes; `--only <step>` re-runs one, and
+   `--set <name>` one of the marketing sets inside it.
 
    It needs the release APK built against the local backend on the
    `Pixel_4_API_30` emulator (`pilke-app/docs/e2e.md`, "The short version"), and
@@ -57,27 +58,34 @@ ones you think the change touched: that guess is how a page ships a stale screen
      If the app's layout moved, it may now cover something it should not.
    - The phone frames on `/` and `/en`: each in its page's language, the dates
      ahead of today, and no *Nämä treffit ovat jo olleet* under the date.
-   - If a screen's background colour changed, its entry in `grounds` in
-     `src/assets/screens.ts`, or the frame draws a band of the old colour round it.
+   - The marketing stills' status bars: SystemUI's demo mode, so only `9:41`, full
+     signal and a full battery. A notification icon there means the capture ran
+     without it, and the phone frames, the hero and the beta card all show the bar.
+   - The bottom of every phone frame, at 1280 and at 390: the app's own button row
+     or tab bar with its gutter under it, nothing cut by the rounded corners, and no
+     band of empty screen. A screen that has moved its controls nearer a corner, or
+     a capture moment that leaves the screen mostly empty, shows here first.
 
 4. **Commit** the stills, the pictures and `docs/pictures.md` together, on a branch.
    `main` deploys to pilke.app on every push.
 
 **What stops the build instead of making a wrong picture.** Every composite and
-the phone frame cut the Android status bar (the top 96 rows) and navigation bar (the
-bottom 136) at fixed rows, measured on the Pixel 4 profile. `scripts/photos/stills.py`
+the phone frame cut or keep the Android status bar (the top 96 rows) and navigation
+bar (the bottom 136) at fixed rows, measured on the Pixel 4 profile. `scripts/photos/stills.py`
 checks every still for that profile's size, its three navigation buttons and its
-clock where those rows put them, and that `Phone.astro` crops the same rows; a still
-from another device, gesture navigation, or an app drawing into a bar fails by name.
+clock where those rows put them, and that `Phone.astro` crops the same rows and
+draws its camera in the bar it keeps; a still from another device, gesture
+navigation, or an app drawing into a bar fails by name.
 An original that changed upstream fails its hash, since every screen corner is fitted
 on the recorded file, and `cutout.py` checks that its copy of the hero's fitted screen
 still matches `hero.py`'s.
 
-**What a reader sees of a marketing shot is less than the file.** `Phone.astro` crops the
-device's status bar and navigation bar off every picture in `src/assets/screens`, so a
-change that only touches those bars changes nothing on the site. The manual's stills are
-drawn whole, bars included, in an ink bezel whose rounded corners fall on the bars, so a
-change to a bar shows in the manual.
+**What a reader sees of a marketing shot is the file less its navigation bar.**
+`Phone.astro` crops the three-button bar off every picture in `src/assets/screens` and
+draws the rest edge to edge, the status bar included, under a punch-hole camera; the
+app's own button rows leave the gutter the rounded corners need. Nothing is inset on a
+margin of the app's colour, so no screen needs one recorded for it. The manual's stills
+are drawn whole, bars included, in an ink bezel.
 
 Not every screen the flows take is carried here. `screenshots.yaml` also shoots the
 calendar and the question sets, and neither has a place on the site; the way to bring
@@ -98,7 +106,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`platter` 520px<br>`story-en` 460px<br>`invitation` 460px<br>`date-en` 460px<br>`feedback` 460px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`platter-en` 520px<br>`story-en` 460px<br>`invitation-en` 460px<br>`date-en` 460px<br>`feedback-en` 460px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kipinat.html/` | `en/date-wizard-petals` 560px |
@@ -114,7 +122,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/kayttoehdot.html/` | none |
 | `/en/kysyttya.html/` | none |
 | `/en/lapsiturvallisuus.html/` | none |
-| `/en/nain-se-toimii.html/` | `story-en` 500px<br>`platter` 500px<br>`date-en` 500px |
+| `/en/nain-se-toimii.html/` | `story-en` 500px<br>`platter-en` 500px<br>`date-en` 500px |
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset-en` 520px |
@@ -162,14 +170,17 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `date` | An agreed date, upcoming | `.maestro/manual/dateUpcoming.yaml`, as the seeded home account with its language set to Finnish | The map with the venue's pin, under a sheet opening with the partner's Treffit card (venue and time), the calendar page `Treffit huomenna` with the venue's line, the `Synkronoi treffit` row, `Peru treffit` and `Takaisin` |
 | `date-en` | An agreed date, upcoming, English | `.maestro/manual/dateUpcomingEn.yaml`, the same account in English | The same date in English, `Cancel the date` and `Back`. Drawn on `/en` in place of `date` |
 | `story-en` | Story test, first question, English | `screenshotStory.yaml` in English | The first question in English and `Continue`. Drawn on `/en` in place of `story` |
-| `feedback` | Date feedback | `screenshotFeedback.yaml`, as Elina Koskinen, whose Finnish account gets the questions in Finnish | The date's own Treffit card (partner, venue, time) at the top, a gutter under the status bar, the first question *Miten treffit sujuivat?* with its five answers as radio rows, and the pinned footer: the back button and a grey `Jatka` |
+| `platter-en` | Candidates, English | `screenshotPlatter.yaml` in English | What `platter` shows, in English: `Candidates`, `Times`, `Places`, `Propose!`. Drawn on `/en` in place of `platter` |
+| `invitation-en` | Invitation received, English | `screenshots.yaml` in English | What `invitation` shows, in English: `Choose a time and a place`, `Decline`, `Back`, `Agreed!`. Drawn on `/en` in place of `invitation`, and set into `beta-invitation-en` |
+| `feedback` | Date feedback, *Haluaisitko tavata treffiparisi uudelleen?* | `screenshotFeedbackMeetAgain.yaml`, as Elina Koskinen, whose Finnish account gets the questions in Finnish: *Tosi hyvin*, *Kyllä*, two chips, the venue | The date's own Treffit card (partner, venue, time) at the top, the last question of the happy route with its info button, its three answers as radio rows, none ticked, the line on when a number is shared, and the pinned footer: the back button, `Ohita` and a grey `Jatka`. The quiz pins its footer to the screen's foot and stands its answers under the card, so every step leaves room between them, and this one leaves the least; the flow says why nothing is ticked |
+| `feedback-en` | Date feedback, *Would you like to meet your date again?*, English | `screenshotFeedbackMeetAgain.yaml` in English, as Owen Sims, whose account is English | The same step in English, `Skip` and `Continue`. Drawn on `/en` in place of `feedback` |
 | `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress dots, the question and its options, `Jatka` |
 | `asetukset` | Settings, Safety open | `screenshots.yaml` | The accordion's sections with their icons and round chevrons, Safety open with its whole explanation, the trusted-contact field and its save button, the tab bar. The most copy of any picture here, so it goes stale on wording as well as on layout |
 | `asetukset-en` | Settings, Safety open, English | `screenshots.yaml` in English | The same section in English, `Save number`. Drawn on `/en` in place of `asetukset` |
 | `hero-cutout-fi` | Home, populated, **inside a photograph, cut out** | `screens/treffit.png` composited by `scripts/photos/hero.py fi`, cut out by `scripts/photos/cutout.py` | Everything `treffit` shows, both Android bars included (the phone in the photo is an Android), bent round the phone's curved edges; the hand and phone only, transparent, on the page's coral disc, which clips the hand and arm; `hero-cutout-phone.png`, a mask of the same size, lets the phone and the fingers gripping it stand over the disc's edge, each by its own contour; the disc's circle is baked into both, so the page's geometry and `scripts/photos/cutout.py` change together. A reshoot of `treffit` reaches the page only through this composite |
 | `hero-cutout-en` | Home, English, **inside a photograph, cut out** | `scripts/photos/stills/treffit-en.png`, `screenshots.yaml` in English, composited by `hero.py en`, cut out with the Finnish one's alpha | The same fixture as `treffit`, in English: the three stacks, the spark counter (`Sparks:`), `Find a date!`, both Android bars |
-| `beta-invitation-fi` | Invitation received, **inside a photograph** | `screens/invitation.png` composited by `scripts/photos/beta.py fi` | What `invitation` shows, with a drawn iOS status bar over the map and a home indicator; a thumb covers the last venue row, `Hylkää` and `Takaisin`. Drawn in the footer's beta card on the front page only |
-| `beta-invitation-en` | Invitation received, English, **inside a photograph** | the manual's `manual/en/invitation.png`, read where it is, composited by `beta.py en` | Owen Sims's invitation with four times and three places, the iOS bar drawn over the map; a thumb covers the last venue row, `Decline` and `Back`. A reshoot of the manual's still changes this picture too |
+| `beta-invitation-fi` | Invitation received, **inside a photograph** | `screens/invitation.png` composited by `scripts/photos/beta.py fi` | What `invitation` shows, standing on the screen's foot as the app lays out on an iPhone, the home indicator in the gutter under `Sovittu!`; a drawn iOS status bar over the map, whose top rows, under the bar, are the map's own mirrored; a thumb covers the lower venue rows, `Hylkää` and `Takaisin`. Drawn in the footer's beta card on the front page only |
+| `beta-invitation-en` | Invitation received, English, **inside a photograph** | `screens/invitation-en.png` composited by `beta.py en` | The same in English; the thumb covers the lower venue rows, `Decline` and `Back` |
 
 ## The photographs
 

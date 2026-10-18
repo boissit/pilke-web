@@ -300,7 +300,7 @@ const fi = {
     'Ehdokkaat-näkymä: yksi ehdokas, hänen kanssaan yhteiset ajat ja valittu tekeminen.',
   'shot.invitation': 'Saapunut treffikutsu: kutsujan nimi ja kuva, tarjotut ajat ja paikka.',
   'shot.feedback':
-    'Treffipalaute puhelimessa: kuka oli treffeillä, milloin, ja ensimmäinen kysymys vastausvaihtoehtoineen.',
+    'Treffipalaute puhelimessa: kuka oli treffeillä ja milloin, ja kysymys siitä, haluaisitko tavata treffiparisi uudelleen, vastausvaihtoehtoineen.',
   'shot.asetukset':
     'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.',
   'shot.date': 'Sovitut treffit puhelimessa: aika, paikka kartalla ja turvapainike.',
@@ -623,7 +623,7 @@ const en: Record<keyof typeof fi, string> = {
   'shot.invitation':
     'A date invitation received: who sent it, with their photo, the times offered and the place.',
   'shot.feedback':
-    'Date feedback on a phone: who the date was with, when it was, and the first question with its options.',
+    'Date feedback on a phone: who the date was with and when, and the question of whether you would like to meet them again, with its options.',
   'shot.asetukset':
     'The Safety section of the settings, open, with the field for a trusted person’s number.',
   'shot.date': 'An agreed date on a phone: the time, the venue on a map, and the safety button.',
