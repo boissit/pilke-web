@@ -5,7 +5,7 @@ order: 50
 draft: true
 ---
 
-Lähetät kutsun yhdelle ehdokkaistasi. Kutsuun kului {{petals.set_cost}} kipinää jo silloin, kun painoit **Lähetä treffikutsu!** ja löysit ehdokkaat. Katso [Kipinät](/ohje/kipinat).
+Lähetät kutsun yhdelle ehdokkaistasi. Kutsuun kului {{petals.set_cost}} kipinää jo silloin, kun painoit **Löydä ehdokkaat**. Katso [Kipinät](/ohje/kipinat).
 
 ## Mitä tarjoat
 

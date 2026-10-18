@@ -7,7 +7,7 @@ draft: true
 
 Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joiden kanssa treffit olisivat mahdollisia, ja valitsee heistä {{candidates.per_set}} sinulle sopivinta. Jos heitä ei löydy {{candidates.per_set}}, kipinäsi pysyvät tallessa.
 
-![Ehdokkaat-näkymä: keskimmäisen ehdokkaan kortti, yhteiset ajat ja yhteinen tekeminen](shot:platter#timeslot-chip-*,activity-chip-*)
+![Ehdokkaat-näkymä: keskimmäisen ehdokkaan kortti, yhteiset ajat ja paikat](shot:platter#timeslot-chip-*,activity-chip-*)
 
 Jokaisessa kortissa on ehdokkaan kuva, nimi ja ikä, enintään {{candidates.times_per_card}} lähintä yhteistä aikaanne (1) ja enintään {{candidates.venues_per_card}} treffipaikkaa, jotka sopivat teille molemmille (2). Niistä kokoat kutsun. Katso [Kutsut](/ohje/kutsut).
 

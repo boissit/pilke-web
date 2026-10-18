@@ -5,7 +5,7 @@ order: 50
 draft: true
 ---
 
-You send an invitation to one of your candidates. It took {{petals.set_cost}} sparks, and they went when you pressed **Send an invitation!** and found your candidates. See [Sparks](/en/guide/kipinat).
+You send an invitation to one of your candidates. It took {{petals.set_cost}} sparks, and they went when you pressed **Find candidates**. See [Sparks](/en/guide/kipinat).
 
 ## What you offer
 

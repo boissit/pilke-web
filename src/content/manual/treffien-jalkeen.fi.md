@@ -37,9 +37,9 @@ Kun vastaat kysymykseen *Miten treffit sujuivat?* vaihtoehdolla *Treffit eivät 
 
 ## Treffihistoria
 
-![Treffit-sivun alaosa ja Treffihistoria-painike](shot:date-history-open#open-date-history)
+![Treffit-sivun alaosa ja Treffihistoria-rivi](shot:date-history-open#open-date-history)
 
-Treffit-sivun alimmainen painike **Treffihistoria** (1) avaa listan treffeistä, joilla olet käynyt. Uusimmat ovat ylimpänä. Perutut treffit ja treffit, joista on kerrottu treffipaikalta, ettei toinen saapunut, eivät näy listassa.
+Treffit-sivun alimmainen rivi **Treffihistoria** (1) avaa listan treffeistä, joilla olet käynyt. Uusimmat ovat ylimpänä. Perutut treffit ja treffit, joista on kerrottu treffipaikalta, ettei toinen saapunut, eivät näy listassa.
 
 ![Treffihistoria: menneet treffit ja vaihdettu puhelinnumero](shot:date-history#date-history-row-number)
 

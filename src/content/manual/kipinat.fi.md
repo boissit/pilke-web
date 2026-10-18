@@ -14,7 +14,7 @@ Kipinäsi näkyvät Treffit-sivun ylälaidassa. Tältä sivulta näet, mistä ni
 | Vahvistat puhelinnumerosi, kun luot profiilin | +{{petals.signup_bonus}}, kerran |
 | Kalenterissasi on {{calendar.petal_week_hours}} tuntia vapaata aikaa viikon ajan | +1 |
 | Käyt treffeillä ja kerrot, miten meni | +{{sparks.per_date}}, kun lähetät palautteen |
-| Lähetät treffikutsun | −{{petals.set_cost}}, kun painat **Lähetä treffikutsu!** |
+| Lähetät treffikutsun | −{{petals.set_cost}}, kun painat **Löydä ehdokkaat** |
 | Kutsusi hylätään | +{{petals.refund}} takaisin |
 | Kutsusi raukeaa, koska siihen ei vastattu {{invitation.answer_hours}} tunnissa | +{{petals.refund}} takaisin |
 | Kutsumasi henkilö peruu sovitut treffit | +{{petals.refund}} takaisin |
@@ -54,8 +54,8 @@ Palautetut kipinät tulevat perille rajasta riippumatta, joten kipinöitä voi j
 
 ## Milloin kipinät kuluvat
 
-![Treffikutsun viimeinen vaihe: kipinöiden määrä ja Lähetä treffikutsu! -painike](shot:date-wizard-petals#wizard-balance,date-wizard-send)
+![Treffikutsun viimeinen vaihe: kipinöiden määrä ja Löydä ehdokkaat -painike](shot:date-wizard-petals#wizard-balance,date-wizard-send)
 
-Näet kipinäsi (1) ennen kuin lähetät kutsun. {{petals.set_cost}} kipinää lähtee heti, kun painat **Lähetä treffikutsu!** (2). Sen jälkeen löydät {{candidates.per_set}} ehdokasta ja valitset, kenelle kutsu lähtee.
+Näet kipinäsi (1) ennen kuin lähetät kutsun. {{petals.set_cost}} kipinää lähtee heti, kun painat **Löydä ehdokkaat** (2). Sen jälkeen löydät {{candidates.per_set}} ehdokasta ja valitset, kenelle kutsu lähtee.
 
 Jos {{candidates.per_set}} sopivaa ehdokasta ei löydy, kipinäsi pysyvät tallessa. Jos taas löydät ehdokkaat etkä kutsu ketään heistä, kipinöitä ei palauteta. Ehdokkaat odottavat sinua {{candidates.set_hours}} tuntia: katso [Ketä sinulle näytetään](/ohje/ehdokkaat).

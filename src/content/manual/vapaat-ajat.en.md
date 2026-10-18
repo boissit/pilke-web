@@ -20,7 +20,7 @@ Gestures: press and hold the grid and drag to add a marking. Tap a marking to se
 
 ## The yellow hours
 
-![The calendar: your own markings in coral, with afternoon hours between them shaded yellow](shot:kalenteri#calendar-density)
+![The calendar: your own markings in coral, with hours near them shaded yellow](shot:kalenteri#calendar-density)
 
 The yellow shading (1) shows the hours when many people who would suit you have marked themselves free. The deeper the shade, the more of them there are compared with the other hours on screen.
 

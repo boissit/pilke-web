@@ -37,9 +37,9 @@ When you answer *How did the date go?* with *The date didn't happen*, we ask wha
 
 ## Date history
 
-![The foot of the Dates page and the Date history button](shot:date-history-open#open-date-history)
+![The foot of the Dates page and the Date history row](shot:date-history-open#open-date-history)
 
-**Date history** (1), the last button on the Dates page, opens a list of the dates you have been on, newest first. Cancelled dates and dates where someone reported from the venue that the other did not turn up are left out.
+**Date history** (1), the last row on the Dates page, opens a list of the dates you have been on, newest first. Cancelled dates and dates where someone reported from the venue that the other did not turn up are left out.
 
 ![Date history: past dates and a phone number you exchanged](shot:date-history#date-history-row-number)
 

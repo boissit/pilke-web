@@ -14,7 +14,7 @@ Your sparks are at the top of the Dates page. This page covers where they come f
 | You confirm your phone number when you sign up | +{{petals.signup_bonus}}, once |
 | You keep {{calendar.petal_week_hours}} hours of free time marked for a week | +1 |
 | You go on a date and say how it went | +{{sparks.per_date}}, when you send the feedback |
-| You send a date invitation | −{{petals.set_cost}}, when you press **Send an invitation!** |
+| You send a date invitation | −{{petals.set_cost}}, when you press **Find candidates** |
 | Your invitation is declined | +{{petals.refund}} back |
 | Your invitation lapses because nobody answered within {{invitation.answer_hours}} hours | +{{petals.refund}} back |
 | The person you invited calls off your agreed date | +{{petals.refund}} back |
@@ -54,8 +54,8 @@ Refunds arrive whatever your count, so you can sometimes have more than {{petals
 
 ## When sparks are spent
 
-![The last step before your candidates: your sparks and the Send an invitation! button](shot:date-wizard-petals#wizard-balance,date-wizard-send)
+![The last step before your candidates: your sparks and the Find candidates button](shot:date-wizard-petals#wizard-balance,date-wizard-send)
 
-You see your sparks (1) before you send an invitation. {{petals.set_cost}} of them go as soon as you press **Send an invitation!** (2). Then you find {{candidates.per_set}} candidates and choose who the invitation goes to.
+You see your sparks (1) before you send an invitation. {{petals.set_cost}} of them go as soon as you press **Find candidates** (2). Then you find {{candidates.per_set}} candidates and choose who the invitation goes to.
 
 If {{candidates.per_set}} suitable candidates cannot be found, your sparks stay put. If you find candidates and invite none of them, the sparks do not come back. Your candidates wait for you for {{candidates.set_hours}} hours: see [Who you are shown](/en/guide/ehdokkaat).
