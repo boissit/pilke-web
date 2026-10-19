@@ -23,6 +23,6 @@ Ilmoitus ei tavoita viranomaisia. Hätätilanteessa soita 112.
 
 ## Käytöksestä kertominen
 
-Kun kerrot palautteessa, että treffipari myöhästyi paljon, oli paljon puhelimellaan tai käyttäytyi töykeästi, tai vastaat turvallisuuskysymykseen *Jokin jäi vaivaamaan*, kysymme *Haluatko kertoa tästä Pilkkeen työntekijöille?* Kertominen on vapaaehtoista. Jos vastaat *Kyllä, kerron*, voit halutessasi kertoa omin sanoin, mitä tapahtui, enintään {{feedback.report_max_chars}} merkkiä.
+Kun vastaat turvallisuuskysymykseen *Jokin jäi vaivaamaan*, kysymme, mikä jäi vaivaamaan, ja sitten *Haluatko kertoa tästä Pilkkeen työntekijöille?* Kertominen on vapaaehtoista. Jos vastaat *Kyllä, kerron*, voit halutessasi kertoa omin sanoin, mitä tapahtui, enintään {{feedback.report_max_chars}} merkkiä.
 
 Kertomuksesi näkevät vain Pilkkeen työntekijät, ja luemme sen niin pian kuin mahdollista. Treffikumppanisi ei saa tietää siitä.

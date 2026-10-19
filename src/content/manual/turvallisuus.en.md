@@ -23,6 +23,6 @@ A report does not reach the authorities. In an emergency, call 112.
 
 ## Telling us how your date behaved
 
-When your feedback says your date was very late, was on their phone a lot or was rude, or you answer the safety question with *Something bothered me*, we ask *Would you like to tell Pilke's staff about this?* It is up to you. If you answer *Yes, I'll tell them*, you can describe what happened in your own words if you want to, up to {{feedback.report_max_chars}} characters.
+When you answer the safety question with *Something bothered me*, we ask what bothered you, and then *Would you like to tell Pilke's staff about this?* It is up to you. If you answer *Yes, I'll tell them*, you can describe what happened in your own words if you want to, up to {{feedback.report_max_chars}} characters.
 
 Only Pilke's staff see what you tell us, and we read it as soon as we can. Your date is not told about it.

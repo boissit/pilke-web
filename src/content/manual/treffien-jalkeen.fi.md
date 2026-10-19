@@ -9,18 +9,25 @@ Palautteen voi antaa heti, kun treffit ovat päättyneet, eli {{date.length_hour
 
 ![Treffipalaute: treffikumppani, treffien aika ja ensimmäinen kysymys](shot:feedback)
 
-Ylhäällä näkyy, mistä treffeistä on kyse. Ensimmäinen kysymys on *Miten treffit sujuivat?*, ja vastauksesi ratkaisee, mitä kysytään seuraavaksi. Kun treffit sujuivat hyvin, kysymme, vastasiko treffipari kumppanitoiveitasi, mikä teillä klikkasi, millainen sovittu treffipaikka oli ja haluaisitko tavata hänet uudelleen.
+Ylhäällä näkyy, mistä treffeistä on kyse. Ensimmäinen kysymys on *Miten treffit sujuivat?*, ja vastauksesi ratkaisee, mitä kysytään seuraavaksi. Jokaisen vaihtoehdon alla lukee, mitä sen jälkeen kysytään.
 
-Jos treffit menivät huonosti, kysymme seuraavaksi, tuntuiko olosi turvalliselta treffeillä. Katso [Turvallisuus](/ohje/turvallisuus).
+- **Hyvin.** Kysymme, mistä pidit treffikumppanissasi, soveltuiko paikka treffeille ja haluaisitko tavata hänet uudelleen.
+- **Ok.** Kysymme, mistä pidit ja mitä toivoit treffikumppaniltasi enemmän. Sen jälkeen kysymme paikasta ja siitä, haluaisitko tavata hänet uudelleen.
+- **Huonosti.** Kysymme ensin, tuntuiko olosi turvalliselta treffeillä. Jos vastaat *Kyllä*, kysymme, mitä toivoit treffikumppaniltasi enemmän, ja sitten paikasta. Muista vastauksista kerromme sivulla [Turvallisuus](/ohje/turvallisuus).
+- **Treffit eivät toteutuneet.** Kysymme, mitä tapahtui. Katso alta.
 
-Kysymys treffipaikasta on vapaaehtoinen, ja siinä voit kertoa myös, että *Paikka oli kiinni tai täynnä*. Palaute lähtee viimeisestä vastauksesta, ja palaat Treffit-sivulle, jossa näet saamasi kipinät.
+Kysymyksissä *Pidin näistä asioista treffikumppanissani* ja *Toivoin treffikumppaniltani enemmän näitä asioita* on samat vaihtoehdot, esimerkiksi *Luonne*, *Huumori*, *Elämäntilanne* ja *Aallonpituus*. Voit valita niistä niin monta kuin haluat, tai et yhtään.
+
+Kysymys *Paikka soveltui treffeille* on vapaaehtoinen. Vastaa *Kyllä*, *En osaa sanoa* tai *Ei*. Jos jouduitte siirtymään muualle, valitse *Vaihdoimme paikkaa*.
+
+Palaute lähtee viimeisestä vastauksestasi. Sen jälkeen näet tekstin *Kiitos vastauksistasi.* Kun painat **Valmis**, palaat Treffit-sivulle, jossa näet saamasi kipinät.
 
 - **Mitä vastauksillesi tapahtuu.** Vastauksesi näkevät vain Pilkkeen työntekijät. Ainoa asia, joka voi välittyä treffikumppanillesi, on puhelinnumerosi, ja vain alla kerrotulla tavalla.
 - **Kipinät.** Palautteesta saat {{sparks.per_date}} kipinää, kun treffit toteutuivat tai treffipari ei tullut paikalle. Kumpikin saa omansa, kun on itse vastannut. Katso [Kipinät](/ohje/kipinat).
 
 ## Tapaatteko uudelleen
 
-Kun treffit sujuivat hyvin, kysymme lopuksi *Haluaisitko tavata treffiparisi uudelleen?* Siihen on kolme vastausta: *Kyllä, ja puhelinnumeroni saa jakaa hänelle*, *Kyllä, mutta vain Pilkkeen kautta* ja *En*. Mitä seuraa, riippuu siitä, mitä te molemmat vastaatte:
+Kun vastaat *Hyvin* tai *Ok*, kysymme viimeiseksi *Haluaisitko tavata treffiparisi uudelleen?* Siihen on kolme vastausta: *Kyllä, ja puhelinnumeroni saa jakaa hänelle*, *Kyllä, mutta vain Pilkkeen kautta* ja *En*. Mitä seuraa, riippuu siitä, mitä te molemmat vastaatte:
 
 - **Molemmat jakavat numeronsa.** Puhelinnumeronne vaihdetaan. Saatte siitä ilmoituksen, ja numero näkyy treffihistoriassa.
 - **Molemmat vastaavat kyllä, mutta ainakin toinen vain Pilkkeen kautta.** Numeroita ei vaihdeta. Voitte tulla toisillenne taas ehdokkaiksi.

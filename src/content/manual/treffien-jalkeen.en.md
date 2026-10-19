@@ -9,18 +9,25 @@ You can give feedback as soon as the date has ended, {{date.length_hours}} hour 
 
 ![Date feedback: your date, when it was, and the first question](shot:feedback)
 
-At the top is the date it is about. The first question is *How did the date go?*, and your answer decides what comes next. When the date went well, we ask whether your date matched what you were hoping for, what clicked between you, what the booked place was like and whether you would like to meet them again.
+At the top is the date it is about. The first question is *How did the date go?*, and your answer decides what comes next. Under each answer it says what you will be asked after it.
 
-If the date went badly, we ask next whether you felt safe on the date. See [Safety](/en/guide/turvallisuus).
+- **Well.** We ask what you liked about your date, whether the place suited a date and whether you would like to meet them again.
+- **OK.** We ask what you liked and what you wished your date had more of. Then we ask about the place and whether you would like to meet them again.
+- **Not well.** We ask first whether you felt safe on the date. If you answer *Yes*, we ask what you wished your date had more of, and then about the place. We cover the other answers in [Safety](/en/guide/turvallisuus).
+- **The date didn't happen.** We ask what happened. See below.
 
-The question about the place is optional, and it lets you say *The place was closed or full*. Your feedback goes with your last answer, and you are back on the Dates page, where you see the sparks you got.
+*I liked these things about my date* and *I wished my date had more of these things* offer the same choices, such as *Personality*, *Humour*, *Life situation* and *Being on the same wavelength*. You can pick as many as you like, or none.
+
+The question *The place suited a date* is optional. Answer *Yes*, *Can't say* or *No*. If you had to go somewhere else, choose *We went somewhere else*.
+
+Your feedback goes with your last answer. Then you see *Thank you for your answers.* When you press **Done**, you are back on the Dates page, where you see the sparks you got.
 
 - **What happens to your answers.** Only Pilke's staff see your answers. The only thing that can reach your date is your phone number, and only in the way described below.
 - **Sparks.** Your feedback gets you {{sparks.per_date}} sparks when the date happened or your date did not turn up. Each of you gets your own once you have answered. See [Sparks](/en/guide/kipinat).
 
 ## Meeting again
 
-When the date went well, we ask last *Would you like to meet your date again?* It has three answers: *Yes, and my phone number may be shared with them*, *Yes, but only through Pilke* and *No*. What follows depends on what you both say:
+When you answer *Well* or *OK*, we ask last *Would you like to meet your date again?* It has three answers: *Yes, and my phone number may be shared with them*, *Yes, but only through Pilke* and *No*. What follows depends on what you both say:
 
 - **You both share your number.** Your phone numbers are exchanged. You are both told, and the number appears in your date history.
 - **You both say yes, but at least one of you only through Pilke.** No numbers are exchanged. You can become candidates for each other again.
