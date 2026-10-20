@@ -1,6 +1,6 @@
 ---
 title: Tietosi ja tilisi
-lead: Mitä muut näkevät sinusta ja milloin, mitkä ilmoitukset tulevat aina, ja mitä tilin poistamisesta seuraa.
+lead: Mitä muut näkevät sinusta ja milloin, mitkä ilmoitukset tulevat aina, mitä tilin poistamisesta seuraa ja miten annat palautetta.
 order: 90
 draft: true
 ---
@@ -45,3 +45,7 @@ Kirjaudut puhelinnumeroosi tulevalla kertakoodilla, eikä salasanaa ole. Kirjaut
 - Menneet treffit, niistä annetut palautteet ja turvallisuusilmoitukset jäävät talteen. Nimesi tilalla näkyy *Poistunut käyttäjä*.
 
 Voit rekisteröityä myöhemmin samalla numerolla, mutta aloitat silloin tyhjältä tililtä. Kuinka kauan mitäkin säilytetään, kerrotaan [tietosuojaselosteessa](/tietosuoja).
+
+## Palaute
+
+**Anna palautetta** on asetusten alareunassa, osioiden alla. Lomakkeessa on kolme kohtaa: **Mikä toimii?**, **Mikä ei toimi?** ja **Vapaa sana**. Voit kirjoittaa yhteen tai kaikkiin, ja palaute tulee suoraan meille. Jos valitset **Toivon vastausta palautteeseeni**, vastaamme sähköpostiosoitteeseesi tai puhelinnumeroosi.

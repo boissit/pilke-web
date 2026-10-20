@@ -1,6 +1,6 @@
 ---
 title: Your data and your account
-lead: What other people see about you and when, which notifications always come, and what deleting your account does.
+lead: What other people see about you and when, which notifications always come, what deleting your account does, and how to give feedback.
 order: 90
 draft: true
 ---
@@ -45,3 +45,7 @@ You sign in with a one-time code sent to your phone number, and there is no pass
 - Past dates, the feedback given on them and safety reports are kept. Where your name was, people see *Deleted user*.
 
 You can sign up again later with the same number, but you start from an empty account. How long each thing is kept is in the [privacy policy](/en/tietosuoja).
+
+## Feedback
+
+**Give feedback** is at the bottom of Settings, below the sections. The form has three boxes: **What works?**, **What does not work?** and **Anything else**. You can write in one of them or in all three, and the feedback comes straight to us. If you choose **I would like a reply to my feedback**, we will reply to your email address or phone number.
