@@ -15,14 +15,14 @@ Näytöllä lukee, lähtikö viesti. Jos ei, soita läheisellesi itse. Hätätil
 
 ## Turvallisuusilmoitus
 
-Kun vastaat palautteen kysymykseen *Miten treffit sujuivat?* vaihtoehdolla *Huonosti*, kysymme *Tuntuiko olosi turvalliselta treffeillä?* Jos vastaat *Oloni oli turvaton*, palaute vie ilmoitukseen. Voit halutessasi valita, mitä tapahtui, ja kertoa siitä omin sanoin, enintään {{feedback.report_max_chars}} merkkiä. Ilmoitus lähtee, kun painat **Lähetä**, myös tyhjänä.
+Kun vastaat palautteen kysymykseen *Miten treffit sujuivat?* vaihtoehdolla *Huonosti*, kysymme *Tuntuiko olosi turvalliselta treffeillä?* Jos vastaat *Oloni oli turvaton*, palaute vie ilmoitukseen. Valitse kohdassa *Miksi olosi oli turvaton?* vähintään yksi syy. Voit halutessasi kertoa myös omin sanoin kohtaan *Vapaa sana*, enintään {{feedback.report_max_chars}} merkkiä. Ilmoitus lähtee, kun painat **Lähetä**.
 
-Ilmoitus menee Pilkkeen työntekijöille, ja vain he näkevät sen. Luemme sen niin pian kuin mahdollista. Treffikumppanisi ei näe sitä.
+Ilmoitus menee Pilkkeen ylläpidolle, ja vain ylläpito näkee sen. Luemme sen niin pian kuin mahdollista. Treffikumppanisi ei näe sitä.
 
 Ilmoitus ei tavoita viranomaisia. Hätätilanteessa soita 112.
 
 ## Käytöksestä kertominen
 
-Kun vastaat turvallisuuskysymykseen *Jokin jäi vaivaamaan*, kysymme, mikä jäi vaivaamaan, ja sitten *Haluatko kertoa tästä Pilkkeen työntekijöille?* Kertominen on vapaaehtoista. Jos vastaat *Kyllä, kerron*, voit halutessasi kertoa omin sanoin, mitä tapahtui, enintään {{feedback.report_max_chars}} merkkiä.
+Kun vastaat turvallisuuskysymykseen *Jokin jäi vaivaamaan*, kysymme, mikä jäi vaivaamaan. Sen jälkeen voit kohdassa *Kerro, mitä tapahtui* kertoa omin sanoin, mitä tapahtui, enintään {{feedback.report_max_chars}} merkkiä. Kertominen on vapaaehtoista. Jos kirjoitat jotain, se menee Pilkkeen työntekijöille.
 
 Kertomuksesi näkevät vain Pilkkeen työntekijät, ja luemme sen niin pian kuin mahdollista. Treffikumppanisi ei saa tietää siitä.

@@ -15,7 +15,7 @@ The screen tells you whether it was sent. If not, call your trusted person yours
 
 ## Reporting that you felt unsafe
 
-When you answer the feedback's *How did the date go?* with *Not well*, we ask *Did you feel safe on the date?* If you answer *I felt unsafe*, the questionnaire takes you to a report. You can pick what happened and describe it in your own words if you want to, up to {{feedback.report_max_chars}} characters. The report goes when you press **Send**, even with nothing filled in.
+When you answer the feedback's *How did the date go?* with *Not well*, we ask *Did you feel safe on the date?* If you answer *I felt unsafe*, the questionnaire takes you to a report. Under *Why did you feel unsafe?*, pick at least one reason. You can also write in your own words under *Free text* if you want to, up to {{feedback.report_max_chars}} characters. The report goes when you press **Send**.
 
 The report goes to Pilke's staff, and only they see it. We read it as soon as we can. Your date does not see it.
 
@@ -23,6 +23,6 @@ A report does not reach the authorities. In an emergency, call 112.
 
 ## Telling us how your date behaved
 
-When you answer the safety question with *Something bothered me*, we ask what bothered you, and then *Would you like to tell Pilke's staff about this?* It is up to you. If you answer *Yes, I'll tell them*, you can describe what happened in your own words if you want to, up to {{feedback.report_max_chars}} characters.
+When you answer the safety question with *Something bothered me*, we ask what bothered you. Then, under *Tell us what happened*, you can describe what happened in your own words, up to {{feedback.report_max_chars}} characters. It is up to you. If you write something, it goes to Pilke's staff.
 
 Only Pilke's staff see what you tell us, and we read it as soon as we can. Your date is not told about it.

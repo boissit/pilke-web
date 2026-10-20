@@ -16,9 +16,11 @@ Ylhäällä näkyy, mistä treffeistä on kyse. Ensimmäinen kysymys on *Miten t
 - **Huonosti.** Kysymme ensin, tuntuiko olosi turvalliselta treffeillä. Jos vastaat *Kyllä*, kysymme, mitä toivoit treffikumppaniltasi enemmän, ja sitten paikasta. Muista vastauksista kerromme sivulla [Turvallisuus](/ohje/turvallisuus).
 - **Treffit eivät toteutuneet.** Kysymme, mitä tapahtui. Katso alta.
 
-Kysymyksissä *Pidin näistä asioista treffikumppanissani* ja *Toivoin treffikumppaniltani enemmän näitä asioita* on samat vaihtoehdot, esimerkiksi *Luonne*, *Huumori*, *Elämäntilanne* ja *Aallonpituus*. Voit valita niistä niin monta kuin haluat, tai et yhtään.
+Vastaa jokaiseen kysymykseen ja paina **Jatka**.
 
-Kysymys *Paikka soveltui treffeille* on vapaaehtoinen. Vastaa *Kyllä*, *En osaa sanoa* tai *Ei*. Jos jouduitte siirtymään muualle, valitse *Vaihdoimme paikkaa*.
+Kysymyksissä *Pidin näistä asioista treffikumppanissani* ja *Toivoin treffikumppaniltani enemmän näitä asioita* on samat vaihtoehdot, esimerkiksi *Luonne*, *Huumori*, *Elämäntilanne* ja *Aallonpituus*. Valitse niistä vähintään yksi. Voit valita niin monta kuin haluat.
+
+Kysymykseen *Paikka soveltui treffeille* voit vastata *Kyllä*, *En osaa sanoa* tai *Ei*. Jos jouduitte siirtymään muualle, valitse *Vaihdoimme paikkaa*.
 
 Palaute lähtee viimeisestä vastauksestasi. Sen jälkeen näet tekstin *Kiitos vastauksistasi.* Kun painat **Valmis**, palaat Treffit-sivulle, jossa näet saamasi kipinät.
 

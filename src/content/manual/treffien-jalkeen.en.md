@@ -16,9 +16,11 @@ At the top is the date it is about. The first question is *How did the date go?*
 - **Not well.** We ask first whether you felt safe on the date. If you answer *Yes*, we ask what you wished your date had more of, and then about the place. We cover the other answers in [Safety](/en/guide/turvallisuus).
 - **The date didn't happen.** We ask what happened. See below.
 
-*I liked these things about my date* and *I wished my date had more of these things* offer the same choices, such as *Personality*, *Humour*, *Life situation* and *Being on the same wavelength*. You can pick as many as you like, or none.
+Answer each question and press **Continue**.
 
-The question *The place suited a date* is optional. Answer *Yes*, *Can't say* or *No*. If you had to go somewhere else, choose *We went somewhere else*.
+*I liked these things about my date* and *I wished my date had more of these things* offer the same choices, such as *Personality*, *Humour*, *Life situation* and *Being on the same wavelength*. Pick at least one. You can pick as many as you like.
+
+To *The place suited a date* you can answer *Yes*, *Can't say* or *No*. If you had to go somewhere else, choose *We went somewhere else*.
 
 Your feedback goes with your last answer. Then you see *Thank you for your answers.* When you press **Done**, you are back on the Dates page, where you see the sparks you got.
 
