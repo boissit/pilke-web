@@ -68,6 +68,12 @@ def site_copy():
 T = site_copy()
 
 
+def first_sentence(s):
+    """A body's first sentence, for a box with room for one."""
+    head = s.split('. ')[0]
+    return head if head.endswith(('.', '!', '?')) else head + '.'
+
+
 # ───────────────────────────── text metrics ─────────────────────────────
 
 FONT_FILES = {'Fredoka': os.path.join(HERE, '.cache', 'Fredoka-latin.ttf'),
@@ -550,12 +556,14 @@ def triangle_v1(d):
     d.sparkle('vaalea-koralli', x + 14, y + h - 24, 10, 30)
     # Face 2: a phone with the invitation, and the three things Pilke does instead.
     x, y, w, h = tri_card(d, 1, C['white'], outline=C['rule'])
-    _, ph = d.phone('treffikutsu', x + 3, y + 5, w - 6)
-    yy = y + 5 + ph + 12
+    # The phone a little narrower than the face, so the three bodies end 15 mm above
+    # the foot.
+    _, ph = d.phone('treffikutsu', x + 5, y + 5, w - 10)
+    yy = y + 5 + ph + 10
     for key in ['match', 'invite', 'ready']:
         body = T[f'pitch.instead.{key}.body']
         if key != 'invite':
-            body = body.split('. ')[0] + '.'
+            body = first_sentence(body)
         d.sparkle('ruusu', x + 4, yy + 4.2, 6.5)
         _, th = d.text(x + 8, yy, w - 8, T[f'pitch.instead.{key}.title'], 13, face='Fredoka', weight=600)
         _, bh = d.text(x + 8, yy + th - 1, w - 8, body, 9.5)
@@ -872,7 +880,7 @@ def build_elements(layout):
         d.text(x + 3, 151, 34, title, 11, weight=700)
     d.card(M + 214, 30, 54, 70, fill=C['white'], outline=C['rule'])
     d.text(M + 218, 34, 46, T['pitch.instead.ready.title'], 12, weight=700)
-    d.text(M + 218, 46, 46, T['pitch.instead.ready.body'].split('. ')[0] + '.', 9)
+    d.text(M + 218, 46, 46, first_sentence(T['pitch.instead.ready.body']), 9)
 
     # 7–8 phones
     for page, names in [(7, ['treffit', 'treffikutsu', 'treffikutsu-valittu', 'sovitut-treffit', 'ehdokkaat']),
