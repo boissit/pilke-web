@@ -114,17 +114,53 @@ SITE_SHOTS = [
     ('asetukset', 'asetukset-turvallisuus'),
 ]
 ANDROID_NAV_ROWS = 136
+ANDROID_STATUS_ROWS = 96
+ANDROID_SIZE = (1080, 2280)
+
+# The phones, each a still pilke.app already serves, framed as `Phone.astro` frames it.
+# Slides fetches every picture from a public URL, so a phone is made only from a picture
+# the site already shows: the marketing stills of `src/assets/screens`, and where the
+# site has none of a screen, the manual's still of it in `src/assets/manual/fi`, which
+# the guide pages draw whole. A manual still's status bar is the capture's own; its
+# clock and signal are replaced by the demo-mode bar of the marketing stills
+# (`demo_bar`), so every phone says 9:41.
+PHONE_SHOTS = [
+    # (name in the kit, still under src/assets, the page of pilke.app that draws it)
+    ('treffit', 'manual/fi/treffit', '/ohje/pilke-lyhyesti'),
+    ('treffikutsu', 'screens/invitation', '/'),
+    ('sovitut-treffit', 'screens/date', '/'),
+    ('kalenteri', 'manual/fi/kalenteri', '/ohje/vapaat-ajat'),
+    ('kipinat', 'manual/fi/date-wizard-petals', '/ohje/kipinat'),
+    ('ehdokkaat', 'screens/platter', '/'),
+    ('persoonallisuuskysely', 'screens/story', '/'),
+    ('palaute', 'screens/feedback', '/'),
+    ('asetukset-turvallisuus', 'screens/asetukset', '/turvallisuus'),
+]
+# The one phone pilke.app has no still of: the invitation with a time and a place
+# chosen. It is framed from the iPhone capture, which is pilke-app's and not public, so
+# it never goes on the assets branch (docs/print-kit.md): it is placed by hand.
+PRIVATE_PHONES = [('invitation-chosen', 'treffikutsu-valittu')]
+# The demo-mode status bar the manual stills are given, and the boxes its clock and
+# its icons stand in: everything else in either bar has to be the plain ground.
+DEMO_BAR = 'screens/asetukset'
+BAR_GLYPHS = [(40, 330), (860, 1040)]
 
 SPARKLE_PATH = None  # read from src/components/sparkleArtwork.ts
 SPARKLE_BOX = None
 
 written = []
+# Files made from pilke-app's own captures and store images, which are not public.
+# Slides can only fetch a picture from a public URL, so these never go on the assets
+# branch: `out/private.txt` lists them for rsync to leave out (docs/print-kit.md).
+private = []
 
 
-def out(*parts):
+def out(*parts, public=True):
     path = os.path.join(OUT, *parts)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     written.append(path)
+    if not public:
+        private.append(path)
     return path
 
 
@@ -470,10 +506,13 @@ def rounded(im, frac):
     return out_im
 
 
-def phone_frame(screen, shadow=True):
-    """The store images' white shell (pilke-app tools/store-assets/render/build.py):
-    padding 3.3 % of the device's width, outer corners 16 %, the glass 12.9 %, and
-    two soft shadows. Transparent outside the phone and its shadow."""
+def phone_frame(screen, shadow=True, camera=True):
+    """`Phone.astro`'s marketing frame, in fractions of the phone's width W: a white
+    shell padded 3.3 % with corners of 11.3 %, the screen edge to edge in an opening
+    with corners of 8 %, and a punch-hole camera 3 % of the screen wide in the middle
+    of the status bar. The opening's corner is the one the site measured to clear the
+    controls its stills draw nearest their corners. Two soft shadows, transparent
+    outside the phone and its shadow."""
     sw, sh = screen.size
     W = sw / (1 - 2 * 0.033)
     pad = 0.033 * W
@@ -488,38 +527,85 @@ def phone_frame(screen, shadow=True):
         for dy, blur, alpha in [(0.007, 0.014, 0.10), (0.035, 0.07, 0.16)]:
             m = Image.new('L', (cw, ch), 0)
             ImageDraw.Draw(m).rounded_rectangle((margin, margin + dy * W, margin + W, margin + H + dy * W),
-                                                radius=0.16 * W, fill=int(255 * alpha))
+                                                radius=0.113 * W, fill=int(255 * alpha))
             m = m.filter(ImageFilter.GaussianBlur(blur * W / 2))
             layer = Image.new('RGBA', (cw, ch), (58, 46, 43, 0))
             layer.putalpha(m)
             canvas = Image.alpha_composite(canvas, layer)
     shell = Image.new('L', (cw * k, ch * k), 0)
     ImageDraw.Draw(shell).rounded_rectangle((margin * k, margin * k, (margin + W) * k, (margin + H) * k),
-                                            radius=0.16 * W * k, fill=255)
+                                            radius=0.113 * W * k, fill=255)
     shell = shell.resize((cw, ch), Image.LANCZOS)
     canvas.paste(Image.new('RGBA', (cw, ch), (255, 255, 255, 255)), (0, 0), shell)
+    screen = screen.convert('RGBA')
+    if camera:
+        # 48 of the status bar's 96 rows down, a shade darker than a bezel, with the
+        # faint light rim the site draws round it.
+        lens = Image.new('RGBA', (sw * k, sh * k), (0, 0, 0, 0))
+        cx, cy, r = sw * k / 2, ANDROID_STATUS_ROWS / 2 * k, 0.015 * sw * k
+        rim = 0.0025 * sw * k
+        ImageDraw.Draw(lens).ellipse((cx - r - rim, cy - r - rim, cx + r + rim, cy + r + rim), fill=(255, 255, 255, 20))
+        ImageDraw.Draw(lens).ellipse((cx - r, cy - r, cx + r, cy + r), fill=(29, 29, 29, 255))
+        screen.alpha_composite(lens.resize((sw, sh), Image.LANCZOS))
     glass = Image.new('L', (sw * k, sh * k), 0)
-    ImageDraw.Draw(glass).rounded_rectangle((0, 0, sw * k - 1, sh * k - 1), radius=0.129 * W * k, fill=255)
+    ImageDraw.Draw(glass).rounded_rectangle((0, 0, sw * k - 1, sh * k - 1), radius=0.08 * W * k, fill=255)
     glass = glass.resize((sw, sh), Image.LANCZOS)
-    canvas.paste(screen.convert('RGBA'), (int(margin + pad), int(margin + pad)), glass)
+    canvas.paste(screen, (int(margin + pad), int(margin + pad)), glass)
     return canvas
+
+
+def android_still(rel):
+    """A still of `src/assets`, checked for the capture profile the crops are measured
+    on (`scripts/photos/stills.py` checks the bars themselves)."""
+    im = Image.open(os.path.join(WEB, 'src', 'assets', f'{rel}.png')).convert('RGB')
+    if im.size != ANDROID_SIZE:
+        sys.exit(f'{rel} is {im.size}, not the capture profile\'s {ANDROID_SIZE}: the bar crops would cut into the app')
+    return im
+
+
+def demo_bar(im, rel):
+    """`im` with the status bar of the demo-mode still DEMO_BAR: 9:41, full signal.
+    Only where both bars are the same plain ground outside the clock's and the icons'
+    boxes, so the swap replaces the system's glyphs and nothing the app drew."""
+    import numpy as np
+    demo = android_still(DEMO_BAR)
+    bars = [np.asarray(x.crop((0, 0, x.width, ANDROID_STATUS_ROWS))).astype(int) for x in (im, demo)]
+    ground = bars[1][ANDROID_STATUS_ROWS // 2, 600]
+    for bar, name in zip(bars, (rel, DEMO_BAR)):
+        ink = np.abs(bar - ground).sum(2) > 6
+        for x0, x1 in BAR_GLYPHS:
+            ink[:, x0:x1] = False
+        if ink.any():
+            sys.exit(f'{name}: the status bar is not the plain ground {tuple(ground)} outside its clock and icons, '
+                     'so its bar cannot be swapped for the demo-mode one')
+    out_im = im.copy()
+    out_im.paste(demo.crop((0, 0, demo.width, ANDROID_STATUS_ROWS)), (0, 0))
+    return out_im
 
 
 def screens():
     iphone = os.path.join(STORE, 'captures', 'iphone', 'fi')
     for shot, name in IPHONE_SHOTS:
         im = Image.open(os.path.join(iphone, f'{shot}.png')).convert('RGB')
-        save_png(im, out('Kuvat', 'nayttokuvat', f'naytto-{name}.png'))
-        save_png(phone_frame(im), out('Kuvat', 'puhelimet', f'puhelin-{name}.png'))
+        save_png(im, out('Kuvat', 'nayttokuvat', f'naytto-{name}.png', public=False))
     for shot, name in SITE_SHOTS:
         im = Image.open(os.path.join(SCREENS, f'{shot}.png')).convert('RGB')
         im = im.crop((0, 0, im.width, im.height - ANDROID_NAV_ROWS))
         save_png(im, out('Kuvat', 'nayttokuvat', f'naytto-{name}.png'))
+    for name, rel, _ in PHONE_SHOTS:
+        im = android_still(rel)
+        if rel.startswith('manual/'):
+            im = demo_bar(im, rel)
+        im = im.crop((0, 0, im.width, im.height - ANDROID_NAV_ROWS))
         save_png(phone_frame(im), out('Kuvat', 'puhelimet', f'puhelin-{name}.png'))
+    for shot, name in PRIVATE_PHONES:
+        im = Image.open(os.path.join(iphone, f'{shot}.png')).convert('RGB')
+        # No punch-hole: an iPhone's camera is the island, and its bar is taller.
+        save_png(phone_frame(im, camera=False), out('Kuvat', 'puhelimet', f'puhelin-{name}.png', public=False))
     store = os.path.join(STORE, 'out', 'fi', 'app-store', 'iphone-6.9')
     for f in sorted(os.listdir(store)):
         if f.endswith('.png'):
-            save_jpeg(Image.open(os.path.join(store, f)), out('Kuvat', 'kauppakuvat', f.replace('.png', '.jpg')), 92)
+            save_jpeg(Image.open(os.path.join(store, f)), out('Kuvat', 'kauppakuvat', f.replace('.png', '.jpg'), public=False), 92)
 
 
 # ───────────────────────────── the Drive copies ─────────────────────────────
@@ -580,6 +666,8 @@ def manifest():
     with open(os.path.join(OUT, 'manifest.json'), 'w') as f:
         json.dump(entries, f, indent=1, ensure_ascii=False)
         f.write('\n')
+    with open(os.path.join(OUT, 'private.txt'), 'w') as f:
+        f.writelines('/' + os.path.relpath(p, OUT) + '\n' for p in sorted(set(private)))
     return entries
 
 

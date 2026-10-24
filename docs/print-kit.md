@@ -68,8 +68,8 @@ The first run makes `tools/print-kit/.venv` from `requirements.txt` (Pillow, qrc
 resvg-py for the SVGs, fontTools for the site's own woff2, PyYAML for the copy). It
 reads:
 
-- `src/assets/brand/`, `src/assets/photos/`, `src/assets/screens/`, `public/fonts/` and
-  `src/components/sparkleArtwork.ts` here;
+- `src/assets/brand/`, `src/assets/photos/`, `src/assets/screens/`, `src/assets/manual/fi/`,
+  `public/fonts/` and `src/components/sparkleArtwork.ts` here;
 - `assets/brand/icon.svg`, `tools/store-assets/captures/iphone/fi/` and
   `tools/store-assets/out/fi/app-store/iphone-6.9/` in `../pilke-app` (`PILKE_APP`
   moves it). The store images are that tool's output, so run
@@ -82,10 +82,30 @@ one-slide .pptx each Slides file starts from) and `manifest.json` with every fil
 size and SHA-256. The same inputs give the same bytes, so comparing the manifest with
 the previous one says exactly which files a refresh has to replace.
 
-The phone mockups are the store images' white shell (`pilke-app/tools/store-assets/render/build.py`)
-redrawn round each iPhone capture with its shadow, on transparency. Three screens the
-store set lacks (the personality quiz, feedback, settings) are the site's Android
-stills with the navigation bar cut off, as `Phone.astro` cuts it.
+The phone mockups are `Phone.astro`'s marketing frame drawn as a PNG, with a shadow, on
+transparency: a white shell, the screen edge to edge in an opening whose corners are 8 %
+of the phone's width, and a punch-hole camera in the status bar. The navigation bar is
+cut and the status bar kept, since the bar is what holds the top of a screen off the
+top corners. Every phone is a still pilke.app already shows (`PHONE_SHOTS` in
+`build.py`): the marketing stills of `src/assets/screens`, and for the home screen,
+the calendar and the sparks, which the site shows only in the guide, the guide's
+stills in `src/assets/manual/fi`. A guide still's status bar is swapped for the
+marketing stills' demo-mode bar, so every phone says 9:41; the build stops if either
+bar has anything but the clock and the icons on its plain ground. Look at the corners
+of every phone at full size after a rebuild: a screen whose controls moved nearer a
+corner shows there first.
+
+The one phone with no still on pilke.app, `puhelin-treffikutsu-valittu.png` (the
+invitation with a time and a place chosen), is framed from pilke-app's iPhone capture,
+and its sheet's frame runs along the screen's edges, so the rounded opening cuts its
+corners. It stays out of the public branch with the other private pictures below, and
+goes into a deck by hand, if at all.
+
+**What may be published.** Everything made from pilke-app's own captures and store
+images, which are not public, is listed in `out/private.txt`: the store images, the
+unframed iPhone screens and the private phone. Those never go on the assets branch.
+Before adding a new picture to the kit, check that it is made only from what
+pilke.app already serves; if it is not, give it `public=False` in `build.py`.
 
 Every transparent PNG carries its edge colour under its transparent pixels
 (`bleed()` in `build.py`). Google's PDF export, which is how a card gets printed,
@@ -105,11 +125,13 @@ The folder's ids are at the end of this page.
 
 1. **Build and diff.** Keep the old `out/manifest.json`, run `build.sh`, and list the
    paths whose hash changed.
-2. **Publish the pictures for Slides.** Push `out/` without `drive/` and `slides/` as
-   an orphan branch `print-kit-assets` of `boissit/pilke-web` from a scratch
-   directory (never from the working tree), and note the commit:
+2. **Publish the pictures for Slides.** Push `out/` without `drive/`, `slides/` and
+   every file `out/private.txt` lists, as an orphan branch `print-kit-assets` of
+   `boissit/pilke-web` from a scratch directory (never from the working tree), and
+   note the commit:
 
-       git init -b print-kit-assets && rsync -a --exclude drive --exclude slides tools/print-kit/out/ .
+       git init -b print-kit-assets && rsync -a --exclude drive --exclude slides \
+         --exclude-from tools/print-kit/out/private.txt tools/print-kit/out/ .
        git add -A && git commit -m "print-kit assets" && git push -f git@github.com:boissit/pilke-web.git print-kit-assets
 
    The repository is public, so these files are public while the branch exists. Only
