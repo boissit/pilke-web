@@ -101,5 +101,5 @@
   en: 'You choose on a map where you would like to go on dates. Pilke’s map is divided into areas in advance, and you pick the ones you like best.'
 
 'privacy.body':
-  fi: 'Saapuessasi treffeille voit halutessasi jakaa sijaintisi treffikumppanillesi löytääksenne toisenne. Puhelimesi sijainti näkyy vain väliaikaisesti, korkeintaan {{sharing.trail_minutes}} treffien alkamisen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta.'
+  fi: 'Saapuessasi treffeille voit halutessasi jakaa sijaintisi treffikumppanillesi löytääksenne toisenne. Puhelimesi sijainti näkyy vain väliaikaisesti, korkeintaan {{sharing.trail_minutes}} minuuttia treffien alkamisen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta.'
   en: 'When you arrive at a date, you can share your location with your date if you want to, so you find each other. Your phone’s location shows only for a while, at most {{sharing.trail_minutes}} minutes after the date starts, and only within {{sharing.radius_m}} metres of the venue.'
