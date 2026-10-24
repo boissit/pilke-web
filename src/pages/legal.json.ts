@@ -1,7 +1,7 @@
 import type { APIContext } from 'astro';
 
 import { legalDocuments } from '../i18n/legal';
-import { languages, localePath, type Lang } from '../i18n/ui';
+import { langs, localePath } from '../i18n/ui';
 
 /**
  * `https://pilke.app/legal.json` — which version of each legal document is live,
@@ -27,7 +27,7 @@ export const GET = async ({ site }: APIContext) => {
         effective: legal.effective.toISOString().slice(0, 10),
         draft: legal.draft,
         ...Object.fromEntries(
-          (Object.keys(languages) as Lang[]).map((lang) => [
+          langs.map((lang) => [
             lang,
             new URL(localePath(lang, legal.slug), site).href,
           ]),

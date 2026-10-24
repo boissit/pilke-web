@@ -7,15 +7,18 @@ root, English under `/en`.
 npm install
 npm run dev      # http://localhost:4321
 npm run build    # static output in dist/
-npx astro check  # types, including a key missing from one language
+npx astro check  # types and content collections
 ```
 
 ## How it is put together
 
-`src/i18n/ui.ts` holds every string in both languages. `en` is typed
-`Record<keyof typeof fi, string>`, so a key present in Finnish and missing in
-English is a type error rather than a blank on the page. This mirrors how the app
-itself types its dictionaries.
+**Every string a reader meets has one source.** The pages' copy is
+`src/content/copy/*.yaml`, one file per page with each key's `fi` and `en` side by
+side and the house style in the header of `site.yaml`; the guide and the legal
+documents are Markdown. `src/i18n/ui.ts` reads the YAML and is where a page's
+`t('key')` comes from. It holds no string of its own, and it fails the build on a key
+missing a language, an empty string, a key in two files or a page asking for a key
+no file holds, which is the check a typed dictionary used to make.
 
 One file is the whole of a page in both languages. They live under
 `src/pages/[...lang]/`: `index.astro`, `nain-se-toimii.astro`,
@@ -33,7 +36,7 @@ the `PageHead` card every subpage opens with, and the
 `sparkleArtwork.ts` holds the sparkle those draw from, and `src/assets/brand/` the
 owner's wordmark.
 `src/assets/screens.ts` is the table of screenshots, and is the only thing the
-pages share besides the dictionary.
+pages share besides the copy.
 
 **Everything legal lives in this repository, and nowhere else.** The published
 documents are `src/content/legal/`; the audit they are written from —
@@ -43,11 +46,10 @@ which version it showed. That is the point of the arrangement, so **do not add a
 second copy of a legal text to `pilke-app` or `treffit-backend`**, not even as a
 convenience.
 
-The documents are the one exception to *every string lives in `ui.ts`*.
-`src/content/legal/` holds them as Markdown, one file per document per language,
-named `<slug>.<lang>.md`; `src/content.config.ts` declares the schema and
+The documents are Markdown rather than YAML. `src/content/legal/` holds them, one
+file per document per language, named `<slug>.<lang>.md`; `src/content.config.ts` declares the schema and
 `src/pages/[...lang]/[doc].astro` renders every one of them. They are prose a
-lawyer edits, and a lawyer does not edit a TypeScript object literal. Their titles
+lawyer edits, and a lawyer edits a document rather than a list of keys. Their titles
 and ledes come from their own frontmatter, so the footer names a document from the
 same place the page does.
 
@@ -182,7 +184,8 @@ in. That file is generated, not edited: `make export-constants` in
 `treffit-backend` (containers up) reads each value off the setting or constant the
 backend enforces and writes it here. Rerun it whenever one of those rules changes
 and commit the result; a token the file does not hold fails the build. The same
-tokens work in `src/i18n/ui.ts`, whose `t()` fills them in, and in the legal
+tokens work in `src/content/copy/`, whose strings `t()` in `src/i18n/ui.ts` fills
+in, and in the legal
 documents, which `renderLegalBody()` in `src/i18n/legal.ts` renders. Most of those
 pages still carry their numbers as prose, so a change the export picks up has to be
 checked against them by hand; the location-sharing window and the decline and

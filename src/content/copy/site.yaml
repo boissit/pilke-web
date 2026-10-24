@@ -1,42 +1,43 @@
 # Every string on this site, in both languages, grouped by the page that shows it.
 #
-# This is a *second copy* of the strings in `src/i18n/ui.ts`, extracted so that copy
-# can be read and proofread as copy: one page per file, the two languages of a
-# sentence on adjacent lines, and prose in a file a non-developer can open.
+# These files are the site's copy. `src/i18n/ui.ts` reads all of them when the site
+# is built, and every page draws its strings from here: one page per file, the two
+# languages of a sentence on adjacent lines, so copy is read and proofread as copy in
+# a file a non-developer can open. The guide and the legal documents are Markdown, in
+# `src/content/manual/` and `src/content/legal/`, and are the one other source.
 #
-# WARNING: **The site does not read these files yet.** `src/i18n/ui.ts` is still the
-# only thing any page renders from, so an edit made here changes nothing a reader
-# sees until the two are reconciled. Until then, edit both or edit `ui.ts`.
+# The `key` of each entry is the dotted key a page asks for, `t('hero.title')`, kept
+# flat and unnested: one indentation level for somebody editing prose, and a key that
+# greps to every place it is drawn.
 #
-# The `key` of each entry is the dotted key `ui.ts` uses, unchanged and unnested. It
-# is kept flat on purpose: it is the join between the two copies, so a diff of the
-# two is a mechanical check rather than a reading exercise, and a flat key is one
-# indentation level for somebody editing prose in YAML.
+# WARNING: **Both languages, every key.** YAML has no type for that, so `ui.ts`
+# checks it instead: an entry with a `fi:` and no `en:`, an empty string, a key in two
+# files, or a page asking for a key no file holds fails the build rather than
+# shipping a blank.
 #
-# ## House style, from `ui.ts`
+# ## House style
 #
 # Finnish is the product's language and the one written first; English is a full
-# translation rather than a fallback set, so a key missing from `en` is a type
-# error in `ui.ts` in the same way it is in the app's own dictionaries.
-#
-# WARNING: **YAML has no such type.** A `fi:` with no `en:` beside it parses
-# cleanly and would ship a blank, which is the one guarantee this format gives up
-# relative to the TypeScript dictionary. Recovering it is a schema on
-# the collection, and is the first thing to add if the site is ever rewired to
-# read these files.
+# translation rather than a fallback set.
 #
 # Product vocabulary is the app's own spelling: the tokens are kipinät, one kipinä,
 # in English sparks, and five of them send a treffikutsu. They are never called a
 # currency: Pilke pyörii kipinöillä, runs on sparks. A zero balance is
 # never "ei kipinää", which means no chemistry, and "kipinöitä lentää" belongs to the
 # moment two people say yes. The constants keep their old names, `{{petals.*}}`,
-# because the backend does.
+# because the backend does, except `{{sparks.per_date}}`.
 #
 # The front page is the owner's pitch, and it answers why anybody should care in
 # three parts: what Pilke does instead of what the other apps make you do, how it
 # goes in practice, and who would be better off elsewhere. Sparks are left to
 # `nain-se-toimii`, because a price list on a front page reads as a game to be
 # played rather than as an app for meeting people.
+#
+# The owner's rules for new copy: short, warm, direct and in the second person. A
+# sentence opens with what something is, never with what it is not, and carries no
+# emphatic add-on ("aina", "ei koskaan enempää") and no reassurance nobody asked
+# for. The terms are fixed: löydä ehdokkaat, persoonallisuuskysely, kipinät, jäähy,
+# ylläpidetty kalenteri.
 #
 # Sentences here are short on purpose. A clause that can be its own sentence is one,
 # and a paragraph says its point in its first six words.
@@ -60,9 +61,9 @@
 # ──────────────────────────────────────────────────────────────────────────
 # The bar at the top, and the link that skips it
 #
-# Three subpages and a language, in `SiteHeader.astro`, which folds them into a
-# menu on a phone. `nav.back` is the button every subpage closes with rather than
-# anything in the bar.
+# Three subpages, the guide and a language, in `SiteHeader.astro`, which folds them
+# into a menu on a phone; the footer lists the same four. `nav.back` is the button
+# every subpage closes with rather than anything in the bar.
 # ──────────────────────────────────────────────────────────────────────────
 
 'nav.how':
@@ -77,13 +78,16 @@
   fi: 'Kysyttyä'
   en: 'Questions'
 
-# WARNING: **Nothing renders this.** The language control in `SiteHeader.astro`
-# is labelled with the name of the other language — `Suomi` or `English`, from
-# `languages` in `ui.ts` — rather than with the word `Kieli`. Either wire it up
-# or delete it; a dictionary entry no page reads is copy nobody proofreads.
-'nav.language':
-  fi: 'Kieli'
-  en: 'Language'
+'nav.manual':
+  fi: 'Ohjeet'
+  en: 'Guide'
+
+# The language switch, in the header and the footer, names each language in itself,
+# on every page: the English page's link to Finnish reads `Suomi`. So this is the one
+# key whose two values are drawn side by side, whichever language the page is in.
+'language.name':
+  fi: 'Suomi'
+  en: 'English'
 
 'nav.skip':
   fi: 'Siirry sisältöön'

@@ -1,8 +1,5 @@
 # House style, and what this format is for, is the header of `site.yaml`.
 #
-# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
-# every page renders from.
-#
 # WARNING: **This page states only what the app does.** It names the trusted
 # contact, the safety button and the report because those exist and ship. It
 # promises nothing about what Pilke will do on somebody's behalf, and the advice

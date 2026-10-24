@@ -1,0 +1,53 @@
+# House style, and what this format is for, is the header of `site.yaml`.
+#
+# The strings round the guide: its index at `/ohje`, and what every page of it says
+# besides its own Markdown. A page's title, lead and body are its file in
+# `src/content/manual/`, and the index lists each page by that title and lead.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The index
+#
+# `manual.empty` is the line the index shows instead of the list while no page
+# exists, and `manual.draft.tag` the word beside an unfinished page's title.
+# ──────────────────────────────────────────────────────────────────────────
+
+'manual.title':
+  fi: 'Käyttöohje'
+  en: 'User guide'
+
+'manual.lead':
+  fi: 'Näin Pilkettä käytetään ja näin sen osat toimivat.'
+  en: 'How to use Pilke, and how its parts work.'
+
+'manual.empty':
+  fi: 'Ohjeita ei ole vielä julkaistu.'
+  en: 'No guides have been published yet.'
+
+'manual.draft.tag':
+  fi: 'Kesken'
+  en: 'Unfinished'
+
+# ──────────────────────────────────────────────────────────────────────────
+# A page of the guide
+#
+# WARNING: **Shown whenever a page has `draft: true`.** The flag defaults to true,
+# so a page is unfinished until somebody says otherwise, and this is the notice
+# that says so. `manual.shot.missing` stands in a draft's phone where a still has
+# not been captured yet.
+# ──────────────────────────────────────────────────────────────────────────
+
+'manual.draft.title':
+  fi: 'Tämä ohje on kesken'
+  en: 'This guide is unfinished'
+
+'manual.draft.body':
+  fi: 'Teksti ja kuvat voivat vielä muuttua, eikä kaikki tässä välttämättä vastaa sovellusta sellaisenaan.'
+  en: 'The text and the pictures may still change, and not everything here necessarily matches the app as it is.'
+
+'manual.shot.missing':
+  fi: 'Kuva puuttuu'
+  en: 'Screenshot missing'
+
+'manual.back':
+  fi: 'Takaisin ohjeisiin'
+  en: 'Back to the guide'

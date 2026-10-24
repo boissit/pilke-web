@@ -20,7 +20,7 @@ import Icon from './Icon.astro';
 import Logo from './Logo.astro';
 import { manualHref } from '../i18n/manual';
 import { otherLanguage, otherLanguageHref } from '../i18n/switch';
-import { languages, localePath, useTranslations, type Lang } from '../i18n/ui';
+import { languageName, localePath, useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
@@ -57,7 +57,7 @@ const current = (href: string) => here === href || here.startsWith(`${href}/`);
         {nav.map((item) => (
           <li><a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a></li>
         ))}
-        <li><a href={switchHref} lang={other} hreflang={other}>{languages[other]}</a></li>
+        <li><a href={switchHref} lang={other} hreflang={other}>{languageName(other)}</a></li>
       </ul>
     </nav>
 
@@ -74,7 +74,7 @@ const current = (href: string) => here === href || here.startsWith(`${href}/`);
             {nav.map((item) => (
               <li><a href={item.href} aria-current={current(item.href) ? 'page' : undefined}>{item.label}</a></li>
             ))}
-            <li><a href={switchHref} lang={other} hreflang={other}>{languages[other]}</a></li>
+            <li><a href={switchHref} lang={other} hreflang={other}>{languageName(other)}</a></li>
           </ul>
         </nav>
       </details>

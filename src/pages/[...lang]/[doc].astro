@@ -15,14 +15,14 @@
  */
 import PageHead from '../../components/PageHead.astro';
 import { formatEffective, legalDocuments, renderLegalBody } from '../../i18n/legal';
-import { defaultLang, languages, localePath, useTranslations, type Lang } from '../../i18n/ui';
+import { defaultLang, langs, localePath, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
 export const getStaticPaths = async () => {
   const documents = await legalDocuments();
 
   return documents.flatMap((legal) =>
-    (Object.keys(languages) as Lang[]).map((lang) => ({
+    langs.map((lang) => ({
       params: {
         // Finnish is the site's root and takes no segment at all, exactly as
         // `localeRoutes()` builds the hand-written pages.
@@ -42,7 +42,7 @@ const body = await renderLegalBody(entry);
 ---
 
 <Base lang={lang}>
-  <PageHead title={entry.data.title} lead={entry.data.lead} />
+  <PageHead title={legal.text[lang].title} lead={legal.text[lang].lead} />
 
   <section class="slab slab-white">
     <div class="wrap section-pad">

@@ -1,7 +1,4 @@
 # House style, and what this format is for, is the header of `site.yaml`.
-#
-# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
-# every page renders from.
 
 # ──────────────────────────────────────────────────────────────────────────
 # Hero
@@ -19,6 +16,23 @@
 'pitch.hero.lead':
   fi: 'Pilke etsii puolestasi ehdokkaat, yhteisen ajan ja treffipaikan. Sinä menet treffeille.'
   en: 'Pilke finds your candidates, a time you both have free and a place to meet. You go on the date.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The photographs
+#
+# Each is a stock photo with a real still of the app set into its phone, so the alt
+# says both what the scene is and what the screen shows. `hero` is the hand on the
+# coral disc; `beta` stands beside the waitlist in the footer's card, which only the
+# front page hands a photograph.
+# ──────────────────────────────────────────────────────────────────────────
+
+'photo.hero':
+  fi: 'Käsi pitelee puhelinta, jossa on Pilkkeen etusivu: saapunut treffikutsu, sovitut treffit ja lähetetty kutsu.'
+  en: 'A hand holding a phone with the Pilke home screen: a date invitation received and a date agreed.'
+
+'photo.beta':
+  fi: 'Puhelin kädessä persikanvärisen talon edessä, näytöllä saapunut treffikutsu: kutsuja, ajat ja paikat.'
+  en: 'A phone held up in front of a peach-coloured house, showing a date invitation received: who sent it, the times and the places.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # The other apps, struck through

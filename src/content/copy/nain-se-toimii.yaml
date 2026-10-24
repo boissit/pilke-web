@@ -1,8 +1,5 @@
 # House style, and what this format is for, is the header of `site.yaml`.
 #
-# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
-# every page renders from.
-#
 # WARNING: **Every number on this page is a backend constant.** Five kipinää for an
 # invitation, fifteen held at a time, one hour of shared calendar, at least two times
 # offered, a day to answer. The size of a set is deliberately not one of them: what

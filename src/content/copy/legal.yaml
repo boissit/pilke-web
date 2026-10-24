@@ -1,12 +1,8 @@
 # House style, and what this format is for, is the header of `site.yaml`.
 #
-# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
-# every page renders from.
-#
 # The strings the pages *around* the legal documents need. The documents
-# themselves are `src/content/legal/*.md` and are already in a format a person can
-# edit, so nothing of them is copied here — the note below the banner is `ui.ts`'s
-# own, and says why.
+# themselves, their titles and ledes included, are `src/content/legal/*.md`, in a
+# format a lawyer can edit, so nothing of them is repeated here.
 
 # ──────────────────────────────────────────────────────────────────────────
 # The header of a legal page
@@ -17,9 +13,6 @@
 # text.
 # ──────────────────────────────────────────────────────────────────────────
 
-# The legal documents. Their titles and ledes live in their own frontmatter,
-# in the document's language, so they are not repeated here; these are the
-# strings the pages around them need.
 'legal.effective':
   fi: 'Voimassa {date} alkaen'
   en: 'In effect from {date}'

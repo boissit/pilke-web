@@ -3,7 +3,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 import { resolveTokens } from '../manual/constants';
 
-import { defaultLang, languages, localePath, type Lang } from './ui';
+import { defaultLang, langs, localePath, traced, type Lang } from './ui';
 
 /**
  * The legal documents, read once and checked, for the page that renders them, the
@@ -45,6 +45,9 @@ export interface LegalDocument {
 
   /** Both languages, guaranteed present. */
   entries: Record<Lang, LegalEntry>;
+
+  /** Title and lead per language, with their `{{tokens}}` already resolved. */
+  text: Record<Lang, { title: string; lead: string }>;
 }
 
 /** The `<slug>.<lang>` an entry's id is, split at the last dot. */
@@ -72,7 +75,7 @@ export async function legalDocuments(): Promise<LegalDocument[]> {
     // drifts, and on a legal page it means a reader is handed the wrong language
     // of a binding text or a 404. The site's own routing cannot catch it here the
     // way `localeRoutes()` does for a page, because the content is the route.
-    for (const lang of Object.keys(languages) as Lang[]) {
+    for (const lang of langs) {
       if (!found.has(lang)) {
         throw new Error(
           `Legal document "${slug}" has no ${lang} text. Every document needs src/content/legal/${slug}.${lang}.md.`,
@@ -81,7 +84,7 @@ export async function legalDocuments(): Promise<LegalDocument[]> {
     }
 
     const entriesByLang = Object.fromEntries(
-      (Object.keys(languages) as Lang[]).map((lang) => [lang, found.get(lang)!]),
+      langs.map((lang) => [lang, found.get(lang)!]),
     ) as Record<Lang, LegalEntry>;
 
     // The two languages are one document, so they are one version. If they
@@ -97,12 +100,28 @@ export async function legalDocuments(): Promise<LegalDocument[]> {
       }
     }
 
+    const text = Object.fromEntries(
+      langs.map((lang) => {
+        const where = `src/content/legal/${slug}.${lang}.md`;
+        const { title, lead } = entriesByLang[lang].data;
+        const key = `legal/${slug}.${lang}`;
+        return [
+          lang,
+          {
+            title: traced(lang, `${key}#title`, resolveTokens(title, where)),
+            lead: traced(lang, `${key}#lead`, resolveTokens(lead, where)),
+          },
+        ];
+      }),
+    ) as LegalDocument['text'];
+
     return {
       slug,
       version: authoritative.version,
       effective: authoritative.effective,
       draft: authoritative.draft,
       entries: entriesByLang,
+      text,
     } satisfies LegalDocument;
   });
 

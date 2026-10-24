@@ -1,7 +1,4 @@
 # House style, and what this format is for, is the header of `site.yaml`.
-#
-# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
-# every page renders from.
 
 # ──────────────────────────────────────────────────────────────────────────
 # The waitlist form
@@ -18,12 +15,11 @@
 # reader from JavaScript.
 # ──────────────────────────────────────────────────────────────────────────
 
-# The waitlist. TODO(pilke-web): the form posts nowhere yet — see README.
 # "Olemme" rather than "Pilke on": the wordmark stands right above the title in the
 # footer's card, and the name twice in a row reads as a stutter.
 'cta.title':
   fi: 'Olemme suljetussa betassa'
-  en: 'We''re in closed beta'
+  en: 'We’re in closed beta'
 
 'cta.body':
   fi: 'Jätä sähköpostiosoitteesi, niin kerromme heti, kun pääset mukaan.'

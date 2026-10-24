@@ -1,7 +1,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 
 import { resolveTokens } from '../manual/constants';
-import { defaultLang, languages, localePath, type Lang } from './ui';
+import { defaultLang, langs, localePath, traced, type Lang } from './ui';
 
 /**
  * The manual's pages, read once and checked, for the index that lists them, the page
@@ -48,8 +48,6 @@ function parseId(id: string): { slug: string; lang: string } {
   return { slug: id.slice(0, cut), lang: id.slice(cut + 1) };
 }
 
-const langs = Object.keys(languages) as Lang[];
-
 let cache: ManualPage[] | undefined;
 
 /** Every page, in index order: by `order`, then by slug so a tie is stable. */
@@ -59,7 +57,7 @@ export async function manualPages(): Promise<ManualPage[]> {
   const bySlug = new Map<string, Map<string, ManualEntry>>();
   for (const entry of await getCollection('manual')) {
     const { slug, lang } = parseId(entry.id);
-    if (!(langs as string[]).includes(lang)) {
+    if (!(langs as readonly string[]).includes(lang)) {
       throw new Error(`${manualFile(entry)} is not named <slug>.<lang>.md with lang one of ${langs.join(', ')}.`);
     }
     if (!bySlug.has(slug)) bySlug.set(slug, new Map());
@@ -94,7 +92,14 @@ export async function manualPages(): Promise<ManualPage[]> {
       langs.map((lang) => {
         const where = manualFile(entries[lang]);
         const { title, lead } = entries[lang].data;
-        return [lang, { title: resolveTokens(title, where), lead: resolveTokens(lead, where) }];
+        const key = `manual/${slug}.${lang}`;
+        return [
+          lang,
+          {
+            title: traced(lang, `${key}#title`, resolveTokens(title, where)),
+            lead: traced(lang, `${key}#lead`, resolveTokens(lead, where)),
+          },
+        ];
       }),
     ) as ManualPage['text'];
 

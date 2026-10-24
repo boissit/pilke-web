@@ -1,8 +1,5 @@
 # House style, and what this format is for, is the header of `site.yaml`.
 #
-# WARNING: **The site does not read this file yet.** `src/i18n/ui.ts` is still what
-# every page renders from.
-#
 # WARNING: **Every claim on this page is checked against the backend's own
 # deletion code** by way of `docs/legal/privacy-policy.md` §11, and the two lists
 # are that section's two lists. Deletion is a tombstone rather than a row delete,

@@ -35,7 +35,7 @@ import SparkleScatter from './SparkleScatter.astro';
 import { legalDocuments, legalHref } from '../i18n/legal';
 import { manualHref } from '../i18n/manual';
 import { otherLanguage, otherLanguageHref } from '../i18n/switch';
-import { languages, localePath, useTranslations, type Lang } from '../i18n/ui';
+import { languageName, localePath, useTranslations, type Lang } from '../i18n/ui';
 
 interface Props {
   lang: Lang;
@@ -61,16 +61,16 @@ const pages = [
 
 /*
   The legal links, in the order a reader is offered them: what is done with their
-  data, the terms they agreed to, and how to leave. The first two take their label
-  from the document's own frontmatter rather than from `ui.ts`, so a document is
+  data, the terms they agreed to, and how to leave. The documents take their label
+  from their own frontmatter rather than from `src/content/copy/`, so a document is
   named in one place and the footer cannot call it something the page does not.
 */
 const documents = await legalDocuments();
 
 /*
-  The hosted form to post to, per language. Not in `ui.ts`: these are not strings
-  a reader sees, they are configuration, and a form id in the dictionary would be
-  a value the copy review is asked to proofread.
+  The hosted form to post to, per language. Not in `src/content/copy/`: these are
+  not strings a reader sees, they are configuration, and a form id among the copy
+  would be a value the copy review is asked to proofread.
 
   Both are bound to their own topic — `Beta (fi)` and `Beta (en)` — so the
   invitation months later goes out in the language somebody was reading.
@@ -126,7 +126,7 @@ const photoSparkles: Sparkles = [
 const legal = [
   ...documents.map((document) => ({
     href: legalHref(document.slug, lang),
-    label: document.entries[lang].data.title,
+    label: document.text[lang].title,
   })),
   { href: localePath(lang, 'tietojen-poisto'), label: t('legal.deletion.nav') },
   { href: localePath(lang, 'yhteystiedot'), label: t('contact.nav') },
@@ -281,8 +281,8 @@ const legal = [
         sees at a glance that there is another, and which of the two they are in.
       -->
       <p class="langs">
-        <span class="chosen" aria-current="true">{languages[lang]}</span>
-        <a href={switchHref} lang={other} hreflang={other}>{languages[other]}</a>
+        <span class="chosen" aria-current="true">{languageName(lang)}</span>
+        <a href={switchHref} lang={other} hreflang={other}>{languageName(other)}</a>
       </p>
     </div>
   </div>

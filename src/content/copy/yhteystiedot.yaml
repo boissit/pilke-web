@@ -1,0 +1,76 @@
+# House style, and what this format is for, is the header of `site.yaml`.
+#
+# The App Store's support URL points at this page, and a store reviewer reads it as
+# the promise that a person answers. Every topic goes to the one address in
+# `src/data/contact.ts`, so no string here carries an address of its own.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The page itself
+#
+# `contact.nav` is the page's name in the footer's second list, beside the legal
+# documents.
+# ──────────────────────────────────────────────────────────────────────────
+
+'contact.nav':
+  fi: 'Yhteystiedot'
+  en: 'Contact'
+
+'contact.title':
+  fi: 'Yhteystiedot'
+  en: 'Contact'
+
+'contact.lead':
+  fi: 'Kysymykset, palaute ja avunpyynnöt: kirjoita meille sähköpostia.'
+  en: 'Questions, feedback and requests for help: write to us by email.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# What to write about
+#
+# WARNING: **`contact.account.body` carries a `{link}` placeholder.** The page cuts
+# the sentence there and draws the deletion page's title as a link, so a
+# translation that drops it loses the link.
+# ──────────────────────────────────────────────────────────────────────────
+
+'contact.help.title':
+  fi: 'Apua sovelluksen kanssa'
+  en: 'Help with the app'
+
+'contact.help.body':
+  fi: 'Jos jokin ei toimi tai et löydä etsimääsi, kerro, mitä yritit tehdä ja millä puhelimella.'
+  en: 'If something doesn''t work or you can''t find what you''re looking for, tell us what you were trying to do and on which phone.'
+
+'contact.feedback.title':
+  fi: 'Palaute ja ideat'
+  en: 'Feedback and ideas'
+
+'contact.feedback.body':
+  fi: 'Kerro, mikä toimii ja mitä toivoisit Pilkkeeltä.'
+  en: 'Tell us what works and what you''d like from Pilke.'
+
+'contact.account.title':
+  fi: 'Tili ja tietosi'
+  en: 'Your account and data'
+
+'contact.account.body':
+  fi: 'Kysymykset tilistäsi ja tiedoistasi. Tilin poistamisesta kerromme sivulla {link}.'
+  en: 'Questions about your account and your data. How to delete your account is on {link}.'
+
+'contact.press.title':
+  fi: 'Media ja yhteistyö'
+  en: 'Press and partners'
+
+'contact.press.body':
+  fi: 'Kiinnostaako tarina Pilkkeen takana? Ota yhteyttä, niin kerromme lisää.'
+  en: 'Curious about the story behind Pilke? Get in touch and we''ll tell you more.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# Where answers already are
+# ──────────────────────────────────────────────────────────────────────────
+
+'contact.answers.title':
+  fi: 'Moneen kysymykseen löytyy jo vastaus'
+  en: 'Many answers are already here'
+
+'contact.answers.body':
+  fi: 'Kysyttyä-sivulla vastaamme yleisimpiin kysymyksiin, ja Ohjeet kertovat, miten Pilke toimii vaihe vaiheelta.'
+  en: 'The Questions page answers the most common ones, and the Guide explains how Pilke works step by step.'

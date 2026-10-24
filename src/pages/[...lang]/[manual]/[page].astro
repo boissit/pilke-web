@@ -17,7 +17,7 @@
 import ManualStep from '../../../components/ManualStep.astro';
 import PageHead from '../../../components/PageHead.astro';
 import { manualFile, manualHref, manualPages, manualSegment } from '../../../i18n/manual';
-import { defaultLang, languages, useTranslations, type Lang } from '../../../i18n/ui';
+import { defaultLang, langs, useTranslations } from '../../../i18n/ui';
 import Base from '../../../layouts/Base.astro';
 import { renderManualBody } from '../../../manual/body';
 
@@ -25,7 +25,7 @@ export const getStaticPaths = async () => {
   const pages = await manualPages();
 
   return pages.flatMap((page) =>
-    (Object.keys(languages) as Lang[]).map((lang) => ({
+    langs.map((lang) => ({
       params: {
         lang: lang === defaultLang ? undefined : lang,
         manual: manualSegment[lang],
