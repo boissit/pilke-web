@@ -12,9 +12,11 @@
 #     committed pictures were made with it: a different interpreter can mean
 #     different wheels and a picture a few levels off everywhere. PICTURES_PYTHON
 #     names an interpreter to use instead of looking for one.
-#   * The Unsplash originals, into full/, from the URLs in originals.json. Each is
-#     checked against its size and SHA-256 there, so a photo that changed upstream
-#     stops the build instead of moving every screen corner fitted on the old one.
+#   * The stock originals, from Unsplash and Pexels, into full/, from the URLs in
+#     originals.json. Each is checked against its size and SHA-256 there, so a photo
+#     that changed upstream stops the build instead of moving every screen corner or
+#     crop fitted on the old one. Pexels refuses Python's own User-Agent, so the
+#     fetch sends a browser's.
 #
 # The same inputs give the same bytes out, every run.
 set -euo pipefail
@@ -64,15 +66,16 @@ for o in json.load(open('originals.json')):
     path = os.path.join('full', o['file'])
     if not os.path.exists(path):
         print(f"→ fetching {o['file']} from {o['url']}")
-        with urllib.request.urlopen(o['url'], timeout=60) as r:
+        req = urllib.request.Request(o['url'], headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=60) as r:
             data = r.read()
         open(path + '.part', 'wb').write(data)
         os.replace(path + '.part', path)
     size, digest = os.path.getsize(path), sha(path)
     if size != o['bytes'] or digest != o['sha256']:
         print(f"{path} is {size} bytes, sha256 {digest}; originals.json says {o['bytes']} and {o['sha256']}.\n"
-              f"  Unsplash may have re-encoded it ({o['page']}). Every screen corner is fitted on the\n"
-              f"  recorded file, so check the fits against the new one before recording it.", file=sys.stderr)
+              f"  The source may have re-encoded it ({o['page']}). Every screen corner and crop is\n"
+              f"  fitted on the recorded file, so check them against the new one before recording it.", file=sys.stderr)
         bad += 1
 sys.exit(1 if bad else 0)
 EOF

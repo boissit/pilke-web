@@ -1,0 +1,99 @@
+---
+/**
+ * The date itself on `nain-se-toimii`: a heading and a photograph, nothing else.
+ *
+ * A peach card with the sparkles every subpage head carries, the heading on it and
+ * the photo under the heading at the card's width in a softer corner of its own.
+ *
+ * The photo comes in two crops of one picture, chosen by width rather than cropped
+ * by CSS: the two in it are small, and the 16:9 that suits the card on a desktop
+ * would leave them a speck in a phone's 4:5. `scripts/photos/crops.py` cuts both,
+ * each framed on the couple.
+ *
+ * WARNING: **Nobody in the photograph is a Pilke user.** It is a stock photo of two
+ * people whose faces are too small to read, and nothing here may caption it as
+ * anything else.
+ */
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
+
+import SparkleScatter from './SparkleScatter.astro';
+
+interface Props {
+  title: string;
+  /** The 16:9 crop, drawn where the card is wider than a phone. */
+  wide: ImageMetadata;
+  /** The 4:5 crop, drawn on a phone. */
+  tall: ImageMetadata;
+  alt: string;
+}
+
+const { title, wide, tall, alt } = Astro.props;
+
+// The line the card switches crops at, the same one its CSS does.
+const phone = '(max-width: 40rem)';
+const formats = ['avif', 'webp'] as const;
+
+const tallSets = await Promise.all(formats.map((format) => getImage({ src: tall, widths: [360, 540, 720, 1080], format })));
+const wideSets = await Promise.all(formats.map((format) => getImage({ src: wide, widths: [560, 800, 1120, 1600, 2240], format })));
+const fallback = await getImage({ src: wide, widths: [800, 1120, 1600], format: 'jpg' });
+---
+
+<section class="slab slab-pale" aria-labelledby="date-title">
+  <div class="wrap section-pad card">
+    <SparkleScatter
+      fill="var(--sparkle-on-peach)"
+      sparkles={[
+        { size: 110, rotate: 14, right: '6%', top: '26px', only: 'wide' },
+        { size: 40, rotate: -24, right: 'calc(6% + 128px)', top: '52px', only: 'wide' },
+        { size: 56, rotate: 14, left: '10px', bottom: '8px', only: 'narrow' },
+      ]}
+    />
+    <h2 id="date-title" class="display-mid">{title}</h2>
+    <picture>
+      {
+        formats.map((format, i) => (
+          <source media={phone} type={`image/${format}`} srcset={tallSets[i].srcSet.attribute} sizes="90vw" width={tall.width} height={tall.height} />
+        ))
+      }
+      {
+        formats.map((format, i) => (
+          <source type={`image/${format}`} srcset={wideSets[i].srcSet.attribute} sizes="(min-width: 80rem) 1120px, 90vw" width={wide.width} height={wide.height} />
+        ))
+      }
+      <img
+        src={fallback.src}
+        srcset={fallback.srcSet.attribute}
+        sizes="(min-width: 80rem) 1120px, 90vw"
+        width={1120}
+        height={Math.round((1120 * wide.height) / wide.width)}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+      />
+    </picture>
+  </div>
+</section>
+
+<style>
+  .card picture {
+    display: block;
+    margin-top: var(--pad-large);
+  }
+
+  .card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  @media (max-width: 40rem) {
+    .card img {
+      aspect-ratio: 4 / 5;
+    }
+  }
+</style>

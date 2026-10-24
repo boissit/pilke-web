@@ -15,10 +15,10 @@
  * README, and a marketing page stating a price the product does not charge is
  * worse than a page that stays vague.
  */
-import { Picture } from 'astro:assets';
-
-import coffee from '../../assets/photos/coffee-date.jpg';
+import dateTall from '../../assets/photos/date-bench-tall.jpg';
+import dateWide from '../../assets/photos/date-bench-wide.jpg';
 import { shotsFor } from '../../assets/screens';
+import DateSection from '../../components/DateSection.astro';
 import PageHead from '../../components/PageHead.astro';
 import Phone from '../../components/Phone.astro';
 import Sparkle from '../../components/Sparkle.astro';
@@ -109,27 +109,7 @@ const changes = [
     </div>
   </section>
 
-  <!--
-    The date itself, between the invitation and what happens when it falls
-    through, with the one photograph on the page. A stock photo, cropped so that
-    nobody's face is in it, since nobody in it is a Pilke user; drawn the card's
-    width, and taller than wide-screen on a phone so the cups stay the subject.
-  -->
-  <section class="slab slab-pale">
-    <div class="wrap section-pad enjoy">
-      <h2 class="display-mid">{t('detail.enjoy.title')}</h2>
-      <p class="lede">{t('detail.enjoy.body')}</p>
-      <Picture
-        src={coffee}
-        formats={['avif', 'webp']}
-        alt={t('photo.coffee')}
-        width={1120}
-        widths={[480, 720, 960, 1120, 1600, 2240]}
-        sizes="(min-width: 80rem) 1120px, 90vw"
-        class="photo"
-      />
-    </div>
-  </section>
+  <DateSection title={t('detail.enjoy.title')} wide={dateWide} tall={dateTall} alt={t('photo.date')} />
 
   <section class="slab slab-white">
     <div class="wrap section-pad">
@@ -293,24 +273,4 @@ const changes = [
     margin-top: var(--pad-small);
   }
 
-  .enjoy .lede {
-    max-width: 52rem;
-  }
-
-  /* The card's width at its natural shape, and 4:3 on a phone, where the full
-     frame would be a strip; the cups sit right of centre, so the crop leans there. */
-  .enjoy :global(.photo) {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: var(--radius-card);
-  }
-
-  @media (max-width: 40rem) {
-    .enjoy :global(.photo) {
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      object-position: 60% 50%;
-    }
-  }
 </style>

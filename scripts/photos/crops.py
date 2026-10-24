@@ -24,10 +24,14 @@ for lang in LANGS:
     # The right fifth of the original is left out: a blurred cheek and sunglasses.
     web(f'beta-{lang}-full.jpg', (970, 1650, 3050, 4250), 1000, f'beta-invitation-{lang}.jpg')
 
-# The coffee on nain-se-toimii, one for both languages, at 2400 wide for the page's
-# widest card at 2x. The top of the original, where her cheek is, and the blurred
-# pot on the right are left out.
-web('full/g86airJZ4Gs.jpg', (0, 800, 5000, 3648), 2400, 'coffee-date.jpg')
+# The two on a garden bench under *Nauttikaa treffeistä!* on nain-se-toimii, one
+# picture for both languages, cut twice because the card is 16:9 beside the copy and
+# 4:5 on a phone, and the couple is small in the original: nearly the whole width at
+# 16:9, wide enough for the path and the bush round them, and at 4:5 close enough
+# that they fill most of it. 2240 and 1080 wide, the card's widest at 2x and a
+# phone's at about 3x.
+web('full/30696772.jpg', (0, 1200, 4100, 3506), 2240, 'date-bench-wide.jpg')
+web('full/30696772.jpg', (880, 620, 3230, 3558), 1080, 'date-bench-tall.jpg')
 
 # The phone's part of the cut-out, as a mask of the same size, for both languages.
 phone = Image.open('cutout-phone-full.png')

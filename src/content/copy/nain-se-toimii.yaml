@@ -124,21 +124,18 @@
 # ──────────────────────────────────────────────────────────────────────────
 # Enjoying the date
 #
-# `photo.coffee` is the alt text of the photograph under it, a stock photo whose
-# faces are out of the frame; `docs/pictures.md` records where it is from.
+# A heading and a photograph, no paragraph: the picture says it. `photo.date` is
+# its alt text, a stock photo of two people too small to recognise;
+# `docs/pictures.md` records where it is from.
 # ──────────────────────────────────────────────────────────────────────────
 
 'detail.enjoy.title':
   fi: 'Nauttikaa treffeistä!'
   en: 'Enjoy your date!'
 
-'detail.enjoy.body':
-  fi: 'Aika ja paikka on jo sovittu, joten voitte keskittyä toisiinne. Tilatkaa kahvit, kysykää ja kuunnelkaa. Treffien jälkeen kerrot palautteessa, miten meni.'
-  en: 'The time and the place are already settled, so you can focus on each other. Order a coffee, ask questions and listen. Afterwards, tell us in the feedback how it went.'
-
-'photo.coffee':
-  fi: 'Kaksi ihmistä kahvilla puupöydän ääressä, toisen käsi toisen kädellä.'
-  en: 'Two people over coffee at a wooden table, one hand resting on the other’s.'
+'photo.date':
+  fi: 'Kaksi ihmistä juttelee penkillä puutarhassa. Toinen nauraa käsi suun edessä, toinen nojaa häntä kohti.'
+  en: 'Two people talk on a bench in a garden. One laughs behind a hand, the other leans in.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # When plans change
