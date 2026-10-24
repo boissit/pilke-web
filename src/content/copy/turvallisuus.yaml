@@ -23,8 +23,8 @@
   en: 'Read about safety'
 
 'safety.page.lead':
-  fi: 'Tuntemattoman tapaaminen on eri asia kuin viestittely. Tältä sivulta näet, mitä Pilke tekee turvallisuutesi eteen ja mitä kannattaa tehdä itse.'
-  en: 'Meeting a stranger is a different thing from messaging one. This page covers what Pilke does for your safety and what is worth doing yourself.'
+  fi: 'Turvallisuus treffeillä on meille ykkösprioriteetti. Tästä syystä treffipaikat ovat kaikki ennaltamääriteltyjä, ja tarjoamme vinkkejä ja muita ominaisuuksia turvalliseen treffailuun.'
+  en: 'Safety on dates is our top priority. That is why every date venue is set in advance, and we offer tips and other features for dating safely.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # The three tools
@@ -38,36 +38,32 @@
   en: 'A trusted person'
 
 'safety.contact.body':
-  fi: 'Tallenna asetusten Turvallisuus-kohtaan yhden läheisesi puhelinnumero ja sovi asiasta hänen kanssaan etukäteen. Se on ainoa numero, johon sovellus voi lähettää viestin puolestasi.'
-  en: 'Save one trusted person’s phone number under Safety in the settings, and agree it with them beforehand. It is the only number the app can text on your behalf.'
+  fi: 'Tallenna asetusten Turvallisuus-kohtaan yhden läheisesi puhelinnumero ja sovi asiasta hänen kanssaan etukäteen. Sovellus voi lähettää siihen viestin turvapainikkeen avulla.'
+  en: 'Save one trusted person’s phone number under Safety in the settings, and agree it with them beforehand. The app can text that number with the safety button.'
 
 'safety.button.title':
   fi: 'Turvapainike'
   en: 'The safety button'
 
 'safety.button.body':
-  fi: 'Turvapainike ilmestyy treffinäytölle, kun olet tallentanut luotettavan läheisen numeron, joten tallenna se etukäteen. Yksi painallus lähettää hänelle tekstiviestin, jossa on nimesi ja pyyntö ottaa sinuun yhteyttä. Sijaintisi, treffipaikka, kellonaika ja tiedot treffikumppanistasi jäävät viestistä pois. Treffikumppanisi ei saa tietää painalluksesta.'
-  en: 'The safety button appears on the date screen once you have saved a trusted person’s number, so save it beforehand. One press texts them your name and a request to get in touch. Your location, the venue, the time and anything about your date are left out of the message. Your date is not told about the press.'
+  fi: 'Turvapainike ilmestyy treffinäytölle, kun olet tallentanut luotettavan läheisen numeron, joten tallenna se etukäteen. Yksi painallus lähettää hänelle tekstiviestin, jossa on nimesi ja pyyntö ottaa sinuun yhteyttä. Sijaintisi, treffipaikka, kellonaika ja tiedot treffikumppanistasi jäävät viestistä pois, joten kerro näistäkin etukäteen!'
+  en: 'The safety button appears on the date screen once you have saved a trusted person’s number, so save it beforehand. One press texts them your name and a request to get in touch. Your location, the venue, the time and anything about your date are left out of the message, so tell them those beforehand too!'
 
 'safety.report.title':
-  fi: 'Ilmoitus'
+  fi: 'Ilmianto'
   en: 'Reporting'
 
 'safety.report.body':
-  fi: 'Jos olosi oli treffeillä turvaton, kerro siitä treffien jälkeisessä palautteessa, halutessasi omin sanoin. Ilmoitus menee Pilkkeen työntekijöille, ja vain he lukevat sen. Luemme sen niin pian kuin mahdollista.'
-  en: 'If you did not feel safe on the date, say so in the feedback afterwards, in your own words if you like. The report goes to Pilke staff, and only they read it. We read it as soon as we can.'
+  fi: 'Jos olosi treffeillä oli turvaton, kerro siitä treffien jälkeisessä palautteessa. Tästä syntyy ilmoitus Pilkkeen ylläpidolle, ja reagoimme siihen niin pian kuin mahdollista.'
+  en: 'If you did not feel safe on the date, say so in the feedback afterwards. That sends a report to Pilke’s moderators, and we act on it as soon as we can.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Meeting somebody safely
 # ──────────────────────────────────────────────────────────────────────────
 
 'tips.title':
-  fi: 'Näin tapaat turvallisesti'
-  en: 'Meeting somebody safely'
-
-'tips.lead':
-  fi: 'Tavallista järkeä, joka unohtuu helposti, kun jännittää.'
-  en: 'Ordinary sense, and easy to forget when you are nervous.'
+  fi: 'Näin treffailet turvallisesti'
+  en: 'How to date safely'
 
 'tips.one':
   fi: 'Tallenna luotettavan läheisen numero ennen ensimmäisiä treffejä.'
@@ -89,10 +85,6 @@
   fi: 'Pidä puhelin ladattuna.'
   en: 'Keep your phone charged.'
 
-'tips.six':
-  fi: 'Jos olo on epämukava, lähde. Sinun ei tarvitse selittää sitä kenellekään, ei meillekään.'
-  en: 'If you feel uncomfortable, leave. You do not owe anybody an explanation for it, us included.'
-
 # ──────────────────────────────────────────────────────────────────────────
 # Location and privacy
 # ──────────────────────────────────────────────────────────────────────────
@@ -105,9 +97,9 @@
 # how the earlier version came to claim something the app does not do. The area
 # is a choice on a map; the position is a permission during a date.
 'privacy.area':
-  fi: 'Treffialueet valitset kartalta. Pilke on jakanut kartan valmiiksi alueisiin, ja sinä valitset niistä ne, joilla voisit käydä treffeillä. Treffipaikkoja ehdotetaan vain valitsemiltasi alueilta, joten kotiosoitettasi ei tarvita.'
-  en: 'You choose your date areas on a map. Pilke has divided the map into areas, and you pick the ones where you could go on a date. Venues are suggested only inside the areas you choose, so we do not need your home address.'
+  fi: 'Voit itse valita kartalta, minne haluaisit mennä treffeille. Pilkkeen kartta on jaettu valmiiksi alueisiin, joista valitset mieluisimmat.'
+  en: 'You choose on a map where you would like to go on dates. Pilke’s map is divided into areas in advance, and you pick the ones you like best.'
 
 'privacy.body':
-  fi: 'Laitteesi sijaintia luetaan vain treffeillä ja vain, jos itse valitset jakaa sen. Jakaminen toimii {{sharing.lead_minutes}} minuuttia ennen sovittua alkamisaikaa ja {{sharing.trail_minutes}} minuuttia sen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta, joten kotoa sinua ei voi paikantaa. Sijainnin näkee vain treffikumppanisi. Se poistetaan heti, kun aika umpeutuu, ja voit lopettaa jakamisen milloin tahansa.'
-  en: 'Your device location is read only on a date, and only if you choose to share it. Sharing works from {{sharing.lead_minutes}} minutes before the agreed start to {{sharing.trail_minutes}} minutes after, and only within {{sharing.radius_m}} metres of the venue, so you cannot be located at home. Only your date sees it. It is deleted as soon as the window closes, and you can stop at any time.'
+  fi: 'Saapuessasi treffeille voit halutessasi jakaa sijaintisi treffikumppanillesi löytääksenne toisenne. Puhelimesi sijainti näkyy vain väliaikaisesti, korkeintaan {{sharing.trail_minutes}} treffien alkamisen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta.'
+  en: 'When you arrive at a date, you can share your location with your date if you want to, so you find each other. Your phone’s location shows only for a while, at most {{sharing.trail_minutes}} minutes after the date starts, and only within {{sharing.radius_m}} metres of the venue.'

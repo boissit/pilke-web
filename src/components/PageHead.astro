@@ -7,12 +7,15 @@
  * and the peach card at the top of one of them cannot drift from the rest. It is the
  * hero's ground and the hero's sparkles, so a reader who came from the front page is
  * visibly on the same site.
+ *
+ * A lede with a link in it comes in the `lead` slot instead of the prop, as the
+ * 404's does.
  */
 import SparkleScatter from './SparkleScatter.astro';
 
 interface Props {
   title: string;
-  lead: string;
+  lead?: string;
 }
 
 const { title, lead } = Astro.props;
@@ -32,7 +35,7 @@ const { title, lead } = Astro.props;
       ]}
     />
     <h1 class="display-mid">{title}</h1>
-    <p class="lede">{lead}</p>
+    <p class="lede">{Astro.slots.has('lead') ? <slot name="lead" /> : lead}</p>
   </div>
 </section>
 

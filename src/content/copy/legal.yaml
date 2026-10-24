@@ -22,16 +22,12 @@
 #
 # WARNING: **Shown whenever a document has `draft: true`.** That flag defaults
 # to true, so a text that has not been through legal review cannot be read as
-# if it had. This is the sentence that says so.
+# if it had. This is the line that says so.
 # ──────────────────────────────────────────────────────────────────────────
 
 'legal.draft.title':
   fi: 'Tämä teksti on kesken'
   en: 'This text is unfinished'
-
-'legal.draft.body':
-  fi: 'Lakimies käy sisällön läpi ennen kuin Pilke avautuu. Siihen asti teksti ei sido ketään eikä siihen voi vedota.'
-  en: 'A lawyer goes through it before Pilke opens. Until then it binds nobody and cannot be relied on.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # The links in the footer

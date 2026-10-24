@@ -134,15 +134,22 @@
 #
 # The page GitHub Pages serves for any address it has no file for. One file for both
 # languages, so it carries a line of English under the Finnish.
+#
+# WARNING: **`notfound.lead` carries a `{link}` placeholder.** The page cuts the
+# sentence there and draws `notfound.lead.link` as the link to the front page.
 # ──────────────────────────────────────────────────────────────────────────
 
 'notfound.title':
-  fi: 'Hups, tämä sivu jäi saapumatta'
-  en: 'Oops, this page didn’t turn up'
+  fi: 'Hups, tätä sivua ei löytynyt'
+  en: 'Oops, this page could not be found'
 
 'notfound.lead':
-  fi: 'Linkki on ehkä vanhentunut. Etusivulta pääset jatkamaan.'
-  en: 'The link may be out of date. Carry on from the front page.'
+  fi: 'Linkki on ehkä vanhentunut. {link}.'
+  en: 'The link may be out of date. {link}.'
+
+'notfound.lead.link':
+  fi: 'Palaa etusivulle'
+  en: 'Go back to the front page'
 
 'notfound.home':
   fi: 'Etusivulle'

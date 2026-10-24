@@ -122,7 +122,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/kayttoehdot.html/` | none |
 | `/en/kysyttya.html/` | none |
 | `/en/lapsiturvallisuus.html/` | none |
-| `/en/nain-se-toimii.html/` | `story-en` 500px<br>`platter-en` 500px<br>`date-en` 500px |
+| `/en/nain-se-toimii.html/` | `story-en` 500px<br>`platter-en` 500px<br>`coffee-date` 1120px<br>`date-en` 500px |
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset-en` 520px |
@@ -131,7 +131,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
-| `/nain-se-toimii.html/` | `story` 500px<br>`platter` 500px<br>`date` 500px |
+| `/nain-se-toimii.html/` | `story` 500px<br>`platter` 500px<br>`coffee-date` 1120px<br>`date` 500px |
 | `/ohje.html/` | none |
 | `/ohje/ehdokkaat.html/` | `fi/platter` 560px<br>`fi/cooldown-nodraw` 560px |
 | `/ohje/kipinat.html/` | `fi/date-wizard-petals` 560px |
@@ -181,11 +181,13 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `hero-cutout-en` | Home, English, **inside a photograph, cut out** | `scripts/photos/stills/treffit-en.png`, `screenshots.yaml` in English, composited by `hero.py en`, cut out with the Finnish one's alpha | The same fixture as `treffit`, in English: the three stacks, the spark counter (`Sparks:`), `Find a date!`, both Android bars |
 | `beta-invitation-fi` | Invitation received, **inside a photograph** | `screens/invitation.png` composited by `scripts/photos/beta.py fi` | What `invitation` shows, standing on the screen's foot as the app lays out on an iPhone, the home indicator in the gutter under `Sovittu!`; a drawn iOS status bar over the map, whose top rows, under the bar, are the map's own mirrored; a thumb covers the lower venue rows, `Hylkää` and `Takaisin`. Drawn in the footer's beta card on the front page only |
 | `beta-invitation-en` | Invitation received, English, **inside a photograph** | `screens/invitation-en.png` composited by `beta.py en` | The same in English; the thumb covers the lower venue rows, `Decline` and `Back` |
+| `coffee-date` | None: a stock photograph, no app in it | `scripts/photos/crops.py`, from the Unsplash original | Two people's hands and coffee cups on a wooden café table, under *Nauttikaa treffeistä!* on `nain-se-toimii` in both languages. Nothing in it shows the app, so it cannot go stale with it |
 
 ## The photographs
 
 Two pictures on the front page are stock photos from Unsplash with a still set into
-the phone in them, each made once per language so that `/en` shows the English app. A
+the phone in them, each made once per language so that `/en` shows the English app; a
+third, `coffee-date` on `nain-se-toimii`, is a plain crop with no phone in it. A
 still in a photograph goes stale with the app like any other, and more quietly, because
 nobody reads a photograph for its UI. The stills the photographs alone use are kept in
 `scripts/photos/stills/`; the rest are read from `src/assets/screens/` and
@@ -198,11 +200,13 @@ a changed original stops the build.
 | --- | --- | --- |
 | `hero-cutout-*` | [Ebb8fe-NZtM](https://unsplash.com/photos/Ebb8fe-NZtM) | Georgia de Lotz |
 | `beta-invitation-*` | [q_lCo82aXeo](https://unsplash.com/photos/q_lCo82aXeo) | Job Vermeulen |
+| `coffee-date` | [g86airJZ4Gs](https://unsplash.com/photos/g86airJZ4Gs) | Priscilla Du Preez |
 
-Both are under the Unsplash License: free for commercial use, credit not
+All three are under the Unsplash License: free for commercial use, credit not
 required. It does not cover the likeness of people in them, so none of them shows a
 face (the beta card's crop leaves out the right fifth of its original, where a
-blurred cheek is), and none may be captioned as a Pilke user.
+blurred cheek is, and the coffee's leaves out the top of its original, where hers
+is), and none may be captioned as a Pilke user.
 
 ## The sparks
 

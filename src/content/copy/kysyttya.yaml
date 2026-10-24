@@ -16,7 +16,11 @@
   en: 'Short answers to what people ask about Pilke most often.'
 
 # ──────────────────────────────────────────────────────────────────────────
-# The seven questions, in the order they are answered
+# The six questions, in the order they are answered
+#
+# WARNING: **`faq.who.a` carries a `{link}` placeholder.** The page cuts the
+# sentence there and draws `faq.who.link` as the link to the privacy policy, so
+# a translation that drops it loses the link.
 # ──────────────────────────────────────────────────────────────────────────
 
 'faq.chat.q':
@@ -24,48 +28,44 @@
   en: 'Can I message people in the app?'
 
 'faq.chat.a':
-  fi: 'Ei. Kutsussa on jo aika ja paikka, joten sopiminen ei vaadi keskustelua. Loput sanotaan kasvokkain.'
-  en: 'No. An invitation already carries the time and the place, so arranging it needs no conversation. The rest is said in person.'
+  fi: 'Ei. Kutsussa on jo aika ja paikka, joten treffien sopiminen ei vaadi keskustelua. Säästä sanasi treffeille!'
+  en: 'No. An invitation already carries the time and the place, so arranging the date needs no conversation. Save your words for the date!'
 
 'faq.who.q':
   fi: 'Kuka näkee tietoni?'
   en: 'Who sees my details?'
 
 'faq.who.a':
-  fi: 'Ehdokas näkee kutsumanimesi, ikäsi, kuvasi ja sen, mitä teillä on yhteistä. Puhelinnumerosi välitämme toiselle vain, jos valitsette treffien jälkeen molemmat, että numerot saa jakaa. Tarkemmin tietosuojaselosteessa.'
-  en: 'A candidate sees your first name, your age, your photo and what the two of you have in common. We pass your phone number on only if you both choose, after a date, to share numbers. The privacy policy has the detail.'
+  fi: 'Ehdokas näkee kutsumanimesi, ikäsi ja kuvasi. Voit halutessasi jakaa puhelinnumerosi toiselle treffien jälkeen. Muista tiedoista tarkemmin {link}.'
+  en: 'A candidate sees your first name, your age and your photo. After a date you can share your phone number with the other person if you want to. The {link} has more on the rest of your details.'
+
+'faq.who.link':
+  fi: 'tietosuojaselosteessa'
+  en: 'privacy policy'
 
 'faq.safety.q':
   fi: 'Näkeekö toinen, missä olen?'
   en: 'Can the other person see where I am?'
 
 'faq.safety.a':
-  fi: 'Vain jos valitset niin. Sijainti näkyy {{sharing.lead_minutes}} minuuttia ennen sovittua alkua ja {{sharing.trail_minutes}} minuuttia sen jälkeen, ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta. Voit lopettaa jakamisen milloin tahansa, ja sijainti poistetaan, kun aika umpeutuu.'
-  en: 'Only if you choose to share it. It is visible from {{sharing.lead_minutes}} minutes before the agreed start to {{sharing.trail_minutes}} minutes after, and only within {{sharing.radius_m}} metres of the venue. You can stop at any time, and the location is deleted when the window closes.'
+  fi: 'Voit päättää jakaa sijaintisi {{sharing.lead_minutes}} minuuttia ennen treffien alkua, ja se päättyy viimeistään {{sharing.trail_minutes}} minuuttia treffien alun jälkeen. Sijainnin jako on mahdollista vain {{sharing.radius_m}} metrin säteellä treffipaikasta. Voit lopettaa jakamisen milloin tahansa, ja jakaminen päättyy automaattisesti, kun aika umpeutuu.'
+  en: 'You can choose to share your location from {{sharing.lead_minutes}} minutes before the date starts, and sharing ends {{sharing.trail_minutes}} minutes after the start at the latest. Sharing works only within {{sharing.radius_m}} metres of the venue. You can stop at any time, and sharing ends by itself when the window closes.'
 
 'faq.cost.q':
-  fi: 'Mitä se maksaa?'
-  en: 'What does it cost?'
+  fi: 'Mitä Pilke maksaa?'
+  en: 'What does Pilke cost?'
 
 'faq.cost.a':
-  fi: 'Pilke on maksuton. Se pyörii kipinöillä: niitä kertyy, kun pidät kalenterisi ajan tasalla ja käyt treffeillä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun. Kipinöitä ei voi ostaa.'
-  en: 'Pilke is free. It runs on sparks: you collect them by keeping your calendar up to date and going on dates, and {{petals.set_cost}} sparks send a date invitation. Sparks cannot be bought.'
-
-'faq.refund.q':
-  fi: 'Milloin kipinät palaavat?'
-  en: 'When do sparks come back?'
-
-'faq.refund.a':
-  fi: 'Kun kutsusi hylätään, kun se raukeaa vastaamattomana {{invitation.answer_hours}} tunnissa tai kun kutsumasi henkilö peruu sovitut treffit, {{petals.refund}} kipinää palaa sinulle. Jos peruutat kutsun itse tai perut sovitut treffit, kipinät jäävät käytetyiksi.'
-  en: 'When your invitation is declined, when it lapses unanswered after {{invitation.answer_hours}} hours, or when the person you invited calls off your date, {{petals.refund}} sparks come back to you. If you withdraw the invitation or call off the date yourself, the sparks stay spent.'
+  fi: 'Pilke on käyttäjille maksuton ja pyrimme pitämään sen maksuttomana.'
+  en: 'Pilke is free for its users, and we aim to keep it free.'
 
 'faq.cancel.q':
   fi: 'Entä jos treffit peruuntuvat?'
   en: 'What if a date falls through?'
 
 'faq.cancel.a':
-  fi: 'Sovitut treffit voi perua sovelluksessa, mutta se on toiselle epäkohteliasta: hän on varannut aikaa sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä aikaisemmin perut, sitä lyhyempi jäähy on. Saapumatta jättämisestä seuraa samanlainen jäähy. Jos toinen kutsui sinut, hän saa kipinänsä takaisin. Kutsun hylkäämisestä ja vastaamatta jättämisestä seuraa lyhyt jäähy: {{cooldown.decline_hours}} tuntiin et voi löytää uusia ehdokkaita.'
-  en: 'You can call off an agreed date in the app, but it is rude to the other person: they have set time aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The earlier you call it off, the shorter it is. Not turning up brings the same kind of cooldown. If they invited you, they get their sparks back. Declining an invitation, or leaving it unanswered, brings a short cooldown: for {{cooldown.decline_hours}} hours you cannot find new candidates.'
+  fi: 'Sovitut treffit voi perua sovelluksessa, mutta se on toiselle epäkohteliasta: hän on varannut aikaa sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä aikaisemmin perut, sitä lyhyempi jäähy on. Saapumatta jättämisestä seuraa samanlainen jäähy ja toistuva treffeiltä poissaolo johtaa käyttökieltoon. Jos toinen kutsui sinut, hän saa kipinänsä takaisin. Kutsun hylkäämisestä ja vastaamatta jättämisestä seuraa lyhyt jäähy: {{cooldown.decline_hours}} tuntiin et voi löytää uusia ehdokkaita.'
+  en: 'You can call off an agreed date in the app, but it is rude to the other person: they have set time aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The earlier you call it off, the shorter it is. Not turning up brings the same kind of cooldown, and missing dates repeatedly leads to a ban. If they invited you, they get their sparks back. Declining an invitation, or leaving it unanswered, brings a short cooldown: for {{cooldown.decline_hours}} hours you cannot find new candidates.'
 
 'faq.delete.q':
   fi: 'Voinko poistaa tilini?'

@@ -4,8 +4,8 @@
  *
  * The front page gives the loop in four steps and stops. This page carries what
  * a reader who wants the whole picture needs: what happens before the first
- * invitation, where candidates come from, everything about sparks, and
- * what happens when plans change.
+ * invitation, everything about sparks, how candidates are chosen, the date itself,
+ * and what happens when plans change.
  *
  * WARNING: **Every number on this page is a backend constant.** Five sparks for
  * an invitation, fifteen held at a time, one hour of shared calendar, at least two
@@ -15,6 +15,9 @@
  * README, and a marketing page stating a price the product does not charge is
  * worse than a page that stays vague.
  */
+import { Picture } from 'astro:assets';
+
+import coffee from '../../assets/photos/coffee-date.jpg';
 import { shotsFor } from '../../assets/screens';
 import PageHead from '../../components/PageHead.astro';
 import Phone from '../../components/Phone.astro';
@@ -29,9 +32,8 @@ const shots = shotsFor(lang);
 const t = useTranslations(lang);
 
 const earnings = [
-  { what: t('detail.earn.signup'), amount: t('economy.amount.five'), note: t('detail.earn.signup.note') },
-  { what: t('detail.earn.calendar'), amount: t('economy.amount.one'), note: t('detail.earn.calendar.note') },
   { what: t('detail.earn.date'), amount: t('economy.amount.two'), note: t('detail.earn.date.note') },
+  { what: t('detail.earn.calendar'), amount: t('economy.amount.one'), note: t('detail.earn.calendar.note') },
 ];
 
 const changes = [
@@ -39,6 +41,7 @@ const changes = [
   { what: t('detail.changes.declined'), note: t('detail.changes.declined.note') },
   { what: t('detail.changes.withdrawn'), note: t('detail.changes.withdrawn.note') },
   { what: t('detail.changes.canceled'), note: t('detail.changes.canceled.note') },
+  { what: t('detail.changes.noshow'), note: t('detail.changes.noshow.note') },
 ];
 ---
 
@@ -50,8 +53,6 @@ const changes = [
       <div class="col">
         <h2 class="display-mid small">{t('detail.start.title')}</h2>
         <p class="prose">{t('detail.start.body')}</p>
-        <h2 class="display-mid small">{t('detail.story.title')}</h2>
-        <p class="prose">{t('detail.story.body')}</p>
         <h2 class="display-mid small">{t('detail.prefs.title')}</h2>
         <p class="prose">{t('detail.prefs.body')}</p>
       </div>
@@ -60,18 +61,6 @@ const changes = [
   </section>
 
   <section class="slab slab-pale">
-    <div class="wrap section-pad split">
-      <Phone src={shots.platter} alt={t('shot.platter')} width={250} tilt="left" />
-      <div class="col">
-        <h2 class="display-mid small">{t('detail.draw.title')}</h2>
-        <p class="prose">{t('detail.draw.body')}</p>
-        <h2 class="display-mid small">{t('detail.invite.title')}</h2>
-        <p class="prose">{t('detail.invite.body')}</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="slab slab-white">
     <div class="wrap section-pad">
       <h2 class="display-mid">{t('detail.economy.title')}</h2>
       <p class="lede">{t('detail.economy.body')}</p>
@@ -108,7 +97,41 @@ const changes = [
     </div>
   </section>
 
+  <section class="slab slab-white">
+    <div class="wrap section-pad split">
+      <Phone src={shots.platter} alt={t('shot.platter')} width={250} tilt="left" shell="var(--brand-background)" />
+      <div class="col">
+        <h2 class="display-mid small">{t('detail.draw.title')}</h2>
+        <p class="prose">{t('detail.draw.body')}</p>
+        <h2 class="display-mid small">{t('detail.invite.title')}</h2>
+        <p class="prose">{t('detail.invite.body')}</p>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    The date itself, between the invitation and what happens when it falls
+    through, with the one photograph on the page. A stock photo, cropped so that
+    nobody's face is in it, since nobody in it is a Pilke user; drawn the card's
+    width, and taller than wide-screen on a phone so the cups stay the subject.
+  -->
   <section class="slab slab-pale">
+    <div class="wrap section-pad enjoy">
+      <h2 class="display-mid">{t('detail.enjoy.title')}</h2>
+      <p class="lede">{t('detail.enjoy.body')}</p>
+      <Picture
+        src={coffee}
+        formats={['avif', 'webp']}
+        alt={t('photo.coffee')}
+        width={1120}
+        widths={[480, 720, 960, 1120, 1600, 2240]}
+        sizes="(min-width: 80rem) 1120px, 90vw"
+        class="photo"
+      />
+    </div>
+  </section>
+
+  <section class="slab slab-white">
     <div class="wrap section-pad">
       <h2 class="display-mid">{t('detail.changes.title')}</h2>
       <dl class="ledger">
@@ -124,7 +147,7 @@ const changes = [
     </div>
   </section>
 
-  <section class="slab slab-white">
+  <section class="slab slab-pale">
     <div class="wrap section-pad split">
       <div class="col">
         <h2 class="display-mid small">{t('detail.chat.title')}</h2>
@@ -134,7 +157,7 @@ const changes = [
           <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
         </p>
       </div>
-      <Phone src={shots.date} alt={t('shot.date')} width={250} tilt="right" shell="var(--brand-background)" />
+      <Phone src={shots.date} alt={t('shot.date')} width={250} tilt="right" />
     </div>
   </section>
 </Base>
@@ -193,6 +216,10 @@ const changes = [
     font-weight: 500;
     font-size: clamp(1.1875rem, 0.29vw + 1.12rem, 1.375rem);
     max-width: none;
+  }
+
+  .slab-pale .price {
+    background: var(--surface);
   }
 
   /* The mark beside the line that names its count, with no chip around it: a lit
@@ -264,5 +291,26 @@ const changes = [
 
   .spend > * + * {
     margin-top: var(--pad-small);
+  }
+
+  .enjoy .lede {
+    max-width: 52rem;
+  }
+
+  /* The card's width at its natural shape, and 4:3 on a phone, where the full
+     frame would be a strip; the cups sit right of centre, so the crop leans there. */
+  .enjoy :global(.photo) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-card);
+  }
+
+  @media (max-width: 40rem) {
+    .enjoy :global(.photo) {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: 60% 50%;
+    }
   }
 </style>

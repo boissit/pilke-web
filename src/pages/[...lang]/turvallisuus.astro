@@ -32,7 +32,7 @@ const safety = [
   { title: t('safety.report.title'), body: t('safety.report.body') },
 ];
 
-const tips = [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('tips.five'), t('tips.six')];
+const tips = [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('tips.five')];
 ---
 
 <Base lang={lang}>
@@ -57,7 +57,6 @@ const tips = [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('
   <section class="slab slab-mint">
     <div class="wrap section-pad">
       <h2 class="display-mid">{t('tips.title')}</h2>
-      <p class="prose">{t('tips.lead')}</p>
       <ol class="tips">{tips.map((tip) => <li>{tip}</li>)}</ol>
     </div>
   </section>

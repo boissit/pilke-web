@@ -7,7 +7,7 @@
  * the front page top to bottom, and a stack of answers is the last thing a reader
  * of the front page needs before the waitlist.
  *
- * The answers are the seven the header points at, and several of them state
+ * The answers are the six the header points at, and several of them state
  * numbers the backend owns. Read `README.md` before changing one.
  */
 import PageHead from '../../components/PageHead.astro';
@@ -19,12 +19,14 @@ export const getStaticPaths = () => localeRoutes();
 const lang = localeOf(Astro.params);
 const t = useTranslations(lang);
 
+// The privacy policy's name is a link inside the answer, so the answer is cut there.
+const who = t('faq.who.a').split('{link}');
+
 const faq = [
   { q: t('faq.chat.q'), a: t('faq.chat.a') },
-  { q: t('faq.who.q'), a: t('faq.who.a') },
+  { q: t('faq.who.q'), a: who[0], link: { href: localePath(lang, 'tietosuoja'), text: t('faq.who.link'), after: who[1] } },
   { q: t('faq.safety.q'), a: t('faq.safety.a') },
   { q: t('faq.cost.q'), a: t('faq.cost.a') },
-  { q: t('faq.refund.q'), a: t('faq.refund.a') },
   { q: t('faq.cancel.q'), a: t('faq.cancel.a') },
   { q: t('faq.delete.q'), a: t('faq.delete.a') },
 ];
@@ -40,7 +42,15 @@ const faq = [
           faq.map((item) => (
             <div class="qa">
               <dt>{item.q}</dt>
-              <dd class="prose">{item.a}</dd>
+              <dd class="prose">
+                {item.a}
+                {item.link && (
+                  <>
+                    <a href={item.link.href}>{item.link.text}</a>
+                    {item.link.after}
+                  </>
+                )}
+              </dd>
             </div>
           ))
         }

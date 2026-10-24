@@ -18,8 +18,8 @@
 # ──────────────────────────────────────────────────────────────────────────
 
 'shot.story':
-  fi: 'Persoonallisuuskyselyn ensimmäinen kysymys onboardingissa: tilanne ja kolme vaihtoehtoa, joista valitaan yksi.'
-  en: 'The first question of the personality quiz during onboarding: a situation and three options, one of which you pick.'
+  fi: 'Persoonallisuuskyselyn ensimmäinen kysymys tilin luonnin aikana.'
+  en: 'The first question of the personality quiz, while creating an account.'
 
 'shot.platter':
   fi: 'Ehdokkaat-näkymä: yksi ehdokas, hänen kanssaan yhteiset ajat ja valittu tekeminen.'

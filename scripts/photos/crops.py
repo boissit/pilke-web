@@ -1,4 +1,4 @@
-"""Cut the site's pictures out of the composites, into src/assets/photos.
+"""Cut the site's pictures out of the composites and the originals, into src/assets/photos.
 
 Run after hero.py and beta.py, each for fi and for en,
 and cutout.py, from this directory."""
@@ -23,6 +23,11 @@ for lang in LANGS:
         os.path.join(WEB, f'hero-cutout-{lang}.png'), optimize=True)
     # The right fifth of the original is left out: a blurred cheek and sunglasses.
     web(f'beta-{lang}-full.jpg', (970, 1650, 3050, 4250), 1000, f'beta-invitation-{lang}.jpg')
+
+# The coffee on nain-se-toimii, one for both languages, at 2400 wide for the page's
+# widest card at 2x. The top of the original, where her cheek is, and the blurred
+# pot on the right are left out.
+web('full/g86airJZ4Gs.jpg', (0, 800, 5000, 3648), 2400, 'coffee-date.jpg')
 
 # The phone's part of the cut-out, as a mask of the same size, for both languages.
 phone = Image.open('cutout-phone-full.png')

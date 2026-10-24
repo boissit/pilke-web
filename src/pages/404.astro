@@ -14,10 +14,16 @@ import Base from '../layouts/Base.astro';
 
 const t = useTranslations('fi');
 const en = useTranslations('en');
+
+// The way back is a link inside the sentence, so the sentence is cut there.
+const lead = t('notfound.lead').split('{link}');
+const enLead = en('notfound.lead').split('{link}');
 ---
 
 <Base lang="fi" alternate={localePath('en')}>
-  <PageHead title={t('notfound.title')} lead={t('notfound.lead')} />
+  <PageHead title={t('notfound.title')}>
+    <Fragment slot="lead">{lead[0]}<a href={localePath('fi')}>{t('notfound.lead.link')}</a>{lead[1]}</Fragment>
+  </PageHead>
 
   <section class="slab slab-white">
     <div class="wrap section-pad">
@@ -25,7 +31,7 @@ const en = useTranslations('en');
 
       <div class="other" lang="en">
         <h2>{en('notfound.title')}</h2>
-        <p>{en('notfound.lead')}</p>
+        <p>{enLead[0]}<a href={localePath('en')}>{en('notfound.lead.link')}</a>{enLead[1]}</p>
         <p><a class="go ghost" href={localePath('en')}>{en('notfound.home')}</a></p>
       </div>
     </div>
