@@ -267,6 +267,7 @@
   .chip.dismissed { background: var(--ground); color: var(--text-soft); box-shadow: inset 0 0 0 1.5px var(--rule); }
   .chip.stale { background: var(--card-feedback); color: var(--warn-text); }
   .chip.cond { background: var(--card-sent); color: #2f5f6b; }
+  .chip.dup { background: var(--card-received); color: #7a3f6f; }
 
   /* ─── The panel under a text ──────────────────────────────────────────── */
   .panel {
@@ -297,6 +298,10 @@
   .go-btn:disabled { opacity: 0.5; cursor: default; }
   .link-btn { border: 0; background: none; padding: 0; cursor: pointer; font-weight: 600; font-size: 0.85rem; text-decoration: underline; text-underline-offset: 3px; color: var(--text-soft); }
   .link-btn:hover { color: var(--link-hover); }
+  .link-btn.danger { color: var(--coral-deep); }
+  .note .link-btn { font-size: 0.8rem; }
+  .entry .edit { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+  .entry .acts { flex-wrap: wrap; align-items: center; }
   .history, .thread { display: flex; flex-direction: column; gap: 10px; }
   .entry { padding: 10px 12px; border-radius: 14px; background: var(--surface); box-shadow: inset 0 0 0 1.5px var(--rule); }
   .slab.white .entry { background: var(--surface); }
@@ -357,6 +362,8 @@
     onlyOpen: false,
     query: '',
     open: null,          // { id, lang, focus }
+    editing: null,       // { sid, draft }: a suggestion being rewritten in place
+    confirming: null,    // sid of a suggestion whose Poista waits for its second press
     suggestions: [],
     comments: [],
     db: null,
@@ -438,6 +445,13 @@
     const t = state.snap.texts[s.text_id];
     return !t || !t[s.lang] || t[s.lang].hash !== s.base_hash;
   };
+  /* One's own suggestions can be rewritten and deleted; a row written before the desk
+     knew who anyone was has no author, and is the owner's too. */
+  const isMine = (s) => s.author_kind !== 'claude' && (!s.author || !state.me || s.author === state.me.id);
+  /* An open suggestion with the same words as an earlier open one for the same text: the
+     double press the owner asked to be able to clean up. The earliest copy is the original. */
+  const isDuplicate = (s) => s.status === 'open' && suggestionsFor(s.text_id, s.lang).some((o) =>
+    o !== s && o.status === 'open' && o.new_text.trim() === s.new_text.trim() && (o.created_at < s.created_at || (o.created_at === s.created_at && o._id < s._id)));
   const hasOpen = (id) => suggestionsFor(id).some((s) => s.status === 'open') || commentsFor(id).some((c) => c.status === 'open');
   const openCount = (page) => new Set(page.items.map((i) => i.id).filter(hasOpen)).size;
 
@@ -746,6 +760,10 @@
           body.innerHTML = `${state.lang === 'both' ? `<span class="lang-tag">${s.lang.toUpperCase()}</span>` : ''}<b>Uusi:</b> ${inline(s.new_text, t.format)} `;
         }
         body.append(el('span', { class: 'who', text: `(${authorName(s)})` }), ' ', el('span', { class: `chip ${stale ? 'stale' : 'open'}`, text: stale ? 'muuttunut' : 'avoin' }));
+        if (isDuplicate(s)) body.append(' ', el('span', { class: 'chip dup', text: 'sama kuin toinen' }));
+        if (isMine(s) && canSuggest()) {
+          body.append(' ', el('button', { type: 'button', class: 'link-btn', text: 'muokkaa', onclick: () => startEditing(s) }));
+        }
         note.append(body);
         notes.append(note);
       }
@@ -788,11 +806,14 @@
     if (previous) previous.remove();
     document.querySelectorAll('.is-open, .on').forEach((n) => n.classList.remove('is-open', 'on'));
     state.open = { id, lang, focus };
+    if (focus !== 'edit') state.editing = null;
+    state.confirming = null;
     const entry = drawn.get(id)?.[0];
     if (!entry) return;
     const panel = panelFor(id);
     entry.slot.append(panel);
     entry.root.classList.add('is-open');
+    if (focus === 'edit') { focusEditor(panel); return; }
     const target = focus === 'comment' ? $('textarea.comment-box', panel) : $('textarea.rewrite-box', panel);
     if (target) { target.focus({ preventScroll: true }); if (focus !== 'comment') target.setSelectionRange(target.value.length, target.value.length); }
     panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
@@ -803,6 +824,8 @@
     if (panel) panel.remove();
     document.querySelectorAll('.is-open').forEach((n) => n.classList.remove('is-open'));
     state.open = null;
+    state.editing = null;
+    state.confirming = null;
   }
 
   const forEditing = (text) => text.replace(SHY_RE, '&shy;');
@@ -903,7 +926,79 @@
     } catch {}
   }
 
+  /* Opens the text's panel with this suggestion as an editor in its list. */
+  function startEditing(s) {
+    state.editing = { sid: s._id, draft: s.new_text };
+    state.confirming = null;
+    if (state.open?.id === s.text_id && state.open.lang === s.lang) {
+      const panel = document.querySelector('.panel[data-for]');
+      if (panel) { refreshPanelLists(panel, s.text_id); focusEditor(panel); return; }
+    }
+    openPanel(s.text_id, s.lang, 'edit');
+  }
+
+  function focusEditor(panel) {
+    const box = $('textarea.edit-box', panel);
+    if (!box) return;
+    box.focus({ preventScroll: true });
+    box.setSelectionRange(box.value.length, box.value.length);
+    box.closest('.entry').scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  /*
+    WARNING: **Saving an edit re-anchors the suggestion on the text as it is now.** The
+    owner rewrites it looking at today's page, so the stale mark would otherwise survive
+    an edit made precisely because the page moved on; `copy:apply` then checks the new
+    `base_hash` like any other.
+  */
+  function editorFor(s, t) {
+    const wrap = el('div', { class: 'edit' });
+    const box = el('textarea', { class: 'edit-box', id: `edit-${s._id}`, rows: Math.min(10, Math.max(3, Math.ceil(state.editing.draft.length / 70))) });
+    box.value = state.editing.draft;
+    const hints = el('div');
+    const showHints = () => hints.replaceChildren(...problems(t, s.lang, box.value).map((p) => el('p', { class: 'hint warn', text: p })));
+    showHints();
+    box.addEventListener('input', () => { state.editing.draft = box.value; showHints(); });
+    const status = el('span', { class: 'hint', role: 'status' });
+    const save = el('button', { type: 'button', class: 'go-btn', text: 'Tallenna muutos' });
+    save.addEventListener('click', async () => {
+      const value = box.value.trim();
+      const rec = t[s.lang];
+      if (!value) { status.textContent = 'Ehdotus ei voi olla tyhjä. Poista se, jos et tarvitse sitä.'; return; }
+      if (rec && value === forEditing(rec.text)) { status.textContent = 'Teksti on sama kuin sivulla nyt.'; return; }
+      save.disabled = true;
+      status.textContent = 'Tallennetaan…';
+      try {
+        const now = new Date().toISOString();
+        await state.db.doc(`suggestions/${s._id}`).update({
+          new_text: value, updated_at: now, edited_at: now,
+          ...(rec ? { base_hash: rec.hash, base_text: rec.text, snapshot_commit: state.snap.commit } : {}),
+        });
+        state.editing = null;
+        refreshAll();
+      } catch {
+        status.textContent = 'Tallennus ei onnistunut. Yritä hetken päästä uudelleen.';
+        save.disabled = false;
+      }
+    });
+    const cancel = el('button', { type: 'button', class: 'go-btn ghost', text: 'Peru', onclick: () => { state.editing = null; refreshAll(); } });
+    wrap.append(box, hints, el('div', { class: 'row' }, save, cancel, status));
+    return wrap;
+  }
+
+  async function removeSuggestion(s) {
+    try {
+      await state.db.doc(`suggestions/${s._id}`).delete();
+      state.confirming = null;
+      if (state.editing?.sid === s._id) state.editing = null;
+    } catch {
+      state.confirming = null;
+      refreshAll();
+    }
+  }
+
   function refreshPanelLists(panel, id) {
+    const focused = document.activeElement?.classList?.contains('edit-box');
     const t = state.snap.texts[id];
     const history = $('.history', panel);
     if (history) {
@@ -913,21 +1008,42 @@
       for (const s of rows) {
         const stale = s.status === 'open' && isStale(s);
         const chip = stale ? ['stale', 'teksti on muuttunut'] : s.status === 'applied' ? ['applied', 'viety sivulle'] : s.status === 'dismissed' ? ['dismissed', 'hylätty'] : ['open', 'avoin'];
-        const entry = el('div', { class: 'entry' },
-          el('div', { class: 'meta' }, el('span', { text: `${authorName(s)} · ${when(s.created_at)}` }), el('span', { class: `chip ${chip[0]}`, text: chip[1] })),
-          el('div', { class: 'body', html: inline(s.new_text, t.format) }));
+        const meta = el('div', { class: 'meta' }, el('span', { text: `${authorName(s)} · ${when(s.created_at)}${s.edited_at ? ' · muokattu' : ''}` }), el('span', { class: `chip ${chip[0]}`, text: chip[1] }));
+        if (isDuplicate(s)) meta.append(el('span', { class: 'chip dup', text: 'sama kuin toinen' }));
+        const entry = el('div', { class: 'entry', 'data-sid': s._id }, meta);
+        if (state.editing?.sid === s._id) {
+          entry.append(editorFor(s, t));
+          history.append(entry);
+          continue;
+        }
+        entry.append(el('div', { class: 'body', html: inline(s.new_text, t.format) }));
         if (stale) entry.append(el('p', { class: 'hint warn', html: `Nyt sivulla: ${t[s.lang] ? inline(t[s.lang].text, t.format) : 'tekstiä ei enää ole'}` }));
         const acts = el('div', { class: 'acts' });
-        if (s.status === 'open') {
-          acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Käytä pohjana', onclick: () => { const b = $('textarea.rewrite-box', panel); if (b) { b.value = s.new_text; b.dispatchEvent(new Event('input')); b.focus(); } } }));
-          acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Hylkää', onclick: () => setStatus('suggestions', s, 'dismissed') }));
-        } else if (s.status === 'dismissed') {
-          acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Palauta avoimeksi', onclick: () => setStatus('suggestions', s, 'open') }));
+        if (state.confirming === s._id) {
+          acts.append(
+            el('span', { class: 'hint warn', text: 'Poistetaanko ehdotus?' }),
+            el('button', { type: 'button', class: 'link-btn danger', text: 'Kyllä, poista', onclick: () => removeSuggestion(s) }),
+            el('button', { type: 'button', class: 'link-btn', text: 'Peru', onclick: () => { state.confirming = null; refreshPanelLists(panel, id); } }));
+        } else {
+          if (s.status === 'open' && isMine(s)) {
+            acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Muokkaa', onclick: () => startEditing(s) }));
+          }
+          if (s.status === 'open') {
+            acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Käytä pohjana', onclick: () => { const b = $('textarea.rewrite-box', panel); if (b) { b.value = s.new_text; b.dispatchEvent(new Event('input')); b.focus(); } } }));
+            acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Hylkää', onclick: () => setStatus('suggestions', s, 'dismissed') }));
+          } else if (s.status === 'dismissed') {
+            acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Palauta avoimeksi', onclick: () => setStatus('suggestions', s, 'open') }));
+          }
+          /* What is on the site stays in the record: only what never got there can go. */
+          if (s.status !== 'applied' && isMine(s)) {
+            acts.append(el('button', { type: 'button', class: 'link-btn danger', text: 'Poista', onclick: () => { state.confirming = s._id; refreshPanelLists(panel, id); } }));
+          }
         }
         if (s.commit) acts.append(el('span', { class: 'hint', text: `versiossa ${s.commit}` }));
         if (acts.childElementCount) entry.append(acts);
         history.append(entry);
       }
+      if (focused) focusEditor(panel);
     }
     const thread = $('.thread', panel);
     thread.replaceChildren();
