@@ -8,6 +8,7 @@ npm install
 npm run dev      # http://localhost:4321
 npm run build    # static output in dist/
 npx astro check  # types and content collections
+npm run copy:export  # every text on the site as one JSON snapshot, for the copy desk
 ```
 
 ## How it is put together
@@ -19,6 +20,7 @@ documents are Markdown. `src/i18n/ui.ts` reads the YAML and is where a page's
 `t('key')` comes from. It holds no string of its own, and it fails the build on a key
 missing a language, an empty string, a key in two files or a page asking for a key
 no file holds, which is the check a typed dictionary used to make.
+`docs/copy-desk.md` is how the owner's rewrites reach these files.
 
 One file is the whole of a page in both languages. They live under
 `src/pages/[...lang]/`: `index.astro`, `nain-se-toimii.astro`,

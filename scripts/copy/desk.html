@@ -1,0 +1,1052 @@
+<title>Pilke Copy Desk</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fredoka:wght@500;600&display=swap">
+<style>
+  /*
+    The site's own tokens, from pilke-web src/styles/global.css. The site is light
+    only by design, so the desk is too: one palette, painted explicitly.
+  */
+  :root {
+    color-scheme: light;
+    --text: #3a2e2b;
+    --text-soft: #6e5f5a;
+    --text-hover: #54433f;
+    --link-hover: #8f3a26;
+    --ground: #fff8f4;
+    --surface: #ffffff;
+    --rule: #f0ddd5;
+    --peach: #ffe3da;
+    --coral: #ffa98c;
+    --coral-hover: #ff9774;
+    --coral-deep: #c2573a;
+    --mint-ground: #e4f3ee;
+    --mint-edge: #7fb3a2;
+    --mint-text: #2f6b58;
+    --card-sent: #dcfbff;
+    --card-received: #ffeafc;
+    --card-feedback: #fff8c2;
+    --warn-text: #7a5a00;
+    --shadow-card: 0 1px 2px rgb(58 46 43 / 0.05), 0 8px 24px rgb(58 46 43 / 0.05);
+    --shadow-float: 0 2px 4px rgb(58 46 43 / 0.08), 0 20px 40px rgb(58 46 43 / 0.12);
+    --radius-panel: 32px;
+    --radius-card: 22px;
+    --font-display: 'Fredoka', 'Trebuchet MS', sans-serif;
+    --font-body: 'Figtree', 'Trebuchet MS', system-ui, sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { background: var(--ground); }
+  body {
+    margin: 0;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+  button, input, textarea, select { font: inherit; color: inherit; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--coral-deep); outline-offset: 2px; border-radius: 6px; }
+
+  /* ─── The bar ─────────────────────────────────────────────────────────── */
+  .bar {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    padding: 12px 16px 0;
+  }
+  .pill {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+    padding: 10px 12px 10px 22px;
+    background: var(--surface);
+    border-radius: 999px;
+    box-shadow: var(--shadow-float);
+  }
+  .brand { display: flex; align-items: baseline; gap: 8px; margin-right: auto; }
+  .brand b { font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; letter-spacing: -0.02em; }
+  .brand span { font-family: var(--font-display); font-weight: 500; color: var(--text-soft); font-size: 1.05rem; }
+  .search {
+    display: flex; align-items: center; gap: 8px;
+    min-height: 44px; padding: 0 14px;
+    background: var(--ground); border-radius: 999px;
+    flex: 1 1 220px; max-width: 340px;
+  }
+  .search svg { flex: none; color: var(--text-soft); }
+  .search input { border: 0; background: transparent; outline: none; width: 100%; min-width: 0; }
+  .seg { display: inline-flex; background: var(--ground); border-radius: 999px; padding: 4px; }
+  .seg button {
+    border: 0; background: transparent; border-radius: 999px;
+    min-height: 36px; padding: 0 14px; font-weight: 600; cursor: pointer; color: var(--text-soft);
+  }
+  .seg button[aria-pressed="true"] { background: var(--text); color: var(--ground); }
+  .toggle {
+    display: inline-flex; align-items: center; gap: 8px;
+    min-height: 44px; padding: 0 16px; border: 0; border-radius: 999px;
+    background: var(--ground); font-weight: 600; cursor: pointer; color: var(--text-soft);
+  }
+  .toggle[aria-pressed="true"] { background: var(--coral); color: var(--text); }
+  @media (max-width: 760px) {
+    .pill { border-radius: 28px; padding: 12px; }
+    .brand { width: 100%; padding-left: 8px; }
+    .search { max-width: none; flex-basis: 100%; }
+  }
+
+  /* ─── Layout ──────────────────────────────────────────────────────────── */
+  .layout {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 16px 96px;
+    display: grid;
+    grid-template-columns: 270px minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .layout { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+    .side { display: none; }
+  }
+
+  /* ─── The list of pages ───────────────────────────────────────────────── */
+  .side { position: sticky; top: 96px; max-height: calc(100vh - 112px); overflow: auto; padding-bottom: 16px; }
+  .side h2 {
+    font-family: var(--font-body); font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-soft);
+    margin: 20px 12px 6px;
+  }
+  .side h2:first-child { margin-top: 0; }
+  .side ul { list-style: none; margin: 0; padding: 0; }
+  .side a {
+    display: flex; align-items: center; justify-content: space-between; gap: 8px;
+    padding: 7px 12px; border-radius: 14px; text-decoration: none; font-weight: 500;
+  }
+  .side a:hover { background: var(--surface); }
+  .side a[aria-current="page"] { background: var(--peach); font-weight: 700; }
+  .count {
+    flex: none; min-width: 24px; height: 24px; padding: 0 7px;
+    display: inline-grid; place-items: center;
+    background: var(--coral); color: var(--text); border-radius: 999px;
+    font-size: 0.78rem; font-weight: 700; font-variant-numeric: tabular-nums;
+  }
+  .about { margin: 24px 12px 0; font-size: 0.8rem; color: var(--text-soft); }
+  .page-select-wrap { display: none; }
+  @media (max-width: 900px) {
+    .page-select-wrap { display: block; }
+    .page-select-wrap select {
+      width: 100%; min-height: 48px; padding: 0 16px; border-radius: 999px;
+      border: 0; background: var(--surface); box-shadow: var(--shadow-card); font-weight: 600;
+    }
+  }
+
+  /* ─── A page, as cards ────────────────────────────────────────────────── */
+  main { min-width: 0; }
+  .notice {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 14px 18px; margin-bottom: 16px; border-radius: 18px;
+    background: var(--card-feedback); color: var(--warn-text); font-weight: 500;
+  }
+  .page-top { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 4px 4px 14px; color: var(--text-soft); font-size: 0.9rem; }
+  .page-top a { font-weight: 600; }
+  .slab { border-radius: var(--radius-panel); padding: clamp(24px, 4vw, 48px) clamp(20px, 4vw, 52px); }
+  .slab + .slab { margin-top: 18px; }
+  .slab.white { background: var(--surface); box-shadow: var(--shadow-card); }
+  .slab.pale { background: var(--peach); }
+  .column { max-width: 44rem; display: flex; flex-direction: column; gap: 18px; }
+
+  /* ─── One text ────────────────────────────────────────────────────────── */
+  .text { position: relative; }
+  .line { display: flex; gap: 10px; align-items: flex-start; }
+  .words { flex: 1; min-width: 0; cursor: text; border-radius: 10px; margin: -4px -6px; padding: 4px 6px; }
+  .words:hover { background: rgb(255 169 140 / 0.12); }
+  .is-open > .line .words, .is-open .words.on { background: rgb(255 169 140 / 0.2); }
+  .tools { flex: none; display: flex; gap: 4px; align-items: center; opacity: 0.55; transition: opacity 0.15s; }
+  .text:hover .tools, .text:focus-within .tools, .is-open .tools { opacity: 1; }
+  @media (hover: none) { .tools { opacity: 1; } }
+  .icon-btn {
+    width: 34px; height: 34px; display: inline-grid; place-items: center;
+    border: 0; border-radius: 50%; background: var(--ground); cursor: pointer; color: var(--text);
+    text-decoration: none;
+  }
+  .slab.white .icon-btn { background: var(--ground); }
+  .slab.pale .icon-btn { background: var(--surface); }
+  .icon-btn:hover { background: var(--coral); }
+  .eyebrow {
+    display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.07em;
+    text-transform: uppercase; color: var(--text-soft); margin-bottom: 2px;
+  }
+  .lang-tag {
+    display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em;
+    padding: 1px 7px; border-radius: 999px; background: var(--ground); color: var(--text-soft);
+    vertical-align: 0.15em; margin-right: 6px;
+  }
+  .slab.white .lang-tag { background: var(--peach); }
+  .text .en-line { margin-top: 6px; color: var(--text-soft); }
+  .k-h1 .words { font-family: var(--font-display); font-weight: 600; font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.04; letter-spacing: -0.02em; text-wrap: balance; }
+  .k-h2 .words { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.08; letter-spacing: -0.02em; text-wrap: balance; }
+  .k-h3 .words, .k-h4 .words { font-family: var(--font-display); font-weight: 600; font-size: 1.35rem; line-height: 1.2; letter-spacing: -0.01em; }
+  .k-lede .words { font-size: 1.2rem; }
+  .k-question .words, .k-subheading .words { font-weight: 700; }
+  .k-question .words { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; line-height: 1.25; }
+  .k-answer { margin-top: -10px; }
+  .k-button .words { flex: 0 1 auto; }
+  .k-button .words .go {
+    display: inline-flex; align-items: center; min-height: 46px; padding: 0 22px;
+    background: var(--text); color: var(--ground); border-radius: 999px; font-weight: 700;
+  }
+  .k-link .words { text-decoration: underline; text-underline-offset: 3px; font-weight: 600; }
+  .k-alt .words, .k-sr .words, .k-meta .words, .k-hint .words {
+    font-size: 0.95rem; color: var(--text-soft);
+    padding: 10px 14px; margin: 0; border: 1.5px dashed var(--rule); border-radius: 14px;
+  }
+  .slab.pale .k-alt .words, .slab.pale .k-sr .words { border-color: var(--sparkle, #fcd1c3); }
+  .k-amount .words { font-weight: 700; }
+  .k-tag .words span.t {
+    display: inline-block; padding: 2px 10px; border-radius: 999px; background: var(--peach); font-weight: 700; font-size: 0.85rem;
+  }
+  .words strong { font-weight: 700; }
+  .words a { text-underline-offset: 3px; }
+  .tok {
+    border-bottom: 2px dotted var(--coral-deep); font-variant-numeric: tabular-nums; cursor: help;
+  }
+  .ph {
+    font-family: var(--font-mono); font-size: 0.85em; padding: 0 5px;
+    background: var(--card-sent); border-radius: 6px;
+  }
+  .shy::before { content: '-'; color: var(--coral-deep); opacity: 0.55; }
+
+  /* The struck line, as the front page draws it. */
+  .struck-line { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.3; letter-spacing: -0.02em; }
+  .struck-line del {
+    position: relative; display: inline-block; text-decoration: none; cursor: text;
+    margin-right: 0.3em; border-radius: 8px;
+  }
+  .struck-line del::after {
+    content: ''; position: absolute; left: -0.04em; right: -0.04em; top: 54%;
+    height: 0.09em; border-radius: 999px; background: var(--coral);
+  }
+  .struck-line del:hover, .struck-line del.on { background: rgb(255 169 140 / 0.2); }
+  .struck-tools { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; letter-spacing: 0; color: var(--text-soft); }
+
+  /* Lists and tables, from the guide and the legal pages. */
+  .list { margin: 0; padding-left: 1.3rem; display: flex; flex-direction: column; gap: 12px; }
+  .list > li::marker { color: var(--coral-deep); font-weight: 700; }
+  .table-wrap { overflow-x: auto; border-radius: 16px; border: 1.5px solid var(--rule); }
+  table.cells { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+  table.cells td, table.cells th { padding: 10px 12px; border-bottom: 1.5px solid var(--rule); text-align: left; vertical-align: top; }
+  table.cells th { background: var(--ground); font-weight: 700; }
+  table.cells tr:last-child td { border-bottom: 0; }
+  table.cells .cell { cursor: text; border-radius: 6px; }
+  table.cells .cell:hover, table.cells .cell.on { background: rgb(255 169 140 / 0.2); }
+
+  /* ─── What the owner has said about it ────────────────────────────────── */
+  .notes { display: flex; flex-direction: column; gap: 4px; margin-top: 6px; }
+  .notes:empty { display: none; }
+  .note {
+    display: flex; gap: 8px; align-items: flex-start; font-size: 0.95rem; line-height: 1.45;
+    padding-left: 4px;
+  }
+  .note > svg { flex: none; margin-top: 2px; color: var(--coral-deep); }
+  .note.comment > svg { color: #2f7d8c; }
+  .note .who { color: var(--text-soft); font-size: 0.85rem; white-space: nowrap; }
+  .note b { font-weight: 700; }
+  .note.stale { background: var(--card-feedback); border-radius: 12px; padding: 8px 10px; color: var(--warn-text); }
+  .note.stale .now { color: var(--text); }
+  .chip {
+    display: inline-block; padding: 1px 9px; border-radius: 999px; font-size: 0.74rem; font-weight: 700;
+    white-space: nowrap; vertical-align: 0.1em;
+  }
+  .chip.open { background: var(--coral); color: var(--text); }
+  .chip.applied { background: var(--mint-ground); color: var(--mint-text); box-shadow: inset 0 0 0 1.5px var(--mint-edge); }
+  .chip.dismissed { background: var(--ground); color: var(--text-soft); box-shadow: inset 0 0 0 1.5px var(--rule); }
+  .chip.stale { background: var(--card-feedback); color: var(--warn-text); }
+  .chip.cond { background: var(--card-sent); color: #2f5f6b; }
+
+  /* ─── The panel under a text ──────────────────────────────────────────── */
+  .panel {
+    margin-top: 12px; padding: 18px; border-radius: var(--radius-card);
+    background: var(--surface); box-shadow: var(--shadow-float);
+    display: flex; flex-direction: column; gap: 16px; font-family: var(--font-body);
+    font-size: 1rem; font-weight: 400; letter-spacing: 0; line-height: 1.5;
+  }
+  .slab.white .panel { background: var(--ground); box-shadow: none; border: 1.5px solid var(--rule); }
+  .panel h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; margin: 0; }
+  .panel .where { font-size: 0.8rem; color: var(--text-soft); word-break: break-all; }
+  .panel .where code { font-family: var(--font-mono); font-size: 0.78rem; }
+  .panel textarea {
+    width: 100%; min-height: 96px; resize: vertical; padding: 12px 14px;
+    border-radius: 14px; border: 2px solid var(--rule); background: var(--surface); line-height: 1.5;
+  }
+  .panel textarea:focus { outline: none; border-color: var(--coral); }
+  .hint { font-size: 0.85rem; color: var(--text-soft); margin: 6px 0 0; }
+  .hint.warn { color: var(--warn-text); font-weight: 600; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .go-btn {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px;
+    border: 0; border-radius: 999px; background: var(--text); color: var(--ground); font-weight: 700; cursor: pointer;
+  }
+  .go-btn:hover { background: var(--text-hover); }
+  .go-btn.ghost { background: var(--surface); color: var(--text); font-weight: 600; box-shadow: inset 0 0 0 1.5px var(--rule); }
+  .go-btn.ghost:hover { background: var(--peach); }
+  .go-btn:disabled { opacity: 0.5; cursor: default; }
+  .link-btn { border: 0; background: none; padding: 0; cursor: pointer; font-weight: 600; font-size: 0.85rem; text-decoration: underline; text-underline-offset: 3px; color: var(--text-soft); }
+  .link-btn:hover { color: var(--link-hover); }
+  .history, .thread { display: flex; flex-direction: column; gap: 10px; }
+  .entry { padding: 10px 12px; border-radius: 14px; background: var(--surface); box-shadow: inset 0 0 0 1.5px var(--rule); }
+  .slab.white .entry { background: var(--surface); }
+  .entry .meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 0.8rem; color: var(--text-soft); margin-bottom: 4px; }
+  .entry.is-claude { background: var(--card-sent); box-shadow: none; }
+  .entry .body { white-space: pre-wrap; }
+  .entry .acts { display: flex; gap: 14px; margin-top: 6px; }
+  details.dev summary { cursor: pointer; font-size: 0.85rem; color: var(--text-soft); font-weight: 600; }
+  details.dev pre { white-space: pre-wrap; font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-soft); margin: 6px 0 0; }
+  .sep { height: 1.5px; background: var(--rule); border: 0; margin: 0; }
+
+  /* ─── Search results and empty states ─────────────────────────────────── */
+  .result-head { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; margin: 4px 0 -6px; color: var(--text-soft); }
+  .empty { color: var(--text-soft); font-size: 1.05rem; }
+  .loading { padding: 64px 16px; text-align: center; color: var(--text-soft); font-family: var(--font-display); font-size: 1.3rem; }
+  .flash { animation: flash 1.6s ease-out; }
+  @keyframes flash { from { box-shadow: 0 0 0 6px rgb(255 169 140 / 0.6); } to { box-shadow: 0 0 0 6px rgb(255 169 140 / 0); } }
+  @media (prefers-reduced-motion: reduce) { .flash { animation: none; } .tools { transition: none; } }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+</style>
+
+<header class="bar">
+  <div class="pill">
+    <div class="brand"><b>Pilke</b><span>Copy Desk</span></div>
+    <label class="search" for="q">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <span class="visually-hidden">Hae tekstiä</span>
+      <input id="q" type="search" placeholder="Hae tekstiä kaikilta sivuilta" autocomplete="off">
+    </label>
+    <div class="seg" role="group" aria-label="Kieli">
+      <button type="button" data-lang="fi" aria-pressed="true">Suomi</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+      <button type="button" data-lang="both" aria-pressed="false">Molemmat</button>
+    </div>
+    <button type="button" class="toggle" id="only-open" aria-pressed="false">Vain avoimet</button>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="side" id="side" aria-label="Sivut"></nav>
+  <main id="main">
+    <div class="page-select-wrap"><label class="visually-hidden" for="page-select">Sivu</label><select id="page-select"></select></div>
+    <div id="notices"></div>
+    <div id="view"><p class="loading">Ladataan tekstejä…</p></div>
+  </main>
+</div>
+
+<script>
+(() => {
+  const SHY = String.fromCharCode(173);
+  const SHY_RE = new RegExp(SHY, 'g');
+  const LANG_NAME = { fi: 'Suomi', en: 'English' };
+
+  const state = {
+    snap: null,
+    lang: 'fi',
+    page: 'etusivu',
+    onlyOpen: false,
+    query: '',
+    open: null,          // { id, lang, focus }
+    suggestions: [],
+    comments: [],
+    db: null,
+    user: null,
+    me: null,
+    canWrite: null,
+    dbReady: false,
+    dbState: 'waiting',  // waiting | ready | absent | readonly
+    names: {},
+  };
+
+  /* Blocks currently drawn, by text id, so a db change refreshes only their notes. */
+  let drawn = new Map();
+
+  // ─── Small helpers ──────────────────────────────────────────────────────
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const el = (tag, props = {}, ...kids) => {
+    const node = document.createElement(tag);
+    for (const [k, v] of Object.entries(props)) {
+      if (v === undefined || v === null || v === false) continue;
+      if (k === 'class') node.className = v;
+      else if (k === 'html') node.innerHTML = v;
+      else if (k === 'text') node.textContent = v;
+      else if (k.startsWith('on')) node.addEventListener(k.slice(2), v);
+      else node.setAttribute(k, v === true ? '' : v);
+    }
+    for (const kid of kids.flat()) if (kid !== null && kid !== undefined && kid !== false) node.append(kid);
+    return node;
+  };
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  const ICONS = {
+    pencil: '<path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/>',
+    comment: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>',
+    external: '<path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>',
+    arrow: '<polyline points="15 10 20 15 15 20"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/>',
+    alert: '<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>',
+  };
+  const icon = (name, size = 18) => {
+    const span = document.createElement('span');
+    span.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
+    return span.firstChild;
+  };
+  const when = (iso) => {
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return '';
+    return d.toLocaleString('fi-FI', { day: 'numeric', month: 'numeric', hour: 'numeric', minute: '2-digit' });
+  };
+  const remember = (k, v) => { try { localStorage.setItem(`pilke-desk:${k}`, JSON.stringify(v)); } catch {} };
+  const recall = (k, fallback) => { try { const v = localStorage.getItem(`pilke-desk:${k}`); return v === null ? fallback : JSON.parse(v); } catch { return fallback; } };
+
+  /* The text as the reader sees it, with the desk's marks: a figure from the app is
+     underlined dotted and shows its name, a placeholder the page fills is boxed, a
+     soft hyphen shows faintly where the word may break. */
+  function inline(text, format) {
+    let html = esc(text.replace(SHY_RE, '&shy;'));
+    html = html.replace(/&amp;shy;/g, '<span class="shy" title="Tavutuskohta"></span>');
+    html = html.replace(/\{\{\s*([\w.-]+)\s*\}\}/g, (all, path) => {
+      const value = state.snap.constants[path];
+      return value === undefined ? `<span class="ph">${all}</span>` : `<span class="tok" title="Sovelluksen luku {{${esc(path)}}}">${esc(value)}</span>`;
+    });
+    html = html.replace(/\{([a-z]+)\}/g, '<span class="ph" title="Sivu lisää tähän sisällön">{$1}</span>');
+    if (format === 'markdown') {
+      html = html
+        .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (all, label, href) => {
+          const url = href.startsWith('/') ? state.snap.site + href : href;
+          return `<a href="${url}" target="_blank" rel="noopener">${label}</a>`;
+        })
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/(^|[^*])\*([^*\s][^*]*?)\*/g, '$1<em>$2</em>')
+        .replace(/`([^`]+)`/g, '<code>$1</code>');
+    }
+    return html;
+  }
+
+  // ─── What the db says about a text ──────────────────────────────────────
+  const suggestionsFor = (id, lang) => state.suggestions.filter((s) => s.text_id === id && (!lang || s.lang === lang));
+  const commentsFor = (id) => state.comments.filter((c) => c.text_id === id).sort((a, b) => (a.created_at < b.created_at ? -1 : 1));
+  const isStale = (s) => {
+    const t = state.snap.texts[s.text_id];
+    return !t || !t[s.lang] || t[s.lang].hash !== s.base_hash;
+  };
+  const hasOpen = (id) => suggestionsFor(id).some((s) => s.status === 'open') || commentsFor(id).some((c) => c.status === 'open');
+  const openCount = (page) => new Set(page.items.map((i) => i.id).filter(hasOpen)).size;
+
+  function authorName(row) {
+    if (row.author_kind === 'claude') return 'Claude';
+    if (state.me && row.author && row.author === state.me.id) return 'sinä';
+    return state.names[row.author] || 'Joku';
+  }
+
+  async function resolveNames() {
+    if (!state.user) return;
+    const ids = [...new Set([...state.suggestions, ...state.comments].map((r) => r.author).filter(Boolean))];
+    if (!ids.length) return;
+    const profiles = await state.user.profiles(ids);
+    let changed = false;
+    for (const id of ids) {
+      const name = profiles[id]?.name || '';
+      if (state.names[id] !== name) { state.names[id] = name; changed = true; }
+    }
+    if (changed) refreshAll();
+  }
+
+  // ─── The list of pages ──────────────────────────────────────────────────
+  function renderNav() {
+    const side = $('#side');
+    side.replaceChildren();
+    const select = $('#page-select');
+    select.replaceChildren();
+    for (const group of state.snap.groups) {
+      const pages = state.snap.pages.filter((p) => p.group === group.id);
+      if (!pages.length) continue;
+      side.append(el('h2', { text: group.label.fi }));
+      const ul = el('ul');
+      const og = el('optgroup', { label: group.label.fi });
+      for (const page of pages) {
+        const n = openCount(page);
+        const label = page.label.fi.replace(SHY_RE, '');
+        ul.append(el('li', {}, el('a', {
+          href: `#${hashOf(page.id)}`,
+          'aria-current': page.id === state.page && !state.query ? 'page' : null,
+          onclick: (e) => { e.preventDefault(); go(page.id); },
+        }, el('span', { text: label }), n ? el('span', { class: 'count', text: String(n), title: `${n} tekstiä, joissa avoin ehdotus tai kommentti` }) : null)));
+        og.append(el('option', { value: page.id, selected: page.id === state.page, text: n ? `${label} (${n})` : label }));
+      }
+      side.append(ul);
+      select.append(og);
+    }
+    const generated = new Date(state.snap.generated_at);
+    side.append(el('p', { class: 'about', text: `Tekstit versiosta ${state.snap.commit}, ${generated.toLocaleDateString('fi-FI')}. Uudet tekstit tulevat näkyviin, kun muutokset on julkaistu sivulle.` }));
+  }
+  const hashOf = (id) => id.replace(/\//g, '.');
+  const idOfHash = (h) => h.replace(/\./g, '/');
+
+  function go(pageId, focusText) {
+    state.page = pageId;
+    state.query = '';
+    $('#q').value = '';
+    state.open = null;
+    remember('page', pageId);
+    try { history.replaceState(null, '', `#${hashOf(pageId)}`); } catch {}
+    renderNav();
+    renderView();
+    if (focusText) {
+      const hit = drawn.get(focusText)?.[0];
+      if (hit) { hit.root.scrollIntoView({ block: 'center' }); hit.root.classList.add('flash'); }
+    } else {
+      window.scrollTo({ top: 0 });
+    }
+  }
+
+  // ─── A page ─────────────────────────────────────────────────────────────
+  function langsShown() { return state.lang === 'both' ? ['fi', 'en'] : [state.lang]; }
+
+  function kindClass(item, index, items) {
+    const k = item.kind;
+    if (k === 'heading') return `k-h${Math.min(item.level || 2, 4)}`;
+    if (k === 'paragraph' && index > 0 && items[index - 1].kind === 'heading' && items[index - 1].level === 1) return 'k-lede';
+    if (k === 'alt text') return 'k-alt';
+    if (k === 'screen-reader text' || k === 'screen-reader label') return 'k-sr';
+    if (['meta title', 'meta description', 'social title', 'social description'].includes(k)) return 'k-meta';
+    if (['placeholder', 'message', 'label', 'text'].includes(k)) return 'k-hint';
+    return `k-${k.replace(/\s+/g, '-')}`;
+  }
+
+  const EYEBROW = {
+    'alt text': 'Kuvan kuvaus',
+    'screen-reader text': 'Vain ruudunlukijalle',
+    'screen-reader label': 'Vain ruudunlukijalle',
+    'meta title': 'Sivun otsikko välilehdellä ja hakutuloksissa',
+    'meta description': 'Kuvaus hakutuloksissa ja jaetuissa linkeissä',
+    placeholder: 'Esimerkki tyhjässä kentässä',
+    message: 'Lomakkeen viesti',
+    label: 'Kentän nimi',
+    amount: 'Määrä',
+    tag: 'Merkintä listassa',
+  };
+
+  function renderView() {
+    const view = $('#view');
+    drawn = new Map();
+    view.replaceChildren();
+    if (state.query.trim()) return renderSearch(view);
+    const page = state.snap.pages.find((p) => p.id === state.page) || state.snap.pages[0];
+    state.page = page.id;
+    view.append(el('div', { class: 'page-top' },
+      el('span', { text: `${page.items.length} tekstiä` }),
+      el('a', { href: page.url[state.lang === 'en' ? 'en' : 'fi'], target: '_blank', rel: 'noopener', text: 'Avaa sivu' })));
+    let items = page.items;
+    if (state.onlyOpen) items = items.filter((i) => hasOpen(i.id));
+    if (!items.length) {
+      view.append(el('div', { class: 'slab white' }, el('p', { class: 'empty', text: state.onlyOpen ? 'Tällä sivulla ei ole avoimia ehdotuksia eikä kommentteja.' : 'Tällä sivulla ei ole tekstejä.' })));
+      return;
+    }
+    renderItems(view, items, page);
+  }
+
+  /* Cards break at the page's big headings, as the site's own slabs do. */
+  function renderItems(view, items, page) {
+    let slab = null;
+    let column = null;
+    let tone = 0;
+    const startSlab = (pale) => {
+      slab = el('section', { class: `slab ${pale ? 'pale' : 'white'}` });
+      column = el('div', { class: 'column' });
+      slab.append(column);
+      view.append(slab);
+    };
+    let i = 0;
+    while (i < items.length) {
+      const item = items[i];
+      const big = item.kind === 'heading' && (item.level || 2) <= 2;
+      if (!slab || (big && column.childElementCount > 0)) {
+        const first = item.kind === 'heading' && item.level === 1;
+        startSlab(first || (!slab ? false : tone++ % 2 === 1));
+      }
+      if (item.kind === 'struck') {
+        const run = [];
+        while (i < items.length && items[i].kind === 'struck') run.push(items[i++]);
+        column.append(struckLine(run, page));
+        continue;
+      }
+      if (item.kind === 'table header' || item.kind === 'table cell') {
+        const run = [];
+        const t = item.table?.index;
+        while (i < items.length && (items[i].kind === 'table header' || items[i].kind === 'table cell') && items[i].table?.index === t) run.push(items[i++]);
+        column.append(tableOf(run, page));
+        continue;
+      }
+      if (item.kind === 'list item') {
+        const run = [];
+        while (i < items.length && items[i].kind === 'list item') run.push(items[i++]);
+        const list = el(run[0].ordered ? 'ol' : 'ul', { class: 'list' });
+        for (const li of run) list.append(textBlock(li, i, items, page, 'li'));
+        column.append(list);
+        continue;
+      }
+      column.append(textBlock(item, i, items, page));
+      i++;
+    }
+  }
+
+  function register(id, entry) {
+    if (!drawn.has(id)) drawn.set(id, []);
+    drawn.get(id).push(entry);
+  }
+
+  function toolButtons(id, lang, page, item) {
+    const t = state.snap.texts[id];
+    const url = (item.url && item.url[lang]) || t[lang]?.url;
+    const tools = el('div', { class: 'tools' });
+    if (canSuggest()) {
+      tools.append(el('button', { type: 'button', class: 'icon-btn', title: `Kirjoita uusi teksti (${LANG_NAME[lang]})`, 'aria-label': `Kirjoita uusi teksti, ${LANG_NAME[lang]}`, onclick: () => openPanel(id, lang, 'rewrite') }, icon('pencil', 17)));
+    }
+    if (canSuggest() && lang === langsShown()[0]) {
+      tools.append(el('button', { type: 'button', class: 'icon-btn', title: 'Kommentoi', 'aria-label': 'Kommentoi tätä tekstiä', onclick: () => openPanel(id, lang, 'comment') }, icon('comment', 17)));
+    }
+    if (url) tools.append(el('a', { class: 'icon-btn', href: url, target: '_blank', rel: 'noopener', title: 'Näytä sivulla', 'aria-label': 'Näytä tämä teksti sivulla' }, icon('external', 16)));
+    return tools;
+  }
+
+  function wordsOf(id, lang, item) {
+    const t = state.snap.texts[id];
+    const rec = t[lang];
+    if (!rec) return el('span', { class: 'words', text: `Ei ${lang === 'fi' ? 'suomeksi' : 'englanniksi'}.` });
+    let html = inline(rec.text, t.format);
+    if (item.kind === 'button') html = `<span class="go">${html}</span>`;
+    if (item.kind === 'tag') html = `<span class="t">${html}</span>`;
+    const words = el('div', { class: 'words', html: (state.lang === 'both' ? `<span class="lang-tag">${lang.toUpperCase()}</span>` : '') + html });
+    words.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      if (canSuggest()) openPanel(id, lang, 'rewrite');
+    });
+    return words;
+  }
+
+  function textBlock(item, index, items, page, tag = 'div') {
+    const id = item.id;
+    const t = state.snap.texts[id];
+    const root = el(tag, { class: `text ${kindClass(item, index, items)}`, 'data-id': id });
+    const eyebrow = EYEBROW[item.kind] || (t.conditional ? 'Näkyy vain tietyssä tilanteessa' : '');
+    if (eyebrow) root.append(el('span', { class: 'eyebrow', text: eyebrow }));
+    langsShown().forEach((lang, n) => {
+      const line = el('div', { class: `line${n ? ' en-line' : ''}` }, wordsOf(id, lang, item), toolButtons(id, lang, page, item));
+      root.append(line);
+    });
+    const notes = el('div', { class: 'notes' });
+    root.append(notes);
+    const slot = el('div', { class: 'panel-slot' });
+    root.append(slot);
+    register(id, { root, notes, slot, compact: false });
+    fillNotes(id, notes);
+    if (state.open && state.open.id === id && !slot.childElementCount) slot.append(panelFor(id));
+    return root;
+  }
+
+  function struckLine(run, page) {
+    const wrap = el('div', { class: 'text struck-wrap' });
+    const line = el('p', { class: 'struck-line' });
+    const seen = new Set();
+    const lang = langsShown()[0];
+    for (const item of run) {
+      const rec = state.snap.texts[item.id][lang];
+      line.append(el('del', {
+        title: 'Napauta kirjoittaaksesi uuden tekstin',
+        tabindex: canSuggest() ? '0' : null,
+        html: inline(rec.text, 'plain'),
+        onclick: () => canSuggest() && openPanel(item.id, lang, 'rewrite'),
+        onkeydown: (e) => { if (e.key === 'Enter' && canSuggest()) openPanel(item.id, lang, 'rewrite'); },
+      }), ' ');
+    }
+    wrap.append(line);
+    if (state.lang === 'both') {
+      wrap.append(el('p', { class: 'struck-tools', text: run.map((i) => state.snap.texts[i.id].en.text).join(' ') }));
+    }
+    for (const item of run) {
+      if (seen.has(item.id)) continue;
+      seen.add(item.id);
+      const notes = el('div', { class: 'notes' });
+      const slot = el('div', { class: 'panel-slot' });
+      const holder = el('div', { 'data-id': item.id }, notes, slot);
+      wrap.append(holder);
+      register(item.id, { root: holder, notes, slot, compact: true });
+      fillNotes(item.id, notes, true);
+      if (state.open && state.open.id === item.id) slot.append(panelFor(item.id));
+    }
+    return wrap;
+  }
+
+  function tableOf(run, page) {
+    const rows = new Map();
+    for (const item of run) {
+      const r = item.table.row;
+      if (!rows.has(r)) rows.set(r, []);
+      rows.get(r).push(item);
+    }
+    const wrap = el('div', { class: 'text' });
+    const scroller = el('div', { class: 'table-wrap' });
+    const table = el('table', { class: 'cells' });
+    const after = el('div');
+    for (const [r, cells] of [...rows].sort((a, b) => a[0] - b[0])) {
+      const tr = el('tr');
+      for (const item of cells.sort((a, b) => a.table.column - b.table.column)) {
+        const td = el(r === 0 ? 'th' : 'td');
+        for (const lang of langsShown()) {
+          const rec = state.snap.texts[item.id][lang];
+          if (!rec) continue;
+          td.append(el('div', {
+            class: 'cell',
+            tabindex: canSuggest() ? '0' : null,
+            html: (state.lang === 'both' ? `<span class="lang-tag">${lang.toUpperCase()}</span>` : '') + inline(rec.text, 'markdown'),
+            onclick: (e) => { if (!e.target.closest('a') && canSuggest()) openPanel(item.id, lang, 'rewrite'); },
+            onkeydown: (e) => { if (e.key === 'Enter' && canSuggest()) openPanel(item.id, lang, 'rewrite'); },
+          }));
+        }
+        const notes = el('div', { class: 'notes' });
+        td.append(notes);
+        tr.append(td);
+        const slot = el('div', { class: 'panel-slot' });
+        after.append(slot);
+        register(item.id, { root: td, notes, slot, compact: true });
+        fillNotes(item.id, notes, true);
+        if (state.open && state.open.id === item.id) slot.append(panelFor(item.id));
+      }
+      table.append(tr);
+    }
+    scroller.append(table);
+    wrap.append(scroller, after);
+    return wrap;
+  }
+
+  // ─── The lines under a text ─────────────────────────────────────────────
+  function fillNotes(id, notes, compact) {
+    notes.replaceChildren();
+    const t = state.snap.texts[id];
+    if (t.conditional && compact) notes.append(el('div', { class: 'note' }, el('span', { class: 'chip cond', text: 'näkyy vain tietyssä tilanteessa' })));
+    for (const lang of langsShown()) {
+      for (const s of suggestionsFor(id, lang).filter((x) => x.status === 'open').sort((a, b) => (a.created_at < b.created_at ? 1 : -1))) {
+        const stale = isStale(s);
+        const note = el('div', { class: `note${stale ? ' stale' : ''}` });
+        note.append(icon(stale ? 'alert' : 'arrow', 16));
+        const body = el('div');
+        if (stale) {
+          const now = t[s.lang];
+          body.innerHTML = `<b>Teksti on muuttunut</b> ehdotuksesi jälkeen. <span class="now">Nyt: ${now ? inline(now.text, t.format) : '<i>tekstiä ei enää ole</i>'}</span><br>Ehdotus: ${inline(s.new_text, t.format)} `;
+        } else {
+          body.innerHTML = `${state.lang === 'both' ? `<span class="lang-tag">${s.lang.toUpperCase()}</span>` : ''}<b>Uusi:</b> ${inline(s.new_text, t.format)} `;
+        }
+        body.append(el('span', { class: 'who', text: `(${authorName(s)})` }), ' ', el('span', { class: `chip ${stale ? 'stale' : 'open'}`, text: stale ? 'muuttunut' : 'avoin' }));
+        note.append(body);
+        notes.append(note);
+      }
+    }
+    const thread = commentsFor(id);
+    const open = thread.filter((c) => c.status === 'open');
+    if (open.length) {
+      const last = open[open.length - 1];
+      const note = el('div', { class: 'note comment' }, icon('comment', 16));
+      const body = el('div');
+      body.append(document.createTextNode(last.body), ' ', el('span', { class: 'who', text: `(${authorName(last)}${thread.length > 1 ? `, ${thread.length} viestiä` : ''})` }));
+      note.append(body);
+      note.addEventListener('click', () => openPanel(id, langsShown()[0], 'comment'));
+      note.style.cursor = 'pointer';
+      notes.append(note);
+    }
+    const settled = suggestionsFor(id).filter((s) => s.status !== 'open');
+    if (!compact && settled.length && !open.length && !suggestionsFor(id).some((s) => s.status === 'open')) {
+      const lastSettled = settled.sort((a, b) => ((a.status_at || a.created_at) < (b.status_at || b.created_at) ? 1 : -1))[0];
+      notes.append(el('div', { class: 'note' }, el('span', { class: `chip ${lastSettled.status}`, text: lastSettled.status === 'applied' ? 'viety sivulle' : 'hylätty' }), el('span', { class: 'who', text: `${settled.length} aiempaa ehdotusta` })));
+    }
+  }
+
+  function refreshAll() {
+    for (const [id, entries] of drawn) {
+      for (const e of entries) fillNotes(id, e.notes, e.compact);
+    }
+    if (state.open) {
+      const panel = document.querySelector('.panel[data-for]');
+      if (panel) refreshPanelLists(panel, state.open.id);
+    }
+    renderNav();
+  }
+
+  // ─── The panel: a rewrite and the thread ────────────────────────────────
+  function canSuggest() { return state.dbState === 'ready'; }
+
+  function openPanel(id, lang, focus) {
+    const previous = document.querySelector('.panel[data-for]');
+    if (previous) previous.remove();
+    document.querySelectorAll('.is-open, .on').forEach((n) => n.classList.remove('is-open', 'on'));
+    state.open = { id, lang, focus };
+    const entry = drawn.get(id)?.[0];
+    if (!entry) return;
+    const panel = panelFor(id);
+    entry.slot.append(panel);
+    entry.root.classList.add('is-open');
+    const target = focus === 'comment' ? $('textarea.comment-box', panel) : $('textarea.rewrite-box', panel);
+    if (target) { target.focus({ preventScroll: true }); if (focus !== 'comment') target.setSelectionRange(target.value.length, target.value.length); }
+    panel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }
+
+  function closePanel() {
+    const panel = document.querySelector('.panel[data-for]');
+    if (panel) panel.remove();
+    document.querySelectorAll('.is-open').forEach((n) => n.classList.remove('is-open'));
+    state.open = null;
+  }
+
+  const forEditing = (text) => text.replace(SHY_RE, '&shy;');
+
+  function problems(t, lang, value) {
+    const out = [];
+    const current = t[lang]?.text || '';
+    if (t.format === 'plain' && /\*\*|\]\(|`/.test(value)) out.push('Tämä teksti näkyy sivulla sellaisenaan: lihavointi ja linkit näkyisivät tähteinä ja hakasulkeina.');
+    const ph = (s) => [...new Set(s.match(/\{[a-z]+\}/g) || [])].sort().join(' ');
+    if (ph(value.replace(/\{\{[^}]*\}\}/g, '')) !== ph(current.replace(/\{\{[^}]*\}\}/g, ''))) out.push(`Säilytä ${ph(current.replace(/\{\{[^}]*\}\}/g, '')) || 'paikkamerkit'} sellaisenaan: sivu lisää siihen kohtaan sisällön.`);
+    for (const m of value.matchAll(/\{\{\s*([\w.-]+)\s*\}\}/g)) if (!(m[1] in state.snap.constants)) out.push(`{{${m[1]}}} ei ole sovelluksen luku. Käytä jotain tämän tekstin luvuista.`);
+    return out;
+  }
+
+  function panelFor(id) {
+    const t = state.snap.texts[id];
+    const lang = state.open.lang;
+    const rec = t[lang];
+    const panel = el('div', { class: 'panel', 'data-for': id });
+
+    if (rec) {
+      const file = typeof t.file === 'string' ? t.file : t.file[lang];
+      panel.append(el('div', {},
+        el('h3', { text: `Uusi teksti · ${LANG_NAME[lang]}` }),
+        el('div', { class: 'where', html: `${esc(file)} · <code>${esc(rec.key)}</code>` })));
+      const draftKey = `draft:${rec.key}:${lang}`;
+      const box = el('textarea', { class: 'rewrite-box', id: `rewrite-${hashOf(rec.key).replace(/[^\w.-]/g, '_')}`, rows: Math.min(10, Math.max(3, Math.ceil(rec.text.length / 70))) });
+      box.value = recall(draftKey, null) ?? forEditing(rec.text);
+      const hints = el('div');
+      const tokensHere = [...rec.text.matchAll(/\{\{\s*([\w.-]+)\s*\}\}/g)].map((m) => m[1]);
+      const baseHint = [
+        tokensHere.length ? `{{…}} on sovelluksen oma luku (${[...new Set(tokensHere)].map((p) => `{{${p}}} = ${state.snap.constants[p]}`).join(', ')}). Jätä se paikalleen, niin luku pysyy oikeana.` : '',
+        rec.text.includes(SHY) || box.value.includes('&shy;') ? '&shy; on tavutuskohta: pitkä sana saa katketa siitä kapealla näytöllä.' : '',
+        t.format === 'markdown' ? 'Voit lihavoida **näin** ja lisätä linkin [näin](/ohje).' : '',
+      ].filter(Boolean);
+      const showHints = () => {
+        hints.replaceChildren(...baseHint.map((h) => el('p', { class: 'hint', text: h })), ...problems(t, lang, box.value).map((p) => el('p', { class: 'hint warn', text: p })));
+      };
+      showHints();
+      let timer;
+      box.addEventListener('input', () => { showHints(); clearTimeout(timer); timer = setTimeout(() => remember(draftKey, box.value), 400); });
+      const save = el('button', { type: 'button', class: 'go-btn', text: 'Tallenna ehdotus' });
+      const status = el('span', { class: 'hint', role: 'status' });
+      save.addEventListener('click', async () => {
+        const value = box.value.trim();
+        if (!value || value === forEditing(rec.text)) { status.textContent = 'Kirjoita ensin uusi teksti.'; return; }
+        save.disabled = true;
+        status.textContent = 'Tallennetaan…';
+        try {
+          const now = new Date().toISOString();
+          await state.db.collection('suggestions').add({
+            text_id: id, key: rec.key, lang, base_hash: rec.hash, base_text: rec.text, new_text: value,
+            page: state.page, author: state.me?.id || null, author_kind: 'person',
+            created_at: now, updated_at: now, status: 'open', snapshot_commit: state.snap.commit,
+          });
+          remember(draftKey, null);
+          try { localStorage.removeItem(`pilke-desk:${draftKey}`); } catch {}
+          status.textContent = 'Tallennettu.';
+          closePanel();
+        } catch (e) {
+          status.textContent = e?.code === 'invalid_argument' ? 'Sinulla ei ole oikeutta tallentaa tähän.' : 'Tallennus ei onnistunut. Yritä hetken päästä uudelleen.';
+          save.disabled = false;
+        }
+      });
+      panel.append(el('div', {}, box, hints), el('div', { class: 'row' }, save, el('button', { type: 'button', class: 'go-btn ghost', text: 'Sulje', onclick: closePanel }), status));
+      if (t.note) panel.append(el('details', { class: 'dev' }, el('summary', { text: 'Kehittäjän huomio tästä tekstistä (englanniksi)' }), el('pre', { text: t.note })));
+      panel.append(el('div', { class: 'history' }));
+    }
+
+    panel.append(el('hr', { class: 'sep' }), el('h3', { text: 'Kommentit' }), el('div', { class: 'thread' }));
+    const cbox = el('textarea', { class: 'comment-box', id: `comment-${hashOf(id).replace(/[^\w.-]/g, '_')}`, rows: 2, placeholder: 'Esim. lyhyemmäksi, tai kysy jotain tästä kohdasta' });
+    const send = el('button', { type: 'button', class: 'go-btn', text: 'Lähetä kommentti' });
+    const cstatus = el('span', { class: 'hint', role: 'status' });
+    send.addEventListener('click', async () => {
+      const body = cbox.value.trim();
+      if (!body) return;
+      send.disabled = true;
+      try {
+        await state.db.collection('comments').add({
+          text_id: id, lang: state.lang === 'both' ? null : state.open.lang, body, page: state.page,
+          author: state.me?.id || null, author_kind: 'person', created_at: new Date().toISOString(), status: 'open',
+        });
+        cbox.value = '';
+        cstatus.textContent = 'Lähetetty.';
+      } catch (e) {
+        cstatus.textContent = 'Kommentti ei tallentunut. Yritä hetken päästä uudelleen.';
+      }
+      send.disabled = false;
+    });
+    panel.append(cbox, el('div', { class: 'row' }, send, cstatus));
+    refreshPanelLists(panel, id);
+    return panel;
+  }
+
+  async function setStatus(collection, row, status) {
+    try {
+      await state.db.doc(`${collection}/${row._id}`).update({ status, status_at: new Date().toISOString(), status_by: state.me?.id || null });
+    } catch {}
+  }
+
+  function refreshPanelLists(panel, id) {
+    const t = state.snap.texts[id];
+    const history = $('.history', panel);
+    if (history) {
+      history.replaceChildren();
+      const rows = suggestionsFor(id, state.open.lang).sort((a, b) => (a.created_at < b.created_at ? 1 : -1));
+      if (rows.length) history.append(el('h3', { text: 'Ehdotukset' }));
+      for (const s of rows) {
+        const stale = s.status === 'open' && isStale(s);
+        const chip = stale ? ['stale', 'teksti on muuttunut'] : s.status === 'applied' ? ['applied', 'viety sivulle'] : s.status === 'dismissed' ? ['dismissed', 'hylätty'] : ['open', 'avoin'];
+        const entry = el('div', { class: 'entry' },
+          el('div', { class: 'meta' }, el('span', { text: `${authorName(s)} · ${when(s.created_at)}` }), el('span', { class: `chip ${chip[0]}`, text: chip[1] })),
+          el('div', { class: 'body', html: inline(s.new_text, t.format) }));
+        if (stale) entry.append(el('p', { class: 'hint warn', html: `Nyt sivulla: ${t[s.lang] ? inline(t[s.lang].text, t.format) : 'tekstiä ei enää ole'}` }));
+        const acts = el('div', { class: 'acts' });
+        if (s.status === 'open') {
+          acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Käytä pohjana', onclick: () => { const b = $('textarea.rewrite-box', panel); if (b) { b.value = s.new_text; b.dispatchEvent(new Event('input')); b.focus(); } } }));
+          acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Hylkää', onclick: () => setStatus('suggestions', s, 'dismissed') }));
+        } else if (s.status === 'dismissed') {
+          acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Palauta avoimeksi', onclick: () => setStatus('suggestions', s, 'open') }));
+        }
+        if (s.commit) acts.append(el('span', { class: 'hint', text: `versiossa ${s.commit}` }));
+        if (acts.childElementCount) entry.append(acts);
+        history.append(entry);
+      }
+    }
+    const thread = $('.thread', panel);
+    thread.replaceChildren();
+    const rows = commentsFor(id);
+    if (!rows.length) thread.append(el('p', { class: 'hint', text: 'Ei vielä kommentteja. Claude lukee ne ja vastaa tähän.' }));
+    for (const c of rows) {
+      const chip = c.status === 'applied' ? ['applied', 'hoidettu'] : c.status === 'dismissed' ? ['dismissed', 'suljettu'] : ['open', 'avoin'];
+      const entry = el('div', { class: `entry${c.author_kind === 'claude' ? ' is-claude' : ''}` },
+        el('div', { class: 'meta' }, el('span', { text: `${authorName(c)} · ${when(c.created_at)}${c.lang ? ` · ${LANG_NAME[c.lang]}` : ''}` }), el('span', { class: `chip ${chip[0]}`, text: chip[1] })),
+        el('div', { class: 'body', text: c.body }));
+      const acts = el('div', { class: 'acts' });
+      if (c.status === 'open') {
+        acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Merkitse hoidetuksi', onclick: () => setStatus('comments', c, 'applied') }));
+        acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Sulje', onclick: () => setStatus('comments', c, 'dismissed') }));
+      } else {
+        acts.append(el('button', { type: 'button', class: 'link-btn', text: 'Avaa uudelleen', onclick: () => setStatus('comments', c, 'open') }));
+      }
+      entry.append(acts);
+      thread.append(entry);
+    }
+  }
+
+  // ─── Search ─────────────────────────────────────────────────────────────
+  function renderSearch(view) {
+    const q = state.query.trim().toLowerCase();
+    const plain = (s) => (s || '').replace(SHY_RE, '').toLowerCase();
+    let total = 0;
+    const seen = new Set();
+    for (const page of state.snap.pages) {
+      const hits = page.items.filter((item) => {
+        if (seen.has(item.id)) return false;
+        const t = state.snap.texts[item.id];
+        const ok = ['fi', 'en'].some((l) => plain(t[l]?.text).includes(q) || plain(t[l]?.rendered).includes(q)) || item.id.toLowerCase().includes(q);
+        if (ok && state.onlyOpen && !hasOpen(item.id)) return false;
+        return ok;
+      });
+      if (!hits.length) continue;
+      hits.forEach((h) => seen.add(h.id));
+      total += hits.length;
+      view.append(el('p', { class: 'result-head' }, el('a', { href: `#${hashOf(page.id)}`, text: page.label.fi.replace(SHY_RE, ''), onclick: (e) => { e.preventDefault(); go(page.id, hits[0].id); } })));
+      const slab = el('section', { class: 'slab white' });
+      const column = el('div', { class: 'column' });
+      hits.slice(0, 60).forEach((item, n) => column.append(textBlock({ ...item, kind: item.kind === 'struck' ? 'paragraph' : item.kind }, n, hits, page)));
+      slab.append(column);
+      view.append(slab);
+    }
+    if (!total) view.append(el('div', { class: 'slab white' }, el('p', { class: 'empty', text: `Haulla ”${state.query}” ei löytynyt tekstiä.` })));
+  }
+
+  // ─── Notices about saving ───────────────────────────────────────────────
+  function renderNotices() {
+    const box = $('#notices');
+    box.replaceChildren();
+    const say = (text) => box.append(el('div', { class: 'notice' }, icon('alert', 18), el('span', { text })));
+    if (state.dbState === 'absent') say('Ehdotuksia ja kommentteja ei voi tallentaa tässä näkymässä. Avaa sivu claude.ai:ssa kirjautuneena.');
+    if (state.dbState === 'readonly') say('Voit lukea tekstit ja ehdotukset, mutta sinulla ei ole oikeutta tallentaa uusia.');
+  }
+
+  // ─── Start ──────────────────────────────────────────────────────────────
+  function setLang(lang) {
+    state.lang = lang;
+    remember('lang', lang);
+    document.querySelectorAll('.seg button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    state.open = null;
+    renderView();
+  }
+
+  document.querySelectorAll('.seg button').forEach((b) => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  $('#only-open').addEventListener('click', (e) => {
+    state.onlyOpen = !state.onlyOpen;
+    e.currentTarget.setAttribute('aria-pressed', String(state.onlyOpen));
+    renderView();
+  });
+  let searchTimer;
+  $('#q').addEventListener('input', (e) => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => { state.query = e.target.value; state.open = null; renderNav(); renderView(); }, 180);
+  });
+  $('#page-select').addEventListener('change', (e) => go(e.target.value));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && state.open) closePanel(); });
+
+  async function connect() {
+    if (!window.claude?.use) { state.dbState = 'absent'; renderNotices(); renderView(); return; }
+    const [db, user] = await Promise.all([window.claude.use('db'), window.claude.use('user')]);
+    state.user = user;
+    if (user) state.me = await user.me();
+    if (!db) { state.dbState = 'absent'; renderNotices(); renderView(); return; }
+    state.db = db;
+    const can = user ? await user.can('data.write') : null;
+    state.dbState = can === false ? 'readonly' : 'ready';
+    renderNotices();
+    const watch = (name, into) => db.collection(name).onSnapshot((snap) => {
+      state[into] = snap.docs.map((d) => ({ ...d.data(), _id: d.id }));
+      refreshAll();
+      resolveNames();
+    }, () => {});
+    watch('suggestions', 'suggestions');
+    watch('comments', 'comments');
+    renderView();
+  }
+
+  async function start() {
+    state.lang = recall('lang', 'fi');
+    document.querySelectorAll('.seg button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === state.lang)));
+    try {
+      const res = await fetch('snapshot.json', { cache: 'no-cache' });
+      state.snap = await res.json();
+    } catch {
+      $('#view').replaceChildren(el('p', { class: 'loading', text: 'Tekstien lataus ei onnistunut. Lataa sivu uudelleen.' }));
+      return;
+    }
+    const fromHash = idOfHash(location.hash.slice(1));
+    const wanted = state.snap.pages.find((p) => p.id === fromHash) ? fromHash : recall('page', 'etusivu');
+    state.page = state.snap.pages.find((p) => p.id === wanted) ? wanted : 'etusivu';
+    renderNav();
+    renderView();
+    connect();
+  }
+
+  start();
+})();
+</script>
