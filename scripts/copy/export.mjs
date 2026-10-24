@@ -17,7 +17,7 @@
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, mkdtempSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
-import { dirname, join, relative } from 'node:path';
+import { dirname, join, relative, resolve } from 'node:path';
 
 import {
   appConstants,
@@ -35,7 +35,7 @@ import {
 } from './sources.mjs';
 
 const args = process.argv.slice(2);
-const out = join(ROOT, args.includes('--out') ? args[args.indexOf('--out') + 1] : '.copy-desk/snapshot.json');
+const out = resolve(ROOT, args.includes('--out') ? args[args.indexOf('--out') + 1] : '.copy-desk/snapshot.json');
 
 // ─── Reading the pages ──────────────────────────────────────────────────────
 
