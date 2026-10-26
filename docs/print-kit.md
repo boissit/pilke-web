@@ -15,7 +15,7 @@ printed card is then as current as the site the day the kit was last refreshed.
 | `Kuvat/Pilke – kuvat` | A Slides file: every photograph, phone mockup, unframed screen and store image at full size, one group a page, the file name under each |
 | `Pilke – elementit` | The element library, A4 landscape: wordmarks, the icon, sparkles, palette chips as shapes in the exact colours, the type styles, the struck-through steps, the coral disc, the pill buttons, cards and step numbers as native shapes, phones, photo crops and the QR codes. Copy and paste keeps size and colour |
 | `Pilke – pöytäkolmio` | One table-tent template on A4 landscape, for the public release, after a how-to page |
-| `Pilke – A5-flyer` | One two-sided A5 flyer for beta testers: exactly two pages, front and back; how to print it is in the front page's speaker notes |
+| `Pilke – A5-flyer` | One two-sided A5 flyer for beta testers: pages 1–2 are the front and back that print, pages 3–5 the front's three alternative layouts; how to print it is in the front page's speaker notes |
 
 Slides gives a file one page size, so each format is its own file. Everything is the
 owner's and private; nothing is shared.
@@ -70,11 +70,18 @@ The template is for the public release, so it says nothing about a beta:
 
 - **Face 1**, peach: the wordmark, the site's headline and lead, and the hand holding
   the phone on the coral disc.
-- **Face 2**, white: the other apps' routine struck through as on the front page, then
-  "Pilkkeessä ei swaippailla eikä chättäillä." and the lead under it.
-- **Face 3**, mint: "Näin se menee käytännössä" in five numbered steps in the site's
-  words, the code to pilke.app, the App Store and Google Play badges and "Pilke toimii
+- **Face 2**, white: the wordmark small, the other apps' routine struck through as on
+  the front page, then "Pilkkeessä ei swaippailla eikä chättäillä." and the lead under it.
+- **Face 3**, mint: the wordmark small, "Näin se menee käytännössä" in five numbered
+  steps, the code to pilke.app, the App Store and Google Play badges and "Pilke toimii
   toistaiseksi vain pääkaupunkiseudulla."
+
+The wordmark sits in the same top-left corner of every face, 40 mm wide on face 1 and
+22 mm on faces 2 and 3. The steps are `TENT_FLOW` in `slides.py`: each title with its
+own body from `etusivu.yaml`, word for word, cut to whole sentences where the face has no
+room for the rest. Luo tili, Kutsu tai tule kutsutuksi, Käy treffeillä and Anna
+palautetta are the practice cards (`pitch.practice.*`); Aika ja paikka valmiina is the
+pitch card of that name (`pitch.instead.ready.*`), third, after the invitation.
 
 The badges are the stores' own Finnish artwork, unaltered (`badges()` in `build.py`):
 both drawn 10 mm tall (Google asks for its badge to be at least the size of the other
@@ -84,21 +91,40 @@ badge; `GOOGLE_ROWS` in `slides.py` is where the drawn badge sits in it.
 
 ## The A5 flyer
 
-One flyer of exactly two pages, so it prints double-sided. The front says what Pilke
+One flyer of two printing pages, so it prints double-sided. The front says what Pilke
 does in the site's words: the headline and lead, the routine struck through with
 "Pilkkeessä ei swaippailla eikä chättäillä.", the three things Pilke does instead, and
 the hand holding the phone. The back is the owner's own text (`PRINT` in `slides.py`,
 verbatim): who is behind Pilke and the ask for testers, four things to know about the
-beta, and the code to the beta's sign-up form. How to print it is in the front page's
+beta, and the code to the beta's sign-up form with "Skannaa ja liity betaan" and the
+wordmark beside it. The owner's first block is two paragraphs, the second starting
+"Etsimme ihmisiä…" (`testers.body` and `testers.ask`). How to print it is in the front page's
 speaker notes, which do not print: `slides.py a5-flyer --notes` prints them, and they go
 into the notes shape (`read_slide_page`, `notesPage.notesProperties.speakerNotesObjectId`)
 once the slide exists. Content keeps 6 mm or more from every edge.
+
+Pages 3–5 are the front in three layouts with the same content, each labelled
+"Vaihtoehto A/B/C · ei tulosteta" along its top edge and saying in its speaker notes
+that only pages 1–2 print: **A**, photo first (`flyer_front_photo`: the hand on the
+disc large at the top, the headline on one line under it, the routine run on in two
+rows, the three features side by side); **B**, type first (`flyer_front_type`: the
+routine large on white, then the line, the headline and the features, the photo small);
+**C**, two columns (`flyer_front_split`, the earlier front). `FLYER_FRONT` names the one
+page 1 uses, A for now. To use another, drag its slide to page 1, delete the old page 1
+and the label.
 
 **Markers.** A sparkle or a step number beside a line is centred on that line's
 capitals: `first_line_mid()` puts the first baseline of a Slides text box 2.39 mm plus
 0.957 of the type size below its top, measured on the decks' own PDF export, and a
 capital is 0.70 of the size in both faces. Check it on a fresh export when the faces
 or the line spacing change.
+
+**Step numbers.** `disc_number()` draws the disc and a separate text box holding only
+the digit, grouped, and places the box so the digit's ink (Fredoka's own outline, via
+PIL) sits on the disc's centre. A digit typed into the disc shape itself lands wherever
+Slides' insets put it, low and to one side. Slides sets a lone digit 0.16 mm left of
+PIL's ink box, so the box carries that correction; on the October 2026 export every
+number sits within 0.05 mm of its disc's centre, and every disc on its title's capitals.
 
 ## Rebuild the files
 
