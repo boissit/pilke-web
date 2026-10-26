@@ -15,7 +15,7 @@ printed card is then as current as the site the day the kit was last refreshed.
 | `Kuvat/Pilke – kuvat` | A Slides file: every photograph, phone mockup, unframed screen and store image at full size, one group a page, the file name under each |
 | `Pilke – elementit` | The element library, A4 landscape: wordmarks, the icon, sparkles, palette chips as shapes in the exact colours, the type styles, the struck-through steps, the coral disc, the pill buttons, cards and step numbers as native shapes, phones, photo crops and the QR codes. Copy and paste keeps size and colour |
 | `Pilke – pöytäkolmio` | One table-tent template on A4 landscape, for the public release, after a how-to page |
-| `Pilke – A5-flyer` | One two-sided A5 flyer for beta testers: pages 1–2 are the front and back that print, pages 3–5 the front's three alternative layouts; how to print it is in the front page's speaker notes |
+| `Pilke – A5-flyer` | One two-sided A5 flyer for beta testers: exactly two pages, front and back; how to print it is in the front page's speaker notes |
 
 Slides gives a file one page size, so each format is its own file. Everything is the
 owner's and private; nothing is shared.
@@ -72,46 +72,51 @@ The template is for the public release, so it says nothing about a beta:
   the phone on the coral disc.
 - **Face 2**, white: the wordmark small, the other apps' routine struck through as on
   the front page, then "Pilkkeessä ei swaippailla eikä chättäillä." and the lead under it.
-- **Face 3**, mint: the wordmark small, "Näin se menee käytännössä" in five numbered
-  steps, the code to pilke.app, the App Store and Google Play badges and "Pilke toimii
-  toistaiseksi vain pääkaupunkiseudulla."
+- **Face 3**, mint: the wordmark small, "Näin se menee käytännössä" in six numbered
+  steps, then one footer row: the code to pilke.app and "pilke.app" on the left, the App
+  Store and Google Play badges stacked on the right; "Pilke toimii toistaiseksi vain
+  pääkaupunkiseudulla." under the row.
 
 The wordmark sits in the same top-left corner of every face, 40 mm wide on face 1 and
-22 mm on faces 2 and 3. The steps are `TENT_FLOW` in `slides.py`: each title with its
-own body from `etusivu.yaml`, word for word, cut to whole sentences where the face has no
-room for the rest. Luo tili, Kutsu tai tule kutsutuksi, Käy treffeillä and Anna
-palautetta are the practice cards (`pitch.practice.*`); Aika ja paikka valmiina is the
-pitch card of that name (`pitch.instead.ready.*`), third, after the invitation.
+22 mm on faces 2 and 3, and faces 2 and 3 carry face 1's two top-right sparkles
+(`corner_sparkles()`), above their first line. The steps are `flow()` in `slides.py`,
+the same six on the tent and the flyer: Luo tili, Kutsu tai tule kutsutuksi, Aika ja
+paikka valmiina, Käy treffeillä, Anna palautetta, Uudet treffit?. The first three bodies
+are the site's own (`pitch.practice.one/two.body` cut to their first sentence,
+`pitch.instead.ready.body` whole); the last three bodies and the sixth title are the
+owner's, verbatim (`PRINT['flow.*']`). On face 3 they are set 10.5/8.5 pt (`TENT_STEP`);
+`slides.py poytakolmio --summary` warns when they run into the footer.
 
 The badges are the stores' own Finnish artwork, unaltered (`badges()` in `build.py`):
 both drawn 10 mm tall (Google asks for its badge to be at least the size of the other
-stores'), a quarter of their height apart, and kept clear of the code and the note by
-at least that much. The Google Play PNG carries transparent rows above and below the
-badge; `GOOGLE_ROWS` in `slides.py` is where the drawn badge sits in it.
+stores'), stacked a quarter of their height apart and right-aligned on the content's
+edge, with at least that much clear space to the link and the steps. The code is as
+tall as the two badges and their gap, so its plate's top and foot line up with the
+App Store badge's top and the Google Play badge's foot. The Google Play PNG carries
+transparent rows above and below the badge; `GOOGLE_ROWS` in `slides.py` is where the
+drawn badge sits in it.
 
 ## The A5 flyer
 
-One flyer of two printing pages, so it prints double-sided. The front says what Pilke
-does in the site's words: the headline and lead, the routine struck through with
-"Pilkkeessä ei swaippailla eikä chättäillä.", the three things Pilke does instead, and
-the hand holding the phone. The back is the owner's own text (`PRINT` in `slides.py`,
-verbatim): who is behind Pilke and the ask for testers, four things to know about the
-beta, and the code to the beta's sign-up form with "Skannaa ja liity betaan" and the
-wordmark beside it. The owner's first block is two paragraphs, the second starting
-"Etsimme ihmisiä…" (`testers.body` and `testers.ask`). How to print it is in the front page's
+Exactly two pages, front and back, so it prints double-sided. The front: the wordmark
+on the left of the top row and the headline right-aligned on the same row, the lead
+under them, then two columns: "Näin se menee käytännössä" in the same six steps as the
+tent (`flow()`, set 11/9 pt, `FLYER_STEP`) on the left, and on the right the other
+apps' routine struck through, "Pilkkeessä ei swaippailla eikä chättäillä." and, at the
+foot, the hand holding the phone, as wide as the room right of the steps allows. The
+back is the owner's own text (`PRINT` in `slides.py`, verbatim): who is behind Pilke and
+the ask for testers, in two paragraphs (`testers.body`, `testers.ask`), four things to
+know about the beta, and the beta form's footer. How to print it is in the front page's
 speaker notes, which do not print: `slides.py a5-flyer --notes` prints them, and they go
 into the notes shape (`read_slide_page`, `notesPage.notesProperties.speakerNotesObjectId`)
 once the slide exists. Content keeps 6 mm or more from every edge.
 
-Pages 3–5 are the front in three layouts with the same content, each labelled
-"Vaihtoehto A/B/C · ei tulosteta" along its top edge and saying in its speaker notes
-that only pages 1–2 print: **A**, photo first (`flyer_front_photo`: the hand on the
-disc large at the top, the headline on one line under it, the routine run on in two
-rows, the three features side by side); **B**, type first (`flyer_front_type`: the
-routine large on white, then the line, the headline and the features, the photo small);
-**C**, two columns (`flyer_front_split`, the earlier front). `FLYER_FRONT` names the one
-page 1 uses, A for now. To use another, drag its slide to page 1, delete the old page 1
-and the label.
+The back's footer is one grid (`flyer_footer()`): the code on the left; in a column 6 mm
+right of it, "Skannaa ja liity betaan" with its capitals starting level with the top of
+the code's modules, and the form's address, `https://forms.gle/LNjDw77d5giuxFWeA`,
+printed as the code reads, on the modules' bottom edge; the wordmark at the content's
+right edge, standing on that same line. `qr_inset()` reads where the modules start in
+the code's PNG.
 
 **Markers.** A sparkle or a step number beside a line is centred on that line's
 capitals: `first_line_mid()` puts the first baseline of a Slides text box 2.39 mm plus
