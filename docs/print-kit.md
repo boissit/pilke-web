@@ -79,8 +79,8 @@ The template is for the public release, so it says nothing about a beta:
   `HEAD_FIRST_BASE` is how far Slides raises the first baseline at that leading); the six
   numbered steps; then
   one footer row: the code to pilke.app with "pilke.app" centred under it on the left,
-  the App Store and Google Play badges stacked on the right; "Pilke toimii toistaiseksi
-  vain pääkaupunkiseudulla." under the row.
+  the App Store and Google Play badges stacked on the right; and "Pilke toimii toistaiseksi
+  vain pääkaupunkiseudulla." standing on the content's foot.
 
 The wordmark sits in the same top-left corner of every face, 40 mm wide on face 1 and
 21 mm on faces 2 and 3 (`SMALL_WM`), and faces 2 and 3 carry face 1's two top-right
@@ -90,10 +90,13 @@ the same six on the tent and the flyer: Luo tili, Kutsu tai tule kutsutuksi, Aik
 paikka valmiina, Käy treffeillä, Anna palautetta, Uudet treffit?. The first three bodies
 are the site's own (`pitch.practice.one/two.body` cut to their first sentence,
 `pitch.instead.ready.body` whole); the last three bodies and the sixth title are the
-owner's, verbatim (`PRINT['flow.*']`). On face 3 they are set 10.5/8.5 pt (`TENT_STEP`)
-and share out the height between the heading and the footer's clear space as equal
-gaps (`steps_height()` measures them dry); `slides.py poytakolmio --summary` warns when
-the gaps would fall under the least one.
+owner's, verbatim (`PRINT['flow.*']`). On face 3 they are set 10.5/8.5 pt (`TENT_STEP`).
+Face 3 runs on one rhythm, measured ink to ink: the header row, the steps, the footer
+row and the note have equal gaps between them, and the gaps between the steps are
+`STEP_SHARE` of those (1.0: every gap on the face is the same, 5.5 mm on the export).
+`steps_ink()` measures the steps' ink dry and what each gap must be to leave that space,
+counting whether a body's last line has a descender (`ink_below()`, `DESC_EM`);
+`slides.py poytakolmio --summary` warns when a gap would fall under the least one.
 
 The badges are the stores' own Finnish artwork, unaltered (`badges()` in `build.py`):
 stacked and right-aligned on the content's edge, the same width (39.3 mm). The App Store
@@ -132,12 +135,15 @@ The back's footer (`flyer_footer()`) stands on the content's foot: the wordmark 
 left, its ink starting on the page's shared left edge with the paragraphs and the list
 markers (16.69 mm), the beta form's code on the right with its plate on the content's
 edge, the wordmark exactly as tall as the code's modules and level with them
-(`FLYER_CODE`, 18 mm), and between them three lines: "Skannaa ja liity betaan", the
-form's address `https://forms.gle/LNjDw77d5giuxFWeA` printed as the code reads, and
-pilke.app, whose baseline sits on the modules' foot. The address is sized to the line's
-width; the line's descenders clear the address's capitals by about 2 mm. The three parts
-are spaced evenly, 6.05 mm of ink to ink. `qr_inset()` reads where the modules start in
-the code's PNG.
+(`FLYER_CODE`, 18 mm), and between them three lines: "Skannaa ja liity betaan" in
+Fredoka 16 pt, the form's address printed short as `forms.gle/LNjDw77d5giuxFWeA` (the
+code reads `https://forms.gle/LNjDw77d5giuxFWeA`), and pilke.app. The line keeps its
+16 pt so it leads the block, and the address grows to match its ink width (11.31 pt;
+pilke.app follows it). The lines' ink starts on one edge; the block's top is the line's
+ink on the modules' top, pilke.app's baseline sits on the modules' foot, and the three
+lines' ink is evenly spaced (3.0 mm). `FOOTER_INK` holds the lines' ink as Slides sets
+it, measured on the export. The block is centred between the wordmark's ink and the
+modules, 6.2 mm each side. `qr_inset()` reads where the modules start in the code's PNG.
 
 **Markers.** A sparkle or a step number beside a line is centred on that line's
 capitals: `first_line_mid()` puts the first baseline of a Slides text box 2.39 mm plus

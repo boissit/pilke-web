@@ -456,7 +456,7 @@ class Deck:
 PRINT = {
     'url': 'pilke.app',
     'scan': 'Skannaa ja liity betaan',
-    'form': 'https://forms.gle/LNjDw77d5giuxFWeA',
+    'form': 'forms.gle/LNjDw77d5giuxFWeA',   # printed; the code reads https://forms.gle/LNjDw77d5giuxFWeA
     'area': 'Pilke toimii toistaiseksi vain pääkaupunkiseudulla.',
     # The flyer's back, the owner's own words (2026-10-26), kept verbatim.
     'testers.title': 'Etsimme testaajia',
@@ -565,12 +565,41 @@ def steps_height(x, w, items, title_pt, body_pt, d_num=7, tuck=2):
                + (text_height(b, tw, body_pt) - tuck if b else 0) for t, b in items)
 
 
+DESCENDS = set('gjpqy,;')
+DESC_EM = {'Figtree': 0.21, 'Fredoka': 0.225}   # how far a descender reaches below the baseline (PDF export)
+
+
+def ink_below(text, w, size, face='Figtree', weight=400):
+    """From the ink's foot on a text box's last line down to the box's foot, mm: a line
+    with no descender ends its ink on the baseline."""
+    em = size * PT_MM
+    lines = wrap(text, face, weight, size, w - 2 * INSET_X)
+    line_mm = em * LINE_EM[face] * (100 if face == 'Fredoka' else 125) / 100
+    foot = 2.39 + 0.957 * em + (len(lines) - 1) * line_mm
+    if DESCENDS & set(lines[-1]):
+        foot += DESC_EM[face] * em
+    return text_height(text, w, size, face, weight) - foot
+
+
+def steps_ink(x, w, items, title_pt, body_pt, d_num=7, tuck=2):
+    """The steps' ink with no gaps between them, from the first disc's top to the last
+    line's ink foot, and what each gap must be to leave a given space ink to ink: the
+    space less the ink-free strip below each body and above the next disc."""
+    tx = x + d_num + 2.5 - INSET_X
+    ink_top = first_line_mid(0, title_pt) - d_num / 2
+    below = [ink_below(b, x + w - tx, body_pt) for _, b in items]
+    ink = steps_height(x, w, items, title_pt, body_pt, d_num, tuck) - ink_top - below[-1]
+    ink -= sum(b + ink_top for b in below[:-1])
+    return ink_top, ink, [b + ink_top for b in below[:-1]]
+
+
 def steps(d, x, y, w, items, title_pt, body_pt, gap=3, d_num=7, tuck=2):
     """Numbered steps: a white disc with its number centred in it by the ink, the disc
     centred on the title's capitals, the title the same distance from it on every row.
     Each body's box starts `tuck` mm up inside its title's, which sets the space between
-    the two."""
+    the two. A list of gaps sets each one in turn."""
     tx = x + d_num + 2.5 - INSET_X
+    gaps = gap if isinstance(gap, list) else [gap] * len(items)
     for n, (title, body) in enumerate(items, 1):
         cy = first_line_mid(y, title_pt)
         d.disc_number(x + d_num / 2, cy, d_num, n)
@@ -579,7 +608,7 @@ def steps(d, x, y, w, items, title_pt, body_pt, gap=3, d_num=7, tuck=2):
         if body:
             _, bh = d.text(tx, y - tuck, x + w - tx, body, body_pt)
             y += bh - tuck
-        y += gap
+        y += gaps[n - 1] if n <= len(gaps) else 0
     return y
 
 
@@ -773,9 +802,15 @@ def triangle_faces(d):
     d.text(x + w - widest - 4, baseline_box(base1, hpt) + HEAD_FIRST_BASE * em, widest + 4 + INSET_X, head,
            hpt, face='Fredoka', weight=600, align='END', spacing=lead, h=hh)
     corner_sparkles(d, x, y, w, big=(-5, 23.5, 8), small=(-15, 22.5))
-    top = y + 3 + wh + 3
-    # The footer row, from the foot up: the note, the badges and the code with its link.
-    d.text(x, bottom - 8.5, w, PRINT['area'], 8, color=C['soft'], align='CENTER')
+    # One rhythm down the face: the header row, the steps, the code-and-badges row and the
+    # note, measured ink to ink, with equal gaps between them; the gaps between the steps,
+    # ink to ink as well, are a share of those. The note stands on the content's foot.
+    tpt, bpt, gmin = TENT_STEP[:3]
+    d_num, tuck = 6.5, 2.5
+    note_pt = 8
+    note_base = bottom - DESC_EM['Figtree'] * note_pt * PT_MM - 0.2
+    note_top = note_base - 0.70 * note_pt * PT_MM
+    head_bottom = base2 + DESC_EM['Fredoka'] * em   # the heading's descender, below the wordmark's foot
     apple_h = 11
     iw, ih = size_of(BADGE_APPLE)
     top_r, bottom_r, _ = GOOGLE_ROWS
@@ -784,27 +819,31 @@ def triangle_faces(d):
     stack = apple_h + bw * (bottom_r - top_r) / gw_px
     clear = max(apple_h, stack - apple_h) / 4
     stack += clear
-    ry = bottom - 8.5 - 3 - stack
+    url_pt = 11
+    uem = url_pt * PT_MM
+    foot_h = stack + DESC_EM['Fredoka'] * uem    # down to pilke.app's descender
+    ink_top, need, strips = steps_ink(x, w, flow(), tpt, bpt, d_num=d_num, tuck=tuck)
+    n_gaps = len(strips)
+    G = (note_top - head_bottom - foot_h - need) / (3 + n_gaps * STEP_SHARE)
+    gaps = [G * STEP_SHARE - strip for strip in strips]
+    gap = min(gaps)
+    if gap < gmin:
+        d.warnings.append(f'{d.sid} face 3: the gap between two steps would be {gap:.1f} mm')
+    top = head_bottom + G - ink_top
+    ry = head_bottom + G + need + n_gaps * G * STEP_SHARE + G
+    d.text(x, baseline_box(note_base, note_pt), w, PRINT['area'], note_pt, color=C['soft'], align='CENTER')
     store_badges(d, x + w, ry, apple_h)
     # The code and pilke.app under it make a block as tall as the badges: the plate's top
     # level with the App Store badge's, the link's baseline on the Google Play badge's foot.
-    url_pt = 11
-    uem = url_pt * PT_MM
     q = stack - 1.5 - 0.70 * uem
     d.qr(x, ry, q, code='site')
     d.text(x - INSET_X, baseline_box(ry + stack, url_pt), q + 2 * INSET_X, PRINT['url'], url_pt, face='Fredoka',
            weight=600, align='CENTER')
-    # The steps share out what is left between the heading and the footer's clear space.
-    tpt, bpt, gmin = TENT_STEP[:3]
-    room = ry - clear - top
-    need = steps_height(x, w, flow(), tpt, bpt, d_num=6.5, tuck=2.5)
-    gap = min(3.5, (room - need) / (len(flow()) - 1))
-    if gap < gmin:
-        d.warnings.append(f'{d.sid} face 3: the steps need {need:.1f} mm, the room is {room:.1f}')
-    steps(d, x, top, w, flow(), tpt, bpt, gap=gap, d_num=6.5, tuck=2.5)
+    steps(d, x, top, w, flow(), tpt, bpt, gap=gaps, d_num=d_num, tuck=tuck)
 
 
 TENT_STEP = (10.5, 8.5, 1.0)   # face 3: step title pt, body pt, least gap mm
+STEP_SHARE = 1.0    # face 3: the gap between two steps, ink to ink, as a share of the gap between two groups
 WM_LETTER_TOP = 0.134   # the wordmark's letters start this far down its height; the sparkle is above
 HEAD_FOOT = 0.10        # the heading's second baseline stands this far above the wordmark's foot, mm
 HEAD_LEADING = 90       # the heading's line spacing, %
@@ -841,39 +880,50 @@ def flyer_footer(d, bottom, left):
     """Along the foot of the back, standing on `bottom`: the wordmark on the left, its ink
     starting on the page's shared left edge `left`, the beta form's code on the right,
     the wordmark as tall as the code's modules and level with them, and between them the
-    line, the form's address and pilke.app, the address sized to the line's width and
-    pilke.app's baseline on the modules' foot. The three are spaced evenly."""
+    line, the form's address and pilke.app, the address's ink as wide as the line's, the
+    three lines' ink starting on one edge and pilke.app's baseline on the modules' foot.
+    The block's gaps to the wordmark and the code are equal, as are the lines'."""
     x, _, w, _ = A5_C
     mods = FLYER_CODE
     frac = qr_inset('form', 100) / 100
     q = mods / (1 - 2 * frac)
     inset = q * frac
     title_pt = 16
+    t_em = title_pt * PT_MM
     tw = text_width_mm(PRINT['scan'], 'Fredoka', 600, title_pt)
-    url_pt = round(title_pt * tw / text_width_mm(PRINT['form'], 'Figtree', 500, title_pt), 2)
+    ink_w = tw - sum(FOOTER_INK['scan'][:2]) * t_em
+    per_pt = text_width_mm(PRINT['form'], 'Figtree', 500, 1) - sum(FOOTER_INK['form'][:2]) * PT_MM
+    url_pt = round(ink_w / per_pt, 2)
+    url_em = url_pt * PT_MM
     wm_w = mods / 0.72
-    # Slides sets the lines' ink 0.04 mm left of the box's text origin and 0.3 mm narrower
-    # than PIL measures them (PDF export); the gaps are shared out on the ink.
-    ink_w = tw - 0.29
     gap = (x + w - inset - left - wm_w - ink_w - mods) / 2
     mod_bottom = bottom - inset
     mod_top = mod_bottom - mods
     d.wordmark('muste', left, mod_top, w=wm_w)
-    col = left + wm_w + gap + 0.04
-    url_em = url_pt * PT_MM
+    col = left + wm_w + gap
+    # The block runs from the line's ink on the modules' top to pilke.app's baseline on
+    # their foot, with equal gaps between the three lines' ink.
     site_base = mod_bottom
-    form_base = site_base - 1.45 * url_em
-    # The line's descenders clear the address's capitals by 2 mm.
-    title_base = form_base - 0.70 * url_em - 2 - 0.20 * title_pt * PT_MM
-    d.text(col - INSET_X, baseline_box(title_base, title_pt), tw + 2 * INSET_X + 1, PRINT['scan'], title_pt,
-           face='Fredoka', weight=600)
-    d.text(col - INSET_X, baseline_box(form_base, url_pt), tw + 2 * INSET_X + 1, PRINT['form'], url_pt, weight=500)
-    d.text(col - INSET_X, baseline_box(site_base, url_pt), tw + 2 * INSET_X + 1, PRINT['url'], url_pt, weight=500)
+    ink = (sum(FOOTER_INK['scan'][2:]) * t_em + sum(FOOTER_INK['form'][2:]) * url_em
+           + FOOTER_INK['url'][2] * url_em)
+    g = (mods - ink) / 2
+    form_base = site_base - FOOTER_INK['url'][2] * url_em - g - FOOTER_INK['form'][3] * url_em
+    title_base = mod_top + FOOTER_INK['scan'][2] * t_em
+    for key, base, size, face, weight in (('scan', title_base, title_pt, 'Fredoka', 600),
+                                          ('form', form_base, url_pt, 'Figtree', 500),
+                                          ('url', site_base, url_pt, 'Figtree', 500)):
+        bx = col - FOOTER_INK[key][0] * size * PT_MM - INSET_X
+        d.text(bx, baseline_box(base, size), tw + 2 * INSET_X + 1, PRINT[key], size, face=face, weight=weight)
     d.qr(x + w - q, bottom - q, q, code='form')
     return mod_top
 
 
 FLYER_CODE = 18   # the back's code: its modules' side, mm; the wordmark is as tall
+# The back's footer lines' ink as Slides sets it, in ems (PDF export): from the box's
+# inset edge to the first glyph's ink, from the last glyph's ink back to where PIL ends
+# the line, and above and below the baseline.
+FOOTER_INK = {'scan': (0.0, 0.120, 0.714, 0.225), 'form': (0.0, 0.102, 0.731, 0.226),
+              'url': (0.040, 0.0, 0.718, 0.0)}
 
 
 FLYER_HOW_TO = (
