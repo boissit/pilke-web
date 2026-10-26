@@ -13,8 +13,8 @@ printed card is then as current as the site the day the kit was last refreshed.
 | `QR/` | `https://pilke.app` and `https://pilke.app/#beta`, ink and white on transparency, PNG and SVG. The App Store and Google Play codes are there too, for after the release: both listings answer 404 today, and `osoitteet.txt` says so |
 | `Kuvat/Pilke – kuvat` | A Slides file: every photograph, phone mockup, unframed screen and store image at full size, one group a page, the file name under each |
 | `Pilke – elementit` | The element library, A4 landscape: wordmarks, the icon, sparkles, palette chips as shapes in the exact colours, the type styles, the struck-through steps, the coral disc, the pill buttons, cards and step numbers as native shapes, phones, photo crops and the QR codes. Copy and paste keeps size and colour |
-| `Pilke – pöytäkolmio` | Three table-tent templates on A4 portrait, after a how-to page |
-| `Pilke – A5-flyer` | Three two-sided flyer templates on A5, after a how-to page |
+| `Pilke – pöytäkolmio` | Two table-tent templates on A4 landscape, after a how-to page |
+| `Pilke – A5-flyer` | One two-sided A5 flyer for beta testers, front and back, and a second front, after a how-to page |
 
 Slides gives a file one page size, so each format is its own file. Everything is the
 owner's and private; nothing is shared.
@@ -35,30 +35,45 @@ build, laid out with the folder's names, for dragging into Drive by hand.
 
 ## The table tent
 
-A triangular prism standing on its end: three tall faces of 66 × 297 mm, each upright
-when it stands.
+A triangular prism standing on its end: three faces of 99 × 210 mm side by side on A4
+landscape, each upright when it stands. There is no glue flap: the sheet's left and
+right edges meet at the third edge of the prism and are taped inside, so a printer's
+blank margin falls where the faces meet.
 
 ```
- 0   12           78           144          210 mm
- |liima| puoli 1   |  puoli 2   |  puoli 3   |
- | 12  |    66     |     66     |     66     |   297 mm tall
+ 0              99             198            297 mm
+ |   puoli 1    |    puoli 2    |    puoli 3    |
+ |     99       |      99       |      99       |   210 mm tall
 ```
 
-- **Print** one template page on A4, portrait, at 100 % (actual size), on 160–250 g/m²
+- **Print** one template page on A4, landscape, at 100 % (actual size), on 160–250 g/m²
   card if there is any.
-- **Cut** nothing: the sheet is already the size. Each face is a rounded card 3 mm
-  inside its folds and 8 mm inside the top and foot, so a printer's 3–5 mm blank edge
-  falls on the white ground round it; text, phones and codes keep 8 mm from the folds
-  and 15 mm from the top and foot.
-- **Fold** along the three dashed lines, at 12, 78 and 144 mm from the left edge, each
-  one backwards, print outwards.
-- **Glue** the 12 mm flap ("liimaa tähän") and press the right edge of face 3 onto it
-  from inside. The faces run 1, 2, 3 round the triangle.
-- The fold lines, the flap's tint and its label are one group, **Ohjeviivat**, the
-  topmost thing on each page: one click and Delete removes them all.
+- **Cut** nothing: the sheet is already the size. Each face is a rounded card 5 mm
+  inside its folds or the sheet's edge and 6 mm inside the top and foot, so a printer's
+  3–5 mm blank edge falls on the white ground round it; the content keeps 4 mm inside
+  the card, 9 mm from a fold and 10 mm from the top and foot.
+- **Fold** along the two dashed lines, at 99 and 198 mm from the left edge, each one
+  backwards, print outwards.
+- **Tape** the left and right edges together from inside. The faces run 1, 2, 3 round
+  the triangle.
+- The two fold lines are one group, **Ohjeviivat**, the topmost thing on each page: one
+  click and Delete removes them.
 
-The A5 flyer keeps its content 6 mm or more from every edge. The how-to page of each
-file says how to print it, on A5 or two to an A4 sheet.
+Both templates have the hand holding the phone and the site's headline on face 1, the
+other apps' routine struck through and "Pilkkeessä ei swaippailla eikä chättäillä." on
+face 2, and the beta on face 3, with the pilke.app/#beta code and a line saying Pilke
+works only in pääkaupunkiseutu for now.
+
+## The A5 flyer
+
+One flyer, two sides, for finding beta testers: the front says what Pilke does in the
+site's words, the back who is behind it, what is asked of a tester and what to expect
+of an early beta, and ends in the beta code. Page 4 is a second front with the
+struck-through routine. Content keeps 6 mm or more from every edge, and the how-to
+page says how to print it, on A5 or two to an A4 sheet.
+
+The lines that are the kit's own and not the site's are in `PRINT` at the top of the
+decks' definitions in `slides.py`, for the owner to review.
 
 ## Rebuild the files
 
@@ -175,7 +190,7 @@ The folder's ids are at the end of this page.
 | Kuvat | `1f3Lt-qv-oiCMhKtEYnPT-mQECDbsfoYt` |
 | QR | `1Mf7N8l70puVgiP2-WbbSG805petOPGIA` |
 | Pilke – elementit | `17M4W07GlKV2ZZfE-2s2MKT8Hf3poGka8d3MExMuSlps` |
-| Pilke – pöytäkolmio | `1d65fdXh29GshJoMswYYdr1NlCoxt4jYlC8yAz6p0G58` |
+| Pilke – pöytäkolmio | `12wuzVPzNYIIuJEo2YmZ62Ij9U3gFKqmA1VUCARX1hWw` |
 | Pilke – A5-flyer | `1T0juNo9puhLvO5qpoKV61WKCyHi3QQ6mUVkXITnZmVg` |
 | Kuvat/Pilke – kuvat | `18F9QtSrwB0JcBRA7QkQwJYDWpmsgbM7eN1bv9KKsdaY` |
 

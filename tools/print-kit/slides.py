@@ -137,6 +137,9 @@ PHONE = {k: f'Kuvat/puhelimet/puhelin-{k}.png' for k in
           'persoonallisuuskysely', 'palaute', 'asetukset-turvallisuus']}
 PHONE_MARGIN = 0.16   # build.py's phone_frame(): the shadow's room either side, in phone widths
 QR_INK = 'QR/qr-pilke-app-muste.png'
+QR_CODES = {'site': (QR_INK, 'https://pilke.app'),
+            'beta': ('QR/qr-pilke-app-beta-muste.png', 'https://pilke.app/#beta')}
+BETA_ROUNDED = 'Kuvat/valokuvat/rajaus-pyorea-talon-edessa.png'
 HERO_DISC = 'Kuvat/valokuvat/kasi-ja-puhelin-korallilevylla.png'
 
 
@@ -396,115 +399,141 @@ class Deck:
                                                     'fields': 'contentAlignment'}})
         return oid
 
-    def qr(self, x, y, d, caption=None, plate=True):
-        """The pilke.app code, ink on a white plate: a code needs a light ground to scan."""
+    def qr(self, x, y, d, code='site', plate=True):
+        """A code in ink on a white plate, since a code needs a light ground to scan:
+        `site` is pilke.app, `beta` pilke.app/#beta."""
+        path, target = QR_CODES[code]
         ids = []
         if plate:
             ids.append(self.card(x, y, d, d, fill=C['white']))
             pad = d * 0.06
-            ids.append(self.image(QR_INK, x + pad, y + pad, d - 2 * pad, d - 2 * pad, role='qr')[0])
+            ids.append(self.image(path, x + pad, y + pad, d - 2 * pad, d - 2 * pad, role='qr')[0])
         else:
-            ids.append(self.image(QR_INK, x, y, d, d, role='qr')[0])
-        gid = self.group(ids, title='QR: https://pilke.app')
+            ids.append(self.image(path, x, y, d, d, role='qr')[0])
+        gid = self.group(ids, title=f'QR: {target}')
         return gid
 
 
 # ───────────────────────────── shared copy for print ─────────────────────────────
 
-# Lines written for print, not on the site. Kept few, and in the owner's register.
+# Lines written for print, not on the site, in the owner's register. Everything here
+# is the kit's own copy, for the owner to review; the rest is the site's.
 PRINT = {
     'url': 'pilke.app',
     'scan': 'Skannaa ja liity betaan',
+    'area': 'Pilke toimii toistaiseksi vain pääkaupunkiseudulla.',
+    # The flyer's back: who is behind Pilke, the ask, and what to expect of the beta.
+    'testers.title': 'Etsimme testaajia',
+    'testers.body': 'Pilke on muutaman helsinkiläisen kaverin harrastusprojekti. Etsimme ihmisiä, jotka '
+                    'haluavat kokeilla sovellusta ja auttaa meitä selvittämään, toimiiko idea.',
+    'expect.title': 'Hyvä tietää',
+    'expect.beta.title': 'Varhainen beta',
+    'expect.beta.body': 'Sovellus on vielä keskeneräinen, ja jokin voi hajota.',
+    'expect.area.title': 'Pääkaupunkiseutu',
+    'expect.area.body': 'Pilke toimii toistaiseksi vain pääkaupunkiseudulla.',
+    'expect.few.title': 'Käyttäjiä on vielä vähän',
+    'expect.few.body': 'Siksi ehdokkaiden löytyminen voi viedä aikaa.',
+    'expect.feedback.title': 'Palaute on kultaa',
+    'expect.feedback.body': 'Kerro meille, mikä toimii ja mikä takkuaa: Asetuksista löytyy kohta Anna palautetta.',
 }
 
 
-def how_to(d, title, steps, note=None):
-    """The first slide of a template file: how to print it."""
+def how_to(d, title, steps, note=None, w=None):
+    """The first slide of a template file: how to print it. `w` narrows the steps to
+    leave room beside them."""
     d.slide('Näin tulostat', bg=C['ground'])
     m = 14 if d.W < 200 else 18
+    w = w or d.W - 2 * m
     _, th = d.text(m, m, d.W - 2 * m, title, 26 if d.W < 200 else 30, face='Fredoka', weight=600)
     y = m + th + 6
     for i, (head, body) in enumerate(steps, 1):
         d.numeral(m, y, 9, i)
-        tid, h1 = d.text(m + 12, y - 0.5, d.W - 2 * m - 12, head, 12, weight=700)
-        _, h2 = d.text(m + 12, y + h1 - 1.5, d.W - 2 * m - 12, body, 10.5, color=C['soft'])
+        tid, h1 = d.text(m + 12, y - 0.5, w - 12, head, 12, weight=700)
+        _, h2 = d.text(m + 12, y + h1 - 1.5, w - 12, body, 10.5, color=C['soft'])
         y += max(h1 + h2, 10) + 3
     if note:
         d.text(m, y + 2, d.W - 2 * m, note, 9.5, color=C['soft'])
     return y
 
 
+def bullets(d, x, y, w, items, title_pt, body_pt=None, title_face='Fredoka', gap=4, spark=6):
+    """Rows of a rose sparkle and a title, with a body under it when there is one.
+    Returns the y under the last row."""
+    for title, body in items:
+        d.sparkle('ruusu', x + spark / 2, y + spark * 0.65, spark)
+        weight = 600 if title_face == 'Fredoka' else 700
+        _, th = d.text(x + spark + 2, y, w - spark - 2, title, title_pt, face=title_face, weight=weight)
+        y += th
+        if body:
+            _, bh = d.text(x + spark + 2, y - 1.5, w - spark - 2, body, body_pt)
+            y += bh - 1.5
+        y += gap
+    return y
+
+
 # ───────────────────────────── Pöytäkolmio ─────────────────────────────
 
-FLAP = 12
-PANEL = 66
-FOLDS = [FLAP, FLAP + PANEL, FLAP + 2 * PANEL]  # 12, 78, 144
-CARD_X, CARD_Y = 3, 8          # a face's card, inset from the folds and from the sheet's top and foot
-PAD = 5                        # content inside the card
+# A4 landscape, three upright faces side by side: folds at 99 and 198 mm, and the
+# sheet's two short edges meet at the third edge of the prism, taped inside. Each face
+# is a card 5 mm inside its folds or the sheet's edge (where a printer's blank margin
+# falls on the white ground) and 6 mm inside the top and foot, and the content keeps
+# 4 mm inside the card: 9 mm from a fold, 10 mm from the top and foot.
+TT_W, TT_H = 297, 210
+PANEL = 99
+FOLDS = [PANEL, 2 * PANEL]
+CARD_X, CARD_Y = 5, 6
+PAD = 4
 
 
 def face_box(i):
-    """Panel i (0, 1, 2): its card and its content box, mm."""
-    px = FLAP + i * PANEL
-    card = (px + CARD_X, CARD_Y, PANEL - 2 * CARD_X, 297 - 2 * CARD_Y)
-    content = (card[0] + PAD, card[1] + PAD + 2, card[2] - 2 * PAD, card[3] - 2 * PAD - 4)
+    """Face i (0, 1, 2): its left edge, its card and its content box, mm."""
+    px = i * PANEL
+    card = (px + CARD_X, CARD_Y, PANEL - 2 * CARD_X, TT_H - 2 * CARD_Y)
+    content = (card[0] + PAD, card[1] + PAD, card[2] - 2 * PAD, card[3] - 2 * PAD)
     return px, card, content
 
 
 def triangle_guides(d):
-    """Fold lines and the glue flap: one group on top of the page, named so it is easy
-    to find and delete. The folds print as a pale dashed line, the flap as a tint
-    that ends up inside the triangle."""
-    ids = [d.rect(0, 0, FLAP, 297, fill='#F3ECEE', role='flap')]
-    # A 272 x 8 mm box turned a quarter about its centre, which is the flap's middle.
-    tid, _ = d.text(FLAP / 2 - 136, 297 / 2 - 4.5, 272, 'liimaa tähän   ·   liimaa tähän   ·   liimaa tähän', 10,
-                    weight=600, color=C['guide'], align='CENTER', h=9, valign='MIDDLE', rot=-90, role='glue',
-                    check=False)
-    ids.append(tid)
-    for x in FOLDS:
-        ids.append(d.line(x, 0, x, 297, C['guide'], pt=0.5, dash='DASH'))
+    """The two folds, a pale dashed line each: one group on top of the page, named so
+    it is easy to find and delete."""
+    ids = [d.line(x, 0, x, TT_H, C['guide'], pt=0.5, dash='DASH') for x in FOLDS]
     return d.group(ids, title='Ohjeviivat',
-                   description='Taitteet ja liimaläppä. Poista koko ryhmä, jos et halua niitä tulosteeseen.')
+                   description='Taitteet. Poista koko ryhmä, jos et halua niitä tulosteeseen.')
 
 
 def build_triangle(layout):
-    d = Deck('pk', 210, 297, layout)
-    how_to(d, 'Pöytäkolmio – näin tulostat ja taitat', [
-        ('Tulosta A4:lle todellisessa koossa',
-         'Valitse yksi pohja (sivut 2–4). Tiedosto › Lataa › PDF ja tulosta PDF: paperi A4, pystysuunta, '
+    d = Deck('pk', TT_W, TT_H, layout)
+    how_to(d, 'Pöytäkolmio – näin tulostat ja taitat', w=162, steps=[
+        ('Tulosta A4:lle vaakasuuntaan todellisessa koossa',
+         'Valitse pohja (sivu 2 tai 3). Tiedosto › Lataa › PDF ja tulosta PDF: paperi A4, vaakasuunta, '
          'skaalaus 100 % eli todellinen koko. Paksu paperi (160–250 g/m²) seisoo parhaiten.'),
         ('Arkki on valmiiksi oikean kokoinen',
-         '12 mm liimaläppä ja kolme 66 mm leveää puolta täyttävät A4:n leveyden. Tulostimen 3–5 mm tyhjät '
-         'reunat osuvat vaaleaan pohjaan korttien ympärillä, joten arkki on heti valmis taitettavaksi.'),
-        ('Taita kolmesta katkoviivasta',
-         'Taitteet ovat 12, 78 ja 144 mm:n kohdalla vasemmasta reunasta. Taita jokainen taaksepäin, kuva ulospäin. '
+         'Kolme 99 mm leveää puolta täyttävät A4:n leveyden. Tulostimen 3–5 mm tyhjät reunat osuvat '
+         'valkoiseen pohjaan korttien ympärillä, joten mitään ei tarvitse leikata.'),
+        ('Taita kahdesta katkoviivasta',
+         'Taitteet ovat 99 ja 198 mm:n kohdalla vasemmasta reunasta. Taita kumpikin taaksepäin, kuva ulospäin. '
          'Viivain ja tylppä veitsi tekevät taitteesta suoran.'),
-        ('Liimaa läppä',
-         'Levitä liima tai kaksipuolinen teippi läppään, jossa lukee "liimaa tähän". Kierrä arkki kolmioksi ja '
-         'paina oikeanpuoleisen puolen reuna läpän päälle, sisäpuolelta. Kolmio seisoo pystyssä, ja kaikki '
-         'kolme puolta ovat oikein päin.'),
+        ('Teippaa viimeinen reuna sisäpuolelta',
+         'Kierrä arkki kolmioksi niin, että sen vasen ja oikea reuna kohtaavat, ja teippaa sauma sisäpuolelta. '
+         'Kolmio seisoo pystyssä, ja kaikki kolme puolta ovat oikein päin.'),
         ('Ohjeviivat ovat yksi ryhmä',
-         'Taitteet ja läppä ovat ryhmässä "Ohjeviivat". Klikkaa mitä tahansa ohjeviivaa ja paina Delete, '
+         'Taitteet ovat ryhmässä "Ohjeviivat". Klikkaa kumpaa tahansa katkoviivaa ja paina Delete, '
          'jos haluat tulosteen ilman niitä.'),
     ])
-    # The strip, drawn small: what each strip of the sheet becomes.
-    sx, sy, k = 18, 214, 0.62
-    labels = ['liima', 'puoli 1', 'puoli 2', 'puoli 3']
-    widths = [FLAP, PANEL, PANEL, PANEL]
-    x = sx
-    for lab, wd in zip(labels, widths):
-        d.rect(x, sy, wd * k, 52, fill=C['white'] if lab != 'liima' else '#F3ECEE', outline=C['guide'], outline_pt=0.5,
-               dash='DASH' if lab != 'liima' else None)
-        d.text(x - 4, sy + 52 + 1, wd * k + 8, f'{wd} mm', 7, color=C['soft'], align='CENTER', check=False)
-        if lab != 'liima':
-            d.text(x, sy + 20, wd * k, lab, 9, weight=600, color=C['soft'], align='CENTER')
-        x += wd * k
-    d.text(sx + 210 * k + 6, sy, 210 - (sx + 210 * k + 6) - 14,
-           'Arkki ylhäältä: läppä vasemmalla, sitten kolme puolta. Taitettuna puolet 1, 2 ja 3 kiertävät '
-           'kolmion ympäri, ja läppä jää puolen 3 alle.', 9.5, color=C['soft'])
+    # The sheet, drawn small beside the steps: three faces side by side.
+    k = 0.32
+    sx, sy = TT_W - 18 - TT_W * k, 52
+    for i in range(3):
+        x = sx + i * PANEL * k
+        d.rect(x, sy, PANEL * k, TT_H * k, fill=C['white'], outline=C['guide'], outline_pt=0.5,
+               dash=None if i == 0 else 'DASH')
+        d.text(x, sy + TT_H * k / 2 - 4, PANEL * k, f'puoli {i + 1}', 9, weight=600, color=C['soft'], align='CENTER')
+        d.text(x - 4, sy + TT_H * k + 1, PANEL * k + 8, '99 mm', 7, color=C['soft'], align='CENTER', check=False)
+    d.text(sx, sy + TT_H * k + 7, TT_W * k,
+           'Arkki edestä: kolme puolta vierekkäin. Taitettuna ne kiertävät kolmion ympäri, ja arkin vasen ja '
+           'oikea reuna teipataan yhteen kolmion sisäpuolelta.', 10, color=C['soft'])
 
-    variants = [triangle_v1, triangle_v2, triangle_v3]
-    for v in variants:
+    for v in [triangle_v1, triangle_v2]:
         d.slide(v.__doc__.strip().split('\n')[0], bg=C['white'])
         v(d)
         triangle_guides(d)
@@ -522,120 +551,90 @@ def scatter(d, colour, spots):
         d.sparkle(colour, cx, cy, s, r)
 
 
-def tri_cta(d, i, fill, heading, lead=None, button_style='ink', wordmark=None, outline=None, spark='vaalea-koralli'):
-    """The face with the code: a heading, the QR on its white plate, the button and
-    the address, the code low on the face where a phone is held up to it."""
+def headline(d, x, y, w, size):
+    """The site's headline, broken where the site breaks it on a narrow screen."""
+    return d.text(x, y, w, T['hero.title'].replace(', ', ',\n'), size, face='Fredoka', weight=600)
+
+
+def tri_struck(d, i, fill, outline=None):
+    """The other apps' routine, struck through as on the front page, and the line under it."""
+    x, y, w, h = tri_card(d, i, fill, outline=outline)
+    steps = [T['pitch.elsewhere.swipe'], T['pitch.elsewhere.chat'], T['pitch.elsewhere.ghost'],
+             T['pitch.elsewhere.swipe'], T['pitch.elsewhere.more'], T['pitch.elsewhere.maybe']]
+    _, yy = d.struck(x - 1, y + 10, w + 2, steps, 21, gap=0.3)
+    _, th = d.text(x, yy + 10, w, T['pitch.instead.title'], 24, face='Fredoka', weight=600)
+    return x, y, w, h, yy + 10 + th
+
+
+def tri_beta(d, i, fill, button_style='ink', outline=None, wordmark=None, spark='vaalea-koralli'):
+    """The beta: the heading, where Pilke works, and the code to pilke.app/#beta low on
+    the face, where a phone is held up to it."""
     x, y, w, h = tri_card(d, i, fill, outline=outline)
     bottom = y + h
-    scatter(d, spark, [(x + w - 4, y + 3, 15, 14), (x + 3, y + 104, 8, -26), (x + w - 6, y + 124, 11, 30)])
+    q = 58
+    qy = bottom - 40 - q
+    scatter(d, spark, [(x + w - 4, y + 2, 16, 14), (x + 3, qy + 34, 9, -26), (x + w - 3, qy + 12, 10, 30)])
     top = y + 8
     if wordmark:
-        d.wordmark(wordmark, x + 3, top, w=w - 6)
-        top += (w - 6) * 0.72 + 12
-    _, hh = d.text(x, top, w, heading, 24, face='Fredoka', weight=600)
-    if lead:
-        d.text(x, top + hh + 1, w, lead, 12, weight=500)
-    q = w - 4
-    qy = bottom - 46 - q
-    d.qr(x + 2, qy, q)
-    d.pill(x + 2, qy + q + 8, w - 4, 13, T['cta.button'], style=button_style, size=13)
-    d.text(x, qy + q + 25, w, PRINT['url'], 14, face='Fredoka', weight=600, align='CENTER')
+        d.wordmark(wordmark, x + 2, top, w=30)
+        top += 30 * 0.72 + 8
+    _, hh = d.text(x, top, w, T['cta.title'], 24, face='Fredoka', weight=600)
+    _, ah = d.text(x, top + hh + 2, w - 6, PRINT['area'], 13, weight=500)
+    if top + hh + 2 + ah > qy - 3:
+        d.warnings.append(f'{d.sid} beta face: the text runs into the code')
+    d.qr(x + (w - q) / 2, qy, q, code='beta')
+    d.pill(x + (w - 60) / 2, qy + q + 6, 60, 13, T['cta.button'], style=button_style, size=13)
+    d.text(x, qy + q + 22, w, PRINT['url'], 14, face='Fredoka', weight=600, align='CENTER')
 
 
 def triangle_v1(d):
     """Pohja 1 · Vihdoin, treffisovellus"""
-    # Face 1: the wordmark and the headline on peach, the coral disc at the foot.
+    # Face 1: the wordmark and the headline on peach, the hand and phone on the coral disc.
     x, y, w, h = tri_card(d, 0, C['peach'])
-    scatter(d, 'persikka', [(x + w - 5, y + 3, 16, 14), (x + 4, y + 66, 9, -26), (x + w - 3, y + 172, 14, -18)])
-    d.wordmark('muste', x + 3, y + 8, w=w - 6)
-    _, hh = d.text(x, y + 74, w, 'Vihdoin,\ntreffi-\nsovellus', 30, face='Fredoka', weight=600)
-    d.text(x, y + 74 + hh + 4, w, T['pitch.hero.lead'], 12.5, weight=500)
-    d.disc(x + 2, y + h - 62, w - 4)
-    d.sparkle('ruusu', x + w - 8, y + h - 60, 15, 14)
-    d.sparkle('ruusu', x + w - 1, y + h - 70, 6, -20)
-    d.sparkle('vaalea-koralli', x + 14, y + h - 24, 10, 30)
-    # Face 2: a phone with the invitation, and the three things Pilke does instead.
-    x, y, w, h = tri_card(d, 1, C['white'], outline=C['rule'])
-    # The phone a little narrower than the face, so the three bodies end 15 mm above
-    # the foot.
-    _, ph = d.phone('treffikutsu', x + 5, y + 5, w - 10)
-    yy = y + 5 + ph + 10
-    for key in ['match', 'invite', 'ready']:
-        body = T[f'pitch.instead.{key}.body']
-        if key != 'invite':
-            body = first_sentence(body)
-        d.sparkle('ruusu', x + 4, yy + 4.2, 6.5)
-        _, th = d.text(x + 8, yy, w - 8, T[f'pitch.instead.{key}.title'], 13, face='Fredoka', weight=600)
-        _, bh = d.text(x + 8, yy + th - 1, w - 8, body, 9.5)
-        yy += th + bh + 6
+    scatter(d, 'persikka', [(x + w - 6, y + 4, 18, 14), (x + w - 14, y + 30, 8, -26), (x + 4, y + 104, 10, 30)])
+    d.wordmark('muste', x + 1, y + 4, w=40)
+    _, hh = headline(d, x, y + 38, w, 30)
+    d.text(x, y + 38 + hh + 2, w - 4, T['pitch.hero.lead'], 12.5, weight=500)
+    d.image(HERO_DISC, x + 6, y + h - 78 * 33525 / 29575, w=78)
+    # Face 2: the routine, struck through, and what Pilke does with it.
+    x, y, w, h, yy = tri_struck(d, 1, C['white'], outline=C['rule'])
+    bullets(d, x, yy + 8, w, [(T[f'pitch.instead.{k}.title'], None) for k in ['match', 'invite', 'ready']],
+            14, gap=3, spark=6)
+    d.sparkle('vaalea-koralli', x + w - 8, y + h - 10, 14, 14)
+    d.sparkle('vaalea-koralli', x + w - 22, y + h - 4, 6, -24)
     # Face 3: the beta, with the code.
-    tri_cta(d, 2, C['coral'], T['cta.title'], button_style='ink')
+    tri_beta(d, 2, C['coral'], button_style='ink')
 
 
 def triangle_v2(d):
-    """Pohja 2 · Swaippaa, yliviivattuna"""
-    # Face 1: the other apps' routine, struck through, and the owner's line under it.
+    """Pohja 2 · Kädessä puhelin"""
+    # Face 1: the photograph of the invitation in a hand, and the headline under it.
     x, y, w, h = tri_card(d, 0, C['white'], outline=C['rule'])
-    steps = [T['pitch.elsewhere.swipe'], T['pitch.elsewhere.chat'], 'Tule', 'ghostatuksi.', T['pitch.elsewhere.swipe'],
-             'Chättäile', 'lisää.', T['pitch.elsewhere.maybe']]
-    _, yy = d.struck(x - 1, y + 8, w + 2, steps, 19, gap=0.3)
-    d.text(x, yy + 12, w, T['pitch.instead.title'], 22, face='Fredoka', weight=600)
-    d.disc(x + 4, y + h - 56, w - 8)
-    d.sparkle('vaalea-koralli', x + w / 2 + 6, y + h - 38, 14, 14)
-    d.sparkle('vaalea-koralli', x + w / 2 - 10, y + h - 22, 7, -24)
-    d.sparkle('ruusu', x + w - 6, y + h - 54, 9, 20)
-    # Face 2: the hand and phone on the coral disc, and what Pilke does with those steps.
-    x, y, w, h = tri_card(d, 1, C['peach'])
-    scatter(d, 'persikka', [(x + w - 5, y + 3, 14, 14), (x + 4, y + 150, 10, -26), (x + w - 3, y + 196, 16, 36),
-                            (x + 6, y + h - 8, 12, 18)])
-    _, iw, ih = d.image(HERO_DISC, x, y + 30, w=w)
-    d.text(x, y + 30 + ih + 12, w, T['pitch.instead.lead'], 17, face='Fredoka', weight=600)
-    d.wordmark('muste', x + 8, y + h - 42, w=w - 16)
-    # Face 3: the code on white.
-    tri_cta(d, 2, C['white'], T['cta.button'], lead=T['cta.title'] + '. ' + T['pitch.hero.lead'], button_style='coral',
-            outline=C['rule'],
-            spark='ruusu')
-
-
-def triangle_v3(d):
-    """Pohja 3 · Näin se menee käytännössä"""
-    # Face 1: the four steps.
-    x, y, w, h = tri_card(d, 0, C['mint_ground'])
-    _, th = d.text(x, y + 6, w, T['pitch.practice.title'], 21, face='Fredoka', weight=600)
-    yy = y + 6 + th + 4
-    _, lh = d.text(x, yy, w, T['pitch.practice.lead'], 12, weight=500)
-    yy += lh + 14
-    for n, key in enumerate(['one', 'two', 'three', 'four'], 1):
-        d.numeral(x + 2, yy, 14, n)
-        _, sh = d.text(x, yy + 17, w, T[f'pitch.practice.{key}.title'], 16, face='Fredoka', weight=600)
-        yy += 17 + sh + 13
-    d.sparkle('ruusu', x + w - 8, y + h - 12, 12, 14)
-    # Face 2: sparks.
-    x, y, w, h = tri_card(d, 1, C['peach'])
-    scatter(d, 'persikka', [(x + w - 2, y + 117, 12, 14), (x + 3, y + 130, 9, -26), (x + w - 3, y + 210, 14, 30)])
-    _, th = d.text(x, y + 6, w, 'Pilke pyörii\nkipinöillä', 24, face='Fredoka', weight=600)
-    yy = y + 6 + th + 3
-    body = T['detail.economy.body'].split('. ', 1)[1]
-    _, bh = d.text(x, yy, w, body, 11.5, weight=500)
-    _, ph = d.phone('kipinat', x + 3, yy + bh + 10, w - 6)
-    yy = yy + bh + 10 + ph + 14
-    _, rw, rh = d.image('Brändi/kipinat/kipinarivi.png', x + 6, yy, w=w - 12)
-    d.text(x, yy + rh + 3, w, T['economy.lead'], 16, face='Fredoka', weight=600, align='CENTER')
-    # Face 3: the wordmark, the code and the beta.
-    tri_cta(d, 2, C['coral'], T['cta.button'], button_style='ink', wordmark='muste')
+    _, iw, ih = d.image(BETA_ROUNDED, x, y, w=w)
+    _, hh = headline(d, x, y + ih + 8, w, 28)
+    d.text(x, y + ih + 8 + hh + 2, w - 4, T['pitch.hero.lead'], 12.5, weight=500)
+    d.wordmark('muste', x, y + h - 22, h=22)
+    d.sparkle('ruusu', x + w - 8, y + h - 8, 12, 14)
+    # Face 2: the routine, struck through, on peach, with the lead.
+    x, y, w, h, yy = tri_struck(d, 1, C['peach'])
+    d.text(x, yy + 4, w - 4, T['pitch.instead.lead'], 13, weight=500)
+    scatter(d, 'ruusu', [(x + w - 14, y + h - 14, 16, 14), (x + w - 28, y + h - 6, 7, -20)])
+    scatter(d, 'persikka', [(x + 8, y + h - 12, 12, 30), (x + w - 4, y + h - 34, 8, -26)])
+    # Face 3: the wordmark and the beta on white.
+    tri_beta(d, 2, C['white'], button_style='coral', outline=C['rule'], wordmark='muste', spark='ruusu')
 
 
 # ───────────────────────────── A5 flyer ─────────────────────────────
 
 A5_CARD = (6, 6, 136, 198)
-A5_C = (14, 15, 120, 182)  # content box
+A5_C = (14, 14, 120, 182)  # content box: 8 mm inside the card, 14 mm from the sheet's edge
 
 
 def flyer_footer(d, y, tone='ink'):
-    """QR, the button and the address, along the foot of a back page."""
+    """The beta code, the button and the address, along the foot of a page."""
     x, _, w, _ = A5_C
     q = 30
-    d.qr(x, y, q)
+    d.qr(x, y, q, code='beta')
     _, th = d.text(x + q + 6, y + 1, w - q - 6, PRINT['scan'], 15, face='Fredoka', weight=600)
     d.text(x + q + 6, y + 1 + th, w - q - 6, PRINT['url'], 12, weight=600, color=C['soft'])
     d.pill(x + q + 8, y + q - 12, 46, 12, T['cta.button'], style=tone, size=12)
@@ -646,112 +645,68 @@ def build_flyer(layout):
     how_to(d, 'A5-flyer – näin tulostat', [
         ('Tulosta todellisessa koossa',
          'Tiedosto › Lataa › PDF ja tulosta PDF skaalauksella 100 % (todellinen koko). '
-         'Jokainen pohja on kaksi sivua: etupuoli ja takapuoli.'),
+         'Flyer on kaksi sivua: etupuoli (sivu 2) ja takapuoli (sivu 3). Sivu 4 on toinen etupuoli, '
+         'jos se sopii tilanteeseen paremmin.'),
         ('A5-paperille',
-         'Valitse paperiksi A5 ja kaksipuolinen tulostus, kääntö pitkän reunan mukaan. Tulosta pohjan '
-         'kaksi sivua, esimerkiksi sivut 2–3.'),
+         'Valitse paperiksi A5 ja kaksipuolinen tulostus, kääntö pitkän reunan mukaan, ja tulosta sivut 2–3 '
+         '(tai 4 ja 3).'),
         ('A4-paperille',
          'Valitse "2 sivua arkille" ja vaakasuunta, niin etu- ja takapuoli tulevat vierekkäin samalle arkille. '
          'Leikkaa arkki keskeltä. Kaksipuoliseen flyeriin tulosta etupuolet ja takapuolet eri kierroksilla.'),
         ('Reunat',
          'Kaikki sisältö on vähintään 6 mm:n päässä reunasta, joten se mahtuu tulostimen tyhjien reunojen sisäpuolelle.'),
     ])
-    for front, back in [(flyer1_front, flyer1_back), (flyer2_front, flyer2_back), (flyer3_front, flyer3_back)]:
-        for page in (front, back):
-            d.slide(page.__doc__.strip(), bg=C['ground'])
-            page(d)
+    for page in (flyer_front, flyer_back, flyer_front_struck):
+        d.slide(page.__doc__.strip(), bg=C['ground'])
+        page(d)
     return d
 
 
-def flyer1_front(d):
-    """Pohja 1 · etupuoli · Vihdoin, treffisovellus"""
+def flyer_front(d):
+    """Etupuoli · Vihdoin, treffisovellus"""
     d.card(*A5_CARD, fill=C['peach'])
-    for cx, cy, s, r in [(128, 22, 20, 14), (112, 40, 8, -26), (22, 150, 18, -18), (36, 186, 9, 30), (132, 104, 12, 36)]:
-        d.sparkle('persikka', cx, cy, s, r)
+    scatter(d, 'persikka', [(128, 20, 20, 14), (112, 38, 8, -26), (20, 192, 14, -18), (40, 198, 7, 30)])
     x, y, w, h = A5_C
     d.wordmark('muste', x, y, w=30)
-    _, th = d.text(x, y + 28, w, 'Vihdoin,\ntreffisovellus', 38, face='Fredoka', weight=600)
-    _, lh = d.text(x, y + 28 + th + 2, 78, T['pitch.hero.lead'], 13, weight=500)
-    d.pill(x, y + 28 + th + lh + 8, 44, 12, T['cta.button'], style='ink', size=12)
-    d.image(HERO_DISC, 142 - 6 - 76, 204 - 86 - 4, w=76)
+    _, th = headline(d, x, y + 28, w, 34)
+    _, lh = d.text(x, y + 28 + th + 2, w - 20, T['pitch.hero.lead'], 13, weight=500)
+    yy = y + 28 + th + lh + 8
+    _, ih = d.text(x, yy, 62, T['pitch.instead.title'], 15, face='Fredoka', weight=600)
+    bullets(d, x, yy + ih + 3, 62, [(T[f'pitch.instead.{k}.title'], None) for k in ['match', 'invite', 'ready']],
+            11.5, title_face='Figtree', gap=2.5, spark=5)
+    iw = 66
+    d.image(HERO_DISC, 142 - 4 - iw, 204 - 4 - iw * 33525 / 29575, w=iw)
 
 
-def flyer1_back(d):
-    """Pohja 1 · takapuoli · Mitä Pilke tekee"""
+def flyer_back(d):
+    """Takapuoli · Etsimme testaajia"""
     d.card(*A5_CARD, fill=C['white'], outline=C['rule'])
+    d.sparkle('ruusu', 129, 19, 13, 14)
     x, y, w, h = A5_C
-    _, th = d.text(x, y, w, T['pitch.instead.title'], 22, face='Fredoka', weight=600)
-    _, lh = d.text(x, y + th + 1, w, T['pitch.instead.lead'], 11.5, weight=500, color=C['soft'])
-    yy = y + th + lh + 6
-    tints = [C['card_sent'], C['card_received'], C['peach'], C['card_feedback']]
-    for key, tint in zip(['match', 'invite', 'ready'], tints):
-        body = T[f'pitch.instead.{key}.body']
-        bh = len(wrap(body, 'Figtree', 400, 10.5, w - 8 - 2 * INSET_X)) * 10.5 * PT_MM * 1.2 * 1.25 + 2 * INSET_Y
-        ch = 10.5 + bh + 3
-        d.card(x, yy, w, ch, fill=tint)
-        d.text(x + 4, yy + 2.5, w - 8, T[f'pitch.instead.{key}.title'], 12.5, weight=700)
-        d.text(x + 4, yy + 10, w - 8, body, 10.5)
-        yy += ch + 4
-    flyer_footer(d, 204 - 6 - 30)
-
-
-def flyer2_front(d):
-    """Pohja 2 · etupuoli · Swaippaa, yliviivattuna"""
-    d.card(*A5_CARD, fill=C['white'], outline=C['rule'])
-    d.disc(74, 130, 62, fill=C['coral'])
-    for cx, cy, s, r in [(112, 150, 14, 14), (124, 178, 8, -20), (96, 182, 10, 30)]:
-        d.sparkle('vaalea-koralli', cx, cy, s, r)
-    x, y, w, h = A5_C
-    steps = [T['pitch.elsewhere.swipe'], T['pitch.elsewhere.chat'], T['pitch.elsewhere.ghost'],
-             T['pitch.elsewhere.swipe'], T['pitch.elsewhere.more'], T['pitch.elsewhere.maybe']]
-    _, yy = d.struck(x - 1, y + 2, 100, steps, 22, gap=0.2)
-    d.text(x, yy + 6, 84, T['pitch.instead.title'], 26, face='Fredoka', weight=600)
-    d.wordmark('muste', x, 204 - 8 - 22, h=22)
-
-
-def flyer2_back(d):
-    """Pohja 2 · takapuoli · Näin se menee käytännössä"""
-    d.card(*A5_CARD, fill=C['peach'])
-    x, y, w, h = A5_C
-    _, th = d.text(x, y, w, T['pitch.practice.title'], 24, face='Fredoka', weight=600)
-    _, lh = d.text(x, y + th, w, T['pitch.practice.lead'], 11.5, weight=500)
-    yy = y + th + lh + 4
-    for n, key in enumerate(['one', 'two', 'three', 'four'], 1):
-        d.numeral(x, yy, 10, n)
-        _, sh = d.text(x + 13, yy + 0.5, w - 13, T[f'pitch.practice.{key}.title'], 12, weight=700)
-        _, bh = d.text(x + 13, yy + sh - 1, w - 13, T[f'pitch.practice.{key}.body'], 9.5)
-        yy += max(sh + bh, 12) + 2
+    _, th = d.text(x, y, w - 24, PRINT['testers.title'], 24, face='Fredoka', weight=600)
+    _, bh = d.text(x, y + th + 1, w, PRINT['testers.body'], 12, weight=500)
+    yy = y + th + bh + 7
+    _, eh = d.text(x, yy, w, PRINT['expect.title'], 15, face='Fredoka', weight=600)
+    bullets(d, x, yy + eh + 2, w,
+            [(PRINT[f'expect.{k}.title'], PRINT[f'expect.{k}.body']) for k in ['beta', 'area', 'few', 'feedback']],
+            12, 10.5, title_face='Figtree', gap=3, spark=5)
     flyer_footer(d, 204 - 10 - 30)
 
 
-def flyer3_front(d):
-    """Pohja 3 · etupuoli · Pilke pyörii kipinöillä"""
-    d.card(*A5_CARD, fill=C['coral'])
-    for cx, cy, s, r in [(24, 112, 16, 14), (40, 128, 7, -26), (130, 30, 14, -18), (120, 196, 10, 30), (20, 194, 12, 20)]:
-        d.sparkle('vaalea-koralli', cx, cy, s, r)
-    x, y, w, h = A5_C
-    _, th = d.text(x, y, w, 'Pilke pyörii\nkipinöillä', 36, face='Fredoka', weight=600)
-    body = T['detail.economy.body'].split('. ', 1)[1]
-    _, bh = d.text(x, y + th + 1, 92, body, 12.5, weight=500)
-    top = y + th + bh + 8
-    d.phone('treffit', 76, top + 6, 44)
-    d.phone('kipinat', 34, top, 44)
-    d.image('Brändi/kipinat/kipinarivi.png', x, 204 - 8 - 12, h=12)
-
-
-def flyer3_back(d):
-    """Pohja 3 · takapuoli · Kenelle Pilke sopii?"""
+def flyer_front_struck(d):
+    """Toinen etupuoli · Swaippaa, yliviivattuna"""
     d.card(*A5_CARD, fill=C['white'], outline=C['rule'])
+    d.disc(78, 128, 60, fill=C['coral'])
     x, y, w, h = A5_C
-    _, th = d.text(x, y, w - 30, T['pitch.notfor.title'], 24, face='Fredoka', weight=600)
-    _, lh = d.text(x, y + th, w - 30, T['pitch.notfor.lead'], 11.5, weight=500, color=C['soft'])
-    yy = y + th + lh + 6
-    for key in ['more', 'chat', 'phone', 'algorithm']:
-        _, qh = d.text(x, yy, w, T[f'pitch.notfor.{key}.q'], 12.5, weight=700)
-        _, ah = d.text(x, yy + qh - 1.5, w, T[f'pitch.notfor.{key}.a'], 12, color=C['soft'])
-        yy += qh + ah + 3
-    d.wordmark('muste', x + w - 26, y, w=26)
-    flyer_footer(d, 204 - 10 - 30, tone='coral')
+    steps = [T['pitch.elsewhere.swipe'], T['pitch.elsewhere.chat'], T['pitch.elsewhere.ghost'],
+             T['pitch.elsewhere.swipe'], T['pitch.elsewhere.more'], T['pitch.elsewhere.maybe']]
+    _, yy = d.struck(x - 1, y + 2, 100, steps, 20, gap=0.2)
+    _, th = d.text(x, yy + 5, 76, T['pitch.instead.title'], 22, face='Fredoka', weight=600)
+    d.text(x, yy + 5 + th + 2, 60, T['pitch.hero.lead'], 12, weight=500)
+    d.phone('treffikutsu', 88, 92, 40)
+    for cx, cy, s, r in [(80, 186, 12, 14), (136, 112, 8, -20)]:
+        d.sparkle('ruusu', cx, cy, s, r)
+    d.wordmark('muste', x, 204 - 8 - 20, h=20)
 
 
 # ───────────────────────────── Elementit ─────────────────────────────

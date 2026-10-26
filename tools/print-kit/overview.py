@@ -14,7 +14,7 @@ from PIL import Image, ImageDraw
 
 import slides
 
-DECKS = [('poytakolmio', 'Pilke – pöytäkolmio (A4 pysty)'), ('a5-flyer', 'Pilke – A5-flyer'),
+DECKS = [('poytakolmio', 'Pilke – pöytäkolmio (A4 vaaka)'), ('a5-flyer', 'Pilke – A5-flyer'),
          ('elementit', 'Pilke – elementit (A4 vaaka)'), ('kuvat', 'Pilke – kuvat (A4 vaaka)')]
 ROW_H, GAP, HEAD, MAX = 560, 24, 70, 3600
 

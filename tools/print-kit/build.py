@@ -650,7 +650,7 @@ def drive_set():
 def skeletons():
     """The one-slide .pptx files each Slides file is first made from (skeleton.py)."""
     import skeleton
-    for size, name in [('a4-landscape', 'elementit'), ('a4-portrait', 'poytakolmio'), ('a5-portrait', 'a5-flyer'),
+    for size, name in [('a4-landscape', 'elementit'), ('a4-landscape', 'poytakolmio'), ('a5-portrait', 'a5-flyer'),
                        ('a4-landscape', 'kuvat')]:
         skeleton.build(size, out('slides', f'{name}.pptx'))
 
