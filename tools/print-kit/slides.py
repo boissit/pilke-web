@@ -751,21 +751,27 @@ def triangle_faces(d):
     # the code with the link under it on the left, the store badges stacked on the right.
     x, y, w, h = tri_card(d, 2, C['mint_ground'])
     bottom = y + h
-    # The heading, right-aligned on the face's edge, set so its two lines' ink, the first
-    # line's capitals to the second's baseline, is exactly as tall as the wordmark's.
+    # The heading, right-aligned on the face's edge: its first line's capitals start at
+    # the top of the wordmark's letters (below the sparkle that sits on the P) and its
+    # second line's baseline stands on the letters' foot.
     wm = SMALL_WM
     wh = wm * 0.72
     d.wordmark('muste', x + 1, y + 3, w=wm)
     head = T['pitch.practice.title']
     head = '\n'.join(head.rsplit(' ', 1))
-    hpt = round(wh / ((0.70 + FREDOKA_ADVANCE) * PT_MM), 2)
+    lead = HEAD_LEADING
+    cap_top = y + 3 + WM_LETTER_TOP * wh
+    base2 = y + 3 + wh - HEAD_FOOT
+    hpt = round((base2 - cap_top) / ((0.70 + FREDOKA_ADVANCE * lead / 100) * PT_MM), 2)
+    em = hpt * PT_MM
     lines = head.split('\n')
     widest = max(text_width_mm(t, 'Fredoka', 600, hpt) for t in lines)
     if x + 1 + wm + 3 > x + w - widest:
         d.warnings.append(f'{d.sid} face 3: the heading does not fit beside the wordmark')
-    hh = 2 * INSET_Y + 0.6 + len(lines) * hpt * PT_MM * LINE_EM['Fredoka']
-    d.text(x + w - widest - 4, cap_top_box(y + 3, hpt), widest + 4 + INSET_X, head, hpt,
-           face='Fredoka', weight=600, align='END', spacing=100, h=hh)
+    hh = 2 * INSET_Y + 0.6 + len(lines) * em * LINE_EM['Fredoka'] * lead / 100
+    base1 = base2 - FREDOKA_ADVANCE * em * lead / 100
+    d.text(x + w - widest - 4, baseline_box(base1, hpt) + HEAD_FIRST_BASE * em, widest + 4 + INSET_X, head,
+           hpt, face='Fredoka', weight=600, align='END', spacing=lead, h=hh)
     corner_sparkles(d, x, y, w, big=(-5, 23.5, 8), small=(-15, 22.5))
     top = y + 3 + wh + 3
     # The footer row, from the foot up: the note, the badges and the code with its link.
@@ -799,6 +805,10 @@ def triangle_faces(d):
 
 
 TENT_STEP = (10.5, 8.5, 1.0)   # face 3: step title pt, body pt, least gap mm
+WM_LETTER_TOP = 0.134   # the wordmark's letters start this far down its height; the sparkle is above
+HEAD_FOOT = 0.10        # the heading's second baseline stands this far above the wordmark's foot, mm
+HEAD_LEADING = 90       # the heading's line spacing, %
+HEAD_FIRST_BASE = 0.097   # at that spacing Slides sets the first baseline this many ems higher (PDF export)
 
 
 # ───────────────────────────── A5 flyer ─────────────────────────────
@@ -827,12 +837,12 @@ def baseline_box(baseline, size_pt):
     return baseline - 2.39 - 0.957 * size_pt * PT_MM
 
 
-def flyer_footer(d, bottom):
-    """Along the foot of the back, standing on `bottom`: the wordmark on the left, the
-    beta form's code on the right, the wordmark as tall as the code's modules and level
-    with them, and between them the line with the form's address right under it, the
-    address sized to the line's width and its baseline on the modules' foot. The three
-    are spaced evenly between the content's edges."""
+def flyer_footer(d, bottom, left):
+    """Along the foot of the back, standing on `bottom`: the wordmark on the left, its ink
+    starting on the page's shared left edge `left`, the beta form's code on the right,
+    the wordmark as tall as the code's modules and level with them, and between them the
+    line, the form's address and pilke.app, the address sized to the line's width and
+    pilke.app's baseline on the modules' foot. The three are spaced evenly."""
     x, _, w, _ = A5_C
     mods = FLYER_CODE
     frac = qr_inset('form', 100) / 100
@@ -842,25 +852,28 @@ def flyer_footer(d, bottom):
     tw = text_width_mm(PRINT['scan'], 'Fredoka', 600, title_pt)
     url_pt = round(title_pt * tw / text_width_mm(PRINT['form'], 'Figtree', 500, title_pt), 2)
     wm_w = mods / 0.72
-    gap = (w - inset - wm_w - tw - mods) / 2
+    # Slides sets the lines' ink 0.04 mm left of the box's text origin and 0.3 mm narrower
+    # than PIL measures them (PDF export); the gaps are shared out on the ink.
+    ink_w = tw - 0.29
+    gap = (x + w - inset - left - wm_w - ink_w - mods) / 2
     mod_bottom = bottom - inset
     mod_top = mod_bottom - mods
-    d.wordmark('muste', x, mod_top, w=wm_w)
-    # Slides sets the two lines' ink 0.13 mm in from the box and 0.3 mm narrower than PIL
-    # measures them (PDF export); the 0.17 mm evens the two gaps out.
-    col = x + wm_w + gap + 0.17
-    url_top = baseline_box(mod_bottom, url_pt)
-    url_cap = mod_bottom - 0.70 * url_pt * PT_MM
-    # The line's descenders clear the address's capitals by 1 mm.
-    title_base = url_cap - 1 - 0.20 * title_pt * PT_MM
+    d.wordmark('muste', left, mod_top, w=wm_w)
+    col = left + wm_w + gap + 0.04
+    url_em = url_pt * PT_MM
+    site_base = mod_bottom
+    form_base = site_base - 1.45 * url_em
+    # The line's descenders clear the address's capitals by 2 mm.
+    title_base = form_base - 0.70 * url_em - 2 - 0.20 * title_pt * PT_MM
     d.text(col - INSET_X, baseline_box(title_base, title_pt), tw + 2 * INSET_X + 1, PRINT['scan'], title_pt,
            face='Fredoka', weight=600)
-    d.text(col - INSET_X, url_top, tw + 2 * INSET_X + 1, PRINT['form'], url_pt, weight=500)
+    d.text(col - INSET_X, baseline_box(form_base, url_pt), tw + 2 * INSET_X + 1, PRINT['form'], url_pt, weight=500)
+    d.text(col - INSET_X, baseline_box(site_base, url_pt), tw + 2 * INSET_X + 1, PRINT['url'], url_pt, weight=500)
     d.qr(x + w - q, bottom - q, q, code='form')
     return mod_top
 
 
-FLYER_CODE = 19   # the back's code: its modules' side, mm; the wordmark is as tall
+FLYER_CODE = 18   # the back's code: its modules' side, mm; the wordmark is as tall
 
 
 FLYER_HOW_TO = (
@@ -941,7 +954,7 @@ FLYER_STEP = (11, 8.5, 1.0, 68, 15)   # the front's flow: title pt, body pt, gap
 def flyer_back(d):
     """Takapuoli · Etsimme testaajia"""
     d.card(*A5_CARD, fill=C['white'], outline=C['rule'])
-    scatter(d, 'persikka', [(128, 14, 13, 14), (113, 11, 6, -26), (126, 71, 10, 18), (22, 163, 7, -20)])
+    scatter(d, 'persikka', [(128, 14, 13, 14), (113, 11, 6, -26), (126, 71, 10, 18)])
     x, y, w, h = A5_C
     _, th = d.text(x, y - 2, w - 22, PRINT['testers.title'], 21, face='Fredoka', weight=600)
     _, bh = d.text(x, y - 2 + th, w, PRINT['testers.body'] + '\n' + PRINT['testers.ask'], 10, weight=500, after=5)
@@ -952,7 +965,7 @@ def flyer_back(d):
     end = bullets(d, mx, yy + eh, x + w - mx,
                   [(PRINT[f'expect.{k}.title'], PRINT[f'expect.{k}.body']) for k in ['beta', 'few', 'area', 'feedback']],
                   10.5, 9.5, title_face='Figtree', gap=2, spark=4.5)
-    foot = flyer_footer(d, A5_C[1] + A5_C[3])
+    foot = flyer_footer(d, A5_C[1] + A5_C[3], mx)
     if end > foot - 3:
         d.warnings.append(f'{d.sid} back: the list runs into the footer ({end:.1f} > {foot - 3:.1f})')
 

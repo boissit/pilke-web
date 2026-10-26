@@ -73,9 +73,11 @@ The template is for the public release, so it says nothing about a beta:
 - **Face 2**, white: the wordmark small, the other apps' routine struck through as on
   the front page, then "Pilkkeessä ei swaippailla eikä chättäillä." and the lead under it.
 - **Face 3**, mint: the wordmark small with "Näin se menee käytännössä" beside it on
-  two lines, right-aligned on the face's edge and sized so its ink, the first line's
-  capitals to the second line's baseline, is exactly as tall as the wordmark's (22.4 pt
-  beside a 21 mm wordmark); the six numbered steps; then
+  two lines, right-aligned on the face's edge: its first line's capitals start at the top
+  of the wordmark's letters (below the sparkle on the P, `WM_LETTER_TOP`) and its second
+  baseline stands on the letters' foot, set 20.5 pt at 90 % leading (`HEAD_LEADING`;
+  `HEAD_FIRST_BASE` is how far Slides raises the first baseline at that leading); the six
+  numbered steps; then
   one footer row: the code to pilke.app with "pilke.app" centred under it on the left,
   the App Store and Google Play badges stacked on the right; "Pilke toimii toistaiseksi
   vain pääkaupunkiseudulla." under the row.
@@ -121,19 +123,21 @@ back is the owner's own text (`PRINT` in `slides.py`, verbatim): who is behind P
 the ask for testers, in two paragraphs (`testers.body`, `testers.ask`), four things to
 know about the beta, and the beta form's footer. The list's sparkle markers start on the
 paragraphs' ink edge, their titles and bodies after them. Light peach sparkles sit top
-right, beside "Hyvä tietää" at the right edge and above the wordmark at the foot. How to print it is in the front page's
+right and beside "Hyvä tietää" at the right edge. How to print it is in the front page's
 speaker notes, which do not print: `slides.py a5-flyer --notes` prints them, and they go
 into the notes shape (`read_slide_page`, `notesPage.notesProperties.speakerNotesObjectId`)
 once the slide exists. Content keeps 6 mm or more from every edge.
 
 The back's footer (`flyer_footer()`) stands on the content's foot: the wordmark on the
-left, the beta form's code on the right with its plate on the content's edge, the
-wordmark exactly as tall as the code's modules and level with them (`FLYER_CODE`, 19 mm),
-and between them "Skannaa ja liity betaan" with the form's address,
-`https://forms.gle/LNjDw77d5giuxFWeA`, printed as the code reads, right under it: the
-address's baseline on the modules' foot, the line's descenders 1 mm above its capitals,
-and the address sized so it is as wide as the line. The three are spaced evenly, 6.1 mm
-of ink to ink. `qr_inset()` reads where the modules start in the code's PNG.
+left, its ink starting on the page's shared left edge with the paragraphs and the list
+markers (16.69 mm), the beta form's code on the right with its plate on the content's
+edge, the wordmark exactly as tall as the code's modules and level with them
+(`FLYER_CODE`, 18 mm), and between them three lines: "Skannaa ja liity betaan", the
+form's address `https://forms.gle/LNjDw77d5giuxFWeA` printed as the code reads, and
+pilke.app, whose baseline sits on the modules' foot. The address is sized to the line's
+width; the line's descenders clear the address's capitals by about 2 mm. The three parts
+are spaced evenly, 6.05 mm of ink to ink. `qr_inset()` reads where the modules start in
+the code's PNG.
 
 **Markers.** A sparkle or a step number beside a line is centred on that line's
 capitals: `first_line_mid()` puts the first baseline of a Slides text box 2.39 mm plus
