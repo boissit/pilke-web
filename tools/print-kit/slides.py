@@ -374,12 +374,17 @@ class Deck:
             self.warnings.append(f'{self.sid} pill {label!r}: too narrow')
         return oid
 
-    def struck(self, x, y, w, steps, size, gap=0.35, colour=C['soft']):
+    def struck(self, x, y, w, steps, size, gap=0.35, colour=C['soft'], right=None):
         """The front page's struck-through steps: one line of Fredoka per step and a coral
         bar over it, a little below the middle of the lowercase (index.astro, `.elsewhere`).
-        Each step is its text box and its bar, grouped, so it moves as one."""
+        Each step is its text box and its bar, grouped, so it moves as one. With `right`,
+        each line is set so its bar, the line's rightmost ink, ends there."""
         groups = []
         for step in steps:
+            if right is not None:
+                tw = text_width_mm(step, 'Fredoka', 600, size)
+                x = right - INSET_X - tw - 0.04 * size * PT_MM
+                w = tw + 2 * INSET_X + 1
             g, line_h = self.struck_one(x, y, w, step, size, colour)
             groups.append(g)
             y += line_h - 2 * INSET_Y + gap * size * PT_MM
@@ -498,6 +503,19 @@ def how_to(d, title, steps, note=None, w=None):
     if note:
         d.text(m, y + 2, d.W - 2 * m, note, 9.5, color=C['soft'])
     return y
+
+
+# How far inside a left-aligned box the first glyph's ink starts, by its first letter,
+# measured on the decks' PDF export: the box's own inset and the letter's side bearing as
+# Slides sets it, in ems. A letter not listed takes 0.03 em.
+INK_LSB_EM = {('Figtree', 500, 'P'): 0.045, ('Figtree', 500, 'E'): 0.045, ('Fredoka', 600, 'N'): 0.012,
+              ('Fredoka', 600, 'H'): 0.013}
+FREDOKA_ADVANCE = 1.216   # Slides' line advance for Fredoka at 100 % spacing and 22 pt, in ems (PDF export)
+
+
+def ink_in(text, size_pt, face='Figtree', weight=400):
+    """How far right of a left-aligned box's edge its first glyph's ink starts, mm."""
+    return INSET_X + INK_LSB_EM.get((face, weight, text[0]), 0.03) * size_pt * PT_MM
 
 
 def first_line_mid(y, size_pt):
@@ -693,16 +711,19 @@ def flow():
     ]
 
 
-def corner_sparkles(d, x, y, w, small=(-21, 13)):
+def corner_sparkles(d, x, y, w, big=(-6, 4, 18), small=(-21, 13)):
     """Face 1's two top-right sparkles, kept above the face's first line and clear of the
-    small wordmark at the left; `small` places the little one from the top-right corner."""
-    scatter(d, 'persikka', [(x + w - 6, y + 4, 18, 14), (x + w + small[0], y + small[1], 7, -26)])
+    small wordmark at the left; `big` and `small` place them from the top-right corner."""
+    scatter(d, 'persikka', [(x + w + big[0], y + big[1], big[2], 14), (x + w + small[0], y + small[1], 7, -26)])
+
+
+SMALL_WM = 21   # the wordmark on faces 2 and 3, mm wide
 
 
 def small_wordmark(d, x, y):
     """The wordmark in the face's top-left corner, small, the same place on faces 2 and 3."""
-    d.wordmark('muste', x + 1, y + 3, w=22)
-    return 22 * 0.72 + 4
+    d.wordmark('muste', x + 1, y + 3, w=SMALL_WM)
+    return SMALL_WM * 0.72 + 4
 
 
 def triangle_faces(d):
@@ -730,21 +751,23 @@ def triangle_faces(d):
     # the code with the link under it on the left, the store badges stacked on the right.
     x, y, w, h = tri_card(d, 2, C['mint_ground'])
     bottom = y + h
-    wm = 22
+    # The heading, right-aligned on the face's edge, set so its two lines' ink, the first
+    # line's capitals to the second's baseline, is exactly as tall as the wordmark's.
+    wm = SMALL_WM
+    wh = wm * 0.72
     d.wordmark('muste', x + 1, y + 3, w=wm)
-    corner_sparkles(d, x, y, w, small=(-5, 22))
-    hx = x + 1 + wm + 3 - INSET_X
-    hw = x + w - 16 - hx
-    hpt = TENT_STEP[3]
-    em = hpt * PT_MM
-    line = em * LINE_EM['Fredoka']
-    hh = text_height(T['pitch.practice.title'], hw, hpt, face='Fredoka', weight=600)
-    lines = len(wrap(T['pitch.practice.title'], 'Fredoka', 600, hpt, hw - 2 * INSET_X))
-    # The heading's ink, first capital to last baseline, centred on the wordmark's.
-    ink_mid = 2.39 + ((0.957 - 0.70) * em + 0.957 * em + (lines - 1) * line) / 2
-    hy = y + 3 + wm * 0.72 / 2 - ink_mid
-    d.text(hx, hy, hw, T['pitch.practice.title'], hpt, face='Fredoka', weight=600)
-    top = max(y + 3 + wm * 0.72, hy + hh) + 3
+    head = T['pitch.practice.title']
+    head = '\n'.join(head.rsplit(' ', 1))
+    hpt = round(wh / ((0.70 + FREDOKA_ADVANCE) * PT_MM), 2)
+    lines = head.split('\n')
+    widest = max(text_width_mm(t, 'Fredoka', 600, hpt) for t in lines)
+    if x + 1 + wm + 3 > x + w - widest:
+        d.warnings.append(f'{d.sid} face 3: the heading does not fit beside the wordmark')
+    hh = 2 * INSET_Y + 0.6 + len(lines) * hpt * PT_MM * LINE_EM['Fredoka']
+    d.text(x + w - widest - 4, cap_top_box(y + 3, hpt), widest + 4 + INSET_X, head, hpt,
+           face='Fredoka', weight=600, align='END', spacing=100, h=hh)
+    corner_sparkles(d, x, y, w, big=(-5, 23.5, 8), small=(-15, 22.5))
+    top = y + 3 + wh + 3
     # The footer row, from the foot up: the note, the badges and the code with its link.
     d.text(x, bottom - 8.5, w, PRINT['area'], 8, color=C['soft'], align='CENTER')
     apple_h = 11
@@ -775,7 +798,7 @@ def triangle_faces(d):
     steps(d, x, top, w, flow(), tpt, bpt, gap=gap, d_num=6.5, tuck=2.5)
 
 
-TENT_STEP = (10.5, 8.5, 1.0, 14)   # face 3: step title pt, body pt, least gap mm, heading pt
+TENT_STEP = (10.5, 8.5, 1.0)   # face 3: step title pt, body pt, least gap mm
 
 
 # ───────────────────────────── A5 flyer ─────────────────────────────
@@ -875,13 +898,21 @@ def flyer_front(d):
     hl_h = 2 * hl_pt * PT_MM * LINE_EM['Fredoka'] + 2 * INSET_Y + 0.6
     d.text(x + wm + 4, y + wm * 0.72 / 2 - hl_h / 2 + 1, w - wm - 4 + INSET_X, hl, hl_pt, face='Fredoka',
            weight=600, align='END', h=hl_h)
+    # Two axes: the wordmark's ink edge on the left, which the lead, the heading and the
+    # step numbers share, and the headline's ink edge on the right, which the routine and
+    # its line share. The headline's ink ends on the content edge (PDF export).
+    right = x + w
     yy = y + wm * 0.72 + 3
-    _, lh = d.text(x, yy, w, T['pitch.hero.lead'], 11.5, weight=500)
+    lead = T['pitch.hero.lead']
+    lx = x - ink_in(lead, 11.5, weight=500)
+    _, lh = d.text(lx, yy, w + x - lx, lead, 11.5, weight=500)
     yy += lh + 2
     # Left: how it goes, the six steps. Right: the other apps' routine struck through and
     # the line under it, and the hand at the foot.
     lw = FLYER_STEP[3]
-    _, th = d.text(x, yy, lw, T['pitch.practice.title'], 14, face='Fredoka', weight=600)
+    head = T['pitch.practice.title']
+    hx = x - ink_in(head, 14, face='Fredoka', weight=600)
+    _, th = d.text(hx, yy, lw + x - hx, head, 14, face='Fredoka', weight=600)
     end = steps(d, x, yy + th, lw, flow(), FLYER_STEP[0], FLYER_STEP[1], gap=FLYER_STEP[2], d_num=6.5,
                 tuck=2.5)
     if end - FLYER_STEP[2] > y + h + 0.2:
@@ -889,8 +920,11 @@ def flyer_front(d):
     rx = x + lw + 4
     rw = x + w - rx
     spt = FLYER_STEP[4]
-    _, sy = d.struck(rx - 1, yy, rw + 2, [T[k] for k in ELSEWHERE], spt, gap=0.12)
-    _, ph = d.text(rx, sy + 1.5, rw, T['pitch.instead.title'], spt, face='Fredoka', weight=600)
+    _, sy = d.struck(rx - 1, yy, rw + 2, [T[k] for k in ELSEWHERE], spt, gap=0.12, right=right)
+    # The line under them follows them to the right edge, its lines ragged on the left as
+    # theirs are.
+    _, ph = d.text(rx, sy + 1.5, right - rx + INSET_X, T['pitch.instead.title'], spt, face='Fredoka',
+                   weight=600, align='END')
     # The hand as wide as the room right of the steps' longest lines, to the card's edge.
     left = x + lw - INSET_X + 1.5
     iw = A5_CARD[0] + A5_CARD[2] - 4 - left
@@ -907,13 +941,15 @@ FLYER_STEP = (11, 8.5, 1.0, 68, 15)   # the front's flow: title pt, body pt, gap
 def flyer_back(d):
     """Takapuoli · Etsimme testaajia"""
     d.card(*A5_CARD, fill=C['white'], outline=C['rule'])
-    scatter(d, 'persikka', [(128, 14, 13, 14), (113, 11, 6, -26)])
+    scatter(d, 'persikka', [(128, 14, 13, 14), (113, 11, 6, -26), (126, 71, 10, 18), (22, 163, 7, -20)])
     x, y, w, h = A5_C
     _, th = d.text(x, y - 2, w - 22, PRINT['testers.title'], 21, face='Fredoka', weight=600)
     _, bh = d.text(x, y - 2 + th, w, PRINT['testers.body'] + '\n' + PRINT['testers.ask'], 10, weight=500, after=5)
     yy = y - 2 + th + bh + 2
     _, eh = d.text(x, yy, w, PRINT['expect.title'], 13, face='Fredoka', weight=600)
-    end = bullets(d, x, yy + eh, w,
+    # The markers' ink starts where the paragraphs' does; the sparkle's ink fills its box.
+    mx = x + ink_in(PRINT['testers.body'], 10, weight=500)
+    end = bullets(d, mx, yy + eh, x + w - mx,
                   [(PRINT[f'expect.{k}.title'], PRINT[f'expect.{k}.body']) for k in ['beta', 'few', 'area', 'feedback']],
                   10.5, 9.5, title_face='Figtree', gap=2, spark=4.5)
     foot = flyer_footer(d, A5_C[1] + A5_C[3])
