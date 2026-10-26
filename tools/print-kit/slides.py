@@ -138,7 +138,13 @@ PHONE = {k: f'Kuvat/puhelimet/puhelin-{k}.png' for k in
 PHONE_MARGIN = 0.16   # build.py's phone_frame(): the shadow's room either side, in phone widths
 QR_INK = 'QR/qr-pilke-app-muste.png'
 QR_CODES = {'site': (QR_INK, 'https://pilke.app'),
-            'beta': ('QR/qr-pilke-app-beta-muste.png', 'https://pilke.app/#beta')}
+            'beta': ('QR/qr-pilke-app-beta-muste.png', 'https://pilke.app/#beta'),
+            'form': ('QR/qr-beta-lomake-muste.png', 'https://forms.gle/LNjDw77d5giuxFWeA')}
+# The stores' own Finnish badges, as build.py fetches them. The Google Play PNG carries
+# transparent rows above and below the badge: its drawn badge is rows 29-221 of 250.
+BADGE_APPLE = 'Brändi/kauppamerkit/app-store-musta.png'
+BADGE_GOOGLE = 'Brändi/kauppamerkit/google-play.png'
+GOOGLE_ROWS = (29, 221, 250)
 BETA_ROUNDED = 'Kuvat/valokuvat/rajaus-pyorea-talon-edessa.png'
 HERO_DISC = 'Kuvat/valokuvat/kasi-ja-puhelin-korallilevylla.png'
 
@@ -157,6 +163,7 @@ class Deck:
         self.batches = []
         self.slide_no = 0
         self.warnings = []
+        self.notes = {}  # slide id -> speaker notes, inserted after the slide exists
 
     # A slide is one batch, so a failure names the slide it belongs to.
     def slide(self, name, bg=C['white']):
@@ -422,19 +429,25 @@ PRINT = {
     'url': 'pilke.app',
     'scan': 'Skannaa ja liity betaan',
     'area': 'Pilke toimii toistaiseksi vain pääkaupunkiseudulla.',
-    # The flyer's back: who is behind Pilke, the ask, and what to expect of the beta.
+    # The flyer's back, the owner's own words (2026-10-26), kept verbatim.
     'testers.title': 'Etsimme testaajia',
-    'testers.body': 'Pilke on muutaman helsinkiläisen kaverin harrastusprojekti. Etsimme ihmisiä, jotka '
-                    'haluavat kokeilla sovellusta ja auttaa meitä selvittämään, toimiiko idea.',
+    'testers.body': 'Pilke on uudenlainen treffisovellus, jonka ainoa tarkoitus on viedä sinut treffeille. '
+                    'Pilkettä kehitetään kaveriporukan voimin ilman kaupallisia intressejä, joten toivomme '
+                    'aidosti luovamme sovelluksen, joka auttaa löytämään parhaat mahdolliset treffikumppanit. '
+                    'Etsimme ihmisiä, jotka ovat kiinnostuneita testaamaan sovelluskonseptia, varmentamaan idean '
+                    'toimivuutta ja mielellään antamaan palautetta kokonaisuudesta.',
     'expect.title': 'Hyvä tietää',
     'expect.beta.title': 'Varhainen beta',
-    'expect.beta.body': 'Sovellus on vielä keskeneräinen, ja jokin voi hajota.',
-    'expect.area.title': 'Pääkaupunkiseutu',
-    'expect.area.body': 'Pilke toimii toistaiseksi vain pääkaupunkiseudulla.',
-    'expect.few.title': 'Käyttäjiä on vielä vähän',
-    'expect.few.body': 'Siksi ehdokkaiden löytyminen voi viedä aikaa.',
+    'expect.beta.body': 'Olette sovelluksen ensimmäisiä testaajia ja käyttäjiä, joten bugeja todennäköisesti ilmenee.',
+    'expect.few.title': 'Rajattu käyttäjäkunta',
+    'expect.few.body': 'Sovellus on suljetussa testauksessa, joten käyttäjiä on vähän ja treffiparien muodostus on '
+                       'haastavaa. Käykää treffeillä avoimin mielin!',
+    'expect.area.title': 'Vain pääkaupunkiseudulla',
+    'expect.area.body': 'Yksinkertaisuuden vuoksi sovellus toimii aluksi vain Helsinki-Espoo -akselilla, ja aluetta '
+                        'laajennetaan myöhemmin.',
     'expect.feedback.title': 'Palaute on kultaa',
-    'expect.feedback.body': 'Kerro meille, mikä toimii ja mikä takkuaa: Asetuksista löytyy kohta Anna palautetta.',
+    'expect.feedback.body': 'Kerro meille mikä toimii ja mikä takkuaa, arvostamme kaikkea palautetta. Voit antaa '
+                            'palautetta sovelluksen kautta tai suoraan meille.',
 }
 
 
@@ -456,17 +469,48 @@ def how_to(d, title, steps, note=None, w=None):
     return y
 
 
-def bullets(d, x, y, w, items, title_pt, body_pt=None, title_face='Fredoka', gap=4, spark=6):
-    """Rows of a rose sparkle and a title, with a body under it when there is one.
-    Returns the y under the last row."""
+def first_line_mid(y, size_pt):
+    """The middle of the capitals on the first line of a text box whose top is y: the
+    first baseline of a Slides text box in Fredoka or Figtree sits 2.39 mm plus 0.957
+    of the type size below its top (measured on the decks' own PDF export, at both
+    faces' line spacings), and a capital is 0.70 of the size tall in both faces."""
+    em = size_pt * PT_MM
+    return y + 2.39 + (0.957 - 0.35) * em
+
+
+def marker(d, x, y, size_pt, spark):
+    """A rose sparkle beside a line of text whose box top is y, centred on its capitals."""
+    d.sparkle('ruusu', x + spark / 2, first_line_mid(y, size_pt), spark)
+
+
+def bullets(d, x, y, w, items, title_pt, body_pt=None, title_face='Fredoka', gap=4, spark=5):
+    """Rows of a rose sparkle and a title, with a body under it when there is one: each
+    sparkle sits on its title's first line, centred on the capitals, and the text starts
+    the same distance from it on every row. Returns the y under the last row."""
+    tx = x + spark + 0.8 - INSET_X + 2.5   # the glyphs start 2.5 mm right of the sparkle
     for title, body in items:
-        d.sparkle('ruusu', x + spark / 2, y + spark * 0.65, spark)
+        marker(d, x, y, title_pt, spark)
         weight = 600 if title_face == 'Fredoka' else 700
-        _, th = d.text(x + spark + 2, y, w - spark - 2, title, title_pt, face=title_face, weight=weight)
+        _, th = d.text(tx, y, x + w - tx, title, title_pt, face=title_face, weight=weight)
         y += th
         if body:
-            _, bh = d.text(x + spark + 2, y - 1.5, w - spark - 2, body, body_pt)
-            y += bh - 1.5
+            _, bh = d.text(tx, y - 2, x + w - tx, body, body_pt)
+            y += bh - 2
+        y += gap
+    return y
+
+
+def steps(d, x, y, w, items, title_pt, body_pt, gap=3, d_num=7):
+    """Numbered steps: a white disc with the number, centred on the title's capitals."""
+    tx = x + d_num + 2.5 - INSET_X
+    for n, (title, body) in enumerate(items, 1):
+        cy = first_line_mid(y, title_pt)
+        d.numeral(x, cy - d_num / 2, d_num, n)
+        _, th = d.text(tx, y, x + w - tx, title, title_pt, face='Fredoka', weight=600)
+        y += th
+        if body:
+            _, bh = d.text(tx, y - 2, x + w - tx, body, body_pt)
+            y += bh - 2
         y += gap
     return y
 
@@ -505,7 +549,7 @@ def build_triangle(layout):
     d = Deck('pk', TT_W, TT_H, layout)
     how_to(d, 'Pöytäkolmio – näin tulostat ja taitat', w=162, steps=[
         ('Tulosta A4:lle vaakasuuntaan todellisessa koossa',
-         'Valitse pohja (sivu 2 tai 3). Tiedosto › Lataa › PDF ja tulosta PDF: paperi A4, vaakasuunta, '
+         'Tulosta sivu 2. Tiedosto › Lataa › PDF ja tulosta PDF: paperi A4, vaakasuunta, '
          'skaalaus 100 % eli todellinen koko. Paksu paperi (160–250 g/m²) seisoo parhaiten.'),
         ('Arkki on valmiiksi oikean kokoinen',
          'Kolme 99 mm leveää puolta täyttävät A4:n leveyden. Tulostimen 3–5 mm tyhjät reunat osuvat '
@@ -533,10 +577,9 @@ def build_triangle(layout):
            'Arkki edestä: kolme puolta vierekkäin. Taitettuna ne kiertävät kolmion ympäri, ja arkin vasen ja '
            'oikea reuna teipataan yhteen kolmion sisäpuolelta.', 10, color=C['soft'])
 
-    for v in [triangle_v1, triangle_v2]:
-        d.slide(v.__doc__.strip().split('\n')[0], bg=C['white'])
-        v(d)
-        triangle_guides(d)
+    d.slide(triangle_faces.__doc__.strip().split('\n')[0], bg=C['white'])
+    triangle_faces(d)
+    triangle_guides(d)
     return d
 
 
@@ -566,29 +609,26 @@ def tri_struck(d, i, fill, outline=None):
     return x, y, w, h, yy + 10 + th
 
 
-def tri_beta(d, i, fill, button_style='ink', outline=None, wordmark=None, spark='vaalea-koralli'):
-    """The beta: the heading, where Pilke works, and the code to pilke.app/#beta low on
-    the face, where a phone is held up to it."""
-    x, y, w, h = tri_card(d, i, fill, outline=outline)
-    bottom = y + h
-    q = 58
-    qy = bottom - 40 - q
-    scatter(d, spark, [(x + w - 4, y + 2, 16, 14), (x + 3, qy + 34, 9, -26), (x + w - 3, qy + 12, 10, 30)])
-    top = y + 8
-    if wordmark:
-        d.wordmark(wordmark, x + 2, top, w=30)
-        top += 30 * 0.72 + 8
-    _, hh = d.text(x, top, w, T['cta.title'], 24, face='Fredoka', weight=600)
-    _, ah = d.text(x, top + hh + 2, w - 6, PRINT['area'], 13, weight=500)
-    if top + hh + 2 + ah > qy - 3:
-        d.warnings.append(f'{d.sid} beta face: the text runs into the code')
-    d.qr(x + (w - q) / 2, qy, q, code='beta')
-    d.pill(x + (w - 60) / 2, qy + q + 6, 60, 13, T['cta.button'], style=button_style, size=13)
-    d.text(x, qy + q + 22, w, PRINT['url'], 14, face='Fredoka', weight=600, align='CENTER')
+def store_badges(d, cx, y, h):
+    """The App Store and Google Play badges side by side, centred on cx, both drawn
+    badges h tall (Google asks for its badge to be at least the size of the others), a
+    quarter of their height apart and clear of everything round them. Returns the y
+    under them."""
+    iw, ih = size_of(BADGE_APPLE)
+    aw = h * iw / ih
+    top, bottom, full = GOOGLE_ROWS
+    gw_px, _ = size_of(BADGE_GOOGLE)
+    gh = h * full / (bottom - top)
+    gw = h * gw_px / (bottom - top)
+    gap = h / 4
+    x = cx - (aw + gap + gw) / 2
+    d.image(BADGE_APPLE, x, y, aw, h, role='bdg')
+    d.image(BADGE_GOOGLE, x + aw + gap, y - h * top / (bottom - top), gw, gh, role='bdg')
+    return y + h
 
 
-def triangle_v1(d):
-    """Pohja 1 · Vihdoin, treffisovellus"""
+def triangle_faces(d):
+    """Pöytäkolmio · Vihdoin, treffisovellus"""
     # Face 1: the wordmark and the headline on peach, the hand and phone on the coral disc.
     x, y, w, h = tri_card(d, 0, C['peach'])
     scatter(d, 'persikka', [(x + w - 6, y + 4, 18, 14), (x + w - 14, y + 30, 8, -26), (x + 4, y + 104, 10, 30)])
@@ -596,32 +636,32 @@ def triangle_v1(d):
     _, hh = headline(d, x, y + 38, w, 30)
     d.text(x, y + 38 + hh + 2, w - 4, T['pitch.hero.lead'], 12.5, weight=500)
     d.image(HERO_DISC, x + 6, y + h - 78 * 33525 / 29575, w=78)
-    # Face 2: the routine, struck through, and what Pilke does with it.
+    # Face 2: the other apps' routine, struck through, and what Pilke does with it.
     x, y, w, h, yy = tri_struck(d, 1, C['white'], outline=C['rule'])
-    bullets(d, x, yy + 8, w, [(T[f'pitch.instead.{k}.title'], None) for k in ['match', 'invite', 'ready']],
-            14, gap=3, spark=6)
-    d.sparkle('vaalea-koralli', x + w - 8, y + h - 10, 14, 14)
-    d.sparkle('vaalea-koralli', x + w - 22, y + h - 4, 6, -24)
-    # Face 3: the beta, with the code.
-    tri_beta(d, 2, C['coral'], button_style='ink')
-
-
-def triangle_v2(d):
-    """Pohja 2 · Kädessä puhelin"""
-    # Face 1: the photograph of the invitation in a hand, and the headline under it.
-    x, y, w, h = tri_card(d, 0, C['white'], outline=C['rule'])
-    _, iw, ih = d.image(BETA_ROUNDED, x, y, w=w)
-    _, hh = headline(d, x, y + ih + 8, w, 28)
-    d.text(x, y + ih + 8 + hh + 2, w - 4, T['pitch.hero.lead'], 12.5, weight=500)
-    d.wordmark('muste', x, y + h - 22, h=22)
-    d.sparkle('ruusu', x + w - 8, y + h - 8, 12, 14)
-    # Face 2: the routine, struck through, on peach, with the lead.
-    x, y, w, h, yy = tri_struck(d, 1, C['peach'])
     d.text(x, yy + 4, w - 4, T['pitch.instead.lead'], 13, weight=500)
-    scatter(d, 'ruusu', [(x + w - 14, y + h - 14, 16, 14), (x + w - 28, y + h - 6, 7, -20)])
-    scatter(d, 'persikka', [(x + 8, y + h - 12, 12, 30), (x + w - 4, y + h - 34, 8, -26)])
-    # Face 3: the wordmark and the beta on white.
-    tri_beta(d, 2, C['white'], button_style='coral', outline=C['rule'], wordmark='muste', spark='ruusu')
+    d.sparkle('vaalea-koralli', x + w - 10, y + h - 12, 16, 14)
+    d.sparkle('vaalea-koralli', x + w - 26, y + h - 4, 7, -24)
+    d.sparkle('persikka', x + 8, y + h - 14, 12, 30)
+    # Face 3: how it goes, in the site's words, then the code to pilke.app and the stores.
+    x, y, w, h = tri_card(d, 2, C['mint_ground'])
+    bottom = y + h
+    _, th = d.text(x, y + 2, w, T['pitch.practice.title'], 17, face='Fredoka', weight=600)
+    flow = [
+        (T['pitch.practice.one.title'], first_sentence(T['pitch.practice.one.body'])),
+        (T['pitch.instead.ready.title'], first_sentence(T['detail.draw.body'])),
+        (T['pitch.practice.two.title'], T['pitch.instead.invite.body']),
+        (T['pitch.practice.three.title'], first_sentence(T['pitch.practice.three.body'])),
+        (T['pitch.practice.four.title'], first_sentence(T['pitch.practice.four.body'])),
+    ]
+    yy = steps(d, x, y + 2 + th + 2, w, flow, 12, 9, gap=2.2)
+    _, nh = d.text(x, bottom - 9, w, PRINT['area'], 8.5, color=C['soft'], align='CENTER')
+    by = store_badges(d, x + w / 2, bottom - 9 - 3 - 10, 10)
+    q = 30
+    qy = by - 10 - 4 - 7 - q
+    if qy < yy + 2:
+        d.warnings.append(f'{d.sid} face 3: the steps run into the code ({yy:.1f} > {qy:.1f})')
+    d.qr(x + (w - q) / 2, qy, q, code='site')
+    d.text(x, qy + q + 0.5, w, PRINT['url'], 13, face='Fredoka', weight=600, align='CENTER')
 
 
 # ───────────────────────────── A5 flyer ─────────────────────────────
@@ -631,82 +671,71 @@ A5_C = (14, 14, 120, 182)  # content box: 8 mm inside the card, 14 mm from the s
 
 
 def flyer_footer(d, y, tone='ink'):
-    """The beta code, the button and the address, along the foot of a page."""
+    """The beta form's code, the line and the button, along the foot of a page."""
     x, _, w, _ = A5_C
-    q = 30
-    d.qr(x, y, q, code='beta')
-    _, th = d.text(x + q + 6, y + 1, w - q - 6, PRINT['scan'], 15, face='Fredoka', weight=600)
-    d.text(x + q + 6, y + 1 + th, w - q - 6, PRINT['url'], 12, weight=600, color=C['soft'])
+    q = 28
+    d.qr(x, y, q, code='form')
+    _, th = d.text(x + q + 6, y + 3, w - q - 6, PRINT['scan'], 15, face='Fredoka', weight=600)
     d.pill(x + q + 8, y + q - 12, 46, 12, T['cta.button'], style=tone, size=12)
 
 
+FLYER_HOW_TO = (
+    'A5-flyer – näin tulostat. Flyer on kaksi sivua: etupuoli (sivu 1) ja takapuoli (sivu 2). '
+    'Tiedosto › Lataa › PDF ja tulosta PDF skaalauksella 100 % (todellinen koko). '
+    'A5-paperille: valitse kaksipuolinen tulostus, kääntö pitkän reunan mukaan. '
+    'A4-paperille: valitse "2 sivua arkille" ja vaakasuunta, niin etu- ja takapuoli tulevat vierekkäin; '
+    'leikkaa arkki keskeltä. Kaksipuoliseen flyeriin tulosta etupuolet ja takapuolet eri kierroksilla. '
+    'Kaikki sisältö on vähintään 6 mm:n päässä reunasta.')
+
+
 def build_flyer(layout):
+    """Two pages, front and back, so it prints double-sided; how to print it is in the
+    front page's speaker notes, which do not print."""
     d = Deck('fl', 148, 210, layout)
-    how_to(d, 'A5-flyer – näin tulostat', [
-        ('Tulosta todellisessa koossa',
-         'Tiedosto › Lataa › PDF ja tulosta PDF skaalauksella 100 % (todellinen koko). '
-         'Flyer on kaksi sivua: etupuoli (sivu 2) ja takapuoli (sivu 3). Sivu 4 on toinen etupuoli, '
-         'jos se sopii tilanteeseen paremmin.'),
-        ('A5-paperille',
-         'Valitse paperiksi A5 ja kaksipuolinen tulostus, kääntö pitkän reunan mukaan, ja tulosta sivut 2–3 '
-         '(tai 4 ja 3).'),
-        ('A4-paperille',
-         'Valitse "2 sivua arkille" ja vaakasuunta, niin etu- ja takapuoli tulevat vierekkäin samalle arkille. '
-         'Leikkaa arkki keskeltä. Kaksipuoliseen flyeriin tulosta etupuolet ja takapuolet eri kierroksilla.'),
-        ('Reunat',
-         'Kaikki sisältö on vähintään 6 mm:n päässä reunasta, joten se mahtuu tulostimen tyhjien reunojen sisäpuolelle.'),
-    ])
-    for page in (flyer_front, flyer_back, flyer_front_struck):
+    for page in (flyer_front, flyer_back):
         d.slide(page.__doc__.strip(), bg=C['ground'])
         page(d)
+    d.notes[d.batches[0]['slide']] = FLYER_HOW_TO
     return d
 
 
 def flyer_front(d):
     """Etupuoli · Vihdoin, treffisovellus"""
     d.card(*A5_CARD, fill=C['peach'])
-    scatter(d, 'persikka', [(128, 20, 20, 14), (112, 38, 8, -26), (20, 192, 14, -18), (40, 198, 7, 30)])
+    scatter(d, 'persikka', [(128, 20, 20, 14), (112, 38, 8, -26), (24, 196, 10, -18)])
     x, y, w, h = A5_C
-    d.wordmark('muste', x, y, w=30)
-    _, th = headline(d, x, y + 28, w, 34)
-    _, lh = d.text(x, y + 28 + th + 2, w - 20, T['pitch.hero.lead'], 13, weight=500)
-    yy = y + 28 + th + lh + 8
-    _, ih = d.text(x, yy, 62, T['pitch.instead.title'], 15, face='Fredoka', weight=600)
-    bullets(d, x, yy + ih + 3, 62, [(T[f'pitch.instead.{k}.title'], None) for k in ['match', 'invite', 'ready']],
-            11.5, title_face='Figtree', gap=2.5, spark=5)
-    iw = 66
+    d.wordmark('muste', x, y, w=28)
+    _, th = headline(d, x, y + 25, w, 32)
+    _, lh = d.text(x, y + 25 + th + 1, w - 10, T['pitch.hero.lead'], 12.5, weight=500)
+    top = y + 25 + th + lh + 6
+    # Left: the other apps' routine, struck through, and the line under it.
+    steps_ = [T['pitch.elsewhere.swipe'], T['pitch.elsewhere.chat'], T['pitch.elsewhere.ghost'],
+              T['pitch.elsewhere.swipe'], T['pitch.elsewhere.more'], T['pitch.elsewhere.maybe']]
+    _, sy = d.struck(x - 1, top, 66, steps_, 15, gap=0.2)
+    d.text(x, sy + 3, 62, T['pitch.instead.title'], 15, face='Fredoka', weight=600)
+    # Right: what Pilke does instead, and the hand holding the phone.
+    bullets(d, 82, top + 1, 54, [(T[f'pitch.instead.{k}.title'], None) for k in ['match', 'invite', 'ready']],
+            11, title_face='Figtree', gap=2, spark=4.5)
+    iw = 54
     d.image(HERO_DISC, 142 - 4 - iw, 204 - 4 - iw * 33525 / 29575, w=iw)
 
 
 def flyer_back(d):
     """Takapuoli · Etsimme testaajia"""
     d.card(*A5_CARD, fill=C['white'], outline=C['rule'])
-    d.sparkle('ruusu', 129, 19, 13, 14)
+    d.sparkle('ruusu', 129, 18, 12, 14)
     x, y, w, h = A5_C
-    _, th = d.text(x, y, w - 24, PRINT['testers.title'], 24, face='Fredoka', weight=600)
-    _, bh = d.text(x, y + th + 1, w, PRINT['testers.body'], 12, weight=500)
-    yy = y + th + bh + 7
-    _, eh = d.text(x, yy, w, PRINT['expect.title'], 15, face='Fredoka', weight=600)
-    bullets(d, x, yy + eh + 2, w,
-            [(PRINT[f'expect.{k}.title'], PRINT[f'expect.{k}.body']) for k in ['beta', 'area', 'few', 'feedback']],
-            12, 10.5, title_face='Figtree', gap=3, spark=5)
-    flyer_footer(d, 204 - 10 - 30)
-
-
-def flyer_front_struck(d):
-    """Toinen etupuoli · Swaippaa, yliviivattuna"""
-    d.card(*A5_CARD, fill=C['white'], outline=C['rule'])
-    d.disc(78, 128, 60, fill=C['coral'])
-    x, y, w, h = A5_C
-    steps = [T['pitch.elsewhere.swipe'], T['pitch.elsewhere.chat'], T['pitch.elsewhere.ghost'],
-             T['pitch.elsewhere.swipe'], T['pitch.elsewhere.more'], T['pitch.elsewhere.maybe']]
-    _, yy = d.struck(x - 1, y + 2, 100, steps, 20, gap=0.2)
-    _, th = d.text(x, yy + 5, 76, T['pitch.instead.title'], 22, face='Fredoka', weight=600)
-    d.text(x, yy + 5 + th + 2, 60, T['pitch.hero.lead'], 12, weight=500)
-    d.phone('treffikutsu', 88, 92, 40)
-    for cx, cy, s, r in [(80, 186, 12, 14), (136, 112, 8, -20)]:
-        d.sparkle('ruusu', cx, cy, s, r)
-    d.wordmark('muste', x, 204 - 8 - 20, h=20)
+    _, th = d.text(x, y - 2, w - 22, PRINT['testers.title'], 21, face='Fredoka', weight=600)
+    _, bh = d.text(x, y - 2 + th, w, PRINT['testers.body'], 10, weight=500)
+    yy = y - 2 + th + bh + 3
+    _, eh = d.text(x, yy, w, PRINT['expect.title'], 13, face='Fredoka', weight=600)
+    end = bullets(d, x, yy + eh, w,
+                  [(PRINT[f'expect.{k}.title'], PRINT[f'expect.{k}.body']) for k in ['beta', 'few', 'area', 'feedback']],
+                  10.5, 9.5, title_face='Figtree', gap=2, spark=4.5)
+    foot = 204 - 8 - 28
+    if end > foot - 3:
+        d.warnings.append(f'{d.sid} back: the list runs into the footer ({end:.1f} > {foot - 3:.1f})')
+    flyer_footer(d, foot)
 
 
 # ───────────────────────────── Elementit ─────────────────────────────
@@ -936,6 +965,9 @@ def main():
     ap.add_argument('--max-chars', type=int, default=9000, help='split a slide into batches of about this much JSON')
     ap.add_argument('--part', type=int, help='print only this batch (0-based) of the selected slide(s)')
     ap.add_argument('--texts', action='store_true', help='print every text box id and its text, for checking a built deck')
+    ap.add_argument('--notes', action='store_true',
+                    help="print each slide's speaker notes as JSON: insert them into the slide's notes shape "
+                         '(read_slide_page: notesPage.notesProperties.speakerNotesObjectId) once the slide exists')
     ap.add_argument('--replace-images', metavar='PATTERN',
                     help='print replaceImage requests for every image whose out/ path contains PATTERN, '
                          'pointing at --assets: how a refreshed picture reaches a built deck in place')
@@ -954,6 +986,10 @@ def main():
                     reqs.append({'replaceImage': {'imageObjectId': r['createImage']['objectId'],
                                                   'url': r['createImage']['url'], 'imageReplaceMethod': 'CENTER_INSIDE'}})
         json.dump(reqs, sys.stdout, ensure_ascii=False, separators=(',', ':'))
+        print()
+        return
+    if args.notes:
+        json.dump(d.notes, sys.stdout, ensure_ascii=False)
         print()
         return
     if args.texts:

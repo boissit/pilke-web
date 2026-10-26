@@ -89,6 +89,8 @@ WORDMARKS = [
 QR = [
     ('pilke-app', 'https://pilke.app'),
     ('pilke-app-beta', 'https://pilke.app/#beta'),
+    # The beta's sign-up form, the flyer's code.
+    ('beta-lomake', 'https://forms.gle/LNjDw77d5giuxFWeA'),
     # From pilke-app/eas.json (ascAppId) and app.config.ts (the Android package).
     # Neither listing is public yet: both URLs answer 404 until the apps are released.
     ('app-store', 'https://apps.apple.com/fi/app/id6806932833'),

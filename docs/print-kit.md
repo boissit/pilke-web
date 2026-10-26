@@ -1,7 +1,8 @@
 # The print kit
 
 Everything the owner needs to make a flyer or a table tent in Google Slides lives in
-one Drive folder, **Pilke – painotuotteet**, and every file in it is rebuilt from this
+one Drive folder (id `1jOGlLP45pesKXiPyRwUE9YvZOAOFzgap`, moved there by the owner on
+2026-10-26), and every file in it is rebuilt from this
 repository and `pilke-app` by `tools/print-kit/`. A picture or a line of copy on a
 printed card is then as current as the site the day the kit was last refreshed.
 
@@ -10,14 +11,20 @@ printed card is then as current as the site the day the kit was last refreshed.
 | Drive | What it holds |
 | --- | --- |
 | `Brändi/` | The wordmark as SVG in ink, white and coral, and as 1000 px PNGs; the rounded app icon, 768 px; `paletti.svg` and `paletti.txt`, every colour with its hex and RGB; `Kipinät/`, the sparkle in seven colours as SVG and 1000 px PNG, and the counter's row; `Kauppamerkit/`, Apple's own Finnish App Store badge, black and white SVG |
-| `QR/` | `https://pilke.app` and `https://pilke.app/#beta`, ink and white on transparency, PNG and SVG. The App Store and Google Play codes are there too, for after the release: both listings answer 404 today, and `osoitteet.txt` says so |
+| `QR/` | `https://pilke.app`, `https://pilke.app/#beta` and the beta's sign-up form (`qr-beta-lomake-*`, `https://forms.gle/LNjDw77d5giuxFWeA`), ink and white on transparency, PNG and SVG. The App Store and Google Play codes are there too, for after the release: both listings answer 404 today, and `osoitteet.txt` says so |
 | `Kuvat/Pilke – kuvat` | A Slides file: every photograph, phone mockup, unframed screen and store image at full size, one group a page, the file name under each |
 | `Pilke – elementit` | The element library, A4 landscape: wordmarks, the icon, sparkles, palette chips as shapes in the exact colours, the type styles, the struck-through steps, the coral disc, the pill buttons, cards and step numbers as native shapes, phones, photo crops and the QR codes. Copy and paste keeps size and colour |
-| `Pilke – pöytäkolmio` | Two table-tent templates on A4 landscape, after a how-to page |
-| `Pilke – A5-flyer` | One two-sided A5 flyer for beta testers, front and back, and a second front, after a how-to page |
+| `Pilke – pöytäkolmio` | One table-tent template on A4 landscape, for the public release, after a how-to page |
+| `Pilke – A5-flyer` | One two-sided A5 flyer for beta testers: exactly two pages, front and back; how to print it is in the front page's speaker notes |
 
 Slides gives a file one page size, so each format is its own file. Everything is the
 owner's and private; nothing is shared.
+
+**What the connector can reach there.** The Drive connector Claude works through sees
+only files it created or was handed by id. The owner's folder itself answers "not
+found", so Claude cannot list it or add files to it. The decks are edited in place by
+their ids (below), which puts the changes wherever the owner keeps them; a new loose
+file (a PNG, a badge) stays in `tools/print-kit/out/` for the owner to drag in.
 
 ### Why the big pictures are in a Slides file and not loose in the folder
 
@@ -59,21 +66,39 @@ blank margin falls where the faces meet.
 - The two fold lines are one group, **Ohjeviivat**, the topmost thing on each page: one
   click and Delete removes them.
 
-Both templates have the hand holding the phone and the site's headline on face 1, the
-other apps' routine struck through and "Pilkkeessä ei swaippailla eikä chättäillä." on
-face 2, and the beta on face 3, with the pilke.app/#beta code and a line saying Pilke
-works only in pääkaupunkiseutu for now.
+The template is for the public release, so it says nothing about a beta:
+
+- **Face 1**, peach: the wordmark, the site's headline and lead, and the hand holding
+  the phone on the coral disc.
+- **Face 2**, white: the other apps' routine struck through as on the front page, then
+  "Pilkkeessä ei swaippailla eikä chättäillä." and the lead under it.
+- **Face 3**, mint: "Näin se menee käytännössä" in five numbered steps in the site's
+  words, the code to pilke.app, the App Store and Google Play badges and "Pilke toimii
+  toistaiseksi vain pääkaupunkiseudulla."
+
+The badges are the stores' own Finnish artwork, unaltered (`badges()` in `build.py`):
+both drawn 10 mm tall (Google asks for its badge to be at least the size of the other
+stores'), a quarter of their height apart, and kept clear of the code and the note by
+at least that much. The Google Play PNG carries transparent rows above and below the
+badge; `GOOGLE_ROWS` in `slides.py` is where the drawn badge sits in it.
 
 ## The A5 flyer
 
-One flyer, two sides, for finding beta testers: the front says what Pilke does in the
-site's words, the back who is behind it, what is asked of a tester and what to expect
-of an early beta, and ends in the beta code. Page 4 is a second front with the
-struck-through routine. Content keeps 6 mm or more from every edge, and the how-to
-page says how to print it, on A5 or two to an A4 sheet.
+One flyer of exactly two pages, so it prints double-sided. The front says what Pilke
+does in the site's words: the headline and lead, the routine struck through with
+"Pilkkeessä ei swaippailla eikä chättäillä.", the three things Pilke does instead, and
+the hand holding the phone. The back is the owner's own text (`PRINT` in `slides.py`,
+verbatim): who is behind Pilke and the ask for testers, four things to know about the
+beta, and the code to the beta's sign-up form. How to print it is in the front page's
+speaker notes, which do not print: `slides.py a5-flyer --notes` prints them, and they go
+into the notes shape (`read_slide_page`, `notesPage.notesProperties.speakerNotesObjectId`)
+once the slide exists. Content keeps 6 mm or more from every edge.
 
-The lines that are the kit's own and not the site's are in `PRINT` at the top of the
-decks' definitions in `slides.py`, for the owner to review.
+**Markers.** A sparkle or a step number beside a line is centred on that line's
+capitals: `first_line_mid()` puts the first baseline of a Slides text box 2.39 mm plus
+0.957 of the type size below its top, measured on the decks' own PDF export, and a
+capital is 0.70 of the size in both faces. Check it on a fresh export when the faces
+or the line spacing change.
 
 ## Rebuild the files
 
@@ -183,7 +208,7 @@ The folder's ids are at the end of this page.
 
 | | Drive id |
 | --- | --- |
-| Pilke – painotuotteet | `1y8XShY6AJZVnYh28FE0i-OT5ZSUDTKpO` |
+| The kit's folder (the owner's; the connector cannot list it) | `1jOGlLP45pesKXiPyRwUE9YvZOAOFzgap` |
 | Brändi | `192JSihUyyqQYxLV-UnrOfAGBkLordnJ-` |
 | Brändi/Kipinät | `1z9SU-S_xZSxmeJ8VUxja5O1ucXByANje` |
 | Brändi/Kauppamerkit | `1zUUSW6fcyDKfBIs2xi90owkRfotg6NPW` |
