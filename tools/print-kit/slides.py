@@ -531,6 +531,22 @@ def bullets(d, x, y, w, items, title_pt, body_pt=None, title_face='Fredoka', gap
     return y
 
 
+def text_height(text, w, size, face='Figtree', weight=400, spacing=None, after=0):
+    """The height Deck.text gives a box of this text and width, mm."""
+    spacing = spacing or (100 if face == 'Fredoka' else 125)
+    lines = wrap(text, face, weight, size, w - 2 * INSET_X)
+    line_mm = size * PT_MM * LINE_EM[face] * spacing / 100
+    return len(lines) * line_mm + text.count('\n') * after * PT_MM + 2 * INSET_Y + 0.6
+
+
+def steps_height(x, w, items, title_pt, body_pt, d_num=7, tuck=2):
+    """What steps() takes with no gaps, mm."""
+    tx = x + d_num + 2.5 - INSET_X
+    tw = x + w - tx
+    return sum(text_height(t, tw, title_pt, face='Fredoka', weight=600)
+               + (text_height(b, tw, body_pt) - tuck if b else 0) for t, b in items)
+
+
 def steps(d, x, y, w, items, title_pt, body_pt, gap=3, d_num=7, tuck=2):
     """Numbered steps: a white disc with its number centred in it by the ink, the disc
     centred on the title's capitals, the title the same distance from it on every row.
@@ -643,30 +659,23 @@ def tri_struck(d, i, fill, outline=None):
     return x, y, w, h, yy + 10 + th
 
 
-def badge_column(h):
-    """The width of the two store badges stacked, h tall each."""
+def store_badges(d, right, y, apple_h):
+    """The App Store badge over the Google Play badge, right-aligned on `right` and the
+    same width, so the Google Play badge, whose drawn shape is less wide for its height,
+    comes out a little taller: at least the size of the other store's badge, as Google
+    asks. They are a quarter of the taller one's height apart, the clear space both
+    stores ask for round a badge. Returns (width, the y under them, that clear space)."""
     iw, ih = size_of(BADGE_APPLE)
-    top, bottom, _ = GOOGLE_ROWS
-    gw_px, _ = size_of(BADGE_GOOGLE)
-    return max(h * iw / ih, h * gw_px / (bottom - top))
-
-
-def store_badges(d, right, y, h):
-    """The App Store badge over the Google Play badge, right-aligned on `right`, both
-    drawn badges h tall (Google asks for its badge to be at least the size of the
-    others) and a quarter of their height apart, the clear space both stores ask for.
-    Returns the y under them."""
-    iw, ih = size_of(BADGE_APPLE)
-    aw = h * iw / ih
+    bw = apple_h * iw / ih
     top, bottom, full = GOOGLE_ROWS
     gw_px, _ = size_of(BADGE_GOOGLE)
-    gh = h * full / (bottom - top)
-    gw = h * gw_px / (bottom - top)
-    gap = h / 4
-    d.image(BADGE_APPLE, right - aw, y, aw, h, role='bdg')
-    gy = y + h + gap
-    d.image(BADGE_GOOGLE, right - gw, gy - h * top / (bottom - top), gw, gh, role='bdg')
-    return gy + h
+    gh_drawn = bw * (bottom - top) / gw_px
+    clear = max(apple_h, gh_drawn) / 4
+    d.image(BADGE_APPLE, right - bw, y, bw, apple_h, role='bdg')
+    gy = y + apple_h + clear
+    d.image(BADGE_GOOGLE, right - bw, gy - gh_drawn * top / (bottom - top), bw, gh_drawn * full / (bottom - top),
+            role='bdg')
+    return bw, gy + gh_drawn, clear
 
 
 # "Näin se menee käytännössä" in six steps, the same on the tent and the flyer: the
@@ -684,10 +693,10 @@ def flow():
     ]
 
 
-def corner_sparkles(d, x, y, w):
+def corner_sparkles(d, x, y, w, small=(-21, 13)):
     """Face 1's two top-right sparkles, kept above the face's first line and clear of the
-    small wordmark at the left."""
-    scatter(d, 'persikka', [(x + w - 6, y + 4, 18, 14), (x + w - 21, y + 13, 7, -26)])
+    small wordmark at the left; `small` places the little one from the top-right corner."""
+    scatter(d, 'persikka', [(x + w - 6, y + 4, 18, 14), (x + w + small[0], y + small[1], 7, -26)])
 
 
 def small_wordmark(d, x, y):
@@ -717,34 +726,56 @@ def triangle_faces(d):
     d.sparkle('vaalea-koralli', x + w - 10, y + h - 12, 16, 14)
     d.sparkle('vaalea-koralli', x + w - 26, y + h - 4, 7, -24)
     d.sparkle('persikka', x + 8, y + h - 14, 12, 30)
-    # Face 3: the wordmark small, how it goes, then the code and the link on the left of
-    # one row and the store badges stacked on its right.
+    # Face 3: the small wordmark with the heading beside it, the six steps, then one row:
+    # the code with the link under it on the left, the store badges stacked on the right.
     x, y, w, h = tri_card(d, 2, C['mint_ground'])
     bottom = y + h
-    top = y + small_wordmark(d, x, y)
-    corner_sparkles(d, x, y, w)
-    _, th = d.text(x, top, w, T['pitch.practice.title'], 16, face='Fredoka', weight=600)
-    yy = steps(d, x, top + th + 0.5, w, flow(), TENT_STEP[0], TENT_STEP[1], gap=TENT_STEP[2], d_num=6.5,
-               tuck=2.5)
+    wm = 22
+    d.wordmark('muste', x + 1, y + 3, w=wm)
+    corner_sparkles(d, x, y, w, small=(-5, 22))
+    hx = x + 1 + wm + 3 - INSET_X
+    hw = x + w - 16 - hx
+    hpt = TENT_STEP[3]
+    em = hpt * PT_MM
+    line = em * LINE_EM['Fredoka']
+    hh = text_height(T['pitch.practice.title'], hw, hpt, face='Fredoka', weight=600)
+    lines = len(wrap(T['pitch.practice.title'], 'Fredoka', 600, hpt, hw - 2 * INSET_X))
+    # The heading's ink, first capital to last baseline, centred on the wordmark's.
+    ink_mid = 2.39 + ((0.957 - 0.70) * em + 0.957 * em + (lines - 1) * line) / 2
+    hy = y + 3 + wm * 0.72 / 2 - ink_mid
+    d.text(hx, hy, hw, T['pitch.practice.title'], hpt, face='Fredoka', weight=600)
+    top = max(y + 3 + wm * 0.72, hy + hh) + 3
+    # The footer row, from the foot up: the note, the badges and the code with its link.
     d.text(x, bottom - 8.5, w, PRINT['area'], 8, color=C['soft'], align='CENTER')
-    bh = 10
-    row = 2 * bh + bh / 4
-    ry = bottom - 8.5 - 3 - row
-    if ry - bh / 4 < yy - TENT_STEP[2]:
-        d.warnings.append(f'{d.sid} face 3: the steps run into the footer ({yy:.1f} > {ry - bh / 4:.1f})')
-    d.qr(x, ry, row, code='site')
-    store_badges(d, x + w, ry, bh)
-    url_pt = 12
-    lx = x + row + 3
-    room = x + w - badge_column(bh) - bh / 4 - lx
-    if text_width_mm(PRINT['url'], 'Fredoka', 600, url_pt) > room:
-        d.warnings.append(f'{d.sid} face 3: pilke.app does not fit between the code and the badges')
-    lh = url_pt * PT_MM * LINE_EM['Fredoka'] + 2 * INSET_Y + 0.6
-    d.text(lx - INSET_X, ry + row / 2 - lh / 2, room + 2 * INSET_X, PRINT['url'], url_pt, face='Fredoka',
-           weight=600, h=lh, valign='MIDDLE')
+    apple_h = 11
+    iw, ih = size_of(BADGE_APPLE)
+    top_r, bottom_r, _ = GOOGLE_ROWS
+    gw_px, _ = size_of(BADGE_GOOGLE)
+    bw = apple_h * iw / ih
+    stack = apple_h + bw * (bottom_r - top_r) / gw_px
+    clear = max(apple_h, stack - apple_h) / 4
+    stack += clear
+    ry = bottom - 8.5 - 3 - stack
+    store_badges(d, x + w, ry, apple_h)
+    # The code and pilke.app under it make a block as tall as the badges: the plate's top
+    # level with the App Store badge's, the link's baseline on the Google Play badge's foot.
+    url_pt = 11
+    uem = url_pt * PT_MM
+    q = stack - 1.5 - 0.70 * uem
+    d.qr(x, ry, q, code='site')
+    d.text(x - INSET_X, baseline_box(ry + stack, url_pt), q + 2 * INSET_X, PRINT['url'], url_pt, face='Fredoka',
+           weight=600, align='CENTER')
+    # The steps share out what is left between the heading and the footer's clear space.
+    tpt, bpt, gmin = TENT_STEP[:3]
+    room = ry - clear - top
+    need = steps_height(x, w, flow(), tpt, bpt, d_num=6.5, tuck=2.5)
+    gap = min(3.5, (room - need) / (len(flow()) - 1))
+    if gap < gmin:
+        d.warnings.append(f'{d.sid} face 3: the steps need {need:.1f} mm, the room is {room:.1f}')
+    steps(d, x, top, w, flow(), tpt, bpt, gap=gap, d_num=6.5, tuck=2.5)
 
 
-TENT_STEP = (10.5, 8.5, 1.1)   # the flow on face 3: title pt, body pt, gap mm
+TENT_STEP = (10.5, 8.5, 1.0, 14)   # face 3: step title pt, body pt, least gap mm, heading pt
 
 
 # ───────────────────────────── A5 flyer ─────────────────────────────
@@ -773,26 +804,40 @@ def baseline_box(baseline, size_pt):
     return baseline - 2.39 - 0.957 * size_pt * PT_MM
 
 
-def flyer_footer(d, y):
-    """The beta form's code along the foot of the back, and on its right one grid: the
-    line's capitals start level with the top of the code's modules, and the form's
-    address and the wordmark stand on the modules' bottom edge, the address in the
-    line's column and the wordmark at the content's right edge."""
+def flyer_footer(d, bottom):
+    """Along the foot of the back, standing on `bottom`: the wordmark on the left, the
+    beta form's code on the right, the wordmark as tall as the code's modules and level
+    with them, and between them the line with the form's address right under it, the
+    address sized to the line's width and its baseline on the modules' foot. The three
+    are spaced evenly between the content's edges."""
     x, _, w, _ = A5_C
-    q = 28
-    d.qr(x, y, q, code='form')
-    inset = qr_inset('form', q)
-    mod_top, mod_bottom = y + inset, y + q - inset
-    col = x + q + 6
-    wm = 20
-    d.text(col - INSET_X, cap_top_box(mod_top, 15), x + w - col + 2 * INSET_X, PRINT['scan'], 15,
+    mods = FLYER_CODE
+    frac = qr_inset('form', 100) / 100
+    q = mods / (1 - 2 * frac)
+    inset = q * frac
+    title_pt = 16
+    tw = text_width_mm(PRINT['scan'], 'Fredoka', 600, title_pt)
+    url_pt = round(title_pt * tw / text_width_mm(PRINT['form'], 'Figtree', 500, title_pt), 2)
+    wm_w = mods / 0.72
+    gap = (w - inset - wm_w - tw - mods) / 2
+    mod_bottom = bottom - inset
+    mod_top = mod_bottom - mods
+    d.wordmark('muste', x, mod_top, w=wm_w)
+    # Slides sets the two lines' ink 0.13 mm in from the box and 0.3 mm narrower than PIL
+    # measures them (PDF export); the 0.17 mm evens the two gaps out.
+    col = x + wm_w + gap + 0.17
+    url_top = baseline_box(mod_bottom, url_pt)
+    url_cap = mod_bottom - 0.70 * url_pt * PT_MM
+    # The line's descenders clear the address's capitals by 1 mm.
+    title_base = url_cap - 1 - 0.20 * title_pt * PT_MM
+    d.text(col - INSET_X, baseline_box(title_base, title_pt), tw + 2 * INSET_X + 1, PRINT['scan'], title_pt,
            face='Fredoka', weight=600)
-    url_pt = 9.5
-    room = x + w - wm - 3 - col
-    if text_width_mm(PRINT['form'], 'Figtree', 500, url_pt) > room:
-        d.warnings.append(f'{d.sid} back: the form address does not fit beside the wordmark')
-    d.text(col - INSET_X, baseline_box(mod_bottom, url_pt), room + 2 * INSET_X, PRINT['form'], url_pt, weight=500)
-    d.wordmark('muste', x + w - wm, mod_bottom - wm * 0.72, w=wm)
+    d.text(col - INSET_X, url_top, tw + 2 * INSET_X + 1, PRINT['form'], url_pt, weight=500)
+    d.qr(x + w - q, bottom - q, q, code='form')
+    return mod_top
+
+
+FLYER_CODE = 19   # the back's code: its modules' side, mm; the wordmark is as tall
 
 
 FLYER_HOW_TO = (
@@ -843,8 +888,9 @@ def flyer_front(d):
         d.warnings.append(f'{d.sid} front: the steps run past the content box ({end - FLYER_STEP[2]:.1f} > {y + h:.1f})')
     rx = x + lw + 4
     rw = x + w - rx
-    _, sy = d.struck(rx - 1, yy, rw + 2, [T[k] for k in ELSEWHERE], 12.5, gap=0.1)
-    _, ph = d.text(rx, sy + 1.5, rw, T['pitch.instead.title'], 12.5, face='Fredoka', weight=600)
+    spt = FLYER_STEP[4]
+    _, sy = d.struck(rx - 1, yy, rw + 2, [T[k] for k in ELSEWHERE], spt, gap=0.12)
+    _, ph = d.text(rx, sy + 1.5, rw, T['pitch.instead.title'], spt, face='Fredoka', weight=600)
     # The hand as wide as the room right of the steps' longest lines, to the card's edge.
     left = x + lw - INSET_X + 1.5
     iw = A5_CARD[0] + A5_CARD[2] - 4 - left
@@ -855,13 +901,13 @@ def flyer_front(d):
     d.image(HERO_DISC, left, iy, w=iw)
 
 
-FLYER_STEP = (11, 9, 1.0, 78)   # the front's flow: title pt, body pt, gap mm, column mm
+FLYER_STEP = (11, 8.5, 1.0, 68, 15)   # the front's flow: title pt, body pt, gap mm, column mm, routine pt
 
 
 def flyer_back(d):
     """Takapuoli · Etsimme testaajia"""
     d.card(*A5_CARD, fill=C['white'], outline=C['rule'])
-    d.sparkle('ruusu', 129, 18, 12, 14)
+    scatter(d, 'persikka', [(128, 14, 13, 14), (113, 11, 6, -26)])
     x, y, w, h = A5_C
     _, th = d.text(x, y - 2, w - 22, PRINT['testers.title'], 21, face='Fredoka', weight=600)
     _, bh = d.text(x, y - 2 + th, w, PRINT['testers.body'] + '\n' + PRINT['testers.ask'], 10, weight=500, after=5)
@@ -870,10 +916,9 @@ def flyer_back(d):
     end = bullets(d, x, yy + eh, w,
                   [(PRINT[f'expect.{k}.title'], PRINT[f'expect.{k}.body']) for k in ['beta', 'few', 'area', 'feedback']],
                   10.5, 9.5, title_face='Figtree', gap=2, spark=4.5)
-    foot = 204 - 8 - 28
+    foot = flyer_footer(d, A5_C[1] + A5_C[3])
     if end > foot - 3:
         d.warnings.append(f'{d.sid} back: the list runs into the footer ({end:.1f} > {foot - 3:.1f})')
-    flyer_footer(d, foot)
 
 
 # ───────────────────────────── Elementit ─────────────────────────────
