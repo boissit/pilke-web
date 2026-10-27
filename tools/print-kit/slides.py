@@ -895,7 +895,8 @@ def flyer_footer(d, bottom, left):
     per_pt = text_width_mm(PRINT['form'], 'Figtree', 500, 1) - sum(FOOTER_INK['form'][:2]) * PT_MM
     url_pt = round(ink_w / per_pt, 2)
     url_em = url_pt * PT_MM
-    wm_w = mods / 0.72
+    iw, ih = size_of(WORDMARK['muste'])   # the PNG is the wordmark's ink box, sparkle tip to the e's foot
+    wm_w = mods * iw / ih
     gap = (x + w - inset - left - wm_w - ink_w - mods) / 2
     mod_bottom = bottom - inset
     mod_top = mod_bottom - mods

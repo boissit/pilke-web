@@ -134,7 +134,8 @@ once the slide exists. Content keeps 6 mm or more from every edge.
 The back's footer (`flyer_footer()`) stands on the content's foot: the wordmark on the
 left, its ink starting on the page's shared left edge with the paragraphs and the list
 markers (16.69 mm), the beta form's code on the right with its plate on the content's
-edge, the wordmark exactly as tall as the code's modules and level with them
+edge, the wordmark exactly as tall as the code's modules and level with them (its PNG is
+the artwork's ink box, sparkle tip to the e's foot, so the PNG's aspect sizes it)
 (`FLYER_CODE`, 18 mm), and between them three lines: "Skannaa ja liity betaan" in
 Fredoka 16 pt, the form's address printed short as `forms.gle/LNjDw77d5giuxFWeA` (the
 code reads `https://forms.gle/LNjDw77d5giuxFWeA`), and pilke.app. The line keeps its
@@ -254,8 +255,13 @@ The folder's ids are at the end of this page.
 4. **Update the Slides files in place.** Object ids are fixed by `slides.py`
    (`<deck>_s<NN>_<role><NN>`), so a changed picture is one `replaceImage` request on
    the same id with the new branch URL and `imageReplaceMethod: CENTER_INSIDE`, which
-   keeps the frame; a changed line of copy is `deleteText` and `insertText` on its
-   text box. When a page's layout changes, delete its slide and resend it:
+   keeps the frame. A picture with a new aspect shrinks to fit that frame and is
+   centred in it, so read the element's transform first (the owner may have moved or
+   sized it by hand) and set it back after the swap, the same `scaleX` and `scaleY` and
+   the same `translateX`/`translateY` (`updatePageElementTransform`, `ABSOLUTE`): the
+   width and the top-left corner hold and the height follows the new aspect. That is
+   how the wordmarks went from the cut 4000 × 2881 PNGs to the whole 4000 × 2892 ones.
+   A changed line of copy is `deleteText` and `insertText` on its text box. When a page's layout changes, delete its slide and resend it:
 
        tools/print-kit/.venv/bin/python tools/print-kit/slides.py poytakolmio --assets <commit> --layout p3 --slide 3
 
