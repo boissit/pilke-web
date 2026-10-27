@@ -152,7 +152,7 @@ const legal = [
     }
 
     <div class="beta-copy">
-    <div class="mark"><Logo height={88} class="beta-logo" /></div>
+    <div class="mark"><Logo height={88} /></div>
     <h2 id="beta-title">{t('cta.title')}</h2>
     <p class="body">{t('cta.body')}</p>
 
@@ -251,7 +251,7 @@ const legal = [
   <div class="wrap">
     <div class="foot-top">
       <a class="brand" href={localePath(lang)} aria-label={t('nav.home')}>
-        <Logo height={64} class="foot-logo" />
+        <Logo height={64} />
       </a>
 
       <div class="foot-links">
@@ -356,9 +356,8 @@ const legal = [
   }
 
   /* The wordmark over the headline, smaller on a phone. */
-  .mark :global(.beta-logo) {
-    height: clamp(72px, 1.52vw + 66px, 88px);
-    width: auto;
+  .mark {
+    --logo-height: clamp(72px, 1.52vw + 66px, 88px);
   }
 
   h2 {
@@ -500,9 +499,8 @@ const legal = [
   }
 
   /* The wordmark at the footer's size on a desktop and the smaller one on a phone. */
-  .brand :global(.foot-logo) {
-    height: clamp(52px, 1.14vw + 47.5px, 64px);
-    width: auto;
+  .brand {
+    --logo-height: clamp(52px, 1.14vw + 47.5px, 64px);
   }
 
   /* Two equal columns on a phone, as wide as the footer; two columns as wide as

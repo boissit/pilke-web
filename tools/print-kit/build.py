@@ -22,6 +22,7 @@ import argparse
 import hashlib
 import io
 import json
+import math
 import os
 import re
 import shutil
@@ -258,6 +259,26 @@ def sparkle_svg(fill):
             f'<path fill="{fill}" d="{SPARKLE_PATH}"/></svg>\n')
 
 
+def wordmark_png(svg, width):
+    """The wordmark as a PNG `width` px across, framed on the artwork's box
+    (`data-artwork-box`) rather than on the SVG's viewBox, which has a margin round that
+    box for the browser's sake (`Logo.astro`): the Slides files place these by their
+    edges (`slides.py`, `WM_LETTER_TOP` and the flyer's ink edge), so the ink is the image.
+
+    WARNING: **The canvas is given exactly, never left to resvg.** An SVG with no size of
+    its own gets its viewBox's size rounded to whole units, 100 x 72 for the artwork's
+    100.23 x 72.45, while the drawing is scaled by the true width: the canvas came out
+    11 px short at 4000 across, and the PNGs cut the foot off the `e`. The height here
+    is rounded up, and the drawing hangs from the top, so any spare row is clear."""
+    x, y, w, h = map(float, re.search(r'data-artwork-box="([^"]+)"', svg).group(1).split())
+    height = math.ceil(width * h / w)
+    framed = re.sub(r'<svg[^>]*>', f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{x} {y} {w} {h}" '
+                    f'width="{width}" height="{height}" preserveAspectRatio="xMidYMin meet">', svg, count=1)
+    im = render_svg(framed, width)
+    assert im.size == (width, height), f'the wordmark rendered {im.size}, not {width} x {height}'
+    return im
+
+
 def wordmarks():
     ink = open(os.path.join(BRAND, 'pilke-wordmark.svg')).read()
     white = open(os.path.join(BRAND, 'pilke-wordmark-white.svg')).read()
@@ -272,9 +293,9 @@ def wordmarks():
         with open(out('Brändi', f'pilke-wordmark-{suffix}.svg'), 'w') as f:
             f.write(svg)
         # 4000 px wide is 34 cm at 300 dpi: a wordmark as wide as an A3 sheet.
-        save_png(render_svg(svg, 4000), out('Brändi', f'pilke-wordmark-{suffix}.png'))
+        save_png(wordmark_png(svg, 4000), out('Brändi', f'pilke-wordmark-{suffix}.png'))
         # A small one for the Slides library, and for anything printed at badge size.
-        save_png(render_svg(svg, 1200), out('Brändi', 'pienet', f'pilke-wordmark-{suffix}-1200.png'))
+        save_png(wordmark_png(svg, 1200), out('Brändi', 'pienet', f'pilke-wordmark-{suffix}-1200.png'))
 
 
 def app_icon():

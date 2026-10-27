@@ -8,6 +8,20 @@
  * sized by its **height**: the lockup is wider than tall, and the artwork's own
  * viewBox owns the other side. `tone="white"` is the variant for dark grounds.
  *
+ * WARNING: **Sized and laid out by the artwork's box, not by the viewBox.** The artwork's
+ * box (`data-artwork-box`, the release file's measured box) has the `P`'s stem, the
+ * `e`'s right side and foot and the sparkle's tip on its edges, and a browser snaps an
+ * `<svg>`'s clip to whole device pixels: drawn in that box, a wordmark on a fractional
+ * position or at a `clamp()` size lost up to a pixel row off the `e`. The viewBox is that
+ * box with about 1.8 units round it, more than a device pixel at the header's 44 px, so
+ * the snap only ever cuts margin. The page lays out a box the artwork's size, `height`
+ * tall, and the drawing hangs out of it on every side by its margin, positioned in
+ * percentages of that box, so the letters sit and measure exactly where the box alone
+ * put them and the margin takes no room.
+ *
+ * A caller that scales it with the viewport sets `--logo-height` on an ancestor, which
+ * replaces `height` in CSS.
+ *
  * Decorative here: every place that draws it is a link that names itself (*Pilke,
  * etusivu*), so the drawing takes `aria-hidden` rather than a second name. Pass
  * `label` where the wordmark stands alone.
@@ -16,7 +30,7 @@ import ink from '../assets/brand/pilke-wordmark.svg?raw';
 import white from '../assets/brand/pilke-wordmark-white.svg?raw';
 
 interface Props {
-  /** The wordmark's height in px. The width follows the artwork's aspect. */
+  /** The artwork's height in px. The width follows the artwork's aspect. */
   height: number;
   tone?: 'ink' | 'white';
   label?: string;
@@ -27,29 +41,48 @@ const { height, tone = 'ink', label, class: className } = Astro.props;
 
 const source = tone === 'white' ? white : ink;
 const viewBox = source.match(/viewBox="([^"]+)"/)?.[1];
+const artworkBox = source.match(/data-artwork-box="([^"]+)"/)?.[1];
 const body = source.match(/<svg[^>]*>([\s\S]*)<\/svg>/)?.[1]?.replace(/<title>[\s\S]*?<\/title>/, '').trim();
-if (!viewBox || !body) throw new Error('Logo: the wordmark artwork has no viewBox or no paths.');
+if (!viewBox || !artworkBox || !body) {
+  throw new Error('Logo: the wordmark artwork has no viewBox, no data-artwork-box or no paths.');
+}
 
-const [, , w, h] = viewBox.split(/\s+/).map(Number);
-const width = Math.round(((height * w) / h) * 100) / 100;
+const [vx, vy, vw, vh] = viewBox.split(/\s+/).map(Number);
+const [ax, ay, aw, ah] = artworkBox.split(/\s+/).map(Number);
+if (ax < vx || ay < vy || ax + aw > vx + vw || ay + ah > vy + vh) {
+  throw new Error('Logo: the wordmark artwork box reaches outside its viewBox.');
+}
+
+const percent = (n: number) => `${Math.round(n * 1e6) / 1e4}%`;
+const box = `height: var(--logo-height, ${height}px); aspect-ratio: ${aw} / ${ah}`;
+const drawing = [
+  `left: ${percent((vx - ax) / aw)}`,
+  `top: ${percent((vy - ay) / ah)}`,
+  `width: ${percent(vw / aw)}`,
+  `height: ${percent(vh / ah)}`,
+].join('; ');
 ---
 
-<svg
-  class:list={['logo', className]}
-  width={width}
-  height={height}
-  viewBox={viewBox}
-  role={label ? 'img' : undefined}
-  aria-label={label}
-  aria-hidden={label ? undefined : 'true'}
-  focusable="false"
-  set:html={body}
-/>
+<span class:list={['logo', className]} style={box}>
+  <svg
+    viewBox={viewBox}
+    style={drawing}
+    role={label ? 'img' : undefined}
+    aria-label={label}
+    aria-hidden={label ? undefined : 'true'}
+    focusable="false"
+    set:html={body}
+  />
+</span>
 
 <style>
-  /* Block, so the mark takes no descender space under it. A caller that scales it
-     with the viewport sets `height` on its class and `width: auto`. */
+  /* Block, so the mark takes no descender space under it; the box the page lays out. */
   .logo {
     display: block;
+    position: relative;
+  }
+
+  .logo svg {
+    position: absolute;
   }
 </style>
