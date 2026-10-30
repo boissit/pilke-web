@@ -122,6 +122,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/kayttoehdot.html/` | none |
 | `/en/kysyttya.html/` | none |
 | `/en/lapsiturvallisuus.html/` | none |
+| `/en/meista.html/` | `boissit` 420px<br>`visu1` 150px<br>`visu2` 150px<br>`designsprint2` 420px<br>`designsprint` 200px<br>`mockup1` 150px<br>`mockup2` 150px<br>`mockup3` 150px<br>`latevisu1` 150px<br>`latevisu2` 150px |
 | `/en/nain-se-toimii.html/` | `story-en` 500px<br>`platter-en` 500px<br>`date-bench-wide` 1120px<br>`date-en` 500px |
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
@@ -131,6 +132,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
+| `/meista.html/` | `boissit` 420px<br>`visu1` 150px<br>`visu2` 150px<br>`designsprint2` 420px<br>`designsprint` 200px<br>`mockup1` 150px<br>`mockup2` 150px<br>`mockup3` 150px<br>`latevisu1` 150px<br>`latevisu2` 150px |
 | `/nain-se-toimii.html/` | `story` 500px<br>`platter` 500px<br>`date-bench-wide` 1120px<br>`date` 500px |
 | `/ohje.html/` | none |
 | `/ohje/ehdokkaat.html/` | `fi/platter` 560px<br>`fi/cooldown-nodraw` 560px |
@@ -182,6 +184,16 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `beta-invitation-fi` | Invitation received, **inside a photograph** | `screens/invitation.png` composited by `scripts/photos/beta.py fi` | What `invitation` shows, standing on the screen's foot as the app lays out on an iPhone, the home indicator in the gutter under `Sovittu!`; a drawn iOS status bar over the map, whose top rows, under the bar, are the map's own mirrored; a thumb covers the lower venue rows, `Hylkää` and `Takaisin`. Drawn in the footer's beta card on the front page only |
 | `beta-invitation-en` | Invitation received, English, **inside a photograph** | `screens/invitation-en.png` composited by `beta.py en` | The same in English; the thumb covers the lower venue rows, `Decline` and `Back` |
 | `date-bench-wide` | None: a stock photograph, no app in it | `scripts/photos/crops.py`, from the Pexels original | Two people talking on a garden bench, she laughing behind a hand and he leaning in, under *Nauttikaa treffeistä!* on `nain-se-toimii` in both languages. `date-bench-tall` is the same picture cut 4:5 for a phone, drawn from a `<source>` and so not listed above. Nothing in it shows the app, so it cannot go stale with it; the faces are small enough that a closer crop would make them recognisable, so neither crop goes nearer than it does |
+| `boissit` | None: the owner's own photograph, 2019 | `scripts/photos/meista.py`, copied as sent | A group of friends on the grass by a lake on a summer day, one with a ukulele, one lying down, bags all round. On the 2019 entry of `/meista`. It shows no app, so it cannot go stale |
+| `visu1` | An early design of the app as *Treffit*, not the shipping app | `meista.py`, cut from its Figma frame | The *Kerro itsestäsi* step: two gender questions with *Mies / Nainen / Muu* toggles and *Seuraava*, on a pink and violet gradient. 2020 on `/meista`. A picture of the past, so a change to the app never makes it stale |
+| `visu2` | An early visual, not the shipping app | `meista.py`, masked to the phone | A pink sign-in screen, *GET ON BOARD / GET MATCHED / GET A DATE*, in a black iPhone X. 2020 on `/meista` |
+| `designsprint2` | None: the owner's own photograph | `meista.py`, copied as sent | A design session in a cabin: a user-flow diagram on a TV, one person at a laptop, another standing. With `designsprint` on 2021 of `/meista`, or on 2022–2025 (`SPRINT` in `meista.astro`) |
+| `designsprint` | None: the owner's own photograph | `meista.py`, copied as sent | A window covered in sticky notes (*Tekninen toteutus*, *Tech stack*, *Launch*, *Käyttäjätestaus*…) with a person behind them. Drawn with `designsprint2` |
+| `mockup1` | The 2021 prototype, not the shipping app | `meista.py`, masked to the phone | Black-and-white *Treffit* home: a sent date request, roses and petals, *Löydä treffit!*, the tab bar; in a rose-gold iPhone 8. 2021 on `/meista` |
+| `mockup2` | The 2021 prototype | `meista.py`, masked to the phone | Black-and-white *Kalenteri*, July 2021 with three days marked. 2021 on `/meista` |
+| `mockup3` | The 2021 prototype | `meista.py`, masked to the phone | Black-and-white *Treffit!*: an agreed coffee date, the partner's photo, the time, a map, *Peru treffit* and *Takaisin*. 2021 on `/meista` |
+| `latevisu1` | A later design, not the shipping app | `meista.py`, masked to the phone | *Ehdokkaat* in colour: a candidate card on yellow, shared times, activities, *Ehdota!*. 2022–2025 on `/meista` |
+| `latevisu2` | A later design, not the shipping app | `meista.py`, masked to the phone | The *Pilke* home in colour: an agreed date card, *Löydä treffit!*, the tab bar. 2022–2025 on `/meista` |
 
 ## The photographs
 
@@ -208,6 +220,31 @@ likeness of people in them, so none of them shows a face anyone could recognise 
 beta card's crop leaves out the right fifth of its original, where a blurred cheek is,
 and the bench is cut no closer than its couple's faces allow), and none may be
 captioned as a Pilke user.
+
+## The owner's pictures on `/meista`
+
+The timeline on `/meista` carries the owner's own pictures: photographs of the
+people who made Pilke, and designs from before the app looked as it does. None is
+stock and none is a still of the shipping app, so none of them goes stale with it;
+the rows above say which is which.
+
+The originals are `scripts/photos/meista/`, as the owner sent them and under the
+owner's names, and `scripts/photos/meista.py` (run by `npm run pictures:build`)
+makes each into `src/assets/meista/`: a photograph is copied as it is, a phone shot
+drawn on black is masked to the phone's own outline and written as PNG, and a
+design-tool frame is cut from its canvas. The page finds a picture by its file's
+stem, so `latevisu1.jpg` is drawn from `latevisu1.png`.
+
+**Adding or replacing one.** Put the file in `scripts/photos/meista/` under the
+name the page's slot names (`entries` in `src/pages/[...lang]/meista.astro`), add
+it to its kind in `meista.py` if the name is new, and run
+`npm run pictures:build`. Give it a row above and an alt text,
+`about.photo.<stem>`, in `src/content/copy/meista.yaml`. A slot whose picture is
+not there yet draws a dashed placeholder carrying `data-photo-missing`, and the
+inventory lists it as awaited.
+
+The people in these photographs are the owner's own team and friends, and they are
+on the page with the owner's say-so rather than under any stock licence.
 
 ## The sparks
 

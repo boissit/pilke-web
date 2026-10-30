@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Every picture the site makes from the app's stills: the photographs in both
-# languages, the hero's cut-out and the crops, into src/assets/photos. Run by
+# languages, the hero's cut-out and the crops, into src/assets/photos; and the
+# owner's pictures for /meista, into src/assets/meista. Run by
 # `npm run pictures:build`, which then builds the site and checks the inventory;
 # docs/pictures.md is the runbook.
 #
@@ -92,3 +93,5 @@ echo "→ cutout.py"
 "$PY" cutout.py >/dev/null
 echo "→ crops.py"
 "$PY" crops.py
+echo "→ meista.py"
+"$PY" meista.py

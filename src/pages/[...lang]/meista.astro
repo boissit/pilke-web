@@ -1,0 +1,710 @@
+---
+/**
+ * The about page, at `meista`: why Pilke was made, and the timeline from the sauna
+ * to the goals ahead.
+ *
+ * The timeline is the page. Each entry is a year on a rail, its text and, for the
+ * years the owner has pictures of, a small gallery. The rail says where the
+ * project is: solid and white-carded up to now, the one coral card that is now,
+ * and dashed after it, in the dashed edge this site draws everything with that has
+ * not shipped yet.
+ *
+ * The pictures are the owner's. Their originals are `scripts/photos/meista/`, and
+ * `scripts/photos/meista.py` makes each one's picture into `src/assets/meista/`,
+ * where this page finds it by the original's name. A slot whose picture is not
+ * there draws a dashed placeholder of its shape instead, carrying
+ * `data-photo-missing`, which `npm run pictures` lists as awaited.
+ * `docs/pictures.md` has the rest.
+ */
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
+import Icon from '../../components/Icon.astro';
+import PageHead from '../../components/PageHead.astro';
+import SparkleScatter from '../../components/SparkleScatter.astro';
+import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
+import Base from '../../layouts/Base.astro';
+
+export const getStaticPaths = () => localeRoutes();
+
+const lang = localeOf(Astro.params);
+const t = useTranslations(lang);
+
+/*
+  The shapes a picture sits in. A photograph, `landscape` or `portrait`, is a card
+  in the photo's own proportions. A `screen` is a bare app design, a card in its
+  own proportions too. A `device` is a phone shot that comes with its own device
+  frame drawn in, so it gets no second one: `meista.py` cuts it out to the phone's
+  outline, and it stands on the page as the phone.
+
+  The proportions are the picture's; a slot still waiting for one takes the
+  shape's usual proportions here.
+*/
+type Shape = 'landscape' | 'portrait' | 'screen' | 'device';
+
+const placeholderRatio: Record<Shape, string> = {
+  landscape: '3 / 2',
+  portrait: '3 / 4',
+  screen: '9 / 16',
+  device: '1 / 2.05',
+};
+
+/*
+  The width each shape is drawn at, at most, which is what its picture is resized
+  for, with a 2x beside it. Narrower screens take a share of the width.
+*/
+const drawn: Record<Shape, { width: number; sizes: string }> = {
+  landscape: { width: 420, sizes: '(min-width: 72rem) 26rem, 80vw' },
+  portrait: { width: 200, sizes: '(min-width: 72rem) 12rem, 40vw' },
+  screen: { width: 150, sizes: '(min-width: 72rem) 9rem, 28vw' },
+  device: { width: 150, sizes: '(min-width: 72rem) 9rem, 28vw' },
+};
+
+interface Slot {
+  /** The owner's file name. Its stem is the picture's name and the alt text's key, `about.photo.<stem>`. */
+  file: string;
+  shape: Shape;
+}
+
+/*
+  The two photos from the design sprint, the cabin and the window of post-its,
+  are the owner's extra. They sit with the mockups in 2021 ("algoritmin
+  suunnittelua"), or with the later screens in 2022–2025, and the owner is
+  choosing between the two; `null` leaves them out.
+*/
+const SPRINT = '2021' as '2021' | '2022' | null;
+const sprint: Slot[] = [
+  { file: 'designsprint2.jpg', shape: 'landscape' },
+  { file: 'designsprint.jpg', shape: 'portrait' },
+];
+
+/*
+  The entries, in the owner's order. `state` is written out rather than worked out
+  from today's date: what is "now" is the owner's account of where the project is,
+  and a build in January should not quietly move it.
+*/
+type State = 'done' | 'now' | 'goal';
+
+interface Entry {
+  /** The key the entry's copy is under: `about.timeline.<id>.year` and `.text`. */
+  id: string;
+  state: State;
+  slots?: Slot[];
+  /** The last goal, which is a joke, and is drawn as one. */
+  playful?: boolean;
+}
+
+const entries: Entry[] = [
+  { id: '2019', state: 'done', slots: [{ file: 'boissit.jpg', shape: 'landscape' }] },
+  {
+    id: '2020',
+    state: 'done',
+    slots: [
+      { file: 'visu1.jpg', shape: 'screen' },
+      { file: 'visu2.jpg', shape: 'device' },
+    ],
+  },
+  {
+    id: '2021',
+    state: 'done',
+    slots: [
+      ...(SPRINT === '2021' ? sprint : []),
+      { file: 'mockup1.png', shape: 'device' },
+      { file: 'mockup2.png', shape: 'device' },
+      { file: 'mockup3.png', shape: 'device' },
+    ],
+  },
+  {
+    id: '2022',
+    state: 'done',
+    slots: [
+      ...(SPRINT === '2022' ? sprint : []),
+      { file: 'latevisu1.jpg', shape: 'device' },
+      { file: 'latevisu2.jpg', shape: 'device' },
+    ],
+  },
+  { id: '2026', state: 'now' },
+  { id: '2027', state: 'goal' },
+  { id: '2028', state: 'goal' },
+  { id: '2030', state: 'goal', playful: true },
+];
+
+const stem = (file: string) => file.replace(/\.\w+$/, '');
+
+// Every picture in `src/assets/meista/`, by stem: `meista.py` writes a phone shot
+// as PNG whatever the original was, so `latevisu1.jpg` is drawn from `latevisu1.png`.
+const files = import.meta.glob<{ default: ImageMetadata }>('../../assets/meista/*.{jpg,jpeg,png,webp}', { eager: true });
+const pictures = new Map(Object.entries(files).map(([path, module]) => [stem(path.split('/').pop() as string), module.default]));
+
+/*
+  A gallery is laid out in two rows at most: the photographs first, one as a wide
+  card or two as prints laid one over the other, and the screens and phones in a
+  row under them. So the fullest year still reads as one picture and one row.
+*/
+const groups = (slots: Slot[]) =>
+  [
+    { kind: 'photos', slots: slots.filter((slot) => slot.shape === 'landscape' || slot.shape === 'portrait') },
+    { kind: 'phones', slots: slots.filter((slot) => slot.shape === 'screen' || slot.shape === 'device') },
+  ].filter((group) => group.slots.length > 0);
+---
+
+<Base lang={lang} title={t('about.meta.title')} description={t('about.meta.description')}>
+  <PageHead title={t('about.title')} lead={t('about.lead')} />
+
+  <section class="slab slab-white">
+    <div class="wrap section-pad">
+      <SparkleScatter
+        fill="var(--sparkle-on-peach)"
+        sparkles={[
+          { size: 96, rotate: -14, right: '8%', bottom: '40px', only: 'wide' },
+          { size: 36, rotate: 22, right: 'calc(8% + 112px)', bottom: '112px', only: 'wide' },
+        ]}
+      />
+      <p class="story">{t('about.story')}</p>
+    </div>
+  </section>
+
+  <section class="slab slab-pale" aria-labelledby="timeline-title">
+    <div class="wrap section-pad">
+      <SparkleScatter
+        fill="var(--sparkle-on-peach)"
+        sparkles={[
+          { size: 104, rotate: 18, right: '7%', top: '36px', only: 'wide' },
+          { size: 40, rotate: -20, right: 'calc(7% + 124px)', top: '64px', only: 'wide' },
+          { size: 52, rotate: 18, right: '16px', top: '18px', only: 'narrow' },
+        ]}
+      />
+      <h2 id="timeline-title" class="display-mid">{t('about.timeline.title')}</h2>
+
+      <ol class="timeline">
+        {
+          entries.map((entry) => (
+            <li class:list={['entry', entry.state, entry.playful && 'playful']}>
+              <div class="when">
+                <h3 class="year">{t(`about.timeline.${entry.id}.year`)}</h3>
+                {entry.state === 'now' && <span class="now-tag">{t('about.timeline.now')}</span>}
+                {entry.state === 'goal' && <span class="tag">{t('about.timeline.goal')}</span>}
+              </div>
+
+              <span class="node" aria-hidden="true" />
+
+              <div class="card">
+                {entry.state === 'now' && (
+                  <SparkleScatter
+                    fill="var(--sparkle-on-coral)"
+                    sparkles={[
+                      { size: 92, rotate: 16, right: '-14px', top: '-18px' },
+                      { size: 34, rotate: -24, right: '84px', bottom: '10px' },
+                    ]}
+                  />
+                )}
+                {entry.playful && (
+                  <SparkleScatter
+                    fill="var(--sparkle-on-peach)"
+                    sparkles={[
+                      { size: 70, rotate: 20, right: '12px', top: '-10px' },
+                      { size: 30, rotate: -18, right: '88px', top: '30px' },
+                      { size: 22, rotate: 34, right: '58px', bottom: '6px' },
+                    ]}
+                  />
+                )}
+                <p class="what">{t(`about.timeline.${entry.id}.text`)}</p>
+
+                {entry.slots && (
+                  <div class="gallery">
+                    {groups(entry.slots).map((group) => (
+                      <div class:list={['group', `group-${group.kind}`, `count-${group.slots.length}`]}>
+                        {group.slots.map((slot) => {
+                          const picture = pictures.get(stem(slot.file));
+                          const alt = t(`about.photo.${stem(slot.file)}`);
+                          const size = drawn[slot.shape];
+                          const ratio = picture ? `${picture.width} / ${picture.height}` : placeholderRatio[slot.shape];
+                          return (
+                            <figure class:list={['slot', slot.shape, picture && 'has-picture']} style={`aspect-ratio: ${ratio}`}>
+                              {picture ? (
+                                <Image
+                                  src={picture}
+                                  alt={alt}
+                                  width={size.width}
+                                  widths={[size.width, size.width * 2]}
+                                  sizes={size.sizes}
+                                />
+                              ) : (
+                                <div class="awaited" role="img" aria-label={alt} data-photo-missing={slot.file}>
+                                  <Icon name={slot.shape === 'device' ? 'smartphone' : 'image'} size={20} />
+                                  <code>{stem(slot.file)}<wbr />{slot.file.slice(stem(slot.file).length)}</code>
+                                </div>
+                              )}
+                            </figure>
+                          );
+                        })}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <!--
+    The people who made Pilke. The owner writes this section; until then the
+    dashed card marks where it goes.
+  -->
+  <section class="slab slab-white" aria-labelledby="people-title">
+    <div class="wrap section-pad people">
+      <h2 id="people-title" class="display-mid">{t('about.people.title')}</h2>
+      <div class="block provisional">
+        <p>{t('about.people.pending')}</p>
+      </div>
+      <p><a class="go" href={localePath(lang)}>{t('nav.back')}</a></p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* The owner's paragraph at the lede's size and a longer measure: it is the one
+     piece of prose on the page, and it reads as a story told rather than a list. */
+  .story {
+    max-width: 62ch;
+    font-size: clamp(1.0625rem, 0.38vw + 0.97rem, 1.3125rem);
+    line-height: 1.65;
+  }
+
+  .people > * + * {
+    margin-top: var(--pad-large);
+  }
+
+  .people .provisional {
+    margin-top: var(--pad-medium);
+  }
+
+  /*
+    The timeline: three columns per entry, the year, the rail and the card. On a
+    phone the year column folds to nothing and the year stands over its card, so
+    the rail keeps the left edge.
+
+    `--node-y` is how far down an entry its node sits, level with the year's first
+    line, and the rail is drawn in two halves on either side of it: the half above
+    belongs to the year before, the half below to the year after. That is what lets
+    the line change from solid to dashed exactly at now.
+  */
+  .timeline {
+    --year-w: clamp(8.5rem, 6vw + 4rem, 11rem);
+    --rail-w: 64px;
+    --rail: 4px;
+    --node: 22px;
+    --node-y: 40px;
+    --dash: linear-gradient(to bottom, var(--brand-main) 0 55%, transparent 55% 100%) 0 0 / 100% 14px repeat-y;
+
+    list-style: none;
+    margin: var(--pad-large) 0 0;
+    padding: 0;
+  }
+
+  .entry {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--year-w) var(--rail-w) minmax(0, 1fr);
+    align-items: start;
+    padding-bottom: clamp(20px, 1.5vw + 10px, 32px);
+  }
+
+  .entry:last-child {
+    padding-bottom: 0;
+  }
+
+  .entry::before,
+  .entry::after {
+    content: '';
+    position: absolute;
+    left: calc(var(--year-w) + (var(--rail-w) - var(--rail)) / 2);
+    width: var(--rail);
+    background: var(--brand-main);
+  }
+
+  .entry::before {
+    top: 0;
+    height: var(--node-y);
+  }
+
+  .entry::after {
+    top: var(--node-y);
+    bottom: 0;
+  }
+
+  .entry:first-child::before,
+  .entry:last-child::after {
+    display: none;
+  }
+
+  .now::after,
+  .goal::before,
+  .goal::after {
+    background: var(--dash);
+  }
+
+  .when {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--pad-small);
+  }
+
+  /* Level with the node: the line's half-height above the node's centre. */
+  .year {
+    margin-top: calc(var(--node-y) - 0.55em);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.75rem, 0.95vw + 1.5rem, 2.5rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .goal .year {
+    color: var(--text-soft);
+  }
+
+  .now-tag {
+    padding: 2px 12px;
+    background: var(--text);
+    color: var(--surface);
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .node {
+    position: relative;
+    z-index: 1;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: center;
+    width: var(--node);
+    height: var(--node);
+    margin-top: calc(var(--node-y) - var(--node) / 2);
+    border-radius: 50%;
+    background: var(--brand-main);
+    box-shadow: 0 0 0 5px var(--brand-background);
+  }
+
+  /* Now is the larger node with a white heart and a slow ring going out from it. */
+  .now .node {
+    --node: 34px;
+    background: radial-gradient(circle, var(--surface) 0 26%, var(--brand-main) 27%);
+  }
+
+  .now .node::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    animation: ring 2.4s ease-out infinite;
+  }
+
+  @keyframes ring {
+    from {
+      box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand-main) 70%, transparent);
+    }
+    to {
+      box-shadow: 0 0 0 18px color-mix(in srgb, var(--brand-main) 0%, transparent);
+    }
+  }
+
+  .goal .node {
+    background: var(--ground);
+    border: 3px dashed var(--brand-main);
+  }
+
+  .card {
+    grid-column: 3;
+    grid-row: 1;
+    position: relative;
+    isolation: isolate;
+    padding: clamp(18px, 1.14vw + 14px, 28px) clamp(18px, 1.5vw + 12px, 32px);
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+  }
+
+  .what {
+    max-width: 52ch;
+    font-size: clamp(1.0625rem, 0.19vw + 1rem, 1.1875rem);
+    line-height: 1.55;
+  }
+
+  /* The year that is now: the coral card, the one place on the rail in the brand's
+     full colour, with the sparkles the coral cards on this site carry. */
+  .now .card {
+    overflow: hidden;
+    background: var(--brand-main);
+    box-shadow: var(--shadow-float);
+  }
+
+  .now .card {
+    padding-block: clamp(22px, 1.52vw + 16px, 36px);
+  }
+
+  .now .what,
+  .playful .what {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.25rem, 0.57vw + 1.1rem, 1.625rem);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+  }
+
+  /* The goals: the dashed edge and no shadow, the way `.provisional` draws what has
+     not shipped. */
+  .goal .card {
+    background: var(--ground);
+    border: 2px dashed var(--brand-main);
+    box-shadow: none;
+  }
+
+  .playful .card {
+    overflow: hidden;
+    rotate: -1.2deg;
+  }
+
+  /* ── The galleries ─────────────────────────────────────────────────── */
+
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(18px, 1.5vw + 10px, 28px);
+    margin-top: clamp(16px, 0.76vw + 13px, 24px);
+  }
+
+  .group {
+    width: 100%;
+  }
+
+  .slot {
+    position: relative;
+    margin: 0;
+    border-radius: 20px;
+  }
+
+  .landscape {
+    width: min(100%, 34rem);
+    rotate: -1.2deg;
+  }
+
+  /* The design sprint's two photos as two prints, one over the other: the
+     landscape behind, the portrait lower and in front of its corner. */
+  .group-photos.count-2 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    max-width: 34rem;
+  }
+
+  .group-photos.count-2 > .landscape {
+    grid-area: 1 / 1 / 2 / 10;
+    width: auto;
+    rotate: -2deg;
+  }
+
+  .group-photos.count-2 > .portrait {
+    grid-area: 1 / 8 / 2 / 13;
+    margin-top: 12%;
+    rotate: 3deg;
+    z-index: 1;
+  }
+
+  /* The screens and phones in a row, fanned a little, the middle one held a
+     touch higher. */
+  .group-phones {
+    display: flex;
+    align-items: flex-end;
+    gap: clamp(10px, 1.5vw, 22px);
+    padding-top: 10px;
+  }
+
+  .screen,
+  .device {
+    flex: 0 1 9rem;
+    min-width: 0;
+  }
+
+  .screen {
+    border-radius: 16px;
+  }
+
+  .device {
+    border-radius: 24px;
+  }
+
+  .group-phones > :first-child:not(:only-child) {
+    rotate: -4deg;
+  }
+
+  .group-phones > :last-child:not(:only-child) {
+    rotate: 4deg;
+  }
+
+  .group-phones.count-3 > :nth-child(2) {
+    translate: 0 -10px;
+  }
+
+  .has-picture:not(.device) {
+    box-shadow: var(--shadow-float);
+  }
+
+  /* A photo on a print has a thin white edge, as a print does, and it is what
+     keeps the one in front apart from the one behind. */
+  .has-picture:is(.landscape, .portrait) {
+    border: 4px solid var(--surface);
+  }
+
+  .slot :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+  }
+
+  .has-picture:is(.landscape, .portrait) :global(img) {
+    border-radius: 16px;
+  }
+
+  /* A phone is its own outline: no corner of ours, and a shadow that follows it. */
+  .device :global(img) {
+    object-fit: contain;
+    border-radius: 0;
+    filter: drop-shadow(0 12px 16px color-mix(in srgb, var(--text) 22%, transparent));
+  }
+
+  /* A slot still waiting for its picture: the dashed edge of the unshipped, its
+     shape, and the file it is waiting for. */
+  .awaited {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: var(--pad-small);
+    padding: 12px;
+    background: var(--ground);
+    border: 2px dashed var(--brand-main);
+    border-radius: inherit;
+    color: var(--text-soft);
+  }
+
+  /* The print behind keeps its label clear of the one in front. */
+  .group-photos.count-2 > :first-child .awaited {
+    justify-content: flex-start;
+  }
+
+  :is(.screen, .device) .awaited {
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .awaited code {
+    max-width: 100%;
+    padding: 2px 8px;
+    background: var(--surface);
+    border-radius: 10px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  /*
+    Wide enough, the gallery stands beside the text rather than under it, so a year
+    with four pictures is a wide card rather than a tall one. Below this the text
+    column would be a few words to a line.
+  */
+  @media (min-width: 72rem) {
+    .card:has(.gallery) {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      align-items: start;
+      column-gap: clamp(28px, 3vw, 48px);
+    }
+
+    .card .gallery {
+      margin-top: 0;
+    }
+
+    .landscape {
+      width: 100%;
+    }
+  }
+
+  /* ── A phone ───────────────────────────────────────────────────────── */
+
+  @media (max-width: 47.99rem) {
+    .timeline {
+      --rail-w: 28px;
+      --node: 18px;
+      --node-y: 18px;
+      margin-top: var(--pad-medium);
+    }
+
+    .entry {
+      grid-template-columns: var(--rail-w) minmax(0, 1fr);
+      column-gap: 12px;
+      padding-bottom: 22px;
+    }
+
+    .entry::before,
+    .entry::after {
+      left: calc((var(--rail-w) - var(--rail)) / 2);
+    }
+
+    .node {
+      grid-column: 1;
+    }
+
+    .when {
+      grid-column: 2;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--pad-normal);
+    }
+
+    .year {
+      font-size: 1.75rem;
+    }
+
+    .now .node {
+      --node: 26px;
+    }
+
+    .card {
+      grid-column: 2;
+      grid-row: 2;
+      margin-top: var(--pad-normal);
+    }
+
+    .device {
+      border-radius: 16px;
+    }
+
+    :is(.screen, .device) .awaited {
+      padding: 4px;
+    }
+
+    :is(.screen, .device) .awaited code {
+      padding: 2px 4px;
+      font-size: 0.6875rem;
+    }
+  }
+</style>

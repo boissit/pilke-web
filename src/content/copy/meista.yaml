@@ -1,0 +1,202 @@
+# House style, and what this format is for, is the header of `site.yaml`.
+#
+# The about page, at `/meista` and `/en/meista`: why Pilke was made, and the
+# timeline from the sauna to the goals ahead.
+#
+# WARNING: **A draft.** The story, the heading `Aikajana` and every line of the
+# timeline are the owner's own Finnish and are final. Everything else in Finnish
+# is new copy written round them and waits for the owner's word, and so does the
+# whole of the English, which is a draft translation of the owner's text.
+
+# ──────────────────────────────────────────────────────────────────────────
+# The page itself
+#
+# `nav.about` is the label the header and the footer give this page, which took
+# the guide's place in the header. `about.meta.*` are this page's own title and
+# description in the document head, set through `Base.astro`'s props.
+# ──────────────────────────────────────────────────────────────────────────
+
+# New copy, both languages.
+'nav.about':
+  fi: 'Meistä'
+  en: 'About us'
+
+# The owner's heading.
+'about.title':
+  fi: 'Meistä'
+  en: 'About us'
+
+# New copy, both languages: the lede under the title.
+'about.lead':
+  fi: 'Miksi Pilke syntyi, ja mihin olemme menossa.'
+  en: 'Why Pilke was made, and where we are headed.'
+
+# New copy, both languages.
+'about.meta.title':
+  fi: 'Meistä – Pilke'
+  en: 'About us – Pilke'
+
+# New copy, both languages.
+'about.meta.description':
+  fi: 'Pilkkeen tarina: idea saunan lauteilta, vuosien kehitystyö ja tavoitteet eteenpäin.'
+  en: 'The story of Pilke: an idea born in a sauna, years of development and the goals ahead.'
+
+# The owner's text. The English is a draft translation.
+'about.story':
+  fi: 'Idea Pilkkeestä syntyi, kuten kaikki hyvät ideat, kaverin polttareilla saunassa. Olemassaolevat sovelluskonseptit eivät vakuuttaneet; käytännössä kaikki perustuvat ensin loputtomaan naamojen swaippailuun, sen jälkeen naiset hukkuvat viesteihin, ja miesten avaukset sumenevat toistensa sekaan. Lisäksi sovellukset harrastavat dynaamista hinnoittelua algoritmeilla, jotka nostavat hintaa käyttäjien epätoivon mukaan. Näiden pohjalta lähdimme suunnittelemaan kirjaimellisesti treffisovellusta: tavoitteena järjestää käyttäjille mahdollisimman hyviä treffejä, minimoida sovelluksen "pelaaminen" ja kehittää treffailukulttuuria.'
+  en: 'The idea for Pilke was born, like all good ideas, in a sauna at a friend’s stag do. The existing app concepts left us unconvinced: practically all of them start with endless swiping through faces, after which women drown in messages and men’s opening lines blur into one another. On top of that, the apps go in for dynamic pricing, with algorithms that raise the price in step with their users’ desperation. So we set out to design, quite literally, an app for dates: the aim is to arrange the best possible dates for its users, to keep “gaming” the app to a minimum, and to develop dating culture.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The timeline
+#
+# One `.year` and one `.text` per entry, in the owner's order. Which entries are
+# done, which is now and which are goals is the page's to say, in `meista.astro`;
+# `about.timeline.now` and `about.timeline.goal` are the tags it draws on the
+# entry that is now and on each goal.
+# ──────────────────────────────────────────────────────────────────────────
+
+# The owner's heading.
+'about.timeline.title':
+  fi: 'Aikajana'
+  en: 'Timeline'
+
+# New copy, both languages.
+'about.timeline.now':
+  fi: 'Nyt'
+  en: 'Now'
+
+# New copy, both languages.
+'about.timeline.goal':
+  fi: 'Tavoite'
+  en: 'Goal'
+
+'about.timeline.2019.year':
+  fi: '2019'
+  en: '2019'
+
+'about.timeline.2019.text':
+  fi: 'Idea sikiää saunan lauteilla, ensimmäinen suuntaa-antava kyselytutkimus sokkotreffailukonseptista'
+  en: 'The idea is conceived on the sauna benches; a first, indicative survey of a blind-dating concept'
+
+'about.timeline.2020.year':
+  fi: '2020'
+  en: '2020'
+
+# The English glosses the working title, which the Finnish has no need to.
+'about.timeline.2020.text':
+  fi: 'Työstönimi Treffit, visuaalisen ilmeen suunnittelua ja konseptin kehittämistä'
+  en: 'Working title Treffit (Finnish for “dates”), designing the visual identity and developing the concept'
+
+'about.timeline.2021.year':
+  fi: '2021'
+  en: '2021'
+
+'about.timeline.2021.text':
+  fi: 'Sovelluksen toiminnallisuusprototyyppi, sovelluskonseptin prototyyppitestausta, algoritmin suunnittelua, nimi vakiintuu Pilkkeeksi'
+  en: 'A functional prototype of the app, prototype testing of the app concept, designing the algorithm, and the name settles on Pilke'
+
+'about.timeline.2022.year':
+  fi: '2022–2025'
+  en: '2022–2025'
+
+'about.timeline.2022.text':
+  fi: 'Hidasta sovelluskehitystä'
+  en: 'Slow app development'
+
+'about.timeline.2026.year':
+  fi: '2026'
+  en: '2026'
+
+'about.timeline.2026.text':
+  fi: 'Sovelluskehityksen tahti kiihtyy, ensimmäinen alfatestaus käynnistyy'
+  en: 'App development picks up pace, and the first alpha test begins'
+
+'about.timeline.2027.year':
+  fi: '2027'
+  en: '2027'
+
+'about.timeline.2027.text':
+  fi: 'Sovelluksen julkaisu, tuhansia käyttäjiä'
+  en: 'The app launches, with thousands of users'
+
+'about.timeline.2028.year':
+  fi: '2028'
+  en: '2028'
+
+'about.timeline.2028.text':
+  fi: 'Sovellus kattaa koko Suomen'
+  en: 'The app covers all of Finland'
+
+'about.timeline.2030.year':
+  fi: '2030'
+  en: '2030'
+
+# Match Group is a proper noun in both languages.
+'about.timeline.2030.text':
+  fi: 'Pilke syrjäyttää Match Groupin'
+  en: 'Pilke dethrones Match Group'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The pictures on the timeline
+#
+# One alt text per picture, named after the owner's file (`about.photo.boissit` for
+# `boissit.jpg`), so a picture and its description are found by the same word.
+# New copy, both languages, written from the pictures themselves. A word on a
+# screen is quoted as the screen has it, and the English glosses it.
+# ──────────────────────────────────────────────────────────────────────────
+
+'about.photo.boissit':
+  fi: 'Kaveriporukka nurmikolla järven rannalla kesäpäivänä: yksi soittaa ukulelea, toinen makaa nurmella, ja ympärillä on reppuja ja kasseja.'
+  en: 'A group of friends on the grass by a lake on a summer day: one plays a ukulele, one lies on the grass, and there are bags and backpacks all around.'
+
+'about.photo.visu1':
+  fi: 'Varhainen Treffit-sovelluksen näkymä: Kerro itsestäsi, kysymykset sukupuolesta ja siitä, keistä olet kiinnostunut, ja Seuraava-painike.'
+  en: 'An early screen of the Treffit app: Kerro itsestäsi (Tell us about yourself), with questions on gender and who you are interested in, and a Seuraava (Next) button.'
+
+'about.photo.visu2':
+  fi: 'Varhainen visuaali puhelimessa: vaaleanpunainen kirjautumisnäkymä ja tekstit Get on board, Get matched ja Get a date.'
+  en: 'An early visual on a phone: a pink sign-in screen reading Get on board, Get matched and Get a date.'
+
+'about.photo.designsprint2':
+  fi: 'Suunnittelusessio mökissä: televisiossa on käyttäjäpolun kaavio, toinen istuu kannettavan ääressä ja toinen seisoo vieressä.'
+  en: 'A design session in a cabin: a user-flow diagram on the TV, one person at a laptop and another standing beside it.'
+
+'about.photo.designsprint':
+  fi: 'Ikkuna täynnä post-it-lappuja, kuten Tekninen toteutus, Tech stack, Launch ja Käyttäjätestaus, ja lappujen takana hymyilevä ihminen.'
+  en: 'A window covered in sticky notes such as Tekninen toteutus (technical implementation), Tech stack, Launch and Käyttäjätestaus (user testing), with someone smiling behind them.'
+
+'about.photo.mockup1':
+  fi: 'Mustavalkoinen prototyyppi: Treffit-etusivu, jossa on lähetetty treffipyyntö, ruusut ja terälehdet sekä Löydä treffit! -painike.'
+  en: 'A black-and-white prototype: the Treffit home screen, with a date request sent, roses and petals, and a Löydä treffit! (Find a date!) button.'
+
+'about.photo.mockup2':
+  fi: 'Mustavalkoinen prototyyppi: kalenteri, johon merkitään päivät, jolloin olisi valmis lähtemään treffeille.'
+  en: 'A black-and-white prototype: the calendar, where you mark the days you could go on a date.'
+
+'about.photo.mockup3':
+  fi: 'Mustavalkoinen prototyyppi: sovitut treffit, treffikumppanin kuva, ajankohta, kahvilatreffien paikka kartalla ja Peru treffit.'
+  en: 'A black-and-white prototype: an agreed date, with the other person’s photo, the time, the café on a map and Peru treffit (Cancel the date).'
+
+'about.photo.latevisu1':
+  fi: 'Värillinen Pilkkeen näkymä: Ehdokkaat, ehdokkaan kuva, yhteiset ajat, aktiviteetit ja Ehdota!-painike.'
+  en: 'A Pilke screen in colour: Ehdokkaat (Candidates), with a candidate’s photo, the times you share, activities and an Ehdota! (Propose!) button.'
+
+'about.photo.latevisu2':
+  fi: 'Värillinen Pilkkeen näkymä: Pilke-logo, sovitut treffit ja Löydä treffit! -painike.'
+  en: 'A Pilke screen in colour: the Pilke wordmark, an agreed date and a Löydä treffit! (Find a date!) button.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The people
+#
+# WARNING: **A marked spot, and nothing more.** The owner writes who made Pilke;
+# until then the page draws this heading over a dashed card with
+# `about.people.pending` in it. Both are new copy.
+# ──────────────────────────────────────────────────────────────────────────
+
+'about.people.title':
+  fi: 'Tekijät'
+  en: 'The people behind Pilke'
+
+'about.people.pending':
+  fi: 'Esittelyt tulossa.'
+  en: 'Introductions coming soon.'

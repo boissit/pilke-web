@@ -1,7 +1,8 @@
 ---
 /**
  * The bar every page carries: a white pill floating on the page, with the wordmark,
- * the subpages, the manual, the language and the one thing the site asks for.
+ * the subpages, the language and the one thing the site asks for. The guide is
+ * left to the footer and to the links that point into it.
  *
  * Wide, the links sit in the pill between the wordmark and the button. Narrow, they
  * fold into a menu behind a round button beside it, and the button stays: joining
@@ -18,7 +19,6 @@
  */
 import Icon from './Icon.astro';
 import Logo from './Logo.astro';
-import { manualHref } from '../i18n/manual';
 import { otherLanguage, otherLanguageHref } from '../i18n/switch';
 import { languageName, localePath, useTranslations, type Lang } from '../i18n/ui';
 
@@ -38,7 +38,7 @@ const nav = [
   { href: localePath(lang, 'nain-se-toimii'), label: t('nav.how') },
   { href: localePath(lang, 'turvallisuus'), label: t('nav.safety') },
   { href: localePath(lang, 'kysyttya'), label: t('nav.questions') },
-  { href: manualHref(lang), label: t('nav.manual') },
+  { href: localePath(lang, 'meista'), label: t('nav.about') },
 ];
 
 // The page being read, as the links spell it, so its own link can say so.

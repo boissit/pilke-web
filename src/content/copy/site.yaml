@@ -47,9 +47,10 @@
 # ──────────────────────────────────────────────────────────────────────────
 # The document itself
 #
-# The title and description of every page on the site. One pair, not one per
-# page: `Base.astro` sets them for all of them, and a per-page description is
-# a promise to keep six of them current.
+# The title and description of every page on the site but `/meista`, which has
+# its own in `meista.yaml`. One pair rather than one per page: `Base.astro` sets
+# them wherever a page passes none, and a per-page description is a promise to
+# keep every one of them current.
 # ──────────────────────────────────────────────────────────────────────────
 
 'meta.title':
@@ -63,9 +64,10 @@
 # ──────────────────────────────────────────────────────────────────────────
 # The bar at the top, and the link that skips it
 #
-# Three subpages, the guide and a language, in `SiteHeader.astro`, which folds them
-# into a menu on a phone; the footer lists the same four. `nav.back` is the button
-# every subpage closes with rather than anything in the bar.
+# Four subpages and a language, in `SiteHeader.astro`, which folds them into a menu
+# on a phone; the footer lists the same four and the guide, which the header leaves
+# to the footer and to the links into it. `nav.about` is in `meista.yaml`.
+# `nav.back` is the button every subpage closes with rather than anything in the bar.
 # ──────────────────────────────────────────────────────────────────────────
 
 'nav.how':
