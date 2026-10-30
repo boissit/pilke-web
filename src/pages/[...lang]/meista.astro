@@ -4,10 +4,10 @@
  * to the goals ahead.
  *
  * The timeline is the page. Each entry is a year on a rail, its text and, for the
- * years the owner has pictures of, rows of them under the text. The rail says where the
- * project is: solid and white-carded up to now, the one coral card that is now,
- * and dashed after it, in the dashed edge this site draws everything with that has
- * not shipped yet.
+ * years the owner has pictures of, a small gallery under the text. The rail says
+ * where the project is: solid and white-carded up to now, the one coral card that
+ * is now, and dashed after it, in the dashed edge this site draws everything with
+ * that has not shipped yet.
  *
  * The pictures are the owner's. Their originals are `scripts/photos/meista/`, and
  * `scripts/photos/meista.py` makes each one's picture into `src/assets/meista/`,
@@ -37,8 +37,7 @@ const t = useTranslations(lang);
   outline, and it stands on the page as the phone.
 
   A `tile` is artwork on its own rounded tile, an app icon, cut out to the tile
-  by `meista.py` and drawn a little inside its slot, so a square stands no taller
-  than the phones beside it.
+  by `meista.py`, and laid over a print's corner.
 
   A slot is drawn in its picture's proportions; one still waiting for its picture
   takes its shape's usual ones, below.
@@ -62,10 +61,6 @@ interface Slot {
   The entries, in the owner's order. `state` is written out rather than worked out
   from today's date: what is "now" is the owner's account of where the project is,
   and a build in January should not quietly move it.
-
-  `rows` are the entry's pictures, row by row, under its text. Each row is one
-  height and fills the card's width, up to a height every row shares, so the
-  entries keep one rhythm: year, text, pictures.
 */
 type State = 'done' | 'now' | 'goal';
 
@@ -73,50 +68,42 @@ interface Entry {
   /** The key the entry's copy is under: `about.timeline.<id>.year` and `.text`. */
   id: string;
   state: State;
-  rows?: Slot[][];
+  slots?: Slot[];
   /** The last goal, which is a joke, and is drawn as one. */
   playful?: boolean;
 }
 
 const entries: Entry[] = [
-  { id: '2019', state: 'done', rows: [[{ file: 'boissit.jpg', shape: 'landscape' }]] },
+  { id: '2019', state: 'done', slots: [{ file: 'boissit.jpg', shape: 'landscape' }] },
   {
     id: '2020',
     state: 'done',
-    rows: [
-      [
-        { file: 'visu1.jpg', shape: 'device' },
-        { file: 'visu2.jpg', shape: 'device' },
-      ],
+    slots: [
+      { file: 'visu1.jpg', shape: 'device' },
+      { file: 'visu2.jpg', shape: 'device' },
     ],
   },
   {
     id: '2021',
     state: 'done',
-    rows: [
+    slots: [
       // The design sprint: the cabin and the window of post-its.
-      [
-        { file: 'designsprint2.jpg', shape: 'landscape' },
-        { file: 'designsprint.jpg', shape: 'portrait' },
-      ],
-      [
-        { file: 'mockup1.png', shape: 'device' },
-        { file: 'mockup2.png', shape: 'device' },
-        { file: 'mockup3.png', shape: 'device' },
-      ],
+      { file: 'designsprint2.jpg', shape: 'landscape' },
+      { file: 'designsprint.jpg', shape: 'portrait' },
+      { file: 'mockup1.png', shape: 'device' },
+      { file: 'mockup2.png', shape: 'device' },
+      { file: 'mockup3.png', shape: 'device' },
     ],
   },
   {
     id: '2022',
     state: 'done',
-    rows: [
-      // The backend's debug map of who is a candidate for whom.
-      [{ file: 'map.jpg', shape: 'landscape' }],
-      [
-        { file: 'latevisu1.jpg', shape: 'device' },
-        { file: 'latevisu2.jpg', shape: 'device' },
-        { file: 'logo.jpg', shape: 'tile' },
-      ],
+    slots: [
+      // The backend's debug map of who is a candidate for whom, and the logo of then.
+      { file: 'map.jpg', shape: 'landscape' },
+      { file: 'logo.jpg', shape: 'tile' },
+      { file: 'latevisu1.jpg', shape: 'device' },
+      { file: 'latevisu2.jpg', shape: 'device' },
     ],
   },
   { id: '2026', state: 'now' },
@@ -133,23 +120,27 @@ const files = import.meta.glob<{ default: ImageMetadata }>('../../assets/meista/
 const pictures = new Map(Object.entries(files).map(([path, module]) => [stem(path.split('/').pop() as string), module.default]));
 
 /*
-  The tallest a row is drawn, at the widest, which is what each picture is resized
-  for, with a 2x beside it. The same figure is `--cap` in the styles below.
+  The width each shape is drawn at, at most, which is what its picture is resized
+  for, with a 2x beside it. Narrower screens take a share of the width.
 */
-const CAP = 340;
-
-/** A row as the page draws it: each slot with its picture, alt text and proportions. */
-const laidOut = (row: Slot[]) => {
-  const slots = row.map((slot) => {
-    const picture = pictures.get(stem(slot.file));
-    const aspect = picture ? picture.width / picture.height : placeholderAspect[slot.shape];
-    return { ...slot, picture, aspect, alt: t(`about.photo.${stem(slot.file)}`) };
-  });
-  const sum = slots.reduce((total, slot) => total + slot.aspect, 0);
-  return { slots, sum };
+const drawn: Record<Shape, { width: number; sizes: string }> = {
+  landscape: { width: 544, sizes: '(min-width: 48rem) 34rem, 80vw' },
+  portrait: { width: 240, sizes: '(min-width: 48rem) 15rem, 40vw' },
+  tile: { width: 200, sizes: '(min-width: 48rem) 12rem, 30vw' },
+  device: { width: 144, sizes: '(min-width: 48rem) 9rem, 28vw' },
 };
 
-const width = (aspect: number) => Math.round(CAP * aspect);
+/*
+  A gallery is laid out by shape, under the entry's text and centred in its card:
+  the photographs first, one as a print or two as prints laid one over the other,
+  and the phones in a row under them, fanned a little. So the fullest year still
+  reads as one picture and one row.
+*/
+const groups = (slots: Slot[]) =>
+  [
+    { kind: 'photos', slots: slots.filter((slot) => slot.shape !== 'device') },
+    { kind: 'phones', slots: slots.filter((slot) => slot.shape === 'device') },
+  ].filter((group) => group.slots.length > 0);
 ---
 
 <Base lang={lang} title={t('about.meta.title')} description={t('about.meta.description')}>
@@ -203,31 +194,34 @@ const width = (aspect: number) => Math.round(CAP * aspect);
                 )}
                 <p class="what">{t(`about.timeline.${entry.id}.text`)}</p>
 
-                {entry.rows && (
+                {entry.slots && (
                   <div class="gallery">
-                    {entry.rows.map(laidOut).map((row) => (
-                      <div class:list={['row', `count-${row.slots.length}`]} style={`--sum: ${row.sum.toFixed(4)}; --n: ${row.slots.length}`}>
-                        {row.slots.map((slot) => (
-                          <figure
-                            class:list={['slot', slot.shape, slot.picture && 'has-picture']}
-                            style={`--a: ${slot.aspect.toFixed(4)}`}
-                          >
-                            {slot.picture ? (
-                              <Image
-                                src={slot.picture}
-                                alt={slot.alt}
-                                width={width(slot.aspect)}
-                                widths={[width(slot.aspect), width(slot.aspect) * 2]}
-                                sizes={`(min-width: 72rem) ${width(slot.aspect)}px, ${Math.round((slot.aspect / row.sum) * 72)}vw`}
-                              />
-                            ) : (
-                              <div class="awaited" role="img" aria-label={slot.alt} data-photo-missing={slot.file}>
-                                <Icon name={slot.shape === 'device' ? 'smartphone' : 'image'} size={20} />
-                                <code>{stem(slot.file)}<wbr />{slot.file.slice(stem(slot.file).length)}</code>
-                              </div>
-                            )}
-                          </figure>
-                        ))}
+                    {groups(entry.slots).map((group) => (
+                      <div class:list={['group', `group-${group.kind}`, `count-${group.slots.length}`]}>
+                        {group.slots.map((slot) => {
+                          const picture = pictures.get(stem(slot.file));
+                          const alt = t(`about.photo.${stem(slot.file)}`);
+                          const size = drawn[slot.shape];
+                          const ratio = picture ? `${picture.width} / ${picture.height}` : `${placeholderAspect[slot.shape]}`;
+                          return (
+                            <figure class:list={['slot', slot.shape, picture && 'has-picture']} style={`aspect-ratio: ${ratio}`}>
+                              {picture ? (
+                                <Image
+                                  src={picture}
+                                  alt={alt}
+                                  width={size.width}
+                                  widths={[size.width, size.width * 2]}
+                                  sizes={size.sizes}
+                                />
+                              ) : (
+                                <div class="awaited" role="img" aria-label={alt} data-photo-missing={slot.file}>
+                                  <Icon name={slot.shape === 'device' ? 'smartphone' : 'image'} size={20} />
+                                  <code>{stem(slot.file)}<wbr />{slot.file.slice(stem(slot.file).length)}</code>
+                                </div>
+                              )}
+                            </figure>
+                          );
+                        })}
                       </div>
                     ))}
                   </div>
@@ -468,49 +462,110 @@ const width = (aspect: number) => Math.round(CAP * aspect);
 
   /* ── The galleries ─────────────────────────────────────────────────── */
 
-  /*
-    A row is one height and fills the card's width. Each picture's share of the
-    width is its proportion over the row's (`--a` over `--sum`), so every picture
-    in a row comes out the same height. Past `--cap` high the row stops growing and
-    stands centred, so a row of two phones does not tower over the text above it.
-  */
+  /* Under the text, each group centred in the card, so a short text never stands
+     beside a tall column of pictures. */
   .gallery {
-    --gap: clamp(10px, 1.2vw + 4px, 20px);
-    --cap: clamp(240px, 10vw + 212px, 340px);
-
     display: flex;
     flex-direction: column;
-    gap: calc(var(--gap) * 1.4);
+    align-items: center;
+    gap: clamp(18px, 1.5vw + 10px, 28px);
     margin-top: clamp(18px, 1vw + 12px, 26px);
   }
 
-  .row {
-    display: flex;
-    align-items: flex-end;
-    gap: var(--gap);
+  .group {
     width: 100%;
-    max-width: calc(var(--cap) * var(--sum) + var(--gap) * (var(--n) - 1));
-    margin-inline: auto;
   }
 
   .slot {
     position: relative;
-    flex: var(--a) 1 0px;
-    min-width: 0;
-    aspect-ratio: var(--a);
     margin: 0;
-    border-radius: 16px;
+    border-radius: 20px;
+  }
+
+  .landscape {
+    width: min(100%, 34rem);
+    margin-inline: auto;
+    rotate: -1.2deg;
+  }
+
+  /*
+    Two pictures as two prints, one over the other: the landscape behind, and in
+    front of its corner, lower, the portrait (the design sprint) or the tile (the
+    map and the logo).
+  */
+  .group-photos.count-2 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    max-width: 34rem;
+    margin-inline: auto;
+  }
+
+  /* Each print at the top of its area and as wide as it: stretched to the row's
+     height, a print's proportions would widen it past its columns. */
+  .group-photos.count-2 > * {
+    align-self: start;
+    width: 100%;
+  }
+
+  .group-photos.count-2 > .landscape {
+    grid-area: 1 / 1 / 2 / 10;
+    rotate: -2deg;
+  }
+
+  .group-photos.count-2 > .portrait {
+    grid-area: 1 / 8 / 2 / 13;
+    margin-top: 12%;
+    rotate: 3deg;
+    z-index: 1;
+  }
+
+  /* The map is the wider print, and the logo drops over its lower corner. */
+  .group-photos.count-2:has(> .tile) > .landscape {
+    grid-area: 1 / 1 / 2 / 12;
+  }
+
+  .group-photos.count-2 > .tile {
+    grid-area: 1 / 9 / 2 / 13;
+    margin-top: 72%;
+    rotate: 5deg;
+    z-index: 1;
+  }
+
+  /* The phones in a row, fanned a little, the middle one held a touch higher. */
+  .group-phones {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: clamp(10px, 1.5vw, 22px);
+    padding-top: 10px;
   }
 
   .device {
-    border-radius: 22px;
+    flex: 0 1 9rem;
+    min-width: 0;
+    border-radius: 24px;
   }
 
-  /* A photo is a print: a thin white edge and the shadow of a card resting on the
-     page. */
+  .group-phones > :first-child:not(:only-child) {
+    rotate: -4deg;
+  }
+
+  .group-phones > :last-child:not(:only-child) {
+    rotate: 4deg;
+  }
+
+  .group-phones.count-3 > :nth-child(2) {
+    translate: 0 -10px;
+  }
+
+  .has-picture:is(.landscape, .portrait) {
+    box-shadow: var(--shadow-float);
+  }
+
+  /* A photo on a print has a thin white edge, as a print does, and it is what
+     keeps the one in front apart from the one behind. */
   .has-picture:is(.landscape, .portrait) {
     border: 4px solid var(--surface);
-    box-shadow: var(--shadow-float);
   }
 
   .slot :global(img) {
@@ -518,18 +573,11 @@ const width = (aspect: number) => Math.round(CAP * aspect);
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: inherit;
   }
 
-  /* A tile stands a little inside its slot: as tall as the phones it would look
-     the heaviest thing in the row. Placed rather than padded, so the picture
-     cannot push the slot past its proportions. */
-  .tile :global(img) {
-    position: absolute;
-    top: 12%;
-    left: 12%;
-    width: 76%;
-    height: 76%;
+  .has-picture:is(.landscape, .portrait) :global(img) {
+    border-radius: 16px;
   }
 
   /* A phone or a tile is its own outline: no corner of ours, and a shadow that
@@ -537,7 +585,7 @@ const width = (aspect: number) => Math.round(CAP * aspect);
   :is(.device, .tile) :global(img) {
     object-fit: contain;
     border-radius: 0;
-    filter: drop-shadow(0 10px 14px color-mix(in srgb, var(--text) 22%, transparent));
+    filter: drop-shadow(0 12px 16px color-mix(in srgb, var(--text) 22%, transparent));
   }
 
   /* A slot still waiting for its picture: the dashed edge of the unshipped, its
