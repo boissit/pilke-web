@@ -122,7 +122,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/kayttoehdot.html/` | none |
 | `/en/kysyttya.html/` | none |
 | `/en/lapsiturvallisuus.html/` | none |
-| `/en/meista.html/` | `boissit` 420px<br>`visu1` 150px<br>`visu2` 150px<br>`designsprint2` 420px<br>`designsprint` 200px<br>`mockup1` 150px<br>`mockup2` 150px<br>`mockup3` 150px<br>`latevisu1` 150px<br>`latevisu2` 150px |
+| `/en/meista.html/` | `boissit` 604px<br>`visu1` 170px<br>`visu2` 170px<br>`designsprint2` 453px<br>`designsprint` 255px<br>`mockup1` 167px<br>`mockup2` 167px<br>`mockup3` 167px<br>`latevisu1` 167px<br>`latevisu2` 167px<br>`latevisu3` awaited<br>`latevisu4` awaited |
 | `/en/nain-se-toimii.html/` | `story-en` 500px<br>`platter-en` 500px<br>`date-bench-wide` 1120px<br>`date-en` 500px |
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
@@ -132,7 +132,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
-| `/meista.html/` | `boissit` 420px<br>`visu1` 150px<br>`visu2` 150px<br>`designsprint2` 420px<br>`designsprint` 200px<br>`mockup1` 150px<br>`mockup2` 150px<br>`mockup3` 150px<br>`latevisu1` 150px<br>`latevisu2` 150px |
+| `/meista.html/` | `boissit` 604px<br>`visu1` 170px<br>`visu2` 170px<br>`designsprint2` 453px<br>`designsprint` 255px<br>`mockup1` 167px<br>`mockup2` 167px<br>`mockup3` 167px<br>`latevisu1` 167px<br>`latevisu2` 167px<br>`latevisu3` awaited<br>`latevisu4` awaited |
 | `/nain-se-toimii.html/` | `story` 500px<br>`platter` 500px<br>`date-bench-wide` 1120px<br>`date` 500px |
 | `/ohje.html/` | none |
 | `/ohje/ehdokkaat.html/` | `fi/platter` 560px<br>`fi/cooldown-nodraw` 560px |
@@ -154,6 +154,8 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 Carried but drawn on no page: `treffit`.
 
 Every still in `src/assets/manual` is drawn on at least one page.
+
+Drawn as a placeholder until the owner's file is in `src/assets/meista/`: `latevisu3`, `latevisu4`.
 
 <!-- inventory:end -->
 
@@ -185,9 +187,9 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `beta-invitation-en` | Invitation received, English, **inside a photograph** | `screens/invitation-en.png` composited by `beta.py en` | The same in English; the thumb covers the lower venue rows, `Decline` and `Back` |
 | `date-bench-wide` | None: a stock photograph, no app in it | `scripts/photos/crops.py`, from the Pexels original | Two people talking on a garden bench, she laughing behind a hand and he leaning in, under *Nauttikaa treffeistä!* on `nain-se-toimii` in both languages. `date-bench-tall` is the same picture cut 4:5 for a phone, drawn from a `<source>` and so not listed above. Nothing in it shows the app, so it cannot go stale with it; the faces are small enough that a closer crop would make them recognisable, so neither crop goes nearer than it does |
 | `boissit` | None: the owner's own photograph, 2019 | `scripts/photos/meista.py`, copied as sent | A group of friends on the grass by a lake on a summer day, one with a ukulele, one lying down, bags all round. On the 2019 entry of `/meista`. It shows no app, so it cannot go stale |
-| `visu1` | An early design of the app as *Treffit*, not the shipping app | `meista.py`, cut from its Figma frame | The *Kerro itsestäsi* step: two gender questions with *Mies / Nainen / Muu* toggles and *Seuraava*, on a pink and violet gradient. 2020 on `/meista`. A picture of the past, so a change to the app never makes it stale |
+| `visu1` | An early design of the app as *Treffit*, not the shipping app | `meista.py`, cut from its Figma frame and set into `visu2`'s phone | The *Kerro itsestäsi* step: two gender questions with *Mies / Nainen / Muu* toggles and *Seuraava*, on a pink and violet gradient carried on above and below it, in the black iPhone X `visu2` is drawn in. 2020 on `/meista`. A picture of the past, so a change to the app never makes it stale |
 | `visu2` | An early visual, not the shipping app | `meista.py`, masked to the phone | A pink sign-in screen, *GET ON BOARD / GET MATCHED / GET A DATE*, in a black iPhone X. 2020 on `/meista` |
-| `designsprint2` | None: the owner's own photograph | `meista.py`, copied as sent | A design session in a cabin: a user-flow diagram on a TV, one person at a laptop, another standing. With `designsprint` on 2021 of `/meista`, or on 2022–2025 (`SPRINT` in `meista.astro`) |
+| `designsprint2` | None: the owner's own photograph | `meista.py`, copied as sent | A design session in a cabin: a user-flow diagram on a TV, one person at a laptop, another standing. With `designsprint`, in one row on 2021 of `/meista` |
 | `designsprint` | None: the owner's own photograph | `meista.py`, copied as sent | A window covered in sticky notes (*Tekninen toteutus*, *Tech stack*, *Launch*, *Käyttäjätestaus*…) with a person behind them. Drawn with `designsprint2` |
 | `mockup1` | The 2021 prototype, not the shipping app | `meista.py`, masked to the phone | Black-and-white *Treffit* home: a sent date request, roses and petals, *Löydä treffit!*, the tab bar; in a rose-gold iPhone 8. 2021 on `/meista` |
 | `mockup2` | The 2021 prototype | `meista.py`, masked to the phone | Black-and-white *Kalenteri*, July 2021 with three days marked. 2021 on `/meista` |
@@ -232,7 +234,8 @@ The originals are `scripts/photos/meista/`, as the owner sent them and under the
 owner's names, and `scripts/photos/meista.py` (run by `npm run pictures:build`)
 makes each into `src/assets/meista/`: a photograph is copied as it is, a phone shot
 drawn on black is masked to the phone's own outline and written as PNG, and a
-design-tool frame is cut from its canvas. The page finds a picture by its file's
+design-tool frame is cut from its canvas and set into another shot's phone (`visu1`
+into `visu2`'s), so the two stand together as one device. The page finds a picture by its file's
 stem, so `latevisu1.jpg` is drawn from `latevisu1.png`.
 
 **Adding or replacing one.** Put the file in `scripts/photos/meista/` under the

@@ -9,7 +9,8 @@
  * visibly on the same site.
  *
  * A lede with a link in it comes in the `lead` slot instead of the prop, as the
- * 404's does.
+ * 404's does. Anything else in the card, as the about page's story is, comes in
+ * the default slot, under the title and the lede if there is one.
  */
 import SparkleScatter from './SparkleScatter.astro';
 
@@ -35,7 +36,8 @@ const { title, lead } = Astro.props;
       ]}
     />
     <h1 class="display-mid">{title}</h1>
-    <p class="lede">{Astro.slots.has('lead') ? <slot name="lead" /> : lead}</p>
+    {(lead || Astro.slots.has('lead')) && <p class="lede">{Astro.slots.has('lead') ? <slot name="lead" /> : lead}</p>}
+    <slot />
   </div>
 </section>
 

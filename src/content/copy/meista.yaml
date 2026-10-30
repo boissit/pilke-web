@@ -21,15 +21,11 @@
   fi: 'Meistä'
   en: 'About us'
 
-# The owner's heading.
+# The owner's heading, drawn with the story under it in the one card the page
+# opens with.
 'about.title':
   fi: 'Meistä'
   en: 'About us'
-
-# New copy, both languages: the lede under the title.
-'about.lead':
-  fi: 'Miksi Pilke syntyi, ja mihin olemme menossa.'
-  en: 'Why Pilke was made, and where we are headed.'
 
 # New copy, both languages.
 'about.meta.title':
@@ -150,8 +146,8 @@
   en: 'A group of friends on the grass by a lake on a summer day: one plays a ukulele, one lies on the grass, and there are bags and backpacks all around.'
 
 'about.photo.visu1':
-  fi: 'Varhainen Treffit-sovelluksen näkymä: Kerro itsestäsi, kysymykset sukupuolesta ja siitä, keistä olet kiinnostunut, ja Seuraava-painike.'
-  en: 'An early screen of the Treffit app: Kerro itsestäsi (Tell us about yourself), with questions on gender and who you are interested in, and a Seuraava (Next) button.'
+  fi: 'Varhainen Treffit-sovelluksen näkymä puhelimessa: Kerro itsestäsi, kysymykset sukupuolesta ja siitä, keistä olet kiinnostunut, ja Seuraava-painike.'
+  en: 'An early screen of the Treffit app on a phone: Kerro itsestäsi (Tell us about yourself), with questions on gender and who you are interested in, and a Seuraava (Next) button.'
 
 'about.photo.visu2':
   fi: 'Varhainen visuaali puhelimessa: vaaleanpunainen kirjautumisnäkymä ja tekstit Get on board, Get matched ja Get a date.'
@@ -184,6 +180,16 @@
 'about.photo.latevisu2':
   fi: 'Värillinen Pilkkeen näkymä: Pilke-logo, sovitut treffit ja Löydä treffit! -painike.'
   en: 'A Pilke screen in colour: the Pilke wordmark, an agreed date and a Löydä treffit! (Find a date!) button.'
+
+# WARNING: **Waiting for the photo.** Placeholders until the owner's files are in;
+# describe each picture then, in both languages.
+'about.photo.latevisu3':
+  fi: 'Odottaa kuvaa (latevisu3.jpg).'
+  en: 'Waiting for the photo (latevisu3.jpg).'
+
+'about.photo.latevisu4':
+  fi: 'Odottaa kuvaa (latevisu4.jpg).'
+  en: 'Waiting for the photo (latevisu4.jpg).'
 
 # ──────────────────────────────────────────────────────────────────────────
 # The people
