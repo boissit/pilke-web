@@ -519,7 +519,13 @@ const groups = (slots: Slot[]) =>
     z-index: 1;
   }
 
-  /* The map is the wider print, and the logo drops over its lower corner. */
+  /* The map is the wider print, and the logo drops over its lower corner. The
+     two are kept small, a keepsake of the years between rather than the year's
+     main picture, and the phones under them stay the size of every other year's. */
+  .group-photos.count-2:has(> .tile) {
+    max-width: min(19.5rem, 78%);
+  }
+
   .group-photos.count-2:has(> .tile) > .landscape {
     grid-area: 1 / 1 / 2 / 12;
   }
