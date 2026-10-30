@@ -181,15 +181,13 @@
   fi: 'Värillinen Pilkkeen näkymä: Pilke-logo, sovitut treffit ja Löydä treffit! -painike.'
   en: 'A Pilke screen in colour: the Pilke wordmark, an agreed date and a Löydä treffit! (Find a date!) button.'
 
-# WARNING: **Waiting for the photo.** Placeholders until the owner's files are in;
-# describe each picture then, in both languages.
-'about.photo.latevisu3':
-  fi: 'Odottaa kuvaa (latevisu3.jpg).'
-  en: 'Waiting for the photo (latevisu3.jpg).'
+'about.photo.map':
+  fi: 'Pilkkeen taustajärjestelmän testikartta Helsingin seudusta: ehdokkaiden merkit ja niiden ympärillä etäisyyksien ympyrät.'
+  en: 'A test map from Pilke’s backend, over the Helsinki area: candidates’ markers and the circles of their distances around them.'
 
-'about.photo.latevisu4':
-  fi: 'Odottaa kuvaa (latevisu4.jpg).'
-  en: 'Waiting for the photo (latevisu4.jpg).'
+'about.photo.logo':
+  fi: 'Pilkkeen varhainen logo: keltainen PILKE ja kipinän viirut mustalla pyöreäkulmaisella neliöllä.'
+  en: 'An early Pilke logo: PILKE in yellow with strokes of a spark, on a black rounded square.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # The people

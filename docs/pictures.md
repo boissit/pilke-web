@@ -122,7 +122,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/kayttoehdot.html/` | none |
 | `/en/kysyttya.html/` | none |
 | `/en/lapsiturvallisuus.html/` | none |
-| `/en/meista.html/` | `boissit` 604px<br>`visu1` 170px<br>`visu2` 170px<br>`designsprint2` 453px<br>`designsprint` 255px<br>`mockup1` 167px<br>`mockup2` 167px<br>`mockup3` 167px<br>`latevisu1` 167px<br>`latevisu2` 167px<br>`latevisu3` awaited<br>`latevisu4` awaited |
+| `/en/meista.html/` | `boissit` 604px<br>`visu1` 170px<br>`visu2` 170px<br>`designsprint2` 453px<br>`designsprint` 255px<br>`mockup1` 167px<br>`mockup2` 167px<br>`mockup3` 167px<br>`map` 654px<br>`latevisu1` 167px<br>`latevisu2` 167px<br>`logo` 340px |
 | `/en/nain-se-toimii.html/` | `story-en` 500px<br>`platter-en` 500px<br>`date-bench-wide` 1120px<br>`date-en` 500px |
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
@@ -132,7 +132,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
-| `/meista.html/` | `boissit` 604px<br>`visu1` 170px<br>`visu2` 170px<br>`designsprint2` 453px<br>`designsprint` 255px<br>`mockup1` 167px<br>`mockup2` 167px<br>`mockup3` 167px<br>`latevisu1` 167px<br>`latevisu2` 167px<br>`latevisu3` awaited<br>`latevisu4` awaited |
+| `/meista.html/` | `boissit` 604px<br>`visu1` 170px<br>`visu2` 170px<br>`designsprint2` 453px<br>`designsprint` 255px<br>`mockup1` 167px<br>`mockup2` 167px<br>`mockup3` 167px<br>`map` 654px<br>`latevisu1` 167px<br>`latevisu2` 167px<br>`logo` 340px |
 | `/nain-se-toimii.html/` | `story` 500px<br>`platter` 500px<br>`date-bench-wide` 1120px<br>`date` 500px |
 | `/ohje.html/` | none |
 | `/ohje/ehdokkaat.html/` | `fi/platter` 560px<br>`fi/cooldown-nodraw` 560px |
@@ -154,8 +154,6 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 Carried but drawn on no page: `treffit`.
 
 Every still in `src/assets/manual` is drawn on at least one page.
-
-Drawn as a placeholder until the owner's file is in `src/assets/meista/`: `latevisu3`, `latevisu4`.
 
 <!-- inventory:end -->
 
@@ -196,6 +194,8 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `mockup3` | The 2021 prototype | `meista.py`, masked to the phone | Black-and-white *Treffit!*: an agreed coffee date, the partner's photo, the time, a map, *Peru treffit* and *Takaisin*. 2021 on `/meista` |
 | `latevisu1` | A later design, not the shipping app | `meista.py`, masked to the phone | *Ehdokkaat* in colour: a candidate card on yellow, shared times, activities, *Ehdota!*. 2022–2025 on `/meista` |
 | `latevisu2` | A later design, not the shipping app | `meista.py`, masked to the phone | The *Pilke* home in colour: an agreed date card, *Löydä treffit!*, the tab bar. 2022–2025 on `/meista` |
+| `map` | The backend's debug map of candidates, not the shipping app | `meista.py`, the browser's toolbar, edge and scrollbar cut off | Folium over OpenStreetMap, the Helsinki area from Kirkkonummi to Sipoo: candidate markers in grey, red, green and blue, each with a radius circle, and the map's zoom buttons. 2022–2025 on `/meista`, over the phones. The crop's box is fixed in `meista.py` and measured on this file, so a new screenshot needs it measured again: nothing of the address bar or the profile picture may show |
+| `logo` | An earlier Pilke logo, not the current wordmark | `meista.py`, cut out to its rounded tile | *PILKE* in yellow with three yellow strokes of a spark, on a black rounded square. 2022–2025 on `/meista`, beside the two phones |
 
 ## The photographs
 

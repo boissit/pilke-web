@@ -11,6 +11,11 @@ by its kind:
     is a dark slab on the page's peach. The black is masked off: every near-black
     region touching the image's edge is background, and what is left is the
     device, cut out to its own outline on transparent and written as PNG.
+  * A tile is artwork on a rounded tile, drawn on white: the white is masked off
+    the same way, and the tile stands on the page by its own outline.
+  * A screenshot of a browser keeps only the page it shows: the box below cuts the
+    browser's toolbar, its address and profile picture, off the top, and the
+    window's edge and scrollbar off the sides.
   * A screen is a design-tool frame on its grey canvas, with the frame's name
     above it. It is cut to the frame and set into the phone of another phone
     shot, so it stands beside that one as the same device: the screen is fitted
@@ -38,6 +43,11 @@ BLACK = 28
 
 PHOTOS = ['boissit.jpg', 'designsprint.jpg', 'designsprint2.jpg']
 DEVICES = ['visu2.jpg', 'mockup1.png', 'mockup2.png', 'mockup3.png', 'latevisu1.jpg', 'latevisu2.jpg']
+TILES = ['logo.jpg']
+# A browser screenshot, and the box of it that is the page: measured on the file.
+BROWSER = {'map.jpg': (8, 26, 1263, 678)}
+# Above this in every channel a pixel is a tile's white ground.
+WHITE = 236
 # A screen, and the device whose phone it is set into.
 SCREENS = {'visu1.jpg': 'visu2.jpg'}
 
@@ -51,9 +61,10 @@ def stem(name):
     return os.path.splitext(name)[0]
 
 
-def cut_out(rgb):
-    """The device's alpha: everything but the near-black ground touching the edge."""
-    dark = (rgb.max(axis=2) < BLACK).astype(np.uint8)
+def cut_out(rgb, ground=None):
+    """The alpha of what stands on a plain ground: everything but the ground's
+    regions touching the image's edge. The ground is near-black unless given."""
+    dark = ((rgb.max(axis=2) < BLACK) if ground is None else ground).astype(np.uint8)
     count, labels = cv2.connectedComponents(dark, connectivity=4)
     edge = np.unique(np.concatenate([labels[0], labels[-1], labels[:, 0], labels[:, -1]]))
     ground = np.isin(labels, edge[edge != 0]) if count > 1 else np.zeros_like(dark, bool)
@@ -72,6 +83,16 @@ def save_device(rgb, alpha, name):
 def device(name):
     rgb = np.array(Image.open(os.path.join(SRC, name)).convert('RGB'))
     save_device(rgb, cut_out(rgb), name)
+
+
+def tile(name):
+    rgb = np.array(Image.open(os.path.join(SRC, name)).convert('RGB'))
+    save_device(rgb, cut_out(rgb, rgb.min(axis=2) > WHITE), name)
+
+
+def browser(name, box):
+    Image.open(os.path.join(SRC, name)).convert('RGB').crop(box).save(
+        os.path.join(WEB, name), quality=90, subsampling=0, optimize=True)
 
 
 def frame_of(rgb):
@@ -128,10 +149,14 @@ for name in PHOTOS:
     shutil.copyfile(os.path.join(SRC, name), os.path.join(WEB, name))
 for name in DEVICES:
     device(name)
+for name in TILES:
+    tile(name)
+for name, box in BROWSER.items():
+    browser(name, box)
 for name, into in SCREENS.items():
     screen(name, into)
 
-known = set(PHOTOS + DEVICES) | set(SCREENS)
+known = set(PHOTOS + DEVICES + TILES) | set(BROWSER) | set(SCREENS)
 unknown = sorted(n for n in os.listdir(SRC) if not n.startswith('.') and n not in known)
 if unknown:
     raise SystemExit(f"meista/ has {', '.join(unknown)}, which meista.py does not know: add each to its kind above.")

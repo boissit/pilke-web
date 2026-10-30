@@ -36,15 +36,20 @@ const t = useTranslations(lang);
   drawn in, so it gets no second one: `meista.py` cuts it out to the phone's
   outline, and it stands on the page as the phone.
 
+  A `tile` is artwork on its own rounded tile, an app icon, cut out to the tile
+  by `meista.py` and drawn a little inside its slot, so a square stands no taller
+  than the phones beside it.
+
   A slot is drawn in its picture's proportions; one still waiting for its picture
   takes its shape's usual ones, below.
 */
-type Shape = 'landscape' | 'portrait' | 'device';
+type Shape = 'landscape' | 'portrait' | 'device' | 'tile';
 
 const placeholderAspect: Record<Shape, number> = {
   landscape: 3 / 2,
   portrait: 3 / 4,
   device: 1 / 2.05,
+  tile: 1,
 };
 
 interface Slot {
@@ -105,11 +110,12 @@ const entries: Entry[] = [
     id: '2022',
     state: 'done',
     rows: [
+      // The backend's debug map of who is a candidate for whom.
+      [{ file: 'map.jpg', shape: 'landscape' }],
       [
         { file: 'latevisu1.jpg', shape: 'device' },
         { file: 'latevisu2.jpg', shape: 'device' },
-        { file: 'latevisu3.jpg', shape: 'device' },
-        { file: 'latevisu4.jpg', shape: 'device' },
+        { file: 'logo.jpg', shape: 'tile' },
       ],
     ],
   },
@@ -488,6 +494,7 @@ const width = (aspect: number) => Math.round(CAP * aspect);
   }
 
   .slot {
+    position: relative;
     flex: var(--a) 1 0px;
     min-width: 0;
     aspect-ratio: var(--a);
@@ -514,8 +521,20 @@ const width = (aspect: number) => Math.round(CAP * aspect);
     border-radius: 12px;
   }
 
-  /* A phone is its own outline: no corner of ours, and a shadow that follows it. */
-  .device :global(img) {
+  /* A tile stands a little inside its slot: as tall as the phones it would look
+     the heaviest thing in the row. Placed rather than padded, so the picture
+     cannot push the slot past its proportions. */
+  .tile :global(img) {
+    position: absolute;
+    top: 12%;
+    left: 12%;
+    width: 76%;
+    height: 76%;
+  }
+
+  /* A phone or a tile is its own outline: no corner of ours, and a shadow that
+     follows it. */
+  :is(.device, .tile) :global(img) {
     object-fit: contain;
     border-radius: 0;
     filter: drop-shadow(0 10px 14px color-mix(in srgb, var(--text) 22%, transparent));
@@ -606,17 +625,6 @@ const width = (aspect: number) => Math.round(CAP * aspect);
 
     .device {
       border-radius: 16px;
-    }
-
-    /* Four phones in a row on a phone would each be a thumbnail, so they go two
-       and two. */
-    .row.count-4 {
-      flex-wrap: wrap;
-      max-width: calc(var(--cap) * var(--sum) / 2 + var(--gap));
-    }
-
-    .row.count-4 > .slot {
-      flex: 0 0 calc(50% - var(--gap) / 2);
     }
 
     .device .awaited {
