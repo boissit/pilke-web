@@ -188,19 +188,3 @@
 'about.photo.logo':
   fi: 'Pilkkeen varhainen logo: keltainen PILKE ja kipinän viirut mustalla pyöreäkulmaisella neliöllä.'
   en: 'An early Pilke logo: PILKE in yellow with strokes of a spark, on a black rounded square.'
-
-# ──────────────────────────────────────────────────────────────────────────
-# The people
-#
-# WARNING: **A marked spot, and nothing more.** The owner writes who made Pilke;
-# until then the page draws this heading over a dashed card with
-# `about.people.pending` in it. Both are new copy.
-# ──────────────────────────────────────────────────────────────────────────
-
-'about.people.title':
-  fi: 'Tekijät'
-  en: 'The people behind Pilke'
-
-'about.people.pending':
-  fi: 'Esittelyt tulossa.'
-  en: 'Introductions coming soon.'

@@ -17,12 +17,18 @@ import SparkleScatter from './SparkleScatter.astro';
 interface Props {
   title: string;
   lead?: string;
+  /**
+   * The card's ground: the hero's peach, or white for a page whose next card is
+   * the peach one, as the about page's timeline is. The sparkles are the peach
+   * card's on either.
+   */
+  ground?: 'pale' | 'white';
 }
 
-const { title, lead } = Astro.props;
+const { title, lead, ground = 'pale' } = Astro.props;
 ---
 
-<section class="slab slab-pale head">
+<section class:list={['slab', `slab-${ground}`, 'head']}>
   <div class="wrap section-pad">
     <SparkleScatter
       fill="var(--sparkle-on-peach)"

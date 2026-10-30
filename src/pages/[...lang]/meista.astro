@@ -144,7 +144,7 @@ const groups = (slots: Slot[]) =>
 ---
 
 <Base lang={lang} title={t('about.meta.title')} description={t('about.meta.description')}>
-  <PageHead title={t('about.title')}>
+  <PageHead title={t('about.title')} ground="white">
     <p class="story">{t('about.story')}</p>
   </PageHead>
 
@@ -231,20 +231,8 @@ const groups = (slots: Slot[]) =>
           ))
         }
       </ol>
-    </div>
-  </section>
 
-  <!--
-    The people who made Pilke. The owner writes this section; until then the
-    dashed card marks where it goes.
-  -->
-  <section class="slab slab-white" aria-labelledby="people-title">
-    <div class="wrap section-pad people">
-      <h2 id="people-title" class="display-mid">{t('about.people.title')}</h2>
-      <div class="block provisional">
-        <p>{t('about.people.pending')}</p>
-      </div>
-      <p><a class="go" href={localePath(lang)}>{t('nav.back')}</a></p>
+      <p class="back"><a class="go" href={localePath(lang)}>{t('nav.back')}</a></p>
     </div>
   </section>
 </Base>
@@ -260,12 +248,9 @@ const groups = (slots: Slot[]) =>
     line-height: 1.65;
   }
 
-  .people > * + * {
+  /* The way back, as every content page ends: at the foot of its last card. */
+  .back {
     margin-top: var(--pad-large);
-  }
-
-  .people .provisional {
-    margin-top: var(--pad-medium);
   }
 
   /*
