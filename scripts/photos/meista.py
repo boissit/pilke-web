@@ -21,8 +21,6 @@ by its kind:
     phone as a screen is, below. These are cut off at the board's foot, so they
     stand on the phone's foot as if they ran on under it, and their own flat
     background is carried on above them.
-  * A rounded tile is a square picture on no tile of its own, given the logo's
-    rounded corners.
   * A screen is a design-tool frame on its grey canvas, with the frame's name
     above it. It is cut to the frame and set into the phone of another phone
     shot, so it stands beside that one as the same device: the screen is fitted
@@ -61,9 +59,6 @@ BLACK = 28
 PHOTOS = ['boissit.jpg', 'designsprint.jpg', 'designsprint2.jpg']
 DEVICES = ['visu2.jpg', 'mockup1.png', 'mockup2.png', 'mockup3.png', 'latevisu1.jpg', 'latevisu2.jpg']
 TILES = ['logo.jpg']
-# A square picture, the box of it that is the square, and the corner radius as a
-# share of its side, the logo tile's.
-ROUNDED_TILES = {'maskotti.png': ((0, 0, 286, 285), 0.175)}
 # A board, and each screen on it: the picture it becomes, its box on the board,
 # and the device whose phone it is set into.
 BOARDS = {
@@ -273,12 +268,6 @@ def board(name, screens):
         set_into_phone(np.ascontiguousarray(sheet[y0:y1, x0:x1]), into, out_name, align='foot')
 
 
-def rounded_tile(name, box, radius):
-    square = Image.open(os.path.join(SRC, name)).convert('RGB').crop(box)
-    cover = (rounded(square.width, square.height, round(min(square.size) * radius))[..., 0] * 255).round().astype(np.uint8)
-    Image.fromarray(np.dstack([np.array(square), cover])).save(os.path.join(WEB, stem(name) + '.png'), optimize=True)
-
-
 os.makedirs(WEB, exist_ok=True)
 for name in PHOTOS:
     shutil.copyfile(os.path.join(SRC, name), os.path.join(WEB, name))
@@ -292,10 +281,8 @@ for name, into in SCREENS.items():
     screen(name, into)
 for name, screens in BOARDS.items():
     board(name, screens)
-for name, (box, radius) in ROUNDED_TILES.items():
-    rounded_tile(name, box, radius)
 
-known = set(PHOTOS + DEVICES + TILES) | set(BROWSER) | set(SCREENS) | set(BOARDS) | set(ROUNDED_TILES)
+known = set(PHOTOS + DEVICES + TILES) | set(BROWSER) | set(SCREENS) | set(BOARDS)
 unknown = sorted(n for n in os.listdir(SRC) if not n.startswith('.') and n not in known)
 if unknown:
     raise SystemExit(f"meista/ has {', '.join(unknown)}, which meista.py does not know: add each to its kind above.")
