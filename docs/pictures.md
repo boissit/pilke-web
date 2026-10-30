@@ -122,7 +122,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/kayttoehdot.html/` | none |
 | `/en/kysyttya.html/` | none |
 | `/en/lapsiturvallisuus.html/` | none |
-| `/en/meista.html/` | `boissit` 544px<br>`visu1` 144px<br>`visu2` 144px<br>`designsprint2` 544px<br>`designsprint` 240px<br>`mockup1` 144px<br>`mockup2` 144px<br>`mockup3` 144px<br>`map` 544px<br>`logo` 200px<br>`latevisu1` 144px<br>`latevisu2` 144px |
+| `/en/meista.html/` | `boissit` 544px<br>`visu1` 144px<br>`visu2` 144px<br>`designsprint2` 544px<br>`designsprint` 240px<br>`mockup1` 144px<br>`mockup2` 144px<br>`mockup3` 144px<br>`map` 544px<br>`logo` 200px<br>`maskotti` 200px<br>`latevisu1` 144px<br>`latevisu2` 144px<br>`onboard` 144px<br>`overview` 144px |
 | `/en/nain-se-toimii.html/` | `story-en` 500px<br>`platter-en` 500px<br>`date-bench-wide` 1120px<br>`date-en` 500px |
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
@@ -132,7 +132,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
-| `/meista.html/` | `boissit` 544px<br>`visu1` 144px<br>`visu2` 144px<br>`designsprint2` 544px<br>`designsprint` 240px<br>`mockup1` 144px<br>`mockup2` 144px<br>`mockup3` 144px<br>`map` 544px<br>`logo` 200px<br>`latevisu1` 144px<br>`latevisu2` 144px |
+| `/meista.html/` | `boissit` 544px<br>`visu1` 144px<br>`visu2` 144px<br>`designsprint2` 544px<br>`designsprint` 240px<br>`mockup1` 144px<br>`mockup2` 144px<br>`mockup3` 144px<br>`map` 544px<br>`logo` 200px<br>`maskotti` 200px<br>`latevisu1` 144px<br>`latevisu2` 144px<br>`onboard` 144px<br>`overview` 144px |
 | `/nain-se-toimii.html/` | `story` 500px<br>`platter` 500px<br>`date-bench-wide` 1120px<br>`date` 500px |
 | `/ohje.html/` | none |
 | `/ohje/ehdokkaat.html/` | `fi/platter` 560px<br>`fi/cooldown-nodraw` 560px |
@@ -189,13 +189,16 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `visu2` | An early visual, not the shipping app | `meista.py`, masked to the phone | A pink sign-in screen, *GET ON BOARD / GET MATCHED / GET A DATE*, in a black iPhone X. 2020 on `/meista` |
 | `designsprint2` | None: the owner's own photograph | `meista.py`, copied as sent | A design session in a cabin: a user-flow diagram on a TV, one person at a laptop, another standing. With `designsprint`, in one row on 2021 of `/meista` |
 | `designsprint` | None: the owner's own photograph | `meista.py`, copied as sent | A window covered in sticky notes (*Tekninen toteutus*, *Tech stack*, *Launch*, *Käyttäjätestaus*…) with a person behind them. Drawn with `designsprint2` |
-| `mockup1` | The 2021 prototype, not the shipping app | `meista.py`, masked to the phone | Black-and-white *Treffit* home: a sent date request, roses and petals, *Löydä treffit!*, the tab bar; in a rose-gold iPhone 8. 2021 on `/meista` |
+| `mockup1` | The 2021 prototype, not the shipping app | `meista.py`, masked to the phone | Black-and-white *Treffit* home: a sent date request, roses and petals, *Löydä treffit!*, the tab bar; in a rose-gold iPhone 8. The profile's photo is the stand-in below. 2021 on `/meista` |
 | `mockup2` | The 2021 prototype | `meista.py`, masked to the phone | Black-and-white *Kalenteri*, July 2021 with three days marked. 2021 on `/meista` |
-| `mockup3` | The 2021 prototype | `meista.py`, masked to the phone | Black-and-white *Treffit!*: an agreed coffee date, the partner's photo, the time, a map, *Peru treffit* and *Takaisin*. 2021 on `/meista` |
-| `latevisu1` | A later design, not the shipping app | `meista.py`, masked to the phone | *Ehdokkaat* in colour: a candidate card on yellow, shared times, activities, *Ehdota!*. 2022–2025 on `/meista` |
-| `latevisu2` | A later design, not the shipping app | `meista.py`, masked to the phone | The *Pilke* home in colour: an agreed date card, *Löydä treffit!*, the tab bar. 2022–2025 on `/meista` |
-| `map` | The backend's debug map of candidates, not the shipping app | `meista.py`, the browser's toolbar, edge and scrollbar cut off | Folium over OpenStreetMap, the Helsinki area from Kirkkonummi to Sipoo: candidate markers in grey, red, green and blue, each with a radius circle, and the map's zoom buttons. 2022–2025 on `/meista`: a print with `logo` over its corner and the two phones under it. The crop's box is fixed in `meista.py` and measured on this file, so a new screenshot needs it measured again: nothing of the address bar or the profile picture may show |
-| `logo` | An earlier Pilke logo, not the current wordmark | `meista.py`, cut out to its rounded tile | *PILKE* in yellow with three yellow strokes of a spark, on a black rounded square. 2022–2025 on `/meista`, laid over the corner of `map` |
+| `mockup3` | The 2021 prototype | `meista.py`, masked to the phone | Black-and-white *Treffit!*: an agreed coffee date, the partner's photo, the time, a map, *Peru treffit* and *Takaisin*. The partner's photo is the stand-in below. 2021 on `/meista` |
+| `latevisu1` | A later design, not the shipping app | `meista.py`, masked to the phone | *Ehdokkaat* in colour: a candidate card on yellow, shared times, activities, *Ehdota!*. The candidate's photo is the stand-in below, under the card's own *Esa, 26* and its darkening. 2022–2025 on `/meista` |
+| `latevisu2` | A later design, not the shipping app | `meista.py`, masked to the phone | The *Pilke* home in colour: an agreed date card, *Löydä treffit!*, the tab bar. The card's photo is the stand-in below. 2022–2025 on `/meista` |
+| `map` | The backend's debug map of candidates, not the shipping app | `meista.py`, the browser's toolbar, edge and scrollbar cut off | Folium over OpenStreetMap, the Helsinki area from Kirkkonummi to Sipoo: candidate markers in grey, red, green and blue, each with a radius circle, and the map's zoom buttons. 2022–2025 on `/meista`: a small print with `logo` and `maskotti` over its lower corners and the four phones under it. The crop's box is fixed in `meista.py` and measured on this file, so a new screenshot needs it measured again: nothing of the address bar or the profile picture may show |
+| `logo` | An earlier Pilke logo, not the current wordmark | `meista.py`, cut out to its rounded tile | *PILKE* in yellow with three yellow strokes of a spark, on a black rounded square. 2022–2025 on `/meista`, laid over the lower right corner of `map` |
+| `maskotti` | An early mascot attempt, never in the app | `meista.py`, cut to its beige square and given the logo tile's corners | A cream, rabbit-like character with sparkles in its fur and navy stars round it, on beige. 2022–2025 on `/meista`, over the lower left corner of `map`. The file is 298 px square, so the tile is drawn no larger than about 88 px |
+| `onboard` | An early design of the welcome screen, not the shipping app | `meista.py`, cut from the `esimerkkiruudut.png` board and set into `visu2`'s phone on its foot | The lilac *Esimerkkiruutu - Onboard 1*: the *Pilke* label with its sparkle, a yellow *Tervetuloa!* card with the owner's text and a *Joo!* button, cut off at the foot as on the board, lilac carried on above. 2022–2025 on `/meista` |
+| `overview` | An early design of the home screen, not the shipping app | `meista.py`, cut from the same board and set into the same phone | The lilac *Esimerkkiruutu - Overview*: the *Pilke* label and four tiles at the top, *Vinkkipankki* and a gear, the yellow tab bar (*Treffit*, *Kalenteri*, *Kysymykset*, *Turvallisuus*) cut off at the foot. 2022–2025 on `/meista` |
 
 ## The photographs
 
@@ -248,6 +251,24 @@ inventory lists it as awaited.
 
 The people in these photographs are the owner's own team and friends, and they are
 on the page with the owner's say-so rather than under any stock licence.
+
+**The one face that is not theirs.** The prototype's sample profile, *Esa, 26* (and
+*Esuli, 26* on `mockup3`), was a real person's photograph, and he is on no page. In
+`mockup1`, `mockup3`, `latevisu1` and `latevisu2` every one of his photo slots is
+painted over by `meista.py` with one face from the backend's mock cast, the same in
+all four so the prototype still reads as one profile: `scripts/photos/cast/spare-male-01.jpg`,
+the cast's Aleksi Rantala, copied from `treffit-backend/test/` under the same name.
+Each slot's box and corner radius are measured on the original and fixed in the
+script, so a new copy of one of those four screenshots needs them measured again.
+
+| Picture | Stock photo | Photographer |
+| --- | --- | --- |
+| The face in `mockup1`, `mockup3`, `latevisu1`, `latevisu2` | [DItYlc26zVI](https://unsplash.com/photos/DItYlc26zVI) | Christian Buehner |
+
+It is Unsplash stock under the Unsplash License, the licence and credit recorded
+for the whole cast in `treffit_backend/mocks/data.py`. Like the front page's photos,
+that licence grants use and not likeness: the face is shown as a prototype's sample
+profile, and may never be captioned as a Pilke user.
 
 ## The sparks
 

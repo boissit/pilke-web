@@ -96,8 +96,8 @@
   en: '2022–2025'
 
 'about.timeline.2022.text':
-  fi: 'Hidasta sovelluskehitystä'
-  en: 'Slow app development'
+  fi: 'Hidasta sovelluskehitystä, visujen ja logojen hinaamista, teknologioiden testailua'
+  en: 'Slow app development, fiddling with visuals and logos, trying out technologies'
 
 'about.timeline.2026.year':
   fi: '2026'
@@ -188,3 +188,15 @@
 'about.photo.logo':
   fi: 'Pilkkeen varhainen logo: keltainen PILKE ja kipinän viirut mustalla pyöreäkulmaisella neliöllä.'
   en: 'An early Pilke logo: PILKE in yellow with strokes of a spark, on a black rounded square.'
+
+'about.photo.maskotti':
+  fi: 'Varhainen maskottiluonnos: kermanvärinen, jänistä muistuttava hahmo tähtien keskellä.'
+  en: 'An early mascot sketch: a cream, rabbit-like character among little stars.'
+
+'about.photo.onboard':
+  fi: 'Varhainen Pilkkeen aloitusnäkymä puhelimessa: liila tausta, Pilke-logo, keltainen Tervetuloa!-kortti ja Joo!-painike.'
+  en: 'An early Pilke welcome screen on a phone: a lilac screen, the Pilke label, a yellow Tervetuloa! (Welcome!) card and a Joo! (Yes!) button.'
+
+'about.photo.overview':
+  fi: 'Varhainen Pilkkeen etusivu puhelimessa: liila näkymä, Pilke-logo ja keltainen välilehtipalkki.'
+  en: 'An early Pilke home screen on a phone: a lilac screen, the Pilke label and a yellow tab bar.'

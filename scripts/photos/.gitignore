@@ -8,5 +8,7 @@ cutout-box.txt
 !meista/
 !meista/*.jpg
 !meista/*.png
+!cast/
+!cast/*.jpg
 .venv/
 hero-quad.json

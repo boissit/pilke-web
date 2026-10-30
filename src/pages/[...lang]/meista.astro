@@ -99,11 +99,15 @@ const entries: Entry[] = [
     id: '2022',
     state: 'done',
     slots: [
-      // The backend's debug map of who is a candidate for whom, and the logo of then.
+      // The backend's debug map of who is a candidate for whom, the logo of then
+      // and a first try at a mascot; then four screens from those years.
       { file: 'map.jpg', shape: 'landscape' },
       { file: 'logo.jpg', shape: 'tile' },
+      { file: 'maskotti.png', shape: 'tile' },
       { file: 'latevisu1.jpg', shape: 'device' },
       { file: 'latevisu2.jpg', shape: 'device' },
+      { file: 'onboard.png', shape: 'device' },
+      { file: 'overview.png', shape: 'device' },
     ],
   },
   { id: '2026', state: 'now' },
@@ -504,22 +508,43 @@ const groups = (slots: Slot[]) =>
     z-index: 1;
   }
 
-  /* The map is the wider print, and the logo drops over its lower corner. The
-     two are kept small, a keepsake of the years between rather than the year's
-     main picture, and the phones under them stay the size of every other year's. */
-  .group-photos.count-2:has(> .tile) {
-    max-width: min(19.5rem, 78%);
+  /*
+    The map is a small print, a keepsake of the years between rather than the
+    year's main picture, and the two tiles drop over its lower corners: the logo
+    on the right, the mascot on the left. The mascot is a small file, so its tile
+    stays small: at most a quarter of 22rem, under 1.5 times its own pixels.
+  */
+  .group-photos.count-3 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    max-width: min(22rem, 88%);
+    margin-inline: auto;
   }
 
-  .group-photos.count-2:has(> .tile) > .landscape {
-    grid-area: 1 / 1 / 2 / 12;
+  .group-photos.count-3 > * {
+    align-self: start;
+    width: 100%;
   }
 
-  .group-photos.count-2 > .tile {
-    grid-area: 1 / 9 / 2 / 13;
-    margin-top: 72%;
-    rotate: 5deg;
+  .group-photos.count-3 > .landscape {
+    grid-area: 1 / 2 / 2 / 12;
+    rotate: -2deg;
+  }
+
+  .group-photos.count-3 > .tile {
     z-index: 1;
+  }
+
+  .group-photos.count-3 > :nth-child(2) {
+    grid-area: 1 / 10 / 2 / 13;
+    margin-top: 125%;
+    rotate: 5deg;
+  }
+
+  .group-photos.count-3 > :nth-child(3) {
+    grid-area: 1 / 1 / 2 / 4;
+    margin-top: 112%;
+    rotate: -6deg;
   }
 
   /* The phones in a row, fanned a little, the middle one held a touch higher. */
@@ -547,6 +572,22 @@ const groups = (slots: Slot[]) =>
 
   .group-phones.count-3 > :nth-child(2) {
     translate: 0 -10px;
+  }
+
+  /* Four are a little smaller, so the row stays the width of the others, and the
+     two in the middle are held a touch higher. */
+  .group-phones.count-4 > .device {
+    flex-basis: 7.5rem;
+  }
+
+  .group-phones.count-4 > :nth-child(2) {
+    rotate: -1.5deg;
+    translate: 0 -8px;
+  }
+
+  .group-phones.count-4 > :nth-child(3) {
+    rotate: 1.5deg;
+    translate: 0 -8px;
   }
 
   .has-picture:is(.landscape, .portrait) {
@@ -664,6 +705,16 @@ const groups = (slots: Slot[]) =>
 
     .device {
       border-radius: 16px;
+    }
+
+    /* Four in a row on a phone would each be a thumbnail, so they go in two pairs. */
+    .group-phones.count-4 {
+      flex-wrap: wrap;
+      row-gap: var(--pad-medium);
+    }
+
+    .group-phones.count-4 > .device {
+      flex-basis: 36%;
     }
 
     .device .awaited {
