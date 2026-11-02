@@ -3,7 +3,7 @@ title: Terms of use
 lead: What you agree to when you use Pilke, and what we promise you.
 version: 2026-09-12
 effective: 2026-09-12
-draft: true
+draft: false
 ---
 
 These terms apply to the use of Pilke. Read them before you create an account: by creating
@@ -12,11 +12,11 @@ an account you accept them. How we handle your personal data is set out separate
 
 ## 1. Parties to the agreement
 
-Pilke is provided by **[TO FILL IN: registered company name]** (business ID
-**[TO FILL IN: business ID]**, address **[TO FILL IN: address]**). In these terms *we* and
-*Pilke* mean that company, and *you* mean you as a user.
+Pilke is provided by **Perhosia vatsassa Oy** (business ID **3667373-3**, address
+**Hämeentie 8, 00530 Helsinki**). In these terms *we* and *Pilke* mean that company,
+and *you* mean you as a user.
 
-You can reach us at **[TO FILL IN: email address]**.
+You can reach us at **contact@pilke.app**.
 
 ## 2. The service
 

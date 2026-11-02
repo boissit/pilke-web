@@ -5,7 +5,7 @@ title: "Tietosuoja\u00ADseloste"
 lead: Mitä tietoja käsittelemme sinusta, mihin niitä käytetään ja mitä voit vaatia.
 version: 2026-09-12
 effective: 2026-09-12
-draft: true
+draft: false
 ---
 
 Pilke on sovellus, jolla sovitaan treffit ja tavataan kasvokkain. Tässä selosteessa
@@ -17,10 +17,10 @@ käyttäjä on tallentanut luotettavaksi henkilöksi.
 
 ## 1. Kuka käsittelee tietojasi
 
-Rekisterinpitäjä on **[TÄYDENNÄ: yhtiön virallinen nimi]**, y-tunnus
-**[TÄYDENNÄ: y-tunnus]**, osoite **[TÄYDENNÄ: osoite]**.
+Rekisterinpitäjä on **Perhosia vatsassa Oy**, y-tunnus **3667373-3**, osoite
+**Hämeentie 8, 00530 Helsinki**.
 
-Tietosuoja-asioissa voit kirjoittaa osoitteeseen **[TÄYDENNÄ: sähköpostiosoite]**.
+Tietosuoja-asioissa voit kirjoittaa osoitteeseen **contact@pilke.app**.
 Samaan osoitteeseen lähetät myös oikeuksiasi koskevat pyynnöt (luku 11).
 
 ## 2. Mitä tietoja käsittelemme

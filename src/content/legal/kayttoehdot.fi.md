@@ -3,7 +3,7 @@ title: Käyttöehdot
 lead: Mihin sitoudut, kun käytät Pilkettä, ja mitä me lupaamme sinulle.
 version: 2026-09-12
 effective: 2026-09-12
-draft: true
+draft: false
 ---
 
 Nämä ehdot koskevat Pilkkeen käyttöä. Lue ne ennen kuin luot tilin: luomalla tilin
@@ -12,11 +12,11 @@ hyväksyt ehdot. Henkilötietojesi käsittelystä kerromme erikseen
 
 ## 1. Sopimuksen osapuolet
 
-Pilkkeen tarjoaa **[TÄYDENNÄ: yhtiön virallinen nimi]** (y-tunnus
-**[TÄYDENNÄ: y-tunnus]**, osoite **[TÄYDENNÄ: osoite]**). Näissä ehdoissa *me* ja
-*Pilke* tarkoittavat tätä yhtiötä ja *sinä* sinua käyttäjänä.
+Pilkkeen tarjoaa **Perhosia vatsassa Oy** (y-tunnus **3667373-3**, osoite
+**Hämeentie 8, 00530 Helsinki**). Näissä ehdoissa *me* ja *Pilke* tarkoittavat tätä
+yhtiötä ja *sinä* sinua käyttäjänä.
 
-Voit ottaa meihin yhteyttä osoitteeseen **[TÄYDENNÄ: sähköpostiosoite]**.
+Voit ottaa meihin yhteyttä osoitteeseen **contact@pilke.app**.
 
 ## 2. Palvelun sisältö
 

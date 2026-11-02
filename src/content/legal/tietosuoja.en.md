@@ -3,7 +3,7 @@ title: Privacy policy
 lead: What we hold about you, what it is used for, and what you can ask us to do.
 version: 2026-09-12
 effective: 2026-09-12
-draft: true
+draft: false
 ---
 
 Pilke is an app for agreeing a date and then meeting face to face. This policy says what
@@ -14,10 +14,10 @@ user has saved as their trusted contact.
 
 ## 1. Who processes your data
 
-The controller is **[TO FILL IN: registered company name]**, business ID
-**[TO FILL IN: business ID]**, address **[TO FILL IN: address]**.
+The controller is **Perhosia vatsassa Oy**, business ID **3667373-3**, address
+**Hämeentie 8, 00530 Helsinki**.
 
-For anything to do with privacy, write to **[TO FILL IN: email address]**. Requests
+For anything to do with privacy, write to **contact@pilke.app**. Requests
 concerning your rights go to the same address (section 11).
 
 ## 2. What data we process
