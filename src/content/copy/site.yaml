@@ -116,14 +116,10 @@
 # ──────────────────────────────────────────────────────────────────────────
 # The foot of every page
 #
-# The wordmark, the two lists of links and the language switch, in
+# The wordmark with the language switch under it, and the two lists of links, in
 # `SiteFooter.astro`. The legal list's label is `legal.nav`, and the documents name
 # themselves from their own frontmatter.
 # ──────────────────────────────────────────────────────────────────────────
-
-'footer.rights':
-  fi: 'Pilke'
-  en: 'Pilke'
 
 'footer.pages':
   fi: 'Sivut'

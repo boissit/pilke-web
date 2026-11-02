@@ -82,13 +82,8 @@ const signupForms: Record<Lang, string> = {
 
 /*
   Whether the form takes an address. **Open**, by the owner's decision of 25
-  August 2026, while `tietosuoja` is still a draft.
-
-  The note under the field links to the statement either way: it is published,
-  readable, and says what happens to the address. What the draft flag still
-  means is that no lawyer has read it, and collecting against a statement in
-  that state is a position for counsel rather than a property of this component
-  — it is recorded in `pilke-app/docs/legal/review-notes.md`.
+  August 2026. The note under the field links to the privacy statement, which says
+  what happens to the address.
 
   Closing the form again is one word here, and the copy for it already exists.
 */
@@ -248,51 +243,41 @@ const legal = [
 </section>
 
 <footer class="site-foot">
-  <div class="wrap">
-    <div class="foot-top">
-      <a class="brand" href={localePath(lang)} aria-label={t('nav.home')}>
-        <Logo height={64} />
-      </a>
+  <div class="foot-id">
+    <a class="brand" href={localePath(lang)} aria-label={t('nav.home')}>
+      <Logo height={64} />
+    </a>
 
-      <div class="foot-links">
-        <nav aria-label={t('footer.pages')}>
-          <ul>
-            {pages.map((item) => (
-              <li><a href={item.href}>{item.label}</a></li>
-            ))}
-          </ul>
-        </nav>
-        <nav aria-label={t('legal.nav')}>
-          <ul>
-            {legal.map((item) => (
-              <li><a href={item.href}>{item.label}</a></li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </div>
+    <!--
+      The language as a two-way switch rather than one link: the language being
+      read is drawn as the chosen half, so a reader who landed in the wrong one
+      sees at a glance that there is another, and which of the two they are in.
+    -->
+    <p class="langs">
+      <span class="chosen" aria-current="true">{languageName(lang)}</span>
+      <a href={switchHref} lang={other} hreflang={other}>{languageName(other)}</a>
+    </p>
+  </div>
 
-    <div class="foot-bottom">
-      <p>{t('footer.rights')}</p>
-
-      <!--
-        The language as a two-way switch rather than one link: the language being
-        read is drawn as the chosen half, so a reader who landed in the wrong one
-        sees at a glance that there is another, and which of the two they are in.
-      -->
-      <p class="langs">
-        <span class="chosen" aria-current="true">{languageName(lang)}</span>
-        <a href={switchHref} lang={other} hreflang={other}>{languageName(other)}</a>
-      </p>
-    </div>
+  <div class="foot-links">
+    <nav aria-label={t('footer.pages')}>
+      <ul>
+        {pages.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <nav aria-label={t('legal.nav')}>
+      <ul>
+        {legal.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
   </div>
 </footer>
 
 <style>
-  .beta {
-    padding: 0 var(--gutter) clamp(48px, 3.05vw + 36px, 80px);
-  }
-
   /* The coral card: the one surface on the site in the brand's full colour, because
      it is the one place the site asks for something. */
   .card {
@@ -475,26 +460,27 @@ const legal = [
     text-decoration-thickness: 3px;
   }
 
+  /* The rule is the footer's top edge, so it stands between the page and
+     everything in the footer rather than inside it. */
   .site-foot {
-    padding: clamp(16px, 2.29vw + 7px, 40px) max(var(--gutter), 24px) clamp(32px, 1.52vw + 26px, 48px);
-  }
-
-  .site-foot .wrap {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(28px, 2vw + 20px, 64px);
-  }
-
-  .foot-top {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 28px 64px;
+    padding-block: clamp(28px, 2vw + 20px, 48px) clamp(32px, 1.52vw + 26px, 48px);
+    border-top: 1px solid var(--rule);
+  }
+
+  /* The wordmark, and the language switch under it on the same left edge. */
+  .foot-id {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(16px, 0.76vw + 13px, 24px);
   }
 
   .brand {
     display: inline-flex;
-    align-self: flex-start;
     text-decoration: none;
   }
 
@@ -539,20 +525,9 @@ const legal = [
     text-decoration-color: var(--brand-main);
   }
 
-  .foot-bottom {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    padding-top: clamp(16px, 0.38vw + 14.5px, 20px);
-    border-top: 1px solid var(--rule);
-    font-size: 0.875rem;
-    color: var(--text-soft);
-  }
-
   .langs {
     display: flex;
+    font-size: 0.875rem;
     gap: 4px;
     padding: 4px;
     background: var(--surface);

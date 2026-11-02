@@ -2,8 +2,9 @@
 /**
  * The document every page is drawn in: the head, the bar, the waitlist.
  *
- * A page is a run of `.slab` sections and nothing else — the front page draws its
- * own. Everything around them — the two stylesheets, the metadata, the header and
+ * A page is a run of `.slab` sections and nothing else, laid out by the page grid
+ * in `global.css`: the header, `main`, the waitlist and the footer are its rows,
+ * and the sections are rows of `main`, all a `--section-gap` apart. Everything around them — the two stylesheets, the metadata, the header and
  * the footer that carries the only form on the site — is here, so a new page is its
  * own content and one `<Base>` wrapper.
  */
@@ -74,11 +75,6 @@ const t = useTranslations(lang);
 </html>
 
 <style>
-  /* The last card on a page stands a section's space above the waitlist. */
-  main {
-    padding-bottom: var(--section-space);
-  }
-
   .skip {
     position: absolute;
     left: -9999px;

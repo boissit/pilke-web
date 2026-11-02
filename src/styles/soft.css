@@ -22,21 +22,17 @@
 }
 
 /*
-  A page below the header is a run of `.slab` sections, and a slab is now a card
-  rather than a band: the section keeps the page's gutter and its `.wrap` is the
-  rounded surface. The variants are the surfaces the artboards use — white with a
-  resting shadow, peach, coral and mint — so a page picks a ground by name and
-  every card on the site has the same corner, the same padding and the same air
-  between it and the next one.
+  A page below the header is a run of `.slab` sections, and a slab is a card
+  rather than a band: the page's grid puts the section in the content column and
+  its `.wrap` is the rounded surface. The variants are the surfaces the artboards
+  use — white with a resting shadow, peach, coral and mint — so a page picks a
+  ground by name and every card on the site has the same corner and the same
+  padding. The air between one and the next is the grid's, `--section-gap`.
+
+  `slab-open` is a section with no card, on the page's own ground: it keeps a
+  card's block padding, so its content is as far from the cards around it as a
+  card's content is, and draws nothing it would have to clip.
 */
-.slab {
-  padding-inline: var(--gutter);
-}
-
-.slab + .slab {
-  margin-top: 24px;
-}
-
 .slab > .wrap {
   position: relative;
   overflow: hidden;
@@ -61,12 +57,17 @@
   background: var(--mint-ground);
 }
 
+.slab-open > .wrap {
+  overflow: visible;
+  padding-block: var(--card-pad-block);
+}
+
 
 /* The padding inside a card, as a straight line from the phone artboard's to the
    desktop's. Block and inline differ because a phone needs its side room for the
    text and a desktop card needs its height to breathe. */
 .section-pad {
-  padding: clamp(28px, 4.95vw + 8.7px, 80px) clamp(22px, 5.52vw + 0.5px, 80px);
+  padding: var(--card-pad-block) var(--card-pad-inline);
 }
 
 /* The two display sizes. `.display` is a hero's headline, `.display-mid` the head of

@@ -85,8 +85,12 @@ app**. Every claim on it is checked against `core/deletion.py` by way of
 row delete, so the *what stays* list is the load-bearing half of that page.
 
 `Base.astro` loads both stylesheets, so a page is a run of `.slab` sections and
-nothing else, and a slab is a rounded card in the page's gutter: `slab-white`,
-`slab-pale` (peach), `slab-brand` (coral) or `slab-mint`. The button those
+nothing else, and a slab is a rounded card: `slab-white`, `slab-pale` (peach),
+`slab-brand` (coral) or `slab-mint`, or `slab-open` for a section on the page's own
+ground. **Every page has one layout**, the grid in `global.css`: a `--gutter` either
+side, the content at most `--page-max` wide, and `--section-gap` between the header,
+each section, the waitlist and the footer. A section sets no margin or width of its
+own; the front page is laid out by the same grid as the rest. The button those
 sections link out with is `.go` in `src/styles/soft.css` — one definition, an ink
 pill, with `.ghost` for the white one and `.coral` for the header's.
 
@@ -262,18 +266,16 @@ Four more things to settle before launch:
 1. **The product has two names in the code.** Onboarding copy calls it
    *Treffit*; the safety SMS and the location notification call it *Pilke*. This
    site says Pilke throughout.
-2. **The legal documents are written and not reviewed.** `/tietosuoja` and
-   `/kayttoehdot` exist in both languages, the footer links them, and the app opens
-   these same URLs. Both carry `draft: true`, which renders a notice saying the text
-   binds nobody, and **nothing may clear that flag until a lawyer has read the
-   result.** Three things gate publication, all of them in
-   `docs/legal/review-notes.md`: five fields nobody can read from the code — the
-   company's name, business ID, address, a contact address and the host — the legal
-   positions the text takes, and six places where the code has to change because the
-   text now states something as a fact. Without a contact address a GDPR Art. 13
-   notice cannot be published at all. The app's etiquette screen is placeholder text
-   too, and is not one of these documents — house rules are app copy, and folding
-   them into the terms would make a courtesy enforceable.
+2. **The legal documents are final, by the owner's decision of 2 November 2026.**
+   `/tietosuoja` and `/kayttoehdot` exist in both languages, the footer links them,
+   and the app opens these same URLs. Both carry `draft: false`, so neither shows
+   the notice that a text binds nobody. Four of the five fields
+   `pilke-app/docs/legal/review-notes.md` lists are filled in — Perhosia vatsassa Oy,
+   3667373-3, Hämeentie 8, 00530 Helsinki, contact@pilke.app — and the host in the
+   privacy statement's list of recipients is still a placeholder. The app's
+   etiquette screen is placeholder text too, and is not one of these documents —
+   house rules are app copy, and folding them into the terms would make a courtesy
+   enforceable.
 3. **Answering question sets does not affect matching yet.** The site says so
    plainly rather than implying otherwise. If that changes, the story test
    section changes with it.
@@ -290,9 +292,9 @@ Four more things to settle before launch:
    handler is inline and first-party, so *no analytics, no cookies, no
    third-party script* above still holds.
 
-   **Point 2 gates this in code rather than in a note.** While `tietosuoja`
-   carries `draft: true` the field and the button are disabled and the note reads
-   `cta.closed`; clearing that flag is the whole of what opens the form. The copy
+   **Whether the form is open is `waitlistOpen` in `SiteFooter.astro`**, one
+   switch of its own rather than a read of the privacy statement's `draft` flag;
+   closed, the field and the button are disabled and the note reads `cta.closed`. The copy
    promises the address is used for the beta invitation and nothing else — so
    nothing else is sent to it, and there is deliberately no welcome mail.
    `pilke-app/docs/plans/email.md` argues the arrangement.

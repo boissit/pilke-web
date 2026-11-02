@@ -121,7 +121,7 @@ const notFor = [
 ---
 
 <Base lang={lang} betaPhoto={{ src: photos.beta, alt: t('photo.beta') }}>
-  <section class="hero-section">
+  <section>
     <div class="wrap hero">
       <SparkleScatter
         fill="var(--sparkle-on-peach)"
@@ -200,7 +200,7 @@ const notFor = [
     `<del>` as plain text. The Pilke section's lead, "Pilke hoitaa nämä puolestasi", points
     back at these lines.
   -->
-  <section class="elsewhere" aria-labelledby="elsewhere-note">
+  <section class="slab slab-open elsewhere" aria-labelledby="elsewhere-note">
     <p class="wrap">
       <span class="visually-hidden" id="elsewhere-note">{t('pitch.elsewhere.note')}</span>
       {elsewhereSteps.map((step) => <Fragment><del>{step}</del>{' '}</Fragment>)}
@@ -253,7 +253,7 @@ const notFor = [
     </div>
   </section>
 
-  <section class="how" id="how" aria-labelledby="how-title">
+  <section class="slab slab-open how" id="how" aria-labelledby="how-title">
     <div class="wrap">
       <div class="section-head">
         <h2 id="how-title">{t('pitch.practice.title')}</h2>
@@ -319,10 +319,6 @@ const notFor = [
 
 <style>
   /* ─── Hero ─────────────────────────────────────────────────────────────── */
-
-  .hero-section {
-    padding: clamp(12px, 1.14vw + 7.5px, 24px) var(--gutter-tight) 0;
-  }
 
   .hero {
     position: relative;
@@ -589,18 +585,15 @@ const notFor = [
     The lines between the hero and the Pilke section, on the page's own ground. Set
     in the display face at the size of a section head's second rank, left-aligned
     with the cards' content so the eye runs down one edge from the hero's headline
-    to the Pilke section's, and with a full section's space above and below, so the
-    lines stand alone between the two slabs instead of reading as either one's caption.
+    to the Pilke section's, and with a card's padding above and below (`slab-open`),
+    so the lines stand alone between the two slabs instead of reading as either one's caption.
     The words wrap freely on a phone; each step keeps its own strike.
   */
-  .elsewhere {
-    padding: var(--section-space) var(--gutter);
-  }
-
   /* The inline padding is `.section-pad`'s, so the first word stands on the same
      line as the Pilke section's heading under it. */
   .elsewhere > .wrap {
-    padding-inline: clamp(22px, 5.52vw + 0.5px, 80px);
+    max-width: none;
+    padding-inline: var(--card-pad-inline);
     font-family: var(--font-display);
     font-weight: 600;
     font-size: clamp(2rem, 2.67vw + 1.35rem, 3.75rem);
@@ -669,10 +662,6 @@ const notFor = [
   }
 
   /* ─── In practice ──────────────────────────────────────────────────────── */
-
-  .how {
-    padding: var(--section-space) var(--gutter);
-  }
 
   .how .wrap {
     display: flex;

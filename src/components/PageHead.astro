@@ -21,7 +21,7 @@ interface Props {
 const { title, lead } = Astro.props;
 ---
 
-<section class="slab slab-pale head">
+<section class="slab slab-pale">
   <div class="wrap section-pad">
     <SparkleScatter
       fill="var(--sparkle-on-peach)"
@@ -40,11 +40,6 @@ const { title, lead } = Astro.props;
 </section>
 
 <style>
-  /* The head sits a little tighter under the header than a section under another. */
-  .head {
-    padding-top: clamp(4px, 1.52vw - 2px, 16px);
-  }
-
   /* Room on the right for the sparkle, so a long title never runs under it. */
   h1 {
     max-width: min(18ch, calc(100% - 64px));

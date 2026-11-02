@@ -141,16 +141,20 @@
     1440 artboard draw, so the page is one composition that grows rather than two
     that swap. Written as `clamp(phone, slope + intercept, desktop)`.
 
-    `--gutter` is the room either side of every card; `--gutter-tight` is the
-    header's and the hero's, which run a little wider on a phone so the first
-    screen is mostly card.
+    The page's layout is these three and nothing else: `--gutter`, the room either
+    side of the content; `--page-max`, the widest the content runs; and
+    `--section-gap`, the space between one section and the next, the header, the
+    waitlist and the footer included. A card's own padding is `--card-pad-block`
+    and `--card-pad-inline`, and a section without a card keeps the block one, so
+    its content stands as far from its neighbours as a card's does.
   */
   --gutter: clamp(16px, 6.1vw - 7.8px, 80px);
-  --gutter-tight: clamp(12px, 6.48vw - 13.3px, 80px);
-  --section-space: clamp(64px, 5.33vw + 43.2px, 120px);
+  --page-max: 1280px;
+  --section-gap: clamp(24px, 1.52vw + 18px, 40px);
+  --card-pad-block: clamp(28px, 4.95vw + 8.7px, 80px);
+  --card-pad-inline: clamp(22px, 5.52vw + 0.5px, 80px);
   --radius-panel: clamp(32px, 1.52vw + 26px, 48px);
   --radius-card: 28px;
-  --page-max: 1280px;
 
   --measure: 34rem;
 
@@ -247,10 +251,35 @@ ul {
   padding-left: 1.25rem;
 }
 
-.wrap {
-  width: 100%;
-  max-width: var(--page-max);
-  margin-inline: auto;
+/*
+  The page is one grid, on every page. Its columns are a gutter either side and the
+  content between them, at most `--page-max` wide; its rows are the header, `main`,
+  the waitlist and the footer, a `--section-gap` apart. `main` is a subgrid of the
+  same columns whose rows are the page's sections, the same gap apart. So a section
+  sets no distance from its neighbours and no width of its own: it is placed in the
+  content column, and the grid is the whole of the spacing between them.
+*/
+body {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(var(--gutter), 1fr)
+    [content-start] minmax(0, var(--page-max))
+    [content-end] minmax(var(--gutter), 1fr)
+    [full-end];
+  row-gap: var(--section-gap);
+  align-content: start;
+}
+
+body > *,
+main > * {
+  grid-column: content;
+}
+
+main {
+  grid-column: full;
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: var(--section-gap);
 }
 
 /* The floating header sits above whatever an in-page link scrolls to. */
