@@ -61,8 +61,8 @@
   en: 'The basics of a safe date'
 
 'tips.one':
-  fi: 'Kerro turvahenkilöllesi treffeistä ja sopikaa yhdessä, mitä turvapainike tekee.'
-  en: 'Tell your safety contact about the date, and agree together what the safety button does.'
+  fi: 'Kerro turvahenkilöllesi treffeistä ja sopikaa yhdessä, miten toimia turvapainikkeen viestiä vastaanottaessa.'
+  en: 'Tell your safety contact about the date, and agree together what to do when the safety button’s message arrives.'
 
 'tips.two':
   fi: 'Valitse ensimmäisille treffeille paikka, jossa on muita ihmisiä.'
@@ -89,5 +89,5 @@
   en: 'Location data'
 
 'privacy.body':
-  fi: 'Voimme auttaa sinua löytämään treffikumppanisi treffien alkaessa sijaintitietojen avulla. Sijaintitietoja jaetaan korkeintaan {{sharing.trail_minutes}} minuuttia treffien alkamisen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffikohteesta.'
+  fi: 'Voimme auttaa sinua löytämään treffikumppanisi treffien alkaessa sijaintitietojen avulla. Sijaintitietoja jaetaan korkeintaan {{sharing.trail_minutes}} minuuttia treffien alkamisen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta.'
   en: 'As the date starts, we can help you find your date with location data. Location data is shared for at most {{sharing.trail_minutes}} minutes after the date starts, and only within {{sharing.radius_m}} metres of the venue.'

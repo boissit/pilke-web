@@ -206,7 +206,6 @@ You can ask us for an account of that assessment at the address in section 1.
 | Expo (650 Industries, Inc., United States) | Your device's push token and the content of the notification. Expo passes the notification on to Google's FCM service. |
 | GatewayAPI (Denmark) | The recipient's phone number and the content of the message, when we send a login code or a safety message. |
 | OpenFreeMap (Hyperknot Software Kft., Hungary) | Your device's IP address and which map tiles it requests. The request comes from your device, not from our server. Its own policy says it does not log IP addresses. |
-| Our hosting provider, **[TO FILL IN: provider]**, Finland | All data in the service sits on its servers. |
 | Pilke staff | What the admin view shows, where that is needed for support or to deal with a safety or conduct report. Shared locations do not appear in the admin view. |
 | Google Play | What the app store receives as the distributor of the app. |
 

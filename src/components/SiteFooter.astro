@@ -461,22 +461,28 @@ const legal = [
   }
 
   /* The rule is the footer's top edge, so it stands between the page and
-     everything in the footer rather than inside it. */
+     everything in the footer rather than inside it. On a phone the space under the
+     rule and the space between the switch and the links are the same step, so the
+     stack reads as evenly spaced. */
   .site-foot {
+    --foot-step: clamp(40px, 0.76vw + 37px, 48px);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 28px 64px;
-    padding-block: clamp(28px, 2vw + 20px, 48px) clamp(32px, 1.52vw + 26px, 48px);
+    gap: var(--foot-step) 64px;
+    padding-block: var(--foot-step) clamp(32px, 1.52vw + 26px, 48px);
     border-top: 1px solid var(--rule);
   }
 
-  /* The wordmark, and the language switch under it on the same left edge. */
+  /* The wordmark, and the language switch under it on the same left edge. Beside
+     the links the column is as tall as they are, and the switch sits at its foot,
+     level with the last link. */
   .foot-id {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: clamp(16px, 0.76vw + 13px, 24px);
+    justify-content: space-between;
+    gap: clamp(20px, 0.38vw + 18.5px, 24px);
   }
 
   .brand {
