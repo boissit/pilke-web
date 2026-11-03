@@ -25,8 +25,18 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 WEB = os.path.normpath(os.path.join(HERE, '../..'))
 
 WIDTH, HEIGHT = 1080, 2280
-STATUS = 96              # rows of status bar at the top
-NAV = 2144               # first row of the navigation bar
+STATUS = 96              # rows of status bar at the top, as the crops keep it
+# The rows SystemUI draws the bar in. The app's content starts under them, so a
+# screen scrolled by a line can stand text in rows 84-95: the frame shows it under
+# the clock, as the phone does, and the clock is looked for above it.
+STATUS_DRAWN = 84
+NAV = 2144               # first row of the navigation bar, as the crop cuts it
+# The first row SystemUI draws the bar in. The crop is four rows above it, so the
+# app's last four rows go with the bar: an enabled button's slab reaches them (the
+# feedback quiz's `Jatka`, on its facets step), and losing them is under a pixel at
+# any width a page draws a phone. The bar's own rows, from here, must hold nothing
+# but its buttons.
+BAR = 2148
 # The three-button bar's glyphs, measured on the capture profile: back, home,
 # recents, each inside its window, vertically centred on this row.
 NAV_GLYPHS = ((220, 300), (500, 580), (780, 860))
@@ -55,12 +65,12 @@ def check(img, name, grounds=False):
                          'measured on a Pixel 4 and would cut into the app')
     a = np.asarray(img.convert('RGB')).astype(int)
 
-    nav = a[NAV:]
+    nav = a[BAR:]
     ref = np.median(nav[:, :40].reshape(-1, 3), 0)
     ink = _ink(nav, ref)
     for x0, x1 in NAV_GLYPHS:
         ys, _ = np.nonzero(ink[:, x0:x1])
-        if len(ys) < 200 or abs(ys.mean() + NAV - NAV_CENTRE) > 8:
+        if len(ys) < 200 or abs(ys.mean() + BAR - NAV_CENTRE) > 8:
             raise StillError(f'{name}: no navigation-bar glyph centred at y {NAV_CENTRE} between x {x0} '
                              f'and {x1}. The bar is not where the crop at row {NAV} expects it, so the '
                              'still is from another device profile, gesture navigation, or the app '
@@ -72,20 +82,20 @@ def check(img, name, grounds=False):
     stray[:, :12] = stray[:, -12:] = False    # a card's border running off the screen's edge
     if stray.sum() > 400:
         raise StillError(f'{name}: {int(stray.sum())} px of something other than the three buttons in '
-                         f'the navigation bar (rows {NAV}-{HEIGHT}), which the crop would cut through')
+                         f'the navigation bar (rows {BAR}-{HEIGHT}), which the crop would cut through')
 
     # The clock is the densest band of ink on the left of the bar, a line of text 30
     # rows tall. Judged by that band rather than by the mean of every inked row, because
     # a map drawn under the bar (the date screens) streaks it with streets and labels
     # that pulled the mean off the clock; app content in the bar's last rows -- a card
     # the crop would cut -- is denser than the clock and still fails.
-    status = a[:STATUS]
+    status = a[:STATUS_DRAWN]
     sref = np.median(status[:, 400:680].reshape(-1, 3), 0)
     rows = _ink(status[:, 40:300], sref).sum(1)
     band = np.convolve(rows, np.ones(CLOCK_ROWS, int), 'valid')
     centre = int(band.argmax()) + (CLOCK_ROWS - 1) / 2
     if band.max() < 100 or abs(centre - CLOCK_CENTRE) > 10:
-        raise StillError(f'{name}: no clock centred at y {CLOCK_CENTRE} in the status bar (rows 0-{STATUS}); '
+        raise StillError(f'{name}: no clock centred at y {CLOCK_CENTRE} in the status bar (rows 0-{STATUS_DRAWN}); '
                          'the bar is not the height the crop assumes, or the app draws into its last rows')
 
     # The foot only: a screen drawn edge to edge under the status bar has no ground at
