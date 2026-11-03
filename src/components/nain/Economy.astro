@@ -1,0 +1,158 @@
+---
+/**
+ * Kipinät on `nain-se-toimii`, below its heading: the line about what they are for,
+ * the lit sparkle with its price, how they add up and how they are spent, the
+ * price and the ledger side by side where the card is wide enough.
+ *
+ * WARNING: **Every amount is a backend constant**, through the copy's tokens; the
+ * page's header says why.
+ */
+import Sparkle from '../Sparkle.astro';
+import type { Lang } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const earnings = [
+  { what: t('detail.earn.date'), amount: t('economy.amount.two'), note: t('detail.earn.date.note') },
+  { what: t('detail.earn.calendar'), amount: t('economy.amount.one'), note: t('detail.earn.calendar.note') },
+];
+---
+
+<div class="economy">
+  <div class="intro">
+    <p class="lede">{t('detail.economy.body')}</p>
+    <p class="price">
+      <span class="price-mark" role="img" aria-label={t('economy.spark.alt')}><Sparkle size={88} /></span>
+      <span>{t('economy.lead')}</span>
+    </p>
+  </div>
+
+  <div class="rows">
+    <h3>{t('detail.economy.earn')}</h3>
+    <!--
+      A description list rather than a table: each row is one way of earning and
+      what it pays, and the note under it is part of the same item. A table would
+      promise a third column it does not have.
+    -->
+    <dl class="ledger">
+      {
+        earnings.map((row) => (
+          <div>
+            <dt>
+              <span>{row.what}</span>
+              <b>{row.amount}</b>
+            </dt>
+            <dd>{row.note}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <div class="spend">
+      <h3>{t('detail.economy.spend')}</h3>
+      <p>{t('detail.economy.spend.body')}</p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .economy {
+    display: grid;
+    gap: 24px;
+  }
+
+  .intro {
+    display: grid;
+    gap: 20px;
+    align-content: start;
+  }
+
+  .rows {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+  }
+
+  .price {
+    width: fit-content;
+    max-width: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--pad-medium);
+    padding: 16px 24px;
+    background: var(--brand-background);
+    border-radius: var(--radius-card);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(1.1875rem, 0.29vw + 1.12rem, 1.375rem);
+  }
+
+  .price-mark {
+    display: flex;
+    align-items: center;
+  }
+
+  .ledger {
+    margin: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .ledger > div {
+    padding: 14px 20px;
+    border-radius: 22px;
+  }
+
+  .ledger > div {
+    background: var(--ground);
+  }
+
+  dt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--pad-normal);
+    font-weight: 700;
+  }
+
+  /* The amounts are the coral chips the front page gives them. */
+  dt b {
+    padding: 4px 14px;
+    background: var(--brand-main);
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  dd {
+    margin: var(--pad-small) 0 0;
+    max-width: 60ch;
+    color: var(--text-soft);
+  }
+
+  .spend {
+    display: grid;
+    gap: var(--pad-small);
+    margin-top: 4px;
+    padding: 18px 22px;
+    background: var(--card-sent);
+    border-radius: var(--radius-card);
+  }
+
+  @media (min-width: 64rem) {
+    .economy {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      column-gap: clamp(32px, 3vw, 56px);
+    }
+  }
+</style>

@@ -43,6 +43,33 @@
   en: 'Choose the kinds of date venues you like, and mark on the map where you would be happy to go. In the calendar you mark the times when you could go on a date.'
 
 # ──────────────────────────────────────────────────────────────────────────
+# How candidates are chosen, and the invitation
+#
+# `draw.feedback` is the owner's: what the feedback after each date teaches the
+# matcher, about the reader and about who they suit.
+# ──────────────────────────────────────────────────────────────────────────
+
+'detail.draw.title':
+  fi: 'Miten ehdokkaat valitaan'
+  en: 'How candidates are chosen'
+
+'detail.draw.body':
+  fi: 'Pilke suodattaa ehdokkaat toiveidesi mukaan. Lisäksi jokaisella ehdokkaalla on varmasti kalenterissa yhteistä vapaata aikaa, ja heille sopii jokin yhteinen treffipaikka kanssasi.'
+  en: 'Pilke filters candidates by your wishes. On top of that, every candidate is sure to share free time with you in your calendars, and a date venue that suits you both.'
+
+'detail.draw.feedback':
+  fi: 'Jokaisten treffien jälkeen kerrot, mistä pidit ja mitä jäit kaipaamaan. Palautteesta Pilke oppii sekä sen, millaisista ihmisistä pidät, että sen, millaisille ihmisille sinä sovit.'
+  en: 'After every date you say what you liked and what you missed. From your feedback Pilke learns both what kind of people you like and what kind of people you suit.'
+
+'detail.invite.title':
+  fi: 'Kutsu ja vastaus'
+  en: 'The invitation and the answer'
+
+'detail.invite.body':
+  fi: 'Tarjoa treffiehdokkaalle yhteisistä ajoistanne ja paikoistanne ne, jotka sopivat parhaiten sinulle. Treffien varmistumiseksi kutsussa on oltava vähintään {{invitation.choice_threshold}} aikaa tai {{invitation.choice_threshold}} paikkaa. Kutsun vastaanottaja valitsee lopullisen ajan ja paikan, ja treffit on sovittu. Kutsuun on vastattava {{invitation.answer_hours}} tunnissa, tai se vanhenee.'
+  en: 'Offer your candidate the shared times and places that suit you best. For the date to be set, an invitation has to hold at least {{invitation.choice_threshold}} times or {{invitation.choice_threshold}} places. The person you invite picks the final time and place, and the date is set. An invitation has to be answered within {{invitation.answer_hours}} hours, or it expires.'
+
+# ──────────────────────────────────────────────────────────────────────────
 # Kipinät
 #
 # `economy.amount.*` are the amounts in the earning table, and `economy.lead`
@@ -102,26 +129,6 @@
   en: '2 sparks'
 
 # ──────────────────────────────────────────────────────────────────────────
-# How candidates are chosen, and the invitation
-# ──────────────────────────────────────────────────────────────────────────
-
-'detail.draw.title':
-  fi: 'Miten ehdokkaat valitaan'
-  en: 'How candidates are chosen'
-
-'detail.draw.body':
-  fi: 'Pilke suodattaa ehdokkaat toiveidesi mukaan. Lisäksi jokaisella ehdokkaalla on varmasti kalenterissa yhteistä vapaata aikaa, ja heille sopii jokin yhteinen treffipaikka kanssasi.'
-  en: 'Pilke filters candidates by your wishes. On top of that, every candidate is sure to share free time with you in your calendars, and a date venue that suits you both.'
-
-'detail.invite.title':
-  fi: 'Kutsu ja vastaus'
-  en: 'The invitation and the answer'
-
-'detail.invite.body':
-  fi: 'Tarjoa treffiehdokkaalle yhteisistä ajoistanne ja paikoistanne ne, jotka sopivat parhaiten sinulle. Treffien varmistumiseksi kutsussa on oltava vähintään {{invitation.choice_threshold}} aikaa tai {{invitation.choice_threshold}} paikkaa. Kutsun vastaanottaja valitsee lopullisen ajan ja paikan, ja treffit on sovittu. Kutsuun on vastattava {{invitation.answer_hours}} tunnissa, tai se vanhenee.'
-  en: 'Offer your candidate the shared times and places that suit you best. For the date to be set, an invitation has to hold at least {{invitation.choice_threshold}} times or {{invitation.choice_threshold}} places. The person you invite picks the final time and place, and the date is set. An invitation has to be answered within {{invitation.answer_hours}} hours, or it expires.'
-
-# ──────────────────────────────────────────────────────────────────────────
 # Enjoying the date
 #
 # A heading and a photograph, no paragraph: the picture says it. `photo.date` is
@@ -136,6 +143,24 @@
 'photo.date':
   fi: 'Kaksi ihmistä juttelee penkillä puutarhassa. Toinen nauraa käsi suun edessä, toinen nojaa häntä kohti.'
   en: 'Two people talk on a bench in a garden. One laughs behind a hand, the other leans in.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# After the date
+#
+# A draft of the owner's, open to their edit. "Treffikumppanisi ei näe
+# vastauksiasi" is checked against `feedback.meet_again`: nothing anybody answers
+# is shown to the other party, and the one answer that does anything between the two
+# is the phone number, exchanged only when both chose it, which the next sentence
+# says. The sparks are `{{sparks.per_date}}`, given once the feedback is in.
+# ──────────────────────────────────────────────────────────────────────────
+
+'detail.after.title':
+  fi: 'Treffien jälkeen'
+  en: 'After the date'
+
+'detail.after.body':
+  fi: 'Vastaa lyhyeen treffipalautteeseen: miten treffit sujuivat, mistä pidit ja mitä jäit kaipaamaan. Treffikumppanisi ei näe vastauksiasi. Jos treffit menivät hyvin, voitte vaihtaa puhelinnumerot ja jatkaa Pilkkeen ulkopuolella. Palautteen täytettyäsi saat kipinät, ja seuraavat ehdokkaat osuvat entistä paremmin.'
+  en: 'Answer a short date feedback: how the date went, what you liked and what you missed. Your date does not see your answers. If the date went well, you can swap phone numbers and carry on outside Pilke. Once you have filled in the feedback you get your sparks, and your next candidates are an even better fit.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # When plans change
@@ -196,3 +221,9 @@
 'detail.chat.body':
   fi: 'Chättäilysovelluksia on jo lukuisia. Se on mielestämme oikeastaan turha rituaali ennen treffejä, joilla vasta pääsee tapaamaan toisen ja juttelemaan kunnolla. Pilkkeellä hyppäät suoraan asiaan: jokaisessa treffikutsussa on jo aika ja paikka, ja pääset juttelemaan potentiaaliselle kumppanille kasvotusten ilman viestivastausten odottelua.'
   en: 'There are plenty of chat apps already. We think chatting is really just an unnecessary ritual before the date, which is where you actually get to meet and talk. With Pilke you skip straight to it: every date invitation already has the time and the place, and you get to talk to a potential partner face to face, with no waiting for replies.'
+
+# A draft line of the owner's, which they may still drop: its own key, so dropping
+# it is one deletion here and one in the page.
+'detail.chat.wishes':
+  fi: 'Ehdokkaat on jo valittu toiveidesi mukaan, joten turhilta treffeiltä välttyy ilman viestittelyäkin.'
+  en: 'Your candidates are already chosen to match your wishes, so you avoid pointless dates without any messaging.'

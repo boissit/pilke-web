@@ -1,0 +1,69 @@
+---
+/**
+ * "Joskus suunnitelmat muuttuvat" on `nain-se-toimii`, below its heading: the five
+ * questions somebody has when a plan changes, each answered under it, two to a
+ * row once the card is wide enough.
+ */
+import type { Lang } from '../../i18n/ui';
+import { useTranslations } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const changes = [
+  { what: t('detail.changes.expired'), note: t('detail.changes.expired.note') },
+  { what: t('detail.changes.declined'), note: t('detail.changes.declined.note') },
+  { what: t('detail.changes.withdrawn'), note: t('detail.changes.withdrawn.note') },
+  { what: t('detail.changes.canceled'), note: t('detail.changes.canceled.note') },
+  { what: t('detail.changes.noshow'), note: t('detail.changes.noshow.note') },
+];
+---
+
+<dl class="changes">
+  {
+    changes.map((row) => (
+      <div>
+        <dt>{row.what}</dt>
+        <dd>{row.note}</dd>
+      </div>
+    ))
+  }
+</dl>
+
+<style>
+  .changes {
+    margin: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .changes > div {
+    padding: 14px 20px;
+    background: var(--ground);
+    border-radius: 22px;
+  }
+
+  dt {
+    font-weight: 700;
+  }
+
+  dd {
+    margin: var(--pad-small) 0 0;
+    color: var(--text-soft);
+  }
+
+  /* Two to a row, and an odd last one across both, so the list ends on a full row. */
+  @media (min-width: 64rem) {
+    .changes {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .changes > div:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

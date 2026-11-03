@@ -131,7 +131,7 @@ def stills():
     out = [(os.path.join(screens, f), False) for f in sorted(os.listdir(screens)) if f.endswith('.png')]
     out += [(os.path.join(HERE, 'stills', f), False) for f in sorted(os.listdir(os.path.join(HERE, 'stills')))
             if f.endswith('.png')]
-    ios = {'invitation.png', 'invitation-en.png', 'kalenteri-fi.png', 'kalenteri-en.png'}
+    ios = {'invitation.png', 'invitation-en.png'}
     return [(p, os.path.basename(p) in ios) for p, _ in out]
 
 

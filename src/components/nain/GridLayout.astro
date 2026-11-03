@@ -1,0 +1,245 @@
+---
+/**
+ * `nain-se-toimii` as a grid of cards: the front page's steps, carried on down the
+ * page.
+ *
+ * Each section is a card on one of the app's tints with its screen inside, the
+ * phone hanging from the top of its cell and off the card's foot as the front
+ * page's four steps do, so a reader who came from there sees the same thing go on.
+ * Two to a row from 75rem, and the four that carry more than a paragraph -- Kipinät,
+ * the plans that change and the chat -- take the whole row, which gives each of
+ * them the width to lay its contents out side by side instead of tall. The date's
+ * photograph shares a row with what comes after the date.
+ *
+ * So the rows are: the first invitation and the calendar, the candidates and the
+ * invitation, Kipinät, the date and the feedback, the plans that change, the chat.
+ * The order is the page's; only the widths are this layout's.
+ */
+import dateTall from '../../assets/photos/date-bench-tall.jpg';
+import dateWide from '../../assets/photos/date-bench-wide.jpg';
+import type { Lang } from '../../i18n/ui';
+import { localePath, useTranslations } from '../../i18n/ui';
+import DateSection from '../DateSection.astro';
+import Phone from '../Phone.astro';
+import Changes from './Changes.astro';
+import Economy from './Economy.astro';
+import { nainSections } from './sections';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const sections = nainSections(lang);
+
+/*
+  The app's card tints and the site's two grounds, one per card, so no two cards
+  that touch share one. The first and the after-the-date card keep the tints the
+  front page gives the same screens: blue for your wishes, yellow for the feedback.
+*/
+const tints: Record<string, string> = {
+  start: 'var(--card-sent)',
+  prefs: 'var(--mint-ground)',
+  draw: 'var(--card-received)',
+  invite: 'var(--card-confirmed)',
+  after: 'var(--card-feedback)',
+  chat: 'var(--mint-ground)',
+};
+---
+
+<div class="nain-grid">
+  {
+    sections.map((section, i) => {
+      if (section.kind === 'economy') {
+        return (
+          <section class="card wide plain" aria-labelledby={`${section.id}-title`}>
+            <h2 class="display-mid small" id={`${section.id}-title`}>{section.title}</h2>
+            <Economy lang={lang} />
+          </section>
+        );
+      }
+
+      if (section.kind === 'date') {
+        return <DateSection title={section.title} wide={dateWide} tall={dateTall} alt={t('photo.date')} fill />;
+      }
+
+      if (section.kind === 'changes') {
+        return (
+          <section class="card wide plain with-phone" aria-labelledby={`${section.id}-title`}>
+            <div class="copy">
+              <h2 class="display-mid small" id={`${section.id}-title`}>{section.title}</h2>
+              <Changes lang={lang} />
+            </div>
+            <div class="phone-well">
+              <Phone src={section.shot} alt={section.alt} width={230} tilt={-3} shell="var(--brand-background)" />
+            </div>
+          </section>
+        );
+      }
+
+      return (
+        <section
+          class:list={['card', 'with-phone', section.kind === 'chat' && 'wide']}
+          style={`background:${tints[section.id]}`}
+          aria-labelledby={`${section.id}-title`}
+        >
+          <div class="copy">
+            <h2 id={`${section.id}-title`}>{section.title}</h2>
+            {section.body.map((paragraph) => <p>{paragraph}</p>)}
+            {section.kind === 'chat' && (
+              <p class="links">
+                <a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
+                <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
+              </p>
+            )}
+          </div>
+          <div class="phone-well">
+            <Phone src={section.shot} alt={section.alt} width={230} tilt={i % 2 === 0 ? 3 : -3} />
+          </div>
+        </section>
+      );
+    })
+  }
+</div>
+
+<style>
+  /*
+    One row of the page grid, holding a grid of its own: the cards sit the page's
+    `--section-gap` apart, as the page's sections do.
+  */
+  .nain-grid {
+    display: grid;
+    gap: var(--section-gap);
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 28px 24px 0;
+    border-radius: var(--radius-panel);
+  }
+
+  .plain {
+    padding-bottom: 28px;
+    background: var(--surface);
+    box-shadow: var(--shadow-card);
+  }
+
+  .plain.with-phone {
+    padding-bottom: 0;
+  }
+
+  .copy {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* A card's title as the front page's step titles are set: the display face, a
+     size under a section head's. */
+  .copy h2:not(.display-mid) {
+    font-size: clamp(1.75rem, 0.57vw + 1.6rem, 2.125rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
+
+  .small {
+    font-size: clamp(1.75rem, 0.95vw + 1.5rem, 2.375rem);
+  }
+
+  .copy p {
+    font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
+    line-height: 1.6;
+  }
+
+  .copy .links {
+    margin-top: 6px;
+  }
+
+  /* On a phone the screen stands in a well under the copy, its top half showing:
+     the top of a screen is what says which screen it is. */
+  .phone-well {
+    position: relative;
+    flex: 1 0 300px;
+    min-height: 300px;
+    --phone-width: 220px;
+  }
+
+  .phone-well :global(.phone) {
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    margin-left: calc(var(--phone-width) / -2);
+  }
+
+  /*
+    From 40rem the copy and the phone stand side by side: the phone hangs from the
+    top of its column and off the card's foot, so the card is as tall as its copy or
+    its minimum and the screen is cut where the card ends.
+  */
+  @media (min-width: 40rem) {
+    .card {
+      padding: 44px 44px 0;
+    }
+
+    .plain {
+      padding-bottom: 44px;
+    }
+
+    .with-phone {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) var(--phone-width);
+      column-gap: 28px;
+      min-height: 440px;
+      --phone-width: 220px;
+    }
+
+    .with-phone .copy {
+      padding-bottom: 44px;
+    }
+
+    .phone-well {
+      height: 0;
+      min-height: 0;
+      flex: none;
+    }
+
+    .phone-well :global(.phone) {
+      position: static;
+      margin: 0;
+    }
+  }
+
+  @media (min-width: 75rem) {
+    .nain-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .wide {
+      grid-column: 1 / -1;
+    }
+
+    .wide.with-phone {
+      grid-template-columns: minmax(0, 1fr) var(--phone-width);
+      column-gap: clamp(32px, 3vw, 56px);
+      --phone-width: 240px;
+    }
+
+    .card {
+      padding: 48px 48px 0;
+    }
+
+    .plain {
+      padding-bottom: 48px;
+    }
+
+    .wide .copy > p {
+      max-width: 62ch;
+    }
+  }
+</style>

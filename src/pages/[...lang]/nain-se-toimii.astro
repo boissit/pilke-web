@@ -3,9 +3,15 @@
  * The long explanation, at `nain-se-toimii`.
  *
  * The front page gives the loop in four steps and stops. This page carries what
- * a reader who wants the whole picture needs: what happens before the first
- * invitation, everything about sparks, how candidates are chosen, the date itself,
- * and what happens when plans change.
+ * a reader who wants the whole picture needs, in the order somebody meets it: what
+ * happens before the first invitation, the venues and the calendar, how candidates
+ * are chosen, the invitation and its answer, the sparks that pay for it, the date
+ * itself, what happens after it, what happens when plans change, and why there is
+ * no chat.
+ *
+ * Every section but the sparks and the date carries the screen it is about, laid
+ * out as a grid of tinted cards in the front page's language by `GridLayout`. The
+ * sections, their order and their copy are `components/nain/sections.ts`.
  *
  * WARNING: **Every number on this page is a backend constant.** Five sparks for
  * an invitation, fifteen held at a time, one hour of shared calendar, at least two
@@ -15,262 +21,18 @@
  * README, and a marketing page stating a price the product does not charge is
  * worse than a page that stays vague.
  */
-import dateTall from '../../assets/photos/date-bench-tall.jpg';
-import dateWide from '../../assets/photos/date-bench-wide.jpg';
-import { shotsFor } from '../../assets/screens';
-import DateSection from '../../components/DateSection.astro';
+import GridLayout from '../../components/nain/GridLayout.astro';
 import PageHead from '../../components/PageHead.astro';
-import Phone from '../../components/Phone.astro';
-import Sparkle from '../../components/Sparkle.astro';
-import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
+import { localeOf, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
 export const getStaticPaths = () => localeRoutes();
 
 const lang = localeOf(Astro.params);
-const shots = shotsFor(lang);
 const t = useTranslations(lang);
-
-const earnings = [
-  { what: t('detail.earn.date'), amount: t('economy.amount.two'), note: t('detail.earn.date.note') },
-  { what: t('detail.earn.calendar'), amount: t('economy.amount.one'), note: t('detail.earn.calendar.note') },
-];
-
-const changes = [
-  { what: t('detail.changes.expired'), note: t('detail.changes.expired.note') },
-  { what: t('detail.changes.declined'), note: t('detail.changes.declined.note') },
-  { what: t('detail.changes.withdrawn'), note: t('detail.changes.withdrawn.note') },
-  { what: t('detail.changes.canceled'), note: t('detail.changes.canceled.note') },
-  { what: t('detail.changes.noshow'), note: t('detail.changes.noshow.note') },
-];
 ---
 
 <Base lang={lang}>
   <PageHead title={t('detail.title')} lead={t('detail.lead')} />
-
-  <section class="slab slab-white">
-    <div class="wrap section-pad split">
-      <div class="col">
-        <h2 class="display-mid small">{t('detail.start.title')}</h2>
-        <p class="prose">{t('detail.start.body')}</p>
-        <h2 class="display-mid small">{t('detail.prefs.title')}</h2>
-        <p class="prose">{t('detail.prefs.body')}</p>
-      </div>
-      <Phone src={shots.story} alt={t('shot.story')} width={250} tilt="right" shell="var(--success)" />
-    </div>
-  </section>
-
-  <section class="slab slab-pale">
-    <div class="wrap section-pad">
-      <h2 class="display-mid">{t('detail.economy.title')}</h2>
-      <p class="lede">{t('detail.economy.body')}</p>
-
-      <p class="price">
-        <span class="price-mark" role="img" aria-label={t('economy.spark.alt')}><Sparkle size={104} /></span>
-        <span>{t('economy.lead')}</span>
-      </p>
-
-      <h3>{t('detail.economy.earn')}</h3>
-      <!--
-        A description list rather than a table: each row is one way of earning and
-        what it pays, and the note under it is part of the same item. A table would
-        promise a third column it does not have.
-      -->
-      <dl class="ledger">
-        {
-          earnings.map((row) => (
-            <div>
-              <dt>
-                <span>{row.what}</span>
-                <b>{row.amount}</b>
-              </dt>
-              <dd>{row.note}</dd>
-            </div>
-          ))
-        }
-      </dl>
-
-      <div class="block spend">
-        <h3>{t('detail.economy.spend')}</h3>
-        <p class="prose">{t('detail.economy.spend.body')}</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="slab slab-white">
-    <div class="wrap section-pad split">
-      <Phone src={shots.platter} alt={t('shot.platter')} width={250} tilt="left" shell="var(--brand-background)" />
-      <div class="col">
-        <h2 class="display-mid small">{t('detail.draw.title')}</h2>
-        <p class="prose">{t('detail.draw.body')}</p>
-        <h2 class="display-mid small">{t('detail.invite.title')}</h2>
-        <p class="prose">{t('detail.invite.body')}</p>
-      </div>
-    </div>
-  </section>
-
-  <DateSection title={t('detail.enjoy.title')} wide={dateWide} tall={dateTall} alt={t('photo.date')} />
-
-  <section class="slab slab-white">
-    <div class="wrap section-pad">
-      <h2 class="display-mid">{t('detail.changes.title')}</h2>
-      <dl class="ledger">
-        {
-          changes.map((row) => (
-            <div>
-              <dt><span>{row.what}</span></dt>
-              <dd>{row.note}</dd>
-            </div>
-          ))
-        }
-      </dl>
-    </div>
-  </section>
-
-  <section class="slab slab-pale">
-    <div class="wrap section-pad split">
-      <div class="col">
-        <h2 class="display-mid small">{t('detail.chat.title')}</h2>
-        <p class="prose">{t('detail.chat.body')}</p>
-        <p>
-          <a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
-          <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
-        </p>
-      </div>
-      <Phone src={shots.date} alt={t('shot.date')} width={250} tilt="right" />
-    </div>
-  </section>
+  <GridLayout lang={lang} />
 </Base>
-
-<style>
-  .wrap > * + * {
-    margin-top: var(--pad-medium);
-  }
-
-  /* Copy beside a phone where there is room, the phone under the copy where there
-     is not. Centred on the cross axis once side by side, so a short column does not
-     leave the phone hanging below it. */
-  .split {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: clamp(32px, 4vw, 64px);
-  }
-
-  .split > :global(.phone) {
-    margin-inline: auto;
-  }
-
-  .col {
-    flex: 1 1 22rem;
-  }
-
-  .col > * + * {
-    margin-top: var(--pad-normal);
-  }
-
-  .col h2 + p {
-    margin-top: var(--pad-small);
-  }
-
-  .col p + h2 {
-    margin-top: 28px;
-  }
-
-  .small {
-    font-size: clamp(1.625rem, 1vw + 1.35rem, 2.25rem);
-  }
-
-  .price {
-    width: fit-content;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--pad-medium);
-    margin-block: 8px;
-    padding: 20px 28px;
-    background: var(--brand-background);
-    border-radius: var(--radius-card);
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: clamp(1.1875rem, 0.29vw + 1.12rem, 1.375rem);
-    max-width: none;
-  }
-
-  .slab-pale .price {
-    background: var(--surface);
-  }
-
-  /* The mark beside the line that names its count, with no chip around it: a lit
-     sparkle is the app's picture of an invitation's worth, and the line beside it
-     says the number from its token, so there is no hand-typed digit to go stale. */
-  .price-mark {
-    display: flex;
-    align-items: center;
-    gap: var(--pad-small);
-  }
-
-  /* Each row a soft pill on the card, as the front page draws its two earning
-     rows: the row is the unit, so it is the thing with an edge. */
-  /* Held to a reading width: a row stretched across a desktop card puts its amount
-     a long way from the line it belongs to. */
-  .ledger {
-    margin: 0;
-    max-width: 52rem;
-    display: grid;
-    gap: 10px;
-  }
-
-  .wrap > .ledger,
-  .wrap > h3 {
-    margin-top: 24px;
-  }
-
-  .ledger > div {
-    padding: 16px 22px;
-    background: var(--ground);
-    border-radius: 22px;
-  }
-
-  .slab-pale .ledger > div {
-    background: var(--surface);
-  }
-
-  dt {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--pad-normal);
-    font-weight: 700;
-  }
-
-  /* The amounts are the coral chips the front page gives them. */
-  dt b {
-    padding: 4px 14px;
-    background: var(--brand-main);
-    border-radius: 999px;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-  }
-
-  dd {
-    margin: var(--pad-small) 0 0;
-    max-width: 60ch;
-    color: var(--text-soft);
-  }
-
-  .spend {
-    max-width: 52rem;
-    background: var(--card-sent);
-    box-shadow: none;
-  }
-
-  .spend > * + * {
-    margin-top: var(--pad-small);
-  }
-
-</style>

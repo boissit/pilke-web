@@ -88,9 +88,8 @@ margin of the app's colour, so no screen needs one recorded for it. The manual's
 are drawn whole, bars included, in an ink bezel.
 
 Not every screen the flows take is carried here. `screenshots.yaml` also shoots the
-calendar and the question sets, and neither has a place on the site; the way to bring
-one back is to add it to `MARKETING` in `pilke-app/scripts/capture-site-pictures.sh`
-and give it a row below.
+question sets, which have no place on the site; the way to bring one is to add it to
+`MARKETING` in `pilke-app/scripts/capture-site-pictures.sh` and give it a row below.
 
 ## What is drawn where
 
@@ -106,7 +105,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`platter-en` 460px<br>`invitation-en` 460px<br>`date-en` 460px<br>`feedback-en` 460px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`preferences-en` 460px<br>`invitation-en` 460px<br>`date-en` 460px<br>`feedback-en` 460px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kipinat.html/` | `en/date-wizard-petals` 560px |
@@ -122,16 +121,16 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/kayttoehdot.html/` | none |
 | `/en/kysyttya.html/` | none |
 | `/en/lapsiturvallisuus.html/` | none |
-| `/en/nain-se-toimii.html/` | `story-en` 500px<br>`platter-en` 500px<br>`date-bench-wide` 1120px<br>`date-en` 500px |
+| `/en/nain-se-toimii.html/` | `preferences-en` 460px<br>`kalenteri-en` 460px<br>`platter-en` 460px<br>`invitation-en` 460px<br>`date-bench-wide` 1120px<br>`feedback-en` 460px<br>`date-cancel-en` 460px<br>`date-en` 460px |
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset-en` 520px |
 | `/en/yhteystiedot.html/` | none |
-| `/` | `hero-cutout-fi` 1400px<br>`platter` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/` | `hero-cutout-fi` 1400px<br>`preferences` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
-| `/nain-se-toimii.html/` | `story` 500px<br>`platter` 500px<br>`date-bench-wide` 1120px<br>`date` 500px |
+| `/nain-se-toimii.html/` | `preferences` 460px<br>`kalenteri` 460px<br>`platter` 460px<br>`invitation` 460px<br>`date-bench-wide` 1120px<br>`feedback` 460px<br>`date-cancel` 460px<br>`date` 460px |
 | `/ohje.html/` | none |
 | `/ohje/ehdokkaat.html/` | `fi/platter` 560px<br>`fi/cooldown-nodraw` 560px |
 | `/ohje/kipinat.html/` | `fi/date-wizard-petals` 560px |
@@ -149,7 +148,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/turvallisuus.html/` | `asetukset` 520px |
 | `/yhteystiedot.html/` | none |
 
-Carried but drawn on no page: `treffit`.
+Carried but drawn on no page: `story`, `story-en`, `treffit`.
 
 Every still in `src/assets/manual` is drawn on at least one page.
 
@@ -167,14 +166,20 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `treffit` | Home, populated | `screenshots.yaml` | **The spark counter: three sparkle slots beside `Kipinät:` and the count.** The wordmark (ink letters, rose sparkle), three stacks of match cards with partner photos, names, ages, venues and timeslot chips, the `Loyda treffit!` button, the tab bar. The only marketing picture with the spark counter in it |
 | `platter` | Candidates | `screenshotPlatter.yaml` | A candidate's photo card, name and age, the times both people share, the activity chips, the `Ehdota!` button, the pager dots. Drawn on the brand yellow, so a change to that colour shows here |
 | `invitation` | Invitation received | `screenshots.yaml` | The map with the offered venues' pins, under a sheet opening with the sender's Treffit card (face, name and age, the `Aikaa vastata` countdown), `Valitse aika ja paikka`, the time grid with weekdays, the venue rows, `Hylkää`, `Takaisin` and `Sovittu!` |
-| `date` | An agreed date, upcoming | `.maestro/manual/dateUpcoming.yaml`, as the seeded home account with its language set to Finnish | The map with the venue's pin, under a sheet opening with the partner's Treffit card (venue and time), the calendar page `Treffit huomenna` with the venue's line, the `Synkronoi treffit` row, `Peru treffit` and `Takaisin` |
+| `date` | An agreed date, upcoming | `.maestro/manual/dateUpcoming.yaml`, as the seeded home account with its language set to Finnish | The map with the venue's pin, under a sheet opening with the partner's Treffit card (venue and time), the calendar page, `Treffit tänään` or `Treffit huomenna` as the seeded hour falls, with the venue's line, the `Synkronoi treffit` row, `Peru treffit` and `Takaisin` |
 | `date-en` | An agreed date, upcoming, English | `.maestro/manual/dateUpcomingEn.yaml`, the same account in English | The same date in English, `Cancel the date` and `Back`. Drawn on `/en` in place of `date` |
-| `story-en` | Story test, first question, English | `screenshotStory.yaml` in English | The first question in English and `Continue`. Drawn on `/en` in place of `story` |
+| `date-cancel` | An agreed date, upcoming, its cancel confirmation | `.maestro/manual/dateUpcoming.yaml`, after `date`, `Peru treffit` tapped and nothing in the dialog pressed | The date screen dimmed under the *Oletko varma?* dialog: what calling the date off costs, the cooldown that follows and that it grows as the date nears, `Takaisin` and `Peru`. Copy the app owns, so it goes stale on the dialog's wording. Drawn on `nain-se-toimii` under *Joskus suunnitelmat muuttuvat* |
+| `date-cancel-en` | The same, English | `.maestro/manual/dateUpcomingEn.yaml` | *Are you sure?*, `Back` and `Cancel the date`. Drawn on `/en` in place of `date-cancel` |
+| `story-en` | Story test, first question, English | `screenshotStory.yaml` in English | The first question in English and `Continue`. Drawn on no page |
 | `platter-en` | Candidates, English | `screenshotPlatter.yaml` in English | What `platter` shows, in English: `Candidates`, `Times`, `Places`, `Propose!`. Drawn on `/en` in place of `platter` |
 | `invitation-en` | Invitation received, English | `screenshots.yaml` in English | What `invitation` shows, in English: `Choose a time and a place`, `Decline`, `Back`, `Agreed!`. Drawn on `/en` in place of `invitation`, and set into `beta-invitation-en` |
-| `feedback` | Date feedback, *Haluaisitko tavata treffiparisi uudelleen?* | `screenshotFeedbackMeetAgain.yaml`, as Elina Koskinen, whose Finnish account gets the questions in Finnish: *Tosi hyvin*, *Kyllä*, two chips, the venue | The date's own Treffit card (partner, venue, time) at the top, the last question of the happy route with its info button, its three answers as radio rows, none ticked, the line on when a number is shared, and the pinned footer: the back button, `Ohita` and a grey `Jatka`. The quiz pins its footer to the screen's foot and stands its answers under the card, so every step leaves room between them, and this one leaves the least; the flow says why nothing is ticked |
-| `feedback-en` | Date feedback, *Would you like to meet your date again?*, English | `screenshotFeedbackMeetAgain.yaml` in English, as Owen Sims, whose account is English | The same step in English, `Skip` and `Continue`. Drawn on `/en` in place of `feedback` |
-| `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress dots, the question and its options, `Jatka` |
+| `feedback` | Date feedback, *Pidin näistä asioista treffikumppanissani* | `screenshotFeedback.yaml`, as Venla, whose Finnish account gets the questions in Finnish: *Hyvin*, then *Luonne*, *Älykkyys* and *Huumori* ticked by position | The date's own Treffit card (partner, venue, time) at the top, the facet question with its info button, its facets as rows with three of them ticked, and the pinned footer: the back button and an enabled `Jatka`. The step as somebody answers it, on the front page's fourth step and `nain-se-toimii`'s *Treffien jälkeen* |
+| `feedback-en` | Date feedback, the facet question, English | `screenshotFeedback.yaml` in English, as Juho, whose account is English | The same step in English, `Continue`. Drawn on `/en` in place of `feedback` |
+| `preferences` | Settings, Omat tiedot, the partner preferences | `screenshotPreferences.yaml`, as the platter's account | `Treffikumppanin sukupuoli` with its three options, `Minimi-ikä` and `Maksimi-ikä` filled in on the screen (25 and 38, never saved), `Mitä odotat treffeiltä?` with both answers, the languages with Suomi and Svenska, the head of the activities, the tab bar. The chosen areas' line above them. No name and no photo |
+| `preferences-en` | The same, English | `screenshotPreferences.yaml` in English | The same questions in English. Drawn on `/en` in place of `preferences` |
+| `kalenteri` | Calendar, a week in use | `capture-kalenteri-busy.sh`, the `busy-week` step, as Veera's account | Three days of the week: free slots marked *Treffivaraus* in coral with their sparkles, the phone's own events hatched beside them, the yellow density shading, the ⋮ and (i) buttons, the tab bar. Drawn on `nain-se-toimii` |
+| `kalenteri-en` | Calendar, a week in use, English | the same step in English | The same week in English. Drawn on `/en` in place of `kalenteri` |
+| `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress dots, the question and its options, `Jatka`. Drawn on no page; the print kit's element library places it (`tools/print-kit/build.py`) |
 | `asetukset` | Settings, Safety open | `screenshots.yaml` | The accordion's sections with their icons and round chevrons, Safety open with its whole explanation, the trusted-contact field and its save button, the tab bar. The most copy of any picture here, so it goes stale on wording as well as on layout |
 | `asetukset-en` | Settings, Safety open, English | `screenshots.yaml` in English | The same section in English, `Save number`. Drawn on `/en` in place of `asetukset` |
 | `hero-cutout-fi` | Home, populated, **inside a photograph, cut out** | `screens/treffit.png` composited by `scripts/photos/hero.py fi`, cut out by `scripts/photos/cutout.py` | Everything `treffit` shows, both Android bars included (the phone in the photo is an Android), bent round the phone's curved edges; the hand and phone only, transparent, on the page's coral disc, which clips the hand and arm; `hero-cutout-phone.png`, a mask of the same size, lets the phone and the fingers gripping it stand over the disc's edge, each by its own contour; the disc's circle is baked into both, so the page's geometry and `scripts/photos/cutout.py` change together. A reshoot of `treffit` reaches the page only through this composite |

@@ -10,6 +10,10 @@
  * would leave them a speck in a phone's 4:5. `scripts/photos/crops.py` cuts both,
  * each framed on the couple.
  *
+ * `fill` is for a card that stands in a row beside another, `nain-se-toimii`'s
+ * grid: the photo then takes whatever height the row gives it, cut from the middle
+ * of the wide crop, and never nearer the couple than the full-width card draws them.
+ *
  * WARNING: **Nobody in the photograph is a Pilke user.** It is a stock photo of two
  * people whose faces are too small to read, and nothing here may caption it as
  * anything else.
@@ -26,9 +30,10 @@ interface Props {
   /** The 4:5 crop, drawn on a phone. */
   tall: ImageMetadata;
   alt: string;
+  fill?: boolean;
 }
 
-const { title, wide, tall, alt } = Astro.props;
+const { title, wide, tall, alt, fill = false } = Astro.props;
 
 // The line the card switches crops at, the same one its CSS does.
 const phone = '(max-width: 40rem)';
@@ -39,7 +44,7 @@ const wideSets = await Promise.all(formats.map((format) => getImage({ src: wide,
 const fallback = await getImage({ src: wide, widths: [800, 1120, 1600], format: 'jpg' });
 ---
 
-<section class="slab slab-pale" aria-labelledby="date-title">
+<section class:list={['slab slab-pale', fill && 'fill']} aria-labelledby="date-title">
   <div class="wrap section-pad card">
     <SparkleScatter
       fill="var(--sparkle-on-peach)"
@@ -94,6 +99,28 @@ const fallback = await getImage({ src: wide, widths: [800, 1120, 1600], format: 
   @media (max-width: 40rem) {
     .card img {
       aspect-ratio: 4 / 5;
+    }
+  }
+
+  .fill {
+    display: grid;
+  }
+
+  .fill .card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fill picture {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  @media (min-width: 40rem) {
+    .fill .card img {
+      height: 100%;
+      min-height: 300px;
+      aspect-ratio: auto;
     }
   }
 </style>

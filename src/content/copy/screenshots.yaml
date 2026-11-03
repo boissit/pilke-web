@@ -5,9 +5,8 @@
 # the guide's stills carry their alt text in their own Markdown.
 #
 # Grouped by picture rather than by page because several pages draw the same
-# screen, and the alt text follows the picture: `platter` and `date` are on both
-# the front page and `nain-se-toimii`, and `asetukset` is on the front page and
-# `turvallisuus`.
+# screen, and the alt text follows the picture: `preferences`, `invitation`, `date`
+# and `feedback` are on both the front page and `nain-se-toimii`.
 #
 # WARNING: **These describe a still of a real build.** When the app changes, the
 # description can go stale silently — `docs/pictures.md` is the account of which
@@ -30,8 +29,20 @@
   en: 'A date invitation received: who sent it, with their photo, the times offered and the place.'
 
 'shot.feedback':
-  fi: 'Treffipalaute puhelimessa: kuka oli treffeillä ja milloin, ja kysymys siitä, haluaisitko tavata treffiparisi uudelleen, vastausvaihtoehtoineen.'
-  en: 'Date feedback on a phone: who the date was with and when, and the question of whether you would like to meet them again, with its options.'
+  fi: 'Treffipalaute puhelimessa: kuka oli treffeillä ja milloin, ja kysymys siitä, mistä pidit treffikumppanissasi, muutama vaihtoehto valittuna.'
+  en: 'Date feedback on a phone: who the date was with and when, and the question of what you liked about your date, with a few options picked.'
+
+'shot.preferences':
+  fi: 'Omat tiedot -osion kumppanitoiveet: treffikumppanin sukupuoli, ikähaarukka, mitä odotat treffeiltä ja kielet, joilla voisit käydä treffeillä.'
+  en: 'The partner preferences in Your details: your date’s gender, the age range, what you expect from a date and the languages you could date in.'
+
+'shot.kalenteri':
+  fi: 'Kalenteri viikon keskeltä: treffeille merkityt ajat ja puhelimen omat menot rinnakkain.'
+  en: 'The calendar in the middle of a week: the times marked for dates beside the phone’s own events.'
+
+'shot.date-cancel':
+  fi: 'Vahvistus ennen treffien perumista: mitä perumisesta seuraa, ja painikkeet Takaisin ja Peru.'
+  en: 'The confirmation before calling a date off: what calling it off means, with the Back and Cancel the date buttons.'
 
 'shot.asetukset':
   fi: 'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.'
