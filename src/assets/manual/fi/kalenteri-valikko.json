@@ -1,8 +1,8 @@
 {
   "name": "kalenteri-valikko",
   "language": "fi",
-  "commit": "47d283aca17eca7252eb9a77561806ec825a68f3-dirty",
-  "takenAt": "2026-10-18T04:37:39Z",
+  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
+  "takenAt": "2026-11-04T07:03:16Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -10,27 +10,27 @@
   "elements": {
     "calendar-menu-sheet": {
       "x": 81,
-      "y": 514,
+      "y": 490,
       "width": 919,
       "height": 1252
     },
     "repeat-week": {
       "x": 122,
-      "y": 661,
-      "width": 836,
-      "height": 261
-    },
-    "suggest-times": {
-      "x": 122,
-      "y": 955,
+      "y": 637,
       "width": 836,
       "height": 260
     },
-    "clear-future": {
+    "suggest-times": {
       "x": 122,
-      "y": 1248,
+      "y": 931,
       "width": 836,
       "height": 261
+    },
+    "clear-future": {
+      "x": 122,
+      "y": 1224,
+      "width": 836,
+      "height": 260
     },
     "calendar-menu": {
       "x": 860,
@@ -45,14 +45,14 @@
       "height": 55
     },
     "calendar-density": {
-      "x": 410,
-      "y": 1399,
-      "width": 318,
+      "x": 408,
+      "y": 683,
+      "width": 317,
       "height": 143
     },
     "calendar-block-0": {
-      "x": 100,
-      "y": 929,
+      "x": 99,
+      "y": 715,
       "width": 304,
       "height": 273
     }

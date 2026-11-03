@@ -1,8 +1,8 @@
 {
   "name": "cooldown-nodraw",
   "language": "en",
-  "commit": "58ca6163d9c63dd7df02b0625d3f5a28c38fb386-dirty",
-  "takenAt": "2026-10-18T07:30:28Z",
+  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
+  "takenAt": "2026-11-04T07:56:17Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -18,7 +18,7 @@
       "x": 33,
       "y": 360,
       "width": 1014,
-      "height": 369
+      "height": 308
     },
     "cooldown-explainer": {
       "x": 951,
@@ -54,23 +54,23 @@
       "x": 228,
       "y": 401,
       "width": 690,
-      "height": 122
+      "height": 61
     },
     "cooldown-notice-line": {
       "x": 228,
-      "y": 528,
+      "y": 467,
       "width": 690,
       "height": 159
     },
     "dates-empty": {
       "x": 33,
-      "y": 831,
+      "y": 770,
       "width": 1014,
       "height": 694
     },
     "open-date-history": {
       "x": 33,
-      "y": 1613,
+      "y": 1552,
       "width": 1014,
       "height": 121
     },
@@ -100,13 +100,13 @@
     },
     "dates-empty-title": {
       "x": 80,
-      "y": 1216,
+      "y": 1155,
       "width": 919,
       "height": 94
     },
     "dates-empty-line": {
       "x": 66,
-      "y": 1321,
+      "y": 1260,
       "width": 948,
       "height": 116
     }

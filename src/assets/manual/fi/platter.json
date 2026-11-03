@@ -1,8 +1,8 @@
 {
   "name": "platter",
   "language": "fi",
-  "commit": "47d283aca17eca7252eb9a77561806ec825a68f3-dirty",
-  "takenAt": "2026-10-18T04:27:23Z",
+  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
+  "takenAt": "2026-11-04T06:51:12Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -40,29 +40,23 @@
     },
     "timeslot-chip-0": {
       "x": 126,
-      "y": 1052,
+      "y": 1173,
       "width": 389,
       "height": 121
     },
     "timeslot-chip-1": {
       "x": 126,
-      "y": 1173,
+      "y": 1294,
       "width": 389,
       "height": 121
     },
     "timeslot-chip-2": {
       "x": 126,
-      "y": 1294,
-      "width": 389,
-      "height": 121
-    },
-    "timeslot-chip-3": {
-      "x": 126,
       "y": 1415,
       "width": 389,
       "height": 121
     },
-    "timeslot-chip-4": {
+    "timeslot-chip-3": {
       "x": 126,
       "y": 1536,
       "width": 389,
@@ -70,19 +64,19 @@
     },
     "activity-chip-0": {
       "x": 565,
-      "y": 1052,
+      "y": 1173,
       "width": 389,
       "height": 121
     },
     "activity-chip-1": {
       "x": 565,
-      "y": 1173,
+      "y": 1294,
       "width": 389,
       "height": 121
     },
     "activity-chip-2": {
       "x": 565,
-      "y": 1294,
+      "y": 1415,
       "width": 389,
       "height": 121
     }
