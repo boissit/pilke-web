@@ -71,7 +71,8 @@ The template is for the public release, so it says nothing about a beta:
 - **Face 1**, peach: the wordmark, the site's headline and lead, and the hand holding
   the phone on the coral disc.
 - **Face 2**, white: the wordmark small, the other apps' routine struck through as on
-  the front page, then "Pilkkeessä ei swaippailla eikä chättäillä." and the lead under it.
+  the front page, then "Pilkkeessä ei swaippailla eikä chättäillä." and the lead under it,
+  *Pilke hoitaa nämä puolestasi…* (`PRINT['flow.lead']`).
 - **Face 3**, mint: the wordmark small with "Näin se menee käytännössä" beside it on
   two lines, right-aligned on the face's edge: its first line's capitals start at the top
   of the wordmark's letters (below the sparkle on the P, `WM_LETTER_TOP`) and its second
@@ -87,10 +88,10 @@ The wordmark sits in the same top-left corner of every face, 40 mm wide on face 
 sparkles (`corner_sparkles()`): on face 2 in face 1's place, on face 3 tucked under the
 heading's right end, clear of it and of the first step. The steps are `flow()` in `slides.py`,
 the same six on the tent and the flyer: Luo tili, Kutsu tai tule kutsutuksi, Aika ja
-paikka valmiina, Käy treffeillä, Anna palautetta, Uudet treffit?. The first three bodies
-are the site's own (`pitch.practice.one/two.body` cut to their first sentence,
-`pitch.instead.ready.body` whole); the last three bodies and the sixth title are the
-owner's, verbatim (`PRINT['flow.*']`). On face 3 they are set 10.5/8.5 pt (`TENT_STEP`).
+paikka valmiina, Käy treffeillä, Anna palautetta, Uudet treffit?. Every title and
+body is the owner's, verbatim, in the kit's own `PRINT['flow.*']`, and so are face 2's
+lead and face 3's heading: the front page tells the loop in its own words, so a
+rewrite of the site's steps does not reach the cards. On face 3 they are set 10.5/8.5 pt (`TENT_STEP`).
 Face 3 runs on one rhythm, measured ink to ink: the header row, the steps, the footer
 row and the note have equal gaps between them, and the gaps between the steps are
 `STEP_SHARE` of those (1.0: every gap on the face is the same, 5.5 mm on the export).
@@ -221,7 +222,9 @@ the antialiased edge; left black, it draws a dark rim round every sparkle.
 `slides.py` holds every page of the four Slides files, in millimetres, and compiles a
 deck into Slides API requests. Its copy is the Finnish side of `src/content/copy/*.yaml`
 with the `{{tokens}}` resolved, so a wording change on the site reaches the cards on
-the next refresh. `preview.py <deck> <dir>` draws each page locally from the same
+the next refresh, except the steps of "Näin se menee käytännössä", which are the kit's
+own (`PRINT['flow.*']`). The headline, its lead and the struck-through routine are the
+site's. `preview.py <deck> <dir>` draws each page locally from the same
 requests, close enough to iterate a layout without the API; `overview.py` makes the
 contact sheet.
 

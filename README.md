@@ -120,37 +120,36 @@ positioned on the whole picture.
 ## What the front page argues
 
 The order of the sections is the argument, and it is the owner's pitch: what the
-other apps make you do, what Pilke does instead, how it goes in practice, and who
-would be better off with another app. Each part says its point once and links on
-to the page that says it in full.
+other apps make you do, what Pilke does instead in four steps, why its candidates
+and its dates can be trusted, and who would be better off with another app. Each
+part says its point once and links on to the page that says it in full.
 
 - **The hero** is the owner's headline and a two-sentence lead beside the app's
-  home screen on a coral disc, with two buttons: down to the waitlist, and down to
-  the next part.
+  home screen on a coral disc, with one button, down to the waitlist.
 - **The other apps** are one line of steps on the page's own ground, no card,
-  between the hero and the next card: *Swaippaa. Chättäile. Tule ghostatuksi.
+  between the hero and the next section: *Swaippaa. Chättäile. Tule ghostatuksi.
   Swaippaa. Chättäile lisää. Ehkä treffit.*, each struck through in coral, drawn
   in as it scrolls into view unless the reader asks for less motion. Each step is
   a `<del>`, and a hidden lead-in tells a screen reader the steps are struck.
 - **What Pilke does instead** opens with the owner's line *Pilkkeessä ei
   swaippailla eikä chättäillä*, the one sentence on the site allowed to open with
-  a negation, and a lead whose *nämä* points back at the struck steps. Then the
-  owner's four points beside the candidates screen: candidates by your wishes and
-  ordered by the persoonallisuuskysely, an invitation received or sent to one of
-  three, time and place already set, and what happens after the date. The
-  ordering is claimed carefully — it gets better as there are more users — and
-  the feedback claim rests on the privacy statement. It links to `nain-se-toimii`.
-- **In practice** is the owner's four steps on the app's four card tints, each
-  with its screen running off the bottom of the card: the persoonallisuuskysely,
-  an invitation, the date and the feedback. It links to the manual.
+  a negation, and the lead *Näin se menee käytännössä:*, both centred over the
+  cards. Then the owner's four steps on the app's four card tints, each
+  with its screen running off the bottom of the card: the partner preferences you
+  filter by, an invitation, the date with its map and the feedback's facets. The
+  feedback claim rests on the privacy statement. It links to `nain-se-toimii`.
+- **Quality and safety** are two cards side by side, peach and mint: *Laatua
+  ennen määrää*, how the candidates are filtered and how the feedback after each
+  date sharpens them, and *Turvallista treffailua*, the selected public venues and
+  the safety contact, linking to `turvallisuus`.
 - **Who it is not for** is the owner's four questions, set large, each answered
   under it with the app that does that one thing — Tinder, Bumble, OkCupid, Valo —
   as a friend's tip and never a dig. It links to `kysyttya` and `yhteystiedot`.
 
-**Sparks and safety are not on the front page.** Sparks are how an invitation is
-paid for, which matters once somebody is using the app, and `nain-se-toimii`
-carries the whole of it; on a front page even one line of them reads as a game to
-be played. Safety has its own page, `turvallisuus`, in the header.
+**Sparks are not on the front page.** They are how an invitation is paid for,
+which matters once somebody is using the app, and `nain-se-toimii` carries the
+whole of it; on a front page even one line of them reads as a game to be played.
+Safety has one card there and its own page, `turvallisuus`, in the header.
 
 **Never set body text beside a title.** A lede to the right of a heading reads as
 a second column and the eye does not know which to follow first, so every section
@@ -234,9 +233,10 @@ The load-bearing numbers:
   no create, update or delete, and `core/seed.py` refuses to seed any because
   "seeding a set of them would put invented venues in front of users". **The
   curation is provable from the code; "a public place with other people around" is
-  not.** No field records it, so that half of the *Paikat valitsemme itse* card is
-  a promise about how the team fills the table, and it is the only claim on the
-  site that rests on a practice rather than on a constant. Keep it true.
+  not.** No field records it, so the *julkisilla paikoilla* of the front page's
+  *Turvallista treffailua* card is a promise about how the team fills the table,
+  and it is the only claim on the site that rests on a practice rather than on a
+  constant. Keep it true.
 - **Strong electronic identification does not exist in either repository**, and
   the site says nothing about it. If it ships, it belongs on `turvallisuus`.
 - There is no way to buy a spark, no paid visibility, no boost and no ranking.

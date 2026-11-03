@@ -11,22 +11,23 @@
  * still in a `Phone` frame.
  *
  * The order is the argument, and it is the owner's pitch: what the other apps make
- * you do, struck through in a line of steps under the hero, what Pilke does
- * instead, how it goes in practice, and who would be better off elsewhere. Each answers why anybody should care before the next one is
+ * you do, struck through in a line of steps under the hero, what Pilke does instead
+ * in four steps, why its candidates and its dates can be trusted, and who would be
+ * better off elsewhere. Each answers why anybody should care before the next one is
  * asked, so the page reads as one case top to bottom and the waitlist under it is
  * where the case ends.
  *
  * The page says each thing once and points to where it is said in full: the loop to
- * `nain-se-toimii`, the steps to the manual, the rest of the questions to
- * `kysyttya`. Sparks and safety are not here at all: sparks are how an invitation is
- * paid for, which matters once somebody is using the app, and `turvallisuus` is in
- * the header for anybody who asks. A front page that explains everything is a page
- * nobody reads to the end.
+ * `nain-se-toimii`, safety to `turvallisuus`, the rest of the questions to
+ * `kysyttya`. Sparks are not here at all: they are how an invitation is paid for,
+ * which matters once somebody is using the app. A front page that explains
+ * everything is a page nobody reads to the end.
  *
  * One page at every width. The 1440 artboard and the 390 artboard are the two ends
  * of it, and every size in between is a straight line from one to the other; where
  * a layout changes rather than scales — the hero's phone moving under the copy, the
- * steps going from one column to two — it changes at one of four lines, 40rem,
+ * steps going from one column to two, the quality and safety cards going side by
+ * side — it changes at one of four lines, 40rem,
  * 64rem, 69rem and 75rem, so the page has a few shapes and not a dozen.
  *
  * The waitlist is not on this page. It is the footer, in `SiteFooter.astro`, so that
@@ -40,10 +41,8 @@ import heroEn from '../../assets/photos/hero-cutout-en.png';
 import heroFi from '../../assets/photos/hero-cutout-fi.png';
 import heroPhoneMask from '../../assets/photos/hero-cutout-phone.png';
 import { shotsFor } from '../../assets/screens';
-import Icon from '../../components/Icon.astro';
 import SparkleScatter from '../../components/SparkleScatter.astro';
 import Phone from '../../components/Phone.astro';
-import { manualHref } from '../../i18n/manual';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
@@ -63,21 +62,6 @@ const photos = {
 }[lang];
 
 /*
-  What Pilke does, the owner's four points. Each icon is Lucide's, the app's own set,
-  in the page's ink at 1.8 of Lucide's 24 units rather than its 2: at 20 to 22px the
-  full weight is a shade darker than the text beside it. Each disc is one of the
-  app's card tints: blue under the paper plane, because blue is an invitation you
-  sent, peach under the calendar because that is a date confirmed, yellow under
-  what follows it because yellow is the feedback.
-*/
-const instead = [
-  { title: t('pitch.instead.match.title'), body: t('pitch.instead.match.body'), tint: 'var(--card-received)', icon: 'sliders-horizontal' },
-  { title: t('pitch.instead.invite.title'), body: t('pitch.instead.invite.body'), tint: 'var(--card-sent)', icon: 'send' },
-  { title: t('pitch.instead.ready.title'), body: t('pitch.instead.ready.body'), tint: 'var(--card-confirmed)', icon: 'calendar-check' },
-  { title: t('pitch.instead.after.title'), body: t('pitch.instead.after.body'), tint: 'var(--card-feedback)', icon: 'heart-handshake' },
-];
-
-/*
   The other apps' routine, a step at a time, as the lines between the hero and the
   Pilke section strike it through. "Swaippaa" twice, because it comes round again.
 */
@@ -91,20 +75,21 @@ const elsewhereSteps = [
 ];
 
 /*
-  The owner's four steps, each on one of the app's four card tints: an invitation
-  received is pink, a confirmed date peach and the feedback after it yellow, and
-  the account takes the blue, the one left, so the four are the app's whole set.
-  The tilt alternates so the four phones do not read as a stamped row.
+  What Pilke does instead, in the owner's four steps, each on one of the app's four
+  card tints: an invitation received is pink, a confirmed date peach and the
+  feedback after it yellow, and your wishes take the blue, the one left, so the four
+  are the app's whole set. The tilt alternates so the four phones do not read as a
+  stamped row.
 
-  The account's screen is the persoonallisuuskysely's first question, because it
-  is the one part of signing up that is Pilke's own; a form asking for a name and
-  a birthday is every app's.
+  Each screen is the step being done: the partner preferences a reader filters by,
+  an invitation received, the date with its map, and the feedback's facets with a
+  few picked.
 */
 const steps = [
-  { title: t('pitch.practice.one.title'), body: t('pitch.practice.one.body'), shot: shots.story, alt: t('shot.story'), tint: 'var(--card-sent)' },
-  { title: t('pitch.practice.two.title'), body: t('pitch.practice.two.body'), shot: shots.invitation, alt: t('shot.invitation'), tint: 'var(--card-received)' },
-  { title: t('pitch.practice.three.title'), body: t('pitch.practice.three.body'), shot: shots.date, alt: t('shot.date'), tint: 'var(--card-confirmed)' },
-  { title: t('pitch.practice.four.title'), body: t('pitch.practice.four.body'), shot: shots.feedback, alt: t('shot.feedback'), tint: 'var(--card-feedback)' },
+  { title: t('pitch.how.wishes.title'), body: t('pitch.how.wishes.body'), shot: shots.platter, alt: t('shot.platter'), tint: 'var(--card-sent)' },
+  { title: t('pitch.how.invite.title'), body: t('pitch.how.invite.body'), shot: shots.invitation, alt: t('shot.invitation'), tint: 'var(--card-received)' },
+  { title: t('pitch.how.date.title'), body: t('pitch.how.date.body'), shot: shots.date, alt: t('shot.date'), tint: 'var(--card-confirmed)' },
+  { title: t('pitch.how.after.title'), body: t('pitch.how.after.body'), shot: shots.feedback, alt: t('shot.feedback'), tint: 'var(--card-feedback)' },
 ];
 
 /*
@@ -197,8 +182,8 @@ const notFor = [
     Each step is a `<del>`, which is what struck-through text is, with a real space
     after it so the steps are words apart when read aloud or copied, and a hidden
     lead-in says they are struck to a screen reader, since most of them read
-    `<del>` as plain text. The Pilke section's lead, "Pilke hoitaa nämä puolestasi", points
-    back at these lines.
+    `<del>` as plain text. The heading under them, "Pilkkeessä ei swaippailla eikä
+    chättäillä", is the answer to these lines.
   -->
   <section class="slab slab-open elsewhere" aria-labelledby="elsewhere-note">
     <p class="wrap">
@@ -208,64 +193,24 @@ const notFor = [
   </section>
 
   <!--
-    What Pilke does instead. The heading is the owner's own contrast line, and the
-    phone beside the cards is the three candidates a reader picks from, the one
-    screen that shows "no swiping" rather than saying it.
+    What Pilke does instead, and how it goes. The heading is the owner's own
+    contrast line, read straight after the struck-through steps, and the lead turns
+    it into the four steps. On the page's own ground, so the four tinted cards are
+    the section and nothing frames them twice; the heading and its lead are
+    centred over the cards.
+
+    The phones run off the bottom of their cards on purpose: the top of a screen
+    is what says which screen it is, and a whole phone in each of four cards made
+    them four posters. The card clips its phone; inside the phone the screen runs
+    edge to edge.
   -->
-  <section class="slab slab-pale instead" aria-labelledby="instead-title">
-    <div class="wrap section-pad">
-      <SparkleScatter
-        fill="var(--sparkle-on-peach)"
-        sparkles={[
-          { size: 110, rotate: 16, right: '6%', top: '32px', only: 'wide' },
-          { size: 40, rotate: -24, right: 'calc(6% + 130px)', top: '48px', only: 'wide' },
-          { size: 56, rotate: 14, right: '14px', top: '14px', only: 'narrow' },
-          { size: 24, rotate: -26, right: '80px', top: '22px', only: 'narrow' },
-        ]}
-      />
-      <div class="instead-head">
-        <h2 class="display-mid" id="instead-title">{t('pitch.instead.title')}</h2>
-        <p class="lede">{t('pitch.instead.lead')}</p>
-      </div>
-
-      <div class="instead-body">
-        <ul class="instead-cards">
-          {
-            instead.map((item) => (
-              <li>
-                <span class="icon" style={`background:${item.tint}`} aria-hidden="true">
-                  <Icon name={item.icon} size={22} strokeWidth={1.8} />
-                </span>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-              </li>
-            ))
-          }
-        </ul>
-        <div class="instead-phone">
-          <Phone src={shots.platter} alt={t('shot.platter')} width={260} tilt={3} />
-        </div>
-      </div>
-
-      <p class="instead-more">
-        <a class="go" href={localePath(lang, 'nain-se-toimii')}>{t('pitch.instead.more')}</a>
-      </p>
-    </div>
-  </section>
-
   <section class="slab slab-open how" id="how" aria-labelledby="how-title">
     <div class="wrap">
-      <div class="section-head">
-        <h2 id="how-title">{t('pitch.practice.title')}</h2>
-        <p>{t('pitch.practice.lead')}</p>
+      <div class="how-head">
+        <h2 class="display-mid" id="how-title">{t('pitch.instead.title')}</h2>
+        <p class="lede">{t('pitch.how.lead')}</p>
       </div>
 
-      <!--
-        The phones run off the bottom of their cards on purpose: the top of a screen
-        is what says which screen it is, and a whole phone in each of four cards made
-        them four posters. The card clips its phone; inside the phone the screen runs
-        edge to edge.
-      -->
       <ol class="steps">
         {
           steps.map((step, i) => (
@@ -284,10 +229,35 @@ const notFor = [
       </ol>
 
       <p class="how-more">
-        <a class="go ghost" href={manualHref(lang)}>{t('pitch.practice.more')}</a>
+        <a class="go" href={localePath(lang, 'nain-se-toimii')}>{t('pitch.instead.more')}</a>
       </p>
     </div>
   </section>
+
+  <!--
+    Why the candidates and the dates can be trusted, the owner's two cards, side by
+    side once the row has room for both and stacked before that. Each is a slab of
+    its own on one of the site's grounds, peach and the safety page's mint, and the
+    pair is laid out with the page grid's own gap, so the two stand as far apart as
+    any two sections do.
+  -->
+  <div class="pair">
+    <section class="slab slab-pale" aria-labelledby="quality-title">
+      <div class="wrap section-pad pair-card">
+        <h2 class="display-mid" id="quality-title">{t('pitch.quality.title')}</h2>
+        <p>{t('pitch.quality.body')}</p>
+      </div>
+    </section>
+    <section class="slab slab-mint" aria-labelledby="safety-title">
+      <div class="wrap section-pad pair-card">
+        <h2 class="display-mid" id="safety-title">{t('pitch.safety.title')}</h2>
+        <p>{t('pitch.safety.body')}</p>
+        <p class="pair-more">
+          <a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
+        </p>
+      </div>
+    </section>
+  </div>
 
   <!--
     Who Pilke is not for, last before the waitlist: a reader who has come this far
@@ -466,131 +436,18 @@ const notFor = [
     }
   }
 
-  /* ─── Shared ───────────────────────────────────────────────────────────── */
-
-  /* An icon on a disc, as the app draws one beside a heading: the disc's colour is
-     the card's to set, the stroke is the page's ink. */
-  .icon {
-    display: grid;
-    place-items: center;
-    width: clamp(44px, 0.38vw + 42.5px, 48px);
-    height: clamp(44px, 0.38vw + 42.5px, 48px);
-    flex: 0 0 auto;
-    border-radius: 50%;
-    color: var(--text);
-  }
-
-  .icon :global(svg) {
-    width: clamp(20px, 0.19vw + 19px, 22px);
-    height: clamp(20px, 0.19vw + 19px, 22px);
-  }
-
-  /* A card's lines under its icon: the title in the body face at weight, as every
-     card label on the site is, and the body a step softer. */
-  .instead-cards h3 {
-    font-size: clamp(1.125rem, 0.2vw + 1.08rem, 1.25rem);
-  }
-
-  .instead-cards p {
-    font-size: clamp(0.9375rem, 0.1vw + 0.91rem, 1rem);
-    line-height: 1.55;
-    color: var(--text-soft);
-  }
-
-  /* ─── What Pilke does instead ──────────────────────────────────────────── */
-
-  .instead > .wrap {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(24px, 1.5vw + 18px, 40px);
-  }
-
-  /* Room on the right for the sparkle in the corner, as `PageHead` leaves it; wide,
-     the line breaks in two well short of it. */
-  .instead-head {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: calc(100% - 56px);
-  }
-
-  .instead-head h2 {
-    max-width: 22ch;
-  }
-
-  .instead-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .instead-cards {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 12px;
-    width: 100%;
-  }
-
-  .instead-cards li {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: clamp(22px, 0.57vw + 20px, 28px);
-    background: var(--surface);
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);
-  }
-
-  .instead-cards li .icon {
-    margin-bottom: 4px;
-  }
-
-  .instead-phone {
-    --phone-width: 230px;
-  }
-
-  @media (min-width: 40rem) {
-    .instead-cards {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-  }
-
-  /* Wide, the phone stands to the right of the four cards, as tall as two rows of
-     them, so the screen and the claims read as one picture. */
-  @media (min-width: 64rem) {
-    .instead-body {
-      flex-direction: row;
-      align-items: center;
-      gap: clamp(32px, 3vw, 56px);
-    }
-
-    .instead-cards {
-      flex: 1;
-      gap: 20px;
-    }
-
-    .instead-phone {
-      flex: 0 0 auto;
-      --phone-width: clamp(220px, 19vw, 260px);
-    }
-  }
-
   /* ─── The other apps, struck through ───────────────────────────────────── */
 
   /*
     The lines between the hero and the Pilke section, on the page's own ground. Set
     in the display face at the size of a section head's second rank, left-aligned
-    with the cards' content so the eye runs down one edge from the hero's headline
-    to the Pilke section's, and with a card's padding above and below (`slab-open`),
-    so the lines stand alone between the two slabs instead of reading as either one's caption.
+    with a card's content, and with a card's padding above and below (`slab-open`),
+    so the lines stand alone between the hero and that heading instead of reading as
+    either one's caption.
     The words wrap freely on a phone; each step keeps its own strike.
   */
-  /* The inline padding is `.section-pad`'s, so the first word stands on the same
-     line as the Pilke section's heading under it. */
+  /* The inline padding is `.section-pad`'s, so the first word stands where a card's
+     content does. */
   .elsewhere > .wrap {
     max-width: none;
     padding-inline: var(--card-pad-inline);
@@ -661,34 +518,32 @@ const notFor = [
     white-space: nowrap;
   }
 
-  /* ─── In practice ──────────────────────────────────────────────────────── */
+  /* ─── What Pilke does instead, and how it goes ───────────────────────── */
 
-  .how .wrap {
+  /* No padding above: the struck lines' own padding under them is the whole of the
+     air between the two, so the heading reads as their answer. */
+  .how > .wrap {
     display: flex;
     flex-direction: column;
     gap: clamp(16px, 0.76vw + 13px, 24px);
+    padding-top: 0;
   }
 
-  .section-head {
+  /* The heading and its lead centred over the four cards, the owner's call: they
+     head the cards rather than continue the struck lines, so they stand on the
+     cards' axis. */
+  .how-head {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
     margin-bottom: clamp(16px, 1.52vw + 10px, 32px);
+    padding-inline: var(--card-pad-inline);
     text-align: center;
   }
 
-  .section-head h2 {
-    font-size: clamp(2.75rem, 2.29vw + 2.19rem, 4.25rem);
-    line-height: 1;
-    letter-spacing: -0.02em;
-  }
-
-  .section-head p {
-    max-width: 560px;
-    font-size: clamp(1.0625rem, 0.19vw + 1.02rem, 1.1875rem);
-    line-height: 1.55;
-    color: var(--text-soft);
+  .how-head h2 {
+    max-width: 22ch;
   }
 
   /*
@@ -798,6 +653,43 @@ const notFor = [
   .how-more {
     justify-content: center;
     margin-top: clamp(0px, 1.14vw - 4.5px, 8px);
+  }
+
+  /* ─── Quality and safety ───────────────────────────────────────────────── */
+
+  /* Two slabs in one row of `main`, the page grid's gap between them as between
+     any two sections. Side by side from 64rem, where each is still wide enough for
+     its heading on a line or two. The cards stretch to one height, and the safety
+     card's link stands at its foot. */
+  .pair {
+    display: grid;
+    gap: var(--section-gap);
+  }
+
+  .pair > .slab {
+    display: grid;
+  }
+
+  .pair-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .pair-card p {
+    font-size: clamp(1.0625rem, 0.19vw + 1.02rem, 1.1875rem);
+    line-height: 1.55;
+  }
+
+  .pair-more {
+    margin-top: auto;
+    padding-top: clamp(8px, 1.52vw + 2px, 24px);
+  }
+
+  @media (min-width: 64rem) {
+    .pair {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   /* ─── Who it is not for ────────────────────────────────────────────────── */

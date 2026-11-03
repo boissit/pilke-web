@@ -477,6 +477,23 @@ PRINT = {
     'expect.feedback.title': 'Palaute on kultaa',
     'expect.feedback.body': 'Kerro meille mikä toimii ja mikä takkuaa, arvostamme kaikkea palautetta. Voit antaa '
                             'palautetta sovelluksen kautta tai suoraan meille.',
+    # "Näin se menee käytännössä" as the kit prints it: its heading, its first steps and
+    # face 2's lead, the owner's own words, kept verbatim. They are the kit's own: the
+    # front page tells the loop in its own words, so a change of wording reaches a
+    # printed card only through here.
+    'flow.title': 'Näin se menee käytännössä',
+    'flow.lead': 'Pilke hoitaa nämä puolestasi ja tarjoaa sinulle käytännössä valmiit treffit.',
+    'flow.account.title': 'Luo tili',
+    'flow.account.body': 'Kerro kumppanitoiveesi, vastaa persoonallisuuskyselyyn ja merkitse kalenteriin ajat, '
+                         'jolloin sinulle sopii käydä treffeillä.',
+    'flow.invite.title': 'Kutsu tai tule kutsutuksi',
+    'flow.invite.body': 'Lähettäessäsi kutsua valitset itsellesi sopivimman ehdokkaan, ja ehdotat yhteisiä '
+                        'treffiaikoja ja paikkoja.',
+    'flow.ready.title': 'Aika ja paikka valmiina',
+    'flow.ready.body': 'Sinulla ja treffikumppanillasi on varmasti yhteisiä treffipaikkoja ja aikoja kalenterissa, '
+                       'joten valitsette niistä yhdessä teille sopivimman.',
+    'flow.date.title': 'Käy treffeillä',
+    'flow.feedback.title': 'Anna palautetta',
     # The flow's last three bodies and its sixth step, the owner's own words (2026-10-26),
     # kept verbatim, capitals and all.
     'flow.date.body': 'Pitäkää hauskaa ja tutustukaa toisiinne!',
@@ -725,17 +742,15 @@ def store_badges(d, right, y, apple_h):
     return bw, gy + gh_drawn, clear
 
 
-# "Näin se menee käytännössä" in six steps, the same on the tent and the flyer: the
-# front page's step cards with the pitch's "Aika ja paikka valmiina" third. The first
-# three bodies are the site's own, the first two cut to their first sentence to fit the
-# tent's face; the last three are the owner's (PRINT).
+# "Näin se menee käytännössä" in six steps, the same on the tent and the flyer, every
+# one the owner's (PRINT).
 def flow():
     return [
-        (T['pitch.practice.one.title'], first_sentence(T['pitch.practice.one.body'])),
-        (T['pitch.practice.two.title'], first_sentence(T['pitch.practice.two.body'])),
-        (T['pitch.instead.ready.title'], T['pitch.instead.ready.body']),
-        (T['pitch.practice.three.title'], PRINT['flow.date.body']),
-        (T['pitch.practice.four.title'], PRINT['flow.feedback.body']),
+        (PRINT['flow.account.title'], PRINT['flow.account.body']),
+        (PRINT['flow.invite.title'], PRINT['flow.invite.body']),
+        (PRINT['flow.ready.title'], PRINT['flow.ready.body']),
+        (PRINT['flow.date.title'], PRINT['flow.date.body']),
+        (PRINT['flow.feedback.title'], PRINT['flow.feedback.body']),
         (PRINT['flow.again.title'], PRINT['flow.again.body']),
     ]
 
@@ -772,7 +787,7 @@ def triangle_faces(d):
               T['pitch.elsewhere.swipe'], T['pitch.elsewhere.more'], T['pitch.elsewhere.maybe']]
     _, yy = d.struck(x - 1, top + 4, w + 2, steps_, 21, gap=0.3)
     _, th = d.text(x, yy + 8, w, T['pitch.instead.title'], 24, face='Fredoka', weight=600)
-    d.text(x, yy + 8 + th + 4, w - 4, T['pitch.instead.lead'], 13, weight=500)
+    d.text(x, yy + 8 + th + 4, w - 4, PRINT['flow.lead'], 13, weight=500)
     d.sparkle('vaalea-koralli', x + w - 10, y + h - 12, 16, 14)
     d.sparkle('vaalea-koralli', x + w - 26, y + h - 4, 7, -24)
     d.sparkle('persikka', x + 8, y + h - 14, 12, 30)
@@ -786,7 +801,7 @@ def triangle_faces(d):
     wm = SMALL_WM
     wh = wm * 0.72
     d.wordmark('muste', x + 1, y + 3, w=wm)
-    head = T['pitch.practice.title']
+    head = PRINT['flow.title']
     head = '\n'.join(head.rsplit(' ', 1))
     lead = HEAD_LEADING
     cap_top = y + 3 + WM_LETTER_TOP * wh
@@ -974,7 +989,7 @@ def flyer_front(d):
     # Left: how it goes, the six steps. Right: the other apps' routine struck through and
     # the line under it, and the hand at the foot.
     lw = FLYER_STEP[3]
-    head = T['pitch.practice.title']
+    head = PRINT['flow.title']
     hx = x - ink_in(head, 14, face='Fredoka', weight=600)
     _, th = d.text(hx, yy, lw + x - hx, head, 14, face='Fredoka', weight=600)
     end = steps(d, x, yy + th, lw, flow(), FLYER_STEP[0], FLYER_STEP[1], gap=FLYER_STEP[2], d_num=6.5,
@@ -1110,9 +1125,9 @@ def build_elements(layout):
     rows = [
         ('Otsikko · Fredoka 600 · 48 pt', T['hero.title'], 'Fredoka', 600, 48, C['text']),
         ('Väliotsikko · Fredoka 600 · 30 pt', 'Pilke pyörii kipinöillä', 'Fredoka', 600, 30, C['text']),
-        ('Kortin otsikko · Figtree 700 · 14 pt', T['pitch.instead.ready.title'], 'Figtree', 700, 14, C['text']),
+        ('Kortin otsikko · Figtree 700 · 14 pt', PRINT['flow.ready.title'], 'Figtree', 700, 14, C['text']),
         ('Ingressi · Figtree 500 · 13 pt · #6E5F5A', T['pitch.hero.lead'], 'Figtree', 500, 13, C['soft']),
-        ('Leipäteksti · Figtree 400 · 10 pt', T['pitch.instead.ready.body'], 'Figtree', 400, 10, C['text']),
+        ('Leipäteksti · Figtree 400 · 10 pt', PRINT['flow.ready.body'], 'Figtree', 400, 10, C['text']),
         ('Pieni · Figtree 600 · 8 pt', PRINT['url'], 'Figtree', 600, 8, C['soft']),
     ]
     y = 30
@@ -1146,8 +1161,8 @@ def build_elements(layout):
         d.card(x, 148, 40, 46, fill=fill, outline=outline)
         d.text(x + 3, 151, 34, title, 11, weight=700)
     d.card(M + 214, 30, 54, 70, fill=C['white'], outline=C['rule'])
-    d.text(M + 218, 34, 46, T['pitch.instead.ready.title'], 12, weight=700)
-    d.text(M + 218, 46, 46, first_sentence(T['pitch.instead.ready.body']), 9)
+    d.text(M + 218, 34, 46, PRINT['flow.ready.title'], 12, weight=700)
+    d.text(M + 218, 46, 46, first_sentence(PRINT['flow.ready.body']), 9)
 
     # 7–8 phones
     for page, names in [(7, ['treffit', 'treffikutsu', 'treffikutsu-valittu', 'sovitut-treffit', 'ehdokkaat']),
