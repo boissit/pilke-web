@@ -18,7 +18,8 @@
  * count one as the other — and a draft's missing still by the `data-still-missing` on
  * the box drawn in its place. What each still shows is described in
  * `docs/manual-shots.md`, not here, so that is the table a drawn still is checked
- * against.
+ * against. A photo the owner has not sent yet is read the same way, by the
+ * `data-photo-missing="boissit.jpg"` on its placeholder, and listed as awaited.
  *
  * Then, as a warning and never a failure, it says which manual stills may be stale: any
  * whose sidecar's `commit` is older than a change under `pilke-app/src`. That is a
@@ -73,7 +74,8 @@ const pages = walk(DIST)
       };
     });
     const missing = [...html.matchAll(/data-still-missing="([^"]+)"/g)].map((m) => m[1]);
-    return { route: route(f), pictures, missing };
+    const awaited = [...html.matchAll(/data-photo-missing="([^"]+)"/g)].map((m) => stem(m[1]));
+    return { route: route(f), pictures, missing, awaited };
   });
 
 if (pages.length === 0) {
@@ -113,6 +115,7 @@ for (const p of pages) {
   const list = [
     ...p.pictures.map((i) => `\`${i.stem}\` ${i.width}px`),
     ...p.missing.map((m) => `\`${m}\` missing`),
+    ...p.awaited.map((a) => `\`${a}\` awaited`),
   ].join('<br>');
   rows.push(`| \`${p.route}\` | ${list || 'none'} |`);
 }
@@ -134,6 +137,14 @@ if (stillsMissing.length) {
   rows.push('');
   rows.push(
     `Drawn as "screenshot missing" on a draft, not captured yet: ${stillsMissing.map((m) => `\`${m}\``).join(', ')}.`,
+  );
+}
+
+const awaited = [...new Set(pages.flatMap((p) => p.awaited))].sort();
+if (awaited.length) {
+  rows.push('');
+  rows.push(
+    `Drawn as a placeholder until the owner's file is in \`src/assets/meista/\`: ${awaited.map((a) => `\`${a}\``).join(', ')}.`,
   );
 }
 
@@ -247,6 +258,7 @@ if (check) {
     console.log(`  ${p.route}`);
     for (const i of p.pictures) console.log(`     ${String(i.width).padStart(4)}px  ${i.stem}`);
     for (const m of p.missing) console.log(`  missing  ${m}`);
+    for (const a of p.awaited) console.log(`  awaited  ${a}`);
   }
   if (unused.length) console.log(`  carried but drawn nowhere: ${unused.join(', ')}`);
   if (stillsUnused.length) console.log(`  manual stills drawn nowhere: ${stillsUnused.join(', ')}`);

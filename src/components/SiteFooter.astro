@@ -51,11 +51,13 @@ const t = useTranslations(lang);
 const other = otherLanguage(lang);
 const switchHref = alternate ?? otherLanguageHref(Astro.url.pathname, lang);
 
-// The same four the header carries, so the foot of a long page is a way on.
+// The same four the header carries, so the foot of a long page is a way on, and
+// the guide, which the header leaves to here.
 const pages = [
   { href: localePath(lang, 'nain-se-toimii'), label: t('nav.how') },
   { href: localePath(lang, 'turvallisuus'), label: t('nav.safety') },
   { href: localePath(lang, 'kysyttya'), label: t('nav.questions') },
+  { href: localePath(lang, 'meista'), label: t('nav.about') },
   { href: manualHref(lang), label: t('nav.manual') },
 ];
 

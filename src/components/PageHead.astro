@@ -9,33 +9,51 @@
  * visibly on the same site.
  *
  * A lede with a link in it comes in the `lead` slot instead of the prop, as the
- * 404's does.
+ * 404's does. Anything else in the card, as the about page's story is, comes in
+ * the default slot, under the title and the lede if there is one.
  */
 import SparkleScatter from './SparkleScatter.astro';
 
 interface Props {
   title: string;
   lead?: string;
+  /**
+   * The card's ground: the hero's peach, or white for a page whose next card is
+   * the peach one, as the about page's timeline is. The sparkles are the peach
+   * card's on either.
+   */
+  ground?: 'pale' | 'white';
+  /**
+   * The pair of sparkles at the card's lower edge. The about page turns them off and
+   * draws them on its next card instead, where its story ends.
+   */
+  lowerSparkles?: boolean;
 }
 
-const { title, lead } = Astro.props;
+const { title, lead, ground = 'pale', lowerSparkles = true } = Astro.props;
+
+const upper = [
+  { size: 120, rotate: 14, right: '9%', top: '28px', only: 'wide' },
+  { size: 46, rotate: -24, right: 'calc(9% + 140px)', top: '40px', only: 'wide' },
+  { size: 64, rotate: 14, right: '14px', top: '14px', only: 'narrow' },
+  { size: 26, rotate: -24, right: '86px', top: '22px', only: 'narrow' },
+] as const;
+
+const lower = [
+  { size: 130, rotate: -20, right: '26%', bottom: '-48px', only: 'wide' },
+  { size: 38, rotate: 32, right: 'calc(26% - 50px)', bottom: '40px', only: 'wide' },
+] as const;
 ---
 
-<section class="slab slab-pale">
+<section class:list={['slab', `slab-${ground}`]}>
   <div class="wrap section-pad">
     <SparkleScatter
       fill="var(--sparkle-on-peach)"
-      sparkles={[
-        { size: 120, rotate: 14, right: '9%', top: '28px', only: 'wide' },
-        { size: 46, rotate: -24, right: 'calc(9% + 140px)', top: '40px', only: 'wide' },
-        { size: 64, rotate: 14, right: '14px', top: '14px', only: 'narrow' },
-        { size: 26, rotate: -24, right: '86px', top: '22px', only: 'narrow' },
-        { size: 130, rotate: -20, right: '26%', bottom: '-48px', only: 'wide' },
-        { size: 38, rotate: 32, right: 'calc(26% - 50px)', bottom: '40px', only: 'wide' },
-      ]}
+      sparkles={lowerSparkles ? [...upper, ...lower] : [...upper]}
     />
     <h1 class="display-mid">{title}</h1>
-    <p class="lede">{Astro.slots.has('lead') ? <slot name="lead" /> : lead}</p>
+    {(lead || Astro.slots.has('lead')) && <p class="lede">{Astro.slots.has('lead') ? <slot name="lead" /> : lead}</p>}
+    <slot />
   </div>
 </section>
 

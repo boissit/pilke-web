@@ -24,7 +24,7 @@ no file holds, which is the check a typed dictionary used to make.
 
 One file is the whole of a page in both languages. They live under
 `src/pages/[...lang]/`: `index.astro`, `nain-se-toimii.astro`,
-`turvallisuus.astro`, `kysyttya.astro`. The `[...lang]` segment is a rest
+`turvallisuus.astro`, `kysyttya.astro`, `meista.astro`. The `[...lang]` segment is a rest
 parameter, and `localeRoutes()` in `src/i18n/ui.ts` builds each file twice — once
 with no segment at all, which is Finnish at the root, and once as `en`. A section
 therefore cannot exist in one language and not the other, which is the usual way a

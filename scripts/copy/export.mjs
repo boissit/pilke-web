@@ -282,6 +282,8 @@ const PAGES = [
   { id: 'nain-se-toimii', group: 'pages', route: '/nain-se-toimii', label: both('nav.how') },
   { id: 'turvallisuus', group: 'pages', route: '/turvallisuus', label: both('nav.safety') },
   { id: 'kysyttya', group: 'pages', route: '/kysyttya', label: both('nav.questions') },
+  // The one page with a title and description of its own, so its head is read too.
+  { id: 'meista', group: 'pages', route: '/meista', region: ['main', 'meta'], label: both('nav.about') },
   { id: 'ohje', group: 'guide', route: '/ohje', label: both('manual.title') },
   ...guide.map((d) => ({ id: `ohje/${d.slug}`, group: 'guide', route: `/ohje/${d.slug}`, label: mdTitle('manual', d.slug), body: d })),
   ...legalDocs.map((slug) => ({
@@ -305,6 +307,7 @@ const HOME = {
   'nain-se-toimii.yaml': 'nain-se-toimii',
   'turvallisuus.yaml': 'turvallisuus',
   'kysyttya.yaml': 'kysyttya',
+  'meista.yaml': 'meista',
   'ohje.yaml': 'ohje',
   'legal.yaml': 'tietosuoja',
   'tietojen-poisto.yaml': 'tietojen-poisto',

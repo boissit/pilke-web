@@ -5,5 +5,10 @@ __pycache__/
 cutout-box.txt
 !stills/
 !stills/*.png
+!meista/
+!meista/*.jpg
+!meista/*.png
+!cast/
+!cast/*.jpg
 .venv/
 hero-quad.json
