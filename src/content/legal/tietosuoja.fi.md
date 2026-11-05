@@ -230,7 +230,11 @@ Suomessa.
 | Tili ja profiili | Niin kauan kuin tilisi on olemassa. |
 | Sijainti, jonka olet jakanut treffipaikalla | Poistetaan, kun aikaikkuna sulkeutuu eli viimeistään {{sharing.trail_minutes}} minuuttia sovitun alun jälkeen, tai heti, kun lopetat jakamisen. |
 | Kirjautuneet laitteet | 90 päivää siitä, kun laitetta on viimeksi käytetty. |
-| Kalenterimerkinnät ja vastaukset kysymyssarjoihin | Tilin ajan; poistetaan tilin mukana. |
+| Laitteet, joille lähetämme push-ilmoituksia | Lähetämme laitteelle, kunnes sitä ei ole käytetty 90 päivään, ja enintään kymmenelle viimeksi käytetylle laitteellesi. Laitteen tunniste poistetaan tilin mukana. |
+| Kalenterimerkinnät | 31 päivää siitä, kun merkitty aika on päättynyt. Tulevat merkinnät säilyvät tilin ajan, ja kaikki poistetaan tilin mukana. |
+| Vastaukset kysymyssarjoihin | Tilin ajan; poistetaan tilin mukana. |
+| Ehdotukset, jotka sinulle on näytetty, ja tieto siitä, kenelle sinua on ehdotettu | 12 kuukautta ehdotuksesta. Kun poistat tilisi, sinulle näytetyt ehdotukset poistetaan heti. |
+| Kipinöiden kertymä ja käyttö | Niin kauan kuin tili tai sen poiston jälkeen jäävä merkintä on olemassa. Kun poistat tilisi, merkinnöissä ei ole enää nimeäsi. |
 | Treffit, kutsut ja perumiset | 12 kuukautta treffien ajankohdasta. |
 | Palautteet | 12 kuukautta treffien ajankohdasta. |
 | Vastaus siihen, haluatko tavata uudelleen, ja vaihdettu puhelinnumero | 12 kuukautta treffien ajankohdasta, treffien mukana. Kopio numerosta on lähetetyssä push-ilmoituksessa, ja se poistuu 90 päivässä. |

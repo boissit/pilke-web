@@ -227,7 +227,11 @@ Finland.
 | Account and profile | As long as your account exists. |
 | A location you have shared at a venue | Deleted when the window closes, at the latest {{sharing.trail_minutes}} minutes after the agreed start, or immediately when you stop sharing. |
 | Signed-in devices | 90 days from when the device was last used. |
-| Calendar entries and answers to question sets | For the life of the account; deleted with it. |
+| Devices we send push notifications to | We send to a device until it has gone unused for 90 days, and to your ten most recently used devices at most. The device's identifier is deleted with your account. |
+| Calendar entries | 31 days from when the marked time ended. Entries still ahead are kept for the life of the account, and all of them are deleted with it. |
+| Answers to question sets | For the life of the account; deleted with it. |
+| Suggestions shown to you, and the record of whom you were suggested to | 12 months from the suggestion. When you delete your account, the suggestions shown to you are deleted at once. |
+| How you earned and used kipinät | For as long as the account, or the record left after deleting it, exists. Once you delete your account, the entries no longer carry your name. |
 | Dates, invitations and cancellations | 12 months from the date. |
 | Feedback | 12 months from the date. |
 | Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. A copy of the number sits in the push notification that was sent, and that goes after 90 days. |
