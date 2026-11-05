@@ -50,8 +50,7 @@ answers: yes and my phone number may be shared with them, yes but only through P
 no. We store your answer with that date.
 
 If you both choose to share the number, each of you is given the other's nickname and
-phone number on that date in the app's date history. A push notification tells you about
-the exchange, and the number itself is only in the date history. If you both answer yes
+phone number on that date in the app's date history. If you both answer yes
 but either of you chose through Pilke, the two of you can be offered to each other again,
 and nothing is disclosed. If either of you answers no, nothing happens and nothing is
 disclosed.
@@ -182,8 +181,7 @@ So an exchange cannot be stopped afterwards. Before it happens, a safety report 
 — once one of you has filed a safety report about the other, no numbers are exchanged, even
 if both of you chose to — but a report can only be filed in the feedback for that date, not later. Once
 the numbers have been exchanged you can delete your account: your number disappears from
-the other person's app, but that does not reach what they have already seen or saved
-either (section 9).
+the other person's app.
 
 Your date preferences can reveal whether you are interested in the same or a different
 gender and whether you are looking for sex. That is special category data, and we process
@@ -234,7 +232,7 @@ Finland.
 | How you earned and used kipinät | For as long as the account, or the record left after deleting it, exists. Once you delete your account, the entries no longer carry your name. |
 | Dates, invitations and cancellations | 12 months from the date. |
 | Feedback | 12 months from the date. |
-| Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. The number is kept only with the date: the notifications we keep do not contain it. |
+| Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. |
 | No-show reports, including those made in the feedback, and the restrictions that follow from them | 12 months from the report. |
 | Notifications sent, and delivery records for text messages | 90 days. |
 | Safety and conduct reports, their free text, and records of safety button presses | 5 years from the report. |
@@ -254,13 +252,6 @@ We delete your phone number, email address, nickname, date of birth, gender, pho
 trusted contact's number, date preferences, date area, calendar entries and answers to
 question sets. The photograph is deleted from storage as well, and every device is signed
 out at the same moment.
-
-There is one thing the deletion does not reach. If you have exchanged phone numbers with
-somebody you dated, your number disappears from their app at the same moment as your
-account, but what they have already seen or saved cannot be taken back. The push
-notification about the exchange does not contain the number. Notifications sent before
-5 October 2026 showed it in their text, and one that has already arrived stays on their
-phone. None of the notifications we keep contain the number.
 
 Two groups remain:
 

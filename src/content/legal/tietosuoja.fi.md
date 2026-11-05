@@ -52,8 +52,7 @@ kolme: kyllä ja puhelinnumeroni saa jakaa hänelle, kyllä mutta vain Pilkkeen 
 en. Tallennamme vastauksesi näiden treffien tietoihin.
 
 Jos te molemmat valitsette numeron jakamisen, kumpikin saa toisen nimimerkin ja
-puhelinnumeron sovelluksen treffihistoriaan näiden treffien kohdalle. Push-ilmoitus kertoo
-vaihdosta, mutta numero on vain treffihistoriassa. Jos molemmat
+puhelinnumeron sovelluksen treffihistoriaan näiden treffien kohdalle. Jos molemmat
 vastaatte kyllä mutta toinen teistä valitsi Pilkkeen kautta, teidät voidaan ehdottaa
 toisillenne uudelleen, eikä mitään luovuteta. Jos jompikumpi vastaa en, mitään ei tapahdu
 eikä mitään luovuteta.
@@ -186,7 +185,7 @@ Vaihtoa ei siis voi pysäyttää jälkikäteen. Ennen vaihtoa sen pysäyttää
 turvallisuusilmoitus — kun jompikumpi teistä on tehnyt toisesta turvallisuusilmoituksen,
 numeroita ei vaihdeta, vaikka molemmat olisivat niin valinneet — mutta ilmoituksen voi
 tehdä vain treffien palautteessa, ei myöhemmin. Kun numerot on vaihdettu, voit poistaa tilisi: numerosi katoaa toisen
-sovelluksesta, mutta sitä, minkä hän on jo nähnyt tai tallentanut, sekään ei tavoita (luku 9).
+sovelluksesta.
 
 Treffitoiveistasi voi ilmetä, oletko kiinnostunut samasta vai eri sukupuolesta ja haetko
 seksiä. Nämä ovat erityisiin henkilötietoryhmiin kuuluvia tietoja, ja käsittelemme niitä
@@ -237,7 +236,7 @@ Suomessa.
 | Kipinöiden kertymä ja käyttö | Niin kauan kuin tili tai sen poiston jälkeen jäävä merkintä on olemassa. Kun poistat tilisi, merkinnöissä ei ole enää nimeäsi. |
 | Treffit, kutsut ja perumiset | 12 kuukautta treffien ajankohdasta. |
 | Palautteet | 12 kuukautta treffien ajankohdasta. |
-| Vastaus siihen, haluatko tavata uudelleen, ja vaihdettu puhelinnumero | 12 kuukautta treffien ajankohdasta, treffien mukana. Numero on vain treffien tiedoissa: säilyttämämme ilmoitukset eivät sisällä sitä. |
+| Vastaus siihen, haluatko tavata uudelleen, ja vaihdettu puhelinnumero | 12 kuukautta treffien ajankohdasta, treffien mukana. |
 | Ilmoitukset saapumatta jättämisestä, myös palautteessa kerrotut, ja niistä seuraavat rajoitukset | 12 kuukautta ilmoituksesta. |
 | Lähetetyt ilmoitukset ja tekstiviestien lähetystiedot | 90 päivää. |
 | Turvallisuus- ja käytösilmoitukset, niiden vapaa teksti ja merkinnät turvapainikkeen painalluksista | 5 vuotta ilmoituksesta. |
@@ -257,13 +256,6 @@ Poistamme puhelinnumeron, sähköpostiosoitteen, nimimerkin, syntymäajan, sukup
 valokuvan, luotettavan henkilön numeron, treffitoiveet, treffialueen, kalenterimerkinnät
 ja vastaukset kysymyssarjoihin. Valokuva poistuu myös tallennustilasta, ja kirjautumiset
 katkeavat kaikilta laitteilta samalla hetkellä.
-
-Yhtä asiaa poisto ei tavoita. Jos olet vaihtanut puhelinnumeron treffiparisi kanssa,
-numerosi katoaa hänen sovelluksestaan samalla hetkellä kuin tilisi, mutta sitä, minkä hän
-on jo nähnyt tai tallentanut, emme voi ottaa takaisin. Vaihdosta kertova push-ilmoitus ei
-sisällä numeroa. Ennen 5.10.2026 lähetetyissä ilmoituksissa numero näkyi ilmoituksen
-tekstissä, ja jo saapunut ilmoitus jää hänen puhelimeensa. Omat tallenteemme eivät sisällä
-numeroa missään ilmoituksessa.
 
 Kaksi ryhmää jää:
 
