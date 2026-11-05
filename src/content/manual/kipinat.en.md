@@ -1,6 +1,6 @@
 ---
 title: Sparks
-lead: Pilke runs on sparks. They build up from a calendar kept up to date and from the dates you go on, and {{petals.set_cost}} sparks send a date invitation.
+lead: Dating takes a spark. Sparks build up from a calendar kept up to date and from the dates you go on, and {{petals.set_cost}} sparks send a date invitation.
 order: 30
 draft: true
 ---

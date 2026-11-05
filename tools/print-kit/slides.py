@@ -487,7 +487,7 @@ PRINT = {
     'flow.account.body': 'Kerro kumppanitoiveesi, vastaa persoonallisuuskyselyyn ja merkitse kalenteriin ajat, '
                          'jolloin sinulle sopii käydä treffeillä.',
     'flow.invite.title': 'Kutsu tai tule kutsutuksi',
-    'flow.invite.body': 'Lähettäessäsi kutsua valitset itsellesi sopivimman ehdokkaan, ja ehdotat yhteisiä '
+    'flow.invite.body': 'Lähettäessäsi kutsua valitset itsellesi sopivimman ehdokkaan ja ehdotat yhteisiä '
                         'treffiaikoja ja paikkoja.',
     'flow.ready.title': 'Aika ja paikka valmiina',
     'flow.ready.body': 'Sinulla ja treffikumppanillasi on varmasti yhteisiä treffipaikkoja ja aikoja kalenterissa, '
@@ -1124,7 +1124,7 @@ def build_elements(layout):
     d.text(M, M - 4, 200, 'Tekstityylit', 20, face='Fredoka', weight=600)
     rows = [
         ('Otsikko · Fredoka 600 · 48 pt', T['hero.title'], 'Fredoka', 600, 48, C['text']),
-        ('Väliotsikko · Fredoka 600 · 30 pt', 'Pilke pyörii kipinöillä', 'Fredoka', 600, 30, C['text']),
+        ('Väliotsikko · Fredoka 600 · 30 pt', 'Deittailu vaatii kipinää', 'Fredoka', 600, 30, C['text']),
         ('Kortin otsikko · Figtree 700 · 14 pt', PRINT['flow.ready.title'], 'Figtree', 700, 14, C['text']),
         ('Ingressi · Figtree 500 · 13 pt · #6E5F5A', T['pitch.hero.lead'], 'Figtree', 500, 13, C['soft']),
         ('Leipäteksti · Figtree 400 · 10 pt', PRINT['flow.ready.body'], 'Figtree', 400, 10, C['text']),

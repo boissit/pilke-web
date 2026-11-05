@@ -91,12 +91,16 @@ const earnings = [
     align-content: start;
   }
 
+  /* On a phone the sparkle stands over its line, both centred in a pill as wide as
+     the column; beside the ledger it sits in front of the line again. */
   .price {
-    width: fit-content;
+    width: 100%;
     max-width: none;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
     gap: var(--pad-medium);
     padding: 16px 24px;
     background: var(--brand-background);
@@ -184,6 +188,13 @@ const earnings = [
   }
 
   @media (min-width: 64rem) {
+    .price {
+      width: fit-content;
+      flex-direction: row;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
     .economy {
       grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
       column-gap: clamp(32px, 3vw, 56px);
