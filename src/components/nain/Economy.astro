@@ -1,12 +1,18 @@
 ---
 /**
  * Kipinät on `nain-se-toimii`, below its heading: the line about what they are for,
- * the lit sparkle with its price, how they add up and how they are spent, the
- * price and the ledger side by side where the card is wide enough.
+ * the lit sparkle with its price, the most that can be held, how they add up and how
+ * they are spent, the price and the ledger side by side where the card is wide
+ * enough.
+ *
+ * The cap is drawn as the app's counter draws a full balance, one lit sparkle per
+ * invitation's worth, so the count of them is `petals.cap_roses` and not a number
+ * written here.
  *
  * WARNING: **Every amount is a backend constant**, through the copy's tokens; the
  * page's header says why.
  */
+import constants from '../../data/app-constants.json';
 import Sparkle from '../Sparkle.astro';
 import type { Lang } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/ui';
@@ -17,6 +23,8 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const capSparkles = Array.from({ length: constants.petals.cap_roses });
 
 const earnings = [
   { what: t('detail.earn.date'), amount: t('economy.amount.two'), note: t('detail.earn.date.note') },
@@ -30,6 +38,10 @@ const earnings = [
     <p class="price">
       <span class="price-mark" role="img" aria-label={t('economy.spark.alt')}><Sparkle size={88} /></span>
       <span>{t('economy.lead')}</span>
+    </p>
+    <p class="cap">
+      <span class="cap-mark">{capSparkles.map(() => <Sparkle size={30} />)}</span>
+      <span>{t('detail.economy.cap')}</span>
     </p>
   </div>
 
@@ -97,6 +109,28 @@ const earnings = [
   .price-mark {
     display: flex;
     align-items: center;
+  }
+
+  /* The price's smaller sibling: the same pill and the same sparkle, three of them
+     at a third of the size, and the line in the body face. */
+  .cap {
+    width: fit-content;
+    max-width: 30rem;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 20px;
+    background: var(--ground);
+    border-radius: var(--radius-card);
+    font-size: 0.9375rem;
+    line-height: 1.45;
+    color: var(--text-soft);
+  }
+
+  .cap-mark {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 2px;
   }
 
   .ledger {

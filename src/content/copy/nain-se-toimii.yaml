@@ -77,8 +77,8 @@
   en: 'Sparks'
 
 'detail.economy.body':
-  fi: 'Pilke pyörii kipinöillä. Kipinät on suunniteltu tarjoamaan jokaiselle käyttäjälle vuorotellen mahdollisuus kutsun lähettämiseen, sekä kannustamaan treffeillä käymiseen ja kalenterin ylläpitämiseen.'
-  en: 'Pilke runs on sparks. They are designed to give every user a turn at sending an invitation, and to encourage going on dates and keeping your calendar up to date.'
+  fi: 'Deittailu vaatii kipinää. Pilkkeessä kipinöitä kuluu kutsujen lähettämiseen, mutta niitä saa kalenterin ylläpitämisestä ja treffeillä käymisestä, eli aktiivisuus kannattaa! Kipinöitä ei voi ostaa rahalla.'
+  en: 'Dating takes a spark. On Pilke, sparks go on sending invitations, and you get them by keeping your calendar up to date and going on dates, so being active pays off! Sparks can’t be bought with money.'
 
 'detail.economy.earn':
   fi: 'Näin kipinöitä kertyy'
@@ -97,16 +97,23 @@
   en: 'Keeping your calendar up to date'
 
 'detail.earn.calendar.note':
-  fi: 'Yhden kipinän ansaitseminen tarvitsee {{calendar.petal_week_hours}} tuntia kalenterissa viikon ajan. Mukaan lasketaan seuraavan {{calendar.earning_horizon_days}} päivän ajat, kerrallaan enintään {{calendar.counted_hours_cap}} tuntia. Viikossa kipinöitä kertyy siis kalenterista enintään {{calendar.max_petals_per_week}}.'
-  en: 'Earning one spark takes {{calendar.petal_week_hours}} hours in your calendar, kept for a week. Times in the next {{calendar.earning_horizon_days}} days count, up to {{calendar.counted_hours_cap}} hours at once, so your calendar brings at most {{calendar.max_petals_per_week}} sparks a week.'
+  fi: 'Kalenterimerkinnät tuottavat kipinöitä matalalla, mutta jatkuvalla tahdilla. {{calendar.petal_week_hours}} tunnin viikko tuottaa yhden kokonaisen kipinän ja {{calendar.counted_hours_cap}} tunnin viikko {{calendar.max_petals_per_week}} kipinän maksimin. Kipinätuotanto lasketaan seuraavan {{calendar.earning_horizon_days}} päivän ajalta.'
+  en: "The times in your calendar bring in sparks at a low but steady pace. A {{calendar.petal_week_hours}}\u2011hour week brings in one whole spark, and a {{calendar.counted_hours_cap}}\u2011hour week the most there is, {{calendar.max_petals_per_week}} sparks. What you earn is counted over the next {{calendar.earning_horizon_days}} days."
 
 'detail.economy.spend':
   fi: 'Näin käytät kipinöitä'
   en: 'How you use sparks'
 
 'detail.economy.spend.body':
-  fi: 'Treffikutsuun kuluu {{petals.set_cost}} kipinää, heti hakiessasi ehdokkaat. Jos sopivia ehdokkaita ei löydy, esimerkiksi liian tyhjän kalenterin takia, kipinäsi palautetaan. Kipinöitä voi olla kerättynä korkeintaan {{petals.cap}}, eli {{petals.cap_roses}} kutsun verran.'
-  en: 'A date invitation takes {{petals.set_cost}} sparks, as soon as you look for candidates. If no suitable candidates can be found, for example because your calendar is too empty, your sparks are refunded. You can collect at most {{petals.cap}} sparks, enough for {{petals.cap_roses}} invitations.'
+  fi: 'Treffikutsu kuluttaa {{petals.set_cost}} kipinää heti, kun näet ehdokkaasi. Jos Pilke ei pysty tarjoilemaan vähintään {{candidates.per_set}} ehdokasta, esimerkiksi liian tyhjän kalenterin takia, kipinäsi palautetaan.'
+  en: 'A date invitation uses {{petals.set_cost}} sparks as soon as you see your candidates. If Pilke can’t serve up at least {{candidates.per_set}} candidates, for example because your calendar is too empty, your sparks are refunded.'
+
+# Under the price, in the card's left column: how many sparks can be held at once.
+# (`earn.calendar.note`'s English joins each number to its "hour" with a
+# non-breaking hyphen, so a phone never breaks "10-" from "hour".)
+'detail.economy.cap':
+  fi: 'Kipinöitä voi olla kerättynä korkeintaan {{petals.cap}}, eli {{petals.cap_roses}} kutsun verran.'
+  en: 'You can collect at most {{petals.cap}} sparks, enough for {{petals.cap_roses}} invitations.'
 
 'economy.lead':
   fi: '{{petals.set_cost}} kipinää, yksi treffikutsu.'
