@@ -81,12 +81,15 @@ const elsewhereSteps = [
   are the app's whole set. The tilt alternates so the four phones do not read as a
   stamped row.
 
-  Each screen is the step being done: the partner preferences a reader filters by,
-  an invitation received, the date with its map, and the feedback's facets with a
-  few picked.
+  Each screen is the step being done: the Mieltymykset questions a reader filters
+  by, with two answered, an invitation received, the date with its map, and the
+  feedback's facets with a few picked. Mieltymykset carries the owner's *Tulossa
+  pian* chip, laid over its phone in the page rather than drawn into the still, so
+  it goes when the set ships without a retake; it is text in the card, so a screen
+  reader reads it with the step.
 */
 const steps = [
-  { title: t('pitch.how.wishes.title'), body: t('pitch.how.wishes.body'), shot: shots.preferences, alt: t('shot.preferences'), tint: 'var(--card-sent)' },
+  { title: t('pitch.how.wishes.title'), body: t('pitch.how.wishes.body'), shot: shots.mieltymykset, alt: t('shot.mieltymykset'), tint: 'var(--card-sent)', soon: t('pitch.how.wishes.soon') },
   { title: t('pitch.how.invite.title'), body: t('pitch.how.invite.body'), shot: shots.invitation, alt: t('shot.invitation'), tint: 'var(--card-received)' },
   { title: t('pitch.how.date.title'), body: t('pitch.how.date.body'), shot: shots.date, alt: t('shot.date'), tint: 'var(--card-confirmed)' },
   { title: t('pitch.how.after.title'), body: t('pitch.how.after.body'), shot: shots.feedback, alt: t('shot.feedback'), tint: 'var(--card-feedback)' },
@@ -221,7 +224,10 @@ const notFor = [
                 <p>{step.body}</p>
               </div>
               <div class="step-phone">
-                <Phone src={step.shot} alt={step.alt} width={230} tilt={i % 2 === 0 ? 3 : -3} />
+                <div class="phone-hold">
+                  <Phone src={step.shot} alt={step.alt} width={230} tilt={i % 2 === 0 ? 3 : -3} />
+                  {step.soon && <span class="tag soon">{step.soon}</span>}
+                </div>
               </div>
             </li>
           ))
@@ -595,11 +601,23 @@ const notFor = [
     --phone-width: 210px;
   }
 
-  .step-phone :global(.phone) {
+  .phone-hold {
     position: absolute;
     left: 50%;
     top: 36px;
+    width: var(--phone-width);
     margin-left: calc(var(--phone-width) / -2);
+  }
+
+  /* The site's tag, tilted over the phone's top right corner, clear of the screen's
+     title and its questions. */
+  .soon {
+    position: absolute;
+    top: -12px;
+    right: -14px;
+    z-index: 1;
+    transform: rotate(7deg);
+    box-shadow: var(--shadow-card);
   }
 
   @media (min-width: 40rem) {
@@ -633,8 +651,10 @@ const notFor = [
       flex: none;
     }
 
-    .step-phone :global(.phone) {
-      position: static;
+    .phone-hold {
+      position: relative;
+      left: auto;
+      top: auto;
       margin: 0;
     }
   }

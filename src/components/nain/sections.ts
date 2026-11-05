@@ -23,7 +23,7 @@ export function nainSections(lang: Lang): Section[] {
   return [
     { kind: 'text', id: 'start', title: t('detail.start.title'), body: [t('detail.start.body')], shot: shots.preferences, alt: t('shot.preferences') },
     { kind: 'text', id: 'prefs', title: t('detail.prefs.title'), body: [t('detail.prefs.body')], shot: shots.kalenteri, alt: t('shot.kalenteri') },
-    { kind: 'text', id: 'draw', title: t('detail.draw.title'), body: [t('detail.draw.body'), t('detail.draw.feedback')], shot: shots.platter, alt: t('shot.platter') },
+    { kind: 'text', id: 'draw', title: t('detail.draw.title'), body: [t('detail.draw.body')], shot: shots.platter, alt: t('shot.platter') },
     { kind: 'text', id: 'invite', title: t('detail.invite.title'), body: [t('detail.invite.body')], shot: shots.invitation, alt: t('shot.invitation') },
     { kind: 'economy', id: 'economy', title: t('detail.economy.title') },
     { kind: 'date', id: 'date', title: t('detail.enjoy.title') },

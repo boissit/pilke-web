@@ -95,12 +95,18 @@
   fi: 'Muista sovelluksista poiketen Pilke tarjoaa kattavat valinnat ehdokkaiden suodattamiselle jo ennen treffikutsun lähettämistä tai vastaanottamista.'
   en: 'Unlike other apps, Pilke gives you thorough options for filtering candidates before an invitation is even sent or received.'
 
+# The owner's chip over the first step's phone: the Mieltymykset set it shows is
+# not in the app yet.
+'pitch.how.wishes.soon':
+  fi: 'Tulossa pian'
+  en: 'Coming soon'
+
 'pitch.how.invite.title':
   fi: 'Kutsu tai tule kutsutuksi.'
   en: 'Invite, or be invited.'
 
 'pitch.how.invite.body':
-  fi: 'Lähettäessäsi kutsua valitset itsellesi sopivimman ehdokkaan, ja ehdotat yhteisiä treffiaikoja ja paikkoja. Kun sinut kutsutaan, valitset lopullisen ajan ja paikan, ja treffit on sovittu.'
+  fi: 'Lähettäessäsi kutsua valitset itsellesi sopivimman ehdokkaan ja ehdotat yhteisiä treffiaikoja ja paikkoja. Kun sinut kutsutaan, valitset lopullisen ajan ja paikan, ja treffit on sovittu.'
   en: 'When you send an invitation, you choose the candidate who suits you best and suggest shared times and places for the date. When someone invites you, you pick the final time and place, and the date is set.'
 
 'pitch.how.date.title':
@@ -116,8 +122,8 @@
   en: 'Tell us how it went.'
 
 'pitch.how.after.body':
-  fi: 'Jos treffit menivät hyvin, voitte vaihtaa puhelinnumerot ja jatkaa Pilkkeen ulkopuolella. Mikäli sopivaa ihmistä ei vielä löytynyt, treffipalautteesi auttaa löytämään sinulle osuvampia ehdokkaita seuraaville treffeille.'
-  en: 'If the date went well, you can swap phone numbers and carry on outside Pilke. If you have not met the right person yet, your date feedback helps find you better-suited candidates for your next dates.'
+  fi: 'Jos treffit menivät hyvin, voitte vaihtaa puhelinnumeroita ja jatkaa Pilkkeen ulkopuolella. Voit myös jatkaa Pilkkeen käyttöä, treffipalautteesi auttaa löytämään sinulle osuvampia ehdokkaita seuraaville treffeille.'
+  en: 'If the date went well, you can swap phone numbers and carry on outside Pilke. You can also keep using Pilke, and your date feedback helps find you better-suited candidates for your next dates.'
 
 'pitch.instead.more':
   fi: 'Lue, miten Pilke toimii'
@@ -135,12 +141,12 @@
 # ──────────────────────────────────────────────────────────────────────────
 
 'pitch.quality.title':
-  fi: 'Laatua ennen määrää'
+  fi: 'Laatu ennen määrää'
   en: 'Quality over quantity'
 
 'pitch.quality.body':
-  fi: 'Sinulle näytettävät ehdokkaat suodatetaan kynnyskysymysten perusteella, joten näet vain itsellesi sopivia ihmisiä. Jokaisten treffien jälkeen kerrot palautteessa mistä pidit ja mitä jäit kaipaamaan, jolloin seuraavat ehdokkaat osuvat entistä paremmin.'
-  en: 'The candidates you are shown are filtered by your dealbreakers, so you only see people who suit you. After every date you say in your feedback what you liked and what you missed, so your next candidates are an even better fit.'
+  fi: 'Loputtoman ja sekalaisen profiilivirran sijasta Pilke keskittyy laatuun. Näet vähemmän ihmisiä, mutta voit luottaa siihen, että heidät on valittu toiveitasi ja treffikokemustasi optimoiden.'
+  en: 'In place of an endless, mixed stream of profiles, Pilke focuses on quality. You see fewer people, but you can trust that they have been chosen to make the most of your wishes and your date experience.'
 
 'pitch.safety.title':
   fi: 'Turvallista treffailua'

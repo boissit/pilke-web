@@ -17,6 +17,7 @@ import asetukset from './screens/asetukset.png';
 import date from './screens/date.png';
 import dateCancel from './screens/date-cancel.png';
 import kalenteri from './screens/kalenteri.png';
+import mieltymykset from './screens/mieltymykset.png';
 import preferences from './screens/preferences.png';
 import invitation from './screens/invitation.png';
 import feedback from './screens/feedback.png';
@@ -30,6 +31,7 @@ import kalenteriEn from './screens/kalenteri-en.png';
 import feedbackEn from './screens/feedback-en.png';
 import invitationEn from './screens/invitation-en.png';
 import platterEn from './screens/platter-en.png';
+import mieltymyksetEn from './screens/mieltymykset-en.png';
 import preferencesEn from './screens/preferences-en.png';
 import storyEn from './screens/story-en.png';
 
@@ -37,6 +39,7 @@ export const shots = {
   treffit,
   story,
   preferences,
+  mieltymykset,
   kalenteri,
   platter,
   invitation,
@@ -61,6 +64,7 @@ const shotsEn: Partial<Record<keyof typeof shots, ImageMetadata>> = {
   date: dateEn,
   dateCancel: dateCancelEn,
   preferences: preferencesEn,
+  mieltymykset: mieltymyksetEn,
 };
 
 /** The screens in a page's language, Finnish where English has none. */

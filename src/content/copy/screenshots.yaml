@@ -5,8 +5,8 @@
 # the guide's stills carry their alt text in their own Markdown.
 #
 # Grouped by picture rather than by page because several pages draw the same
-# screen, and the alt text follows the picture: `preferences`, `invitation`, `date`
-# and `feedback` are on both the front page and `nain-se-toimii`.
+# screen, and the alt text follows the picture: `invitation`, `date` and `feedback`
+# are on both the front page and `nain-se-toimii`.
 #
 # WARNING: **These describe a still of a real build.** When the app changes, the
 # description can go stale silently — `docs/pictures.md` is the account of which
@@ -31,6 +31,10 @@
 'shot.feedback':
   fi: 'Treffipalaute puhelimessa: kuka oli treffeillä ja milloin, ja kysymys siitä, mistä pidit treffikumppanissasi, muutama vaihtoehto valittuna.'
   en: 'Date feedback on a phone: who the date was with and when, and the question of what you liked about your date, with a few options picked.'
+
+'shot.mieltymykset':
+  fi: 'Mieltymykset-kysymykset puhelimessa: Haluan joskus lapsia, vastauksena En osaa sanoa, ja Poltan tupakkaa, vastauksena En, mutta se ei haittaa minua.'
+  en: 'The Preferences questions on a phone: I want children some day, answered I can’t say, and I smoke, answered No, but it doesn’t bother me.'
 
 'shot.preferences':
   fi: 'Omat tiedot -osion kumppanitoiveet: treffikumppanin sukupuoli, ikähaarukka, mitä odotat treffeiltä ja kielet, joilla voisit käydä treffeillä.'

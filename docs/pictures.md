@@ -105,7 +105,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`preferences-en` 460px<br>`invitation-en` 460px<br>`date-en` 460px<br>`feedback-en` 460px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`mieltymykset-en` 460px<br>`invitation-en` 460px<br>`date-en` 460px<br>`feedback-en` 460px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kipinat.html/` | `en/date-wizard-petals` 560px |
@@ -127,7 +127,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `asetukset-en` 520px |
 | `/en/yhteystiedot.html/` | none |
-| `/` | `hero-cutout-fi` 1400px<br>`preferences` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
+| `/` | `hero-cutout-fi` 1400px<br>`mieltymykset` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
@@ -177,7 +177,9 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `invitation-en` | Invitation received, English | `screenshots.yaml` in English | What `invitation` shows, in English: `Choose a time and a place`, `Decline`, `Back`, `Agreed!`. Drawn on `/en` in place of `invitation`, and set into `beta-invitation-en` |
 | `feedback` | Date feedback, *Pidin näistä asioista treffikumppanissani* | `screenshotFeedback.yaml`, as Venla, whose Finnish account gets the questions in Finnish: *Hyvin*, then *Luonne*, *Älykkyys* and *Huumori* ticked by position | The date's own Treffit card (partner, venue, time) at the top, the facet question with its info button, its facets as rows with three of them ticked, and the pinned footer: the back button and an enabled `Jatka`. The step as somebody answers it, on the front page's fourth step and `nain-se-toimii`'s *Treffien jälkeen* |
 | `feedback-en` | Date feedback, the facet question, English | `screenshotFeedback.yaml` in English, as Juho, whose account is English | The same step in English, `Continue`. Drawn on `/en` in place of `feedback` |
-| `preferences` | Settings, Omat tiedot, the partner preferences | `screenshotPreferences.yaml`, as the platter's account | `Treffikumppanin sukupuoli` with its three options, `Minimi-ikä` and `Maksimi-ikä` filled in on the screen (25 and 38, never saved), `Mitä odotat treffeiltä?` with both answers, the languages with Suomi and Svenska, the head of the activities, the tab bar. The chosen areas' line above them. No name and no photo |
+| `mieltymykset` | Question set *Mieltymykset*, two answers picked | `screenshotMieltymykset.yaml`, as the platter's account, its Mieltymykset answers cleared before and after | The back button, the set's title and its `2/3` progress, *Haluan joskus lapsia* with *En osaa sanoa* picked, *Poltan tupakkaa* with *En, mutta se ei haittaa minua* picked, and the head of *Unelmoin maalla asumisesta*, at the top of the screen as it opens. Server copy in the account's language, so it goes stale on the survey's wording. Drawn on the front page's first step, under the page's own *Tulossa pian* chip |
+| `mieltymykset-en` | The same, English | `screenshotMieltymykset.yaml` in English | *Preferences*, *I can't say* and *No, but it doesn't bother me*. Drawn on `/en` in place of `mieltymykset` |
+| `preferences` | Settings, Omat tiedot, the partner preferences, on `nain-se-toimii`'s first section | `screenshotPreferences.yaml`, as the platter's account | `Treffikumppanin sukupuoli` with its three options, `Minimi-ikä` and `Maksimi-ikä` filled in on the screen (25 and 38, never saved), `Mitä odotat treffeiltä?` with both answers, the languages with Suomi and Svenska, the head of the activities, the tab bar. The chosen areas' line above them. No name and no photo |
 | `preferences-en` | The same, English | `screenshotPreferences.yaml` in English | The same questions in English. Drawn on `/en` in place of `preferences` |
 | `kalenteri` | Calendar, a week in use | `capture-kalenteri-busy.sh`, the `busy-week` step, as Veera's account | Three days of the week: free slots marked *Treffivaraus* in coral with their sparkles, the phone's own events hatched beside them, the yellow density shading, the ⋮ and (i) buttons, the tab bar. Drawn on `nain-se-toimii` |
 | `kalenteri-en` | Calendar, a week in use, English | the same step in English | The same week in English. Drawn on `/en` in place of `kalenteri` |

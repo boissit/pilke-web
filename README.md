@@ -135,8 +135,9 @@ part says its point once and links on to the page that says it in full.
   swaippailla eikä chättäillä*, the one sentence on the site allowed to open with
   a negation, and the lead *Näin se menee käytännössä:*, both centred over the
   cards. Then the owner's four steps on the app's four card tints, each
-  with its screen running off the bottom of the card: the partner preferences you
-  filter by, an invitation, the date with its map and the feedback's facets. The
+  with its screen running off the bottom of the card: the Mieltymykset questions
+  you filter by, under a *Tulossa pian* chip the page lays over the phone, an
+  invitation, the date with its map and the feedback's facets. The
   feedback claim rests on the privacy statement. It links to `nain-se-toimii`.
 - **Quality and safety** are two cards side by side, peach and mint: *Laatua
   ennen määrää*, how the candidates are filtered and how the feedback after each
