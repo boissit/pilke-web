@@ -32,7 +32,7 @@ concerning your rights go to the same address (section 11).
 | Date of birth | We check that you are 18. Others are shown your age in years only. |
 | Language | Decides which language your notifications and text messages are in. |
 | Date preferences | Who you are interested in, what kind of date you are looking for, the ages you want to be offered, and the languages you want to speak. |
-| Date area | The areas, drawn in advance by Pilke, that you have chosen on the map: where you could go on a date. Also a point and a radius derived from them. |
+| Date area | The areas, drawn in advance by Pilke, that you have chosen on the map: where you could go on a date. |
 | Trusted contact's phone number | Optional. The safety button sends a message to this number. |
 
 ### Dates
@@ -50,7 +50,8 @@ answers: yes and my phone number may be shared with them, yes but only through P
 no. We store your answer with that date.
 
 If you both choose to share the number, each of you is given the other's nickname and
-phone number: in a push notification and on that date in the app's date history. If you both answer yes
+phone number on that date in the app's date history. A push notification tells you about
+the exchange, and the number itself is only in the date history. If you both answer yes
 but either of you chose through Pilke, the two of you can be offered to each other again,
 and nothing is disclosed. If either of you answers no, nothing happens and nothing is
 disclosed.
@@ -113,9 +114,8 @@ Location means two different things in Pilke.
 You choose, on a map, which of the areas drawn in advance by Pilke you could go on a date
 in. You choose them yourself, and the choice does not come from your device's positioning.
 We use it to decide which venues are within reach and who we can offer you: a venue is
-picked from an area you have both chosen. We store the areas you chose, and a point and a
-radius derived from them that cover them, which older versions of the app use to draw the
-map. Other users cannot see your area, and you can change it in settings at any time.
+picked from an area you have both chosen. We store the areas you chose. Other users
+cannot see your area, and you can change it in settings at any time.
 
 ### Your location at the venue
 
@@ -182,7 +182,7 @@ So an exchange cannot be stopped afterwards. Before it happens, a safety report 
 — once one of you has filed a safety report about the other, no numbers are exchanged, even
 if both of you chose to — but a report can only be filed in the feedback for that date, not later. Once
 the numbers have been exchanged you can delete your account: your number disappears from
-the other person's app, but that does not reach a notification that has already arrived
+the other person's app, but that does not reach what they have already seen or saved
 either (section 9).
 
 Your date preferences can reveal whether you are interested in the same or a different
@@ -227,14 +227,14 @@ Finland.
 | Account and profile | As long as your account exists. |
 | A location you have shared at a venue | Deleted when the window closes, at the latest {{sharing.trail_minutes}} minutes after the agreed start, or immediately when you stop sharing. |
 | Signed-in devices | 90 days from when the device was last used. |
-| Devices we send push notifications to | We send to a device until it has gone unused for 90 days, and to your ten most recently used devices at most. The device's identifier is deleted with your account. |
+| Devices we send push notifications to | Notifications to a device stop once it has gone unused for 90 days, and its identifier is deleted once it has gone unused for a year. We send to your ten most recently used devices at most. Identifiers are also deleted with your account. |
 | Calendar entries | 31 days from when the marked time ended. Entries still ahead are kept for the life of the account, and all of them are deleted with it. |
 | Answers to question sets | For the life of the account; deleted with it. |
 | Suggestions shown to you, and the record of whom you were suggested to | 12 months from the suggestion. When you delete your account, the suggestions shown to you are deleted at once. |
 | How you earned and used kipinät | For as long as the account, or the record left after deleting it, exists. Once you delete your account, the entries no longer carry your name. |
 | Dates, invitations and cancellations | 12 months from the date. |
 | Feedback | 12 months from the date. |
-| Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. A copy of the number sits in the push notification that was sent, and that goes after 90 days. |
+| Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. The number is kept only with the date: the notifications we keep do not contain it. |
 | No-show reports, including those made in the feedback, and the restrictions that follow from them | 12 months from the report. |
 | Notifications sent, and delivery records for text messages | 90 days. |
 | Safety and conduct reports, their free text, and records of safety button presses | 5 years from the report. |
@@ -257,8 +257,10 @@ out at the same moment.
 
 There is one thing the deletion does not reach. If you have exchanged phone numbers with
 somebody you dated, your number disappears from their app at the same moment as your
-account, but a push notification that has already arrived cannot be taken back: the number
-is on their phone and it stays there. Our own copy of that notification goes after 90 days.
+account, but what they have already seen or saved cannot be taken back. The push
+notification about the exchange does not contain the number. Notifications sent before
+5 October 2026 showed it in their text, and one that has already arrived stays on their
+phone. None of the notifications we keep contain the number.
 
 Two groups remain:
 

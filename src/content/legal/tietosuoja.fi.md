@@ -35,7 +35,7 @@ Samaan osoitteeseen lähetät myös oikeuksiasi koskevat pyynnöt (luku 11).
 | Syntymäaika | Tarkistamme, että olet täyttänyt 18 vuotta. Muille näytämme vain iän vuosina. |
 | Kieli | Ratkaisee, millä kielellä ilmoitukset ja tekstiviestit tulevat. |
 | Treffitoiveet | Kenestä olet kiinnostunut, minkälaisia treffejä haet, minkä ikäisiä ehdokkaita toivot ja millä kielillä haluat keskustella. |
-| Treffialue | Pilkkeen valmiiksi rajaamat alueet, jotka olet valinnut kartalta: missä voit käydä treffeillä. Lisäksi niistä johdettu piste ja säde. |
+| Treffialue | Pilkkeen valmiiksi rajaamat alueet, jotka olet valinnut kartalta: missä voit käydä treffeillä. |
 | Luotettavan henkilön puhelinnumero | Vapaaehtoinen. Turvapainike lähettää viestin tähän numeroon. |
 
 ### Treffit
@@ -52,7 +52,8 @@ kolme: kyllä ja puhelinnumeroni saa jakaa hänelle, kyllä mutta vain Pilkkeen 
 en. Tallennamme vastauksesi näiden treffien tietoihin.
 
 Jos te molemmat valitsette numeron jakamisen, kumpikin saa toisen nimimerkin ja
-puhelinnumeron: push-ilmoituksena ja sovelluksen treffihistoriassa näiden treffien kohdalla. Jos molemmat
+puhelinnumeron sovelluksen treffihistoriaan näiden treffien kohdalle. Push-ilmoitus kertoo
+vaihdosta, mutta numero on vain treffihistoriassa. Jos molemmat
 vastaatte kyllä mutta toinen teistä valitsi Pilkkeen kautta, teidät voidaan ehdottaa
 toisillenne uudelleen, eikä mitään luovuteta. Jos jompikumpi vastaa en, mitään ei tapahdu
 eikä mitään luovuteta.
@@ -118,9 +119,8 @@ Valitset kartalta Pilkkeen valmiiksi rajaamista alueista ne, joilla voisit käyd
 treffeillä. Valitset ne itse, eikä valinta tule laitteesi paikannuksesta. Sen perusteella
 päätämme, mitkä treffipaikat ovat ulottuvillasi ja keitä voimme ehdottaa sinulle:
 treffipaikka valitaan alueelta, jonka olette molemmat valinneet. Tallennamme valitsemasi
-alueet sekä niistä johdetun pisteen ja säteen, jotka kattavat ne ja joita sovelluksen
-vanhemmat versiot käyttävät kartan näyttämiseen. Muut käyttäjät eivät näe aluetta, ja
-voit muuttaa sitä asetuksissa milloin tahansa.
+alueet. Muut käyttäjät eivät näe aluetta, ja voit muuttaa sitä asetuksissa milloin
+tahansa.
 
 ### Sijainti treffipaikalla
 
@@ -186,7 +186,7 @@ Vaihtoa ei siis voi pysäyttää jälkikäteen. Ennen vaihtoa sen pysäyttää
 turvallisuusilmoitus — kun jompikumpi teistä on tehnyt toisesta turvallisuusilmoituksen,
 numeroita ei vaihdeta, vaikka molemmat olisivat niin valinneet — mutta ilmoituksen voi
 tehdä vain treffien palautteessa, ei myöhemmin. Kun numerot on vaihdettu, voit poistaa tilisi: numerosi katoaa toisen
-sovelluksesta, mutta jo saapunutta ilmoitusta sekään ei tavoita (luku 9).
+sovelluksesta, mutta sitä, minkä hän on jo nähnyt tai tallentanut, sekään ei tavoita (luku 9).
 
 Treffitoiveistasi voi ilmetä, oletko kiinnostunut samasta vai eri sukupuolesta ja haetko
 seksiä. Nämä ovat erityisiin henkilötietoryhmiin kuuluvia tietoja, ja käsittelemme niitä
@@ -230,14 +230,14 @@ Suomessa.
 | Tili ja profiili | Niin kauan kuin tilisi on olemassa. |
 | Sijainti, jonka olet jakanut treffipaikalla | Poistetaan, kun aikaikkuna sulkeutuu eli viimeistään {{sharing.trail_minutes}} minuuttia sovitun alun jälkeen, tai heti, kun lopetat jakamisen. |
 | Kirjautuneet laitteet | 90 päivää siitä, kun laitetta on viimeksi käytetty. |
-| Laitteet, joille lähetämme push-ilmoituksia | Lähetämme laitteelle, kunnes sitä ei ole käytetty 90 päivään, ja enintään kymmenelle viimeksi käytetylle laitteellesi. Laitteen tunniste poistetaan tilin mukana. |
+| Laitteet, joille lähetämme push-ilmoituksia | Ilmoitukset laitteelle lakkaavat, kun sitä ei ole käytetty 90 päivään, ja laitteen tunniste poistetaan, kun sitä ei ole käytetty vuoteen. Lähetämme enintään kymmenelle viimeksi käytetylle laitteellesi. Tunnisteet poistetaan myös tilin mukana. |
 | Kalenterimerkinnät | 31 päivää siitä, kun merkitty aika on päättynyt. Tulevat merkinnät säilyvät tilin ajan, ja kaikki poistetaan tilin mukana. |
 | Vastaukset kysymyssarjoihin | Tilin ajan; poistetaan tilin mukana. |
 | Ehdotukset, jotka sinulle on näytetty, ja tieto siitä, kenelle sinua on ehdotettu | 12 kuukautta ehdotuksesta. Kun poistat tilisi, sinulle näytetyt ehdotukset poistetaan heti. |
 | Kipinöiden kertymä ja käyttö | Niin kauan kuin tili tai sen poiston jälkeen jäävä merkintä on olemassa. Kun poistat tilisi, merkinnöissä ei ole enää nimeäsi. |
 | Treffit, kutsut ja perumiset | 12 kuukautta treffien ajankohdasta. |
 | Palautteet | 12 kuukautta treffien ajankohdasta. |
-| Vastaus siihen, haluatko tavata uudelleen, ja vaihdettu puhelinnumero | 12 kuukautta treffien ajankohdasta, treffien mukana. Kopio numerosta on lähetetyssä push-ilmoituksessa, ja se poistuu 90 päivässä. |
+| Vastaus siihen, haluatko tavata uudelleen, ja vaihdettu puhelinnumero | 12 kuukautta treffien ajankohdasta, treffien mukana. Numero on vain treffien tiedoissa: säilyttämämme ilmoitukset eivät sisällä sitä. |
 | Ilmoitukset saapumatta jättämisestä, myös palautteessa kerrotut, ja niistä seuraavat rajoitukset | 12 kuukautta ilmoituksesta. |
 | Lähetetyt ilmoitukset ja tekstiviestien lähetystiedot | 90 päivää. |
 | Turvallisuus- ja käytösilmoitukset, niiden vapaa teksti ja merkinnät turvapainikkeen painalluksista | 5 vuotta ilmoituksesta. |
@@ -259,9 +259,11 @@ ja vastaukset kysymyssarjoihin. Valokuva poistuu myös tallennustilasta, ja kirj
 katkeavat kaikilta laitteilta samalla hetkellä.
 
 Yhtä asiaa poisto ei tavoita. Jos olet vaihtanut puhelinnumeron treffiparisi kanssa,
-numerosi katoaa hänen sovelluksestaan samalla hetkellä kuin tilisi, mutta jo saapunutta
-push-ilmoitusta emme voi ottaa takaisin: numero on hänen puhelimessaan, ja se jää sinne.
-Oma kopiomme siitä ilmoituksesta poistuu 90 päivässä.
+numerosi katoaa hänen sovelluksestaan samalla hetkellä kuin tilisi, mutta sitä, minkä hän
+on jo nähnyt tai tallentanut, emme voi ottaa takaisin. Vaihdosta kertova push-ilmoitus ei
+sisällä numeroa. Ennen 5.10.2026 lähetetyissä ilmoituksissa numero näkyi ilmoituksen
+tekstissä, ja jo saapunut ilmoitus jää hänen puhelimeensa. Omat tallenteemme eivät sisällä
+numeroa missään ilmoituksessa.
 
 Kaksi ryhmää jää:
 
