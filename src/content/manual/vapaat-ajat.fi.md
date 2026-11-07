@@ -45,4 +45,4 @@ Kopio näkyy ensin ehdotuksena. Ajat ovat katkoviivalla, ja yhteenveto (1) kerto
 Asetusten Kalenteri-kohdassa voit yhdistää Pilkkeen sinun kalenteriisi, esimerkiksi Google- tai Apple-kalenteriisi. Kumpikin suunta on oma valintansa.
 
 - **Pilke kirjoittaa** valitsemaasi kalenteriin sovitut treffit ja halutessasi myös avoimet kutsut. Merkinnässä on treffikumppanisi kutsumanimi ja, kun paikka on päätetty, treffipaikka. Perutut treffit poistetaan. Merkintä näkyy kaikille, jotka näkevät sen kalenterin, esimerkiksi Googlessa.
-- **Pilke lukee** kalenteristasi vain varatut ajat ja näyttää ne raidoitettuina Pilkkeen kalenterissa, jotta et merkitse vapaaksi aikaa, joka on jo varattu. Lukeminen tapahtuu puhelimessa.
+- **Pilke lukee** kalenteristasi menosi ja näyttää ne raidoitettuina Pilkkeen kalenterissa, jotta et merkitse vapaaksi aikaa, joka on jo varattu. Menosi näkyvät vain sinulle.

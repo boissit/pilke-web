@@ -31,6 +31,6 @@ Profiilin luonti kestää noin vartin. Pilke kysyy puhelinnumerosi (se vahvistet
 - **Ketä etsit ja mitä odotat treffeiltä.** Nämä rajaavat ehdokkaat molempiin suuntiin.
 - **Kielet**, jotta teillä on aina yhteinen kieli.
 - **Treffialueet ja tekeminen**, vähintään {{profile.min_categories}} vaihtoehtoa. Treffipaikat valitaan näiden perusteella.
-- **Vapaat aikasi.** Mitä useampia vapaita aikoja merkitset, sitä parempia ehdokkaita löydämme. Alkuun riittää yksi {{calendar.min_slot_hours}} tunnin aika.
+- **Vapaat aikasi.** Kerrot, milloin lähtisit mieluiten treffeille, ja voit yhdistää puhelimesi kalenterin. Niiden pohjalta Pilke ehdottaa treffivarauksia seuraavalle viikolle, ja tarkistat ehdotuksen ennen tallentamista. Mitä useampia vapaita aikoja merkitset, sitä parempia ehdokkaita löydämme. Alkuun riittää yksi {{calendar.min_slot_hours}} tunnin aika.
 
-Kun vahvistat puhelinnumerosi, saat {{petals.signup_bonus}} tervetuliaiskipinää. Ne riittävät yhteen treffikutsuun, joten voit kutsua jonkun heti, kun profiili on valmis.
+Kun vahvistat puhelinnumerosi, saat {{petals.signup_bonus}} tervetuliaiskipinää. Ne riittävät yhteen treffikutsuun, joten voit kutsua jonkun heti, kun profiili on valmis. Lopuksi voit sallia ilmoitukset, ja **Valmista!**-näkymässä painat **Löydä treffit**. Jos ehdokkaita ei vielä löydy, Treffit-sivun **Seuraavaksi** kertoo, mitä voit tehdä.

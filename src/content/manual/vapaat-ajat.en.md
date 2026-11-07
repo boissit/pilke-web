@@ -45,4 +45,4 @@ The copy shows up as a proposal first. The times are drawn dashed, and the summa
 Under Calendar in Settings you can connect Pilke to your own calendar, such as your Google or Apple calendar. Each direction is a choice of its own.
 
 - **Pilke writes** your agreed dates, and if you like your open invitations, into a calendar you choose. An entry carries your date's first name and, once it is settled, the venue. A cancelled date is removed. The entry is visible to anyone who can see that calendar, in Google for instance.
-- **Pilke reads** only the busy times from your calendar, and shows them hatched in Pilke's calendar so you do not mark yourself free when you are not. The reading happens on the phone.
+- **Pilke reads** your events from your calendar, and shows them hatched in Pilke's calendar so you do not mark yourself free when you are not. Only you see your events.

@@ -9,10 +9,10 @@ An agreed date is something two people decided together. The other person has se
 
 ## Two kinds of cooldown
 
-| Cooldown | What you cannot do | The notice begins |
+| Cooldown | What you cannot do | The notice says |
 |---|---|---|
-| Both | Show up in other people's candidates, or look for new candidates. | *You are not showing up in other people's candidates right now, and you cannot look for new candidates until …* |
-| No looking | Look for new candidates. You still show up for others. | *You cannot look for new candidates until …* |
+| Both | Show up in other people's candidates, or look for new candidates. | *Until then you do not appear among other people’s candidates and cannot find new ones.* |
+| No looking | Look for new candidates. You still show up for others. | *Until then you cannot find new candidates.* |
 
 During a cooldown you can still answer invitations you receive and go on your agreed dates. Your open invitations and agreed dates stay as they are. If you had already found your candidates, you can still send one of them an invitation.
 
@@ -42,6 +42,6 @@ You can decline without giving a reason, and a no is a better answer for the one
 
 When you call off an agreed date, the other person is told straight away. That notification cannot be switched off, because without it they would go and wait for someone who is not coming. The agreed time is freed for both of you. If you were the one who invited, the sparks you spent stay spent. If they invited you, {{petals.refund}} sparks go back to them.
 
-You call off an agreed date with **Cancel the date** on its screen. Once the start time has passed, the button is gone.
+You call off an agreed date with **Cancel the date** on its screen. Before you confirm, you see when the cooldown would end. Once the start time has passed, the button is gone.
 
 So call off as soon as you know you cannot make it: the earlier you do, the shorter the cooldown.

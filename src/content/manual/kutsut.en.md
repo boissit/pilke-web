@@ -18,7 +18,7 @@ The other person picks exactly one of your times and one venue. The date starts 
 
 ![A received invitation: the times and venues offered, and the Decline and Agreed! buttons](shot:invitation#timeslot-*,venue-*)
 
-On an invitation you receive, you pick one time (1) and, if there is more than one venue, one venue (2). **Decide later** only closes the screen: the invitation waits, but the clock keeps running.
+On an invitation you receive, you pick one time (1) and, if there is more than one venue, one venue (2). **Back** only closes the screen: the invitation waits, but the clock keeps running.
 
 ## Time to answer
 

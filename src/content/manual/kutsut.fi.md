@@ -18,7 +18,7 @@ Toinen valitsee tarjoamistasi täsmälleen yhden ajan ja yhden paikan. Treffit a
 
 ![Saapunut treffikutsu: tarjotut ajat, paikat ja painikkeet Hylkää ja Sovittu!](shot:invitation#timeslot-*,venue-*)
 
-Saamassasi kutsussa valitset yhden ajan (1) ja, jos paikkoja on useampi, yhden paikan (2). **Päätä myöhemmin** vain sulkee näkymän: kutsu odottaa, mutta aika kuluu.
+Saamassasi kutsussa valitset yhden ajan (1) ja, jos paikkoja on useampi, yhden paikan (2). **Takaisin** vain sulkee näkymän: kutsu odottaa, mutta aika kuluu.
 
 ## Vastausaika
 

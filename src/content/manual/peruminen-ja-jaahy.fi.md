@@ -9,10 +9,10 @@ Sovitut treffit ovat kahden ihmisen yhteinen päätös. Toinen on varannut aikaa
 
 ## Kaksi jäähyä
 
-| Jäähy | Mitä et voi tehdä | Ilmoitus alkaa |
+| Jäähy | Mitä et voi tehdä | Ilmoituksessa lukee |
 |---|---|---|
-| Molemmat | Et näy muiden ehdokkaissa etkä voi hakea uusia ehdokkaita. | *Et näy juuri nyt muiden treffiehdokkaissa etkä voi hakea uusia ehdokkaita …* |
-| Ei hakua | Et voi hakea uusia ehdokkaita. Näyt muille. | *Et voi hakea uusia ehdokkaita …* |
+| Molemmat | Et näy muiden ehdokkaissa etkä voi hakea uusia ehdokkaita. | *Sillä aikaa et näy muiden ehdokkaissa etkä voi löytää uusia ehdokkaita.* |
+| Ei hakua | Et voi hakea uusia ehdokkaita. Näyt muille. | *Sillä aikaa et voi löytää uusia ehdokkaita.* |
 
 Jäähyn aikana voit silti vastata saamiisi kutsuihin ja käydä sovituilla treffeillä. Avoimet kutsusi ja sovitut treffisi pysyvät ennallaan. Jos olit jo löytänyt ehdokkaat, voit silti lähettää kutsun jollekulle heistä.
 
@@ -42,6 +42,6 @@ Kutsun voi hylätä perustelematta, ja hylkäys on kutsujalle parempi vastaus ku
 
 Kun perut sovitut treffit, toinen saa siitä heti ilmoituksen. Ilmoitusta ei voi kytkeä pois, koska ilman sitä hän lähtisi odottamaan ihmistä, joka ei tule. Sovittu aika vapautuu teiltä molemmilta. Jos kutsuit hänet itse, käyttämäsi kipinät jäävät käytetyiksi. Jos hän kutsui sinut, {{petals.refund}} kipinää palaa hänelle.
 
-Sovitut treffit perutaan treffisivun **Peru treffit** -painikkeella. Kun treffien alkamisaika on ohi, painiketta ei enää ole.
+Sovitut treffit perutaan treffisivun **Peru treffit** -painikkeella. Ennen kuin vahvistat, näet, milloin jäähy päättyisi. Kun treffien alkamisaika on ohi, painiketta ei enää ole.
 
 Peru siis heti, kun tiedät, ettet pääse: mitä aikaisemmin perut, sitä lyhyempi jäähy on.

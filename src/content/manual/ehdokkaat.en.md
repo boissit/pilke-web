@@ -22,7 +22,7 @@ A candidate has to meet every one of these, and each is checked both ways: you h
 - **Wishes.** Gender and age fit what each of you is looking for, and you share an answer to what you want from a date.
 - **A choice.** You share at least {{invitation.choice_threshold}} times or at least {{invitation.choice_threshold}} venues, so an invitation can offer a choice.
 
-**The pace setting** counts too: *How often would you like to go on a date?* in Your details. If someone chose *Once a week*, they are suggested for times before their latest agreed date, or from {{matching.pace_weekly_days}} days after it (*Once every two weeks*: {{matching.pace_fortnightly_days}} days). The same goes for you when you are suggested to others. When you look for candidates yourself, your own pace is taken into account too: times that respect it come first.
+**The pace setting** counts too: *How often would you like to go on a date?* on the Times page of Your details. If someone chose *Once a week*, they are suggested for times before their latest agreed date, or from {{matching.pace_weekly_days}} days after it (*Once every two weeks*: {{matching.pace_fortnightly_days}} days). The same goes for you when you are suggested to others. When you look for candidates yourself, your own pace is taken into account too: times that respect it come first.
 
 ## Why someone stops turning up
 
@@ -47,7 +47,7 @@ If you cannot find candidates right now, the Dates page carries a notice (1) wit
 
 ## Questions
 
-**Why were no candidates found?** There were fewer than {{candidates.per_set}} suitable candidates. The app says which condition ruled out the last of them: your wishes, things to do, date areas, shared time, or simply too few suitable people right now. Marking more time usually helps most, especially in the yellow hours. Your sparks stay put.
+**Why were no candidates found?** There were fewer than {{candidates.per_set}} suitable candidates. The app says which condition ruled out the last of them: your wishes, things to do, date areas, shared time, or simply too few suitable people right now. Its button takes you straight to the calendar or to the page of Your details where you can change it, and **Next** on the Dates page gives the same steps. Marking more time usually helps most, especially in the yellow hours. Your sparks stay put.
 
 **Can someone see they were my candidate?** No. A candidate only learns about you when you send them an invitation.
 
