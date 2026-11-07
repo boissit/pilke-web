@@ -1,17 +1,17 @@
 {
   "name": "date-wizard-petals",
   "language": "fi",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T06:46:27Z",
+  "commit": "5e2efe47288c4805ff926e7c975ff181de86ffb6-dirty",
+  "takenAt": "2026-11-07T11:56:31Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
     "date-wizard-send": {
-      "x": 154,
+      "x": 222,
       "y": 1910,
-      "width": 772,
+      "width": 637,
       "height": 172
     },
     "wizard-balance": {

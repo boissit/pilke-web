@@ -1,8 +1,8 @@
 {
   "name": "cooldown-nodraw",
   "language": "fi",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T07:07:07Z",
+  "commit": "5e2efe47288c4805ff926e7c975ff181de86ffb6-dirty",
+  "takenAt": "2026-11-07T11:37:33Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -62,17 +62,29 @@
       "width": 690,
       "height": 106
     },
-    "dates-empty": {
+    "dates-next-steps": {
       "x": 33,
       "y": 717,
       "width": 1014,
-      "height": 636
+      "height": 607
     },
-    "open-date-history": {
-      "x": 33,
-      "y": 1441,
-      "width": 1014,
-      "height": 121
+    "next-step-lever": {
+      "x": 74,
+      "y": 853,
+      "width": 932,
+      "height": 132
+    },
+    "next-step-allow-done": {
+      "x": 74,
+      "y": 996,
+      "width": 932,
+      "height": 132
+    },
+    "next-step-find": {
+      "x": 74,
+      "y": 1139,
+      "width": 932,
+      "height": 132
     },
     "balance-sparks": {
       "x": 721,
@@ -97,18 +109,6 @@
       "y": 151,
       "width": 63,
       "height": 63
-    },
-    "dates-empty-title": {
-      "x": 196,
-      "y": 1102,
-      "width": 687,
-      "height": 94
-    },
-    "dates-empty-line": {
-      "x": 75,
-      "y": 1207,
-      "width": 930,
-      "height": 58
     }
   }
 }

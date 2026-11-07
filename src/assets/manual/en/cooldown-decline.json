@@ -1,8 +1,8 @@
 {
   "name": "cooldown-decline",
   "language": "en",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T07:57:48Z",
+  "commit": "5e2efe47288c4805ff926e7c975ff181de86ffb6-dirty",
+  "takenAt": "2026-11-07T11:41:22Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -33,9 +33,9 @@
       "height": 176
     },
     "find-dates": {
-      "x": 526,
+      "x": 547,
       "y": 1745,
-      "width": 521,
+      "width": 500,
       "height": 172
     },
     "balance-counter": {
@@ -62,17 +62,29 @@
       "width": 690,
       "height": 159
     },
-    "dates-empty": {
+    "dates-next-steps": {
       "x": 33,
       "y": 831,
       "width": 1014,
-      "height": 694
+      "height": 607
     },
-    "open-date-history": {
-      "x": 33,
-      "y": 1613,
-      "width": 1014,
-      "height": 121
+    "next-step-lever": {
+      "x": 74,
+      "y": 967,
+      "width": 932,
+      "height": 132
+    },
+    "next-step-allow-done": {
+      "x": 74,
+      "y": 1110,
+      "width": 932,
+      "height": 132
+    },
+    "next-step-find": {
+      "x": 74,
+      "y": 1253,
+      "width": 932,
+      "height": 132
     },
     "balance-sparks": {
       "x": 726,
@@ -97,18 +109,6 @@
       "y": 151,
       "width": 63,
       "height": 63
-    },
-    "dates-empty-title": {
-      "x": 80,
-      "y": 1216,
-      "width": 919,
-      "height": 94
-    },
-    "dates-empty-line": {
-      "x": 66,
-      "y": 1321,
-      "width": 948,
-      "height": 116
     }
   }
 }
