@@ -1,34 +1,40 @@
 {
   "name": "asetukset-tili",
   "language": "fi",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T07:21:01Z",
+  "commit": "46da80c56251489f1629d4560adfc648c0face4e-dirty",
+  "takenAt": "2026-11-07T21:49:42Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
+    "language": {
+      "x": 33,
+      "y": 1591,
+      "width": 1014,
+      "height": 130
+    },
     "open-app-feedback": {
       "x": 33,
-      "y": 1690,
+      "y": 1809,
       "width": 1014,
-      "height": 172
+      "height": 136
     },
     "sign-out": {
       "x": 33,
-      "y": 620,
+      "y": 621,
       "width": 1014,
       "height": 172
     },
     "sign-out-everywhere": {
       "x": 33,
-      "y": 825,
+      "y": 826,
       "width": 1014,
       "height": 247
     },
     "delete-account": {
       "x": 264,
-      "y": 1232,
+      "y": 1233,
       "width": 552,
       "height": 172
     }

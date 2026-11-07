@@ -1,8 +1,8 @@
 {
   "name": "date-history-open",
   "language": "fi",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T07:15:42Z",
+  "commit": "46da80c56251489f1629d4560adfc648c0face4e-dirty",
+  "takenAt": "2026-11-07T21:42:46Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -38,15 +38,33 @@
       "width": 326,
       "height": 117
     },
-    "dates-empty": {
+    "dates-next-steps": {
       "x": 33,
       "y": 374,
       "width": 1014,
-      "height": 636
+      "height": 607
+    },
+    "next-step-lever": {
+      "x": 74,
+      "y": 510,
+      "width": 932,
+      "height": 132
+    },
+    "next-step-allow-done": {
+      "x": 74,
+      "y": 653,
+      "width": 932,
+      "height": 132
+    },
+    "next-step-find": {
+      "x": 74,
+      "y": 796,
+      "width": 932,
+      "height": 132
     },
     "open-date-history": {
       "x": 33,
-      "y": 1098,
+      "y": 1068,
       "width": 1014,
       "height": 121
     },
@@ -73,18 +91,6 @@
       "y": 151,
       "width": 63,
       "height": 63
-    },
-    "dates-empty-title": {
-      "x": 196,
-      "y": 759,
-      "width": 687,
-      "height": 94
-    },
-    "dates-empty-line": {
-      "x": 75,
-      "y": 864,
-      "width": 930,
-      "height": 58
     }
   }
 }

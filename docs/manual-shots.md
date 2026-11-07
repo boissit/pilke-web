@@ -95,4 +95,6 @@ Four callouts need a word on where their bounds come from:
 
 In `asetukset-ilmoitukset` the flow centres the first editable row, so the channels' column headings and the three "Aina päällä" rows are in view above it.
 
+The settings stills are taken as a store build draws the tab (`asReleased` on the launch), so `asetukset-tili` ends on Poista tili, Sovelluksen kieli and Anna palautetta, with no tester-only *Sisäiset työkalut* row.
+
 Callouts are filled in by whoever writes the text. When the text needs a new callout, add the testID in the table above. The capture pipeline then records its bounds on the next run. If a testID does not exist in the app yet, the capture work adds it.

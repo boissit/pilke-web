@@ -1,8 +1,8 @@
 {
   "name": "asetukset-ilmoitukset",
   "language": "fi",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T07:20:10Z",
+  "commit": "46da80c56251489f1629d4560adfc648c0face4e-dirty",
+  "takenAt": "2026-11-07T21:48:17Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -10,133 +10,133 @@
   "elements": {
     "notification-reveal_prompt-push": {
       "x": 629,
-      "y": 304,
+      "y": 307,
       "width": 209,
       "height": 121
     },
     "notification-reveal_prompt-email": {
       "x": 838,
-      "y": 304,
+      "y": 307,
       "width": 209,
       "height": 121
     },
     "notification-party_arrived-push": {
       "x": 629,
-      "y": 425,
+      "y": 428,
       "width": 209,
       "height": 121
     },
     "notification-party_arrived-email": {
       "x": 838,
-      "y": 425,
+      "y": 428,
       "width": 209,
       "height": 121
     },
     "notification-date_cancelled-push": {
       "x": 629,
-      "y": 546,
+      "y": 549,
       "width": 209,
       "height": 121
     },
     "notification-date_cancelled-email": {
       "x": 838,
-      "y": 546,
+      "y": 549,
       "width": 209,
       "height": 121
     },
     "notification-new_date-push": {
       "x": 629,
-      "y": 928,
+      "y": 931,
       "width": 209,
       "height": 121
     },
     "notification-new_date-email": {
       "x": 838,
-      "y": 928,
+      "y": 931,
       "width": 209,
       "height": 121
     },
     "notification-date_accepted-push": {
       "x": 629,
-      "y": 1049,
+      "y": 1052,
       "width": 209,
       "height": 121
     },
     "notification-date_accepted-email": {
       "x": 838,
-      "y": 1049,
+      "y": 1052,
       "width": 209,
       "height": 121
     },
     "notification-date_declined-push": {
       "x": 629,
-      "y": 1170,
+      "y": 1173,
       "width": 209,
       "height": 121
     },
     "notification-date_declined-email": {
       "x": 838,
-      "y": 1170,
+      "y": 1173,
       "width": 209,
       "height": 121
     },
     "notification-date_withdrawn-push": {
       "x": 629,
-      "y": 1291,
+      "y": 1294,
       "width": 209,
       "height": 121
     },
     "notification-date_withdrawn-email": {
       "x": 838,
-      "y": 1291,
+      "y": 1294,
       "width": 209,
       "height": 121
     },
     "notification-date_expiring-push": {
       "x": 629,
-      "y": 1412,
+      "y": 1415,
       "width": 209,
       "height": 121
     },
     "notification-date_expiring-email": {
       "x": 838,
-      "y": 1412,
+      "y": 1415,
       "width": 209,
       "height": 121
     },
     "notification-date_expired-push": {
       "x": 629,
-      "y": 1533,
+      "y": 1536,
       "width": 209,
       "height": 121
     },
     "notification-date_expired-email": {
       "x": 838,
-      "y": 1533,
+      "y": 1536,
       "width": 209,
       "height": 121
     },
     "notification-date_reminder-push": {
       "x": 629,
-      "y": 1654,
+      "y": 1657,
       "width": 209,
       "height": 121
     },
     "notification-date_reminder-email": {
       "x": 838,
-      "y": 1654,
+      "y": 1657,
       "width": 209,
       "height": 121
     },
     "notification-post_date-push": {
       "x": 629,
-      "y": 1775,
+      "y": 1778,
       "width": 209,
       "height": 121
     },
     "notification-post_date-email": {
       "x": 838,
-      "y": 1775,
+      "y": 1778,
       "width": 209,
       "height": 121
     }
