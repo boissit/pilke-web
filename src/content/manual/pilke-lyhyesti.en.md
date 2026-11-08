@@ -11,9 +11,9 @@ Using Pilke comes down to three things, and they matter equally: leave any one o
 - **Invite someone.** Find {{candidates.per_set}} candidates and send one of them an invitation. See [Who you are shown](/en/guide/ehdokkaat) and [Invitations](/en/guide/kutsut).
 - **Answer invitations and go on the dates.** When someone invites you, pick a time and a place, or decline. A date you agree to is one you keep. See [The day of the date](/en/guide/treffipaiva).
 
-![The Dates page: sparks at the top, invitations and dates in the middle, Find dates! at the bottom](shot:treffit#balance-counter,find-dates)
+![The Dates page: sparks at the top, invitations and dates in the middle, Find a date! at the bottom](shot:treffit#balance-counter,find-dates)
 
-The Dates page is where all three come together. At the top are your sparks (1). Pilke runs on them: they build up from your calendar and your dates, and {{petals.set_cost}} sparks send a date invitation. In the middle are the invitations waiting for your answer, the ones you have sent and your agreed dates. Under them is **Date history**, with the dates you have been on. Press **Find dates!** (2) to find new candidates. See [Sparks](/en/guide/kipinat).
+The Dates page is where all three come together. At the top are your sparks (1). Pilke runs on them: they build up from your calendar and your dates, and {{petals.set_cost}} sparks send a date invitation. In the middle are the invitations waiting for your answer, the ones you have sent and your agreed dates. Under them is **Date history**, with the dates you have been on. Press **Find a date!** (2) to find new candidates. See [Sparks](/en/guide/kipinat).
 
 ## Everything is said face to face
 
@@ -33,4 +33,4 @@ Creating a profile takes about fifteen minutes. Pilke asks for your phone number
 - **Date areas and things to do**, at least {{profile.min_categories}} of them. Venues are chosen from these.
 - **Your free times.** You say when you would most like to go on a date, and you can connect your phone's calendar. From these Pilke suggests date slots for the next week, and you check the suggestion before saving it. The more free times you mark, the better the candidates we can find. One {{calendar.min_slot_hours}}-hour slot is enough to start.
 
-When you confirm your phone number you get {{petals.signup_bonus}} welcome sparks. That is enough for one date invitation, so you can invite someone as soon as your profile is done. Last, you can allow notifications, and on **All set!** you press **Find dates**. If no candidates are found yet, **Next** on the Dates page tells you what you can do.
+When you confirm your phone number you get {{petals.signup_bonus}} welcome sparks. That is enough for one date invitation, so you can invite someone as soon as your profile is done. Last, you can allow notifications, and on **All set!** you press **Find a date**. If no candidates are found yet, **Next** on the Dates page tells you what you can do.

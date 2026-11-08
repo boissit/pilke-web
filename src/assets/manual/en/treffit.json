@@ -1,8 +1,8 @@
 {
   "name": "treffit",
   "language": "en",
-  "commit": "5e2efe47288c4805ff926e7c975ff181de86ffb6-dirty",
-  "takenAt": "2026-11-07T12:32:25Z",
+  "commit": "7c443097005113e81b41c1277411a7814760d476-dirty",
+  "takenAt": "2026-11-08T08:05:09Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -21,9 +21,9 @@
       "height": 176
     },
     "find-dates": {
-      "x": 547,
+      "x": 526,
       "y": 1745,
-      "width": 500,
+      "width": 521,
       "height": 172
     },
     "balance-counter": {
@@ -68,13 +68,13 @@
       "width": 63,
       "height": 63
     },
-    "match-card-1002": {
+    "match-card-1037": {
       "x": 33,
       "y": 466,
       "width": 1014,
       "height": 308
     },
-    "match-card-1001": {
+    "match-card-1036": {
       "x": 33,
       "y": 954,
       "width": 1014,

@@ -1,8 +1,8 @@
 {
   "name": "date-history",
   "language": "en",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T08:15:26Z",
+  "commit": "7c443097005113e81b41c1277411a7814760d476-dirty",
+  "takenAt": "2026-11-08T08:02:53Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -18,15 +18,15 @@
       "x": 33,
       "y": 292,
       "width": 1014,
-      "height": 1651
+      "height": 1618
     },
     "date-history-back": {
       "x": 376,
-      "y": 1976,
+      "y": 1943,
       "width": 328,
       "height": 172
     },
-    "date-history-row-962": {
+    "date-history-row-1033": {
       "x": 33,
       "y": 292,
       "width": 1014,
@@ -38,19 +38,19 @@
       "width": 1014,
       "height": 349
     },
-    "date-history-row-963": {
+    "date-history-row-1034": {
       "x": 33,
       "y": 674,
       "width": 1014,
       "height": 263
     },
-    "date-history-row-964": {
+    "date-history-row-1035": {
       "x": 33,
       "y": 970,
       "width": 1014,
       "height": 264
     },
-    "date-history-row-962-number": {
+    "date-history-row-1033-number": {
       "x": 341,
       "y": 542,
       "width": 422,

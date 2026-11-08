@@ -1,8 +1,8 @@
 {
   "name": "date-history-open",
   "language": "en",
-  "commit": "46da80c56251489f1629d4560adfc648c0face4e-dirty",
-  "takenAt": "2026-11-07T21:44:59Z",
+  "commit": "7c443097005113e81b41c1277411a7814760d476-dirty",
+  "takenAt": "2026-11-08T08:02:16Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -21,9 +21,9 @@
       "height": 176
     },
     "find-dates": {
-      "x": 547,
+      "x": 526,
       "y": 1745,
-      "width": 500,
+      "width": 521,
       "height": 172
     },
     "balance-counter": {
@@ -44,7 +44,7 @@
       "width": 1014,
       "height": 607
     },
-    "next-step-lever": {
+    "next-step-lever-done": {
       "x": 74,
       "y": 510,
       "width": 932,

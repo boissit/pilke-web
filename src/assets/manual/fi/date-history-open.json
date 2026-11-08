@@ -1,8 +1,8 @@
 {
   "name": "date-history-open",
   "language": "fi",
-  "commit": "46da80c56251489f1629d4560adfc648c0face4e-dirty",
-  "takenAt": "2026-11-07T21:42:46Z",
+  "commit": "7c443097005113e81b41c1277411a7814760d476-dirty",
+  "takenAt": "2026-11-08T08:00:08Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -44,7 +44,7 @@
       "width": 1014,
       "height": 607
     },
-    "next-step-lever": {
+    "next-step-lever-done": {
       "x": 74,
       "y": 510,
       "width": 932,
