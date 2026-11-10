@@ -1,0 +1,72 @@
+{
+  "name": "kalenteri-menot",
+  "language": "en",
+  "commit": "2f43954f3f36e5bcce1c7b635d6dc6f12f0ee672-dirty",
+  "takenAt": "2026-11-10T11:33:20Z",
+  "screen": {
+    "width": 1080,
+    "height": 2280
+  },
+  "elements": {
+    "calendar-menu": {
+      "x": 860,
+      "y": 116,
+      "width": 99,
+      "height": 88
+    },
+    "calendar-explainer": {
+      "x": 992,
+      "y": 133,
+      "width": 55,
+      "height": 55
+    },
+    "calendar-density": {
+      "x": 726,
+      "y": 960,
+      "width": 317,
+      "height": 143
+    },
+    "calendar-block-0": {
+      "x": 417,
+      "y": 610,
+      "width": 304,
+      "height": 416
+    },
+    "calendar-block-1": {
+      "x": 735,
+      "y": 681,
+      "width": 304,
+      "height": 130
+    },
+    "calendar-block-2": {
+      "x": 99,
+      "y": 753,
+      "width": 304,
+      "height": 202
+    },
+    "calendar-block-3": {
+      "x": 735,
+      "y": 1111,
+      "width": 304,
+      "height": 416
+    },
+    "calendar-block-4": {
+      "x": 417,
+      "y": 1254,
+      "width": 304,
+      "height": 202
+    },
+    "calendar-block-5": {
+      "x": 99,
+      "y": 1397,
+      "width": 304,
+      "height": 416
+    },
+    "calendar-block-6": {
+      "x": 417,
+      "y": 1612,
+      "width": 304,
+      "height": 273
+    }
+  }
+}

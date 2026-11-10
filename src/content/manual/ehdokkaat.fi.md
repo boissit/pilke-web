@@ -32,14 +32,12 @@ Ehdokkaan pitää täyttää kaikki nämä ehdot. Ne tarkistetaan molempiin suun
 
 Myös **treffitahti** vaikuttaa. Sen valitset Omien tietojen Ajat-sivulla kohdassa *Kuinka usein haluaisit käydä treffeillä?* Jos ehdokas on valinnut *Kerran viikossa*, hänelle ehdotetaan aikoja ennen hänen viimeisimpiä sovittuja treffejään tai aikaisintaan {{matching.pace_weekly_days}} päivää niiden jälkeen. Valinnalla *Kerran kahdessa viikossa* väli on {{matching.pace_fortnightly_days}} päivää. Kun itse etsit ehdokkaita, omaan tahtiisi sopivat ajat näytetään ensin.
 
+Persoonallisuuskyselyn vastaukset toimivat pohjana treffiehdokkaiden löytämiseen. Myöhemmin treffien jälkeinen treffipalaute ohjaa sopivimpien ehdokkaiden löytämistä.
+
 ## Miksi joku ei tule enää vastaan
 
 - **Olette jo käyneet treffeillä.** Kun kaksi ihmistä on käynyt treffeillä, heitä ei enää ehdoteta toisilleen. Poikkeuksena tilanne, jossa molemmat valitsivat treffipalautteessa haluavansa tavata uudelleen Pilkkeen välityksellä. Katso [Treffien jälkeen](/ohje/treffien-jalkeen).
 - **Hänet on näytetty sinulle äskettäin.** Äskettäin näytetty ehdokas laskee järjestyksessä, ja vaikutus puolittuu {{candidates.exposure_half_life_days}} päivässä. Kun sama ihminen on ollut ehdokkaanasi {{candidates.max_appearances}} kertaa, et näe häntä enää.
-
-## Missä järjestyksessä
-
-Persoonallisuuskyselyn vastaukset toimivat pohjana treffiehdokkaiden löytämiseen. Myöhemmin treffien jälkeinen treffipalaute ohjaa sopivimpien ehdokkaiden löytämistä.
 
 ## Kuinka kauan ehdokkaat odottavat
 

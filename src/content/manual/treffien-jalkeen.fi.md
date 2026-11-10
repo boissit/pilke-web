@@ -39,7 +39,7 @@ Kieltäytyminen ja vastaamatta jättäminen näyttävät toiselle samalta.
 
 Jos valitset *Treffit eivät toteutuneet*, kysymme, mitä tapahtui.
 
-- **Treffipari ei tullut paikalle.** Tästä ilmoitetaan Pilkkeen ylläpitäjille, ja toinen saa tästä jäähyn. Katso [Treffipäivä](/ohje/treffipaiva).
+- **Treffipari ei tullut paikalle.** Tästä ilmoitetaan Pilkkeen ylläpitäjille, ja saat palautteesta {{sparks.per_date}} kipinää. Toinen saa jäähyn vain ilmoituksesta, jonka teet treffipaikalla treffien aikana. Katso [Treffipäivä](/ohje/treffipaiva#jos-toinen-ei-tule-paikalle).
 - **En päässyt itse paikalle.** Voit kertoa tapahtuneesta tarkemmin, mutta tulematta jättämisestä ei saa kipinöitä. Ensi kerralla peru treffit heti, kun tiedät, ettet pääse, niin treffiparisi aika vapautuu. Katso [Peruminen ja jäähy](/ohje/peruminen-ja-jaahy).
 
 ## Treffihistoria
