@@ -5,11 +5,11 @@ order: 40
 draft: true
 ---
 
-You find {{candidates.per_set}} matches at a time. Pilke goes through everyone you could go on a date with and picks the {{candidates.per_set}} who suit you best. If there aren't {{candidates.per_set}}, your sparks stay put.
+You find {{candidates.per_set}} matches at a time. Pilke goes through everyone you could go on a date with and picks the ones who suit you best. If fewer than {{candidates.per_set}} suit you, your sparks stay put.
 
 ![Your matches: the middle match's card, the times you're both free and the places](shot:platter#timeslot-chip-*,activity-chip-*)
 
-Each card shows the match's photo, name and age, up to {{candidates.times_per_card}} of the soonest times you're both free (1), and up to {{candidates.venues_per_card}} places that suit you both (2). You build your invite from these. See [Invites](/en/guide/kutsut).
+A match's card shows their photo, name and age. It also has up to {{candidates.times_per_card}} of the soonest times you're both free (1) and up to {{candidates.venues_per_card}} places that suit you both (2). You build your invite from these. See [Invites](/en/guide/kutsut).
 
 ## Favourite spots
 
@@ -21,42 +21,42 @@ A favourite stays saved if you remove its date area or date activity from your c
 
 ## Why these people
 
-A match has to meet every one of these, and each is checked both ways: you have to fit their preferences too.
+A match has to meet all of these. Each one is checked both ways, so you have to fit their preferences too.
 
-- **Shared time.** You're both free for at least {{calendar.min_shared_hours}} hour at the same time. Hours already held by an open invite or an upcoming date don't count.
-- **Date area.** An area you've both chosen has a place that suits what you both want to do.
+- **Shared time.** You share at least {{calendar.min_shared_hours}} hour of free time. Times already held by another open invite or an upcoming date don't count.
+- **Date area.** You share a date area, and it has a place for something you both want to do.
 - **Language.** You have at least one language in common.
-- **Things to do.** You want at least some of the same kinds of date.
-- **Preferences.** Gender and age fit what each of you is looking for, and you want at least one of the same things from a date.
-- **A choice.** You share at least {{invitation.choice_threshold}} times or at least {{invitation.choice_threshold}} places, so an invite can offer a choice.
+- **Things to do.** You want to do at least some of the same things.
+- **Preferences.** Your gender and age fit what the other is looking for, and you want at least one of the same things from a date.
+- **Something to choose from.** You share at least {{invitation.choice_threshold}} times or {{invitation.choice_threshold}} places, so an invite has something to choose from.
 
-**How often you date** counts too: *How often would you like to go on a date?* on the Times page of Your details. If someone chose *Once a week*, they're suggested for times before their latest upcoming date, or from {{matching.pace_weekly_days}} days after it (*Once every two weeks*: {{matching.pace_fortnightly_days}} days). The same goes for you when you're suggested to others. When you look for matches yourself, your own pace counts too: times that respect it come first.
+**How often you date** counts too. You choose it on the Times page of Your details, under *How often would you like to go on a date?* If a match chose *Once a week*, they're suggested for times before their latest upcoming date, or at least {{matching.pace_weekly_days}} days after it. With *Once every two weeks*, the gap is {{matching.pace_fortnightly_days}} days. The same goes for you when you're suggested to others. When you look for matches yourself, times that fit your own pace come first.
 
 ## Why someone stops showing up
 
-- **One of you has already invited the other.** Once there's been an invite between two people, either way and however it ended, they aren't suggested to each other again. The exception is when you both said after a date that you'd like to meet again. See [After the date](/en/guide/treffien-jalkeen).
-- **They were shown to you recently.** A recently shown match moves down the order, and the effect halves every {{candidates.exposure_half_life_days}} days. Once someone has been among your matches {{candidates.max_appearances}} times, they aren't shown to you again.
+- **There's been an invite between you.** Once two people have had an invite, they aren't suggested to each other again, whoever sent it and however it ended. The exception is when you both said after a date that you'd like to meet again. See [After the date](/en/guide/treffien-jalkeen).
+- **They were shown to you recently.** A recently shown match moves down the order, and the effect halves every {{candidates.exposure_half_life_days}} days. Once someone has been among your matches {{candidates.max_appearances}} times, you won't see them again.
 
 ## Who comes first
 
-The personality quiz shapes the order: the more of its questions you've both answered the same way, the higher a match comes. Recently shown matches move down, as above.
+The personality quiz shapes the order. The more questions you've both answered the same way, the higher a match comes. Recently shown matches move down, as described above.
 
 ## How long your matches wait
 
-Your matches wait for you for {{candidates.set_hours}} hours. If you leave, the button on the Dates page says **Finish your invite** and takes you back to the same matches without spending more sparks. You can look for new matches once you've sent an invite or these have expired.
+Your matches wait for you for {{candidates.set_hours}} hours. If you leave in between, the button on the Dates page says **Finish your invite**. It takes you back to the same matches without spending more sparks. You can find new matches once you've sent an invite or these have expired.
 
-Your matches expire sooner if any of them can no longer be invited: the times on their card have passed, or another invite has taken them. Then they all expire, and you don't get the sparks back.
+Your matches expire sooner if any one of them can no longer be invited. That happens when the times on their card have passed or another invite has taken them. Then all your matches expire, and you don't get the sparks back.
 
-When you send an invite, the other two matches go.
+When you send an invite, the other matches go.
 
 ![A notice on the Dates page: you can't look for new matches until a given time](shot:cooldown-nodraw#cooldown-notice)
 
-If you can't look for matches right now, the Dates page shows a notice (1) with the reason and when it ends. See [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).
+If you can't find matches right now, a notice on the Dates page (1) tells you why and when that ends. See [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).
 
 ## Questions
 
-**Why weren't any matches found?** There were fewer than {{candidates.per_set}} people who suit you. The app says which condition ruled out the last of them: your preferences, things to do, date areas, shared time, or simply too few people who suit you right now. Its button takes you straight to the calendar or to the page in Your details where you can change it, and **Next steps** on the Dates page shows the same steps. Marking more time usually helps most, especially in the yellow hours. Your sparks stay put.
+**Why weren't any matches found?** There were fewer than {{candidates.per_set}} people who suit you. The app tells you which condition ruled out the last of them. It can be your preferences, things to do, date areas, shared time, or too few people who suit you right now. Its button takes you straight to the calendar or to the page in Your details where you can change that condition. **Next steps** on the Dates page shows the same steps. Marking more time usually helps most, especially in the yellow hours. Your sparks stay put.
 
 **Can someone see that they were one of my matches?** No. A match only finds out about you when you send them an invite.
 
-**How do I get suggested more often?** Mark more time, especially in the yellow hours, and choose more date areas and things to do. While you're on a time-out, you aren't suggested to anyone.
+**How do I show up more often in other people's matches?** Mark more time, especially in the yellow hours, and choose more date areas and things to do. If you've cancelled a date, or your date has told us you didn't turn up, you won't show up in anyone's matches during your time-out.
