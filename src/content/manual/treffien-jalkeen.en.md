@@ -41,8 +41,8 @@ To the other person, saying no looks the same as not answering.
 
 When you answer *How did the date go?* with *The date didn't happen*, we ask what happened.
 
-- **My date didn't turn up.** We pass it on to the Pilke team, and your feedback earns you {{sparks.per_date}} sparks. Only a report made during the date, at the venue, pauses the other person. See [The day of your date](/en/guide/treffipaiva).
-- **I couldn't make it.** You can say what got in the way. This feedback doesn't earn sparks. Next time you know you can't make it, cancel the date in the app straight away, so your date's time is freed up. See [Cancelling and pauses](/en/guide/peruminen-ja-jaahy).
+- **My date didn't turn up.** We pass it on to the Pilke team, and your feedback earns you {{sparks.per_date}} sparks. Only a report made during the date, at the venue, gets the other person a time-out. See [The day of your date](/en/guide/treffipaiva).
+- **I couldn't make it.** You can say what got in the way. This feedback doesn't earn sparks. Next time you know you can't make it, cancel the date in the app straight away, so your date's time is freed up. See [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).
 
 ## Past dates
 

@@ -51,7 +51,7 @@ When you send an invite, the other two matches go.
 
 ![A notice on the Dates page: you can't look for new matches until a given time](shot:cooldown-nodraw#cooldown-notice)
 
-If you can't look for matches right now, the Dates page shows a notice (1) with the reason and when it ends. See [Cancelling and pauses](/en/guide/peruminen-ja-jaahy).
+If you can't look for matches right now, the Dates page shows a notice (1) with the reason and when it ends. See [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).
 
 ## Questions
 
@@ -59,4 +59,4 @@ If you can't look for matches right now, the Dates page shows a notice (1) with 
 
 **Can someone see that they were one of my matches?** No. A match only finds out about you when you send them an invite.
 
-**How do I get suggested more often?** Mark more time, especially in the yellow hours, and choose more date areas and things to do. While you're paused, you aren't suggested to anyone.
+**How do I get suggested more often?** Mark more time, especially in the yellow hours, and choose more date areas and things to do. While you're on a time-out, you aren't suggested to anyone.

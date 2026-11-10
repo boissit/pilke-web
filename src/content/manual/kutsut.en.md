@@ -38,7 +38,7 @@ When the invite is accepted, only the agreed time stays held and the rest are fr
 
 | How it ends | For the person who invited | For the person invited |
 |---|---|---|
-| **Accepted.** It's a date. | The sparks stay spent. You're told. | No pause. |
+| **Accepted.** It's a date. | The sparks stay spent. You're told. | No time-out. |
 | **Declined.** | {{petals.refund}} sparks come back to you. You're told. | You can't look for new matches for {{cooldown.decline_hours}} hours. |
 | **Expired.** Nobody answered within {{invitation.answer_hours}} hours. | {{petals.refund}} sparks come back to you. You're told. | You can't look for new matches for {{cooldown.no_answer_hours}} hours. |
 | **Withdrawn.** Taken back before an answer. | No refund. You can't look for new matches for {{cooldown.withdrawal_hours}} hours. | If they'd already been told about the invite, they're told it was withdrawn. |
@@ -47,4 +47,4 @@ The invited person's sparks stay as they are, whatever happens. You're told if t
 
 However an invite ends, the two of you aren't suggested to each other again. The only exception is when you went on the date and both said you'd like to meet again.
 
-Cancelling a date is covered in [Cancelling and pauses](/en/guide/peruminen-ja-jaahy).
+Cancelling a date is covered in [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).

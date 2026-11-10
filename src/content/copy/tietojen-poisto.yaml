@@ -117,7 +117,7 @@
 
 'legal.deletion.kept.seven':
   fi: 'Käynnissä oleva jäähy, jos sinulla on sellainen. Lähteminen ei lyhennä sitä.'
-  en: 'A pause you’re on, if you have one. Leaving doesn’t shorten it.'
+  en: 'A time-out you’re on, if you have one. Leaving doesn’t shorten it.'
 
 'legal.deletion.kept.eight':
   fi: 'Ketkä ehdokkaat sinulle on tarjottu, ja keiden ehdokkaissa olet ollut.'

@@ -35,7 +35,7 @@ While you're sharing, the map shows you, the venue and your date, if they're sha
 There's no messaging in the app, so your date can't tell you they're late. If you're left waiting, you can tell us, but only during the date and only at the venue:
 
 - **When.** From {{noshow.grace_minutes}} minutes after the agreed start until the date ends, {{date.length_hours}} hour after the start. The first few minutes leave room for being a little late.
-- **Where.** Within about {{noshow.venue_radius_m}} metres of the venue. A report gets the other person a long pause on one person's word, and made on the spot, it reflects what really happened. Your phone checks your location at the moment you report, and it isn't stored.
+- **Where.** Within about {{noshow.venue_radius_m}} metres of the venue. A report gets the other person a long time-out on one person's word, and made on the spot, it reflects what really happened. Your phone checks your location at the moment you report, and it isn't stored.
 
 To report:
 
@@ -49,13 +49,13 @@ If you're not at the venue, no report is made, and the app tells you so (1).
 
 A report can't be taken back. After it, your feedback is a single tap: on the Dates page you confirm your date didn't turn up, and you get {{sparks.per_date}} sparks for it. Your date isn't shown to anyone else and can't look for new matches for {{cooldown.noshow_days}} days, and their Dates page tells them a report has been made. If they also report, during the date and from the venue, that you didn't turn up, neither of you is penalised and someone from the Pilke team looks into it.
 
-If you couldn't report at the venue, you can tell us in your feedback after the date: answer *How did the date go?* with *The date didn't happen*, then *My date didn't turn up*. We pass it on to the Pilke team, and nobody is paused because of it. See [After the date](/en/guide/treffien-jalkeen).
+If you couldn't report at the venue, you can tell us in your feedback after the date: answer *How did the date go?* with *The date didn't happen*, then *My date didn't turn up*. We pass it on to the Pilke team, and nobody gets a time-out because of it. See [After the date](/en/guide/treffien-jalkeen).
 
 ## Questions
 
 **What happens when an invite is accepted?** It's a date. The chosen time is held for both of you, the other times offered are freed, and whoever sent the invite is told. The date shows up under **Upcoming dates** on the Dates page.
 
-**Can the time or place be changed afterwards?** No. If what you agreed no longer works, cancel the date, and you'll be paused. See [Cancelling and pauses](/en/guide/peruminen-ja-jaahy).
+**Can the time or place be changed afterwards?** No. If what you agreed no longer works, cancel the date, and you'll get a time-out. See [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).
 
 **I'm running late. Can I tell them?** No. Get there as soon as you can. The first {{noshow.grace_minutes}} minutes leave room for being a little late.
 
