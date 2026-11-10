@@ -149,6 +149,9 @@ const drawn: Record<Shape, { width: number; sizes: string }> = {
   and always sit just past the end of the text.
 */
 const question = t('about.story.question');
+/** `*word*` in a story line is italic: the English story names the Finnish idiom the brand comes from. Everything else is escaped. */
+const emphasis = (text: string) =>
+  text.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string).replace(/\*([^*]+)\*/g, '<em lang="fi">$1</em>');
 const questionBreak = question.lastIndexOf(' ') + 1;
 const questionHead = question.slice(0, questionBreak);
 const questionTail = question.slice(questionBreak);
@@ -163,7 +166,7 @@ const groups = (slots: Slot[]) =>
 <Base lang={lang} title={t('about.meta.title')} description={t('about.meta.description')}>
   <PageHead title={t('about.title')} ground="white" lowerSparkles={false}>
     <div class="story one-card">
-      <p>{t('about.story.1')}</p>
+      <p set:html={emphasis(t('about.story.1'))} />
       <p>{t('about.story.2')}</p>
     </div>
   </PageHead>
