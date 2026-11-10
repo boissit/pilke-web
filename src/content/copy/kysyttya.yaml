@@ -8,79 +8,155 @@
 # ──────────────────────────────────────────────────────────────────────────
 
 'faq.title':
-  fi: 'Kysyttyä'
+  fi: 'Usein kysyttyä'
   en: 'Frequently asked questions'
 
 'faq.lead':
-  fi: 'Lyhyet vastaukset siihen, mitä Pilkkeestä useimmin kysytään.'
-  en: 'Quick answers to the things people ask most about Pilke.'
+  fi: 'Lyhyitä vastauksia yleisimpiin kysymyksiin'
+  en: 'Quick answers to the most common questions'
 
 # ──────────────────────────────────────────────────────────────────────────
-# The six questions, in the order they are answered
-#
-# WARNING: **`faq.who.a` carries a `{link}` placeholder.** The page cuts the
-# sentence there and draws `faq.who.link` as the link to the privacy policy, so
-# a translation that drops it loses the link.
+# The questions, in the order the page shows them (`faq.order`). The owner's
+# text, reviewed on 2026-11-10. `[text](route)` in an answer is a link to that
+# page of the site; `{{…}}` numbers come from the app's constants.
 # ──────────────────────────────────────────────────────────────────────────
+
+'faq.cost.q':
+  fi: 'Mitä Pilke maksaa?'
+  en: 'How much does Pilke cost?'
+
+'faq.cost.a':
+  fi: 'Pilke on käyttäjilleen maksuton, se ei sisällä maksullisia lisäominaisuuksia, emmekä tavoittele sovelluksella voittoa.'
+  en: 'Nothing. Pilke is free to use, there are no premium features, and we’re not trying to make a profit from it.'
 
 'faq.chat.q':
   fi: 'Voiko sovelluksessa viestitellä?'
   en: 'Can I message people in the app?'
 
 'faq.chat.a':
-  fi: 'Ei. Kutsussa on jo aika ja paikka, joten treffien sopiminen ei vaadi keskustelua. Säästä sanasi treffeille!'
-  en: 'No. An invite already has the time and place in it, so there’s nothing to arrange by chat. Save your words for the date!'
+  fi: 'Ei voi. Pilke huolehtii, että kaikilla treffeillä on sopiva aika ja paikka, joten treffien sopiminen ei vaadi keskustelua. Treffikumppanisi on valikoitu niin, että etsitte treffeiltä samoja asioita ja sovitte toisillenne mahdollisimman hyvin. Säästä sanasi treffeille!'
+  en: 'No. Pilke makes sure every date has a time and place that work for both of you, so you don’t need to chat to set one up. Your matches are chosen so that you’re looking for the same things and are as good a fit as possible. Save your words for the date!'
+
+'faq.matching.q':
+  fi: 'Millä perusteella treffiehdokkaat valitaan?'
+  en: 'How are my matches chosen?'
+
+'faq.matching.a':
+  fi: 'Kun luot tilisi, ehdokkaita tarjotaan sinulle persoonallisuuskyselyyn perustuvan yhteensopivuusalgoritmin mukaan. Treffien jälkeisten treffipalautteiden avulla opimme tuntemaan sinut ja toiveesi paremmin, ja ne ohjaavat algoritmia tarjoamaan sinulle aina parempia treffiehdokkaita.'
+  en: 'After creating your account, the matching algorithm is based on the personality quiz''s results. After you''ve been on a few dates, the date feedback helps guide the algorithm towards better and better matches.'
+
+'faq.safety.q':
+  fi: 'Miten huolehditte treffien turvallisuudesta?'
+  en: 'How do you keep dates safe?'
+
+'faq.safety.a':
+  fi: 'Turvallisen treffailun mahdollistaminen on yksi sovelluksemme keskeisimmistä tarkoituksista. Moni kokee, että treffejä edeltävällä keskustelulla voi saada kuvan potentiaalisen kumppanin turvallisuudesta. Koska Pilke ohittaa tämän vaiheen kokonaan, olemme panostaneet treffikumppanien tarjonnan laatuun suodattimin, turvapainikkeen kehitykseen, treffipalautteeseen, käyttäjien ilmiantoon, tilien sulkuihin ja turvallisuusohjeisiin. Jos sinulla on ideoita siitä, miten voisimme edelleen parantaa treffailun turvallisuutta ilman chat-ominaisuutta, haluaisimme kuulla ne (contact@pilke.app). Lisää turvallisuudesta voit lukea [Turvallisuus-sivultamme](turvallisuus).'
+  en: 'One of the main goals of Pilke has always been to make dating safer. Many people feel that chatting before a date helps them judge whether someone is safe to meet. Pilke skips that step entirely, so we’ve put our effort elsewhere: filters that improve the quality of your matches, the safety button, date feedback, reporting, account bans and safety tips. If you have ideas for how we could make dating even safer without a chat feature, we’d love to hear them at contact@pilke.app. You can read more on our [Safety page](turvallisuus).'
 
 'faq.who.q':
   fi: 'Kuka näkee tietoni?'
   en: 'Who can see my details?'
 
 'faq.who.a':
-  fi: 'Ehdokas näkee kutsumanimesi, ikäsi ja kuvasi. Voit halutessasi jakaa puhelinnumerosi toiselle treffien jälkeen. Muista tiedoista tarkemmin {link}.'
-  en: 'Your matches see your preferred name, your age and your photo. After a date, you can give the other person your number if you want to. The {link} covers the rest.'
+  fi: 'Kun ehdotamme sinua treffikumppaniksi toiselle käyttäjälle, hän näkee kutsumanimesi, ikäsi ja kuvasi. Samat tiedot näkyvät myös lähettämissäsi treffikutsuissa. Muiden tietojen käytöstä kerromme [tietosuojaselosteessa](tietosuoja).'
+  en: 'When we suggest you as a match to someone, they see your first name, age and photo. The same details appear on invites you send. Our [privacy policy](tietosuoja) explains how we use everything else.'
 
-'faq.who.link':
-  fi: 'tietosuojaselosteessa'
-  en: 'privacy policy'
+'faq.location.q':
+  fi: 'Näkeekö joku, missä olen?'
+  en: 'Can anyone see where I am?'
 
-'faq.safety.q':
-  fi: 'Näkeekö toinen, missä olen?'
-  en: 'Can the other person see where I am?'
-
-'faq.safety.a':
-  fi: 'Voit päättää jakaa sijaintisi {{sharing.lead_minutes}} minuuttia ennen treffien alkua, ja se päättyy viimeistään {{sharing.trail_minutes}} minuuttia treffien alun jälkeen. Sijainnin jako on mahdollista vain {{sharing.radius_m}} metrin säteellä treffipaikasta. Voit lopettaa jakamisen milloin tahansa, ja jakaminen päättyy automaattisesti, kun aika umpeutuu.'
-  en: 'You can choose to share your location from {{sharing.lead_minutes}} minutes before the date starts, and sharing ends {{sharing.trail_minutes}} minutes after the start at the latest. It only works within {{sharing.radius_m}} metres of the venue. You can stop whenever you like, and it stops by itself when the time’s up.'
-
-'faq.cost.q':
-  fi: 'Mitä Pilke maksaa?'
-  en: 'What does Pilke cost?'
-
-'faq.cost.a':
-  fi: 'Pilke on käyttäjille maksuton ja pyrimme pitämään sen maksuttomana.'
-  en: 'Pilke is free, and we want to keep it that way.'
+'faq.location.a':
+  fi: 'Vain, jos haluat. Voit jakaa sijaintisi treffikumppanillesi {{sharing.lead_minutes}} minuuttia ennen treffien alkua ja se päättyy viimeistään {{sharing.trail_minutes}} minuuttia alun jälkeen, ja sijaintisi näkyy vain ollessasi {{sharing.radius_m}} metrin säteellä treffipaikasta. Voit lopettaa jakamisen milloin tahansa.'
+  en: 'Only if you want them to. You can share your location with your date from {{sharing.lead_minutes}} minutes before your date starts until {{sharing.trail_minutes}} minutes after it starts, and only within {{sharing.radius_m}} metres of the venue. You can stop sharing at any time.'
 
 'faq.cancel.q':
-  fi: 'Entä jos treffit peruuntuvat?'
-  en: 'What if a date falls through?'
+  fi: 'Entä jos en pääsekään sopimilleni treffeille?'
+  en: 'What if I can’t make a date I agreed to?'
 
 'faq.cancel.a':
-  fi: 'Sovitut treffit voi perua sovelluksessa, mutta se on toiselle epäkohteliasta: hän on varannut aikaa sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä aikaisemmin perut, sitä lyhyempi jäähy on. Saapumatta jättämisestä seuraa samanlainen jäähy ja toistuva treffeiltä poissaolo johtaa käyttökieltoon. Jos toinen kutsui sinut, hän saa kipinänsä takaisin. Kutsun hylkäämisestä ja vastaamatta jättämisestä seuraa lyhyt jäähy: {{cooldown.decline_hours}} tuntiin et voi löytää uusia ehdokkaita.'
-  en: 'You can cancel a date in the app, but it’s rude to the other person: they’ve set time aside for you. Whoever cancels can’t look for new matches, and won’t be shown to anyone else, for a while. The earlier you cancel, the shorter that is. Not turning up gets you the same, and missing dates again and again gets you banned. If they invited you, they get their sparks back. If you decline an invite or leave it unanswered, you can’t look for new matches for {{cooldown.decline_hours}} hours.'
+  fi: 'Treffikumppanisi on varannut sinulle aikaa viikostaan, joten on kohteliasta perua treffit sovelluksessa mahdollisimman pian. Joudut perumisesta jäähylle, joka on sitä lyhyempi, mitä aikaisemmin perut.'
+  en: 'Your date has set aside time in their week for you, so it’s only polite to cancel in the app as soon as you can. Cancelling gets you a time-out, and the earlier you cancel, the shorter it is.'
 
-# The owner's English; the Finnish is new copy (agent), using the app's word
-# *treffipari* and the feedback's own answer, *Treffipari ei tullut paikalle*.
 'faq.noshow.q':
-  fi: 'Entä jos treffiparini ei tule paikalle?'
+  fi: 'Entä jos treffikumppanini ei tule paikalle?'
   en: 'What if my date doesn’t turn up?'
 
 'faq.noshow.a':
-  fi: 'Kerro siitä meille treffien jälkeisessä palautteessa.'
-  en: 'Let us know in your feedback after the date.'
+  fi: 'Ilmoita siitä sovelluksessa treffipaikalta treffien aikana, niin aikaasi tuhlannut käyttäjä joutuu jäähylle. Jos et ehtinyt ilmoittaa paikan päältä, kerro siitä treffipalautteessa, joka aukeaa heti treffien päätyttyä.'
+  en: 'Report it in the app at the venue, during the date, and whoever wasted your time gets a time-out. If you didn’t report it there, tell us in your date feedback, which opens as soon as the date has ended.'
+
+'faq.timeout.q':
+  fi: 'Mikä on jäähy?'
+  en: 'What’s a time-out?'
+
+'faq.timeout.a':
+  fi: 'Jäähyillä pyrimme ohjaamaan Pilkkeen käyttäjiä kaikkia kunnioittavaan käytökseen ja huolelliseen kalenterointiin. Jäähyn pituuteen vaikuttaa epäkunnioittavan käytöksen vakavuus ja toistuvuus. Jäähylle joutuu sovittujen treffien perumisesta, treffikutsun hylkäämisestä tai siihen vastaamatta jättämisestä, lähettämänsä kutsun peruuttamisesta, treffeiltä poisjäämisestä ja huonosta käytöksestä treffeillä.'
+  en: 'Time-outs are how we encourage everyone on Pilke to treat each other with respect and keep their calendars accurate. How long one lasts depends on how serious the behaviour was and how often it’s happened. You get one for cancelling a date you agreed to, declining an invite or leaving it unanswered, withdrawing an invite you sent, not turning up to a date, and behaving badly on a date.'
+
+'faq.ban.q':
+  fi: 'Tilini suljettiin, miksi?'
+  en: 'Why was my account banned?'
+
+'faq.ban.a':
+  fi: 'Suojelemme käyttäjiämme epäkunnioittavalta tai vaaralliselta käytökseltä sulkemalla vakavasti tai toistuvasti [käyttöehtojamme](kayttoehdot) rikkovan käyttäjän tilin. Rasistinen, seksistinen, muuten halventava tai uhkaava käytös johtaa välittömään tilin sulkuun.'
+  en: 'To protect our users from disrespectful or dangerous behaviour, we ban accounts that seriously or repeatedly break our [terms of use](kayttoehdot). Racist, sexist, threatening or otherwise demeaning behaviour gets you banned immediately.'
 
 'faq.delete.q':
   fi: 'Voinko poistaa tilini?'
   en: 'Can I delete my account?'
 
 'faq.delete.a':
-  fi: 'Kyllä, asetuksista. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Menneet treffit ja niistä annetut palautteet jäävät talteen, koska ne ovat yhtä lailla toisen osapuolen tietoja.'
-  en: 'Yes, in Settings. Your name, photo and contact details are deleted straight away. Past dates and the feedback about them stay, because they belong to the other person as much as to you.'
+  fi: 'Kyllä, sovelluksen asetusten kautta. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Treffihistoriasi tiedot (ilman nimeäsi, kuvaasi ja yhteystietojasi) kuuluvat myös menneille treffikumppaneillesi, ja antamasi ja saamasi treffipalaute vaikuttavat treffikumppaniesi tuleviin treffeihin, joten ne säilyvät.'
+  en: 'Yes, in the app’s settings. Your name, photo and contact details are deleted straight away. Your date history (without your name, photo or contact details) also belongs to the people you’ve been on dates with, and the feedback you’ve given and received shapes their future matches, so we keep it.'
+
+'faq.where.q':
+  fi: 'Missä Pilke toimii?'
+  en: 'Where does Pilke work?'
+
+'faq.where.a':
+  fi: 'Pilke toimii nyt pääkaupunkiseudulla. Treffipaikat ovat toistaiseksi Helsingissä, Espoossa ja Vantaalla, ja lisää alueita tulee myöhemmin.'
+  en: 'Pilke works in the capital region for now. The date spots are all in Helsinki, Espoo and Vantaa so far, and more areas will follow.'
+
+'faq.sparks.q':
+  fi: 'Mitä kipinät ovat?'
+  en: 'What are sparks?'
+
+'faq.sparks.a':
+  fi: 'Kipinöillä lähetät treffikutsuja. Kutsu maksaa {{petals.set_cost}} kipinää, ja niitä saat käymällä treffeillä ja pitämällä kalenterisi ajan tasalla. Kipinöitä ei voi ostaa.'
+  en: 'You spend sparks to send invites. An invite costs {{petals.set_cost}} sparks, and you earn them by going on dates and keeping your calendar up to date. You can’t buy sparks.'
+
+'faq.nomatches.q':
+  fi: 'Miksi en löydä ehdokkaita?'
+  en: 'Why can’t I find any matches?'
+
+'faq.nomatches.a':
+  fi: 'Ehdokkailla pitää olla kanssasi yhteistä vapaata aikaa ja yhteinen treffialue, ja teidän pitää sopia toistenne toiveisiin. Useimmiten auttaa, että merkitset lisää vapaita aikoja.'
+  en: 'Your matches need free time and a date area in common with you, and you need to fit each other’s preferences. Marking more free times usually helps most.'
+
+'faq.feedback.q':
+  fi: 'Näkeekö treffikumppanini palautteeni?'
+  en: 'Will my date see my feedback?'
+
+'faq.feedback.a':
+  fi: 'Ei näe. Palautteesi näkevät vain Pilkkeen ylläpitäjät, ja se auttaa meitä löytämään teille molemmille parempia treffejä.'
+  en: 'No. Only the Pilke team sees it, and it helps us find better dates for you both.'
+
+'faq.again.q':
+  fi: 'Voinko tavata saman ihmisen uudelleen?'
+  en: 'Can I see the same person again?'
+
+'faq.again.a':
+  fi: 'Kyllä. Treffipalautteen lopussa kysymme, haluatko tavata uudelleen. Jos kumpikin haluaa jakaa puhelinnumeronsa, vaihdamme numeronne. Jos kumpikin haluaa nähdä uudelleen Pilkkeen kautta, voitte saada toisenne taas ehdokkaiksi.'
+  en: 'Yes. At the end of the feedback we ask whether you’d like to meet again. If you both want to share numbers, we swap them for you. If you both want to meet again through Pilke, you can be suggested to each other again.'
+
+'faq.strangers.q':
+  fi: 'Eikö tuntemattomien kanssa treffeillä käyminen ole ajanhukkaa?'
+  en: 'Isn''t going on dates with strangers a waste of time?'
+
+'faq.strangers.a':
+  fi: 'Emme usko niin. Swaippailu, chättäily, viesteihin vastausten odottelu ja hyvien avausten keksiminenkin vie aikaa, ja kaikki nämä ovat lähinnä treffeille pääsyn ennakkotehtäviä. Pilkkeellä kun ei ole muuta tarkoitusta kuin järjestää treffejä, niin meidän motivaationamme on todella hioa treffienmuodostusalgoritmi huippuunsa.'
+  en: 'We don''t think so. Swiping, chatting, waiting for messages and coming up with good one-liners also takes time, and all of that is just a prerequisite until a date anyways. As Pilke has no other purpose than to arrange dates, you should rest assured that we try to hone that algorithm to its peak.'
+
+'faq.more':
+  fi: 'Minulla on lisää kysymyksiä!'
+  en: 'I have more questions!'

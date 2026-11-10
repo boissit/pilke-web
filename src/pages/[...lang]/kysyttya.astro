@@ -7,8 +7,8 @@
  * the front page top to bottom, and a stack of answers is the last thing a reader
  * of the front page needs before the waitlist.
  *
- * The answers are the six the header points at, and several of them state
- * numbers the backend owns. Read `README.md` before changing one.
+ * Several answers state numbers the backend owns, through `{{…}}` tokens. Read
+ * `README.md` before changing one.
  */
 import PageHead from '../../components/PageHead.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
@@ -19,18 +19,17 @@ export const getStaticPaths = () => localeRoutes();
 const lang = localeOf(Astro.params);
 const t = useTranslations(lang);
 
-// The privacy policy's name is a link inside the answer, so the answer is cut there.
-const who = t('faq.who.a').split('{link}');
+// The questions in the order the page shows them, the owner's (`kysyttya.yaml`).
+const ORDER = ['cost', 'chat', 'matching', 'safety', 'who', 'location', 'cancel', 'noshow', 'timeout', 'ban', 'delete', 'where', 'sparks', 'nomatches', 'feedback', 'again', 'strangers'];
 
-const faq = [
-  { q: t('faq.chat.q'), a: t('faq.chat.a') },
-  { q: t('faq.who.q'), a: who[0], link: { href: localePath(lang, 'tietosuoja'), text: t('faq.who.link'), after: who[1] } },
-  { q: t('faq.safety.q'), a: t('faq.safety.a') },
-  { q: t('faq.cost.q'), a: t('faq.cost.a') },
-  { q: t('faq.cancel.q'), a: t('faq.cancel.a') },
-  { q: t('faq.noshow.q'), a: t('faq.noshow.a') },
-  { q: t('faq.delete.q'), a: t('faq.delete.a') },
-];
+/** An answer cut into text and links: `[text](route)` links to that page of the site. */
+const parts = (answer: string) =>
+  answer.split(/(\[[^\]]+\]\([^)]+\))/).map((piece) => {
+    const link = piece.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    return link ? { text: link[1], href: localePath(lang, link[2]) } : { text: piece };
+  });
+
+const faq = ORDER.map((id) => ({ q: t(`faq.${id}.q`), a: parts(t(`faq.${id}.a`)) }));
 ---
 
 <Base lang={lang}>
@@ -43,22 +42,14 @@ const faq = [
           faq.map((item) => (
             <div class="qa">
               <dt>{item.q}</dt>
-              <dd class="prose">
-                {item.a}
-                {item.link && (
-                  <>
-                    <a href={item.link.href}>{item.link.text}</a>
-                    {item.link.after}
-                  </>
-                )}
-              </dd>
+              <dd class="prose">{item.a.map((part) => (part.href ? <a href={part.href}>{part.text}</a> : part.text))}</dd>
             </div>
           ))
         }
       </dl>
 
       <p class="back">
-        <a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
+        <a class="go" href={localePath(lang, 'yhteystiedot')}>{t('faq.more')}</a>
         <a class="go ghost" href={localePath(lang)}>{t('nav.back')}</a>
       </p>
     </div>
