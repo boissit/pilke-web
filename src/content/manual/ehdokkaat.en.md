@@ -32,14 +32,12 @@ A match has to meet all of these. Each one is checked both ways, so you have to 
 
 **How often you date** counts too. You choose it on the Times page of Your details, under *How often would you like to go on a date?* If a match chose *Once a week*, they're suggested for times before their latest upcoming date, or at least {{matching.pace_weekly_days}} days after it. With *Once every two weeks*, the gap is {{matching.pace_fortnightly_days}} days. When you look for matches yourself, times that fit your own pace come first.
 
+Your personality quiz answers are the starting point for finding your matches. Later on, the feedback you give after your dates steers us towards the matches who suit you best.
+
 ## Why someone stops showing up
 
 - **You've already been on a date.** Once two people have been on a date, they aren't suggested to each other again. The exception is when you both said in your feedback that you'd like to meet again through Pilke. See [After the date](/en/guide/treffien-jalkeen).
 - **They were shown to you recently.** A recently shown match moves down the order, and the effect halves every {{candidates.exposure_half_life_days}} days. Once someone has been among your matches {{candidates.max_appearances}} times, you won't see them again.
-
-## Who comes first
-
-Your personality quiz answers are the starting point for finding your matches. Later on, the feedback you give after your dates steers us towards the matches who suit you best.
 
 ## How long your matches wait
 

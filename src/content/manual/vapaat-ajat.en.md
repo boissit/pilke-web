@@ -46,3 +46,5 @@ Under **Calendar** in Settings, you can connect Pilke to your own calendar, such
 
 - **Pilke adds** your upcoming dates, and open invites if you like, to a calendar you choose. An entry shows your date's preferred name, and the place once it's decided. If a date is cancelled, Pilke removes its entry.
 - **Pilke reads** your plans from your calendar and shows them striped in Pilke's calendar. That way you can see at a glance which times are already taken. Only you can see your plans.
+
+![The calendar: your free times in coral, with your phone calendar's plans striped between them](shot:kalenteri-menot)

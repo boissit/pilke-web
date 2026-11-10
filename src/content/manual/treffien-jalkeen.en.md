@@ -39,7 +39,7 @@ To the other person, saying no looks the same as not answering.
 
 If you choose *The date didn't happen*, we ask what happened.
 
-- **My date didn't turn up.** The Pilke team is told, and your date gets a time-out. See [The day of your date](/en/guide/treffipaiva).
+- **My date didn't turn up.** The Pilke team is told, and your feedback earns you {{sparks.per_date}} sparks. Your date gets a time-out only from a report you make at the venue during the date. See [The day of your date](/en/guide/treffipaiva#if-your-date-doesnt-turn-up).
 - **I couldn't make it.** You can tell us more about what happened, but not turning up doesn't earn sparks. Next time, cancel the date as soon as you know you can't make it, so your date's time is freed up. See [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).
 
 ## Past dates

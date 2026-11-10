@@ -49,7 +49,7 @@ If you're not at the venue, the app tells you so (1), and no report is made.
 
 You can't take a report back. Your date gets a {{cooldown.noshow_days}}-day time-out, during which they aren't shown in anyone's matches and can't look for new matches. If they also make a report from the venue during the date, the Pilke team will try to get to the bottom of it.
 
-If you didn't make a report at the venue, tell us in your feedback after the date. Answer *How did the date go?* with *The date didn't happen*, then *My date didn't turn up*. See [After the date](/en/guide/treffien-jalkeen).
+If you didn't make a report at the venue, tell us in your feedback after the date. Answer *How did the date go?* with *The date didn't happen*, then *My date didn't turn up*. The Pilke team is told, but your date doesn't get a time-out from it. Your feedback earns you {{sparks.per_date}} sparks. See [After the date](/en/guide/treffien-jalkeen#if-the-date-didnt-happen).
 
 ## Questions
 
