@@ -1,6 +1,6 @@
 ---
 title: The day of your date
-lead: How you find each other when you get there, and what to do if your date doesn't turn up.
+lead: How you find each other at the venue, and what to do if your date doesn't turn up.
 order: 70
 draft: true
 ---
@@ -16,7 +16,7 @@ You can share your location with your date on the map, so you find each other mo
 - **When.** From {{sharing.lead_minutes}} minutes before the start to {{sharing.trail_minutes}} minutes after it. You're notified when you can start sharing.
 - **Where.** Within about {{sharing.radius_m}} metres of the venue.
 - **Who.** Only your date. They're notified when you're there.
-- **For how long.** Your location is only on the server while you're sharing it, and it's deleted as soon as you stop or the time runs out. All we keep is the fact that you shared it.
+- **For how long.** Your date can see your location for at most {{sharing.trail_minutes}} minutes after the date starts, or until you choose to stop sharing.
 
 ![The venue map and the Share my location button](shot:date-map#meet-up-reveal)
 
@@ -24,18 +24,18 @@ To start sharing, press **Share my location** (1) on the map.
 
 ![The question Share your location? and its explanation](shot:date-location-consent)
 
-Before you share, the app explains what will happen and asks for your permission.
+Before you share, the app asks for your permission.
 
 ![The map while you're both sharing: both pins, when your date's location last updated, and the Stop sharing my location button](shot:date-map-sharing#meet-up-stop)
 
-While you're sharing, the map shows you and the venue. If your date is sharing too, you see them as well, and under the map it says when their location last updated. Your own location updates by itself, even with your phone in your pocket. Sharing stops when the time runs out or you press **Stop sharing my location** (1).
+While you're sharing, the map shows you and the venue. If your date is sharing too, you see them as well, and under the map it says when their location last updated. Your own location updates automatically, even with your phone in your pocket. Sharing stops when the time runs out or you press **Stop sharing my location** (1).
 
 ## If your date doesn't turn up
 
-If you're left waiting on your own, you can tell us. You can only report it during the date and at the venue:
+If your date doesn't turn up, you can tell us. You can only report it during the date and at the venue:
 
-- **When.** From {{noshow.grace_minutes}} minutes after the start time until the date ends, {{date.length_hours}} hour after the start. The wait leaves room for being a little late, because your date can't tell you in the app that they're running late.
-- **Where.** Within about {{noshow.venue_radius_m}} metres of the venue. A report gets your date a long time-out on your word alone, so it has to come from the venue. Your phone checks your location when you report, and your location isn't stored.
+- **When.** From {{noshow.grace_minutes}} minutes after the start time until the date ends, {{date.length_hours}} hour after the start. The wait leaves room for being a little late.
+- **Where.** Within about {{noshow.venue_radius_m}} metres of the venue. Your phone checks your location when you report, and your location isn't stored.
 
 To report:
 
@@ -47,9 +47,9 @@ To report:
 
 If you're not at the venue, the app tells you so (1), and no report is made.
 
-Your report is final. After it, your feedback takes a single tap. You confirm on the Dates page that your date didn't turn up, and you get {{sparks.per_date}} sparks. Your date gets a {{cooldown.noshow_days}}-day time-out, during which they aren't shown in anyone's matches and can't look for new matches. Their Dates page tells them a report has been made. If they also report from the venue, during the date, that you didn't turn up, neither of you is penalised, and someone from the Pilke team looks into it.
+You can't take a report back. Your date gets a {{cooldown.noshow_days}}-day time-out, during which they aren't shown in anyone's matches and can't look for new matches. If they also make a report from the venue during the date, the Pilke team will try to get to the bottom of it.
 
-If you couldn't report at the venue, tell us in your feedback after the date. Answer *How did the date go?* with *The date didn't happen*, then *My date didn't turn up*. The Pilke team sees it, but nobody gets a time-out because of it. See [After the date](/en/guide/treffien-jalkeen).
+If you didn't make a report at the venue, tell us in your feedback after the date. Answer *How did the date go?* with *The date didn't happen*, then *My date didn't turn up*. See [After the date](/en/guide/treffien-jalkeen).
 
 ## Questions
 
@@ -61,6 +61,6 @@ If you couldn't report at the venue, tell us in your feedback after the date. An
 
 **I can't find them at the venue.** Share your location on the map. They're notified when you're there and can see you on the map.
 
-**How long does a date last?** As long as you like. In the app, a date ends {{date.length_hours}} hour after the start time, and then you can give feedback. See [After the date](/en/guide/treffien-jalkeen).
+**How long does a date last?** As long as you like. The suggested length of a date is about {{date.length_hours}} hour.
 
-**Who can see where I am?** Only your date, and only while you share your location. You can share it for {{sharing.window_minutes}} minutes around the start of the date.
+**Who can see where I am?** Only your date, and only while you share your location. You can share it for {{sharing.window_minutes}} minutes around the start of the date, and only near the venue.

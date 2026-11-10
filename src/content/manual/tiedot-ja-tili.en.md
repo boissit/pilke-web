@@ -1,6 +1,6 @@
 ---
 title: Your details and account
-lead: What other people can see about you, which notifications always come, what deleting your account does and how to give feedback.
+lead: What data we collect, what other people can see, what deleting your account does and how to give feedback.
 order: 90
 draft: true
 ---
@@ -11,40 +11,40 @@ draft: true
 |---|---|---|
 | Your preferred name, age and photo, and the times and places you share | Someone you're suggested to, and the other person in an invite | When you're one of their matches, or you have an invite between you |
 | Your preferred name and phone number | Your date | When you've both chosen in your feedback to share your number |
-| Your location on the map, for {{sharing.window_minutes}} minutes | Your date | Around the start of a date, if you share your location |
+| Your location, if you're near the venue, for {{sharing.window_minutes}} minutes | Your date | Around the start of a date, if you choose to share your location |
 
-That's everything other people can see about you. Only you can see your email address and your safety contact's number, and your date doesn't see your feedback. If Pilke adds your dates to your own calendar, such as Google or Apple Calendar, anyone who can see that calendar can see the entry. See [Your free times](/en/guide/vapaat-ajat).
+The table lists everything other people can see about you. Everything else is visible only to you.
 
 ## Notifications
 
 ![Notification settings: each notification can come to your phone, your email or both](shot:asetukset-ilmoitukset#notification-new_date-push,notification-new_date-email)
 
-For each notification, you choose whether it comes to your phone (1), your email (2), both or neither. **New invites**, for example, tells you when someone invites you on a date. Emails come once you've confirmed your address.
+For many notifications, you can choose whether it comes to your phone (1), your email (2), both or neither. **New invites**, for example, tells you when someone invites you on a date. To get notifications by email, you first need to confirm your email address in the app.
 
-Three notifications always come to your phone, because they're only useful if they come straight away:
+Three notifications are always sent to your phone, because they're urgent:
 
-- **Your date's starting** comes {{sharing.lead_minutes}} minutes before the date, when you can start sharing your location.
+- **Your date's starting** is sent {{sharing.lead_minutes}} minutes before the date.
 - **When your date arrives** tells you your date has shared their location at the venue.
-- **Cancelled dates** tells you your date has cancelled. Otherwise you'd go and wait for someone who isn't coming.
+- **Cancelled dates** tells you your date has cancelled.
 
-If you haven't marked any times for the week ahead, you get a reminder on Sunday at about {{notifications.calendar_nudge_hour}}:00.
+If you haven't marked any times for the week ahead, you get a reminder to add some on Sunday at about {{notifications.calendar_nudge_hour}}:00.
 
 ## Your account
 
 ![Account open: Sign out, Sign out on all devices and Delete account](shot:asetukset-tili#sign-out-everywhere,delete-account)
 
-You sign in with a code sent by text message to your phone number. You don't need a password. Signing in is per device, and it lasts {{login.session_days}} days from when you last used the app.
+You sign in with a code you get by text message to your phone number. Signing in is per device, and it lasts {{login.session_days}} days from when you last used the app.
 
-**Sign out on all devices** (1) signs you out everywhere, including this device. Use it if your phone is lost or you've lent it to someone.
+**Sign out on all devices** (1) signs you out everywhere, including the one you're using when you press it.
 
 **Delete account** (2) deletes your account straight away. You can't undo this.
 
 - Your name, photo, contact details, preferences, calendar and answers are deleted at once.
-- Upcoming dates are cancelled, and the other person is told. If the invite was theirs, they get their sparks back. A date that's already started is left as it is.
-- Invites you sent are withdrawn. Invites you received are declined, and whoever sent them gets their sparks back.
+- Upcoming dates are cancelled.
+- Invites you sent are withdrawn. Invites you received are declined.
 - Past dates, the feedback given on them and safety reports are kept. In them, your name is replaced with *Deleted user*.
 
-You can sign up again later with the same number, but you'll start from scratch. The [privacy policy](/en/tietosuoja) says how long each kind of data is kept.
+You can sign up again later with the same number, but you'll start with a clean slate. The [privacy policy](/en/tietosuoja) says how long each kind of data is kept.
 
 ## Feedback
 

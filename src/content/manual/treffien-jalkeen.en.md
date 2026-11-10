@@ -1,6 +1,6 @@
 ---
 title: After the date
-lead: Your feedback tells us how the date went. It also decides whether you'll meet again, and it earns you sparks.
+lead: Your feedback tells us how the date went. It helps us learn about both you and your date, so we can offer you better matches for future dates. It also earns you sparks.
 order: 80
 draft: true
 ---
@@ -9,23 +9,21 @@ You can give feedback as soon as the date ends, {{date.length_hours}} hour after
 
 ![Date feedback: your date, when it was, and the first question](shot:feedback)
 
-The top shows which date it's about. First we ask *How did the date go?* Under each answer, it says what we'll ask next.
+The top shows which date it's about. After the first question, the form branches, and we ask slightly different questions depending on how the date went.
 
 - **Well.** We ask what you liked about your date, whether the place was good for a date, and whether you'd like to meet them again.
-- **OK.** We ask what you liked about your date and what you'd have liked more of. Then we ask about the place and whether you'd like to meet them again.
-- **Badly.** We ask first whether you felt safe on the date. If you answer *Yes*, we ask what you'd have liked more of, and then about the place. What the other answers lead to is on the [Safety](/en/guide/turvallisuus) page.
+- **OK.** We ask what you liked about your date and what you'd have liked more of. Then we ask about the venue and whether you'd like to meet them again.
+- **Badly.** We ask first whether you felt safe on the date. If you answer *Yes*, we ask what you'd have liked more of, and then about the venue. You can read more about the other answers on the [Safety](/en/guide/turvallisuus) page.
 - **The date didn't happen.** We ask what happened. See below.
 
 Answer each question and press **Continue**.
 
 *I liked these things about my date* and *I'd have liked more of these in my date* offer the same choices, such as *Personality*, *Humour*, *Where they are in life* and *Being on the same wavelength*. Pick at least one, or as many as you like.
 
-For *The place was good for a date*, you answer *Yes*, *Not sure* or *No*. If you had to go somewhere else, choose *We went somewhere else*.
-
 Your feedback is sent when you answer the last question, and you see *Thanks for your answers.* **Done** takes you back to the Dates page, where you can see the sparks you got.
 
-- **Who sees your answers.** Only the Pilke team. Your phone number is all that can reach your date, and only in the way described below.
-- **Sparks.** Your feedback earns you {{sparks.per_date}} sparks if the date happened or your date didn't turn up. You each get yours for your own feedback. See [Sparks](/en/guide/kipinat).
+- **What happens to your answers.** We use them to understand both you and your date better, so we can offer you both better matches for future dates.
+- **Sparks.** Once you've filled in your feedback, you get {{sparks.per_date}} sparks. You and your date each get yours for your own feedback. See [Sparks](/en/guide/kipinat).
 
 ## Meeting again
 
@@ -41,8 +39,8 @@ To the other person, saying no looks the same as not answering.
 
 If you choose *The date didn't happen*, we ask what happened.
 
-- **My date didn't turn up.** The Pilke team sees it, and your feedback earns you {{sparks.per_date}} sparks. Your date only gets a time-out if you reported it at the venue during the date. See [The day of your date](/en/guide/treffipaiva).
-- **I couldn't make it.** You can say what got in the way. You don't get sparks for this feedback. Next time, cancel the date as soon as you know you can't make it, so your date's time is freed up. See [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).
+- **My date didn't turn up.** The Pilke team is told, and your date gets a time-out. See [The day of your date](/en/guide/treffipaiva).
+- **I couldn't make it.** You can tell us more about what happened, but not turning up doesn't earn sparks. Next time, cancel the date as soon as you know you can't make it, so your date's time is freed up. See [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).
 
 ## Past dates
 

@@ -5,7 +5,7 @@ order: 30
 draft: true
 ---
 
-Your sparks are at the top of the Dates page. Here's how you earn them, what they're spent on and when you get them back.
+Your sparks are at the top of the Dates page. This page covers how you earn them and what they're spent on.
 
 ## How you earn sparks and what they're spent on
 
@@ -25,13 +25,13 @@ Your sparks are at the top of the Dates page. Here's how you earn them, what the
 
 A refund gives you back the {{petals.refund}} sparks the invite cost.
 
-You get the sparks for a date once you've given your feedback. You each get yours for your own feedback.
+You get the sparks for a date once you've filled in your date feedback.
 
 ## Sparks from your calendar
 
 The longer a free time stays marked, the more sparks it earns. {{calendar.petal_week_hours}} hours marked for a week earns one spark. So does {{calendar.counted_hours_cap}} hours for a little under two days. Your sparks arrive one at a time as they add up.
 
-- A future time counts for the part of it within the next {{calendar.earning_horizon_days}} days. An hour earns until it starts.
+- A future time counts for the part of it within the next {{calendar.earning_horizon_days}} days.
 - At most {{calendar.counted_hours_cap}} hours count at once, so your calendar earns up to {{calendar.max_petals_per_week}} sparks a week.
 - A time you mark and then remove straight away earns nothing.
 
@@ -40,15 +40,15 @@ The longer a free time stays marked, the more sparks it earns. {{calendar.petal_
 | In your calendar | Sparks |
 | --- | --- |
 | Saturday 18:00–22:00 (4 hours), marked a week ahead | about 0.4 |
-| The same Saturday, marked 20 days ahead. It starts earning once Saturday is {{calendar.earning_horizon_days}} days away | about 0.8 |
+| The same Saturday, marked 20 days ahead. Sparks start adding up once Saturday is {{calendar.earning_horizon_days}} days away | about 0.8 |
 | About 10 hours a week, always marked two weeks ahead | about 2 a week |
 | Always at least {{calendar.counted_hours_cap}} hours within the next {{calendar.earning_horizon_days}} days | {{calendar.max_petals_per_week}} a week |
 
 ## The limit
 
-You can hold up to {{petals.cap}} sparks at a time, enough for {{petals.cap_roses}} invites. Once you reach the limit, new sparks wait. They arrive as soon as you send an invite and make room. When you're at the limit, send an invite!
+You can hold up to {{petals.cap}} sparks at a time, enough for {{petals.cap_roses}} invites. Once you reach the limit, new sparks wait. You can get more once you send an invite and make room. When you're at the limit, send an invite!
 
-Say you have {{petals.cap}} sparks, and your calendar earns 2 more in a week. Those 2 wait. When you send an invite, {{petals.set_cost}} sparks are spent and the 2 that were waiting arrive. The sparks for feedback only arrive when they all fit at once.
+Say you have {{petals.cap}} sparks, and your calendar earns 2 more in a week. You get them once you send an invite and make room.
 
 Refunds arrive whatever your count, so you can sometimes have more than {{petals.cap}}.
 

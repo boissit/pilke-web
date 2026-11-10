@@ -5,7 +5,7 @@ order: 20
 draft: true
 ---
 
-In the calendar, you mark the times you're free for a date. Your matches are people you share at least {{calendar.min_shared_hours}} hour of free time with. Other people get you as a match the same way, and only for times you've marked. The more time you mark, the more people you can be a match for, and the better the matches we can find you.
+In the calendar, you mark the times you're free for a date. Your matches share at least {{calendar.min_shared_hours}} hour of free time with you. Other people get you as a match the same way, and only for times you've marked. The more time you mark, the more people you can be a match for, and the better the matches we can find you.
 
 Keeping your calendar up to date also earns sparks. See [Sparks](/en/guide/kipinat).
 
@@ -16,19 +16,19 @@ Keeping your calendar up to date also earns sparks. See [Sparks](/en/guide/kipin
 - Once a free time has started or ended, you can't change or remove it.
 - Times held by an open invite or an upcoming date are locked. See [Invites](/en/guide/kutsut).
 
-To add a free time, press and hold the grid and drag. Tap a free time to select it. You can then drag it somewhere else, change its length with the handle on its top or bottom edge, or remove it with the **✕** in its corner.
+To add a free time, press and hold the grid and drag. Tap a free time to select it. You can then drag it somewhere else, change its length with the handle on its top or bottom edge, or remove it with the **✕** button.
 
 ## The yellow hours
 
 ![The calendar: your free times in coral, with yellow hours near them](shot:kalenteri#calendar-density)
 
-The yellow shading (1) shows when lots of people who'd suit you are free. The deeper the shade, the more of them there are compared with the other hours on screen.
+The yellow highlight (1) shows when lots of people who'd suit you have marked time for dates. The deeper the highlight, the more of them there are compared with the other hours on screen.
 
-- The shading only counts people who could be your matches, whose preferences, languages, things to do and date areas fit with yours.
-- An hour is shaded once at least {{calendar.density_min_people}} people are free in it.
-- The shading covers the next {{calendar.density_days}} days. Days far ahead are often pale, because few people have marked times that far.
+- The highlight only counts people who could be your matches, whose preferences, languages, things to do and date areas fit with yours.
+- A time is highlighted once at least {{calendar.density_min_people}} people are free in it.
+- Highlights show for the next {{calendar.density_days}} days. Days far ahead are often pale, because few people have marked times that far.
 
-Mark yourself free in the yellow hours, and you're more likely to find matches.
+Mark yourself free in the highlighted hours, and you're more likely to find matches.
 
 ## Copying a week
 
@@ -42,7 +42,7 @@ The copy shows up first as a suggestion, drawn dashed. The summary (1) shows how
 
 ## Your own calendar
 
-Under **Calendar** in Settings, you can connect Pilke to your own calendar, such as Google or Apple Calendar. You can turn each direction on separately.
+Under **Calendar** in Settings, you can connect Pilke to your own calendar, such as Google or Apple Calendar. You decide whether to share Pilke's entries to your own calendar, show your own calendar's entries inside Pilke, or both.
 
-- **Pilke adds** your upcoming dates, and open invites if you like, to a calendar you choose. An entry shows your date's preferred name, and the place once it's decided. If a date is cancelled, Pilke removes its entry. Anyone who can see that calendar can see the entry.
+- **Pilke adds** your upcoming dates, and open invites if you like, to a calendar you choose. An entry shows your date's preferred name, and the place once it's decided. If a date is cancelled, Pilke removes its entry.
 - **Pilke reads** your plans from your calendar and shows them striped in Pilke's calendar. That way you can see at a glance which times are already taken. Only you can see your plans.
