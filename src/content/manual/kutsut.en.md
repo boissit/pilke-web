@@ -1,50 +1,50 @@
 ---
-title: Invitations
-lead: An invitation comes with the times and places already in it. The other person picks one of each, and the date is agreed.
+title: Invites
+lead: An invite comes with the times and places already in it. The other person picks one of each, and it's a date.
 order: 50
 draft: true
 ---
 
-You send an invitation to one of your candidates. It took {{petals.set_cost}} sparks, and they went when you pressed **Find a date**. See [Sparks](/en/guide/kipinat).
+You send an invite to one of your matches. It cost {{petals.set_cost}} sparks, which went when you pressed **Find a date**. See [Sparks](/en/guide/kipinat).
 
 ## What you offer
 
-From the times and venues on a card you pick the ones that suit you. An invitation has to have:
+From the times and places on a card, you pick the ones that suit you. An invite has to have:
 
-- at least {{invitation.min_times_offered}} time and at least {{invitation.min_venues_offered}} venue, and
-- a choice: at least {{invitation.choice_threshold}} times or at least {{invitation.choice_threshold}} venues.
+- at least {{invitation.min_times_offered}} time and at least {{invitation.min_venues_offered}} place, and
+- a choice: at least {{invitation.choice_threshold}} times or at least {{invitation.choice_threshold}} places.
 
-The other person picks exactly one of your times and one venue. The date starts at the beginning of the chosen time and, as far as Pilke is concerned, lasts {{date.length_hours}} hour.
+The other person picks exactly one of your times and one place. The date starts at the beginning of the chosen time and, as far as Pilke's concerned, lasts {{date.length_hours}} hour.
 
-![A received invitation: the times and venues offered, and the Decline and Agreed! buttons](shot:invitation#timeslot-*,venue-*)
+![An invite received: the times and places offered, and the Decline and It's a date! buttons](shot:invitation#timeslot-*,venue-*)
 
-On an invitation you receive, you pick one time (1) and, if there is more than one venue, one venue (2). **Back** only closes the screen: the invitation waits, but the clock keeps running.
+On an invite you receive, you pick one time (1) and, if there's more than one place, one place (2). **Back** only closes the screen: the invite waits, but the clock keeps running.
 
 ## Time to answer
 
-An invitation has to be answered within {{invitation.answer_hours}} hours of being sent. If you have not answered, you get a reminder about {{invitation.expiry_warning_hours}} hours before it lapses, if reminders are on in Settings. An unanswered invitation lapses on its own, and whoever sent it is told.
+An invite has to be answered within {{invitation.answer_hours}} hours of being sent. If you haven't answered, you get a reminder about {{invitation.expiry_warning_hours}} hours before it expires, if reminders are on in Settings. An unanswered invite expires on its own, and whoever sent it is told.
 
-## An open invitation holds its hours
+## An open invite holds its times
 
-For as long as an invitation is open, every time it offers is held for both of you. Neither of you is shown those hours on other candidates' cards, and neither of you can offer them in another invitation. That is why your calendar shows them as taken, and why they cannot be changed.
+While an invite is open, every time it offers is held for both of you. Neither of you sees those hours on other matches' cards, and neither of you can offer them in another invite. That's why your calendar shows them as taken, and why you can't change them.
 
-When the invitation is accepted, only the agreed time stays held and the rest are freed. When it is declined, lapses or is withdrawn, all of them are freed straight away.
+When the invite is accepted, only the agreed time stays held and the rest are freed. When it's declined, expires or is withdrawn, they're all freed straight away.
 
-![A sent invitation: the times and venues offered, with Withdraw the invitation at the bottom](shot:sent#withdraw-invitation-open)
+![An invite you sent: the times and places offered, with Withdraw invite at the bottom](shot:sent#withdraw-invitation-open)
 
-**Withdraw the invitation** (1) takes back an invitation you sent: see below for what follows.
+**Withdraw invite** (1) takes back an invite you sent: see below for what happens next.
 
 ## What happens to your invitation
 
-| Ending | For the one who invited | For the one invited |
+| How it ends | For the person who invited | For the person invited |
 |---|---|---|
-| **Accepted.** The date is agreed. | The sparks stay spent. You are told. | No cooldown. |
-| **Declined.** | {{petals.refund}} sparks come back to you. You are told. | You cannot find new candidates for {{cooldown.decline_hours}} hours. |
-| **Lapsed.** Nobody answered within {{invitation.answer_hours}} hours. | {{petals.refund}} sparks come back to you. You are told. | You cannot find new candidates for {{cooldown.no_answer_hours}} hours. |
-| **Withdrawn.** Taken back before an answer. | No refund. You cannot find new candidates for {{cooldown.withdrawal_hours}} hours. | If they had already been told about the invitation, they are told it was withdrawn. |
+| **Accepted.** It's a date. | The sparks stay spent. You're told. | No pause. |
+| **Declined.** | {{petals.refund}} sparks come back to you. You're told. | You can't look for new matches for {{cooldown.decline_hours}} hours. |
+| **Expired.** Nobody answered within {{invitation.answer_hours}} hours. | {{petals.refund}} sparks come back to you. You're told. | You can't look for new matches for {{cooldown.no_answer_hours}} hours. |
+| **Withdrawn.** Taken back before an answer. | No refund. You can't look for new matches for {{cooldown.withdrawal_hours}} hours. | If they'd already been told about the invite, they're told it was withdrawn. |
 
-The sparks of the one invited stay as they are, whatever the outcome. You are told if the notification is on in Settings.
+The invited person's sparks stay as they are, whatever happens. You're told if that notification is on in Settings.
 
-However an invitation ends, the two of you are not suggested to each other again. The only exception is when you went on the date and both said you would like to meet again.
+However an invite ends, the two of you aren't suggested to each other again. The only exception is when you went on the date and both said you'd like to meet again.
 
-Calling off an agreed date is covered in [Cancelling and cooldowns](/en/guide/peruminen-ja-jaahy).
+Cancelling a date is covered in [Cancelling and pauses](/en/guide/peruminen-ja-jaahy).

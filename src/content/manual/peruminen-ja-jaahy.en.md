@@ -1,47 +1,47 @@
 ---
-title: Cancelling and cooldowns
-lead: You get a cooldown if you call off an agreed date, withdraw your invitation, decline one or leave it unanswered, or don’t turn up. This page shows how long it lasts and what you can still do during it.
+title: Cancelling and pauses
+lead: If you cancel a date, withdraw your invite, decline an invite or leave it unanswered, or don't turn up, you're paused for a while. This page shows how long a pause lasts and what you can still do during it.
 order: 60
 draft: true
 ---
 
-An agreed date is something two people decided together. The other person has set time aside for you, and there is no messaging in the app, so they cannot ask you anything. Calling it off decides for both of you, which is rude to them, and it earns you a cooldown. A cooldown ends on its own, and your sparks stay as they are.
+An upcoming date is something two people agreed on together. Your date has set time aside for you, and there's no messaging in the app, so they can't ask you anything. Cancelling decides for both of you, which is rude to them, and it gets you paused. A pause ends on its own, and your sparks stay as they are.
 
-## Two kinds of cooldown
+## Two kinds of pause
 
-| Cooldown | What you cannot do | The notice says |
+| Pause | What you can't do | The notice says |
 |---|---|---|
-| Both | Show up in other people's candidates, or look for new candidates. | *Until then you do not appear among other people’s candidates and cannot find new ones.* |
-| No looking | Look for new candidates. You still show up for others. | *Until then you cannot find new candidates.* |
+| Both | Be shown to other people, or look for new matches. | *Until then, you can't look for new matches and won't be shown to anyone else.* |
+| No looking | Look for new matches. You're still shown to others. | *Until then, you can't look for new matches.* |
 
-During a cooldown you can still answer invitations you receive and go on your agreed dates. Your open invitations and agreed dates stay as they are. If you had already found your candidates, you can still send one of them an invitation.
+While you're paused, you can still answer invites you receive and go on your upcoming dates. Your open invites and upcoming dates stay as they are. If you'd already found your matches, you can still send one of them an invite.
 
-![A notice on the Dates page: you are not showing up in other people's candidates and cannot look for new ones](shot:cooldown-blocked#cooldown-notice)
+![A notice on the Dates page: you won't be shown to anyone else and can't look for new matches](shot:cooldown-blocked#cooldown-notice)
 
-During a cooldown the top of the Dates page carries a notice (1): what it stops, until when, and why. The same text appears if you try to look for candidates. With more than one cooldown running, the notice gives the reason and end time of the one that ends last.
+While you're paused, the top of the Dates page shows a notice (1): what it stops, until when, and why. You see the same text if you try to look for matches. If you're paused for more than one reason, the notice shows the reason and end time of the one that ends last.
 
 ## What starts one
 
-| What you did | Cooldown | How long |
+| What you did | Pause | How long |
 |---|---|---|
-| Withdrew an invitation you sent before it was answered | No looking | {{cooldown.withdrawal_hours}} hours |
-| Declined an invitation you received | No looking | {{cooldown.decline_hours}} hours |
-| Left an invitation you received unanswered | No looking | {{cooldown.no_answer_hours}} hours |
-| Called off an agreed date at least {{cooldown.cancel_long_notice_days}} days ahead | Both | {{cooldown.cancel_long_notice_hours}} hours |
-| Called off an agreed date at least {{cooldown.cancel_short_notice_hours}} hours ahead | Both | {{cooldown.cancel_short_notice_days}} days |
-| Called off an agreed date any later | Both | {{cooldown.cancel_late_days}} days |
-| The other person reported from the venue that you did not turn up | Both | {{cooldown.noshow_days}} days |
+| Withdrew an invite you sent before it was answered | No looking | {{cooldown.withdrawal_hours}} hours |
+| Declined an invite you received | No looking | {{cooldown.decline_hours}} hours |
+| Left an invite you received unanswered | No looking | {{cooldown.no_answer_hours}} hours |
+| Cancelled a date at least {{cooldown.cancel_long_notice_days}} days ahead | Both | {{cooldown.cancel_long_notice_hours}} hours |
+| Cancelled a date at least {{cooldown.cancel_short_notice_hours}} hours ahead | Both | {{cooldown.cancel_short_notice_days}} days |
+| Cancelled a date any later | Both | {{cooldown.cancel_late_days}} days |
+| Your date reported from the venue that you didn't turn up | Both | {{cooldown.noshow_days}} days |
 
-Calling off dates again and again makes the cooldown longer. Each date you called off in the last {{cooldown.repeat_window_days}} days multiplies the next one's length by {{cooldown.repeat_multiplier}}, up to a ceiling of {{cooldown.ceiling_days}} days. Withdrawn, declined and unanswered invitations and no-shows do not add to the multiplier.
+Cancelling again and again makes the pause longer. Each date you've cancelled in the last {{cooldown.repeat_window_days}} days multiplies the next pause by {{cooldown.repeat_multiplier}}, up to {{cooldown.ceiling_days}} days at most. Withdrawn, declined and unanswered invites and no-shows don't count towards this.
 
-![A notice on the Dates page: you cannot look for new candidates because you declined a date invitation you received](shot:cooldown-decline#cooldown-notice)
+![A notice on the Dates page: you can't look for new matches because you declined an invite](shot:cooldown-decline#cooldown-notice)
 
-You can decline without giving a reason, and a no is a better answer for the one who invited than silence. Declining or leaving an invitation unanswered gives you a short cooldown (1): they spent sparks on the invitation and waited for your answer. During it you still show up in other people's candidates and can answer the invitations you receive.
+You can decline without giving a reason, and a no is a better answer for the person who invited you than silence. Declining or leaving an invite unanswered gets you a short pause (1): they spent sparks on the invite and waited for your answer. During it, you're still shown to other people and can answer the invites you receive.
 
-## What calling off means for the other person
+## What cancelling means for your date
 
-When you call off an agreed date, the other person is told straight away. That notification cannot be switched off, because without it they would go and wait for someone who is not coming. The agreed time is freed for both of you. If you were the one who invited, the sparks you spent stay spent. If they invited you, {{petals.refund}} sparks go back to them.
+When you cancel a date, your date is told straight away. That notification can't be switched off, because without it they'd go and wait for someone who isn't coming. The agreed time is freed for both of you. If you sent the invite, the sparks you spent stay spent. If they invited you, they get {{petals.refund}} sparks back.
 
-You call off an agreed date with **Cancel the date** on its screen. Before you confirm, you see when the cooldown would end. Once the start time has passed, the button is gone.
+You cancel a date with **Cancel date** on its screen. Before you confirm, you see when your pause would end. Once the start time has passed, the button's gone.
 
-So call off as soon as you know you cannot make it: the earlier you do, the shorter the cooldown.
+So cancel as soon as you know you can't make it: the earlier you do, the shorter the pause.

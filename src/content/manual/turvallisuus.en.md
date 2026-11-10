@@ -1,28 +1,28 @@
 ---
 title: Safety
-lead: The safety button brings in someone you trust during a date, and a safety report tells us if you felt unsafe.
+lead: The Safety button brings in someone you trust during a date, and a safety report tells us if you felt unsafe.
 order: 85
 draft: true
 ---
 
-## The safety button
+## The Safety button
 
-The **Safety button** appears on the date's screen once you have saved a trusted person's phone number under **Safety** in Settings. Without a number there is no button, so save it beforehand and agree it with them.
+The **Safety button** appears on the date's screen once you've saved your safety contact's phone number under **Safety** in Settings. No number, no button, so save it beforehand and agree it with them.
 
-One press sends them a text message: *Pilke: [your name] pressed the safety button and is asking you to get in touch.* It contains no location, no venue, no time and nothing about your date. Your date is not told you pressed it. Pilke records that you pressed it and whether the message got through.
+One tap sends them a text message: *Pilke: [your name] pressed the safety button and is asking you to get in touch.* It contains no location, no place, no time and nothing about your date. Your date isn't told you pressed it. Pilke records that you pressed it and whether the message got through.
 
-The screen tells you whether it was sent. If not, call your trusted person yourself. In an emergency, call 112.
+The screen tells you whether the message was sent. If it wasn't, call your safety contact yourself. In an emergency, call 112.
 
 ## Reporting that you felt unsafe
 
-When you answer the feedback's *How did the date go?* with *Not well*, we ask *Did you feel safe on the date?* If you answer *I felt unsafe*, the questionnaire takes you to a report. Under *Why did you feel unsafe?*, pick at least one reason. You can also write in your own words under *Free text* if you want to, up to {{feedback.report_max_chars}} characters. The report goes when you press **Send**.
+If you answer *How did the date go?* with *Badly*, we ask *Did you feel safe on the date?* If you answer *I felt unsafe*, the survey takes you to a report. Under *Why did you feel unsafe?*, pick at least one reason. You can also write in your own words under *Anything else* if you want to, up to {{feedback.report_max_chars}} characters. The report is sent when you press **Send**.
 
-The report goes to Pilke's staff, and only they see it. We read it as soon as we can. Your date does not see it.
+The report goes to the Pilke team, and only they see it. We'll read it as soon as we can. Your date doesn't see it.
 
-A report does not reach the authorities. In an emergency, call 112.
+A report doesn't reach the authorities. In an emergency, call 112.
 
 ## Telling us how your date behaved
 
-When you answer the safety question with *Something bothered me*, we ask what bothered you. Then, under *Tell us what happened*, you can describe what happened in your own words, up to {{feedback.report_max_chars}} characters. It is up to you. If you write something, it goes to Pilke's staff.
+If you answer the safety question with *Something bothered me*, we ask what bothered you. Then, under *Tell us what happened*, you can describe it in your own words, up to {{feedback.report_max_chars}} characters, if you want to. If you write something, it goes to the Pilke team.
 
-Only Pilke's staff see what you tell us, and we read it as soon as we can. Your date is not told about it.
+Only the Pilke team sees what you tell us, and we'll read it as soon as we can. Your date isn't told about it.

@@ -21,7 +21,7 @@
 
 'contact.lead':
   fi: 'Kysymykset, palaute ja avunpyynnöt: kirjoita meille sähköpostia.'
-  en: 'Questions, feedback and requests for help: write to us by email.'
+  en: 'Questions, feedback or need help? Email us.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # What to write about
@@ -69,8 +69,8 @@
 
 'contact.answers.title':
   fi: 'Moneen kysymykseen löytyy jo vastaus'
-  en: 'Many answers are already here'
+  en: 'Your question may already be answered'
 
 'contact.answers.body':
   fi: 'Kysyttyä-sivulla vastaamme yleisimpiin kysymyksiin, ja Ohjeet kertovat, miten Pilke toimii vaihe vaiheelta.'
-  en: 'The Questions page answers the most common ones, and the Guide explains how Pilke works step by step.'
+  en: 'The FAQ answers the most common questions, and the Guide explains how Pilke works step by step.'

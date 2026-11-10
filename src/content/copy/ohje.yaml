@@ -17,7 +17,7 @@
 
 'manual.lead':
   fi: 'Näin Pilkettä käytetään ja näin sen osat toimivat.'
-  en: 'How to use Pilke, and how its parts work.'
+  en: 'How to use Pilke, and how each part works.'
 
 'manual.empty':
   fi: 'Ohjeita ei ole vielä julkaistu.'
@@ -42,7 +42,7 @@
 
 'manual.draft.body':
   fi: 'Teksti ja kuvat voivat vielä muuttua, eikä kaikki tässä välttämättä vastaa sovellusta sellaisenaan.'
-  en: 'The text and the pictures may still change, and not everything here necessarily matches the app as it is.'
+  en: 'The text and pictures may still change, and not everything here matches the app exactly yet.'
 
 'manual.shot.missing':
   fi: 'Kuva puuttuu'

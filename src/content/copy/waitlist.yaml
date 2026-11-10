@@ -23,7 +23,7 @@
 
 'cta.body':
   fi: 'Jätä sähköpostiosoitteesi, niin kerromme heti, kun pääset mukaan.'
-  en: 'Leave your email address and we will tell you as soon as you can get in.'
+  en: 'Leave your email and we’ll let you know as soon as you’re in.'
 
 'cta.label':
   fi: 'Sähköpostiosoite'
@@ -39,7 +39,7 @@
 
 'cta.note':
   fi: 'Käytämme osoitetta vain betakutsuun. Emme lähetä muuta emmekä anna sitä eteenpäin.'
-  en: 'We use the address for the beta invitation and nothing else. We do not pass it on.'
+  en: 'We’ll only use it for your invite. We won’t send you anything else or pass it on.'
 
 # The link this form may not collect an address without. Its own key rather
 # than a clause inside `cta.note`, so the promise and the document that has to
@@ -62,4 +62,4 @@
 
 'cta.failed':
   fi: 'Liittyminen ei onnistunut. Yritä hetken kuluttua uudelleen.'
-  en: 'That did not go through. Please try again in a moment.'
+  en: 'That didn’t go through. Please try again in a moment.'

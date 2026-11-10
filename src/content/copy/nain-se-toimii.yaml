@@ -20,7 +20,7 @@
 
 'detail.lead':
   fi: 'Pilke on todella erilainen verrattuna muihin deittisovelluksiin. Tällä sivulla pyrimme selventämään Pilkkeen toimintaa.'
-  en: 'Pilke is very different from other dating apps. This page explains how it works.'
+  en: 'Pilke is very different from other dating apps. Here’s how it works.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Before the first invitation
@@ -28,19 +28,19 @@
 
 'detail.start.title':
   fi: 'Ennen ensimmäistä treffikutsua'
-  en: 'Before your first date invitation'
+  en: 'Before your first invite'
 
 'detail.start.body':
   fi: 'Luodessasi tiliä kerrot itsestäsi ja toiveistasi ja vastaat lyhyeen persoonallisuuskyselyyn, jonka vastauksia käytetään sopivien ehdokkaiden löytämiseen.'
-  en: 'When you create your account, you tell us about yourself and what you are looking for, and answer a short personality quiz. Its answers are used to find you suitable candidates.'
+  en: 'When you sign up, you tell us about yourself and who you’d like to meet, and take a short personality quiz. We use your answers to find people who suit you.'
 
 'detail.prefs.title':
   fi: 'Treffipaikat ja kalenteri'
-  en: 'Date venues and calendar'
+  en: 'Places and times'
 
 'detail.prefs.body':
   fi: 'Valitse erityylisistä treffipaikoista itsellesi mieluisat ja merkitse kartalla minne olisit valmis menemään. Kalenteriin merkitset sinulle sopivat treffiajat.'
-  en: 'Choose the kinds of date venues you like and mark on the map where you would be happy to go. In the calendar you mark the times that suit you for a date.'
+  en: 'Pick the kinds of places you’d like to go, and mark on the map where you can get to. Then mark the times you’re free in your calendar.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # How candidates are chosen, and the invitation
@@ -51,19 +51,19 @@
 
 'detail.draw.title':
   fi: 'Miten ehdokkaat valitaan'
-  en: 'How candidates are chosen'
+  en: 'How we pick your matches'
 
 'detail.draw.body':
   fi: 'Pilke suodattaa ehdokkaat toiveidenne ja teille molemmille sopivien aikojen ja treffipaikkojen perusteella. Jokaisten treffien jälkeen kerrot, mistä pidit ja mitä jäit kaipaamaan kumppanissasi. Pilke oppii palautteestasi, millaisista ihmisistä pidät ja kenelle sinä sovit.'
-  en: 'Pilke filters candidates by what you both wish for and by the times and date venues that suit you both. After every date you say what you liked about your date and what you missed. Pilke learns from your feedback what kind of people you like and who you suit.'
+  en: 'Pilke matches you with people who want what you want, and who are free at the same times and places as you. After each date, you tell us what you liked about the person and what was missing. Pilke learns from this what kind of people you like and who you’re a good match for.'
 
 'detail.invite.title':
   fi: 'Kutsu ja vastaus'
-  en: 'The invitation and the answer'
+  en: 'Inviting and being invited'
 
 'detail.invite.body':
   fi: 'Tarjoa valitsemallesi ehdokkaalle yhteisistä ajoistanne ja paikoistanne suosikkisi. Kutsussa on oltava vähintään {{invitation.choice_threshold}} aikaa tai {{invitation.choice_threshold}} paikkaa. Kutsun vastaanottaja valitsee lopullisen ajan ja paikan, ja treffinne on sovittu. Kutsuun on vastattava {{invitation.answer_hours}} tunnissa, tai se vanhenee.'
-  en: 'Offer the candidate you have chosen your favourites among the times and places you share. An invitation has to hold at least {{invitation.choice_threshold}} times or {{invitation.choice_threshold}} places. The person you invite picks the final time and place, and your date is set. An invitation has to be answered within {{invitation.answer_hours}} hours, or it expires.'
+  en: 'Pick someone and send them your favourite options from the times and places that work for both of you. You need to offer at least {{invitation.choice_threshold}} times or {{invitation.choice_threshold}} places. They choose one of each, and it’s a date. They have {{invitation.answer_hours}} hours to reply, or the invite expires.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Kipinät
@@ -78,11 +78,11 @@
 
 'detail.economy.body':
   fi: 'Deittailu vaatii kipinää. Pilkkeessä kipinöitä kuluu kutsujen lähettämiseen, mutta niitä saa kalenterin ylläpitämisestä ja treffeillä käymisestä, eli aktiivisuus kannattaa! Kipinöitä ei voi ostaa rahalla.'
-  en: 'Dating takes a spark. On Pilke, sparks go on sending invitations, and you get them by keeping your calendar up to date and going on dates, so being active pays off! Sparks can’t be bought with money.'
+  en: 'Every date needs a spark. On Pilke, you spend sparks on invites, and you earn them by going on dates and keeping your calendar up to date. Being active pays off, since you can’t buy sparks.'
 
 'detail.economy.earn':
   fi: 'Näin kipinöitä kertyy'
-  en: 'How sparks add up'
+  en: 'Earning sparks'
 
 'detail.earn.date':
   fi: 'Treffeillä käyminen'
@@ -90,7 +90,7 @@
 
 'detail.earn.date.note':
   fi: 'Ansaitset kipinät heti treffien jälkeen, täytettyäsi treffipalautteen.'
-  en: 'You earn the sparks right after the date, once you have filled in the date feedback.'
+  en: 'You get them as soon as you’ve filled in your feedback after the date.'
 
 'detail.earn.calendar':
   fi: 'Kalenterin ylläpitäminen'
@@ -98,30 +98,30 @@
 
 'detail.earn.calendar.note':
   fi: 'Kalenterimerkinnät tuottavat kipinöitä matalalla, mutta jatkuvalla tahdilla. {{calendar.petal_week_hours}} tunnin viikko tuottaa yhden kokonaisen kipinän ja {{calendar.counted_hours_cap}} tunnin viikko {{calendar.max_petals_per_week}} kipinän maksimin. Kipinätuotanto lasketaan seuraavan {{calendar.earning_horizon_days}} päivän ajalta.'
-  en: "The times in your calendar bring in sparks at a low but steady pace. A {{calendar.petal_week_hours}}\u2011hour week brings in one whole spark, and a {{calendar.counted_hours_cap}}\u2011hour week the most there is, {{calendar.max_petals_per_week}} sparks. What you earn is counted over the next {{calendar.earning_horizon_days}} days."
+  en: "Free time in your calendar earns sparks slowly but steadily: {{calendar.petal_week_hours}} free hours a week earns one spark, and {{calendar.counted_hours_cap}} or more earns the maximum of {{calendar.max_petals_per_week}}. This is based on the hours you’ve marked free for the next {{calendar.earning_horizon_days}} days."
 
 'detail.economy.spend':
   fi: 'Näin käytät kipinöitä'
-  en: 'How you use sparks'
+  en: 'Spending sparks'
 
 'detail.economy.spend.body':
   fi: 'Treffikutsu kuluttaa {{petals.set_cost}} kipinää heti, kun näet ehdokkaasi. Jos Pilke ei pysty tarjoilemaan vähintään {{candidates.per_set}} ehdokasta, esimerkiksi liian tyhjän kalenterin takia, kipinäsi palautetaan.'
-  en: 'A date invitation uses {{petals.set_cost}} sparks as soon as you see your candidates. If Pilke can’t serve up at least {{candidates.per_set}} candidates, for example because your calendar is too empty, your sparks are refunded.'
+  en: 'The {{petals.set_cost}} sparks for an invite are taken as soon as you see your candidates. If Pilke can’t find at least {{candidates.per_set}} people for you, for example because your calendar is too empty, you get them back.'
 
 # Under the price, in the card's left column: how many sparks can be held at once.
 # (`earn.calendar.note`'s English joins each number to its "hour" with a
 # non-breaking hyphen, so a phone never breaks "10-" from "hour".)
 'detail.economy.cap':
   fi: 'Kipinöitä voi olla kerättynä korkeintaan {{petals.cap}}, eli {{petals.cap_roses}} kutsun verran.'
-  en: 'You can collect at most {{petals.cap}} sparks, enough for {{petals.cap_roses}} invitations.'
+  en: 'You can hold up to {{petals.cap}}, which is enough for {{petals.cap_roses}} invites.'
 
 'economy.lead':
   fi: '{{petals.set_cost}} kipinää, yksi treffikutsu.'
-  en: '{{petals.set_cost}} sparks, one date invitation.'
+  en: 'An invite costs {{petals.set_cost}} sparks.'
 
 'economy.spark.alt':
   fi: 'Pilkkeen kipinälaskuri, jossa on viisi kipinää, yhden treffikutsun verran.'
-  en: 'Pilke’s spark counter with five sparks, enough for one date invitation.'
+  en: 'Pilke’s spark counter with five sparks, enough for one invite.'
 
 'economy.amount.one':
   fi: '1-4 kipinää'
@@ -163,7 +163,7 @@
 
 'detail.after.body':
   fi: 'Vastaa lyhyeen treffipalautteeseen: miten treffit sujuivat, mistä pidit ja mitä jäit kaipaamaan. Treffikumppanisi ei näe vastauksiasi. Jos treffit menivät hyvin, voitte vaihtaa puhelinnumerot ja jatkaa Pilkkeen ulkopuolella. Palautteen täytettyäsi saat kipinät, ja seuraavat ehdokkaat osuvat entistä paremmin.'
-  en: 'Answer a short date feedback: how the date went, what you liked and what you missed. Your date does not see your answers. If the date went well, you can swap phone numbers and carry on outside Pilke. Once you have filled in the feedback you get your sparks, and your next candidates are an even better fit.'
+  en: 'Answer a few quick questions: how it went, what you liked and what was missing. Your date won’t see your answers. If it went well, swap numbers and take it from there. Once you’ve given feedback, you get your sparks, and your next matches get even better.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # When plans change
@@ -171,47 +171,47 @@
 
 'detail.changes.title':
   fi: 'Joskus suunnitelmat muuttuvat'
-  en: 'Sometimes plans change'
+  en: 'When plans change'
 
 'detail.changes.expired':
   fi: 'Mitä jos kutsuuni ei vastata vuorokaudessa?'
-  en: 'What if my invitation goes unanswered for a day?'
+  en: 'What if nobody answers my invite?'
 
 'detail.changes.expired.note':
   fi: 'Kutsu raukeaa itsestään, ja kipinäsi palautetaan. Vastaamatta jättänyt käyttäjä saa {{cooldown.no_answer_hours}} tunnin jäähyn, jonka aikana hän ei voi löytää uusia ehdokkaita.'
-  en: 'The invitation lapses by itself, and your sparks are refunded. The person who left it unanswered gets a {{cooldown.no_answer_hours}}-hour cooldown, during which they cannot find new candidates.'
+  en: 'After {{invitation.answer_hours}} hours it expires and you get your sparks back. The person who didn’t reply can’t look for new matches for {{cooldown.no_answer_hours}} hours.'
 
 'detail.changes.declined':
   fi: 'Mitä jos lähettämäni kutsu hylätään?'
-  en: 'What if my invitation is turned down?'
+  en: 'What if my invite is declined?'
 
 'detail.changes.declined.note':
   fi: 'Kipinäsi palautetaan. Kutsun hylännyt käyttäjä saa {{cooldown.decline_hours}} tunnin jäähyn, jonka aikana hän ei voi löytää uusia ehdokkaita.'
-  en: 'Your sparks are refunded. The person who declined gets a {{cooldown.decline_hours}}-hour cooldown, during which they cannot find new candidates.'
+  en: 'You get your sparks back. The person who declined can’t look for new matches for {{cooldown.decline_hours}} hours.'
 
 'detail.changes.withdrawn':
   fi: 'Mitä jos perun lähettämäni kutsun?'
-  en: 'What if I withdraw an invitation I sent?'
+  en: 'What if I withdraw my invite?'
 
 'detail.changes.withdrawn.note':
   fi: 'Kipinöitä ei palauteta, ja saat {{cooldown.withdrawal_hours}} tunnin jäähyn, jonka aikana et voi löytää uusia ehdokkaita.'
-  en: 'Your sparks are not refunded, and you get a {{cooldown.withdrawal_hours}}-hour cooldown, during which you cannot find new candidates.'
+  en: 'You don’t get your sparks back, and you can’t look for new matches for {{cooldown.withdrawal_hours}} hours.'
 
 'detail.changes.canceled':
   fi: 'Mitä jos jompikumpi peruu sovitut treffit?'
-  en: 'What if one of us calls off an agreed date?'
+  en: 'What if one of us cancels a date?'
 
 'detail.changes.canceled.note':
   fi: 'Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä lähempänä treffit ovat ja mitä useammin perut, sitä pidempään se kestää. Jos kutsuttu peruu, kutsuja saa kipinänsä takaisin.'
-  en: 'Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The closer the date and the more often you call dates off, the longer it lasts. If the person invited calls it off, the sender gets their sparks back.'
+  en: 'Whoever cancels can’t look for new matches, and won’t be shown to anyone else, for a while. The later you cancel and the more often you do it, the longer that lasts. If the person who was invited cancels, the sender gets their sparks back.'
 
 'detail.changes.noshow':
   fi: 'Mitä jos toinen ei saavu treffeille?'
-  en: 'What if the other person doesn’t turn up for the date?'
+  en: 'What if I can’t make it?'
 
 'detail.changes.noshow.note':
   fi: 'Jos tiedät, ettet syystä tai toisesta pääse paikalle, peru treffit pikimmiten. Sovituille treffeille saapumatta jättäminen on käyttöehtojen vastaista (puhumattakaan kusipäisyydestä), ja tällainen käytös johtaa hyvin nopeasti sovelluksen käyttökieltoon.'
-  en: 'If you know you can’t make it for one reason or another, call the date off as soon as you can. Not turning up for an agreed date is against the terms of use (not to mention a jerk move), and it very quickly gets you banned from the app.'
+  en: 'Cancel as soon as you know. Not turning up to a date you agreed to is against our terms of use (not to mention a jerk move), and it’ll get you banned fast.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Why there is no chat
@@ -219,14 +219,14 @@
 
 'detail.chat.title':
   fi: 'Miksi chattia ei ole'
-  en: 'Why there is no chat'
+  en: 'Why there’s no chat'
 
 'detail.chat.body':
   fi: 'Chättäilysovelluksia on jo lukuisia. Se on mielestämme oikeastaan turha rituaali ennen treffejä, joilla vasta pääsee tapaamaan toisen ja juttelemaan kunnolla. Pilkkeellä hyppäät suoraan asiaan: jokaisessa treffikutsussa on jo aika ja paikka, ja pääset juttelemaan potentiaaliselle kumppanille kasvotusten ilman viestivastausten odottelua.'
-  en: 'There are plenty of chat apps already. We think chatting is really just an unnecessary ritual before the date, which is where you actually get to meet and talk. With Pilke you skip straight to it: every date invitation already has the time and the place, and you get to talk to a potential partner face to face, with no waiting for replies.'
+  en: 'There are plenty of chat apps already. We think chatting is mostly a pointless warm-up before the date, which is where you actually get to meet and talk. Pilke skips straight to that: every invite already has a time and a place, and you get to talk face to face without waiting for replies.'
 
 # A draft line of the owner's, which they may still drop: its own key, so dropping
 # it is one deletion here and one in the page.
 'detail.chat.wishes':
   fi: 'Ehdokkaat on jo valittu toiveidesi mukaan, joten turhilta treffeiltä välttyy ilman viestittelyäkin.'
-  en: 'Your candidates are already chosen to match your wishes, so you avoid pointless dates without any messaging.'
+  en: 'Your matches are already picked to fit what you’re looking for, so you can avoid bad dates without messaging first.'

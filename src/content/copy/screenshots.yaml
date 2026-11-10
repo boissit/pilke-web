@@ -22,36 +22,36 @@
 
 'shot.platter':
   fi: 'Ehdokkaat-näkymä: yksi ehdokas, hänen kanssaan yhteiset ajat ja valittu tekeminen.'
-  en: 'The candidates view: one candidate, the times you both have, and the chosen activity.'
+  en: 'Your matches: one of them, the times you’re both free and the chosen thing to do.'
 
 'shot.invitation':
   fi: 'Saapunut treffikutsu: kutsujan nimi ja kuva, tarjotut ajat ja paikka.'
-  en: 'A date invitation received: who sent it, with their photo, the times offered and the place.'
+  en: 'An invite received: who sent it, with their photo, the times offered and the place.'
 
 'shot.feedback':
   fi: 'Treffipalaute puhelimessa: kuka oli treffeillä ja milloin, ja kysymys siitä, mistä pidit treffikumppanissasi, muutama vaihtoehto valittuna.'
-  en: 'Date feedback on a phone: who the date was with and when, and the question of what you liked about your date, with a few options picked.'
+  en: 'Date feedback on a phone: who the date was with and when, and the question of what you liked about them, with a few options picked.'
 
 'shot.mieltymykset':
   fi: 'Mieltymykset-kysymykset puhelimessa: Haluan joskus lapsia, vastauksena En osaa sanoa, ja Poltan tupakkaa, vastauksena En, mutta se ei haittaa minua.'
-  en: 'The Preferences questions on a phone: I want children some day, answered I can’t say, and I smoke, answered No, but it doesn’t bother me.'
+  en: 'The Preferences questions on a phone: I’d like children one day, answered Not sure, and I smoke, answered No, but it doesn’t bother me.'
 
 'shot.preferences':
   fi: 'Omat tiedot -osion kumppanitoiveet: treffikumppanin sukupuoli, ikähaarukka, mitä odotat treffeiltä ja kielet, joilla voisit käydä treffeillä.'
-  en: 'The partner preferences in Your details: your date’s gender, the age range, what you expect from a date and the languages you could date in.'
+  en: 'Who you’re looking for, in Your details: their gender, the age range, long-term or short-term, and the languages you could date in.'
 
 'shot.kalenteri':
   fi: 'Kalenteri viikon keskeltä: treffeille merkityt ajat ja puhelimen omat menot rinnakkain.'
-  en: 'The calendar in the middle of a week: the times marked for dates beside the phone’s own events.'
+  en: 'The calendar in the middle of a week: the times you’re free beside the phone’s own events.'
 
 'shot.date-cancel':
   fi: 'Vahvistus ennen treffien perumista: mitä perumisesta seuraa, ja painikkeet Takaisin ja Peru.'
-  en: 'The confirmation before calling a date off: what calling it off means, with the Back and Cancel the date buttons.'
+  en: 'The confirmation before cancelling a date: what cancelling means, with the Back and Cancel date buttons.'
 
 'shot.asetukset':
   fi: 'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotettavan henkilön numerolle.'
-  en: 'The Safety section of the settings, open, with the field for a trusted person’s number.'
+  en: 'The Safety section in Settings, open, with the field for your safety contact’s number.'
 
 'shot.date':
   fi: 'Sovitut treffit puhelimessa: aika, paikka kartalla ja turvapainike.'
-  en: 'An agreed date on a phone: the time, the venue on a map, and the safety button.'
+  en: 'An upcoming date on a phone: the time, the place on a map, and the Safety button.'

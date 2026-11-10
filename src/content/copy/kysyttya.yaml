@@ -9,11 +9,11 @@
 
 'faq.title':
   fi: 'Kysyttyä'
-  en: 'Questions'
+  en: 'Frequently asked questions'
 
 'faq.lead':
   fi: 'Lyhyet vastaukset siihen, mitä Pilkkeestä useimmin kysytään.'
-  en: 'Short answers to what people ask about Pilke most often.'
+  en: 'Quick answers to the things people ask most about Pilke.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # The six questions, in the order they are answered
@@ -29,15 +29,15 @@
 
 'faq.chat.a':
   fi: 'Ei. Kutsussa on jo aika ja paikka, joten treffien sopiminen ei vaadi keskustelua. Säästä sanasi treffeille!'
-  en: 'No. An invitation already carries the time and the place, so arranging the date needs no conversation. Save your words for the date!'
+  en: 'No. An invite already has the time and place in it, so there’s nothing to arrange by chat. Save your words for the date!'
 
 'faq.who.q':
   fi: 'Kuka näkee tietoni?'
-  en: 'Who sees my details?'
+  en: 'Who can see my details?'
 
 'faq.who.a':
   fi: 'Ehdokas näkee kutsumanimesi, ikäsi ja kuvasi. Voit halutessasi jakaa puhelinnumerosi toiselle treffien jälkeen. Muista tiedoista tarkemmin {link}.'
-  en: 'A candidate sees your first name, your age and your photo. After a date you can share your phone number with the other person if you want to. The {link} has more on the rest of your details.'
+  en: 'Your matches see your preferred name, your age and your photo. After a date, you can give the other person your number if you want to. The {link} covers the rest.'
 
 'faq.who.link':
   fi: 'tietosuojaselosteessa'
@@ -49,7 +49,7 @@
 
 'faq.safety.a':
   fi: 'Voit päättää jakaa sijaintisi {{sharing.lead_minutes}} minuuttia ennen treffien alkua, ja se päättyy viimeistään {{sharing.trail_minutes}} minuuttia treffien alun jälkeen. Sijainnin jako on mahdollista vain {{sharing.radius_m}} metrin säteellä treffipaikasta. Voit lopettaa jakamisen milloin tahansa, ja jakaminen päättyy automaattisesti, kun aika umpeutuu.'
-  en: 'You can choose to share your location from {{sharing.lead_minutes}} minutes before the date starts, and sharing ends {{sharing.trail_minutes}} minutes after the start at the latest. Sharing works only within {{sharing.radius_m}} metres of the venue. You can stop at any time, and sharing ends by itself when the window closes.'
+  en: 'You can choose to share your location from {{sharing.lead_minutes}} minutes before the date starts, and sharing ends {{sharing.trail_minutes}} minutes after the start at the latest. It only works within {{sharing.radius_m}} metres of the venue. You can stop whenever you like, and it stops by itself when the time’s up.'
 
 'faq.cost.q':
   fi: 'Mitä Pilke maksaa?'
@@ -57,7 +57,7 @@
 
 'faq.cost.a':
   fi: 'Pilke on käyttäjille maksuton ja pyrimme pitämään sen maksuttomana.'
-  en: 'Pilke is free for its users, and we aim to keep it free.'
+  en: 'Pilke is free, and we want to keep it that way.'
 
 'faq.cancel.q':
   fi: 'Entä jos treffit peruuntuvat?'
@@ -65,7 +65,7 @@
 
 'faq.cancel.a':
   fi: 'Sovitut treffit voi perua sovelluksessa, mutta se on toiselle epäkohteliasta: hän on varannut aikaa sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä aikaisemmin perut, sitä lyhyempi jäähy on. Saapumatta jättämisestä seuraa samanlainen jäähy ja toistuva treffeiltä poissaolo johtaa käyttökieltoon. Jos toinen kutsui sinut, hän saa kipinänsä takaisin. Kutsun hylkäämisestä ja vastaamatta jättämisestä seuraa lyhyt jäähy: {{cooldown.decline_hours}} tuntiin et voi löytää uusia ehdokkaita.'
-  en: 'You can call off an agreed date in the app, but it is rude to the other person: they have set time aside for you. Calling it off brings a cooldown, during which you do not appear among other people’s candidates and cannot find new ones. The earlier you call it off, the shorter it is. Not turning up brings the same kind of cooldown, and missing dates repeatedly leads to a ban. If they invited you, they get their sparks back. Declining an invitation, or leaving it unanswered, brings a short cooldown: for {{cooldown.decline_hours}} hours you cannot find new candidates.'
+  en: 'You can cancel a date in the app, but it’s rude to the other person: they’ve set time aside for you. Whoever cancels can’t look for new matches, and won’t be shown to anyone else, for a while. The earlier you cancel, the shorter that is. Not turning up gets you the same, and missing dates again and again gets you banned. If they invited you, they get their sparks back. If you decline an invite or leave it unanswered, you can’t look for new matches for {{cooldown.decline_hours}} hours.'
 
 'faq.delete.q':
   fi: 'Voinko poistaa tilini?'
@@ -73,4 +73,4 @@
 
 'faq.delete.a':
   fi: 'Kyllä, asetuksista. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Menneet treffit ja niistä annetut palautteet jäävät talteen, koska ne ovat yhtä lailla toisen osapuolen tietoja.'
-  en: 'Yes, from the settings. Your name, photo and contact details go straight away. Past dates and the feedback written about them stay, because those belong to the other person as much as to you.'
+  en: 'Yes, in Settings. Your name, photo and contact details are deleted straight away. Past dates and the feedback about them stay, because they belong to the other person as much as to you.'

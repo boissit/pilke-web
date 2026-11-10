@@ -24,7 +24,7 @@
 
 'safety.page.lead':
   fi: 'Treffien on oltava turvalliset, jotta ne voivat olla hauskat. Pidämme käyttäjämme turvassa tarkoin valikoiduilla treffipaikoilla, turvapainikkeella ja ilmiantomahdollisuuksilla.'
-  en: 'A date has to be safe before it can be fun. We keep our users safe with carefully chosen date venues, the safety button and ways to report.'
+  en: 'A date has to be safe before it can be fun. We keep you safe with hand-picked places, the Safety button and ways to report anything that felt wrong.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # The tools
@@ -35,11 +35,11 @@
 
 'safety.button.title':
   fi: 'Turvapainike'
-  en: 'The safety button'
+  en: 'The Safety button'
 
 'safety.button.body':
   fi: 'Tiedät itse, kehen luotat eniten. Tallenna hänen numeronsa turvakontaktiksi ja saat treffien ajaksi käyttöösi turvapainikkeen, jota painamalla saat hänet tueksesi ennalta sopimallanne tavalla. Muista kertoa hänelle riittävät tiedot etukäteen!'
-  en: 'You know best who you trust most. Save their number as your safety contact, and for the date you get a safety button: press it, and they are there for you in the way the two of you agreed in advance. Remember to tell them enough beforehand!'
+  en: 'You know best who you trust most. Save their number as your safety contact, and during the date you’ll have a Safety button: press it, and they’re there for you in whatever way the two of you agreed beforehand. Remember to tell them what they need to know in advance!'
 
 'safety.report.title':
   fi: 'Ilmianto'
@@ -50,7 +50,7 @@
 # the rewrite waits on https://github.com/boissit/treffit-backend/issues/40.
 'safety.report.body':
   fi: 'Jos olosi treffeillä oli turvaton, kerro siitä treffien jälkeisessä palautteessa. Tästä syntyy ilmoitus Pilkkeen ylläpidolle, ja reagoimme siihen niin pian kuin mahdollista.'
-  en: 'If you did not feel safe on the date, say so in the feedback afterwards. That sends a report to Pilke’s moderators, and we act on it as soon as we can.'
+  en: 'If you didn’t feel safe on the date, say so in your feedback afterwards. That sends a report to the Pilke team, and we’ll act on it as soon as we can.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Meeting somebody safely
@@ -58,11 +58,11 @@
 
 'tips.title':
   fi: 'Turvallisten treffien perusteet'
-  en: 'The basics of a safe date'
+  en: 'Safe dating basics'
 
 'tips.one':
   fi: 'Kerro turvahenkilöllesi treffeistä ja sopikaa yhdessä, miten toimia turvapainikkeen viestiä vastaanottaessa.'
-  en: 'Tell your safety contact about the date, and agree together what to do when the safety button’s message arrives.'
+  en: 'Tell your safety contact about the date, and agree together what they’ll do if a message from the Safety button arrives.'
 
 'tips.two':
   fi: 'Valitse ensimmäisille treffeille paikka, jossa on muita ihmisiä.'
@@ -70,7 +70,7 @@
 
 'tips.three':
   fi: 'Vältä vakavia päihtymystiloja.'
-  en: 'Avoid getting heavily intoxicated.'
+  en: 'Stay reasonably sober.'
 
 'tips.four':
   fi: 'Mene treffeille ja palaa kotiin omin kyydein.'
@@ -90,4 +90,4 @@
 
 'privacy.body':
   fi: 'Voimme auttaa sinua löytämään treffikumppanisi treffien alkaessa sijaintitietojen avulla. Sijaintitietoja jaetaan korkeintaan {{sharing.trail_minutes}} minuuttia treffien alkamisen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta.'
-  en: 'As the date starts, we can help you find your date with location data. Location data is shared for at most {{sharing.trail_minutes}} minutes after the date starts, and only within {{sharing.radius_m}} metres of the venue.'
+  en: 'When your date starts, we can help you find each other using your location. It’s shared for at most {{sharing.trail_minutes}} minutes after the start, and only within {{sharing.radius_m}} metres of the venue.'

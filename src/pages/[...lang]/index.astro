@@ -56,6 +56,16 @@ const t = useTranslations(lang);
   Each photograph carries a still of the app, so each is made once per language
   and the page draws the one in its own: the English page shows the English app.
 */
+/*
+  The word the English headline underlines. "Treffisovellus" is a joke in Finnish
+  that "dating app" is not, so the owner asked for *dating* to carry the stress in
+  English. Fredoka has no italic, so it is a coral underline, the strikes' bar.
+  Finnish underlines nothing. A title that no longer holds the word is drawn plain.
+*/
+const heroMark = { fi: null, en: 'dating' }[lang];
+const heroTitle = t('hero.title');
+const heroSplit = heroMark === null ? -1 : heroTitle.indexOf(heroMark);
+
 const photos = {
   fi: { hero: heroFi, beta: betaFi },
   en: { hero: heroEn, beta: betaEn },
@@ -130,7 +140,11 @@ const notFor = [
       />
 
       <div class="hero-copy">
-        <h1>{t('hero.title')}</h1>
+        <h1>
+          {heroSplit < 0 || heroMark === null
+            ? heroTitle
+            : <Fragment>{heroTitle.slice(0, heroSplit)}<span class="hero-mark">{heroMark}</span>{heroTitle.slice(heroSplit + heroMark.length)}</Fragment>}
+        </h1>
         <p class="lede">{t('pitch.hero.lead')}</p>
         <!--
           The footer is the form, so the hero points at it rather than carrying a
@@ -464,6 +478,15 @@ const notFor = [
     letter-spacing: -0.02em;
     color: var(--text-soft);
     text-wrap: balance;
+  }
+
+  /* The English headline's stressed word, underlined in the strikes' coral. */
+  .hero-mark {
+    text-decoration: underline;
+    text-decoration-color: var(--brand-main);
+    text-decoration-thickness: 0.09em;
+    text-underline-offset: 0.14em;
+    text-decoration-skip-ink: none;
   }
 
   /* The strike is a bar drawn over each step rather than `line-through`, so it can
