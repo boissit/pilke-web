@@ -34,18 +34,18 @@
 
 # New copy, both languages.
 'about.meta.description':
-  fi: 'Pilkkeen tarina: idea saunan lauteilta, vuosien kehitystyö ja tavoitteet eteenpäin.'
-  en: 'The story of Pilke: an idea born in a sauna, years of work, and where we’re going next.'
+  fi: 'Miksi teimme Pilkkeen ja mihin olemme menossa.'
+  en: 'Why we made Pilke, and where it’s going.'
 
 # The owner's text, in four paragraphs and the question between them, which the
 # page draws large. The English is a draft translation.
 'about.story.1':
   fi: 'Konsepti niin sanotusta kirjaimellisesta treffisovelluksesta syntyi tietenkin pilke silmäkulmassa, jo pitempi tovi sitten. Olemme jalostaneet, huonontaneet ja sitten taas parantaneet ideaamme yhdessä ja erikseen, viikkoja putkeen ja vuosiin ei ollenkaan. Näkemyksistä on väitelty, implementaatiota, teknologiaa ja teoriaa jumpattu ja tämäkin teksti piti kirjoittaa kolmeen kertaan.'
-  en: 'The idea of a literal dating app, one that gets you actual dates, was born with a twinkle in the eye, of course, quite a while ago now. We’ve refined it, made it worse and made it better again, together and apart, for weeks on end and then not at all for years. We’ve argued about it, wrestled with the implementation, the technology and the theory, and even this text had to be written three times.'
+  en: 'The idea of a dating app that actually gets you dates started out half as a joke, a good while ago. Since then we’ve improved it, made it worse and improved it again, together and on our own, sometimes for weeks at a stretch and sometimes not at all for years. We’ve argued about it, wrestled with the code, the tech and the theory, and even this page took three drafts.'
 
 'about.story.2':
   fi: 'Ydinajatus on kuitenkin pysynyt jo 7 vuotta vakiona, sillä se on mielestämme kauniin yksinkertainen.'
-  en: 'The core idea, though, has stayed the same for seven years, because we think it’s beautifully simple.'
+  en: 'The core idea hasn’t changed in seven years, though, because we think it’s beautifully simple.'
 
 'about.story.question':
   fi: 'Mitä jos treffisovelluksen kautta pääsisi treffeille?'
@@ -53,11 +53,11 @@
 
 'about.story.3':
   fi: 'Emme tiedä onko kukaan muu huomannut, mutta moni modernien treffisovellusten käyttäjä päätyy kuluttamaan enemmän aikaa ja rahaa sovelluksessa kuin treffeillä. Selailuun ja pelailuun suunnitellut käyttöliittymät tuntuvat minimoivan kahden ihmisen aitoja kohtaamisia, eikä usean keskustelun jonglööraus, tai sen yhden ainoan elvytys, lähennä ketään.'
-  en: 'We don’t know if anyone else has noticed, but a lot of people on modern dating apps end up spending more time and money in the app than on dates. Apps built for browsing and playing seem to keep real meetings between two people to a minimum, and juggling several conversations, or reviving that one, doesn’t bring anyone closer.'
+  en: 'Maybe it’s just us, but a lot of people on dating apps seem to spend more time and money in the app than on actual dates. Apps built for endless browsing and game-like swiping seem to keep real meetings to a bare minimum, and juggling a handful of chats, or trying to revive the one that went quiet, doesn’t bring anyone closer.'
 
 'about.story.4':
   fi: 'Uskomme, että treffisovelluksen voi tehdä myös toisin. Sovelluksessamme ei ole mitään pelattavaa, se on täysin ilmainen ja järjestää juuri sinulle sopivia treffejä.'
-  en: 'We believe a dating app can work differently. There’s nothing to play in ours: it’s completely free, and it sets up dates that suit you.'
+  en: 'We think a dating app can work differently. There’s nothing to play in ours. It’s completely free, and it sets up dates that suit you.'
 
 # The owner's closing line, drawn like the question, with the same two sparkles in
 # place of the emoji. The English is a draft translation.
@@ -95,7 +95,7 @@
 
 'about.timeline.2019.text':
   fi: 'Idea sikiää saunan lauteilla, ensimmäinen suuntaa-antava kyselytutkimus sokkotreffailukonseptista'
-  en: 'The idea is born in a sauna; a first, rough survey of a blind-dating concept'
+  en: 'The idea comes up in the sauna, and a first rough survey tests a blind-date concept'
 
 'about.timeline.2020.year':
   fi: '2020'
@@ -104,7 +104,7 @@
 # The English glosses the working title, which the Finnish has no need to.
 'about.timeline.2020.text':
   fi: 'Työstönimi Treffit, visuaalisen ilmeen suunnittelua ja konseptin kehittämistä'
-  en: 'Working title Treffit (Finnish for “dates”), designing the look and developing the concept'
+  en: 'Working title: Treffit (Finnish for “dates”). Designing the look and shaping the concept'
 
 'about.timeline.2021.year':
   fi: '2021'
@@ -112,7 +112,7 @@
 
 'about.timeline.2021.text':
   fi: 'Sovelluksen toiminnallisuusprototyyppi, sovelluskonseptin prototyyppitestausta, algoritmin suunnittelua, nimi vakiintuu Pilkkeeksi'
-  en: 'A working prototype of the app, testing the concept with prototypes, designing the algorithm, and the name settles on Pilke'
+  en: 'A working prototype, testing the concept, designing the algorithm, and the name becomes Pilke'
 
 'about.timeline.2022.year':
   fi: '2022–2025'
@@ -120,7 +120,7 @@
 
 'about.timeline.2022.text':
   fi: 'Hidasta sovelluskehitystä, visujen ja logojen hinaamista, teknologioiden testailua'
-  en: 'Slow app development, wrangling visuals and logos, trying out technologies'
+  en: 'Slow progress on the app, wrestling with visuals and logos, trying out tech'
 
 'about.timeline.2026.year':
   fi: '2026'
@@ -128,7 +128,7 @@
 
 'about.timeline.2026.text':
   fi: 'Sovelluskehityksen tahti kiihtyy, ensimmäinen alfatestaus käynnistyy'
-  en: 'App development speeds up, and the first alpha test begins'
+  en: 'Development picks up speed, and the first alpha test starts'
 
 'about.timeline.2027.year':
   fi: '2027'
@@ -136,7 +136,7 @@
 
 'about.timeline.2027.text':
   fi: 'Sovelluksen julkaisu, tuhansia käyttäjiä'
-  en: 'The app launches, with thousands of users'
+  en: 'Pilke launches, with thousands of users'
 
 'about.timeline.2028.year':
   fi: '2028'
@@ -144,7 +144,7 @@
 
 'about.timeline.2028.text':
   fi: 'Sovellus kattaa koko Suomen'
-  en: 'The app covers all of Finland'
+  en: 'Pilke covers all of Finland'
 
 'about.timeline.2030.year':
   fi: '2030'

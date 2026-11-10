@@ -106,7 +106,7 @@
 
 'detail.economy.spend.body':
   fi: 'Treffikutsu kuluttaa {{petals.set_cost}} kipinää heti, kun näet ehdokkaasi. Jos Pilke ei pysty tarjoilemaan vähintään {{candidates.per_set}} ehdokasta, esimerkiksi liian tyhjän kalenterin takia, kipinäsi palautetaan.'
-  en: 'The {{petals.set_cost}} sparks for an invite are taken as soon as you see your candidates. If Pilke can’t find at least {{candidates.per_set}} people for you, for example because your calendar is too empty, you get them back.'
+  en: 'The {{petals.set_cost}} sparks for an invite are taken as soon as you see your matches. If Pilke can’t find at least {{candidates.per_set}} people for you, for example because your calendar is too empty, you get them back.'
 
 # Under the price, in the card's left column: how many sparks can be held at once.
 # (`earn.calendar.note`'s English joins each number to its "hour" with a

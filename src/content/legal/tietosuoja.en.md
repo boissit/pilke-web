@@ -10,7 +10,7 @@ Pilke is an app for agreeing a date and then meeting face to face. This policy s
 personal data we process when you use Pilke, who receives it, and what rights you have.
 
 It also concerns somebody who does not use Pilke at all: the person whose phone number a
-user has saved as their trusted contact.
+user has saved as their safety contact.
 
 ## 1. Who processes your data
 
@@ -28,19 +28,19 @@ concerning your rights go to the same address (section 11).
 | --- | --- |
 | Phone number | You identify yourself with it. The account has no password, and the login code is sent to this number. |
 | Email address | We contact you about your account. |
-| Nickname, gender and photograph | Shown to the people you may go on a date with. |
+| Preferred name, gender and photograph | Shown to the people you may go on a date with. |
 | Date of birth | We check that you are 18. Others are shown your age in years only. |
 | Language | Decides which language your notifications and text messages are in. |
 | Date preferences | Who you are interested in, what kind of date you are looking for, the ages you want to be offered, and the languages you want to speak. |
 | Date area | The areas, drawn in advance by Pilke, that you have chosen on the map: where you could go on a date. |
-| Trusted contact's phone number | Optional. The safety button sends a message to this number. |
+| Safety contact's phone number | Optional. The Safety button sends a message to this number. |
 
 ### Dates
 
-We process the times you mark as free in the calendar, the candidates offered to you and
-which of them you chose, invitations sent and received, agreed times and venues,
+We process the times you mark as free in the calendar, the matches offered to you and
+which of them you chose, invites sent and received, agreed times and venues,
 cancellations and their reasons, and the feedback given after a date. We use your feedback
-answers when we pick your future candidates. They say what you are looking for, and they are
+answers when we pick your future matches. They say what you are looking for, and they are
 not a rating of the person you met.
 
 ### Whether you want to meet again
@@ -49,8 +49,8 @@ After a date we ask whether you would like to meet the person again. There are t
 answers: yes and my phone number may be shared with them, yes but only through Pilke, and
 no. We store your answer with that date.
 
-If you both choose to share the number, each of you is given the other's nickname and
-phone number on that date in the app's date history. If you both answer yes
+If you both choose to share the number, each of you is given the other's preferred name and
+phone number on that date under Past dates in the app. If you both answer yes
 but either of you chose through Pilke, the two of you can be offered to each other again,
 and nothing is disclosed. If either of you answers no, nothing happens and nothing is
 disclosed.
@@ -75,14 +75,14 @@ device at a time.
 ### Question sets
 
 You answer the personality quiz when you create your profile, and its answers affect the
-order your candidates come in. You can also answer optional question sets, whose answers we
+order your matches come in. You can also answer optional question sets, whose answers we
 use for the same purpose. You answer every question set by picking an option; there is no
 free text in them.
 
 ### Safety records
 
 We process a safety report, the options chosen in it and its free text, a conduct report,
-a report that the other person did not turn up, a record that you pressed the safety button
+a report that the other person did not turn up, a record that you pressed the Safety button
 and who the message went to, and the record that, after a safety report, the two of you are never suggested to each other again.
 
 A conduct report is filed only if you choose to: in the feedback after a date you can tell
@@ -140,17 +140,17 @@ helping the two of you find each other.
 
 ## 4. What other users see about you
 
-Another user sees your nickname, age, gender and photograph. They also see the agreed time
+Another user sees your preferred name, age, gender and photograph. They also see the agreed time
 and venue, the times you have offered them, and your location at the venue if you share
 it.
 
-Another user does not see your email address, your date of birth, your trusted contact's
+Another user does not see your email address, your date of birth, your safety contact's
 number, your date area, your preferences, any restriction placed on you, or the feedback
 you give or that is given about you.
 
 They do not see your phone number either, with one exception: if the two of you have both
 chosen, after the date, that the number may be shared, you are each given the other's
-nickname and number. If only one of you chooses that, or neither does, your number is told
+preferred name and number. If only one of you chooses that, or neither does, your number is told
 to nobody. Section 2 says how that question works.
 
 ## 5. Why we process your data, and on what basis
@@ -158,14 +158,14 @@ to nobody. Section 2 says how that question works.
 | Purpose | Lawful basis |
 | --- | --- |
 | Creating your account and signing you in | Contract |
-| Finding candidates from your preferences, feedback, area and calendar | Contract |
-| Invitations, agreeing a time and venue, and cancellations | Contract |
-| Notifications about invitations, arrivals and feedback requests | Contract |
+| Finding matches from your preferences, feedback, area and calendar | Contract |
+| Invites, agreeing a time and venue, and cancellations | Contract |
+| Notifications about invites, arrivals and feedback requests | Contract |
 | Sharing your location at the venue | Consent, which you can withdraw by stopping sharing |
 | Answers to question sets | Consent, given by answering |
 | Exchanging phone numbers after a date | Consent, given by choosing that answer |
-| Safety: reports, the record that two people are not suggested to each other after a safety report, the safety button and restrictions | Legitimate interest — the safety of our users |
-| Your trusted contact's phone number | Legitimate interest — the user's safety |
+| Safety: reports, the record that two people are not suggested to each other after a safety report, the Safety button and restrictions | Legitimate interest — the safety of our users |
+| Your safety contact's phone number | Legitimate interest — the user's safety |
 | Support and investigating misuse | Legitimate interest — proper use of the service |
 
 Exchanging phone numbers is the only place where we disclose your personal data to
@@ -199,8 +199,8 @@ You can ask us for an account of that assessment at the address in section 1.
 | Recipient | What they get |
 | --- | --- |
 | Other users | What section 4 describes. |
-| The person you dated, when you both choose it | Your nickname and your phone number, once, after the date. This is the only disclosure that rests on your consent, and the only one that cannot be taken back. |
-| Your trusted contact | One text message containing your nickname, if you press the safety button. It contains no position, no venue and nothing about the person you are meeting. |
+| The person you dated, when you both choose it | Your preferred name and your phone number, once, after the date. This is the only disclosure that rests on your consent, and the only one that cannot be taken back. |
+| Your safety contact | One text message containing your preferred name, if you press the Safety button. It contains no position, no venue and nothing about the person you are meeting. |
 | Expo (650 Industries, Inc., United States) | Your device's push token and the content of the notification. Expo passes the notification on to Google's FCM service. |
 | GatewayAPI (Denmark) | The recipient's phone number and the content of the message, when we send a login code or a safety message. |
 | OpenFreeMap (Hyperknot Software Kft., Hungary) | Your device's IP address and which map tiles it requests. The request comes from your device, not from our server. Its own policy says it does not log IP addresses. |
@@ -230,12 +230,12 @@ Finland.
 | Answers to question sets | For the life of the account; deleted with it. |
 | Suggestions shown to you, and the record of whom you were suggested to | 12 months from the suggestion. When you delete your account, the suggestions shown to you are deleted at once. |
 | How you earned and used kipinät | For as long as the account, or the record left after deleting it, exists. Once you delete your account, the entries no longer carry your name. |
-| Dates, invitations and cancellations | 12 months from the date. |
+| Dates, invites and cancellations | 12 months from the date. |
 | Feedback | 12 months from the date. |
 | Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. |
 | No-show reports, including those made in the feedback, and the restrictions that follow from them | 12 months from the report. |
 | Notifications sent, and delivery records for text messages | 90 days. |
-| Safety and conduct reports, their free text, and records of safety button presses | 5 years from the report. |
+| Safety and conduct reports, their free text, and records of Safety button presses | 5 years from the report. |
 | The record that, after a safety report, the two of you are never suggested to each other again | Indefinitely. It does not lapse with time, and it is not undone by either person deleting their account. |
 | A record of which version of the terms you accepted | As long as we may have to show what the processing was based on. |
 
@@ -248,8 +248,8 @@ long as handling it requires.
 You can delete your account in the app's settings. It happens immediately and cannot be
 undone. There is more detail on [How to delete your data](/en/tietojen-poisto).
 
-We delete your phone number, email address, nickname, date of birth, gender, photograph,
-trusted contact's number, date preferences, date area, calendar entries and answers to
+We delete your phone number, email address, preferred name, date of birth, gender, photograph,
+safety contact's number, date preferences, date area, calendar entries and answers to
 question sets. The photograph is deleted from storage as well, and every device is signed
 out at the same moment.
 
@@ -268,12 +268,12 @@ empty account, and nothing links it to the old one.
 
 ## 10. How we make automated decisions
 
-Finding candidates is automated, but it only produces a suggestion. You decide who to
-invite, and you can pass on every candidate.
+Finding matches is automated, but it only produces a suggestion. You decide who to
+invite, and you can pass on every match.
 
-Restrictions also arise automatically, from cancelling an agreed date or not turning up. A
-restriction means you are not shown among other people's candidates, or you cannot draw new
-candidates, and it lasts no more than 30 days.
+Restrictions, which the app calls time-outs, also arise automatically, from cancelling an upcoming date or not turning up. A
+restriction means you are not shown among other people's matches, or you cannot look for new
+matches, and it lasts no more than 30 days.
 
 One restriction rests on another user's report: if the person you were meeting reports that
 you did not turn up, the restriction follows automatically. You can file your own report

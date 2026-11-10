@@ -20,7 +20,7 @@ While you're on a time-out, you can still answer invites you receive and go on y
 
 While you're on a time-out, the top of the Dates page shows a notice (1): what it stops, until when, and why. You see the same text if you try to look for matches. If you have more than one time-out, the notice shows the reason and end time of the one that ends last.
 
-## What starts one
+## What gets you a time-out
 
 | What you did | Time-out | How long |
 |---|---|---|

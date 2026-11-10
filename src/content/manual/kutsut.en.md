@@ -20,7 +20,7 @@ The other person picks exactly one of your times and one place. The date starts 
 
 On an invite you receive, you pick one time (1) and, if there's more than one place, one place (2). **Back** only closes the screen: the invite waits, but the clock keeps running.
 
-## Time to answer
+## How long you have to answer
 
 An invite has to be answered within {{invitation.answer_hours}} hours of being sent. If you haven't answered, you get a reminder about {{invitation.expiry_warning_hours}} hours before it expires, if reminders are on in Settings. An unanswered invite expires on its own, and whoever sent it is told.
 
@@ -34,7 +34,7 @@ When the invite is accepted, only the agreed time stays held and the rest are fr
 
 **Withdraw invite** (1) takes back an invite you sent: see below for what happens next.
 
-## What happens to your invitation
+## What happens to your invite
 
 | How it ends | For the person who invited | For the person invited |
 |---|---|---|

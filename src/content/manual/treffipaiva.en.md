@@ -30,7 +30,7 @@ Before anything is shared, the app explains what will happen and asks you.
 
 While you're sharing, the map shows you, the venue and your date, if they're sharing too. Under the map you can see when their location last updated. Your location keeps updating by itself, even with your phone in your pocket. Sharing stops when the time runs out or when you press **Stop sharing my location** (1).
 
-## If the other person does not come
+## If your date doesn't turn up
 
 There's no messaging in the app, so your date can't tell you they're late. If you're left waiting, you can tell us, but only during the date and only at the venue:
 

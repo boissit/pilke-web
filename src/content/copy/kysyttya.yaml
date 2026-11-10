@@ -67,6 +67,16 @@
   fi: 'Sovitut treffit voi perua sovelluksessa, mutta se on toiselle epäkohteliasta: hän on varannut aikaa sinulle. Perumisesta seuraa jäähy, jonka aikana et näy muiden ehdokkaissa etkä pääse löytämään uusia ehdokkaita. Mitä aikaisemmin perut, sitä lyhyempi jäähy on. Saapumatta jättämisestä seuraa samanlainen jäähy ja toistuva treffeiltä poissaolo johtaa käyttökieltoon. Jos toinen kutsui sinut, hän saa kipinänsä takaisin. Kutsun hylkäämisestä ja vastaamatta jättämisestä seuraa lyhyt jäähy: {{cooldown.decline_hours}} tuntiin et voi löytää uusia ehdokkaita.'
   en: 'You can cancel a date in the app, but it’s rude to the other person: they’ve set time aside for you. Whoever cancels can’t look for new matches, and won’t be shown to anyone else, for a while. The earlier you cancel, the shorter that is. Not turning up gets you the same, and missing dates again and again gets you banned. If they invited you, they get their sparks back. If you decline an invite or leave it unanswered, you can’t look for new matches for {{cooldown.decline_hours}} hours.'
 
+# The owner's English; the Finnish is new copy (agent), using the app's word
+# *treffipari* and the feedback's own answer, *Treffipari ei tullut paikalle*.
+'faq.noshow.q':
+  fi: 'Entä jos treffiparini ei tule paikalle?'
+  en: 'What if my date doesn’t turn up?'
+
+'faq.noshow.a':
+  fi: 'Kerro siitä meille treffien jälkeisessä palautteessa.'
+  en: 'Let us know in your feedback after the date.'
+
 'faq.delete.q':
   fi: 'Voinko poistaa tilini?'
   en: 'Can I delete my account?'

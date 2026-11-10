@@ -93,7 +93,7 @@
 
 'pitch.how.wishes.body':
   fi: 'Muista sovelluksista poiketen Pilke tarjoaa kattavat valinnat ehdokkaiden suodattamiselle jo ennen treffikutsun lähettämistä tai vastaanottamista.'
-  en: 'Before anyone sends or gets an invite, you set exactly who you want to meet: age, long-term or short-term, a language you both speak, and more.'
+  en: 'Before anyone sends or gets an invite, you set exactly who you want to meet: kids or no kids, smoking, city or countryside, and more.'
 
 # The owner's chip over the first step's phone: the Mieltymykset set it shows is
 # not in the app yet.
@@ -202,7 +202,7 @@
   en: 'Think algorithms are the devil’s work?'
 
 'pitch.notfor.algorithm.a':
-  fi: 'Silloin kannattaa varmaan käyttää Valoa.'
+  fi: 'Silloin kannattaa katsoa kohti Valoa.'
   en: 'We suggest you look into Valo.'
 
 'pitch.notfor.questions':

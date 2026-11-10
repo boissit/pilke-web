@@ -23,16 +23,16 @@ You can reach us at **contact@pilke.app**.
 Pilke arranges dates. It is not a messaging app and not a personal ads board.
 
 - **You cannot send messages to other users.** There is no chat in the service.
-- **You choose who to invite.** We suggest candidates to you based on gender, age, your
+- **You choose who to invite.** We suggest matches to you based on gender, age, your
   preferences, your date area and your calendar.
-- **An invitation comes with times and venues already set.** You answer it by choosing the
+- **An invite comes with times and venues already set.** You answer it by choosing the
   final time and venue.
 - **Pilke provides predetermined, public venues.** Users cannot propose venues of their own.
 - **You meet face to face** at the agreed place at the agreed time.
 
 Pilke is free of charge, and nothing in the service is for sale: visibility, promotion and a
 better place among suggestions cannot be bought. We cannot guarantee that you will get a
-date, that candidates will be available to you, or that your invitation will be answered.
+date, that matches will be available to you, or that your invite will be answered.
 
 ## 3. Eligibility
 
@@ -60,7 +60,7 @@ for you. If you cannot make it, cancel as early as you can.
 **Give real information about yourself.** The photograph is of you, and you must be
 recognisable in it.
 
-Your photograph and nickname must not contain
+Your photograph and preferred name must not contain
 
 - another person without their permission, or a child;
 - nudity or sexual content;
@@ -85,12 +85,12 @@ suspect a crime, contact the police. In an emergency, call 112.
 **The safety of our users comes first**, and we work to protect it by the means set out
 below:
 
-- **A trusted contact and the safety button.** When you press the safety button, we send a
-  text message containing your nickname to the person whose number you have saved. The
+- **A safety contact and the Safety button.** When you press the Safety button, we send a
+  text message containing your preferred name to the person whose number you have saved. The
   message contains no position, no venue and nothing about the person you are meeting, and
   that person is not told you pressed it. When you save somebody's number for the safety
   button, it is your responsibility that they know about it and accept it; the number is
-  their data, not yours. The safety button is not an emergency number: when you need help
+  their data, not yours. The Safety button is not an emergency number: when you need help
   now, call 112.
 - **Sharing your location at the venue**, limited as set out in section 3 of the
   [privacy policy](/en/tietosuoja).
@@ -124,9 +124,9 @@ false safety or conduct report is a breach of these terms.
 
 ## 8. Restrictions on use
 
-Some restrictions arise automatically from what has happened in the service. A restriction
-means that you are not shown to others as a candidate, or that you cannot draw new
-candidates. It can follow from cancelling an agreed date, withdrawing from an invitation, or
+Some restrictions, which the app calls time-outs, arise automatically from what has happened in the service. A restriction
+means that you are not shown to others as a match, or that you cannot look for new
+matches. It can follow from cancelling an upcoming date, withdrawing an invite, or
 not turning up. A restriction lasts no longer than 30 days.
 
 You can ask for a decision to be looked at again by writing to the address in section 1. A
@@ -139,9 +139,9 @@ effect immediately; otherwise you will first be given the chance to put things r
 
 ## 9. Messages and notifications
 
-We send push notifications about invitations, about the other person arriving, and about
-feedback requests. A notification often contains the other person's nickname. You can adjust
-notifications in the app's settings, but answering invitations in time remains your own
+We send push notifications about invites, about the other person arriving, and about
+feedback requests. A notification often contains the other person's preferred name. You can adjust
+notifications in the app's settings, but answering invites in time remains your own
 responsibility.
 
 Login codes and safety messages are sent by text message. We do not send marketing messages.
@@ -174,7 +174,7 @@ The agreement lasts as long as your account exists.
 **You can end the agreement at any time** by deleting your account in settings. Deletion
 takes effect immediately and cannot be undone. What goes and what stays is set out on
 [How to delete your data](/en/tietojen-poisto) and in section 9 of the
-[privacy policy](/en/tietosuoja). Agreed dates are cancelled, and deleting your account
+[privacy policy](/en/tietosuoja). Upcoming dates are cancelled, and deleting your account
 brings no restrictions upon you.
 
 We may end the agreement on the grounds set out in section 8. We may also close the service

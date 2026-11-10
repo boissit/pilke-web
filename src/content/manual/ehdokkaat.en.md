@@ -37,7 +37,7 @@ A match has to meet every one of these, and each is checked both ways: you have 
 - **One of you has already invited the other.** Once there's been an invite between two people, either way and however it ended, they aren't suggested to each other again. The exception is when you both said after a date that you'd like to meet again. See [After the date](/en/guide/treffien-jalkeen).
 - **They were shown to you recently.** A recently shown match moves down the order, and the effect halves every {{candidates.exposure_half_life_days}} days. Once someone has been among your matches {{candidates.max_appearances}} times, they aren't shown to you again.
 
-## In what order
+## Who comes first
 
 The personality quiz shapes the order: the more of its questions you've both answered the same way, the higher a match comes. Recently shown matches move down, as above.
 
