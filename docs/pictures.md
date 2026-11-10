@@ -144,7 +144,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/ohje/treffien-jalkeen.html/` | `fi/feedback` 560px<br>`fi/date-history-open` 560px<br>`fi/date-history` 560px |
 | `/ohje/treffipaiva.html/` | `fi/date` 560px<br>`fi/date-map` 560px<br>`fi/date-location-consent` 560px<br>`fi/date-map-sharing` 560px<br>`fi/date-noshow-not-at-venue` 560px |
 | `/ohje/turvallisuus.html/` | none |
-| `/ohje/vapaat-ajat.html/` | `fi/kalenteri` 560px<br>`fi/kalenteri-valikko` 560px<br>`fi/kalenteri-toistuva` 560px |
+| `/ohje/vapaat-ajat.html/` | `fi/kalenteri` 560px<br>`fi/kalenteri-valikko` 560px<br>`fi/kalenteri-toistuva` 560px<br>`fi/kalenteri-menot` 560px |
 | `/tietojen-poisto.html/` | none |
 | `/tietosuoja.html/` | none |
 | `/turvallisuus.html/` | `asetukset` 520px |
@@ -152,7 +152,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 
 Carried but drawn on no page: `story`, `story-en`, `treffit`.
 
-Manual stills carried but drawn on no page: `fi/kalenteri-menot`.
+Every still in `src/assets/manual` is drawn on at least one page.
 
 <!-- inventory:end -->
 

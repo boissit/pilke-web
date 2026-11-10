@@ -13,9 +13,9 @@ A match's card shows their photo, name and age. It also has up to {{candidates.t
 
 ## Favourite spots
 
-You can choose up to {{candidates.favourite_venues_max}} favourite spots on the Places page of Your details. When a favourite suits you both, it comes first on a candidate's card. Your candidates are chosen the same way as always; favourites only decide which places their cards show first.
+You can choose up to {{candidates.favourite_venues_max}} favourite spots on the Places page of Your details. When a favourite suits you both, it comes first on a match's card. Your matches are picked the same way as always; favourites only decide which places their cards show first.
 
-On a card, a star tells you whose favourite a spot is: {star:mine} is yours, {star:theirs} theirs, and {star:both} a favourite of you both. You'll see the same stars on the invitation and on the date's page.
+On a card, a star tells you whose favourite a spot is: {star:mine} is yours, {star:theirs} theirs, and {star:both} a favourite of you both. You'll see the same stars on the invite and on the date's page.
 
 A favourite stays saved if you remove its date area or date activity from your choices, and works again once you choose them.
 
