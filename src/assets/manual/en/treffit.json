@@ -1,8 +1,8 @@
 {
   "name": "treffit",
   "language": "en",
-  "commit": "7c443097005113e81b41c1277411a7814760d476-dirty",
-  "takenAt": "2026-11-08T08:05:09Z",
+  "commit": "ecac332bf0902d099ca76e79846697398294947e-dirty",
+  "takenAt": "2026-11-10T14:06:28Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -17,7 +17,7 @@
     "tip-bank": {
       "x": 33,
       "y": 1741,
-      "width": 150,
+      "width": 116,
       "height": 176
     },
     "find-dates": {
@@ -56,7 +56,7 @@
       "width": 59,
       "height": 59
     },
-    "balance-sparks-slot-1-growing-0": {
+    "balance-sparks-slot-1-growing-1": {
       "x": 797,
       "y": 143,
       "width": 56,
@@ -68,13 +68,13 @@
       "width": 63,
       "height": 63
     },
-    "match-card-1037": {
+    "match-card-1056": {
       "x": 33,
       "y": 466,
       "width": 1014,
       "height": 308
     },
-    "match-card-1036": {
+    "match-card-1055": {
       "x": 33,
       "y": 954,
       "width": 1014,

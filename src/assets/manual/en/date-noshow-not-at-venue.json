@@ -1,8 +1,8 @@
 {
   "name": "date-noshow-not-at-venue",
   "language": "en",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T08:13:06Z",
+  "commit": "ecac332bf0902d099ca76e79846697398294947e-dirty",
+  "takenAt": "2026-11-10T14:03:54Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -15,9 +15,9 @@
       "height": 2280
     },
     "date-map-directions": {
-      "x": 774,
+      "x": 684,
       "y": 1071,
-      "width": 273,
+      "width": 363,
       "height": 137
     },
     "sheet-card": {
@@ -47,7 +47,7 @@
     "date-underway": {
       "x": 33,
       "y": 1924,
-      "width": 467,
+      "width": 471,
       "height": 172
     }
   }

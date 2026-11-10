@@ -17,7 +17,7 @@ You can choose up to {{candidates.favourite_venues_max}} favourite spots on the 
 
 On a card, a star tells you whose favourite a spot is: {star:mine} is yours, {star:theirs} theirs, and {star:both} a favourite of you both. You'll see the same stars on the invite and on the date's page.
 
-A favourite stays saved if you remove its date area or date activity from your choices, and works again once you choose them.
+A favourite stays saved if you remove its date area or thing to do from your choices, and works again once you choose them.
 
 ## Why these people
 

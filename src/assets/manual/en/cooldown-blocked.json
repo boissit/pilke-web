@@ -1,8 +1,8 @@
 {
   "name": "cooldown-blocked",
   "language": "en",
-  "commit": "7c443097005113e81b41c1277411a7814760d476-dirty",
-  "takenAt": "2026-11-08T07:54:39Z",
+  "commit": "ecac332bf0902d099ca76e79846697398294947e-dirty",
+  "takenAt": "2026-11-10T13:12:45Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -18,7 +18,7 @@
       "x": 33,
       "y": 360,
       "width": 1014,
-      "height": 422
+      "height": 369
     },
     "cooldown-explainer": {
       "x": 951,
@@ -29,7 +29,7 @@
     "tip-bank": {
       "x": 33,
       "y": 1741,
-      "width": 150,
+      "width": 116,
       "height": 176
     },
     "find-dates": {
@@ -60,29 +60,29 @@
       "x": 228,
       "y": 528,
       "width": 690,
-      "height": 212
+      "height": 159
     },
     "dates-next-steps": {
       "x": 33,
-      "y": 884,
+      "y": 831,
       "width": 1014,
       "height": 607
     },
     "next-step-lever-done": {
       "x": 74,
-      "y": 1020,
+      "y": 967,
       "width": 932,
       "height": 132
     },
     "next-step-allow-done": {
       "x": 74,
-      "y": 1163,
+      "y": 1110,
       "width": 932,
       "height": 132
     },
     "next-step-find": {
       "x": 74,
-      "y": 1306,
+      "y": 1253,
       "width": 932,
       "height": 132
     },

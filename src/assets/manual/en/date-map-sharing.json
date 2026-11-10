@@ -1,8 +1,8 @@
 {
   "name": "date-map-sharing",
   "language": "en",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T08:09:13Z",
+  "commit": "ecac332bf0902d099ca76e79846697398294947e-dirty",
+  "takenAt": "2026-11-10T13:58:19Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -21,9 +21,9 @@
       "height": 127
     },
     "date-map-directions": {
-      "x": 774,
+      "x": 684,
       "y": 832,
-      "width": 273,
+      "width": 363,
       "height": 137
     },
     "sheet-card": {

@@ -1,8 +1,8 @@
 {
   "name": "date-location-consent",
   "language": "en",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T08:08:18Z",
+  "commit": "ecac332bf0902d099ca76e79846697398294947e-dirty",
+  "takenAt": "2026-11-10T13:57:26Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -10,21 +10,21 @@
   "elements": {
     "meet-up-disclose-cancel": {
       "x": 122,
-      "y": 1287,
+      "y": 1260,
       "width": 241,
       "height": 172
     },
     "meet-up-disclose-confirm": {
       "x": 122,
-      "y": 1470,
+      "y": 1443,
       "width": 611,
       "height": 172
     },
     "meet-up-disclose-body": {
       "x": 122,
-      "y": 724,
+      "y": 750,
       "width": 836,
-      "height": 530
+      "height": 477
     }
   }
 }

@@ -1,8 +1,8 @@
 {
   "name": "date-history-open",
   "language": "en",
-  "commit": "7c443097005113e81b41c1277411a7814760d476-dirty",
-  "takenAt": "2026-11-08T08:02:16Z",
+  "commit": "ecac332bf0902d099ca76e79846697398294947e-dirty",
+  "takenAt": "2026-11-10T13:23:53Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -17,7 +17,7 @@
     "tip-bank": {
       "x": 33,
       "y": 1741,
-      "width": 150,
+      "width": 116,
       "height": 176
     },
     "find-dates": {

@@ -1,19 +1,13 @@
 {
   "name": "platter",
   "language": "en",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T07:39:51Z",
+  "commit": "ecac332bf0902d099ca76e79846697398294947e-dirty",
+  "takenAt": "2026-11-10T12:51:41Z",
   "screen": {
     "width": 1080,
     "height": 2280
   },
   "elements": {
-    "__CAROUSEL_ITEM_2__": {
-      "x": 972,
-      "y": 342,
-      "width": 108,
-      "height": 1602
-    },
     "__CAROUSEL_ITEM_0__": {
       "x": 0,
       "y": 342,
@@ -26,6 +20,12 @@
       "width": 1080,
       "height": 1780
     },
+    "__CAROUSEL_ITEM_2__": {
+      "x": 972,
+      "y": 342,
+      "width": 108,
+      "height": 1602
+    },
     "card-map-toggle": {
       "x": 0,
       "y": 390,
@@ -33,9 +33,9 @@
       "height": 52
     },
     "propose": {
-      "x": 322,
+      "x": 287,
       "y": 1803,
-      "width": 437,
+      "width": 505,
       "height": 172
     },
     "timeslot-chip-0": {

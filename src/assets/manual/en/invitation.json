@@ -1,8 +1,8 @@
 {
   "name": "invitation",
   "language": "en",
-  "commit": "ac56ecd612ecea10a158c7534df88b61574faec3-dirty",
-  "takenAt": "2026-11-04T07:41:11Z",
+  "commit": "ecac332bf0902d099ca76e79846697398294947e-dirty",
+  "takenAt": "2026-11-10T12:53:30Z",
   "screen": {
     "width": 1080,
     "height": 2280
@@ -45,15 +45,15 @@
       "height": 59
     },
     "invitation-back": {
-      "x": 454,
+      "x": 377,
       "y": 1935,
       "width": 241,
       "height": 172
     },
     "invitation-accept": {
-      "x": 728,
+      "x": 651,
       "y": 1935,
-      "width": 319,
+      "width": 396,
       "height": 172
     },
     "timeslot-0": {
