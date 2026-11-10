@@ -11,6 +11,14 @@ You find {{candidates.per_set}} candidates at a time. Pilke goes through everyon
 
 Each card shows the candidate's photo, name and age, up to {{candidates.times_per_card}} of the soonest times you both have free (1), and up to {{candidates.venues_per_card}} venues that suit you both (2). Those are what you build an invitation from. See [Invitations](/en/guide/kutsut).
 
+## Favourite spots
+
+You can choose up to {{candidates.favourite_venues_max}} favourite spots on the Places page of Your details. When a favourite suits you both, it comes first on a candidate's card. Your candidates are chosen the same way as always; favourites only decide which places their cards show first.
+
+On a card, a star tells you whose favourite a spot is: {star:mine} is yours, {star:theirs} theirs, and {star:both} a favourite of you both. You'll see the same stars on the invitation and on the date's page.
+
+A favourite stays saved if you remove its date area or date activity from your choices, and works again once you choose them.
+
 ## Why these people
 
 A candidate has to meet every one of these, and each is checked both ways: you have to fit their wishes too.

@@ -147,6 +147,57 @@ function badgeReferences(html: string, count: number): string {
  * The page as blocks, in order. `where` is the Markdown file, for errors; `draft` is its
  * own flag, which is what lets a still be missing.
  */
+/** Lucide's `star`, the glyph the app draws its favourite spots with. */
+const STAR_PATH =
+  'M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z';
+
+const STAR_KINDS = ['mine', 'theirs', 'both'] as const;
+type StarKind = (typeof STAR_KINDS)[number];
+
+/** What a screen reader says for each star, since the colour is the whole of it. */
+const STAR_LABELS: Record<Lang, Record<StarKind, string>> = {
+  fi: { mine: 'korallinpunainen tähti', theirs: 'mintunvihreä tähti', both: 'kaksi tähteä' },
+  en: { mine: 'coral star', theirs: 'mint star', both: 'two stars' },
+};
+
+const STAR_TOKEN = /\{star:([a-z]+)\}/g;
+
+function starSvg(kind: 'mine' | 'theirs', className: string): string {
+  return `<svg class="fav-star-glyph ${className}" viewBox="0 0 24 24" aria-hidden="true"><path class="fav-star-${kind}" d="${STAR_PATH}"/></svg>`;
+}
+
+/**
+ * `{star:mine}`, `{star:theirs}` and `{star:both}` in a page's text, drawn as the app's
+ * favourite marks: the filled coral star for your own, the mint one for theirs, and the
+ * two overlapping, coral in front. Inline SVG at the text's size, one image to a screen
+ * reader. Not inside code, where the token is being written about.
+ */
+function favouriteStars(html: string, lang: Lang, where: string): string {
+  let inCode = 0;
+  return html
+    .split(/(<[^>]+>)/)
+    .map((part) => {
+      if (part.startsWith('<')) {
+        if (/^<code[\s>]/.test(part)) inCode++;
+        if (part === '</code>') inCode = Math.max(0, inCode - 1);
+        return part;
+      }
+      if (inCode) return part;
+      return part.replace(STAR_TOKEN, (_, kind: string) => {
+        if (!STAR_KINDS.includes(kind as StarKind)) {
+          throw new Error(`${where} has {star:${kind}}. The stars are mine, theirs and both.`);
+        }
+        const label = STAR_LABELS[lang][kind as StarKind];
+        const art =
+          kind === 'both'
+            ? starSvg('theirs', 'fav-star-back') + starSvg('mine', 'fav-star-front')
+            : starSvg(kind as 'mine' | 'theirs', '');
+        return `<span class="fav-star fav-star--${kind}" role="img" aria-label="${label}">${art}</span>`;
+      });
+    })
+    .join('');
+}
+
 export async function renderManualBody(body: string, lang: Lang, draft: boolean, where: string): Promise<ManualBlock[]> {
   const { marked, shots } = markSteps(resolveTokens(body, where), where);
   const stills = shots.map((shot) => resolveStill(shot, lang, draft, where));
@@ -169,7 +220,7 @@ export async function renderManualBody(body: string, lang: Lang, draft: boolean,
   // text, … An index opens a step; `undefined` is the end marker, which closes one.
   let step: Still | undefined;
   for (let i = 0; i < parts.length; i += 2) {
-    const html = parts[i].trim();
+    const html = favouriteStars(parts[i].trim(), lang, where);
     if (step) {
       blocks.push({ kind: 'step', still: step, html: badgeReferences(html, step.markers.length) });
     } else if (html) {

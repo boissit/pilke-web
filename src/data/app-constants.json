@@ -25,6 +25,7 @@
     "per_set": 3,
     "times_per_card": 5,
     "venues_per_card": 3,
+    "favourite_venues_max": 5,
     "set_hours": 24,
     "max_appearances": 10,
     "exposure_half_life_days": 14

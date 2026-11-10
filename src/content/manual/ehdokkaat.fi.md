@@ -11,6 +11,14 @@ Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joi
 
 Jokaisessa kortissa on ehdokkaan kuva, nimi ja ikä, enintään {{candidates.times_per_card}} lähintä yhteistä aikaanne (1) ja enintään {{candidates.venues_per_card}} treffipaikkaa, jotka sopivat teille molemmille (2). Niistä kokoat kutsun. Katso [Kutsut](/ohje/kutsut).
 
+## Suosikkipaikat
+
+Voit valita enintään {{candidates.favourite_venues_max}} suosikkipaikkaa Omien tietojen Paikat-sivulla. Kun suosikki sopii teille molemmille, se näkyy ehdokkaan kortilla ensimmäisenä. Ehdokkaasi valitaan samoin kuin aina; suosikit päättävät vain, mitkä paikat kortilla näkyvät ensin.
+
+Kortilla tähti kertoo, kenen suosikki paikka on: {star:mine} on suosikkisi, {star:theirs} hänen suosikkinsa ja {star:both} molempien suosikki. Samat tähdet näet kutsussa ja treffien sivulla.
+
+Suosikki pysyy tallessa, vaikka poistaisit sen treffialueen tai treffiaktiviteetin valinnoistasi, ja toimii taas, kun valitset ne uudelleen.
+
 ## Miksi juuri nämä ihmiset
 
 Ehdokkaan on täytettävä kaikki nämä ehdot, ja ne tarkistetaan molempiin suuntiin: sinunkin pitää sopia hänen toiveisiinsa.

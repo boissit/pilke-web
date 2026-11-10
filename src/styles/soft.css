@@ -403,6 +403,45 @@ p:has(> .go) {
   margin-top: var(--pad-small);
 }
 
+/* The app's favourite-spot marks in a sentence: Lucide's star at the text's size,
+   filled coral for your own and mint for theirs, outlined in the text colour as the
+   app outlines them in ink, and for both the two overlapping with the coral in front.
+   Flat, like the app's: no disc and no shadow. */
+.manual .fav-star {
+  position: relative;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.12em;
+}
+
+.manual .fav-star--both {
+  width: 1.4em;
+}
+
+.manual .fav-star-glyph {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  stroke: var(--text);
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.manual .fav-star-back {
+  left: 0.4em;
+}
+
+.manual .fav-star-mine {
+  fill: var(--brand-main);
+}
+
+.manual .fav-star-theirs {
+  fill: var(--success);
+}
+
 /* `(1)` in a step's text, drawn as the badge it refers to on the phone beside it,
    at the size of the text it sits in: the annotation blue, a sans numeral, no
    border and no shadow, so it reads as a reference and not as a button. */
