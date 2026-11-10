@@ -5,32 +5,32 @@ order: 10
 draft: true
 ---
 
-Pilkkeessä teet kolmea asiaa. Ne ovat yhtä tärkeitä: jos yksikin jää tekemättä, treffejä ei synny.
+Pilkkeessä teet kolme asiaa. Treffit syntyvät, kun teet ne kaikki.
 
-- **Pidät kalenterin ajan tasalla.** Merkitset ajat, jolloin voisit lähteä treffeille. Ehdokkaita löytyy vain aikoihin, jolloin olette molemmat vapaita, ja muut löytävät sinut samalla tavalla. Katso [Vapaat aikasi](/ohje/vapaat-ajat).
+- **Pidät kalenterin ajan tasalla.** Merkitset ajat, jolloin pääsisit treffeille. Ehdokkaasi ovat ihmisiä, jotka ovat vapaina samaan aikaan kuin sinä, ja muut löytävät sinut samalla tavalla. Katso [Vapaat aikasi](/ohje/vapaat-ajat).
 - **Kutsut jonkun treffeille.** Löydät {{candidates.per_set}} ehdokasta ja lähetät yhdelle heistä kutsun. Katso [Ketä sinulle näytetään](/ohje/ehdokkaat) ja [Kutsut](/ohje/kutsut).
-- **Vastaat kutsuihin ja menet treffeille.** Kun joku kutsuu sinut, valitset ajan ja paikan tai hylkäät kutsun. Sovitut treffit pidetään. Katso [Treffipäivä](/ohje/treffipaiva).
+- **Vastaat kutsuihin ja menet treffeille.** Kun joku kutsuu sinut, valitset ajan ja paikan tai hylkäät kutsun. Kun treffit on sovittu, menet paikalle. Katso [Treffipäivä](/ohje/treffipaiva).
 
 ![Treffit-sivu: kipinät ylhäällä, kutsut ja treffit keskellä, Löydä treffit! alhaalla](shot:treffit#balance-counter,find-dates)
 
-Treffit-sivu kokoaa kaiken kolmen tuloksen. Ylhäällä ovat kipinäsi (1). Pilke pyörii niiden ympärillä: kipinöitä kertyy kalenterista ja treffeiltä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun. Keskellä ovat kutsut, joihin sinun pitää vastata, lähettämäsi kutsut ja sovitut treffit. Niiden alla on **Treffihistoria**, jossa ovat treffit, joilla olet käynyt. Painamalla **Löydä treffit!** (2) löydät uudet ehdokkaat. Katso [Kipinät](/ohje/kipinat).
+Treffit-sivulla näet kaiken tämän. Ylhäällä ovat kipinäsi (1). Niitä kertyy kalenterista ja treffeiltä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun. Katso [Kipinät](/ohje/kipinat). Keskellä ovat kutsut, jotka odottavat vastaustasi, lähettämäsi kutsut ja sovitut treffit. Niiden alla on **Treffihistoria**, josta löydät treffit, joilla olet käynyt. **Löydä treffit!** (2) etsii sinulle uudet ehdokkaat.
 
 ## Kaikki sanotaan kasvokkain
 
-Pilke hoitaa treffien sopimisen, joten viestejä ei tarvita. Sinä saavut paikalle ja tutustut toiseen.
+Pilke järjestää treffit, joten viestittelyä ei tarvita. Sinä menet paikalle ja tutustut toiseen.
 
-Toiseen ihmiseen tutustuu kunnolla vain kasvokkain. Viesteissä on helppo antaa itsestään hiottu kuva, ja pitkä kirjoittelu luo odotuksia, joihin ensimmäinen tapaaminen ei välttämättä vastaa. Siksi Pilke vie teidät suoraan treffeille, ja tutustuminen alkaa vasta siellä.
+Toiseen tutustuu kunnolla vasta kasvokkain. Viesteissä on helppo hioa itsestään parempi kuva. Pitkä kirjoittelu luo myös odotuksia, joihin ensitapaaminen ei aina vastaa. Pilke vie teidät siksi suoraan treffeille.
 
-Tästä seuraa sääntöjä, jotka muuten tuntuisivat tiukoilta. Toinen ei voi kysyä sinulta mitään, etkä sinä voi ilmoittaa myöhästyväsi: hän tulee paikalle ja odottaa. Siksi saapumatta jäämisestä voi kertoa meille jo treffien aikana ([Treffipäivä](/ohje/treffipaiva)).
+Tästä seuraa pari tiukkaa sääntöä. Toinen ei voi kysyä sinulta mitään, etkä voi kertoa hänelle myöhästyväsi. Hän tulee paikalle ja odottaa. Jos toinen jättää tulematta, voit kertoa siitä meille jo treffien aikana. Katso [Treffipäivä](/ohje/treffipaiva).
 
 ## Rekisteröityminen
 
-Profiilin luonti kestää noin vartin. Pilke kysyy puhelinnumerosi (se vahvistetaan tekstiviestikoodilla, ja sillä kirjaudut jatkossa), kutsumanimen, syntymäpäivän, sukupuolen ja kuvan. Pilke on vain {{profile.min_age}} vuotta täyttäneille. Sen jälkeen tulevat kysymykset, joiden perusteella ehdokkaat valitaan:
+Profiilin luomiseen menee noin vartti. Pilke kysyy puhelinnumerosi, kutsumanimesi, syntymäpäiväsi ja sukupuolesi ja pyytää kuvan. Numeron vahvistat tekstiviestillä tulevalla koodilla, ja numerolla kirjaudut myös jatkossa. Pilkettä voivat käyttää {{profile.min_age}} vuotta täyttäneet. Sen jälkeen vastaat kysymyksiin, joiden perusteella ehdokkaasi valitaan:
 
-- **Persoonallisuuskysely**, {{profile.story_questions}} tilannetta, joissa valitset, mitä tekisit. Vastaukset vaikuttavat siihen, missä järjestyksessä ehdokkaat näytetään.
-- **Ketä etsit ja mitä odotat treffeiltä.** Nämä rajaavat ehdokkaat molempiin suuntiin.
-- **Kielet**, jotta teillä on aina yhteinen kieli.
-- **Treffialueet ja tekeminen**, vähintään {{profile.min_categories}} vaihtoehtoa. Treffipaikat valitaan näiden perusteella.
-- **Vapaat aikasi.** Kerrot, milloin lähtisit mieluiten treffeille, ja voit yhdistää puhelimesi kalenterin. Niiden pohjalta Pilke ehdottaa treffivarauksia seuraavalle viikolle, ja tarkistat ehdotuksen ennen tallentamista. Mitä useampia vapaita aikoja merkitset, sitä parempia ehdokkaita löydämme. Alkuun riittää yksi {{calendar.min_slot_hours}} tunnin aika.
+- **Persoonallisuuskysely.** {{profile.story_questions}} tilannetta, joissa valitset, mitä tekisit. Vastauksesi vaikuttavat siihen, missä järjestyksessä ehdokkaat näytetään.
+- **Ketä etsit ja mitä odotat treffeiltä.** Nämä rajaavat ehdokkaitasi, ja myös sinun pitää sopia heidän toiveisiinsa.
+- **Kielet.** Ehdokkaillasi on kanssasi ainakin yksi yhteinen kieli.
+- **Treffialueet ja tekeminen.** Valitset vähintään {{profile.min_categories}} vaihtoehtoa, ja niiden perusteella Pilke valitsee treffipaikat.
+- **Vapaat aikasi.** Kerrot, milloin lähtisit mieluiten treffeille, ja voit yhdistää puhelimesi kalenterin. Näiden pohjalta Pilke ehdottaa sinulle treffivarauksia seuraavalle viikolle. Tarkistat ehdotuksen ennen kuin tallennat sen. Mitä enemmän vapaata aikaa merkitset, sitä parempia ehdokkaita löydämme. Alkuun riittää yksi {{calendar.min_slot_hours}} tunnin aika.
 
-Kun vahvistat puhelinnumerosi, saat {{petals.signup_bonus}} tervetuliaiskipinää. Ne riittävät yhteen treffikutsuun, joten voit kutsua jonkun heti, kun profiili on valmis. Lopuksi voit sallia ilmoitukset, ja **Valmista!**-näkymässä painat **Löydä treffit**. Jos ehdokkaita ei vielä löydy, Treffit-sivun **Seuraavaksi** kertoo, mitä voit tehdä.
+Puhelinnumeron vahvistamisesta saat {{petals.signup_bonus}} tervetuliaiskipinää. Ne riittävät yhteen treffikutsuun, joten voit kutsua jonkun heti, kun profiilisi on valmis. Lopuksi voit sallia ilmoitukset. **Valmista!**-näkymässä painat **Löydä treffit**. Jos ehdokkaita ei vielä löydy, Treffit-sivun **Seuraavaksi** kertoo, mitä voit tehdä.

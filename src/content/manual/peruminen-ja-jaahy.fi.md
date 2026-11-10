@@ -1,24 +1,24 @@
 ---
 title: Peruminen ja jäähy
-lead: Jäähyn saa, jos perut sovitut treffit, peruutat kutsusi, hylkäät saamasi kutsun tai jätät sen vastaamatta tai et saavu treffeille. Tältä sivulta näet, kuinka kauan jäähy kestää ja mitä sen aikana voi tehdä.
+lead: Saat jäähyn, jos perut sovitut treffit tai lähettämäsi kutsun. Samoin käy, jos hylkäät saamasi kutsun, jätät sen vastaamatta tai et saavu treffeille. Tältä sivulta näet, kuinka kauan jäähy kestää ja mitä voit sen aikana tehdä.
 order: 60
 draft: true
 ---
 
-Sovitut treffit ovat kahden ihmisen yhteinen päätös. Toinen on varannut aikaa sinulle, eikä hän voi kysyä sinulta mitään, koska sovelluksessa ei ole keskusteluyhteyttä. Peruminen on siksi epäkohteliasta häntä kohtaan, ja siitä saa jäähyn. Jäähy päättyy itsestään, ja kipinäsi pysyvät ennallaan.
+Sovitut treffit ovat teidän yhteinen päätöksenne. Toinen on varannut ajan sinulle, eikä hän voi kysyä sinulta mitään, koska sovelluksessa ei ole viestejä. Peruminen on siksi epäkohteliasta, ja siitä saa jäähyn. Jäähy päättyy itsestään, ja kipinäsi pysyvät ennallaan.
 
 ## Kaksi jäähyä
 
-| Jäähy | Mitä et voi tehdä | Ilmoituksessa lukee |
+| Jäähy | Mitä jäähy estää | Ilmoituksessa lukee |
 |---|---|---|
 | Molemmat | Et näy muiden ehdokkaissa etkä voi hakea uusia ehdokkaita. | *Sillä aikaa et näy muiden ehdokkaissa etkä voi löytää uusia ehdokkaita.* |
-| Ei hakua | Et voi hakea uusia ehdokkaita. Näyt muille. | *Sillä aikaa et voi löytää uusia ehdokkaita.* |
+| Ei hakua | Et voi hakea uusia ehdokkaita, mutta näyt muiden ehdokkaissa. | *Sillä aikaa et voi löytää uusia ehdokkaita.* |
 
-Jäähyn aikana voit silti vastata saamiisi kutsuihin ja käydä sovituilla treffeillä. Avoimet kutsusi ja sovitut treffisi pysyvät ennallaan. Jos olit jo löytänyt ehdokkaat, voit silti lähettää kutsun jollekulle heistä.
+Jäähyn aikana voit vastata saamiisi kutsuihin ja käydä sovituilla treffeillä. Avoimet kutsusi ja sovitut treffisi pysyvät ennallaan. Jos olit jo löytänyt ehdokkaat, voit vielä kutsua jonkun heistä.
 
 ![Ilmoitus Treffit-sivulla: et näy muiden ehdokkaissa etkä voi hakea uusia ehdokkaita](shot:cooldown-blocked#cooldown-notice)
 
-Jäähyn aikana Treffit-sivun yläosassa on ilmoitus (1): mitä se estää, mihin asti ja miksi. Sama teksti näkyy, jos yrität hakea ehdokkaita. Jos voimassa on useampi jäähy, ilmoitus kertoo viimeisenä päättyvän syyn ja päättymisajan.
+Treffit-sivun yläosan ilmoitus (1) kertoo, mitä jäähy estää, mihin asti ja miksi. Sama teksti tulee näkyviin, jos yrität hakea ehdokkaita. Jos jäähyjä on useampi, ilmoitus kertoo viimeisenä päättyvän syyn ja päättymisajan.
 
 ## Mistä jäähy alkaa
 
@@ -32,16 +32,16 @@ Jäähyn aikana Treffit-sivun yläosassa on ilmoitus (1): mitä se estää, mihi
 | Peruit sovitut treffit myöhemmin | Molemmat | {{cooldown.cancel_late_days}} päivää |
 | Toinen kertoi treffipaikalta, ettet saapunut | Molemmat | {{cooldown.noshow_days}} päivää |
 
-Toistuva peruminen pidentää jäähyä. Jokainen aiempi sovittujen treffien peruminen viimeisen {{cooldown.repeat_window_days}} päivän ajalta kertoo seuraavan perumisen keston {{cooldown.repeat_multiplier}}:lla. Jäähy kestää kuitenkin enintään {{cooldown.ceiling_days}} päivää. Kutsujen peruutukset, hylkäämiset, vastaamatta jättämiset ja saapumatta jäämiset eivät kasvata kerrointa.
+Jos perut usein, jäähy pitenee. Jokainen sovittujen treffien peruminen viimeisen {{cooldown.repeat_window_days}} päivän ajalta kertoo seuraavan perumisen jäähyn {{cooldown.repeat_multiplier}}:lla. Pisin jäähy on {{cooldown.ceiling_days}} päivää. Kerrointa kasvattavat vain sovittujen treffien perumiset, eivät kutsuihin liittyvät jäähyt eivätkä saapumatta jäämiset.
 
 ![Ilmoitus Treffit-sivulla: et voi hakea uusia ehdokkaita, koska hylkäsit saamasi treffikutsun](shot:cooldown-decline#cooldown-notice)
 
-Kutsun voi hylätä perustelematta, ja hylkäys on kutsujalle parempi vastaus kuin hiljaisuus. Hylkäämisestä ja vastaamatta jättämisestä seuraa lyhyt jäähy (1): toinen käytti kutsuun kipinöitä ja odotti vastaustasi. Jäähyn aikana näyt edelleen muiden ehdokkaissa ja voit vastata saamiisi kutsuihin.
+Kutsun voi hylätä perustelematta, ja kutsujalle hylkäys on parempi vastaus kuin hiljaisuus. Hylkäämisestä ja vastaamatta jättämisestä saa lyhyen jäähyn (1), koska toinen käytti kutsuun kipinöitä ja odotti vastaustasi. Jäähyn aikana näyt edelleen muiden ehdokkaissa ja voit vastata saamiisi kutsuihin.
 
 ## Mitä perumisesta seuraa toiselle
 
-Kun perut sovitut treffit, toinen saa siitä heti ilmoituksen. Ilmoitusta ei voi kytkeä pois, koska ilman sitä hän lähtisi odottamaan ihmistä, joka ei tule. Sovittu aika vapautuu teiltä molemmilta. Jos kutsuit hänet itse, käyttämäsi kipinät jäävät käytetyiksi. Jos hän kutsui sinut, {{petals.refund}} kipinää palaa hänelle.
+Toinen saa perumisesta heti ilmoituksen. Sitä ei voi kytkeä pois, koska muuten hän lähtisi odottamaan ihmistä, joka ei tule. Sovittu aika vapautuu teiltä molemmilta. Jos kutsuit hänet, kipinäsi jäävät käytetyiksi. Jos hän kutsui sinut, {{petals.refund}} kipinää palaa hänelle.
 
-Sovitut treffit perutaan treffisivun **Peru treffit** -painikkeella. Ennen kuin vahvistat, näet, milloin jäähy päättyisi. Kun treffien alkamisaika on ohi, painiketta ei enää ole.
+Treffit perut treffisivun painikkeella **Peru treffit**. Ennen vahvistusta näet, milloin jäähysi päättyisi. Kun treffien alkamisaika on ohi, painike katoaa.
 
-Peru siis heti, kun tiedät, ettet pääse: mitä aikaisemmin perut, sitä lyhyempi jäähy on.
+Peru heti, kun tiedät, ettet pääse. Mitä aikaisemmin perut, sitä lyhyempi jäähy.

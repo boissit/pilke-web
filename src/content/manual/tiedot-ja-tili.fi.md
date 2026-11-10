@@ -1,6 +1,6 @@
 ---
 title: Tietosi ja tilisi
-lead: Mitä muut näkevät sinusta ja milloin, mitkä ilmoitukset tulevat aina, mitä tilin poistamisesta seuraa ja miten annat palautetta.
+lead: Mitä muut näkevät sinusta, mitkä ilmoitukset tulevat aina, mitä tilin poistaminen tekee ja miten annat palautetta.
 order: 90
 draft: true
 ---
@@ -9,43 +9,43 @@ draft: true
 
 | Mitä | Kuka | Milloin |
 |---|---|---|
-| Kutsumanimi, ikä ja kuva sekä yhteiset aikanne ja paikkanne | Ehdokas tai kutsuttu | Olet hänen ehdokkaidensa joukossa tai kutsussa |
-| Kutsumanimi ja puhelinnumero | Treffikumppani | Olette molemmat valinneet palautteessa numeron jakamisen |
-| Sijaintisi kartalla, {{sharing.window_minutes}} minuutin ajan | Treffikumppani | Treffien alun ympärillä, jos itse jaat sijaintisi |
+| Kutsumanimesi, ikäsi ja kuvasi sekä yhteiset aikanne ja paikkanne | Ihminen, jolle sinua ehdotetaan, ja kutsun toinen osapuoli | Kun olet hänen ehdokkaanaan tai teillä on kutsu |
+| Kutsumanimesi ja puhelinnumerosi | Treffikumppanisi | Kun olette molemmat valinneet palautteessa, että numeron saa jakaa |
+| Sijaintisi kartalla {{sharing.window_minutes}} minuutin ajan | Treffikumppanisi | Treffien alkamisen aikoihin, jos itse jaat sijaintisi |
 
-Taulukossa on kaikki, mitä sinusta näytetään muille. Sähköpostiosoitettasi ja luotettavan henkilön numeroa ei näe kukaan muu kuin sinä. Palautettasi ei näe treffikumppanisi. Jos Pilke merkitsee treffit sinun kalenteriisi, esimerkiksi Google- tai Apple-kalenteriisi, merkinnän näkevät kaikki, jotka näkevät sen kalenterin. Katso [Vapaat aikasi](/ohje/vapaat-ajat).
+Taulukossa on kaikki, mitä muut sinusta näkevät. Sähköpostiosoitteesi ja luotettavan läheisesi numeron näet vain sinä, eikä treffikumppanisi näe palautettasi. Jos Pilke merkitsee treffit omaan kalenteriisi, kuten Google- tai Apple-kalenteriin, merkinnän näkevät kaikki, jotka näkevät sen kalenterin. Katso [Vapaat aikasi](/ohje/vapaat-ajat).
 
 ## Ilmoitukset
 
 ![Ilmoitusasetukset: jokaiselle ilmoitukselle valitaan puhelin, sähköposti tai molemmat](shot:asetukset-ilmoitukset#notification-new_date-push,notification-new_date-email)
 
-Valitset jokaiselle ilmoitukselle, tuleeko se puhelimeen (1), sähköpostiin (2), molempiin vai ei kumpaankaan. Esimerkiksi **Uudet treffikutsut** kertoo, kun joku kutsuu sinut treffeille. Sähköposti toimii, kun osoitteesi on vahvistettu.
+Jokaiselle ilmoitukselle valitset, tuleeko se puhelimeen (1), sähköpostiin (2), molempiin vai ei kumpaankaan. Esimerkiksi **Uudet treffikutsut** kertoo, kun joku kutsuu sinut treffeille. Sähköpostit tulevat, kun olet vahvistanut osoitteesi.
 
-Kolme ilmoitusta tulee aina puhelimeen, koska niistä on hyötyä vain ajoissa:
+Kolme ilmoitusta tulee aina puhelimeen, koska niistä on hyötyä vain silloin, kun ne tulevat heti:
 
-- **Treffien alku**: sijainnin voi nyt jakaa, {{sharing.lead_minutes}} minuuttia ennen treffejä.
-- **Kun toinen on paikalla**: treffikumppanisi on jakanut sijaintinsa treffipaikalla.
-- **Perutut treffit**: ilman tätä lähtisit odottamaan ihmistä, joka ei tule.
+- **Treffien alku** tulee {{sharing.lead_minutes}} minuuttia ennen treffejä, kun voit alkaa jakaa sijaintisi.
+- **Kun toinen on paikalla** kertoo, että treffikumppanisi on jakanut sijaintinsa treffipaikalla.
+- **Perutut treffit** kertoo, että toinen perui. Muuten lähtisit odottamaan ihmistä, joka ei tule.
 
-Muistutus tyhjästä kalenterista tulee sunnuntaisin noin kello {{notifications.calendar_nudge_hour}}, jos seuraavalle viikolle ei ole merkitty aikoja.
+Jos et ole merkinnyt aikoja seuraavalle viikolle, saat sunnuntaina noin kello {{notifications.calendar_nudge_hour}} muistutuksen.
 
 ## Tili
 
 ![Tili avattuna: Kirjaudu ulos, Kirjaudu ulos kaikilta laitteilta ja Poista tili](shot:asetukset-tili#sign-out-everywhere,delete-account)
 
-Kirjaudut puhelinnumeroosi tulevalla kertakoodilla, eikä salasanaa ole. Kirjautuminen on laitekohtaista, ja se pysyy voimassa {{login.session_days}} päivää viimeisestä käytöstä.
+Kirjaudut sisään koodilla, joka tulee tekstiviestinä puhelinnumeroosi. Salasanaa et tarvitse. Kirjautuminen on laitekohtainen ja pysyy voimassa {{login.session_days}} päivää siitä, kun viimeksi käytit sovellusta.
 
-**Kirjaudu ulos kaikilta laitteilta** (1) kirjaa sinut ulos jokaisesta laitteesta, myös tästä. Käytä sitä, jos puhelimesi on kadonnut tai lainassa.
+**Kirjaudu ulos kaikilta laitteilta** (1) kirjaa sinut ulos jokaiselta laitteelta, myös tältä. Käytä sitä, jos puhelimesi on kadonnut tai lainassa.
 
-**Poista tili** (2) poistaa tilisi heti, eikä sitä voi perua:
+**Poista tili** (2) poistaa tilisi heti. Poistoa ei voi perua.
 
 - Nimesi, kuvasi, yhteystietosi, toiveesi, kalenterisi ja vastauksesi poistetaan heti.
-- Tulevat sovitut treffit perutaan, ja toinen saa siitä ilmoituksen. Jos hän lähetti kutsun, hän saa kipinänsä takaisin. Jo alkaneet treffit jäävät ennalleen.
-- Lähettämäsi kutsut peruutetaan ja saamasi kutsut hylätään. Kutsun lähettäjä saa kipinänsä takaisin.
-- Menneet treffit, niistä annetut palautteet ja turvallisuusilmoitukset jäävät talteen. Nimesi tilalla näkyy *Poistunut käyttäjä*.
+- Tulevat sovitut treffit perutaan, ja toinen saa siitä ilmoituksen. Jos kutsu oli hänen, hän saa kipinänsä takaisin. Jo alkaneet treffit jäävät ennalleen.
+- Lähettämäsi kutsut peruutetaan. Saamasi kutsut hylätään, ja niiden lähettäjät saavat kipinänsä takaisin.
+- Menneet treffit, niistä annetut palautteet ja turvallisuusilmoitukset säilyvät. Nimesi tilalla niissä lukee *Poistettu käyttäjä*.
 
-Voit rekisteröityä myöhemmin samalla numerolla, mutta aloitat silloin tyhjältä tililtä. Kuinka kauan mitäkin säilytetään, kerrotaan [tietosuojaselosteessa](/tietosuoja).
+Voit myöhemmin rekisteröityä samalla numerolla, mutta aloitat silloin alusta. [Tietosuojaselosteesta](/tietosuoja) näet, kuinka kauan mitäkin tietoa säilytetään.
 
 ## Palaute
 
-**Anna palautetta** on asetusten alareunassa, osioiden alla. Lomakkeessa on kolme kohtaa: **Mikä toimii?**, **Mikä ei toimi?** ja **Vapaa sana**. Voit kirjoittaa yhteen tai kaikkiin, ja palaute tulee suoraan meille. Jos valitset **Toivon vastausta palautteeseeni**, vastaamme sähköpostiosoitteeseesi tai puhelinnumeroosi.
+**Anna palautetta** on asetusten alareunassa. Lomakkeessa on kohdat **Mikä toimii?**, **Mikä ei toimi?** ja **Vapaa sana**. Kirjoita yhteen tai kaikkiin, ja palaute tulee suoraan meille. Jos valitset **Toivon vastausta palautteeseeni**, vastaamme sähköpostiisi tai puhelinnumeroosi.
