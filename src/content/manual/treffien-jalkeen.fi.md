@@ -1,6 +1,6 @@
 ---
 title: Treffien jälkeen
-lead: Palautteella kerrot, miten treffit menivät. Se ratkaisee myös, näettekö toisenne uudelleen, ja siitä saat kipinöitä.
+lead: Palautteella kerrot, miten treffit menivät. Treffipalautteella opimme sekä sinusta että treffikumppanistasi, tarjoamme sen avulla entistä parempia ehdokkaita tuleville treffeille. Palautteesta saat myös kipinöitä.
 order: 80
 draft: true
 ---
@@ -9,23 +9,21 @@ Palautetta voit antaa heti, kun treffit päättyvät {{date.length_hours}} tunni
 
 ![Treffipalaute: treffikumppani, treffien aika ja ensimmäinen kysymys](shot:feedback)
 
-Ylhäällä näet, mistä treffeistä on kyse. Ensin kysymme *Miten treffit sujuivat?* Jokaisen vaihtoehdon alla lukee, mitä kysymme sen jälkeen.
+Ylhäällä näet, mistä treffeistä on kyse. Palautteen ensimmäisen kysymyksen jälkeen lomake haarautuu, ja kysymme hieman eri kysymykset riippuen treffien kulusta.
 
 - **Hyvin.** Kysymme, mistä pidit treffikumppanissasi, soveltuiko paikka treffeille ja haluaisitko tavata hänet uudelleen.
-- **Ok.** Kysymme, mistä pidit treffikumppanissasi ja mitä toivoit häneltä enemmän. Sitten kysymme paikasta ja siitä, haluaisitko tavata hänet uudelleen.
-- **Huonosti.** Kysymme ensin, tuntuiko olosi turvalliselta treffeillä. Jos vastaat *Kyllä*, kysymme, mitä toivoit treffikumppaniltasi enemmän, ja sitten paikasta. Mitä muista vastauksista seuraa, kerromme sivulla [Turvallisuus](/ohje/turvallisuus).
+- **Ok.** Kysymme, mistä pidit treffikumppanissasi ja mitä olisit toivonut enemmän. Sitten kysymme treffipaikasta ja siitä, haluaisitko tavata hänet uudelleen.
+- **Huonosti.** Kysymme ensin, tuntuiko olosi turvalliselta treffeillä. Jos vastaat *Kyllä*, kysymme, mitä toivoit treffikumppaniltasi enemmän, ja sitten treffipaikasta. Muista vastauksista voit lukea tarkemmin sivulla [Turvallisuus](/ohje/turvallisuus).
 - **Treffit eivät toteutuneet.** Kysymme, mitä tapahtui. Katso alta.
 
 Vastaa jokaiseen kysymykseen ja paina **Jatka**.
 
 Kysymyksissä *Pidin näistä asioista treffikumppanissani* ja *Toivoin treffikumppaniltani enemmän näitä asioita* on samat vaihtoehdot, esimerkiksi *Luonne*, *Huumori*, *Elämäntilanne* ja *Aallonpituus*. Valitse vähintään yksi tai niin monta kuin haluat.
 
-Kohtaan *Paikka soveltui treffeille* vastaat *Kyllä*, *En osaa sanoa* tai *Ei*. Jos jouduitte vaihtamaan paikkaa, valitse *Vaihdoimme paikkaa*.
+Palaute lähetetään, kun vastaat viimeiseen kysymykseen, ja näet tekstin *Kiitos vastauksistasi.* **Valmis** vie sinut takaisin Treffit-sivulle, jossa näet saamasi kipinät.
 
-Palaute lähtee, kun vastaat viimeiseen kysymykseen, ja näet tekstin *Kiitos vastauksistasi.* **Valmis** vie sinut takaisin Treffit-sivulle, jossa näet saamasi kipinät.
-
-- **Kuka vastauksesi näkee.** Vain Pilkkeen työntekijät. Treffikumppanillesi voi välittyä ainoastaan puhelinnumerosi, ja vain alla kerrotulla tavalla.
-- **Kipinät.** Palautteesta saat {{sparks.per_date}} kipinää, kun treffit toteutuivat tai treffipari ei tullut paikalle. Kumpikin saa omansa omasta palautteestaan. Katso [Kipinät](/ohje/kipinat).
+- **Mitä vastauksille tapahtuu.** Vastauksia käytetään ymmärtämään sekä sinua että treffikumppaniasi paremmin, jotta voimme tarjota teille entistä parempia ehdokkaita tuleville treffeille.
+- **Kipinät.** Palautteen täyttämisen jälkeen saat {{sparks.per_date}} kipinää. Kumpikin treffien osapuolista saa omansa omasta palautteestaan. Katso [Kipinät](/ohje/kipinat).
 
 ## Tapaatteko uudelleen
 
@@ -41,8 +39,8 @@ Kieltäytyminen ja vastaamatta jättäminen näyttävät toiselle samalta.
 
 Jos valitset *Treffit eivät toteutuneet*, kysymme, mitä tapahtui.
 
-- **Treffipari ei tullut paikalle.** Tieto menee Pilkkeen työntekijöille, ja saat palautteesta {{sparks.per_date}} kipinää. Toinen saa jäähyn vain, jos teit ilmoituksen treffipaikalla treffien aikana. Katso [Treffipäivä](/ohje/treffipaiva).
-- **En päässyt itse paikalle.** Voit kertoa, mikä esti. Tästä palautteesta et saa kipinöitä. Ensi kerralla peru treffit heti, kun tiedät, ettet pääse, niin treffiparisi aika vapautuu. Katso [Peruminen ja jäähy](/ohje/peruminen-ja-jaahy).
+- **Treffipari ei tullut paikalle.** Tästä ilmoitetaan Pilkkeen ylläpitäjille, ja toinen saa tästä jäähyn. Katso [Treffipäivä](/ohje/treffipaiva).
+- **En päässyt itse paikalle.** Voit kertoa tapahtuneesta tarkemmin, mutta tulematta jättämisestä ei saa kipinöitä. Ensi kerralla peru treffit heti, kun tiedät, ettet pääse, niin treffiparisi aika vapautuu. Katso [Peruminen ja jäähy](/ohje/peruminen-ja-jaahy).
 
 ## Treffihistoria
 

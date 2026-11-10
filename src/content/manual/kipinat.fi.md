@@ -5,7 +5,7 @@ order: 30
 draft: true
 ---
 
-Kipinäsi näkyvät Treffit-sivun ylälaidassa. Tässä kerromme, mistä niitä kertyy, mihin ne kuluvat ja milloin saat ne takaisin.
+Kipinäsi näkyvät Treffit-sivun ylälaidassa. Tällä sivulla kerromme, mistä niitä kertyy ja mihin ne kuluvat.
 
 ## Mistä kipinöitä saa ja mihin ne kuluvat
 
@@ -25,13 +25,13 @@ Kipinäsi näkyvät Treffit-sivun ylälaidassa. Tässä kerromme, mistä niitä 
 
 Palautuksessa saat takaisin kutsuun kuluneet {{petals.refund}} kipinää.
 
-Treffien kipinät saat, kun olet antanut palautteen. Kumpikin saa omansa omasta palautteestaan.
+Treffeistä saat kipinät, kun olet täyttänyt treffipalautteen.
 
 ## Kalenterin kipinät
 
-Mitä pidempään vapaa aika on merkittynä, sitä enemmän kipinää kertyy. {{calendar.petal_week_hours}} tuntia viikon ajan tuo yhden kipinän. Saman verran tuo esimerkiksi {{calendar.counted_hours_cap}} tuntia vajaassa kahdessa päivässä. Saat kipinät yksi kerrallaan sitä mukaa kuin ne kertyvät.
+Mitä pidempään vapaa aika on merkittynä, sitä enemmän kipinöitä kertyy. {{calendar.petal_week_hours}} tuntia viikon ajan tuo yhden kipinän. Saman verran tuo esimerkiksi {{calendar.counted_hours_cap}} tuntia vajaassa kahdessa päivässä. Saat kipinöitä yksi kerrallaan sitä mukaa kuin ne kertyvät.
 
-- Mukaan lasketaan tulevat ajat siltä osin kuin ne osuvat seuraavan {{calendar.earning_horizon_days}} päivän sisälle. Tunti kerryttää kipinää siihen asti, kun se alkaa.
+- Mukaan lasketaan tulevat ajat siltä osin kuin ne osuvat seuraavan {{calendar.earning_horizon_days}} päivän sisälle.
 - Kerrallaan lasketaan enintään {{calendar.counted_hours_cap}} tuntia, joten viikossa kalenterista kertyy enintään {{calendar.max_petals_per_week}} kipinää.
 - Aika, jonka merkitset ja poistat heti perään, ei kerrytä mitään.
 
@@ -40,15 +40,15 @@ Mitä pidempään vapaa aika on merkittynä, sitä enemmän kipinää kertyy. {{
 | Kalenterissasi | Kipinöitä |
 | --- | --- |
 | Lauantai klo 18–22 (4 tuntia), merkitty viikkoa ennen | noin 0,4 |
-| Sama lauantai merkittynä 20 päivää ennen. Kertyminen alkaa, kun lauantaihin on {{calendar.earning_horizon_days}} päivää | noin 0,8 |
+| Sama lauantai merkittynä 20 päivää ennen nykyhetkeä. Kipinöiden kertyminen alkaa, kun lauantaihin on {{calendar.earning_horizon_days}} päivää | noin 0,8 |
 | Noin 10 tuntia viikossa, aina kaksi viikkoa eteenpäin merkittynä | noin 2 viikossa |
 | Koko ajan vähintään {{calendar.counted_hours_cap}} tuntia seuraavan {{calendar.earning_horizon_days}} päivän aikana | {{calendar.max_petals_per_week}} viikossa |
 
 ## Yläraja
 
-Kipinöitä voi olla kerrallaan enintään {{petals.cap}}, mikä riittää {{petals.cap_roses}} kutsuun. Kun raja täyttyy, uudet kipinät jäävät odottamaan. Ne tulevat perille heti, kun lähetät kutsun ja tilaa vapautuu. Kun kipinät ovat täynnä, lähetä kutsu!
+Kipinöitä voi olla kerrallaan enintään {{petals.cap}}, mikä riittää {{petals.cap_roses}} kutsuun. Kun raja täyttyy, uudet kipinät jäävät odottamaan. Voit saada niitä lisää, kun lähetät kutsun ja tilaa vapautuu. Kun kipinät ovat täynnä, lähetä kutsu!
 
-Sinulla on esimerkiksi {{petals.cap}} kipinää, ja kalenterisi kerryttää viikossa kaksi lisää. Ne jäävät odottamaan. Kun lähetät kutsun, {{petals.set_cost}} kipinää kuluu ja kaksi odottanutta tulee perille. Palautteen kipinät tulevat vasta, kun ne kaikki mahtuvat kerralla.
+Esimerkiksi: sinulla on {{petals.cap}} kipinää, ja kalenterisi kerryttää viikossa kaksi lisää. Saat ne, kun lähetät kutsun ja tilaa vapautuu.
 
 Palautetut kipinät tulevat perille rajasta riippumatta, joten kipinöitä voi joskus olla yli {{petals.cap}}.
 

@@ -5,7 +5,7 @@ order: 40
 draft: true
 ---
 
-Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joiden kanssa treffit olisivat mahdollisia, ja valitsee heistä sinulle sopivimmat. Jos sopivia on alle {{candidates.per_set}}, kipinäsi pysyvät tallessa.
+Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joiden kanssa treffit olisivat mahdollisia, ja valitsee heistä sinulle sopivimmat. Jos sopivia on alle {{candidates.per_set}}, ehdokkaiden haku peruuntuu, eivätkä kipinät kulu.
 
 ![Ehdokkaat-näkymä: keskimmäisen ehdokkaan kortti, yhteiset ajat ja paikat](shot:platter#timeslot-chip-*,activity-chip-*)
 
@@ -23,27 +23,27 @@ Suosikki pysyy tallessa, vaikka poistaisit sen treffialueen tai treffiaktiviteet
 
 Ehdokkaan pitää täyttää kaikki nämä ehdot. Ne tarkistetaan molempiin suuntiin, joten myös sinun pitää sopia hänen toiveisiinsa.
 
-- **Yhteinen aika.** Kalentereissanne on vähintään {{calendar.min_shared_hours}} tunnin yhteinen vapaa aika. Ajat, jotka ovat jo toisessa avoimessa kutsussa tai sovituilla treffeillä, eivät lasketa.
-- **Treffialue.** Teillä on yhteinen treffialue, ja siellä on treffipaikka tekemiselle, jota toivotte molemmat.
+- **Yhteinen aika.** Kalentereissanne on vähintään {{calendar.min_shared_hours}} tunnin yhteinen vapaa aika. Ajat, jotka ovat jo toisessa avoimessa kutsussa tai sovituilla treffeillä, eivät kuulu mukaan.
+- **Treffialue.** Alueella, jonka olette molemmat valinneet, on treffipaikka, joka sopii teidän molempien toivomaan tekemiseen.
 - **Kieli.** Teillä on vähintään yksi yhteinen kieli.
-- **Tekeminen.** Toivotte ainakin osin samanlaista tekemistä.
-- **Toiveet.** Sukupuolenne ja ikänne sopivat toistenne toiveisiin, ja odotatte treffeiltä ainakin yhtä samaa asiaa.
-- **Valinnanvara.** Teillä on vähintään {{invitation.choice_threshold}} yhteistä aikaa tai {{invitation.choice_threshold}} yhteistä paikkaa, jotta kutsussa on mistä valita.
+- **Tekeminen.** Molemmat ovat toivoneet ainakin jotain samaa tekemistä.
+- **Toiveet.** Sukupuolenne, ikänne ja muut mieltymykset sopivat toistenne toiveisiin.
+- **Valinnanvara.** Teillä on vähintään {{invitation.choice_threshold}} yhteistä aikaa tai {{invitation.choice_threshold}} yhteistä paikkaa, jotta kutsun vastaanottajalla on varaa valita.
 
-Myös **treffitahti** vaikuttaa. Sen valitset Omien tietojen Ajat-sivulla kohdassa *Kuinka usein haluaisit käydä treffeillä?* Jos ehdokas on valinnut *Kerran viikossa*, hänelle ehdotetaan aikoja ennen hänen viimeisimpiä sovittuja treffejään tai aikaisintaan {{matching.pace_weekly_days}} päivää niiden jälkeen. Valinnalla *Kerran kahdessa viikossa* väli on {{matching.pace_fortnightly_days}} päivää. Sama koskee sinua, kun sinua ehdotetaan muille. Kun itse etsit ehdokkaita, omaan tahtiisi sopivat ajat näytetään ensin.
+Myös **treffitahti** vaikuttaa. Sen valitset Omien tietojen Ajat-sivulla kohdassa *Kuinka usein haluaisit käydä treffeillä?* Jos ehdokas on valinnut *Kerran viikossa*, hänelle ehdotetaan aikoja ennen hänen viimeisimpiä sovittuja treffejään tai aikaisintaan {{matching.pace_weekly_days}} päivää niiden jälkeen. Valinnalla *Kerran kahdessa viikossa* väli on {{matching.pace_fortnightly_days}} päivää. Kun itse etsit ehdokkaita, omaan tahtiisi sopivat ajat näytetään ensin.
 
 ## Miksi joku ei tule enää vastaan
 
-- **Teillä on ollut kutsu.** Kun kahden ihmisen välillä on ollut kutsu, heitä ei enää ehdoteta toisilleen, lähetti sen kumpi tahansa ja päättyi se miten tahansa. Poikkeus on, jos vastasitte treffien jälkeen molemmat haluavanne tavata uudelleen. Katso [Treffien jälkeen](/ohje/treffien-jalkeen).
+- **Olette jo käyneet treffeillä.** Kun kaksi ihmistä on käynyt treffeillä, heitä ei enää ehdoteta toisilleen. Poikkeuksena tilanne, jossa molemmat valitsivat treffipalautteessa haluavansa tavata uudelleen Pilkkeen välityksellä. Katso [Treffien jälkeen](/ohje/treffien-jalkeen).
 - **Hänet on näytetty sinulle äskettäin.** Äskettäin näytetty ehdokas laskee järjestyksessä, ja vaikutus puolittuu {{candidates.exposure_half_life_days}} päivässä. Kun sama ihminen on ollut ehdokkaanasi {{candidates.max_appearances}} kertaa, et näe häntä enää.
 
 ## Missä järjestyksessä
 
-Järjestykseen vaikuttaa persoonallisuuskysely. Mitä useampaan kysymykseen olette vastanneet samoin, sitä korkeammalle ehdokas nousee. Äskettäin näytetyt laskevat, kuten yllä kerrottiin.
+Persoonallisuuskyselyn vastaukset toimivat pohjana treffiehdokkaiden löytämiseen. Myöhemmin treffien jälkeinen treffipalaute ohjaa sopivimpien ehdokkaiden löytämistä.
 
 ## Kuinka kauan ehdokkaat odottavat
 
-Ehdokkaasi odottavat sinua {{candidates.set_hours}} tuntia. Jos poistut välillä, Treffit-sivun painikkeessa lukee **Viimeistele kutsu**. Se vie sinut takaisin samojen ehdokkaiden luo, eikä uusia kipinöitä kulu. Uudet ehdokkaat löydät, kun olet lähettänyt kutsun tai nämä ehdokkaat ovat vanhentuneet.
+Ehdokkaasi odottavat sinua {{candidates.set_hours}} tuntia. Jos kutsu jää kesken, Treffit-sivun painikkeessa lukee **Viimeistele kutsu**. Se vie sinut takaisin samojen ehdokkaiden luo, eikä uusia kipinöitä kulu. Uudet ehdokkaat löydät, kun olet lähettänyt kutsun tai nämä ehdokkaat ovat vanhentuneet.
 
 Ehdokkaat vanhenevat jo aiemmin, jos yhdellekin heistä ei voi enää lähettää kutsua. Näin käy, kun kortin ajat ovat menneet ohi tai varautuneet toiseen kutsuun. Silloin kaikki ehdokkaat vanhenevat, eikä kipinöitä palauteta.
 
@@ -51,12 +51,12 @@ Kun lähetät kutsun, muut ehdokkaat poistuvat.
 
 ![Ilmoitus Treffit-sivulla: et voi hakea uusia ehdokkaita tiettyyn aikaan asti](shot:cooldown-nodraw#cooldown-notice)
 
-Jos et juuri nyt voi löytää ehdokkaita, Treffit-sivun ilmoitus (1) kertoo syyn ja sen, milloin esto päättyy. Katso [Peruminen ja jäähy](/ohje/peruminen-ja-jaahy).
+Jos et juuri nyt voi löytää ehdokkaita, Treffit-sivun ilmoitus (1) kertoo syyn ja sen, milloin jäähy päättyy. Katso [Peruminen ja jäähy](/ohje/peruminen-ja-jaahy).
 
 ## Kysyttyä
 
-**Miksi ehdokkaita ei löytynyt?** Sopivia ehdokkaita oli alle {{candidates.per_set}}. Sovellus kertoo, mikä ehto karsi viimeisetkin. Se voi olla toiveet, tekeminen, treffialueet, yhteinen aika tai se, että sopivia ihmisiä on juuri nyt vähän. Painikkeesta pääset suoraan kalenteriin tai siihen Omien tietojen sivuun, jolla voit muuttaa ehtoa. Samat askeleet näet Treffit-sivun kohdassa **Seuraavaksi**. Useimmiten auttaa, kun merkitset kalenteriin lisää aikaa, varsinkin kellertäville tunneille. Kipinäsi pysyvät tallessa.
+**Miksi ehdokkaita ei löytynyt?** Sopivia ehdokkaita oli alle {{candidates.per_set}}. Sovellus pyrkii kertomaan, jos tähän voi vaikuttaa valinnoillasi. Tähän vaikuttavat toiveet, tekeminen, treffialueet, yhteinen aika tai se, että sopivia ihmisiä on rekisteröityneenä toistaiseksi vähän. Painikkeesta pääset suoraan kalenteriin tai siihen Omien tietojen sivuun, jolla voit muuttaa ehtoa. Samat askeleet näet Treffit-sivun kohdassa **Seuraavaksi**. Useimmiten auttaa, kun merkitset kalenteriin lisää aikaa, varsinkin [korostetuille tunneille](/ohje/vapaat-ajat#kellertävät-tunnit). Jos ehdokkaita ei löytynyt, kipinät eivät kulu.
 
 **Näkeekö joku, että hän oli ehdokkaani?** Ei. Ehdokas saa tietää sinusta vasta, kun lähetät hänelle kutsun.
 
-**Miten näyn useammin muiden ehdokkaissa?** Merkitse enemmän aikaa, varsinkin kellertäville tunneille, ja valitse useampia treffialueita ja tekemisiä. Kun olet perunut sovitut treffit tai toinen on kertonut, ettet saapunut, et näy jäähyn aikana muiden ehdokkaissa.
+**Miten näyn useammin muiden ehdokkaissa?** Merkitse enemmän aikaa, varsinkin [korostetuille tunneille](/ohje/vapaat-ajat#kellertävät-tunnit), ja valitse useampia treffialueita ja tekemisiä.

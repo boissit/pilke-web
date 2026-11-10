@@ -1,6 +1,6 @@
 ---
 title: Treffipäivä
-lead: Miten löydätte toisenne perillä ja mitä teet, jos toinen ei tule.
+lead: Miten löydätte toisenne treffipaikalla ja mitä tehdä, jos toinen ei saavu paikalle.
 order: 70
 draft: true
 ---
@@ -16,7 +16,7 @@ Kartalla voit jakaa sijaintisi treffikumppanillesi, niin löydätte toisenne hel
 - **Milloin.** {{sharing.lead_minutes}} minuuttia ennen treffien alkua ja {{sharing.trail_minutes}} minuuttia alun jälkeen. Saat ilmoituksen, kun jakaminen on mahdollista.
 - **Missä.** Enintään noin {{sharing.radius_m}} metrin päässä treffipaikasta.
 - **Kenelle.** Vain treffikumppanillesi. Hän saa ilmoituksen, kun olet paikalla.
-- **Kuinka kauan.** Sijaintisi on palvelimella vain jakamisen ajan, ja se poistetaan heti, kun lopetat jakamisen tai aika loppuu. Talteen jää vain tieto siitä, että jaoit sijaintisi.
+- **Kuinka kauan.** Sijaintisi näkyy toiselle korkeintaan {{sharing.trail_minutes}} minuuttia treffien alkamisen jälkeen, tai kunnes päätät itse lopettaa jakamisen.
 
 ![Treffipaikan kartta ja Jaa sijaintini -painike](shot:date-map#meet-up-reveal)
 
@@ -24,18 +24,18 @@ Aloita jakaminen kartan painikkeesta **Jaa sijaintini** (1).
 
 ![Kysymys Jaetaanko sijaintisi? ja sen selitys](shot:date-location-consent)
 
-Ennen jakamista sovellus kertoo, mitä tapahtuu, ja kysyy lupaasi.
+Ennen jakamista sovellus kysyy lupaasi.
 
 ![Kartta, kun jaatte molemmat sijaintianne: molempien nastat, treffikumppanin sijainnin päivitysaika ja Lopeta sijainnin jakaminen -painike](shot:date-map-sharing#meet-up-stop)
 
-Kun jaat sijaintiasi, näet kartalla itsesi ja treffipaikan. Jos treffikumppanisikin jakaa sijaintinsa, näet myös hänet, ja kartan alla lukee, milloin hänen sijaintinsa päivittyi viimeksi. Sinun sijaintisi päivittyy itsestään, vaikka puhelin olisi taskussa. Jakaminen päättyy, kun aika loppuu tai painat **Lopeta sijainnin jakaminen** (1).
+Kun jaat sijaintiasi, näet kartalla itsesi ja treffipaikan. Jos treffikumppanisikin jakaa sijaintinsa, näet myös hänet, ja kartan alla lukee, milloin hänen sijaintinsa päivittyi viimeksi. Sinun sijaintisi päivittyy automaattisesti, vaikka puhelin olisi taskussa. Jakaminen päättyy, kun aika loppuu tai painat **Lopeta sijainnin jakaminen** (1).
 
 ## Jos toinen ei tule
 
-Jos jäät odottamaan yksin, voit kertoa siitä meille. Ilmoituksen voi tehdä vain treffien aikana ja treffipaikalla:
+Jos treffiparisi ei saavu paikalle, voit kertoa siitä meille. Ilmoituksen voi tehdä vain treffien aikana ja treffipaikalla:
 
-- **Milloin.** Aikaisintaan {{noshow.grace_minutes}} minuuttia sovitun alkamisajan jälkeen ja viimeistään, kun treffit päättyvät {{date.length_hours}} tunnin kuluttua alusta. Odotusaika jättää tilaa pienelle myöhästymiselle, koska toinen ei voi kertoa sovelluksessa myöhästyvänsä.
-- **Missä.** Enintään noin {{noshow.venue_radius_m}} metrin päässä treffipaikasta. Ilmoitus tuo toiselle pitkän jäähyn pelkästään sinun sanasi perusteella, joten sen pitää tulla paikan päältä. Puhelin tarkistaa sijaintisi ilmoitushetkellä, eikä sijaintia tallenneta.
+- **Milloin.** Aikaisintaan {{noshow.grace_minutes}} minuuttia sovitun alkamisajan jälkeen ja viimeistään, kun treffit päättyvät {{date.length_hours}} tunnin kuluttua alusta. Odotusaika jättää tilaa pienelle myöhästymiselle.
+- **Missä.** Enintään noin {{noshow.venue_radius_m}} metrin päässä treffipaikasta. Puhelin tarkistaa sijaintisi ilmoitushetkellä, eikä sijaintia tallenneta.
 
 Näin ilmoitat:
 
@@ -47,9 +47,9 @@ Näin ilmoitat:
 
 Jos et ole treffipaikalla, sovellus kertoo sen (1), eikä ilmoitusta tehdä.
 
-Ilmoitus on lopullinen. Sen jälkeen palautteeksi riittää yksi painallus. Vahvistat Treffit-sivulla, että treffipari ei tullut paikalle, ja saat {{sparks.per_date}} kipinää. Toinen saa {{cooldown.noshow_days}} päivän jäähyn, jonka aikana hän ei näy muiden ehdokkaissa eikä voi hakea uusia ehdokkaita. Hän näkee Treffit-sivulla, että hänestä on tehty ilmoitus. Jos hänkin kertoo treffipaikalta treffien aikana, ettet sinä saapunut, kumpaakaan ei rangaista, ja Pilkkeen työntekijä selvittää tapauksen.
+Ilmoitusta ei voi perua. Toinen saa {{cooldown.noshow_days}} päivän jäähyn, jonka aikana hän ei näy muiden ehdokkaissa eikä voi hakea uusia ehdokkaita. Jos hänkin tekee ilmoituksen treffipaikalta treffien aikana, Pilkkeen ylläpito pyrkii selvittämään tapauksen.
 
-Jos ilmoitus ei onnistunut treffipaikalla, kerro asiasta treffien jälkeen palautteessa. Valitse kysymyksessä *Miten treffit sujuivat?* vaihtoehto *Treffit eivät toteutuneet* ja sitten *Treffipari ei tullut paikalle*. Tieto menee Pilkkeen työntekijöille, mutta jäähyä siitä ei seuraa. Katso [Treffien jälkeen](/ohje/treffien-jalkeen).
+Jos et jättänyt ilmoitusta treffipaikalla, kerro asiasta treffien jälkeen palautteessa. Valitse kysymyksessä *Miten treffit sujuivat?* vaihtoehto *Treffit eivät toteutuneet* ja sitten *Treffipari ei tullut paikalle*. Katso [Treffien jälkeen](/ohje/treffien-jalkeen).
 
 ## Kysyttyä
 
@@ -61,6 +61,6 @@ Jos ilmoitus ei onnistunut treffipaikalla, kerro asiasta treffien jälkeen palau
 
 **En löydä toista paikan päältä.** Jaa sijaintisi kartalla. Toinen saa ilmoituksen, kun olet paikalla, ja näkee sinut kartalla.
 
-**Kauanko treffit kestävät?** Niin kauan kuin haluatte. Sovelluksessa treffit päättyvät {{date.length_hours}} tunnin kuluttua alkamisajasta, ja sen jälkeen voit antaa palautetta. Katso [Treffien jälkeen](/ohje/treffien-jalkeen).
+**Kauanko treffit kestävät?** Niin kauan kuin haluatte. Treffien ohjeistettu kesto on noin {{date.length_hours}} tuntia.
 
-**Kuka näkee, missä olen?** Vain treffikumppanisi ja vain silloin, kun jaat sijaintisi. Jakaminen on mahdollista {{sharing.window_minutes}} minuutin ajan treffien alkamisen aikoihin.
+**Kuka näkee, missä olen?** Vain treffikumppanisi ja vain silloin, kun jaat sijaintisi. Jakaminen on mahdollista {{sharing.window_minutes}} minuutin ajan treffien alkamisen aikoihin ja vain treffipaikan läheisyydessä.
