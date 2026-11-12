@@ -57,8 +57,12 @@
     "radius_m": 300
   },
   "noshow": {
-    "grace_minutes": 15,
+    "grace_minutes": 20,
     "venue_radius_m": 300
+  },
+  "safety": {
+    "lead_hours": 2,
+    "trail_hours": 12
   },
   "cooldown": {
     "withdrawal_hours": 12,

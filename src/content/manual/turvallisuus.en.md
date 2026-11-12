@@ -7,7 +7,7 @@ draft: false
 
 ## The Safety button
 
-First, save your safety contact's phone number under **Safety** in Settings. The **Safety button** then appears on the date's screen. Agree this with your safety contact beforehand.
+First, save your safety contact's phone number under **Safety** in Settings. The **Safety button** then appears on the date's screen, from {{safety.lead_hours}} hours before the date starts until {{safety.trail_hours}} hours after. Agree this with your safety contact beforehand.
 
 One tap sends them a text message, *Pilke: [your name] pressed the safety button and is asking you to get in touch.* It has nothing about your location, the place, the time or your date. Your date isn't told you pressed it. Pilke keeps a record that you pressed it and whether the message got through.
 

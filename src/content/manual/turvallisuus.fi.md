@@ -7,7 +7,7 @@ draft: false
 
 ## Turvapainike
 
-Tallenna ensin asetusten kohtaan **Turvallisuus** luotettavan läheisesi puhelinnumero. Sen jälkeen **Turvapainike** näkyy treffisivulla. Sovi asiasta etukäteen luotettavan läheisesi kanssa.
+Tallenna ensin asetusten kohtaan **Turvallisuus** luotettavan läheisesi puhelinnumero. Sen jälkeen **Turvapainike** näkyy treffisivulla {{safety.lead_hours}} tuntia ennen treffien alkua ja vielä {{safety.trail_hours}} tuntia alun jälkeen. Sovi asiasta etukäteen luotettavan läheisesi kanssa.
 
 Yksi painallus lähettää hänelle tekstiviestin *Pilke: [nimesi] painoi turvapainiketta ja pyytää sinua ottamaan yhteyttä.* Siinä ei ole sijaintiasi, treffipaikkaa, kellonaikaa eikä mitään treffikumppanistasi. Treffikumppanisi ei saa tietää painalluksesta. Pilke tallentaa tiedon painalluksesta ja siitä, menikö viesti perille.
 
