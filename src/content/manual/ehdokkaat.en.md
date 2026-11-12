@@ -5,7 +5,7 @@ order: 40
 draft: false
 ---
 
-You find {{candidates.per_set}} matches at a time. Pilke goes through everyone you could go on a date with and picks the ones who suit you best. If fewer than {{candidates.per_set}} suit you, the search is called off and no sparks are spent.
+You find {{candidates.per_set}} matches at a time. Pilke goes through everyone you could go on a date with and picks the ones who suit you best. If only one or two suit you, the app tells you how many and shows the setting that narrows your search the most. You can change it, or press **Continue anyway**, which spends the usual {{petals.set_cost}} sparks and shows you the matches it found. If nobody suits you, no sparks are spent.
 
 ![Your matches: the middle match's card, the times you're both free and the places](shot:platter#timeslot-chip-*,activity-chip-*)
 
@@ -53,7 +53,7 @@ If you can't find matches right now, a notice on the Dates page (1) tells you wh
 
 ## Questions
 
-**Why weren't any matches found?** There were fewer than {{candidates.per_set}} people who suit you. The app tries to tell you if your choices can change this. Your preferences, things to do, date areas and shared time all affect it, and so can there being too few people who suit you signed up so far. Its button takes you straight to the calendar or to the page in Your details where you can change that condition. **Next steps** on the Dates page shows the same steps. Marking more time usually helps most, especially in the [highlighted hours](/en/guide/vapaat-ajat#the-yellow-hours). If no matches were found, no sparks are spent.
+**Why were so few matches found, or none?** There were fewer than {{candidates.per_set}} people who suit you. The app tells you which of your settings narrows your search the most, if one does. Your preferences, things to do, date areas and shared time all affect it, and so can there being too few people who suit you signed up so far. Its button takes you straight to the calendar or to the part of Your details where you can change that setting. **Next steps** on the Dates page shows the same steps. Marking more time usually helps most, especially in the [highlighted hours](/en/guide/vapaat-ajat#the-yellow-hours). If no matches at all were found, no sparks are spent.
 
 **Can someone see that they were one of my matches?** No. A match only finds out about you when you send them an invite.
 

@@ -18,7 +18,7 @@ Your sparks are at the top of the Dates page. This page covers how you earn them
 | Your invite is declined | +{{petals.refund}} back |
 | Nobody answers your invite within {{invitation.answer_hours}} hours, and it expires | +{{petals.refund}} back |
 | The person you invited cancels your date | +{{petals.refund}} back |
-| There aren't enough matches for you | Your sparks stay put |
+| There are fewer than {{candidates.per_set}} matches for you | Your sparks stay put, unless you continue anyway |
 | You withdraw your invite before it's answered | No refund |
 | You invite none of the matches you found | No refund |
 | You cancel a date | No refund |
@@ -58,4 +58,4 @@ Refunds arrive whatever your count, so you can sometimes have more than {{petals
 
 Before you send an invite, you see your sparks (1). When you press **Find a date** (2), {{petals.set_cost}} sparks are spent straight away. Then you see {{candidates.per_set}} matches and choose who to invite.
 
-If there are fewer than {{candidates.per_set}} matches for you, your sparks stay put. If you invite none of the matches you found, you don't get the sparks back. Your matches wait for you for {{candidates.set_hours}} hours. See [Who you're shown](/en/guide/ehdokkaat).
+If there are fewer than {{candidates.per_set}} matches for you, your sparks stay put. The app tells you how many it found, and if you press **Continue anyway**, the usual {{petals.set_cost}} sparks are spent. If you invite none of the matches you found, you don't get the sparks back. Your matches wait for you for {{candidates.set_hours}} hours. See [Who you're shown](/en/guide/ehdokkaat).

@@ -5,7 +5,7 @@ order: 40
 draft: false
 ---
 
-Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joiden kanssa treffit olisivat mahdollisia, ja valitsee heistä sinulle sopivimmat. Jos sopivia on alle {{candidates.per_set}}, ehdokkaiden haku peruuntuu, eivätkä kipinät kulu.
+Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joiden kanssa treffit olisivat mahdollisia, ja valitsee heistä sinulle sopivimmat. Jos sopivia on vain yksi tai kaksi, sovellus kertoo, montako heitä on, ja näyttää valinnan, joka rajaa hakuasi eniten. Voit muuttaa sitä tai painaa **Jatka silti**. Silloin kipinöitä kuluu tavalliset {{petals.set_cost}}, ja näet löytyneet ehdokkaat. Jos sopivia ei ole yhtään, kipinät eivät kulu.
 
 ![Ehdokkaat-näkymä: keskimmäisen ehdokkaan kortti, yhteiset ajat ja paikat](shot:platter#timeslot-chip-*,activity-chip-*)
 
@@ -53,7 +53,7 @@ Jos et juuri nyt voi löytää ehdokkaita, Treffit-sivun ilmoitus (1) kertoo syy
 
 ## Kysyttyä
 
-**Miksi ehdokkaita ei löytynyt?** Sopivia ehdokkaita oli alle {{candidates.per_set}}. Sovellus pyrkii kertomaan, jos tähän voi vaikuttaa valinnoillasi. Tähän vaikuttavat toiveet, tekeminen, treffialueet, yhteinen aika tai se, että sopivia ihmisiä on rekisteröityneenä toistaiseksi vähän. Painikkeesta pääset suoraan kalenteriin tai siihen Omien tietojen sivuun, jolla voit muuttaa ehtoa. Samat askeleet näet Treffit-sivun kohdassa **Seuraavaksi**. Useimmiten auttaa, kun merkitset kalenteriin lisää aikaa, varsinkin [korostetuille tunneille](/ohje/vapaat-ajat#kellertävät-tunnit). Jos ehdokkaita ei löytynyt, kipinät eivät kulu.
+**Miksi ehdokkaita löytyi vähän tai ei yhtään?** Sopivia ehdokkaita oli alle {{candidates.per_set}}. Sovellus kertoo, mikä valinnoistasi rajaa hakua eniten, jos jokin niistä rajaa. Tähän vaikuttavat toiveet, tekeminen, treffialueet, yhteinen aika tai se, että sopivia ihmisiä on rekisteröityneenä toistaiseksi vähän. Painikkeesta pääset suoraan kalenteriin tai siihen Omien tietojen kohtaan, jossa voit muuttaa valintaa. Samat askeleet näet Treffit-sivun kohdassa **Seuraavaksi**. Useimmiten auttaa, kun merkitset kalenteriin lisää aikaa, varsinkin [korostetuille tunneille](/ohje/vapaat-ajat#kellertävät-tunnit). Jos ehdokkaita ei löytynyt yhtään, kipinät eivät kulu.
 
 **Näkeekö joku, että hän oli ehdokkaani?** Ei. Ehdokas saa tietää sinusta vasta, kun lähetät hänelle kutsun.
 

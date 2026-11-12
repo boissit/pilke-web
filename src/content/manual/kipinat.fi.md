@@ -18,7 +18,7 @@ Kipinäsi näkyvät Treffit-sivun ylälaidassa. Tällä sivulla kerromme, mistä
 | Kutsusi hylätään | +{{petals.refund}} takaisin |
 | Kutsuusi ei vastata {{invitation.answer_hours}} tunnissa, ja se raukeaa | +{{petals.refund}} takaisin |
 | Kutsumasi ihminen peruu sovitut treffit | +{{petals.refund}} takaisin |
-| Sopivia ehdokkaita ei löydy | Kipinät pysyvät tallessa |
+| Sopivia ehdokkaita on alle {{candidates.per_set}} | Kipinät pysyvät tallessa, ellet jatka silti |
 | Peruutat kutsusi ennen kuin toinen vastaa | Ei palautusta |
 | Et kutsu ketään löytämistäsi ehdokkaista | Ei palautusta |
 | Perut sovitut treffit | Ei palautusta |
@@ -58,4 +58,4 @@ Palautetut kipinät tulevat perille rajasta riippumatta, joten kipinöitä voi j
 
 Ennen kutsua näet kipinäsi (1). Kun painat **Löydä treffit** (2), {{petals.set_cost}} kipinää kuluu heti. Sitten näet {{candidates.per_set}} ehdokasta ja valitset, kenet kutsut.
 
-Jos sopivia ehdokkaita on alle {{candidates.per_set}}, kipinäsi pysyvät tallessa. Jos et kutsu ketään löytämistäsi ehdokkaista, kipinöitä ei palauteta. Ehdokkaat odottavat sinua {{candidates.set_hours}} tuntia. Katso [Ketä sinulle näytetään](/ohje/ehdokkaat).
+Jos sopivia ehdokkaita on alle {{candidates.per_set}}, kipinäsi pysyvät tallessa. Sovellus kertoo, montako löytyi, ja jos painat **Jatka silti**, kipinöitä kuluu tavalliset {{petals.set_cost}}. Jos et kutsu ketään löytämistäsi ehdokkaista, kipinöitä ei palauteta. Ehdokkaat odottavat sinua {{candidates.set_hours}} tuntia. Katso [Ketä sinulle näytetään](/ohje/ehdokkaat).
