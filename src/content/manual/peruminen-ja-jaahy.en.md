@@ -2,7 +2,7 @@
 title: Cancelling and time-outs
 lead: You get a time-out if you cancel a date or withdraw an invite you sent. The same goes if you decline an invite, leave it unanswered or don't turn up to a date. Here's how time-outs work.
 order: 60
-draft: true
+draft: false
 ---
 
 A date is a date, and time has been set aside for it. Cancelling is rude, and it gets you a time-out.

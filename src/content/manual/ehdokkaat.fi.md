@@ -2,7 +2,7 @@
 title: Ketä sinulle näytetään
 lead: Miksi ehdokkaasi ovat juuri nämä ihmiset, missä järjestyksessä heidät näytetään ja miksi joku ei tule enää vastaan.
 order: 40
-draft: true
+draft: false
 ---
 
 Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joiden kanssa treffit olisivat mahdollisia, ja valitsee heistä sinulle sopivimmat. Jos sopivia on alle {{candidates.per_set}}, ehdokkaiden haku peruuntuu, eivätkä kipinät kulu.

@@ -2,7 +2,7 @@
 title: Sparks
 lead: Every date needs a spark. You earn sparks by keeping your calendar up to date and going on dates, and {{petals.set_cost}} sparks send an invite.
 order: 30
-draft: true
+draft: false
 ---
 
 Your sparks are at the top of the Dates page. This page covers how you earn them and what they're spent on.

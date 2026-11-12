@@ -2,7 +2,7 @@
 title: Who you're shown
 lead: Why these people are your matches, what order you see them in, and why someone stops showing up.
 order: 40
-draft: true
+draft: false
 ---
 
 You find {{candidates.per_set}} matches at a time. Pilke goes through everyone you could go on a date with and picks the ones who suit you best. If fewer than {{candidates.per_set}} suit you, the search is called off and no sparks are spent.

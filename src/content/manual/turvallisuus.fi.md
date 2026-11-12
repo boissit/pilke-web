@@ -2,7 +2,7 @@
 title: Turvallisuus
 lead: Turvapainikkeella pyydät läheistäsi ottamaan yhteyttä kesken treffien. Turvallisuusilmoituksella kerrot meille, jos olosi oli turvaton.
 order: 85
-draft: true
+draft: false
 ---
 
 ## Turvapainike

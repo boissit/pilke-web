@@ -2,7 +2,7 @@
 title: Pilke lyhyesti
 lead: Pilke on treffisovellus ilman swaippailua ja chättäilyä. Pidä kalenterisi ajan tasalla, lähetä kutsuja, vastaa saamiisi ja käy treffeillä!
 order: 10
-draft: true
+draft: false
 ---
 
 Pilke rakentuu kolmen kulmakiven ympärille.

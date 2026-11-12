@@ -2,7 +2,7 @@
 title: Treffien jälkeen
 lead: Palautteella kerrot, miten treffit menivät. Treffipalautteella opimme sekä sinusta että treffikumppanistasi, tarjoamme sen avulla entistä parempia ehdokkaita tuleville treffeille. Palautteesta saat myös kipinöitä.
 order: 80
-draft: true
+draft: false
 ---
 
 Palautetta voit antaa heti, kun treffit päättyvät {{date.length_hours}} tunnin kuluttua alkamisajasta. Jos et ole vastannut, saat seuraavana päivänä noin kello {{feedback.prompt_hour}} muistutuksen, jos muistutukset ovat päällä. Palautteen voi antaa kerran.

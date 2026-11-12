@@ -2,7 +2,7 @@
 title: Kutsut
 lead: Kutsussa on valmiina ajat ja paikat. Vastaanottaja valitsee niistä yhden ajan ja yhden paikan, ja treffit on sovittu.
 order: 50
-draft: true
+draft: false
 ---
 
 ## Mitä kutsuun kuuluu

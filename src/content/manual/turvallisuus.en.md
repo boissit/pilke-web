@@ -2,7 +2,7 @@
 title: Safety
 lead: With the Safety button, you ask someone you trust to get in touch during a date. A safety report tells us if you felt unsafe.
 order: 85
-draft: true
+draft: false
 ---
 
 ## The Safety button

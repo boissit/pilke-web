@@ -2,7 +2,7 @@
 title: Pilke in short
 lead: Pilke is a dating app with no swiping and no chatting. Keep your calendar up to date, send invites, answer the ones you get, and go on dates!
 order: 10
-draft: true
+draft: false
 ---
 
 Pilke is built around three cornerstones.

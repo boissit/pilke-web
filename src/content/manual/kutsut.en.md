@@ -2,7 +2,7 @@
 title: Invites
 lead: An invite comes with the times and places already in it. The person who gets it picks one time and one place, and it's a date.
 order: 50
-draft: true
+draft: false
 ---
 
 ## What goes in an invite

@@ -2,7 +2,7 @@
 title: After the date
 lead: Your feedback tells us how the date went. It helps us learn about both you and your date, so we can offer you better matches for future dates. It also earns you sparks.
 order: 80
-draft: true
+draft: false
 ---
 
 You can give feedback as soon as the date ends, {{date.length_hours}} hour after the start time. If you haven't answered, you get a reminder the next day at about {{feedback.prompt_hour}}:00, if reminders are on. You can give feedback once.

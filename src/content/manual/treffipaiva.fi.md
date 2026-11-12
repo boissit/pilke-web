@@ -2,7 +2,7 @@
 title: Treffipäivä
 lead: Miten löydätte toisenne treffipaikalla ja mitä tehdä, jos toinen ei saavu paikalle.
 order: 70
-draft: true
+draft: false
 ---
 
 ![Sovitut treffit: ajankohta, paikka ja Löydättekö toisenne? -kartta](shot:date#agreed-time,live-map..date-map-directions)

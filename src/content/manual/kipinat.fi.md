@@ -2,7 +2,7 @@
 title: Kipinät
 lead: Deittailu vaatii kipinää. Kipinöitä kertyy ylläpidetystä kalenterista ja käydyistä treffeistä, ja {{petals.set_cost}} kipinällä lähetät treffikutsun.
 order: 30
-draft: true
+draft: false
 ---
 
 Kipinäsi näkyvät Treffit-sivun ylälaidassa. Tällä sivulla kerromme, mistä niitä kertyy ja mihin ne kuluvat.

@@ -2,7 +2,7 @@
 title: Peruminen ja jäähy
 lead: Saat jäähyn, jos perut sovitut treffit tai lähettämäsi kutsun. Samoin käy, jos hylkäät saamasi kutsun, jätät sen vastaamatta tai et saavu treffeille. Tältä sivulta näet, miten jäähy toimii.
 order: 60
-draft: true
+draft: false
 ---
 
 Sovitut treffit ovat sovitut, ja niihin on varattu aikaa. Peruminen on epäkohteliasta, ja siitä saa jäähyn.

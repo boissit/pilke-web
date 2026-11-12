@@ -2,7 +2,7 @@
 title: The day of your date
 lead: How you find each other at the venue, and what to do if your date doesn't turn up.
 order: 70
-draft: true
+draft: false
 ---
 
 ![An upcoming date: the time, the place and the Finding each other map](shot:date#agreed-time,live-map..date-map-directions)

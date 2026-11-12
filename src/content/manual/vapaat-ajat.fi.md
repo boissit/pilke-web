@@ -2,7 +2,7 @@
 title: Vapaat aikasi
 lead: Ehdokkaita löytyy vain aikoihin, jolloin olette molemmat vapaita. Kalenteri päättää, keitä voit tavata.
 order: 20
-draft: true
+draft: false
 ---
 
 Kalenteriin merkitset ajat, jolloin pääsisit treffeille. Ehdokkailla on kanssasi vähintään {{calendar.min_shared_hours}} tunnin yhteinen vapaa aika. Muut saavat sinut ehdokkaakseen samalla tavalla, vain merkitsemiisi aikoihin. Mitä enemmän aikaa merkitset, sitä useammalle voit olla ehdokas ja sitä paremmin sopivia ihmisiä löydämme sinulle.

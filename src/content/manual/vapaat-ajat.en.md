@@ -2,7 +2,7 @@
 title: Your free times
 lead: You're only matched with people who are free at the same times as you. Your calendar decides who you can meet.
 order: 20
-draft: true
+draft: false
 ---
 
 In the calendar, you mark the times you're free for a date. Your matches share at least {{calendar.min_shared_hours}} hour of free time with you. Other people get you as a match the same way, and only for times you've marked. The more time you mark, the more people you can be a match for, and the better the matches we can find you.

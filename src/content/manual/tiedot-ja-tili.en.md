@@ -2,7 +2,7 @@
 title: Your details and account
 lead: What data we collect, what other people can see, what deleting your account does and how to give feedback.
 order: 90
-draft: true
+draft: false
 ---
 
 ## What other people can see

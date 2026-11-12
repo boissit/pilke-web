@@ -2,7 +2,7 @@
 title: Tietosi ja tilisi
 lead: Mitä tietoja keräämme, mitä näkyy muille, mitä tilin poistaminen tekee ja miten annat palautetta.
 order: 90
-draft: true
+draft: false
 ---
 
 ## Mitä muut näkevät
