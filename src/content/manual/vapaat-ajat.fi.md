@@ -44,7 +44,7 @@ Kopio näkyy ensin ehdotuksena katkoviivoin. Yhteenvedosta (1) näet, montako ai
 
 Asetusten **Kalenteri**-kohdassa voit yhdistää Pilkkeen omaan kalenteriisi, esimerkiksi Google- tai Apple-kalenteriin. Voit päättää, jaatko Pilkkeen merkinnät omaan kalenteriisi, oman kalenterisi merkinnät näkymään Pilkkeen sisällä, vai molemmat.
 
-- **Pilke kirjoittaa** valitsemaasi kalenteriin sovitut treffit ja halutessasi myös avoimet kutsut. Merkinnässä on treffikumppanisi kutsumanimi ja treffipaikka, kun se on päätetty. Perutut treffit Pilke poistaa.
+- **Pilke kirjoittaa** valitsemaasi kalenteriin sovitut treffit ja halutessasi myös avoimet kutsut. Merkinnässä on treffiparisi kutsumanimi ja treffipaikka, kun se on päätetty. Perutut treffit Pilke poistaa.
 - **Pilke lukee** kalenteristasi menosi ja näyttää ne raidallisina Pilkkeen kalenterissa. Näet silloin heti, mitkä ajat ovat jo varattuja. Menosi näkyvät vain sinulle.
 
 ![Kalenteri: vapaat aikasi koralleina ja puhelimesi kalenterin menot raidallisina niiden välissä](shot:kalenteri-menot)

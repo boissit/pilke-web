@@ -11,11 +11,11 @@ Treffisivulla näet sovitun ajan (1), paikan ja kartan (2). Saat muistutuksen {{
 
 ## Toisen löytäminen perillä
 
-Kartalla voit jakaa sijaintisi treffikumppanillesi, niin löydätte toisenne helpommin. Jakaminen on vapaaehtoista.
+Kartalla voit jakaa sijaintisi treffiparillesi, niin löydätte toisenne helpommin. Jakaminen on vapaaehtoista.
 
 - **Milloin.** {{sharing.lead_minutes}} minuuttia ennen treffien alkua ja {{sharing.trail_minutes}} minuuttia alun jälkeen. Saat ilmoituksen, kun jakaminen on mahdollista.
 - **Missä.** Enintään noin {{sharing.radius_m}} metrin päässä treffipaikasta.
-- **Kenelle.** Vain treffikumppanillesi. Hän saa ilmoituksen, kun olet paikalla.
+- **Kenelle.** Vain treffiparillesi. Hän saa ilmoituksen, kun olet paikalla.
 - **Kuinka kauan.** Sijaintisi näkyy toiselle korkeintaan {{sharing.trail_minutes}} minuuttia treffien alkamisen jälkeen, tai kunnes päätät itse lopettaa jakamisen.
 
 ![Treffipaikan kartta ja Jaa sijaintini -painike](shot:date-map#meet-up-reveal)
@@ -26,9 +26,9 @@ Aloita jakaminen kartan painikkeesta **Jaa sijaintini** (1).
 
 Ennen jakamista sovellus kysyy lupaasi.
 
-![Kartta, kun jaatte molemmat sijaintianne: molempien nastat, treffikumppanin sijainnin päivitysaika ja Lopeta sijainnin jakaminen -painike](shot:date-map-sharing#meet-up-stop)
+![Kartta, kun jaatte molemmat sijaintianne: molempien nastat, treffiparin sijainnin päivitysaika ja Lopeta sijainnin jakaminen -painike](shot:date-map-sharing#meet-up-stop)
 
-Kun jaat sijaintiasi, näet kartalla itsesi ja treffipaikan. Jos treffikumppanisikin jakaa sijaintinsa, näet myös hänet, ja kartan alla lukee, milloin hänen sijaintinsa päivittyi viimeksi. Sinun sijaintisi päivittyy automaattisesti, vaikka puhelin olisi taskussa. Jakaminen päättyy, kun aika loppuu tai painat **Lopeta sijainnin jakaminen** (1).
+Kun jaat sijaintiasi, näet kartalla itsesi ja treffipaikan. Jos treffiparisikin jakaa sijaintinsa, näet myös hänet, ja kartan alla lukee, milloin hänen sijaintinsa päivittyi viimeksi. Sinun sijaintisi päivittyy automaattisesti, vaikka puhelin olisi taskussa. Jakaminen päättyy, kun aika loppuu tai painat **Lopeta sijainnin jakaminen** (1).
 
 ## Jos toinen ei tule paikalle
 
@@ -63,4 +63,4 @@ Jos et jättänyt ilmoitusta treffipaikalla, kerro asiasta treffien jälkeen pal
 
 **Kauanko treffit kestävät?** Niin kauan kuin haluatte. Treffien ohjeistettu kesto on noin {{date.length_hours}} tuntia.
 
-**Kuka näkee, missä olen?** Vain treffikumppanisi ja vain silloin, kun jaat sijaintisi. Jakaminen on mahdollista {{sharing.window_minutes}} minuutin ajan treffien alkamisen aikoihin ja vain treffipaikan läheisyydessä.
+**Kuka näkee, missä olen?** Vain treffiparisi ja vain silloin, kun jaat sijaintisi. Jakaminen on mahdollista {{sharing.window_minutes}} minuutin ajan treffien alkamisen aikoihin ja vain treffipaikan läheisyydessä.

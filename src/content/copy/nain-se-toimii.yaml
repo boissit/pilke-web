@@ -54,7 +54,7 @@
   en: 'How we pick your matches'
 
 'detail.draw.body':
-  fi: 'Pilke suodattaa ehdokkaat toiveidenne ja teille molemmille sopivien aikojen ja treffipaikkojen perusteella. Jokaisten treffien jälkeen kerrot, mistä pidit ja mitä jäit kaipaamaan kumppanissasi. Pilke oppii palautteestasi, millaisista ihmisistä pidät ja kenelle sinä sovit.'
+  fi: 'Pilke suodattaa ehdokkaat toiveidenne ja teille molemmille sopivien aikojen ja treffipaikkojen perusteella. Jokaisten treffien jälkeen kerrot, mistä pidit ja mitä jäit kaipaamaan treffiparissasi. Pilke oppii palautteestasi, millaisista ihmisistä pidät ja kenelle sinä sovit.'
   en: 'Pilke matches you with people who want what you want, and who are free at the same times and places as you. After each date, you tell us what you liked about the person and what was missing. Pilke learns from this what kind of people you like and who you’re a good match for.'
 
 'detail.invite.title':
@@ -150,7 +150,7 @@
 # ──────────────────────────────────────────────────────────────────────────
 # After the date
 #
-# A draft of the owner's, open to their edit. "Treffikumppanisi ei näe
+# A draft of the owner's, open to their edit. "Treffiparisi ei näe
 # vastauksiasi" is checked against `feedback.meet_again`: nothing anybody answers
 # is shown to the other party, and the one answer that does anything between the two
 # is the phone number, exchanged only when both chose it, which the next sentence
@@ -162,7 +162,7 @@
   en: 'After the date'
 
 'detail.after.body':
-  fi: 'Vastaa lyhyeen treffipalautteeseen: miten treffit sujuivat, mistä pidit ja mitä jäit kaipaamaan. Treffikumppanisi ei näe vastauksiasi. Jos treffit menivät hyvin, voitte vaihtaa puhelinnumerot ja jatkaa Pilkkeen ulkopuolella. Palautteen täytettyäsi saat kipinät, ja seuraavat ehdokkaat osuvat entistä paremmin.'
+  fi: 'Vastaa lyhyeen treffipalautteeseen: miten treffit sujuivat, mistä pidit ja mitä jäit kaipaamaan. Treffiparisi ei näe vastauksiasi. Jos treffit menivät hyvin, voitte vaihtaa puhelinnumerot ja jatkaa Pilkkeen ulkopuolella. Palautteen täytettyäsi saat kipinät, ja seuraavat ehdokkaat osuvat entistä paremmin.'
   en: 'Answer a few quick questions: how it went, what you liked and what was missing. Your date won’t see your answers. If it went well, swap numbers and take it from there. Once you’ve given feedback, you get your sparks, and your next matches get even better.'
 
 # ──────────────────────────────────────────────────────────────────────────
@@ -222,7 +222,7 @@
   en: 'Why there’s no chat'
 
 'detail.chat.body':
-  fi: 'Chättäilysovelluksia on jo lukuisia. Se on mielestämme oikeastaan turha rituaali ennen treffejä, joilla vasta pääsee tapaamaan toisen ja juttelemaan kunnolla. Pilkkeellä hyppäät suoraan asiaan: jokaisessa treffikutsussa on jo aika ja paikka, ja pääset juttelemaan potentiaaliselle kumppanille kasvotusten ilman viestivastausten odottelua.'
+  fi: 'Chättäilysovelluksia on jo lukuisia. Se on mielestämme oikeastaan turha rituaali ennen treffejä, joilla vasta pääsee tapaamaan toisen ja juttelemaan kunnolla. Pilkkeellä hyppäät suoraan asiaan: jokaisessa treffikutsussa on jo aika ja paikka, ja pääset juttelemaan treffiparisi kanssa kasvotusten ilman viestivastausten odottelua.'
   en: 'There are plenty of chat apps already. We think chatting is mostly a pointless warm-up before the date, which is where you actually get to meet and talk. Pilke skips straight to that: every invite already has a time and a place, and you get to talk face to face without waiting for replies.'
 
 # A draft line of the owner's, which they may still drop: its own key, so dropping

@@ -34,7 +34,7 @@
   en: 'Can I message people in the app?'
 
 'faq.chat.a':
-  fi: 'Ei voi. Pilke huolehtii, että kaikilla treffeillä on sopiva aika ja paikka, joten treffien sopiminen ei vaadi keskustelua. Treffikumppanisi on valikoitu niin, että etsitte treffeiltä samoja asioita ja sovitte toisillenne mahdollisimman hyvin. Säästä sanasi treffeille!'
+  fi: 'Ei voi. Pilke huolehtii, että kaikilla treffeillä on sopiva aika ja paikka, joten treffien sopiminen ei vaadi keskustelua. Treffiparisi on valikoitu niin, että etsitte treffeiltä samoja asioita ja sovitte toisillenne mahdollisimman hyvin. Säästä sanasi treffeille!'
   en: 'No. Pilke makes sure every date has a time and place that work for both of you, so you don’t need to chat to set one up. Your matches are chosen so that you’re looking for the same things and are as good a fit as possible. Save your words for the date!'
 
 'faq.matching.q':
@@ -50,7 +50,7 @@
   en: 'How do you keep dates safe?'
 
 'faq.safety.a':
-  fi: 'Turvallisen treffailun mahdollistaminen on yksi sovelluksemme keskeisimmistä tarkoituksista. Moni kokee, että treffejä edeltävällä keskustelulla voi saada kuvan potentiaalisen kumppanin turvallisuudesta. Koska Pilke ohittaa tämän vaiheen kokonaan, olemme panostaneet treffikumppanien tarjonnan laatuun suodattimin, turvapainikkeen kehitykseen, treffipalautteeseen, käyttäjien ilmiantoon, tilien sulkuihin ja turvallisuusohjeisiin. Jos sinulla on ideoita siitä, miten voisimme edelleen parantaa treffailun turvallisuutta ilman chat-ominaisuutta, haluaisimme kuulla ne (contact@pilke.app). Lisää turvallisuudesta voit lukea [Turvallisuus-sivultamme](turvallisuus).'
+  fi: 'Turvallisen treffailun mahdollistaminen on yksi sovelluksemme keskeisimmistä tarkoituksista. Moni kokee, että treffejä edeltävällä keskustelulla voi saada kuvan tulevan treffiparin turvallisuudesta. Koska Pilke ohittaa tämän vaiheen kokonaan, olemme panostaneet ehdotettujen treffiparien laatuun suodattimin, turvapainikkeen kehitykseen, treffipalautteeseen, käyttäjien ilmiantoon, tilien sulkuihin ja turvallisuusohjeisiin. Jos sinulla on ideoita siitä, miten voisimme edelleen parantaa treffailun turvallisuutta ilman chat-ominaisuutta, haluaisimme kuulla ne (contact@pilke.app). Lisää turvallisuudesta voit lukea [Turvallisuus-sivultamme](turvallisuus).'
   en: 'One of the main goals of Pilke has always been to make dating safer. Many people feel that chatting before a date helps them judge whether someone is safe to meet. Pilke skips that step entirely, so we’ve put our effort elsewhere: filters that improve the quality of your matches, the safety button, date feedback, reporting, account bans and safety tips. If you have ideas for how we could make dating even safer without a chat feature, we’d love to hear them at contact@pilke.app. You can read more on our [Safety page](turvallisuus).'
 
 'faq.who.q':
@@ -58,7 +58,7 @@
   en: 'Who can see my details?'
 
 'faq.who.a':
-  fi: 'Kun ehdotamme sinua treffikumppaniksi toiselle käyttäjälle, hän näkee kutsumanimesi, ikäsi ja kuvasi. Samat tiedot näkyvät myös lähettämissäsi treffikutsuissa. Muiden tietojen käytöstä kerromme [tietosuojaselosteessa](tietosuoja).'
+  fi: 'Kun ehdotamme sinua treffipariksi toiselle käyttäjälle, hän näkee kutsumanimesi, ikäsi ja kuvasi. Samat tiedot näkyvät myös lähettämissäsi treffikutsuissa. Muiden tietojen käytöstä kerromme [tietosuojaselosteessa](tietosuoja).'
   en: 'When we suggest you as a match to someone, they see your first name, age and photo. The same details appear on invites you send. Our [privacy policy](tietosuoja) explains how we use everything else.'
 
 'faq.location.q':
@@ -66,7 +66,7 @@
   en: 'Can anyone see where I am?'
 
 'faq.location.a':
-  fi: 'Vain, jos haluat. Voit jakaa sijaintisi treffikumppanillesi {{sharing.lead_minutes}} minuuttia ennen treffien alkua ja se päättyy viimeistään {{sharing.trail_minutes}} minuuttia alun jälkeen, ja sijaintisi näkyy vain ollessasi {{sharing.radius_m}} metrin säteellä treffipaikasta. Voit lopettaa jakamisen milloin tahansa.'
+  fi: 'Vain, jos haluat. Voit jakaa sijaintisi treffiparillesi {{sharing.lead_minutes}} minuuttia ennen treffien alkua ja se päättyy viimeistään {{sharing.trail_minutes}} minuuttia alun jälkeen, ja sijaintisi näkyy vain ollessasi {{sharing.radius_m}} metrin säteellä treffipaikasta. Voit lopettaa jakamisen milloin tahansa.'
   en: 'Only if you want them to. You can share your location with your date from {{sharing.lead_minutes}} minutes before your date starts until {{sharing.trail_minutes}} minutes after it starts, and only within {{sharing.radius_m}} metres of the venue. You can stop sharing at any time.'
 
 'faq.cancel.q':
@@ -74,16 +74,16 @@
   en: 'What if I can’t make a date I agreed to?'
 
 'faq.cancel.a':
-  fi: 'Treffikumppanisi on varannut sinulle aikaa viikostaan, joten on kohteliasta perua treffit sovelluksessa mahdollisimman pian. Joudut perumisesta jäähylle, joka on sitä lyhyempi, mitä aikaisemmin perut.'
+  fi: 'Treffiparisi on varannut sinulle aikaa viikostaan, joten on kohteliasta perua treffit sovelluksessa mahdollisimman pian. Joudut perumisesta jäähylle, joka on sitä lyhyempi, mitä aikaisemmin perut.'
   en: 'Your date has set aside time in their week for you, so it’s only polite to cancel in the app as soon as you can. Cancelling gets you a time-out, and the earlier you cancel, the shorter it is.'
 
 'faq.noshow.q':
-  fi: 'Entä jos treffikumppanini ei tule paikalle?'
+  fi: 'Entä jos treffiparini ei tule paikalle?'
   en: 'What if my date doesn’t turn up?'
 
 'faq.noshow.a':
-  fi: 'Ilmoita siitä sovelluksessa treffipaikalta treffien aikana, niin aikaasi tuhlannut käyttäjä joutuu jäähylle. Jos et ehtinyt ilmoittaa paikan päältä, kerro siitä treffipalautteessa, joka aukeaa heti treffien päätyttyä.'
-  en: 'Report it in the app at the venue, during the date, and whoever wasted your time gets a time-out. If you didn’t report it there, tell us in your date feedback, which opens as soon as the date has ended.'
+  fi: 'Kun alkamisajasta on kulunut {{noshow.grace_minutes}} minuuttia, voit ilmoittaa siitä sovelluksessa treffipaikalta, ja aikaasi tuhlannut käyttäjä joutuu jäähylle. Jos et ehtinyt ilmoittaa paikan päältä, kerro siitä treffipalautteessa, joka aukeaa heti treffien päätyttyä.'
+  en: 'Once {{noshow.grace_minutes}} minutes have passed since the start time, you can report it in the app at the venue, and whoever wasted your time gets a time-out. If you didn’t report it there, tell us in your date feedback, which opens as soon as the date has ended.'
 
 'faq.timeout.q':
   fi: 'Mikä on jäähy?'
@@ -106,7 +106,7 @@
   en: 'Can I delete my account?'
 
 'faq.delete.a':
-  fi: 'Kyllä, sovelluksen asetusten kautta. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Treffihistoriasi tiedot (ilman nimeäsi, kuvaasi ja yhteystietojasi) kuuluvat myös menneille treffikumppaneillesi, ja antamasi ja saamasi treffipalaute vaikuttavat treffikumppaniesi tuleviin treffeihin, joten ne säilyvät.'
+  fi: 'Kyllä, sovelluksen asetusten kautta. Nimesi, kuvasi ja yhteystietosi poistetaan heti. Treffihistoriasi tiedot (ilman nimeäsi, kuvaasi ja yhteystietojasi) kuuluvat myös menneille treffipareillesi, ja antamasi ja saamasi treffipalaute vaikuttavat treffipariesi tuleviin treffeihin, joten ne säilyvät.'
   en: 'Yes, in the app’s settings. Your name, photo and contact details are deleted straight away. Your date history (without your name, photo or contact details) also belongs to the people you’ve been on dates with, and the feedback you’ve given and received shapes their future matches, so we keep it.'
 
 'faq.where.q':
@@ -134,7 +134,7 @@
   en: 'Your matches need free time and a date area in common with you, and you need to fit each other’s preferences. Marking more free times usually helps most.'
 
 'faq.feedback.q':
-  fi: 'Näkeekö treffikumppanini palautteeni?'
+  fi: 'Näkeekö treffiparini palautteeni?'
   en: 'Will my date see my feedback?'
 
 'faq.feedback.a':

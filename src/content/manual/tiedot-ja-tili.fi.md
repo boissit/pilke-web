@@ -10,8 +10,8 @@ draft: false
 | Mitä | Kuka | Milloin |
 |---|---|---|
 | Kutsumanimesi, ikäsi ja kuvasi sekä yhteiset aikanne ja paikkanne | Ihminen, jolle sinua ehdotetaan, ja kutsun toinen osapuoli | Kun olet hänen ehdokkaanaan tai teillä on kutsu |
-| Kutsumanimesi ja puhelinnumerosi | Treffikumppanisi | Kun olette molemmat valinneet palautteessa, että numeron saa jakaa |
-| Sijaintisi, jos olet treffipaikan lähellä, {{sharing.window_minutes}} minuutin ajan | Treffikumppanisi | Treffien alkamisen aikoihin, jos päätät jakaa sijaintisi |
+| Kutsumanimesi ja puhelinnumerosi | Treffiparisi | Kun olette molemmat valinneet palautteessa, että numeron saa jakaa |
+| Sijaintisi, jos olet treffipaikan lähellä, {{sharing.window_minutes}} minuutin ajan | Treffiparisi | Treffien alkamisen aikoihin, jos päätät jakaa sijaintisi |
 
 Taulukossa eritellään kaikki, mitä muut sinusta näkevät. Kaikki muut tiedot näkyvät vain sinulle.
 
@@ -24,7 +24,7 @@ Monelle ilmoitukselle voit valita, tuleeko se puhelimeen (1), sähköpostiin (2)
 Kolme ilmoitusta lähetetään aina puhelimeen, koska ne ovat kiireellisiä:
 
 - **Treffien alku** lähetetään {{sharing.lead_minutes}} minuuttia ennen treffejä.
-- **Kun toinen on paikalla** kertoo, että treffikumppanisi on jakanut sijaintinsa treffipaikalla.
+- **Kun toinen on paikalla** kertoo, että treffiparisi on jakanut sijaintinsa treffipaikalla.
 - **Perutut treffit** kertoo, että toinen perui.
 
 Jos et ole merkinnyt aikoja seuraavalle viikolle, saat sunnuntaina noin kello {{notifications.calendar_nudge_hour}} muistutuksen aikojen lisäämisestä.

@@ -1,28 +1,28 @@
 ---
 title: Treffien jälkeen
-lead: Palautteella kerrot, miten treffit menivät. Treffipalautteella opimme sekä sinusta että treffikumppanistasi, tarjoamme sen avulla entistä parempia ehdokkaita tuleville treffeille. Palautteesta saat myös kipinöitä.
+lead: Palautteella kerrot, miten treffit menivät. Treffipalautteella opimme sekä sinusta että treffiparistasi, tarjoamme sen avulla entistä parempia ehdokkaita tuleville treffeille. Palautteesta saat myös kipinöitä.
 order: 80
 draft: false
 ---
 
 Palautetta voit antaa heti, kun treffit päättyvät {{date.length_hours}} tunnin kuluttua alkamisajasta. Jos et ole vastannut, saat seuraavana päivänä noin kello {{feedback.prompt_hour}} muistutuksen, jos muistutukset ovat päällä. Palautteen voi antaa kerran.
 
-![Treffipalaute: treffikumppani, treffien aika ja ensimmäinen kysymys](shot:feedback)
+![Treffipalaute: treffipari, treffien aika ja ensimmäinen kysymys](shot:feedback)
 
 Ylhäällä näet, mistä treffeistä on kyse. Palautteen ensimmäisen kysymyksen jälkeen lomake haarautuu, ja kysymme hieman eri kysymykset riippuen treffien kulusta.
 
-- **Hyvin.** Kysymme, mistä pidit treffikumppanissasi, soveltuiko paikka treffeille ja haluaisitko tavata hänet uudelleen.
-- **Ok.** Kysymme, mistä pidit treffikumppanissasi ja mitä olisit toivonut enemmän. Sitten kysymme treffipaikasta ja siitä, haluaisitko tavata hänet uudelleen.
-- **Huonosti.** Kysymme ensin, tuntuiko olosi turvalliselta treffeillä. Jos vastaat *Kyllä*, kysymme, mitä toivoit treffikumppaniltasi enemmän, ja sitten treffipaikasta. Muista vastauksista voit lukea tarkemmin sivulla [Turvallisuus](/ohje/turvallisuus).
+- **Hyvin.** Kysymme, mistä pidit treffiparissasi, soveltuiko paikka treffeille ja haluaisitko tavata hänet uudelleen.
+- **Ok.** Kysymme, mistä pidit treffiparissasi ja mitä olisit toivonut enemmän. Sitten kysymme treffipaikasta ja siitä, haluaisitko tavata hänet uudelleen.
+- **Huonosti.** Kysymme ensin, tuntuiko olosi turvalliselta treffeillä. Jos vastaat *Kyllä*, kysymme, mitä toivoit treffipariltasi enemmän, ja sitten treffipaikasta. Muista vastauksista voit lukea tarkemmin sivulla [Turvallisuus](/ohje/turvallisuus).
 - **Treffit eivät toteutuneet.** Kysymme, mitä tapahtui. Katso alta.
 
 Vastaa jokaiseen kysymykseen ja paina **Jatka**.
 
-Kysymyksissä *Pidin näistä asioista treffikumppanissani* ja *Toivoin treffikumppaniltani enemmän näitä asioita* on samat vaihtoehdot, esimerkiksi *Luonne*, *Huumori*, *Elämäntilanne* ja *Aallonpituus*. Valitse vähintään yksi tai niin monta kuin haluat.
+Kysymyksissä *Pidin näistä asioista treffiparissani* ja *Toivoin treffipariltani enemmän näitä asioita* on samat vaihtoehdot, esimerkiksi *Luonne*, *Huumori*, *Elämäntilanne* ja *Aallonpituus*. Valitse vähintään yksi tai niin monta kuin haluat.
 
 Palaute lähetetään, kun vastaat viimeiseen kysymykseen, ja näet tekstin *Kiitos vastauksistasi.* **Valmis** vie sinut takaisin Treffit-sivulle, jossa näet saamasi kipinät.
 
-- **Mitä vastauksille tapahtuu.** Vastauksia käytetään ymmärtämään sekä sinua että treffikumppaniasi paremmin, jotta voimme tarjota teille entistä parempia ehdokkaita tuleville treffeille.
+- **Mitä vastauksille tapahtuu.** Vastauksia käytetään ymmärtämään sekä sinua että treffipariasi paremmin, jotta voimme tarjota teille entistä parempia ehdokkaita tuleville treffeille.
 - **Kipinät.** Palautteen täyttämisen jälkeen saat {{sparks.per_date}} kipinää. Kumpikin treffien osapuolista saa omansa omasta palautteestaan. Katso [Kipinät](/ohje/kipinat).
 
 ## Tapaatteko uudelleen
@@ -50,7 +50,7 @@ Treffit-sivun alimmasta rivistä **Treffihistoria** (1) näet treffit, joilla ol
 
 ![Treffihistoria: menneet treffit ja vaihdettu puhelinnumero](shot:date-history#date-history-row-number)
 
-Rivillä on treffikumppanisi kuva ja nimi sekä treffien aika ja paikka. Jos vaihdoitte numerot, numero näkyy rivillä (1). Napauta numeroa, niin voit lähettää siihen tekstiviestin. Napauta riviä muualta, niin numero kopioituu. Jos treffikumppanisi on poistanut tilinsä, rivillä lukee *Poistettu käyttäjä*.
+Rivillä on treffiparisi kuva ja nimi sekä treffien aika ja paikka. Jos vaihdoitte numerot, numero näkyy rivillä (1). Napauta numeroa, niin voit lähettää siihen tekstiviestin. Napauta riviä muualta, niin numero kopioituu. Jos treffiparisi on poistanut tilinsä, rivillä lukee *Poistettu käyttäjä*.
 
 ## Jos jokin meni pieleen
 

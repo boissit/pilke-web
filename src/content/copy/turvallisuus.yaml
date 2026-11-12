@@ -89,5 +89,5 @@
   en: 'Location data'
 
 'privacy.body':
-  fi: 'Voimme auttaa sinua löytämään treffikumppanisi treffien alkaessa sijaintitietojen avulla. Sijaintitietoja jaetaan korkeintaan {{sharing.trail_minutes}} minuuttia treffien alkamisen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta.'
+  fi: 'Voimme auttaa sinua löytämään treffiparisi treffien alkaessa sijaintitietojen avulla. Sijaintitietoja jaetaan korkeintaan {{sharing.trail_minutes}} minuuttia treffien alkamisen jälkeen ja vain {{sharing.radius_m}} metrin säteellä treffipaikasta.'
   en: 'When your date starts, we can help you find each other using your location. It’s shared for at most {{sharing.trail_minutes}} minutes after the start, and only within {{sharing.radius_m}} metres of the venue.'

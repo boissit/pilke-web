@@ -9,7 +9,7 @@ draft: false
 
 Tallenna ensin asetusten kohtaan **Turvallisuus** luotettavan läheisesi puhelinnumero. Sen jälkeen **Turvapainike** näkyy treffisivulla {{safety.lead_hours}} tuntia ennen treffien alkua ja vielä {{safety.trail_hours}} tuntia alun jälkeen. Sovi asiasta etukäteen luotettavan läheisesi kanssa.
 
-Yksi painallus lähettää hänelle tekstiviestin *Pilke: [nimesi] painoi turvapainiketta ja pyytää sinua ottamaan yhteyttä.* Siinä ei ole sijaintiasi, treffipaikkaa, kellonaikaa eikä mitään treffikumppanistasi. Treffikumppanisi ei saa tietää painalluksesta. Pilke tallentaa tiedon painalluksesta ja siitä, menikö viesti perille.
+Yksi painallus lähettää hänelle tekstiviestin *Pilke: [nimesi] painoi turvapainiketta ja pyytää sinua ottamaan yhteyttä.* Siinä ei ole sijaintiasi, treffipaikkaa, kellonaikaa eikä mitään treffiparistasi. Treffiparisi ei saa tietää painalluksesta. Pilke tallentaa tiedon painalluksesta ja siitä, menikö viesti perille.
 
 Näytöllä lukee, lähtikö viesti. Jos ei, soita läheisellesi itse. Hätätilanteessa soita 112.
 
@@ -25,4 +25,4 @@ Ilmoitusta ei lähetetä viranomaisille. Hätätilanteessa soita 112.
 
 Jos vastaat turvallisuuskysymykseen *Jokin jäi vaivaamaan*, voit halutessasi kertoa tapahtuneesta omin sanoin kohdassa *Kerro, mitä tapahtui*, enintään {{feedback.report_max_chars}} merkkiä.
 
-Kirjoittamasi viestin näkee vain Pilkkeen ylläpito, ja luemme sen niin pian kuin voimme. Treffikumppanisi ei saa tietää siitä.
+Kirjoittamasi viestin näkee vain Pilkkeen ylläpito, ja luemme sen niin pian kuin voimme. Treffiparisi ei saa tietää siitä.

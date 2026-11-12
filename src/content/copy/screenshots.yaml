@@ -29,7 +29,7 @@
   en: 'An invite received: who sent it, with their photo, the times offered and the place.'
 
 'shot.feedback':
-  fi: 'Treffipalaute puhelimessa: kuka oli treffeillä ja milloin, ja kysymys siitä, mistä pidit treffikumppanissasi, muutama vaihtoehto valittuna.'
+  fi: 'Treffipalaute puhelimessa: kuka oli treffeillä ja milloin, ja kysymys siitä, mistä pidit treffiparissasi, muutama vaihtoehto valittuna.'
   en: 'Date feedback on a phone: who the date was with and when, and the question of what you liked about them, with a few options picked.'
 
 'shot.mieltymykset':
@@ -37,7 +37,7 @@
   en: 'The Preferences questions on a phone: I’d like children one day, answered Not sure, and I smoke, answered No, but it doesn’t bother me.'
 
 'shot.preferences':
-  fi: 'Omat tiedot -osion kumppanitoiveet: treffikumppanin sukupuoli, ikähaarukka, mitä odotat treffeiltä ja kielet, joilla voisit käydä treffeillä.'
+  fi: 'Omat tiedot -osion toiveet: treffiparin sukupuoli, ikähaarukka, mitä odotat treffeiltä ja kielet, joilla voisit käydä treffeillä.'
   en: 'Who you’re looking for, in Your details: their gender, the age range, long-term or short-term, and the languages you could date in.'
 
 'shot.kalenteri':
