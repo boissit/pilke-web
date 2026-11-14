@@ -43,24 +43,14 @@ cancellations and their reasons, and the feedback given after a date.
 
 ### Date feedback
 
-After a date we ask how it went: well, OK, badly, or whether it didn't happen. Depending
-on your answer, we then ask what you liked about your date and what you didn't, what you
-thought of the venue, and whether you would like to meet again.
+After a date we ask how it went, what you liked and didn't like about your date, what you
+thought of the venue, and whether you would like to meet again. You answer by picking
+options, such as personality, humour and looks, but also work, wealth and where they are in
+life. There is no free text, except in safety and conduct reports.
 
-You say what you liked and didn't like by picking options: personality, behaviour,
-intelligence, humour, conversation style, being on the same wavelength, sportiness,
-style, looks, plans for the future, where they are in life, how they spend their time,
-work, wealth, and something else. There is no free text in the feedback, apart from
-safety and conduct reports.
-
-Feedback is about two people: about you, in what you value, and about your date, in the
-impression they made on you. Your date never sees your answers, and nor does any other
-user. We use them when we suggest dates to you and to others (section 10).
-
-From your feedback we make a summary for the matching. It records, as numbers, the
-options you picked, how the date went and whether you would like to meet again. It holds no
-venue, no date or time, and no free text. The summary is kept longer than the feedback
-itself (section 8).
+Feedback is about both you and your date, and your date never sees your answers. For the
+matching we make a summary of it, which is kept longer than the feedback itself (sections 8
+and 10).
 
 ### Political views
 

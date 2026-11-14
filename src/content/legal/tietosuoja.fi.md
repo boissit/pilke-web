@@ -46,25 +46,14 @@ syyt sekä treffien jälkeen annetut palautteet.
 
 ### Treffipalaute
 
-Treffien jälkeen kysymme, miten treffit sujuivat: hyvin, ok, huonosti vai eivätkö ne
-toteutuneet. Vastauksen mukaan kysymme lisäksi, mistä pidit treffiparissasi ja mistä et,
-mitä pidit treffipaikasta ja haluaisitko tavata hänet uudelleen.
+Treffien jälkeen kysymme, miten treffit sujuivat, mistä pidit treffiparissasi ja mistä et,
+mitä pidit treffipaikasta ja haluaisitko tavata uudelleen. Vastaat valitsemalla
+vaihtoehtoja, esimerkiksi luonne, huumori ja ulkonäkö mutta myös työtilanne, varallisuus ja
+elämäntilanne. Vapaata tekstiä voi kirjoittaa vain turvallisuus- ja käytösilmoitukseen.
 
-Siihen, mistä pidit ja mistä et, vastaat valitsemalla vaihtoehtoja. Ne ovat luonne,
-käytös, älykkyys, huumori, keskustelutyyli, aallonpituus, sporttisuus, tyyli, ulkonäkö,
-tulevaisuuskuva, elämäntilanne, ajankäyttö, työtilanne, varallisuus ja jokin muu.
-Vapaata tekstiä palautteeseen ei voi kirjoittaa, paitsi turvallisuus- ja
-käytösilmoitukseen.
-
-Palaute kertoo kahdesta ihmisestä: sinusta eli siitä, mitä arvostat, ja treffiparistasi
-eli siitä, millaisen vaikutelman hän sinuun teki. Treffiparisi ei näe vastauksiasi, eikä
-kukaan muukaan käyttäjä. Käytämme niitä, kun ehdotamme treffipareja sinulle ja muille
-(luku 10).
-
-Palautteesta tehdään tiivistelmä ehdotuksia varten. Siihen tallennetaan lukuina
-valitsemasi vaihtoehdot, treffien sujuminen ja se, haluaisitko tavata uudelleen.
-Treffipaikkaa, treffien ajankohtaa tai vapaata tekstiä siinä ei ole. Tiivistelmää säilytetään
-pidempään kuin palautetta itseään (luku 8).
+Palaute kertoo sekä sinusta että treffiparistasi, eikä hän näe vastauksiasi. Ehdotuksia
+varten palautteesta tehdään tiivistelmä, jota säilytetään pidempään kuin palautetta itseään
+(luvut 8 ja 10).
 
 ### Poliittiset näkemykset
 
