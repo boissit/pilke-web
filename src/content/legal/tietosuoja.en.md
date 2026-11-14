@@ -75,7 +75,8 @@ when you create your profile.
   consented. Otherwise it is dropped before anything is stored.
 - In the matching, views count only between two people who have both consented.
 
-You can withdraw your consent in Settings at any time. We then delete every answer about
+If you did not give consent when you created your profile, you can give it later in
+Settings. You can also withdraw it there at any time. We then delete every answer about
 political views that you gave or that was given about you, and they stop affecting your
 matches. The options are no longer shown to you.
 
@@ -118,7 +119,7 @@ phone number typed, and whether an account holds that number.
 
 Of the IP address we usually store only a hash. If sign-in is blocked after too many wrong
 codes, we store the address itself for as long as the block lasts, so that staff can lift
-the block if needed. All of this is deleted after a day.
+the block if needed. All of this is deleted within two days at most.
 
 ### Question sets
 
@@ -299,7 +300,10 @@ Finland.
 | Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. |
 | No-show reports, including those made in the feedback, and the restrictions that follow from them | 12 months from the report. |
 | Notifications sent, and delivery records for text messages | 90 days. |
-| Sign-in security records: hashes of the install ID and IP address, wrong codes, and blocks | A day. |
+| Sign-in security records: hashes of the install ID and IP address, wrong codes, and blocks | Two days at most. |
+| Login codes. If a code is requested for a number that has no account, we store only a hash of the number. | A code expires after five minutes and is deleted by the following day at the latest. |
+| The email address and the record of accepted terms from a registration that was not finished | Two days at most, if the number is not confirmed. Once it is, they move to the account. |
+| Feedback you send us from the app, and the app version | For the life of the account; deleted with it. |
 | Safety and conduct reports, their free text, and records of Safety button presses | 5 years from the report. |
 | The record that, after a safety report, the two of you are never suggested to each other again | Indefinitely. It does not lapse with time, and it is not undone by either person deleting their account. |
 | A record of which version of the terms you accepted, and when you acknowledged the use of date feedback | As long as we may have to show what the processing was based on. |
@@ -367,7 +371,8 @@ suit you and whom you might suit. The order depends on
   down a little, so that the same people are not shown to everyone.
 
 Feedback works in both directions: on whom we suggest to you, and on whom we suggest you
-to. There is also an element of chance in the order, so that the same people are not
+to. We use only feedback given after the person giving it accepted this version of the
+policy. Feedback given before that does not affect the order. There is also an element of chance in the order, so that the same people are not
 always at the top.
 
 Profiling changes only the order. It excludes nobody from the suggestions, and it has no
@@ -414,8 +419,8 @@ answer within one month. If the request is extensive we may extend that by two m
 we will tell you if we do.
 
 Withdrawing consent affects processing from then on. You stop sharing your location with
-one tap, and you can change your date preferences at any time. You withdraw consent to
-political views in Settings, which deletes every answer about them that you gave or that
+one tap, and you can change your date preferences at any time. You can give and withdraw
+consent to political views in Settings, and withdrawing deletes every answer about them that you gave or that
 was given about you. The answer about meeting
 again cannot be withdrawn: once the numbers have been exchanged, withdrawing does not get
 them back. Section 5 says what withdrawing means in that situation.
@@ -428,9 +433,9 @@ Date feedback needs the same balance. Feedback about you is your data as well, b
 dates have been promised that you will not see their answers. On request we tell you what
 feedback has been given about you, as a summary across all your dates. We do not give
 individual answers, who answered what, or which date the feedback is from. If there is
-feedback from so few dates that a summary would reveal somebody's answers, we only tell
-you that there is feedback and what it is used for. Feedback you gave yourself you get in
-full.
+feedback from fewer than three dates, a summary would reveal somebody's answers, so we
+then only tell you that there is feedback and what it is used for. Feedback you gave
+yourself you get in full. Send your request to **contact@pilke.app**.
 
 Using date feedback in the matching rests on the contract, so the right to object does not
 apply to it. You can still write to us if you suspect feedback about you was given out of

@@ -125,7 +125,7 @@ you create your profile you acknowledge that feedback about you is used as the
 honestly, and only about what happened on the date.
 
 For the options about political views we ask for separate consent. It is optional, and you
-can withdraw it in Settings at any time.
+can give or withdraw it in Settings at any time.
 
 You can write freely in a safety or conduct report. It is never shown to the other user. Write down what happened.
 The report is kept and may lead to action concerning the other user, so knowingly filing a
@@ -199,7 +199,7 @@ date, shown at the top of this page, and the app shows the same version.
 
 Minor changes, such as corrected contact details or clarified wording, we publish here
 directly. If a change affects your rights or obligations, we will tell you in the app at
-least a month before it takes effect and ask you to accept the new version. If you do not
+least a month before it takes effect and ask you to accept the new version. The app asks for it the next time you open it. If you do not
 accept the change, you can terminate the agreement by deleting your account before the change
 takes effect.
 

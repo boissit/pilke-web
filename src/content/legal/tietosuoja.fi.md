@@ -80,7 +80,8 @@ valinta, joka ei ole valmiiksi valittuna, kun luot profiilin.
 - Ehdotuksissa näkemykset vaikuttavat vain silloin, kun molemmat ovat antaneet
   suostumuksen.
 
-Voit perua suostumuksen asetuksista milloin tahansa. Silloin poistamme kaikki
+Jos et antanut suostumusta profiilia luodessasi, voit antaa sen myöhemmin asetuksista.
+Voit myös perua sen asetuksista milloin tahansa. Silloin poistamme kaikki
 poliittisia näkemyksiä koskevat vastaukset, jotka olet antanut tai jotka sinusta on
 annettu, ja ne lakkaavat vaikuttamasta ehdotuksiin. Vaihtoehtoja ei sen jälkeen näytetä
 sinulle.
@@ -126,8 +127,8 @@ numeroa ja sen, onko numerolla tili.
 
 IP-osoitteesta tallennamme yleensä vain tiivisteen. Jos kirjautuminen estetään liian
 monen väärän koodin vuoksi, tallennamme osoitteen sellaisenaan eston ajaksi, jotta
-henkilöstö voi tarvittaessa purkaa eston. Kaikki nämä tiedot poistetaan vuorokauden
-kuluttua.
+henkilöstö voi tarvittaessa purkaa eston. Kaikki nämä tiedot poistetaan enintään kahden
+vuorokauden kuluessa.
 
 ### Kysymyssarjat
 
@@ -310,7 +311,10 @@ Suomessa.
 | Vastaus siihen, haluatko tavata uudelleen, ja vaihdettu puhelinnumero | 12 kuukautta treffien ajankohdasta, treffien mukana. |
 | Ilmoitukset saapumatta jättämisestä, myös palautteessa kerrotut, ja niistä seuraavat rajoitukset | 12 kuukautta ilmoituksesta. |
 | Lähetetyt ilmoitukset ja tekstiviestien lähetystiedot | 90 päivää. |
-| Kirjautumisen suojaustiedot: asennustunnisteen ja IP-osoitteen tiivisteet, väärin kirjoitetut koodit ja estot | Vuorokausi. |
+| Kirjautumisen suojaustiedot: asennustunnisteen ja IP-osoitteen tiivisteet, väärin kirjoitetut koodit ja estot | Enintään kaksi vuorokautta. |
+| Kirjautumiskoodit. Jos koodia pyydetään numeroon, jolla ei ole tiliä, tallennamme numerosta vain tiivisteen. | Koodi vanhenee viidessä minuutissa, ja se poistetaan viimeistään seuraavana päivänä. |
+| Kesken jääneen rekisteröitymisen sähköpostiosoite ja merkintä hyväksytyistä ehdoista | Enintään kaksi vuorokautta, jos numeroa ei vahvisteta. Kun numero vahvistetaan, tiedot siirtyvät tilille. |
+| Palaute, jonka lähetät meille sovelluksesta, ja sovelluksen versio | Tilin ajan; poistetaan tilin mukana. |
 | Turvallisuus- ja käytösilmoitukset, niiden vapaa teksti ja merkinnät turvapainikkeen painalluksista | 5 vuotta ilmoituksesta. |
 | Merkintä siitä, että teitä ei turvallisuusilmoituksen jälkeen enää ehdoteta toisillenne | Toistaiseksi. Se ei poistu ajan kuluessa eikä sillä, että jompikumpi poistaa tilinsä. |
 | Merkintä siitä, minkä version ehdoista olet hyväksynyt ja milloin kuittasit treffipalautteen käytön | Niin kauan kuin voimme joutua osoittamaan, mihin käsittely on perustunut. |
@@ -383,7 +387,9 @@ vaikuttavat
   kaikille.
 
 Palaute vaikuttaa kumpaankin suuntaan: siihen, keitä ehdotamme sinulle, ja siihen,
-kenelle ehdotamme sinua. Järjestyksessä on myös sattumaa, jotta samat ihmiset eivät
+kenelle ehdotamme sinua. Käytämme vain palautetta, joka on annettu sen jälkeen, kun
+palautteen antaja on hyväksynyt tämän selosteen version. Sitä aiemmin annettu palaute ei
+vaikuta järjestykseen. Järjestyksessä on myös sattumaa, jotta samat ihmiset eivät
 olisi aina kärjessä.
 
 Profilointi muuttaa vain järjestystä. Se ei sulje ketään pois ehdotuksista, eikä siitä
@@ -434,7 +440,7 @@ siitä sinulle.
 
 Suostumuksen peruminen vaikuttaa vain tulevaan käsittelyyn. Sijainnin jakamisen lopetat
 yhdellä painalluksella, ja treffitoiveita voit muuttaa milloin tahansa. Suostumuksen
-poliittisiin näkemyksiin perut asetuksista, ja se poistaa kaikki niitä koskevat
+poliittisiin näkemyksiin voit antaa ja perua asetuksista, ja peruminen poistaa kaikki niitä koskevat
 vastaukset, jotka olet antanut tai jotka sinusta on annettu. Vastausta siihen,
 haluatko tavata uudelleen, ei sen sijaan voi perua: jos numerot on jo vaihdettu, peruminen
 ei saa niitä takaisin. Luvussa 5 kerromme, mitä peruminen tässä tilanteessa tarkoittaa.
@@ -449,9 +455,9 @@ Treffipalautteessa punnitaan samaa. Sinusta annettu palaute on myös sinun tieto
 mutta treffipareillesi on luvattu, ettet näe heidän vastauksiaan. Pyynnöstä kerromme,
 millaista palautetta sinusta on annettu, yhteenvetona kaikista treffeistäsi. Emme kerro
 yksittäisiä vastauksia emmekä sitä, kuka vastasi mitä tai mistä treffeistä palaute on.
-Jos palautetta on vasta niin harvoista treffeistä, että yhteenveto paljastaisi jonkun
-vastaukset, kerromme vain, että palautetta on ja mihin sitä käytetään. Palautteen,
-jonka olet itse antanut, saat kokonaan.
+Jos palautetta on alle kolmesta treffistä, yhteenveto paljastaisi jonkun vastaukset, joten
+kerromme silloin vain, että palautetta on ja mihin sitä käytetään. Palautteen, jonka olet
+itse antanut, saat kokonaan. Lähetä pyyntö osoitteeseen **contact@pilke.app**.
 
 Treffipalautteen käyttö ehdotuksissa perustuu sopimukseen, joten vastustamisoikeus ei
 koske sitä. Voit silti kirjoittaa meille, jos epäilet, että sinusta annettu palaute on

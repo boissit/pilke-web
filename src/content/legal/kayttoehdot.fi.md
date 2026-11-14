@@ -125,7 +125,7 @@ profiilin, kuittaat, että sinusta annettua palautetta käytetään
 Vastaa siksi rehellisesti ja vain siitä, mitä treffeillä tapahtui.
 
 Poliittisia näkemyksiä koskeviin vaihtoehtoihin pyydämme erillisen suostumuksen. Se on
-vapaaehtoinen, ja voit perua sen asetuksista milloin tahansa.
+vapaaehtoinen, ja voit antaa tai perua sen asetuksista milloin tahansa.
 
 Turvallisuus- ja käytösilmoitukseen voit kirjoittaa vapaasti. Ilmoitus ei näy koskaan toiselle
 käyttäjälle. Kirjoita siihen, mitä on tapahtunut. Ilmoitus säilytetään, ja se voi johtaa
@@ -200,7 +200,8 @@ version.
 Vähäiset muutokset, kuten korjatut yhteystiedot tai tarkennettu sanamuoto, julkaisemme
 suoraan tällä sivulla. Jos muutos vaikuttaa oikeuksiisi tai velvollisuuksiisi,
 ilmoitamme siitä sovelluksessa vähintään kuukautta ennen muutoksen voimaantuloa ja
-pyydämme sinua hyväksymään uuden version. Jos et hyväksy muutosta, voit irtisanoa
+pyydämme sinua hyväksymään uuden version. Sovellus kysyy hyväksyntää, kun avaat sen
+seuraavan kerran. Jos et hyväksy muutosta, voit irtisanoa
 sopimuksen poistamalla tilisi ennen kuin muutos tulee voimaan.
 
 ## 14. Sovellettava laki ja riitojen ratkaisu
