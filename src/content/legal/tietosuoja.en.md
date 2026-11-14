@@ -290,7 +290,7 @@ Finland.
 | Calendar entries | 31 days from when the marked time ended. Entries still ahead are kept for the life of the account, and all of them are deleted with it. |
 | Answers to question sets | For the life of the account; deleted with it. |
 | Suggestions shown to you, and the record of whom you were suggested to | 12 months from the suggestion. When you delete your account, the suggestions shown to you are deleted at once. |
-| The breakdown of how the people in a suggestion were scored (section 10) | 12 months, with the suggestion. When you delete your account, the breakdowns for suggestions shown to you are deleted at once. |
+| The breakdown of how the people in a suggestion were scored (section 10) | For the life of the account; deleted with it. |
 | Your matching profile: what feedback says about you and about what you value, a copy of your quiz answers, who feedback suggests is similar to you, and how often you have been suggested lately | For the life of the account; deleted with it. |
 | How you earned and used kipinät | For as long as the account, or the record left after deleting it, exists. Once you delete your account, the entries no longer carry your name. |
 | Dates, invites and cancellations | 12 months from the date. |
@@ -371,8 +371,7 @@ suit you and whom you might suit. The order depends on
   down a little, so that the same people are not shown to everyone.
 
 Feedback works in both directions: on whom we suggest to you, and on whom we suggest you
-to. We use only feedback given after both the person giving it and the person it is about
-have accepted this version of the policy. Feedback given before that does not affect the order. There is also an element of chance in the order, so that the same people are not
+to. There is also an element of chance in the order, so that the same people are not
 always at the top.
 
 Profiling changes only the order. It excludes nobody from the suggestions, and it has no
@@ -381,8 +380,8 @@ legal or similarly significant effect on you, because you decide who to invite.
 For every suggestion we record a breakdown of how the people in it were scored: a number
 for each of the parts listed above, and their total. It covers only the people shown, and
 it does not contain the feedback itself. We need it to work out afterwards why a
-suggestion came out as it did, and to improve the ordering. It is kept with the suggestion
-for 12 months (section 8).
+suggestion came out as it did, and to improve the ordering. It is kept for the life of your
+account and deleted with it (section 8).
 
 Restrictions, which the app calls time-outs, also arise automatically, from cancelling an upcoming date or not turning up. A
 restriction means you are not shown among other people's matches, or you cannot look for new

@@ -301,7 +301,7 @@ Suomessa.
 | Kalenterimerkinnät | 31 päivää siitä, kun merkitty aika on päättynyt. Tulevat merkinnät säilyvät tilin ajan, ja kaikki poistetaan tilin mukana. |
 | Vastaukset kysymyssarjoihin | Tilin ajan; poistetaan tilin mukana. |
 | Ehdotukset, jotka sinulle on näytetty, ja tieto siitä, kenelle sinua on ehdotettu | 12 kuukautta ehdotuksesta. Kun poistat tilisi, sinulle näytetyt ehdotukset poistetaan heti. |
-| Erittely siitä, miten ehdotuksen ihmiset pisteytettiin (luku 10) | Ehdotuksen mukana 12 kuukautta. Kun poistat tilisi, sinulle näytettyjen ehdotusten erittelyt poistetaan heti. |
+| Erittely siitä, miten ehdotuksen ihmiset pisteytettiin (luku 10) | Tilin ajan; poistetaan tilin mukana. |
 | Yhteenveto sinusta ehdotuksia varten: mitä palaute kertoo sinusta ja siitä, mitä arvostat, kopio kyselyvastauksistasi, keitä muita palaute kertoo sinua muistuttaviksi ja kuinka usein sinua on viime aikoina ehdotettu | Tilin ajan; poistetaan tilin mukana. |
 | Kipinöiden kertymä ja käyttö | Niin kauan kuin tili tai sen poiston jälkeen jäävä merkintä on olemassa. Kun poistat tilisi, merkinnöissä ei ole enää nimeäsi. |
 | Treffit, kutsut ja perumiset | 12 kuukautta treffien ajankohdasta. |
@@ -387,9 +387,7 @@ vaikuttavat
   kaikille.
 
 Palaute vaikuttaa kumpaankin suuntaan: siihen, keitä ehdotamme sinulle, ja siihen,
-kenelle ehdotamme sinua. Käytämme vain palautetta, joka on annettu sen jälkeen, kun
-sekä palautteen antaja että se, jota palaute koskee, ovat hyväksyneet tämän selosteen
-version. Sitä aiemmin annettu palaute ei vaikuta järjestykseen. Järjestyksessä on myös sattumaa, jotta samat ihmiset eivät
+kenelle ehdotamme sinua. Järjestyksessä on myös sattumaa, jotta samat ihmiset eivät
 olisi aina kärjessä.
 
 Profilointi muuttaa vain järjestystä. Se ei sulje ketään pois ehdotuksista, eikä siitä
@@ -400,7 +398,7 @@ Jokaisesta ehdotuksesta tallennamme erittelyn siitä, miten siinä näytetyt ihm
 pisteytettiin: luvun kustakin edellä luetellusta osasta ja niiden summan. Erittely koskee
 vain näytettyjä ihmisiä, eikä siinä ole itse palautetta. Tarvitsemme sitä, jotta voimme
 jälkikäteen selvittää, miksi ehdotus oli sellainen kuin oli, ja parantaa järjestystä.
-Erittely säilytetään ehdotuksen mukana 12 kuukautta (luku 8).
+Erittely säilytetään tilisi ajan, ja se poistetaan tilin mukana (luku 8).
 
 Automaattisesti syntyvät myös rajoitukset, jotka seuraavat siitä, että peruut sovitut
 treffit tai jätät saapumatta. Rajoitus tarkoittaa, ettet näy muiden ehdokkaissa tai ettet
