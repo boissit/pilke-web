@@ -303,7 +303,7 @@ Finland.
 | Sign-in security records: hashes of the install ID and IP address, wrong codes, and blocks | Two days at most. |
 | Login codes. If a code is requested for a number that has no account, we store only a hash of the number. | A code expires after five minutes and is deleted by the following day at the latest. |
 | The email address and the record of accepted terms from a registration that was not finished | Two days at most, if the number is not confirmed. Once it is, they move to the account. |
-| Feedback you send us from the app, and the app version | For the life of the account; deleted with it. |
+| Feedback you send us from the app, and the app version | For the life of the account; deleted with it. A copy is emailed to Pilke's support inbox and deleted from there within 12 months. |
 | Safety and conduct reports, their free text, and records of Safety button presses | 5 years from the report. |
 | The record that, after a safety report, the two of you are never suggested to each other again | Indefinitely. It does not lapse with time, and it is not undone by either person deleting their account. |
 | A record of which version of the terms you accepted, and when you acknowledged the use of date feedback | As long as we may have to show what the processing was based on. |
@@ -371,8 +371,8 @@ suit you and whom you might suit. The order depends on
   down a little, so that the same people are not shown to everyone.
 
 Feedback works in both directions: on whom we suggest to you, and on whom we suggest you
-to. We use only feedback given after the person giving it accepted this version of the
-policy. Feedback given before that does not affect the order. There is also an element of chance in the order, so that the same people are not
+to. We use only feedback given after both the person giving it and the person it is about
+have accepted this version of the policy. Feedback given before that does not affect the order. There is also an element of chance in the order, so that the same people are not
 always at the top.
 
 Profiling changes only the order. It excludes nobody from the suggestions, and it has no

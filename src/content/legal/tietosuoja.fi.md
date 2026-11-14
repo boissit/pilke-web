@@ -314,7 +314,7 @@ Suomessa.
 | Kirjautumisen suojaustiedot: asennustunnisteen ja IP-osoitteen tiivisteet, väärin kirjoitetut koodit ja estot | Enintään kaksi vuorokautta. |
 | Kirjautumiskoodit. Jos koodia pyydetään numeroon, jolla ei ole tiliä, tallennamme numerosta vain tiivisteen. | Koodi vanhenee viidessä minuutissa, ja se poistetaan viimeistään seuraavana päivänä. |
 | Kesken jääneen rekisteröitymisen sähköpostiosoite ja merkintä hyväksytyistä ehdoista | Enintään kaksi vuorokautta, jos numeroa ei vahvisteta. Kun numero vahvistetaan, tiedot siirtyvät tilille. |
-| Palaute, jonka lähetät meille sovelluksesta, ja sovelluksen versio | Tilin ajan; poistetaan tilin mukana. |
+| Palaute, jonka lähetät meille sovelluksesta, ja sovelluksen versio | Tilin ajan; poistetaan tilin mukana. Palautteesta lähtee kopio Pilkkeen tuen sähköpostiin, josta se poistetaan 12 kuukauden kuluessa. |
 | Turvallisuus- ja käytösilmoitukset, niiden vapaa teksti ja merkinnät turvapainikkeen painalluksista | 5 vuotta ilmoituksesta. |
 | Merkintä siitä, että teitä ei turvallisuusilmoituksen jälkeen enää ehdoteta toisillenne | Toistaiseksi. Se ei poistu ajan kuluessa eikä sillä, että jompikumpi poistaa tilinsä. |
 | Merkintä siitä, minkä version ehdoista olet hyväksynyt ja milloin kuittasit treffipalautteen käytön | Niin kauan kuin voimme joutua osoittamaan, mihin käsittely on perustunut. |
@@ -388,8 +388,8 @@ vaikuttavat
 
 Palaute vaikuttaa kumpaankin suuntaan: siihen, keitä ehdotamme sinulle, ja siihen,
 kenelle ehdotamme sinua. Käytämme vain palautetta, joka on annettu sen jälkeen, kun
-palautteen antaja on hyväksynyt tämän selosteen version. Sitä aiemmin annettu palaute ei
-vaikuta järjestykseen. Järjestyksessä on myös sattumaa, jotta samat ihmiset eivät
+sekä palautteen antaja että se, jota palaute koskee, ovat hyväksyneet tämän selosteen
+version. Sitä aiemmin annettu palaute ei vaikuta järjestykseen. Järjestyksessä on myös sattumaa, jotta samat ihmiset eivät
 olisi aina kärjessä.
 
 Profilointi muuttaa vain järjestystä. Se ei sulje ketään pois ehdotuksista, eikä siitä
