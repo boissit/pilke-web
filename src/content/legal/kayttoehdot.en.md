@@ -2,7 +2,7 @@
 title: Terms of use
 lead: What you agree to when you use Pilke, and what we promise you.
 version: 2026-11-15
-effective: 2026-12-15
+effective: 2026-11-15
 draft: false
 ---
 

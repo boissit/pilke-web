@@ -2,7 +2,7 @@
 title: Privacy policy
 lead: What we hold about you, what it is used for, and what you can ask us to do.
 version: 2026-11-15
-effective: 2026-12-15
+effective: 2026-11-15
 draft: false
 ---
 

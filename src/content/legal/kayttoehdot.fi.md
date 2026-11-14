@@ -2,7 +2,7 @@
 title: Käyttöehdot
 lead: Mihin sitoudut, kun käytät Pilkettä, ja mitä me lupaamme sinulle.
 version: 2026-11-15
-effective: 2026-12-15
+effective: 2026-11-15
 draft: false
 ---
 

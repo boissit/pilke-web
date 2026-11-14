@@ -4,7 +4,7 @@
 title: "Tietosuoja\u00ADseloste"
 lead: Mitä tietoja käsittelemme sinusta, mihin niitä käytetään ja mitä voit vaatia.
 version: 2026-11-15
-effective: 2026-12-15
+effective: 2026-11-15
 draft: false
 ---
 
