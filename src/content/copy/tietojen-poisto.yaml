@@ -79,6 +79,10 @@
   fi: 'Jaetut sijainnit.'
   en: 'Any location you shared.'
 
+'legal.deletion.removed.eight':
+  fi: 'Ehdotusten käyttämät tiivistelmät palautteesta, jota sinusta on annettu, ja yhteenveto sinusta ehdotuksia varten.'
+  en: 'The summaries of feedback about you that the matching uses, and your matching profile.'
+
 # ──────────────────────────────────────────────────────────────────────────
 # What stays
 # ──────────────────────────────────────────────────────────────────────────
@@ -94,6 +98,10 @@
 'legal.deletion.kept.one':
   fi: 'Sovitut ja menneet treffit sekä niistä annetut palautteet. Toinen osapuoli näkee sinun tilallasi ”Joku”.'
   en: 'Upcoming and past dates, and the feedback given about them. The other person sees “Someone” where your name was.'
+
+'legal.deletion.kept.ten':
+  fi: 'Palaute, jonka annoit muista, nimettömänä tiivistelmänä ehdotuksia varten. Siinä ei ole mitään, mikä kertoisi sinusta tai yhdistäisi sen sinuun.'
+  en: 'Feedback you gave about others, as an anonymous summary the matching uses. Nothing in it says anything about you or links it to you.'
 
 'legal.deletion.kept.two':
   fi: 'Turvallisuus- ja käytösilmoitukset ja niiden vapaa teksti, sekä sinun kirjoittamat että sinusta kirjoitetut.'

@@ -1,8 +1,8 @@
 ---
 title: Käyttöehdot
 lead: Mihin sitoudut, kun käytät Pilkettä, ja mitä me lupaamme sinulle.
-version: 2026-09-12
-effective: 2026-09-12
+version: 2026-11-15
+effective: 2026-12-15
 draft: false
 ---
 
@@ -24,7 +24,7 @@ Pilke sopii treffejä. Se ei ole viestisovellus eikä seuranhakupalsta.
 
 - **Et voi lähettää viestejä toisille käyttäjille.** Palvelussa ei ole chattia.
 - **Sinä valitset, kenelle lähetät kutsun.** Ehdotamme sinulle ehdokkaita sukupuolen,
-  iän, toiveidesi, treffialueesi ja kalenterisi perusteella.
+  iän, toiveidesi, treffialueesi, kalenterisi ja treffipalautteen perusteella.
 - **Kutsussa on aikoja ja paikkoja valmiina.** Vastaat siihen valitsemalla lopullisen
   ajan ja paikan.
 - **Pilke tarjoaa ennalta määritetyt, julkiset treffipaikat.** Käyttäjät eivät voi
@@ -108,8 +108,8 @@ jollekulle, minne menet, ja lähde pois, jos olo ei tunnu hyvältä.
 
 ## 7. Palaute ja turvallisuusilmoitukset
 
-Treffien jälkeen kysymme, miten teillä meni. Vastaat valitsemalla vaihtoehdon, ja
-vastauksesi koskee kyseistä treffikumppania. Treffiparisi ei näe vastaustasi.
+Treffien jälkeen kysymme, miten teillä meni. Vastaat valitsemalla vaihtoehtoja, ja
+vastauksesi koskevat treffipariasi. Treffiparisi ei näe vastauksiasi.
 
 Tästä on yksi poikkeus: kysymys siitä, haluaisitko tavata uudelleen ja saako
 puhelinnumerosi antaa toiselle. Jos te molemmat haluatte numeroiden vaihtoa, välitämme ne
@@ -117,6 +117,15 @@ toisillenne, ja silloin toinen näkee, että vastasit myöntävästi. Muuten emm
 hänelle vastauksestasi mitään. Vastaus on lopullinen, eikä sitä voi perua, sillä toinen
 on voinut nähdä ja tallentaa numerosi heti vastauksesi jälkeen. Lue
 [tietosuojaselosteen](/tietosuoja) luku 5.
+
+Palautteesi vaikuttaa siihen, keitä ehdotamme sinulle ja kenelle ehdotamme treffipariasi.
+Muiden palaute sinusta vaikuttaa samalla tavalla sinuun. Tämä kuuluu palveluun: kun luot
+profiilin, kuittaat, että sinusta annettua palautetta käytetään
+[tietosuojaselosteen](/tietosuoja) mukaisesti, eikä Pilkettä voi käyttää ilman tätä.
+Vastaa siksi rehellisesti ja vain siitä, mitä treffeillä tapahtui.
+
+Poliittisia näkemyksiä koskeviin vaihtoehtoihin pyydämme erillisen suostumuksen. Se on
+vapaaehtoinen, ja voit perua sen asetuksista milloin tahansa.
 
 Turvallisuus- ja käytösilmoitukseen voit kirjoittaa vapaasti. Ilmoitus ei näy koskaan toiselle
 käyttäjälle. Kirjoita siihen, mitä on tapahtunut. Ilmoitus säilytetään, ja se voi johtaa

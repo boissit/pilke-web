@@ -1,8 +1,8 @@
 ---
 title: Terms of use
 lead: What you agree to when you use Pilke, and what we promise you.
-version: 2026-09-12
-effective: 2026-09-12
+version: 2026-11-15
+effective: 2026-12-15
 draft: false
 ---
 
@@ -24,7 +24,7 @@ Pilke arranges dates. It is not a messaging app and not a personal ads board.
 
 - **You cannot send messages to other users.** There is no chat in the service.
 - **You choose who to invite.** We suggest matches to you based on gender, age, your
-  preferences, your date area and your calendar.
+  preferences, your date area, your calendar and date feedback.
 - **An invite comes with times and venues already set.** You answer it by choosing the
   final time and venue.
 - **Pilke provides predetermined, public venues.** Users cannot propose venues of their own.
@@ -108,8 +108,8 @@ it does not feel right.
 
 ## 7. Feedback and safety reports
 
-After a date we ask how it went for the two of you. You answer by picking an option, and your
-answer concerns that date partner. They cannot see your answer.
+After a date we ask how it went for the two of you. You answer by picking options, and your
+answers are about your date. Your date cannot see them.
 
 There is one exception: the question whether you would like to meet again and whether your
 phone number may be given to the other person. If you both want to exchange numbers, we
@@ -117,6 +117,15 @@ pass them on, and the other person then sees that your answer was yes. Otherwise
 nothing about your answer. The answer is final and cannot be taken back, because the other
 person may have seen and saved your number the moment you answered. See section 5 of the
 [privacy policy](/en/tietosuoja).
+
+Your feedback affects whom we suggest to you and whom we suggest your date to. Other
+people's feedback about you affects you in the same way. This is part of the service: when
+you create your profile you acknowledge that feedback about you is used as the
+[privacy policy](/en/tietosuoja) describes, and Pilke cannot be used without that. So answer
+honestly, and only about what happened on the date.
+
+For the options about political views we ask for separate consent. It is optional, and you
+can withdraw it in Settings at any time.
 
 You can write freely in a safety or conduct report. It is never shown to the other user. Write down what happened.
 The report is kept and may lead to action concerning the other user, so knowingly filing a

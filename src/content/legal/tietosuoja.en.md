@@ -1,8 +1,8 @@
 ---
 title: Privacy policy
 lead: What we hold about you, what it is used for, and what you can ask us to do.
-version: 2026-09-12
-effective: 2026-09-12
+version: 2026-11-15
+effective: 2026-12-15
 draft: false
 ---
 
@@ -39,9 +39,45 @@ concerning your rights go to the same address (section 11).
 
 We process the times you mark as free in the calendar, the matches offered to you and
 which of them you chose, invites sent and received, agreed times and venues,
-cancellations and their reasons, and the feedback given after a date. We use your feedback
-answers when we pick your future matches. They say what you are looking for, and they are
-not a rating of the person you met.
+cancellations and their reasons, and the feedback given after a date.
+
+### Date feedback
+
+After a date we ask how it went: well, OK, badly, or whether it didn't happen. Depending
+on your answer, we then ask what you liked about your date and what you didn't, what you
+thought of the venue, and whether you would like to meet again.
+
+You say what you liked and didn't like by picking options: personality, behaviour,
+intelligence, humour, conversation style, being on the same wavelength, sportiness,
+style, looks, plans for the future, where they are in life, how they spend their time,
+work, wealth, and something else. There is no free text in the feedback, apart from
+safety and conduct reports.
+
+Feedback is about two people: about you, in what you value, and about your date, in the
+impression they made on you. Your date never sees your answers, and nor does any other
+user. We use them when we suggest dates to you and to others (section 10).
+
+From your feedback we make a summary for the matching. It records, as numbers, the
+options you picked, how the date went and whether you would like to meet again. It holds no
+venue, no date or time, and no free text. The summary is kept longer than the feedback
+itself (section 8).
+
+### Political views
+
+The feedback can also include two options that reveal political views: liberal views and
+conservative views. They say something both about where the person answering stands and
+about how they saw their date. We process them only if you have given explicit consent
+(section 5). That consent is optional and separate, and its box is not ticked in advance
+when you create your profile.
+
+- You see these options in the feedback only if you have consented.
+- We store such an answer only if both the person answering and their date have
+  consented. Otherwise it is dropped before anything is stored.
+- In the matching, views count only between two people who have both consented.
+
+You can withdraw your consent in Settings at any time. We then delete every answer about
+political views that you gave or that was given about you, and they stop affecting your
+matches. The options are no longer shown to you.
 
 ### Whether you want to meet again
 
@@ -72,10 +108,22 @@ device platform. We also store which notifications we have sent and whether they
 Each device you have signed in on leaves its own record, so that you can sign out of one
 device at a time.
 
+### Sign-in security
+
+We limit how often login codes can be requested and typed, so that nobody can guess a
+code or flood somebody else's number with codes. For that we process the install ID the
+app creates when it is installed, and the IP address a request comes from. Of the install
+ID we store only a hash. For a wrong code we also store the last three digits of the
+phone number typed, and whether an account holds that number.
+
+Of the IP address we usually store only a hash. If sign-in is blocked after too many wrong
+codes, we store the address itself for as long as the block lasts, so that staff can lift
+the block if needed. All of this is deleted after a day.
+
 ### Question sets
 
 You answer the personality quiz when you create your profile, and its answers affect the
-order your matches come in. You can also answer optional question sets, whose answers we
+order your matches come in (section 10). You can also answer optional question sets, whose answers we
 use for the same purpose. You answer every question set by picking an option; there is no
 free text in them.
 
@@ -158,7 +206,9 @@ to nobody. Section 2 says how that question works.
 | Purpose | Lawful basis |
 | --- | --- |
 | Creating your account and signing you in | Contract |
-| Finding matches from your preferences, feedback, area and calendar | Contract |
+| Finding matches from your preferences, area and calendar | Contract |
+| Date feedback, and using it to order your matches (section 10) | Contract |
+| Answers about political views in the feedback | Explicit consent, which you can withdraw in Settings |
 | Invites, agreeing a time and venue, and cancellations | Contract |
 | Notifications about invites, arrivals and feedback requests | Contract |
 | Sharing your location at the venue | Consent, which you can withdraw by stopping sharing |
@@ -166,7 +216,13 @@ to nobody. Section 2 says how that question works.
 | Exchanging phone numbers after a date | Consent, given by choosing that answer |
 | Safety: reports, the record that two people are not suggested to each other after a safety report, the Safety button and restrictions | Legitimate interest — the safety of our users |
 | Your safety contact's phone number | Legitimate interest — the user's safety |
+| Sign-in security: limits on login codes, the hashed install ID and the IP address | Legitimate interest — protecting accounts |
 | Support and investigating misuse | Legitimate interest — proper use of the service |
+
+Date feedback is part of the service we have agreed to provide: it is how Pilke learns
+whom to suggest to whom. Its basis is therefore the contract. When you create your profile
+you acknowledge, separately, that feedback about you is used as this policy describes.
+That acknowledgement is not consent, because the service cannot be used without it.
 
 Exchanging phone numbers is the only place where we disclose your personal data to
 another user on the basis of your consent. The consent concerns one date, and it has an
@@ -187,6 +243,10 @@ Your date preferences can reveal whether you are interested in the same or a dif
 gender and whether you are looking for sex. That is special category data, and we process
 it only with your explicit consent, which you give when you set those preferences. You can
 change your preferences or delete your account at any time.
+
+Political opinions are special category data too. We process them only with your explicit
+consent (Article 9(2)(a) of the GDPR), which you give with a separate box. Section 2 says
+what the consent covers and what withdrawing it deletes.
 
 The free text of a safety or conduct report may describe acts that are criminal offences. We process
 such data only to protect users and, where necessary, to bring or answer a legal claim.
@@ -229,15 +289,20 @@ Finland.
 | Calendar entries | 31 days from when the marked time ended. Entries still ahead are kept for the life of the account, and all of them are deleted with it. |
 | Answers to question sets | For the life of the account; deleted with it. |
 | Suggestions shown to you, and the record of whom you were suggested to | 12 months from the suggestion. When you delete your account, the suggestions shown to you are deleted at once. |
+| The breakdown of how the people in a suggestion were scored (section 10) | 12 months, with the suggestion. When you delete your account, the breakdowns for suggestions shown to you are deleted at once. |
+| Your matching profile: what feedback says about you and about what you value, a copy of your quiz answers, who feedback suggests is similar to you, and how often you have been suggested lately | For the life of the account; deleted with it. |
 | How you earned and used kipinät | For as long as the account, or the record left after deleting it, exists. Once you delete your account, the entries no longer carry your name. |
 | Dates, invites and cancellations | 12 months from the date. |
-| Feedback | 12 months from the date. |
+| Feedback as it was given | 12 months from the date. |
+| The summary of feedback that the matching uses | As long as the account of the person it is about exists. Section 9 says what deleting an account does to it. |
+| Your consent to political views, and its version | Until you withdraw it or delete your account. |
 | Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. |
 | No-show reports, including those made in the feedback, and the restrictions that follow from them | 12 months from the report. |
 | Notifications sent, and delivery records for text messages | 90 days. |
+| Sign-in security records: hashes of the install ID and IP address, wrong codes, and blocks | A day. |
 | Safety and conduct reports, their free text, and records of Safety button presses | 5 years from the report. |
 | The record that, after a safety report, the two of you are never suggested to each other again | Indefinitely. It does not lapse with time, and it is not undone by either person deleting their account. |
-| A record of which version of the terms you accepted | As long as we may have to show what the processing was based on. |
+| A record of which version of the terms you accepted, and when you acknowledged the use of date feedback | As long as we may have to show what the processing was based on. |
 
 At the end of a retention period we delete the data or make it non-identifiable. If a
 support matter, a safety or conduct report or a legal claim is open, we keep what relates to it for as
@@ -250,8 +315,20 @@ undone. There is more detail on [How to delete your data](/en/tietojen-poisto).
 
 We delete your phone number, email address, preferred name, date of birth, gender, photograph,
 safety contact's number, date preferences, date area, calendar entries and answers to
-question sets. The photograph is deleted from storage as well, and every device is signed
-out at the same moment.
+question sets, and your matching profile. The photograph is deleted from storage as well,
+and every device is signed out at the same moment.
+
+The summaries made from feedback are handled like this:
+
+- **Summaries of feedback given about you** are deleted at once, and no longer affect
+  anybody's matches. You are also removed from the comparisons in which other people were
+  compared with you.
+- **Summaries of feedback you gave about others** stay, anonymised, because they are also
+  your dates' data and their accounts still exist. Everything that says anything about
+  you is removed: who gave the feedback, what it said about what you value, and which
+  feedback it came from. All that is left is how your answers about your date differed
+  from your usual answers, for example that somebody liked their humour more than usual.
+  Nothing links it to you.
 
 Two groups remain:
 
@@ -271,11 +348,42 @@ empty account, and nothing links it to the old one.
 Finding matches is automated, but it only produces a suggestion. You decide who to
 invite, and you can pass on every match.
 
+Putting matches in order is profiling: from your data we assess automatically who might
+suit you and whom you might suit. The order depends on
+
+- **your personality quiz answers:** at first we suggest people whose answers go well with
+  yours;
+- **your own dates:** your feedback teaches us what kind of people suit you in particular,
+  and after just a few dates it counts for more than the quiz;
+- **everyone's dates:** a model learns from all users' feedback which quiz answers go well
+  together, so even a new user benefits from it straight away. The model itself holds
+  nothing about any individual;
+- **feedback given about you:** the impression you have made on your dates, for example
+  through your behaviour or your humour;
+- **similar tastes:** if people who liked the same things in somebody as you did also
+  liked them in somebody else, we are more likely to suggest that other person to you;
+- **how often someone has been suggested:** somebody you were shown recently and did not
+  invite moves down, and somebody being suggested to a great many people right now moves
+  down a little, so that the same people are not shown to everyone.
+
+Feedback works in both directions: on whom we suggest to you, and on whom we suggest you
+to. There is also an element of chance in the order, so that the same people are not
+always at the top.
+
+Profiling changes only the order. It excludes nobody from the suggestions, and it has no
+legal or similarly significant effect on you, because you decide who to invite.
+
+For every suggestion we record a breakdown of how the people in it were scored: a number
+for each of the parts listed above, and their total. It covers only the people shown, and
+it does not contain the feedback itself. We need it to work out afterwards why a
+suggestion came out as it did, and to improve the ordering. It is kept with the suggestion
+for 12 months (section 8).
+
 Restrictions, which the app calls time-outs, also arise automatically, from cancelling an upcoming date or not turning up. A
 restriction means you are not shown among other people's matches, or you cannot look for new
 matches, and it lasts no more than 30 days.
 
-One restriction rests on another user's report: if the person you were meeting reports that
+One restriction rests on another user's report: if your date reports that
 you did not turn up, the restriction follows automatically. You can file your own report
 within 24 hours, which lifts it. You can also ask for the decision to be looked at again by
 writing to the address in section 1, and a person will then review it.
@@ -306,13 +414,28 @@ answer within one month. If the request is extensive we may extend that by two m
 we will tell you if we do.
 
 Withdrawing consent affects processing from then on. You stop sharing your location with
-one tap, and you can change your date preferences at any time. The answer about meeting
+one tap, and you can change your date preferences at any time. You withdraw consent to
+political views in Settings, which deletes every answer about them that you gave or that
+was given about you. The answer about meeting
 again cannot be withdrawn: once the numbers have been exchanged, withdrawing does not get
 them back. Section 5 says what withdrawing means in that situation.
 
 If another user has filed a safety or conduct report about you, you cannot see what it says. Otherwise
 the person who filed it would be identifiable and reporting would become impossible. You
 can still ask us to confirm whether we hold such data about you.
+
+Date feedback needs the same balance. Feedback about you is your data as well, but your
+dates have been promised that you will not see their answers. On request we tell you what
+feedback has been given about you, as a summary across all your dates. We do not give
+individual answers, who answered what, or which date the feedback is from. If there is
+feedback from so few dates that a summary would reveal somebody's answers, we only tell
+you that there is feedback and what it is used for. Feedback you gave yourself you get in
+full.
+
+Using date feedback in the matching rests on the contract, so the right to object does not
+apply to it. You can still write to us if you suspect feedback about you was given out of
+spite or is otherwise misuse, and we will look into it. Sign-in security rests on
+legitimate interest, so you can object to that.
 
 ### Complaining to the supervisory authority
 
@@ -324,7 +447,8 @@ the Data Protection Ombudsman: PO Box 800, FI-00531 Helsinki, switchboard +358 2
 
 The account has no password: you identify yourself with your phone number and a one-time
 code, and each device signs in separately. We store only a hash of the session token, and on
-the phone the token is held in the operating system's secure store.
+the phone the token is held in the operating system's secure store. Requesting and typing
+login codes is limited, so that a code cannot be guessed (section 2).
 
 Connections between the app and the server are encrypted. Admin access is limited to those
 who need it for their work, and shared locations do not appear in the admin view at all.
