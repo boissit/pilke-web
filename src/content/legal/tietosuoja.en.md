@@ -45,8 +45,7 @@ cancellations and their reasons, and the feedback given after a date.
 
 After a date we ask how it went, what you liked and didn't like about your date, what you
 thought of the venue, and whether you would like to meet again. You answer by picking
-options, such as personality, humour and looks, but also work, wealth and where they are in
-life. There is no free text, except in safety and conduct reports.
+options that describe your date as a person and their circumstances. There is no free text, except in safety and conduct reports.
 
 Feedback is about both you and your date, and your date never sees your answers. For the
 matching we make a summary of it, which is kept longer than the feedback itself (sections 8
@@ -321,7 +320,7 @@ The summaries made from feedback are handled like this:
   your dates' data and their accounts still exist. Everything that says anything about
   you is removed: who gave the feedback, what it said about what you value, and which
   feedback it came from. All that is left is how your answers about your date differed
-  from your usual answers, for example that somebody liked their humour more than usual.
+  from your usual answers, for example that somebody liked something about them more than usual.
   Nothing links it to you.
 
 Two groups remain:
@@ -352,8 +351,7 @@ suit you and whom you might suit. The order depends on
 - **everyone's dates:** a model learns from all users' feedback which quiz answers go well
   together, so even a new user benefits from it straight away. The model itself holds
   nothing about any individual;
-- **feedback given about you:** the impression you have made on your dates, for example
-  through your behaviour or your humour;
+- **feedback given about you:** the impression you have made on your dates;
 - **similar tastes:** if people who liked the same things in somebody as you did also
   liked them in somebody else, we are more likely to suggest that other person to you;
 - **how often someone has been suggested:** somebody you were shown recently and did not

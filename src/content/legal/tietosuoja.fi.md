@@ -48,8 +48,7 @@ syyt sekä treffien jälkeen annetut palautteet.
 
 Treffien jälkeen kysymme, miten treffit sujuivat, mistä pidit treffiparissasi ja mistä et,
 mitä pidit treffipaikasta ja haluaisitko tavata uudelleen. Vastaat valitsemalla
-vaihtoehtoja, esimerkiksi luonne, huumori ja ulkonäkö mutta myös työtilanne, varallisuus ja
-elämäntilanne. Vapaata tekstiä voi kirjoittaa vain turvallisuus- ja käytösilmoitukseen.
+vaihtoehtoja, jotka kuvaavat treffipariasi ihmisenä ja hänen elämäntilannettaan. Vapaata tekstiä voi kirjoittaa vain turvallisuus- ja käytösilmoitukseen.
 
 Palaute kertoo sekä sinusta että treffiparistasi, eikä hän näe vastauksiasi. Ehdotuksia
 varten palautteesta tehdään tiivistelmä, jota säilytetään pidempään kuin palautetta itseään
@@ -333,7 +332,7 @@ Palautteesta tehdyt tiivistelmät käsitellään näin:
   poistetaan kaikki, mikä kertoo sinusta: kuka palautteen antoi, mitä se kertoi sinun
   arvostuksistasi ja mistä palautteesta se tehtiin. Jäljelle jää vain se, miten vastauksesi
   treffiparistasi poikkesivat tavallisista vastauksistasi, esimerkiksi että joku piti
-  hänen huumoristaan tavallista enemmän. Mikään ei yhdistä sitä sinuun.
+  jostakin hänessä tavallista enemmän. Mikään ei yhdistä sitä sinuun.
 
 Kaksi ryhmää jää:
 
@@ -366,7 +365,7 @@ vaikuttavat
   kyselyvastaukset sopivat yhteen, joten uusikin käyttäjä hyötyy siitä heti. Itse
   mallissa ei ole tietoja yksittäisistä ihmisistä;
 - **palaute, jota sinusta on annettu:** millaisen vaikutelman olet tehnyt
-  treffipareihisi esimerkiksi käytökselläsi tai huumorillasi;
+  treffipareihisi;
 - **makujen samankaltaisuus:** jos ihmiset, jotka pitivät samoista asioista jossakussa
   kuin sinä, pitivät niistä myös jossakussa toisessa, ehdotamme sinulle tätä toista
   todennäköisemmin;
