@@ -12,17 +12,17 @@ Palautetta voit antaa heti, kun treffit päättyvät {{date.length_hours}} tunni
 Ylhäällä näet, mistä treffeistä on kyse. Palautteen ensimmäisen kysymyksen jälkeen lomake haarautuu, ja kysymme hieman eri kysymykset riippuen treffien kulusta.
 
 - **Hyvin.** Kysymme, mistä pidit treffiparissasi, soveltuiko paikka treffeille ja haluaisitko tavata hänet uudelleen.
-- **Ok.** Kysymme, mistä pidit treffiparissasi ja mitä olisit toivonut enemmän. Sitten kysymme treffipaikasta ja siitä, haluaisitko tavata hänet uudelleen.
-- **Huonosti.** Kysymme ensin, tuntuiko olosi turvalliselta treffeillä. Jos vastaat *Kyllä*, kysymme, mitä toivoit treffipariltasi enemmän, ja sitten treffipaikasta. Muista vastauksista voit lukea tarkemmin sivulla [Turvallisuus](/ohje/turvallisuus).
+- **Ok.** Kysymme, mistä pidit treffiparissasi ja mistä et pitänyt. Sitten kysymme treffipaikasta ja siitä, haluaisitko tavata hänet uudelleen.
+- **Huonosti.** Kysymme ensin, tuntuiko olosi turvalliselta treffeillä. Jos vastaat *Kyllä*, kysymme, mistä et pitänyt treffiparissasi, ja sitten treffipaikasta. Muista vastauksista voit lukea tarkemmin sivulla [Turvallisuus](/ohje/turvallisuus).
 - **Treffit eivät toteutuneet.** Kysymme, mitä tapahtui. Katso alta.
 
 Vastaa jokaiseen kysymykseen ja paina **Jatka**.
 
-Kysymyksissä *Pidin näistä asioista treffiparissani* ja *Toivoin treffipariltani enemmän näitä asioita* on samat vaihtoehdot, esimerkiksi *Luonne*, *Huumori*, *Elämäntilanne* ja *Aallonpituus*. Valitse vähintään yksi tai niin monta kuin haluat.
+Kysymyksissä *Pidin näistä asioista treffiparissani* ja *En pitänyt näistä asioista treffiparissani* on samat vaihtoehdot. Ne kuvaavat treffipariasi ihmisenä ja hänen elämäntilannettaan. Valitse vähintään yksi tai niin monta kuin haluat. Jos saat molemmat kysymykset, ensimmäisessä valitsemasi vaihtoehdot näkyvät toisessa harmaina, eikä niitä voi valita.
 
 Palaute lähetetään, kun vastaat viimeiseen kysymykseen, ja näet tekstin *Kiitos vastauksistasi.* **Valmis** vie sinut takaisin Treffit-sivulle, jossa näet saamasi kipinät.
 
-- **Mitä vastauksille tapahtuu.** Vastauksia käytetään ymmärtämään sekä sinua että treffipariasi paremmin, jotta voimme tarjota teille entistä parempia ehdokkaita tuleville treffeille.
+- **Mitä vastauksille tapahtuu.** Treffiparisi ei näe vastauksiasi. Käytämme niitä, kun ehdotamme jatkossa ehdokkaita sekä sinulle että treffiparillesi.
 - **Kipinät.** Palautteen täyttämisen jälkeen saat {{sparks.per_date}} kipinää. Kumpikin treffien osapuolista saa omansa omasta palautteestaan. Katso [Kipinät](/ohje/kipinat).
 
 ## Tapaatteko uudelleen

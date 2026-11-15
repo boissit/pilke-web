@@ -12,17 +12,17 @@ You can give feedback as soon as the date ends, {{date.length_hours}} hour after
 The top shows which date it's about. After the first question, the form branches, and we ask slightly different questions depending on how the date went.
 
 - **Well.** We ask what you liked about your date, whether the place was good for a date, and whether you'd like to meet them again.
-- **OK.** We ask what you liked about your date and what you'd have liked more of. Then we ask about the venue and whether you'd like to meet them again.
-- **Badly.** We ask first whether you felt safe on the date. If you answer *Yes*, we ask what you'd have liked more of, and then about the venue. You can read more about the other answers on the [Safety](/en/guide/turvallisuus) page.
+- **OK.** We ask what you liked about your date and what you didn't. Then we ask about the venue and whether you'd like to meet them again.
+- **Badly.** We ask first whether you felt safe on the date. If you answer *Yes*, we ask what you didn't like about your date, and then about the venue. You can read more about the other answers on the [Safety](/en/guide/turvallisuus) page.
 - **The date didn't happen.** We ask what happened. See below.
 
 Answer each question and press **Continue**.
 
-*I liked these things about my date* and *I'd have liked more of these in my date* offer the same choices, such as *Personality*, *Humour*, *Where they are in life* and *Being on the same wavelength*. Pick at least one, or as many as you like.
+*I liked these things about my date* and *I didn't like these things about my date* offer the same choices, which describe your date as a person and their circumstances. Pick at least one, or as many as you like. If you get both questions, anything you picked in the first is greyed out in the second.
 
 Your feedback is sent when you answer the last question, and you see *Thanks for your answers.* **Done** takes you back to the Dates page, where you can see the sparks you got.
 
-- **What happens to your answers.** We use them to understand both you and your date better, so we can offer you both better matches for future dates.
+- **What happens to your answers.** Your date won't see them. We use them to suggest matches from now on, both to you and to your date.
 - **Sparks.** Once you've filled in your feedback, you get {{sparks.per_date}} sparks. You and your date each get yours for your own feedback. See [Sparks](/en/guide/kipinat).
 
 ## Meeting again
