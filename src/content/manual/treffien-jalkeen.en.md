@@ -18,7 +18,7 @@ The top shows which date it's about. After the first question, the form branches
 
 Answer each question and press **Continue**.
 
-*I liked these things about my date* and *I didn't like these things about my date* offer the same choices, which describe your date as a person and their circumstances. Pick at least one, or as many as you like. If you get both questions, anything you picked in the first is greyed out in the second.
+*I liked these things about my date* and *I didn't like these things about my date* offer the same choices, which describe your date as a person and their circumstances. Pick at least one, or as many as you like. If you get both questions, anything you picked in the first is struck through in the second.
 
 Your feedback is sent when you answer the last question, and you see *Thanks for your answers.* **Done** takes you back to the Dates page, where you can see the sparks you got.
 

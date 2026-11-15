@@ -18,7 +18,7 @@ Ylhäällä näet, mistä treffeistä on kyse. Palautteen ensimmäisen kysymykse
 
 Vastaa jokaiseen kysymykseen ja paina **Jatka**.
 
-Kysymyksissä *Pidin näistä asioista treffiparissani* ja *En pitänyt näistä asioista treffiparissani* on samat vaihtoehdot. Ne kuvaavat treffipariasi ihmisenä ja hänen elämäntilannettaan. Valitse vähintään yksi tai niin monta kuin haluat. Jos saat molemmat kysymykset, ensimmäisessä valitsemasi vaihtoehdot näkyvät toisessa harmaina, eikä niitä voi valita.
+Kysymyksissä *Pidin näistä asioista treffiparissani* ja *En pitänyt näistä asioista treffiparissani* on samat vaihtoehdot. Ne kuvaavat treffipariasi ihmisenä ja hänen elämäntilannettaan. Valitse vähintään yksi tai niin monta kuin haluat. Jos saat molemmat kysymykset, ensimmäisessä valitsemasi vaihtoehdot näkyvät toisessa yliviivattuina, eikä niitä voi valita.
 
 Palaute lähetetään, kun vastaat viimeiseen kysymykseen, ja näet tekstin *Kiitos vastauksistasi.* **Valmis** vie sinut takaisin Treffit-sivulle, jossa näet saamasi kipinät.
 
