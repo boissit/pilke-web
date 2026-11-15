@@ -365,11 +365,12 @@ suit you and whom you might suit. The order depends on
   down a little, so that the same people are not shown to everyone.
 
 Feedback works in both directions: on whom we suggest to you, and on whom we suggest you
-to. There is also an element of chance in the order, so that the same people are not
-always at the top.
+to.
 
-Profiling changes only the order. It excludes nobody from the suggestions, and it has no
-legal or similarly significant effect on you, because you decide who to invite.
+Profiling changes only the order, and excludes nobody from the suggestions. The one
+exception is when only a few people suit you: then, for a week, we don't suggest anyone
+again from a suggestion where you invited nobody. Profiling has no legal or similarly
+significant effect on you, because you decide who to invite.
 
 For every suggestion we record a breakdown of how the people in it were scored: a number
 for each of the parts listed above, and their total. It covers only the people shown, and

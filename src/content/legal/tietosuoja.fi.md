@@ -381,10 +381,11 @@ vaikuttavat
   kaikille.
 
 Palaute vaikuttaa kumpaankin suuntaan: siihen, keitä ehdotamme sinulle, ja siihen,
-kenelle ehdotamme sinua. Järjestyksessä on myös sattumaa, jotta samat ihmiset eivät
-olisi aina kärjessä.
+kenelle ehdotamme sinua.
 
-Profilointi muuttaa vain järjestystä. Se ei sulje ketään pois ehdotuksista, eikä siitä
+Profilointi muuttaa vain järjestystä, eikä se sulje ketään pois ehdotuksista. Poikkeuksena
+on tilanne, jossa sinulle sopivia ihmisiä on vain vähän: silloin emme ehdota sinulle viikon
+aikana uudelleen ketään, joka oli ehdotuksessa, josta et kutsunut ketään. Profiloinnista ei
 seuraa oikeusvaikutuksia tai muita niihin verrattavia vaikutuksia, sillä sinä päätät,
 kenelle lähetät kutsun.
 
