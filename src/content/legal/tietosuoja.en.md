@@ -57,16 +57,14 @@ and 10).
 The feedback can also include two options that reveal political views: liberal views and
 conservative views. They say something both about where the person answering stands and
 about how they saw their date. We process them only if you have given explicit consent to
-the use of your data for finding dates (section 5). That consent is optional, and its box is
-not ticked in advance when you create your profile.
+the use of your data for finding dates (section 5).
 
 - You see these options in the feedback only if you have consented.
 - We store such an answer only if both the person answering and their date have
   consented. Otherwise it is dropped before anything is stored.
 - In the matching, views count only between two people who have both consented.
 
-Section 5 says how you can give the consent later or withdraw it, and what withdrawing
-deletes.
+Section 5 says how you can give the consent later or withdraw it.
 
 ### Whether you want to meet again
 
@@ -231,8 +229,7 @@ the other person's app.
 Your gender and who you want to meet can reveal your sexual orientation, and your
 preferences can also reveal whether you are looking for sex. Political opinions are special
 category data too. We process this data only with your explicit consent (Article 9(2)(a) of
-the GDPR). The consent is optional, its box is not ticked in advance when you create your
-profile, and it covers:
+the GDPR). The consent covers:
 
 - your gender;
 - who you want to meet, including their gender;
@@ -240,7 +237,7 @@ profile, and it covers:
   answers about political views (section 2).
 
 You can give the consent later in Settings. We then ask your gender and who you want to
-meet, and the consent takes effect once you have answered both. You can withdraw it in
+meet. You can withdraw it in
 Settings at any time. We then delete your gender, who you want to meet, and every answer
 about political views that you gave or that was given about you.
 

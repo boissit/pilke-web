@@ -60,8 +60,7 @@ varten palautteesta tehdään tiivistelmä, jota säilytetään pidempään kuin
 Palautteessa voi olla myös kaksi vaihtoehtoa, jotka kertovat poliittisista näkemyksistä:
 liberaalius ja konservatiivisuus. Ne kertovat sekä vastaajan omasta suuntautumisesta että
 siitä, millaisena hän treffiparinsa näki. Käsittelemme niitä vain, jos olet antanut
-nimenomaisen suostumuksen treffiparien etsintään (luku 5). Suostumus on vapaaehtoinen
-valinta, joka ei ole valmiiksi valittuna, kun luot profiilin.
+nimenomaisen suostumuksen treffiparien etsintään (luku 5).
 
 - Näet nämä vaihtoehdot palautteessa vain, jos olet antanut suostumuksen.
 - Tallennamme tällaisen vastauksen vain, jos sekä vastaaja että treffipari ovat antaneet
@@ -69,8 +68,7 @@ valinta, joka ei ole valmiiksi valittuna, kun luot profiilin.
 - Ehdotuksissa näkemykset vaikuttavat vain silloin, kun molemmat ovat antaneet
   suostumuksen.
 
-Luvussa 5 kerromme, miten suostumuksen voi antaa myöhemmin tai perua ja mitä peruminen
-poistaa.
+Luvussa 5 kerromme, miten suostumuksen voi antaa myöhemmin tai perua.
 
 ### Haluatteko tavata uudelleen
 
@@ -239,8 +237,7 @@ sovelluksesta.
 Sukupuolestasi ja siitä, keitä haluat tavata, voi ilmetä seksuaalinen suuntautumisesi, ja
 toiveistasi voi ilmetä myös, haetko seksiä. Poliittiset mielipiteet ovat samoin erityisiin
 henkilötietoryhmiin kuuluvia tietoja. Käsittelemme näitä tietoja vain nimenomaisella
-suostumuksellasi (tietosuoja-asetuksen 9 artiklan 2 kohdan a alakohta). Suostumus on
-vapaaehtoinen valinta, joka ei ole valmiiksi valittuna, kun luot profiilin, ja se kattaa:
+suostumuksellasi (tietosuoja-asetuksen 9 artiklan 2 kohdan a alakohta). Suostumus kattaa:
 
 - sukupuolesi;
 - sen, keitä haluat tavata, myös heidän sukupuolensa;
@@ -248,7 +245,7 @@ vapaaehtoinen valinta, joka ei ole valmiiksi valittuna, kun luot profiilin, ja s
   myös poliittisia näkemyksiä koskevat vastaukset (luku 2).
 
 Voit antaa suostumuksen myöhemmin asetuksista. Silloin kysymme sukupuolesi ja sen, keitä
-haluat tavata, ja suostumus tulee voimaan, kun olet vastannut molempiin. Voit perua
+haluat tavata. Voit perua
 suostumuksen asetuksista milloin tahansa. Silloin poistamme sukupuolesi, tiedon siitä
 keitä haluat tavata sekä kaikki poliittisia näkemyksiä koskevat vastaukset, jotka olet
 antanut tai jotka sinusta on annettu.
