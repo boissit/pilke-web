@@ -28,10 +28,11 @@ concerning your rights go to the same address (section 11).
 | --- | --- |
 | Phone number | You identify yourself with it. The account has no password, and the login code is sent to this number. |
 | Email address | We contact you about your account. |
-| Preferred name, gender and photograph | Shown to the people you may go on a date with. |
+| Preferred name and photograph | Shown to the people you may go on a date with. |
+| Gender | Only if you have consented to its use for finding dates (section 5). Shown to the people you may go on a date with. |
 | Date of birth | We check that you are 18. Others are shown your age in years only. |
 | Language | Decides which language your notifications and text messages are in. |
-| Date preferences | Who you are interested in, what kind of date you are looking for, the ages you want to be offered, and the languages you want to speak. |
+| Date preferences | What kind of date you are looking for, the ages you want to be offered, and the languages you want to speak. Who you are interested in (including their gender) only if you have consented to its use for finding dates. |
 | Date area | The areas, drawn in advance by Pilke, that you have chosen on the map: where you could go on a date. |
 | Safety contact's phone number | Optional. The Safety button sends a message to this number. |
 
@@ -55,19 +56,17 @@ and 10).
 
 The feedback can also include two options that reveal political views: liberal views and
 conservative views. They say something both about where the person answering stands and
-about how they saw their date. We process them only if you have given explicit consent
-(section 5). That consent is optional and separate, and its box is not ticked in advance
-when you create your profile.
+about how they saw their date. We process them only if you have given explicit consent to
+the use of your data for finding dates (section 5). That consent is optional, and its box is
+not ticked in advance when you create your profile.
 
 - You see these options in the feedback only if you have consented.
 - We store such an answer only if both the person answering and their date have
   consented. Otherwise it is dropped before anything is stored.
 - In the matching, views count only between two people who have both consented.
 
-If you did not give consent when you created your profile, you can give it later in
-Settings. You can also withdraw it there at any time. We then delete every answer about
-political views that you gave or that was given about you, and they stop affecting your
-matches. The options are no longer shown to you.
+Section 5 says how you can give the consent later or withdraw it, and what withdrawing
+deletes.
 
 ### Whether you want to meet again
 
@@ -197,8 +196,8 @@ to nobody. Section 2 says how that question works.
 | --- | --- |
 | Creating your account and signing you in | Contract |
 | Finding matches from your preferences, area and calendar | Contract |
+| Your gender, who you want to meet (including their gender), and other people’s ratings of you, including of your political views, in finding dates | Explicit consent, which you can withdraw in Settings |
 | Date feedback, and using it to order your matches (section 10) | Contract |
-| Answers about political views in the feedback | Explicit consent, which you can withdraw in Settings |
 | Invites, agreeing a time and venue, and cancellations | Contract |
 | Notifications about invites, arrivals and feedback requests | Contract |
 | Sharing your location at the venue | Consent, which you can withdraw by stopping sharing |
@@ -229,14 +228,24 @@ if both of you chose to — but a report can only be filed in the feedback for t
 the numbers have been exchanged you can delete your account: your number disappears from
 the other person's app.
 
-Your date preferences can reveal whether you are interested in the same or a different
-gender and whether you are looking for sex. That is special category data, and we process
-it only with your explicit consent, which you give when you set those preferences. You can
-change your preferences or delete your account at any time.
+Your gender and who you want to meet can reveal your sexual orientation, and your
+preferences can also reveal whether you are looking for sex. Political opinions are special
+category data too. We process this data only with your explicit consent (Article 9(2)(a) of
+the GDPR). The consent is optional, its box is not ticked in advance when you create your
+profile, and it covers:
 
-Political opinions are special category data too. We process them only with your explicit
-consent (Article 9(2)(a) of the GDPR), which you give with a separate box. Section 2 says
-what the consent covers and what withdrawing it deletes.
+- your gender;
+- who you want to meet, including their gender;
+- using other people’s ratings of you to find dates and improve how we find them, including
+  answers about political views (section 2).
+
+You can give the consent later in Settings. We then ask your gender and who you want to
+meet, and the consent takes effect once you have answered both. You can withdraw it in
+Settings at any time. We then delete your gender, who you want to meet, and every answer
+about political views that you gave or that was given about you.
+
+Without the consent we don’t process your gender or who you want to meet, and we suggest
+dates to you from among other users who haven’t given the consent either.
 
 The free text of a safety or conduct report may describe acts that are criminal offences. We process
 such data only to protect users and, where necessary, to bring or answer a legal claim.
@@ -285,7 +294,7 @@ Finland.
 | Dates, invites and cancellations | 12 months from the date. |
 | Feedback as it was given | 12 months from the date. |
 | The summary of feedback that the matching uses | As long as the account of the person it is about exists. Section 9 says what deleting an account does to it. |
-| Your consent to political views, and its version | Until you withdraw it or delete your account. |
+| Your consent to the use of your data for finding dates, and its version | Until you withdraw it or delete your account. |
 | Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. |
 | No-show reports, including those made in the feedback, and the restrictions that follow from them | 12 months from the report. |
 | Notifications sent, and delivery records for text messages | 90 days. |
@@ -407,7 +416,8 @@ we will tell you if we do.
 
 Withdrawing consent affects processing from then on. You stop sharing your location with
 one tap, and you can change your date preferences at any time. You can give and withdraw
-consent to political views in Settings, and withdrawing deletes every answer about them that you gave or that
+consent to the use of your data for finding dates in Settings, and withdrawing deletes your
+gender, who you want to meet, and every answer about political views that you gave or that
 was given about you. The answer about meeting
 again cannot be withdrawn: once the numbers have been exchanged, withdrawing does not get
 them back. Section 5 says what withdrawing means in that situation.
