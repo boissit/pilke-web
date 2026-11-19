@@ -21,7 +21,7 @@ Vastausten alla on linkki *Treffit eivät toteutuneet*. Katso alta.
 
 Ensimmäiseen kysymykseen pitää vastata. Muut voit ohittaa painamalla **Ohita**. Kun olet vastannut, paina **Jatka**.
 
-Kysymyksessä *Mitä mieltä olit treffiparistasi?* vaihtoehdot kuvaavat treffipariasi ihmisenä ja hänen elämäntilannettaan. Napauta vaihtoehtoa kerran, jos pidit siitä, ja toisen kerran, jos et pitänyt. Kolmas napautus poistaa valinnan. Vihreä 👍 tarkoittaa *pidin* ja punainen 👎 *en pitänyt*. Jos vastasit ensimmäiseen kysymykseen *Huonosti*, ensimmäinen napautus on *en pitänyt* ja toinen *pidin*. Valitse niin monta kuin haluat.
+Kysymyksessä *Mitä mieltä olit treffiparistasi?* vaihtoehdot kuvaavat treffipariasi ihmisenä ja hänen elämäntilannettaan. Napauta vaihtoehtoa kerran, jos pidit siitä, ja toisen kerran, jos et pitänyt. Kolmas napautus poistaa valinnan. Vihreä peukku ylös tarkoittaa *Pidin*, punainen peukku alas *En pitänyt* ja tyhjä vaihtoehto *Ei mielipidettä*. Jos vastasit ensimmäiseen kysymykseen *Huonosti*, ensimmäinen napautus on *en pitänyt* ja toinen *pidin*. Valitse niin monta kuin haluat.
 
 Vastauksesi tallentuvat kysymys kerrallaan. Kun vastaat viimeiseen kysymykseen, palaute lähtee ja näet tekstin *Kiitos vastauksistasi.* **Valmis** vie sinut takaisin Treffit-sivulle, jossa näet saamasi kipinät. Jos lopetat kesken, palaute lähtee vuorokauden kuluttua niillä vastauksilla, jotka ehdit antaa.
 

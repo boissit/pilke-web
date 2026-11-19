@@ -21,7 +21,7 @@ Under the answers is the link *The date didn't happen*. See below.
 
 The first question needs an answer. You can skip the others with **Skip**. Once you've answered, press **Continue**.
 
-In *What did you think of your date?*, the choices describe your date as a person and their circumstances. Tap a choice once if you liked it, and twice if you didn't. A third tap clears it. Green 👍 means you liked it and red 👎 means you didn't. If you answered *Badly* to the first question, the first tap is *didn't like* and the second is *liked*. Pick as many as you like.
+In *What did you think of your date?*, the choices describe your date as a person and their circumstances. Tap a choice once if you liked it, and twice if you didn't. A third tap clears it. Green with a thumbs up means *Liked*, red with a thumbs down means *Didn't like*, and a plain choice means *No opinion*. If you answered *Badly* to the first question, the first tap is *didn't like* and the second is *liked*. Pick as many as you like.
 
 Your answers are saved as you go. When you answer the last question, your feedback is sent and you see *Thanks for your answers.* **Done** takes you back to the Dates page, where you can see the sparks you got. If you stop partway, your feedback is sent a day later with the answers you gave.
 
