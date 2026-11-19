@@ -15,7 +15,7 @@ Näytöllä lukee, lähtikö viesti. Jos ei, soita läheisellesi itse. Hätätil
 
 ## Turvallisuusilmoitus
 
-Kun valitset palautteen kysymyksessä *Miten treffit sujuivat?* vaihtoehdon *Huonosti*, kysymme seuraavaksi *Tuntuiko olosi turvalliselta treffeillä?* Vastaus *Oloni oli turvaton* luo ilmoituksen Pilkkeen ylläpidolle. Valitse kohdassa *Miksi olosi oli turvaton?* vähintään yksi syy. Kohtaan *Vapaa sana* voit kertoa omin sanoin, enintään {{feedback.report_max_chars}} merkkiä.
+Kun vastaat palautteen kysymykseen *Miten treffit sujuivat?* *Ok* tai *Huonosti*, kysymme seuraavaksi *Tuntuiko olosi turvalliselta treffeillä?* Vastaus *Oloni oli turvaton* luo ilmoituksen Pilkkeen ylläpidolle. Saman ilmoituksen voit tehdä missä kohtaa kyselyä tahansa yläreunan linkistä *Koin oloni turvattomaksi*. Valitse kohdassa *Miksi olosi oli turvaton?* vähintään yksi syy. Kohtaan *Vapaa sana* voit kertoa omin sanoin, enintään {{feedback.report_max_chars}} merkkiä.
 
 Ilmoituksen näkee vain Pilkkeen ylläpito, ja luemme sen niin pian kuin voimme.
 

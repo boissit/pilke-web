@@ -9,21 +9,24 @@ You can give feedback as soon as the date ends, {{date.length_hours}} hour after
 
 ![Date feedback: your date, when it was, and the first question](shot:feedback)
 
-The top shows which date it's about. After the first question, the form branches, and we ask slightly different questions depending on how the date went.
+The top shows which date it's about. Under it, dots show where you are in the questions, and after the last dot are the sparks your feedback earns. On the right is the link *I felt unsafe*, which takes you to a safety report from any question.
 
-- **Well.** We ask what you liked about your date, whether the place was good for a date, and whether you'd like to meet them again.
-- **OK.** We ask what you liked about your date and what you didn't. Then we ask about the venue and whether you'd like to meet them again.
-- **Badly.** We ask first whether you felt safe on the date. If you answer *Yes*, we ask what you didn't like about your date, and then about the venue. You can read more about the other answers on the [Safety](/en/guide/turvallisuus) page.
-- **The date didn't happen.** We ask what happened. See below.
+The first question is *How did the date go?*
 
-Answer each question and press **Continue**.
+- **Well.** We ask what you thought of your date, whether the place was good for a date, and whether you'd like to meet them again.
+- **OK.** We ask first whether you felt safe on the date. Then we ask the same things as after *Well*.
+- **Badly.** We ask first whether you felt safe on the date. Then we ask what you thought of your date, and about the venue. You can read more about the other answers on the [Safety](/en/guide/turvallisuus) page.
 
-*I liked these things about my date* and *I didn't like these things about my date* offer the same choices, which describe your date as a person and their circumstances. Pick at least one, or as many as you like. If you get both questions, anything you picked in the first is struck through in the second.
+Under the answers is the link *The date didn't happen*. See below.
 
-Your feedback is sent when you answer the last question, and you see *Thanks for your answers.* **Done** takes you back to the Dates page, where you can see the sparks you got.
+The first question needs an answer. You can skip the others with **Skip**. Once you've answered, press **Continue**.
+
+In *What did you think of your date?*, the choices describe your date as a person and their circumstances. Tap a choice once if you liked it, and twice if you didn't. A third tap clears it. Green 👍 means you liked it and red 👎 means you didn't. If you answered *Badly* to the first question, the first tap is *didn't like* and the second is *liked*. Pick as many as you like.
+
+Your answers are saved as you go. When you answer the last question, your feedback is sent and you see *Thanks for your answers.* **Done** takes you back to the Dates page, where you can see the sparks you got. If you stop partway, your feedback is sent a day later with the answers you gave.
 
 - **What happens to your answers.** Your date won't see them. We use them to suggest matches from now on, both to you and to your date.
-- **Sparks.** Once you've filled in your feedback, you get {{sparks.per_date}} sparks. You and your date each get yours for your own feedback. See [Sparks](/en/guide/kipinat).
+- **Sparks.** Your feedback earns you {{sparks.per_date}} sparks, even if you skip questions. You and your date each get yours for your own feedback. See [Sparks](/en/guide/kipinat).
 
 ## Meeting again
 
@@ -37,10 +40,11 @@ To the other person, saying no looks the same as not answering.
 
 ## If the date didn't happen
 
-If you choose *The date didn't happen*, we ask what happened.
+If you tap *The date didn't happen*, we ask what happened. The answers are *The date was cancelled*, *My date didn't turn up*, *I couldn't make it* and *Something else*.
 
 - **My date didn't turn up.** The Pilke team is told, and your feedback earns you {{sparks.per_date}} sparks. Your date gets a time-out only from a report you make at the venue during the date. See [The day of your date](/en/guide/treffipaiva#if-your-date-doesnt-turn-up).
-- **I couldn't make it.** You can tell us more about what happened, but not turning up doesn't earn sparks. Next time, cancel the date as soon as you know you can't make it, so your date's time is freed up. See [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).
+- **I couldn't make it.** Not turning up doesn't earn sparks. Next time, cancel the date as soon as you know you can't make it, so your date's time is freed up. See [Cancelling and time-outs](/en/guide/peruminen-ja-jaahy).
+- **The date was cancelled** or **Something else.** Your feedback earns you {{sparks.per_date}} sparks.
 
 ## Past dates
 
@@ -54,4 +58,4 @@ A row shows your date's photo and name, and when and where you met. If you swapp
 
 ## If something went wrong
 
-If you felt unsafe on the date, or want to tell us how your date behaved, tell us in your feedback. See [Safety](/en/guide/turvallisuus).
+If you felt unsafe on the date, tap *I felt unsafe* at the top of the questions. See also [Safety](/en/guide/turvallisuus).

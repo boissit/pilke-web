@@ -15,7 +15,7 @@ The screen tells you whether the message was sent. If it wasn't, call your safet
 
 ## Reporting that you felt unsafe
 
-If you answer *How did the date go?* with *Badly*, we then ask *Did you feel safe on the date?* The answer *I felt unsafe* creates a report for the Pilke team. Under *Why did you feel unsafe?*, pick at least one reason. Under *Anything else*, you can also write in your own words, up to {{feedback.report_max_chars}} characters.
+If you answer *How did the date go?* with *OK* or *Badly*, we then ask *Did you feel safe on the date?* The answer *I felt unsafe* creates a report for the Pilke team. You can make the same report from any question with the *I felt unsafe* link at the top. Under *Why did you feel unsafe?*, pick at least one reason. Under *Anything else*, you can also write in your own words, up to {{feedback.report_max_chars}} characters.
 
 Only the Pilke team sees the report, and we'll read it as soon as we can.
 
