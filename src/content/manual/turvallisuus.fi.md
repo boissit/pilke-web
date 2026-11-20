@@ -1,17 +1,17 @@
 ---
 title: Turvallisuus
-lead: Turvapainikkeella pyydät läheistäsi ottamaan yhteyttä kesken treffien. Turvallisuusilmoituksella kerrot meille, jos olosi oli turvaton.
+lead: Turvapainikkeella pyydät luotettua henkilöäsi ottamaan yhteyttä kesken treffien. Turvallisuusilmoituksella kerrot meille, jos olosi oli turvaton.
 order: 85
 draft: false
 ---
 
 ## Turvapainike
 
-Tallenna ensin asetusten kohtaan **Turvallisuus** luotettavan läheisesi puhelinnumero. Sen jälkeen **Turvapainike** näkyy treffisivulla {{safety.lead_hours}} tuntia ennen treffien alkua ja vielä {{safety.trail_hours}} tuntia alun jälkeen. Sovi asiasta etukäteen luotettavan läheisesi kanssa.
+Tallenna ensin asetusten kohtaan **Turvallisuus** luotetun henkilösi puhelinnumero. Sen jälkeen **Turvapainike** näkyy treffisivulla {{safety.lead_hours}} tuntia ennen treffien alkua ja vielä {{safety.trail_hours}} tuntia alun jälkeen. Sovi asiasta etukäteen luotetun henkilösi kanssa.
 
 Yksi painallus lähettää hänelle tekstiviestin *Pilke: [nimesi] painoi turvapainiketta ja pyytää sinua ottamaan yhteyttä.* Siinä ei ole sijaintiasi, treffipaikkaa, kellonaikaa eikä mitään treffiparistasi. Treffiparisi ei saa tietää painalluksesta. Pilke tallentaa tiedon painalluksesta ja siitä, menikö viesti perille.
 
-Näytöllä lukee, lähtikö viesti. Jos ei, soita läheisellesi itse. Hätätilanteessa soita 112.
+Näytöllä lukee, lähtikö viesti. Jos ei, soita luotetulle henkilöllesi itse. Hätätilanteessa soita 112.
 
 ## Turvallisuusilmoitus
 

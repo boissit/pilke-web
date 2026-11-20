@@ -83,6 +83,15 @@ const legal = defineCollection({
  * numbered markers, and `{{area.name}}` is a value from
  * `src/data/app-constants.json`. `docs/manual-shots.md` is the contract for the
  * first. `src/manual/body.ts` explains why neither is a Markdown plugin.
+ *
+ * WARNING: **The app links into these pages by slug and by heading.** Its `i`
+ * explanations open `/ohje/<slug>#<heading id>` and `/en/guide/<slug>#<heading id>`,
+ * and the list of them is `manualLinks` in pilke-app's `src/constants/manual.ts`.
+ * A heading's id is made from its text, so renaming a heading moves its anchor, and
+ * renaming a file moves the page. A shipped build cannot follow either: the link
+ * lands on a 404, or at the top of the page, and nothing reports it. Never rename a
+ * slug or a heading the app links to without changing the app to match
+ * (pilke-app#83).
  */
 const manual = defineCollection({
   // The same id as `legal`, for the same reason: `kalenteri.fi`, not `kalenterifi`.

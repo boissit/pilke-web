@@ -38,7 +38,7 @@
   en: 'The Safety button'
 
 'safety.button.body':
-  fi: 'Tiedät itse, kehen luotat eniten. Tallenna hänen numeronsa turvakontaktiksi ja saat treffien ajaksi käyttöösi turvapainikkeen, jota painamalla saat hänet tueksesi ennalta sopimallanne tavalla. Muista kertoa hänelle riittävät tiedot etukäteen!'
+  fi: 'Tiedät itse, kehen luotat eniten. Tallenna hänet luotetuksi henkilöksi ja saat treffien ajaksi käyttöösi turvapainikkeen, jota painamalla saat hänet tueksesi ennalta sopimallanne tavalla. Muista kertoa hänelle riittävät tiedot etukäteen!'
   en: 'You know best who you trust most. Save their number as your safety contact, and during the date you’ll have a Safety button: press it, and they’re there for you in whatever way the two of you agreed beforehand. Remember to tell them what they need to know in advance!'
 
 'safety.report.title':
@@ -61,7 +61,7 @@
   en: 'Safe dating basics'
 
 'tips.one':
-  fi: 'Kerro turvahenkilöllesi treffeistä ja sopikaa yhdessä, miten toimia turvapainikkeen viestiä vastaanottaessa.'
+  fi: 'Kerro luotetulle henkilöllesi treffeistä ja sopikaa yhdessä, miten toimia turvapainikkeen viestiä vastaanottaessa.'
   en: 'Tell your safety contact about the date, and agree together what they’ll do if a message from the Safety button arrives.'
 
 'tips.two':

@@ -85,7 +85,7 @@ Jos epäilet rikosta, ota yhteyttä poliisiin. Hätätilanteessa soita 112.
 **Käyttäjien turvallisuus on meille ensisijaista**, ja pyrimme huolehtimaan siitä alla
 luetelluin keinoin:
 
-- **Turvayhteyshenkilö ja turvapainike.** Kun painat turvapainiketta, lähetämme
+- **Luotettu henkilö ja turvapainike.** Kun painat turvapainiketta, lähetämme
   tallentamallesi henkilölle tekstiviestin, jossa on nimimerkkisi. Viestissä ei ole
   sijaintiasi, treffipaikkaa eikä treffiparisi tietoja, eikä treffiparisi saa tietää
   painalluksesta. Kun tallennat jonkun numeron turvapainiketta varten, vastaat siitä,

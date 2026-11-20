@@ -13,7 +13,7 @@ kerromme, mitä henkilötietoja käsittelemme, kun käytät Pilkettä, kenelle n
 luovutetaan ja mitä oikeuksia sinulla on.
 
 Seloste koskee myös ihmistä, joka ei itse käytä Pilkettä: sitä, jonka puhelinnumeron
-käyttäjä on tallentanut luotettavaksi henkilöksi.
+käyttäjä on tallentanut luotetuksi henkilöksi.
 
 ## 1. Kuka käsittelee tietojasi
 
@@ -37,7 +37,7 @@ Samaan osoitteeseen lähetät myös oikeuksiasi koskevat pyynnöt (luku 11).
 | Kieli | Ratkaisee, millä kielellä ilmoitukset ja tekstiviestit tulevat. |
 | Treffitoiveet | Minkälaisia treffejä haet, minkä ikäisiä ehdokkaita toivot ja millä kielillä haluat keskustella. Kenestä olet kiinnostunut (myös hänen sukupuolensa) vain, jos olet antanut suostumuksen treffiparien etsintään. |
 | Treffialue | Pilkkeen valmiiksi rajaamat alueet, jotka olet valinnut kartalta: missä voit käydä treffeillä. |
-| Luotettavan henkilön puhelinnumero | Vapaaehtoinen. Turvapainike lähettää viestin tähän numeroon. |
+| Luotetun henkilön puhelinnumero | Vapaaehtoinen. Turvapainike lähettää viestin tähän numeroon. |
 
 ### Treffit
 
@@ -188,7 +188,7 @@ Toinen käyttäjä näkee nimimerkkisi, ikäsi, sukupuolesi ja valokuvasi. Lisä
 sovitun ajan ja paikan, ne ajat, joita olet tarjonnut hänelle, ja treffipaikalla
 sijaintisi, jos jaat sen.
 
-Toinen käyttäjä ei näe sähköpostiosoitettasi, syntymäaikaasi, luotettavan henkilön
+Toinen käyttäjä ei näe sähköpostiosoitettasi, syntymäaikaasi, luotetun henkilön
 numeroa, treffialuettasi, treffitoiveitasi, sinulle asetettuja rajoituksia eikä
 palautteita, joita annat tai jotka sinusta annetaan.
 
@@ -211,7 +211,7 @@ kerrota kenellekään. Luvussa 2 kerromme, miten tämä kysymys toimii.
 | Vastaukset kysymyssarjoihin | Suostumus, jonka annat vastaamalla |
 | Puhelinnumeroiden vaihto treffien jälkeen | Suostumus, jonka annat valitsemalla sen vastauksen |
 | Turvallisuus: ilmoitukset, merkintä siitä, ettei teitä ehdoteta toisillenne turvallisuusilmoituksen jälkeen, turvapainike ja rajoitukset | Oikeutettu etu — käyttäjien turvallisuus |
-| Luotettavan henkilön puhelinnumero | Oikeutettu etu — käyttäjän turvallisuus |
+| Luotetun henkilön puhelinnumero | Oikeutettu etu — käyttäjän turvallisuus |
 | Kirjautumisen suojaus: koodien rajoitukset, asennustunnisteen tiiviste ja IP-osoite | Oikeutettu etu — tilien suojaaminen |
 | Käyttäjätuki ja väärinkäytösten selvitys | Oikeutettu etu — palvelun asianmukainen käyttö |
 
@@ -267,7 +267,7 @@ punninnasta selvityksen luvun 1 osoitteesta.
 | --- | --- |
 | Toiset käyttäjät | Sen, mitä luvussa 4 on kuvattu. |
 | Treffiparisi, kun te molemmat niin valitsette | Nimimerkkisi ja puhelinnumerosi, kerran, treffien jälkeen. Tämä on ainoa luovutus, jonka perusteena on suostumuksesi, ja ainoa, jota ei voi ottaa takaisin. |
-| Luotettava henkilösi | Yhden tekstiviestin, jossa on nimimerkkisi, jos painat turvapainiketta. Viestissä ei ole sijaintiasi, treffipaikkaa eikä treffikumppaniasi. |
+| Luotettu henkilösi | Yhden tekstiviestin, jossa on nimimerkkisi, jos painat turvapainiketta. Viestissä ei ole sijaintiasi, treffipaikkaa eikä treffikumppaniasi. |
 | Expo (650 Industries, Inc., Yhdysvallat) | Laitteesi push-tunnisteen ja ilmoituksen sisällön. Expo välittää ilmoituksen edelleen Googlen FCM-palveluun. |
 | GatewayAPI (Tanska) | Puhelinnumeron ja viestin sisällön, kun lähetämme kirjautumiskoodin tai turvaviestin. |
 | OpenFreeMap (Hyperknot Software Kft., Unkari) | Laitteesi IP-osoitteen ja sen, mitä karttaruutuja se pyytää. Pyyntö lähtee laitteeltasi, ei palvelimeltamme. Palvelun oman selosteen mukaan se ei tallenna IP-osoitteita. |
@@ -323,7 +323,7 @@ Voit poistaa tilisi sovelluksen asetuksissa. Poisto tapahtuu heti, eikä sitä v
 peruuttaa. Kerromme tarkemmin sivulla [Näin poistat tietosi](/tietojen-poisto).
 
 Poistamme puhelinnumeron, sähköpostiosoitteen, nimimerkin, syntymäajan, sukupuolen,
-valokuvan, luotettavan henkilön numeron, treffitoiveet, treffialueen, kalenterimerkinnät
+valokuvan, luotetun henkilön numeron, treffitoiveet, treffialueen, kalenterimerkinnät
 ja vastaukset kysymyssarjoihin sekä yhteenvedon, jota ehdotukset käyttävät sinusta.
 Valokuva poistuu myös tallennustilasta, ja kirjautumiset katkeavat kaikilta laitteilta
 samalla hetkellä.
