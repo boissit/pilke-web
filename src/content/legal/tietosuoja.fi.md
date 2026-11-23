@@ -35,7 +35,7 @@ Samaan osoitteeseen lähetät myös oikeuksiasi koskevat pyynnöt (luku 11).
 | Sukupuoli | Vain jos olet antanut suostumuksen treffiparien etsintään (luku 5). Näkyy treffiehdokkaille. |
 | Syntymäaika | Tarkistamme, että olet täyttänyt 18 vuotta. Muille näytämme vain iän vuosina. |
 | Kieli | Ratkaisee, millä kielellä ilmoitukset ja tekstiviestit tulevat. |
-| Treffitoiveet | Minkälaisia treffejä haet, minkä ikäisiä ehdokkaita toivot ja millä kielillä haluat keskustella. Kenestä olet kiinnostunut (myös hänen sukupuolensa) vain, jos olet antanut suostumuksen treffiparien etsintään. |
+| Treffitoiveet | Minkälaisia treffejä haet, minkä ikäisiä ehdokkaita toivot ja millä kielillä haluat keskustella. Vain jos olet antanut suostumuksen treffiparien etsintään: kenestä olet kiinnostunut (myös hänen sukupuolensa) ja oletko avoin monisuhteisuudelle. |
 | Treffialue | Pilkkeen valmiiksi rajaamat alueet, jotka olet valinnut kartalta: missä voit käydä treffeillä. |
 | Luotetun henkilön puhelinnumero | Vapaaehtoinen. Turvapainike lähettää viestin tähän numeroon. |
 
@@ -203,7 +203,7 @@ kerrota kenellekään. Luvussa 2 kerromme, miten tämä kysymys toimii.
 | --- | --- |
 | Tilin luonti ja kirjautuminen | Sopimus |
 | Treffiehdokkaiden etsiminen toiveidesi, alueesi ja kalenterisi perusteella | Sopimus |
-| Sukupuolesi, se keitä haluat tavata (myös heidän sukupuolensa) sekä muiden sinusta antamat arviot, myös poliittisista näkemyksistäsi, treffiparien etsinnässä | Nimenomainen suostumus, jonka voit perua asetuksista |
+| Sukupuolesi, se keitä haluat tavata (myös heidän sukupuolensa), oletko avoin monisuhteisuudelle sekä muiden sinusta antamat arviot, myös poliittisista näkemyksistäsi, treffiparien etsinnässä | Nimenomainen suostumus, jonka voit perua asetuksista |
 | Treffipalaute ja sen käyttö ehdotusten järjestämiseen (luku 10) | Sopimus |
 | Kutsut, ajan ja paikan sopiminen sekä perumiset | Sopimus |
 | Ilmoitukset kutsuista, saapumisesta ja palautepyynnöistä | Sopimus |
@@ -235,24 +235,26 @@ tehdä vain treffien palautteessa, ei myöhemmin. Kun numerot on vaihdettu, voit
 sovelluksesta.
 
 Sukupuolestasi ja siitä, keitä haluat tavata, voi ilmetä seksuaalinen suuntautumisesi, ja
-toiveistasi voi ilmetä myös, haetko seksiä. Poliittiset mielipiteet ovat samoin erityisiin
+toiveistasi voi ilmetä myös, haetko seksiä. Se, oletko avoin monisuhteisuudelle, on tietoa
+seksuaalisesta käyttäytymisestäsi. Poliittiset mielipiteet ovat samoin erityisiin
 henkilötietoryhmiin kuuluvia tietoja. Käsittelemme näitä tietoja vain nimenomaisella
 suostumuksellasi (tietosuoja-asetuksen 9 artiklan 2 kohdan a alakohta). Suostumus kattaa:
 
 - sukupuolesi;
 - sen, keitä haluat tavata, myös heidän sukupuolensa;
+- sen, oletko avoin monisuhteisuudelle;
 - muiden sinusta antamien arvioiden käytön treffiparien etsintään ja sen parantamiseen,
   myös poliittisia näkemyksiä koskevat vastaukset (luku 2).
 
-Voit antaa suostumuksen myöhemmin asetuksista. Silloin kysymme sukupuolesi ja sen, keitä
-haluat tavata. Voit perua
+Voit antaa suostumuksen myöhemmin asetuksista. Silloin kysymme sukupuolesi, sen, keitä
+haluat tavata, ja oletko avoin monisuhteisuudelle. Voit perua
 suostumuksen asetuksista milloin tahansa. Silloin poistamme sukupuolesi, tiedon siitä
-keitä haluat tavata sekä kaikki poliittisia näkemyksiä koskevat vastaukset, jotka olet
-antanut tai jotka sinusta on annettu.
+keitä haluat tavata, vastauksesi monisuhteisuudesta sekä kaikki poliittisia näkemyksiä
+koskevat vastaukset, jotka olet antanut tai jotka sinusta on annettu.
 
-Ilman suostumusta emme käsittele sukupuoltasi emmekä sitä, keitä haluat tavata, ja
-ehdotamme sinulle treffipareja muiden sellaisten käyttäjien joukosta, jotka eivät
-myöskään ole antaneet suostumusta.
+Ilman suostumusta emme käsittele sukupuoltasi, sitä keitä haluat tavata, emmekä sitä,
+oletko avoin monisuhteisuudelle, ja ehdotamme sinulle treffipareja muiden sellaisten
+käyttäjien joukosta, jotka eivät myöskään ole antaneet suostumusta.
 
 Turvallisuus- ja käytösilmoituksen vapaa teksti voi kuvata tekoja, jotka ovat rikoksia. Käsittelemme
 tällaista tietoa vain käyttäjien suojaamiseksi ja tarvittaessa oikeudellisen vaateen
@@ -434,7 +436,8 @@ siitä sinulle.
 Suostumuksen peruminen vaikuttaa vain tulevaan käsittelyyn. Sijainnin jakamisen lopetat
 yhdellä painalluksella, ja treffitoiveita voit muuttaa milloin tahansa. Suostumuksen
 treffiparien etsintään voit antaa ja perua asetuksista, ja peruminen poistaa sukupuolesi,
-tiedon siitä keitä haluat tavata sekä kaikki poliittisia näkemyksiä koskevat vastaukset,
+tiedon siitä keitä haluat tavata, vastauksesi monisuhteisuudesta sekä kaikki poliittisia
+näkemyksiä koskevat vastaukset,
 jotka olet antanut tai jotka sinusta on annettu. Vastausta siihen,
 haluatko tavata uudelleen, ei sen sijaan voi perua: jos numerot on jo vaihdettu, peruminen
 ei saa niitä takaisin. Luvussa 5 kerromme, mitä peruminen tässä tilanteessa tarkoittaa.

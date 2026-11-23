@@ -32,7 +32,7 @@ concerning your rights go to the same address (section 11).
 | Gender | Only if you have consented to its use for finding dates (section 5). Shown to the people you may go on a date with. |
 | Date of birth | We check that you are 18. Others are shown your age in years only. |
 | Language | Decides which language your notifications and text messages are in. |
-| Date preferences | What kind of date you are looking for, the ages you want to be offered, and the languages you want to speak. Who you are interested in (including their gender) only if you have consented to its use for finding dates. |
+| Date preferences | What kind of date you are looking for, the ages you want to be offered, and the languages you want to speak. Only if you have consented to their use for finding dates: who you are interested in (including their gender), and whether you are open to non-monogamy. |
 | Date area | The areas, drawn in advance by Pilke, that you have chosen on the map: where you could go on a date. |
 | Safety contact's phone number | Optional. The Safety button sends a message to this number. |
 
@@ -194,7 +194,7 @@ to nobody. Section 2 says how that question works.
 | --- | --- |
 | Creating your account and signing you in | Contract |
 | Finding matches from your preferences, area and calendar | Contract |
-| Your gender, who you want to meet (including their gender), and other people’s ratings of you, including of your political views, in finding dates | Explicit consent, which you can withdraw in Settings |
+| Your gender, who you want to meet (including their gender), whether you are open to non-monogamy, and other people’s ratings of you, including of your political views, in finding dates | Explicit consent, which you can withdraw in Settings |
 | Date feedback, and using it to order your matches (section 10) | Contract |
 | Invites, agreeing a time and venue, and cancellations | Contract |
 | Notifications about invites, arrivals and feedback requests | Contract |
@@ -227,22 +227,26 @@ the numbers have been exchanged you can delete your account: your number disappe
 the other person's app.
 
 Your gender and who you want to meet can reveal your sexual orientation, and your
-preferences can also reveal whether you are looking for sex. Political opinions are special
+preferences can also reveal whether you are looking for sex. Whether you are open to
+non-monogamy is data about your sex life. Political opinions are special
 category data too. We process this data only with your explicit consent (Article 9(2)(a) of
 the GDPR). The consent covers:
 
 - your gender;
 - who you want to meet, including their gender;
+- whether you are open to non-monogamy;
 - using other people’s ratings of you to find dates and improve how we find them, including
   answers about political views (section 2).
 
-You can give the consent later in Settings. We then ask your gender and who you want to
-meet. You can withdraw it in
-Settings at any time. We then delete your gender, who you want to meet, and every answer
-about political views that you gave or that was given about you.
+You can give the consent later in Settings. We then ask your gender, who you want to
+meet, and whether you are open to non-monogamy. You can withdraw it in
+Settings at any time. We then delete your gender, who you want to meet, your answer about
+non-monogamy, and every answer about political views that you gave or that was given about
+you.
 
-Without the consent we don’t process your gender or who you want to meet, and we suggest
-dates to you from among other users who haven’t given the consent either.
+Without the consent we don’t process your gender, who you want to meet or whether you are
+open to non-monogamy, and we suggest dates to you from among other users who haven’t given
+the consent either.
 
 The free text of a safety or conduct report may describe acts that are criminal offences. We process
 such data only to protect users and, where necessary, to bring or answer a legal claim.
@@ -415,8 +419,8 @@ we will tell you if we do.
 Withdrawing consent affects processing from then on. You stop sharing your location with
 one tap, and you can change your date preferences at any time. You can give and withdraw
 consent to the use of your data for finding dates in Settings, and withdrawing deletes your
-gender, who you want to meet, and every answer about political views that you gave or that
-was given about you. The answer about meeting
+gender, who you want to meet, your answer about non-monogamy, and every answer about
+political views that you gave or that was given about you. The answer about meeting
 again cannot be withdrawn: once the numbers have been exchanged, withdrawing does not get
 them back. Section 5 says what withdrawing means in that situation.
 
