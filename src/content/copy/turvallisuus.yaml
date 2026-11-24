@@ -40,7 +40,7 @@
   en: 'Identity verification'
 
 'safety.verified.body':
-  fi: 'Kannustamme käyttäjiä varmentamaan henkilöllisyytensä vahvan tunnistautumisen avulla turvallisuuden lisäämiseksi. Tunnistautuneena voit halutessasi treffailla vain muita tunnistettuja käyttäjiä. Tunnistautuneilla käyttäjillä näkyy profiilissaan tunnistusmerkki.'
+  fi: 'Kannustamme käyttäjiä vahvistamaan henkilöllisyytensä vahvan tunnistautumisen avulla turvallisuuden lisäämiseksi. Tunnistautuneena voit halutessasi treffailla vain muita tunnistettuja käyttäjiä. Tunnistautuneilla käyttäjillä näkyy profiilissaan tunnistusmerkki.'
   en: 'We encourage everyone to verify their identity with online banking ID or a mobile certificate, to make dating safer. Once you’re verified, you can choose to date only other verified people. Verified people have a badge on their profile.'
 
 'safety.button.title':
