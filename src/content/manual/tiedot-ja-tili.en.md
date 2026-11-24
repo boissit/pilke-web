@@ -37,7 +37,7 @@ You can verify your identity with online banking ID or a mobile certificate. It'
 - **When you create your account**, verifying is a step of its own, straight after you confirm your phone number. Tap **Continue to identification** or **Skip**.
 - **Later**, you'll find **Verify your identity** at the top of the Account section in Settings.
 
-You sign in through Didit and its identification broker, usually in your bank's app, and then come back to Pilke. If you verify while creating your account, your first name is filled in as your preferred name, and you can change it. Your birthday becomes the verified date, which you can't change.
+You sign in through Didit, usually in your bank's app, and then come back to Pilke. If you verify while creating your account, your first name is filled in as your preferred name, and you can change it. Your birthday becomes the verified date, which you can't change.
 
 An identity can be verified on one account only. If you already have a Pilke account and verify while creating a new one, you're signed in to your old account, and its phone number changes to the one you just signed in with. If the identification shows you're under 18, registration ends.
 
@@ -49,9 +49,11 @@ Once you've verified your identity, other people see the verified badge on your 
 
 The badge means the person has confirmed who they are with online banking ID or a mobile certificate, is over 18, and that the age on their profile is their real age. We don't check preferred names or photos, so the badge says nothing about them.
 
-### Removing the verification
+### Cancelling the verification
 
-Once your identity is verified, the Account section in Settings shows **Identity verified**, with **Remove verification** under it. When you remove it, the badge disappears from your profile. Your identity stays linked to your account, though: it can't verify another account, bans still apply to it, and your birthday stays locked. The link goes only when you delete your account.
+Once your identity is verified, the Account section in Settings shows **Identity verified**, with **Remove verification** under it, which cancels the verification. When you cancel it, the badge disappears from your profile. Your identity stays linked to your account, though: it can't verify another account, bans still apply to it, and your birthday stays locked. The link goes only when you delete your account.
+
+Once you've cancelled the verification, you can verify your identity again after a week at the earliest.
 
 ## Your account
 

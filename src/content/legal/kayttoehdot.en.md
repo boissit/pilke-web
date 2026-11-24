@@ -1,10 +1,8 @@
 ---
 title: Terms of use
 lead: What you agree to when you use Pilke, and what we promise you.
-# TODO: the identity-verification clauses need a new version and effective date
-# when the feature launches; leave both as they are until then.
-version: 2026-11-15
-effective: 2026-11-15
+version: 2026-11-24
+effective: 2026-11-24
 draft: false
 ---
 

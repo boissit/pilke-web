@@ -1,11 +1,8 @@
 ---
 title: Privacy policy
 lead: What we hold about you, what it is used for, and what you can ask us to do.
-# TODO: the identity-verification sections need a new version and effective date
-# when the feature launches; leave both as they are until then.
-# TODO: name the identification broker in sections 2 and 6 once Didit says which it uses.
-version: 2026-11-15
-effective: 2026-11-15
+version: 2026-11-24
+effective: 2026-11-24
 draft: false
 ---
 
@@ -49,8 +46,10 @@ Verification has three purposes: everyone has only one account, a ban for safety
 applies to the person and not just to a phone number, and the age on a verified profile is
 real. Other users see the verification as a badge (section 4).
 
-**What identification involves.** You sign in through Didit and its identification broker.
-Didit sees your name, date of birth and personal identity code. Pilke receives the result
+**What identification involves.** You sign in through Didit. As far as we know, Didit
+routes the identification through the identification broker Idura ApS of Denmark (formerly
+Criipto), and Idura in turn through Telia Finland Oyj's identification broker service, part
+of the Finnish Trust Network. Didit sees your name, date of birth and personal identity code. Pilke receives the result
 from Didit. Our server works out a code from your personal identity code, and we do not
 store the personal identity code itself. Your first name and date of birth are shown in the
 app once, so that your preferred name and birthday are filled in on the next page. We do
@@ -86,13 +85,13 @@ on the blocklist until your 18th birthday.
 give at the verification step before you sign in. We process the personal identity code on
 the same consent under section 29 of the Finnish Data Protection Act. The blocklist rests on
 legitimate interest, the safety of other users: it keeps out people banned for safety
-reasons, and under 18s. The code we keep after you remove the verification also rests on
+reasons, and under 18s. The code we keep after you cancel the verification also rests on
 legitimate interest: it keeps to one account per person and makes bans stick (section 5).
 
 **Who processes it.** Didit Identity Spain, S.L. processes the data on our behalf, as our
 processor. It uses its own sub-processors, listed on
 [Didit's sub-processor page](https://didit.me/terms/sub-processors/). The sign-in reaches your
-bank or mobile certificate provider through Didit and the identification broker it uses. The bank or
+bank or mobile certificate provider through Didit, Idura and Telia. The bank or
 mobile operator you sign in with is the identification provider, and handles the
 identification data under its own terms.
 
@@ -102,17 +101,18 @@ product analytics (section 7).
 
 **Retention.** We ask Didit to delete the identification data as soon as the result has been
 handled. In any case Didit deletes it within a month. We keep the record of your
-verification and the code for as long as your account exists, even if you remove the
-badge.
+verification and the code for as long as your account exists, even if you cancel the
+verification.
 The code of an identity banned for safety reasons is kept permanently, and an under-18's
 until their 18th birthday (section 8).
 
-**Removing the verification.** You can remove the verification in Settings at any time. The
+**Cancelling the verification.** You can cancel the verification in Settings at any time. The
 verified badge then disappears from your profile and is no longer shown to anyone. Your
 identity stays linked to your account, though: the record of the verification and the code
 remain, so that everyone still has only one account and bans still stick, and your birthday
 stays locked. They are deleted only when you delete your account, unless the identity is on
-the blocklist (section 9).
+the blocklist (section 9). Once you have cancelled the verification, you can verify your
+identity again after a week at the earliest.
 
 ### Dates
 
@@ -262,7 +262,7 @@ number, your date area, your preferences, any restriction placed on you, or the 
 you give or that is given about you.
 
 If you have verified your identity, another user sees a verified badge on your match card,
-on invites and on the date page. They see nothing else about the verification.
+on invites and on the date page.
 
 They do not see your phone number either, with one exception: if the two of you have both
 chosen, after the date, that the number may be shared, you are each given the other's
@@ -282,8 +282,8 @@ to nobody. Section 2 says how that question works.
 | Sharing your location at the venue | Consent, which you can withdraw by stopping sharing |
 | Answers to question sets | Consent, given by answering |
 | Exchanging phone numbers after a date | Consent, given by choosing that answer |
-| Identity verification and the verified badge (section 2) | Consent, given at the verification step. You can remove the badge in Settings. The personal identity code: section 29 of the Data Protection Act and the same consent |
-| The code and the record of verification after you remove the badge: one account per person, and bans | Legitimate interest — the safety of other users |
+| Identity verification and the verified badge (section 2) | Consent, given at the verification step. You can cancel the verification in Settings. The personal identity code: section 29 of the Data Protection Act and the same consent |
+| The code and the record of verification after you cancel the verification: one account per person, and bans | Legitimate interest — the safety of other users |
 | The blocklist: the codes of people banned for safety reasons and of under 18s | Legitimate interest — the safety of other users |
 | Safety: reports, the record that two people are not suggested to each other after a safety report, the Safety button and restrictions | Legitimate interest — the safety of our users |
 | Your safety contact's phone number | Legitimate interest — the user's safety |
@@ -335,7 +335,7 @@ the consent either.
 The free text of a safety or conduct report may describe acts that are criminal offences. We process
 such data only to protect users and, where necessary, to bring or answer a legal claim.
 
-When you remove the verified badge, the code stays with your account, because without it the
+When you cancel the verification, the code stays with your account, because without it the
 same person could create a new account or get round a ban. Its basis is then legitimate
 interest rather than consent. A code on the blocklist stays, for the same reason, even if the
 account is deleted. We ban only for safety reasons: violence, threats or sexual harassment. A
@@ -353,7 +353,7 @@ You can ask us for an account of that assessment at the address in section 1.
 | The person you dated, when you both choose it | Your preferred name and your phone number, once, after the date. This is the only disclosure that rests on your consent, and the only one that cannot be taken back. |
 | Your safety contact | One text message containing your preferred name, if you press the Safety button. It contains no position, no venue and nothing about the person you are meeting. |
 | Expo (650 Industries, Inc., United States) | Your device's push token and the content of the notification. Expo passes the notification on to Google's FCM service. |
-| Didit Identity Spain, S.L. (Spain) | If you verify your identity: your name, date of birth and personal identity code, while you sign in. The sign-in goes through Didit and the identification broker it uses. Didit uses its own [sub-processors](https://didit.me/terms/sub-processors/) (section 2). |
+| Didit Identity Spain, S.L. (Spain) | If you verify your identity: your name, date of birth and personal identity code, while you sign in. As far as we know, Didit routes the sign-in to your bank or mobile certificate provider through the identification broker Idura ApS (Denmark, formerly Criipto) and Telia Finland Oyj's (Finland) identification broker service. Didit uses its own [sub-processors](https://didit.me/terms/sub-processors/) (section 2). |
 | GatewayAPI (Denmark) | The recipient's phone number and the content of the message, when we send a login code or a safety message. |
 | OpenFreeMap (Hyperknot Software Kft., Hungary) | Your device's IP address and which map tiles it requests. The request comes from your device, not from our server. Its own policy says it does not log IP addresses. |
 | Pilke staff | What the admin view shows, where that is needed for support or to deal with a safety or conduct report. Shared locations do not appear in the admin view. |
@@ -393,11 +393,11 @@ Finland.
 | Dates, invites and cancellations | 12 months from the date. |
 | Feedback as it was given | 12 months from the date. |
 | The summary of feedback that the matching uses | As long as the account of the person it is about exists. Section 9 says what deleting an account does to it. |
-| The record of your identity verification, and the code worked out from your personal identity code | As long as your account exists, even if you remove the badge. |
+| The record of your identity verification, and the code worked out from your personal identity code | As long as your account exists, even if you cancel the verification. |
 | Identification attempts: the result and the time, not your identity | 90 days. |
 | Identification data held by Didit | Deleted as soon as the result has been handled, and within a month at the latest. |
 | A code on the blocklist | For a ban for safety reasons, permanently, until our staff lift the ban. For an under-18, until their 18th birthday. Deleting the account removes neither. |
-| Staff records of merged accounts, bans and removed verifications | A year. The records hold no identity. |
+| Staff records of merged accounts, bans and cancelled verifications | A year. The records hold no identity. |
 | Your consent to the use of your data for finding dates, and its version | Until you withdraw it or delete your account. |
 | Your answer about meeting again, and an exchanged phone number | 12 months from the date, with the date itself. |
 | No-show reports, including those made in the feedback, and the restrictions that follow from them | 12 months from the report. |
@@ -532,8 +532,8 @@ Withdrawing consent affects processing from then on. You stop sharing your locat
 one tap, and you can change your date preferences at any time. You can give and withdraw
 consent to the use of your data for finding dates in Settings, and withdrawing deletes your
 gender, who you want to meet, your answer about non-monogamy, and every answer about
-political views that you gave or that was given about you. You can remove the verified
-badge in Settings. The record of the verification and the code then stay with your account on
+political views that you gave or that was given about you. You can cancel the
+verification in Settings. The record of the verification and the code then stay with your account on
 the basis of legitimate interest (section 5), and are deleted with the account. The answer about meeting
 again cannot be withdrawn: once the numbers have been exchanged, withdrawing does not get
 them back. Section 5 says what withdrawing means in that situation.

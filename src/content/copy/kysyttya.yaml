@@ -55,12 +55,12 @@
 
 # Identity verification: a draft for the owner, not the owner's text.
 'faq.verified.q':
-  fi: 'Mikä on vahvistettu henkilöllisyys?'
+  fi: 'Mikä on varmennettu henkilöllisyys?'
   en: 'What’s a verified identity?'
 
 'faq.verified.a':
-  fi: 'Voit vahvistaa henkilöllisyytesi pankkitunnuksilla tai mobiilivarmenteella, kun luot tilin tai myöhemmin asetuksista. Vahvistetun käyttäjän profiilissa näkyy merkki, joka kertoo, että hän on tunnistautunut, on täysi-ikäinen ja hänen ikänsä on oikea. Kutsumanimeä ja kuvaa emme tarkista. Vahvistaminen on vapaaehtoista, ja voit poistaa merkin asetuksista. Henkilötunnustasi emme tallenna. Lue lisää [tietosuojaselosteesta](tietosuoja).'
-  en: 'You can verify your identity with online banking ID or a mobile certificate when you create your account, or later in Settings. A verified profile shows a badge, which means the person has confirmed who they are, is over 18 and that their age is real. We don’t check preferred names or photos. Verifying is optional, and you can remove the badge in Settings. We don’t store your personal identity code. There’s more in our [privacy policy](tietosuoja).'
+  fi: 'Voit varmentaa henkilöllisyytesi vahvalla tunnistautumisella, pankkitunnuksilla tai mobiilivarmenteella, kun luot tilin tai myöhemmin asetuksista. Varmennetun käyttäjän profiilissa näkyy tunnistusmerkki, joka kertoo, että hän on tunnistautunut ja hänen ikänsä on oikea. Kutsumanimeä ja kuvaa emme tarkista. Varmentaminen on vapaaehtoista, ja voit perua tunnistuksen asetuksista. Henkilötunnustasi emme tallenna. Lue lisää [tietosuojaselosteesta](tietosuoja).'
+  en: 'You can verify your identity with online banking ID or a mobile certificate when you create your account, or later in Settings. A verified profile shows a badge, which means the person has confirmed who they are and that their age is real. We don’t check preferred names or photos. Verifying is optional, and you can cancel the verification in Settings. We don’t store your personal identity code. There’s more in our [privacy policy](tietosuoja).'
 
 'faq.who.q':
   fi: 'Kuka näkee tietoni?'

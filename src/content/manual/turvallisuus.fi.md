@@ -13,11 +13,11 @@ Yksi painallus lähettää hänelle tekstiviestin *Pilke: [nimesi] painoi turvap
 
 Näytöllä lukee, lähtikö viesti. Jos ei, soita luotetulle henkilöllesi itse. Hätätilanteessa soita 112.
 
-## Vahvistusmerkki
+## Tunnistusmerkki
 
-Osa käyttäjistä on vahvistanut henkilöllisyytensä pankkitunnuksilla tai mobiilivarmenteella, ja heidän profiilissaan näkyy vahvistusmerkki. Jos treffiparillasi on merkki, hän on tunnistautunut ja on täysi-ikäinen. Taustoja Pilke ei tarkista, eikä merkki kerro kutsumanimestä tai kuvasta mitään, joten toimi treffeillä samoin kuin tavatessasi kenet tahansa tuntemattoman. Katso [Tietosi ja tilisi](/ohje/tiedot-ja-tili).
+Osa käyttäjistä on varmentanut henkilöllisyytensä pankkitunnuksilla tai mobiilivarmenteella, ja heidän profiilissaan näkyy tunnistusmerkki. Jos treffiparillasi on merkki, hän on tunnistautunut ja on täysi-ikäinen. Taustoja Pilke ei tarkista, eikä merkki kerro kutsumanimestä tai kuvasta mitään, joten toimi treffeillä samoin kuin tavatessasi kenet tahansa tuntemattoman. Katso [Tietosi ja tilisi](/ohje/tiedot-ja-tili).
 
-Jos suljemme vahvistetun tilin turvallisuussyistä, samalla henkilöllisyydellä ei voi enää vahvistaa uutta tiliä.
+Jos suljemme varmennetun tilin turvallisuussyistä, samaa henkilöllisyyttä ei voi enää varmentaa uudelle tilille.
 
 ## Turvallisuusilmoitus
 

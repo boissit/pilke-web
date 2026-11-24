@@ -12,7 +12,7 @@ draft: false
 | Kutsumanimesi, ikäsi ja kuvasi sekä yhteiset aikanne ja paikkanne | Ihminen, jolle sinua ehdotetaan, ja kutsun toinen osapuoli | Kun olet hänen ehdokkaanaan tai teillä on kutsu |
 | Kutsumanimesi ja puhelinnumerosi | Treffiparisi | Kun olette molemmat valinneet palautteessa, että numeron saa jakaa |
 | Sijaintisi, jos olet treffipaikan lähellä, {{sharing.window_minutes}} minuutin ajan | Treffiparisi | Treffien alkamisen aikoihin, jos päätät jakaa sijaintisi |
-| Vahvistusmerkki | Samat ihmiset kuin kutsumanimesi | Jos olet vahvistanut henkilöllisyytesi |
+| Tunnistusmerkki | Samat ihmiset kuin kutsumanimesi | Jos olet varmentanut henkilöllisyytesi |
 
 Taulukossa eritellään kaikki, mitä muut sinusta näkevät. Kaikki muut tiedot näkyvät vain sinulle.
 
@@ -30,28 +30,30 @@ Kolme ilmoitusta lähetetään aina puhelimeen, koska ne ovat kiireellisiä:
 
 Jos et ole merkinnyt aikoja seuraavalle viikolle, saat sunnuntaina noin kello {{notifications.calendar_nudge_hour}} muistutuksen aikojen lisäämisestä.
 
-## Henkilöllisyyden vahvistus
+## Henkilöllisyyden varmennus
 
-Voit vahvistaa henkilöllisyytesi pankkitunnuksilla tai mobiilivarmenteella. Vahvistaminen on vapaaehtoista, ja voit käyttää Pilkettä ilman sitä.
+Voit varmentaa henkilöllisyytesi vahvalla tunnistautumisella, pankkitunnuksilla tai mobiilivarmenteella. Varmentaminen on vapaaehtoista, ja voit käyttää Pilkettä ilman sitä.
 
-- **Tiliä luodessasi** vahvistus on oma vaiheensa heti puhelinnumeron vahvistamisen jälkeen. Paina **Jatka tunnistautumiseen** tai **Ohita**.
+- **Tiliä luodessasi** varmennus on oma vaiheensa heti puhelinnumeron vahvistamisen jälkeen. Paina **Jatka tunnistautumiseen** tai **Ohita**.
 - **Myöhemmin** löydät kohdan **Vahvista henkilöllisyys** asetusten Tili-osion alusta.
 
-Tunnistaudut Didit-palvelun ja sen tunnistusvälittäjän kautta, yleensä pankkisi sovelluksessa, ja palaat sen jälkeen Pilkkeeseen. Kun vahvistat tiliä luodessasi, etunimesi on valmiina kutsumanimeksi, ja voit vaihtaa sen. Syntymäpäiväksi tulee vahvistettu päivä, eikä sitä voi muuttaa.
+Tunnistaudut Didit-palvelun kautta, yleensä pankkisi sovelluksessa, ja palaat sen jälkeen Pilkkeeseen. Kun varmennat henkilöllisyytesi tiliä luodessasi, etunimesi on valmiina kutsumanimeksi, ja voit vaihtaa sen. Syntymäpäiväksi tulee varmennettu päivä, eikä sitä voi muuttaa.
 
-Sama henkilöllisyys voi olla vahvistettuna vain yhdellä tilillä. Jos sinulla on jo Pilke-tili ja vahvistat henkilöllisyytesi uutta tiliä luodessasi, kirjaudut vanhaan tiliisi, ja sen puhelinnumeroksi vaihtuu numero, jolla juuri kirjauduit. Jos tunnistautuminen näyttää, että olet alle 18-vuotias, rekisteröityminen päättyy.
+Sama henkilöllisyys voi olla varmennettuna vain yhdellä tilillä. Jos sinulla on jo Pilke-tili ja varmennat henkilöllisyytesi uutta tiliä luodessasi, kirjaudut vanhaan tiliisi, ja sen puhelinnumeroksi vaihtuu numero, jolla juuri kirjauduit. Jos tunnistautuminen näyttää, että olet alle 18-vuotias, rekisteröityminen päättyy.
 
-[Tietosuojaselosteesta](/tietosuoja) näet, mitä vahvistuksesta tallennetaan.
+[Tietosuojaselosteesta](/tietosuoja) näet, mitä varmennuksesta tallennetaan.
 
-### Vahvistusmerkki
+### Tunnistusmerkki
 
-Kun olet vahvistanut henkilöllisyytesi, muut näkevät vahvistusmerkin ehdokaskortissasi, kutsussa ja treffisivulla.
+Kun olet varmentanut henkilöllisyytesi, muut näkevät tunnistusmerkin ehdokaskortissasi, kutsussa ja treffisivulla.
 
 Merkki kertoo, että ihminen on tunnistautunut pankkitunnuksilla tai mobiilivarmenteella, on täysi-ikäinen ja että profiilissa näkyvä ikä on hänen oikea ikänsä. Kutsumanimeä ja kuvaa emme tarkista, joten merkki ei kerro niistä mitään.
 
-### Vahvistuksen poistaminen
+### Tunnistuksen peruminen
 
-Kun henkilöllisyytesi on vahvistettu, asetusten Tili-osiossa lukee **Henkilöllisyys vahvistettu**, ja sen alla on **Poista vahvistus**. Kun poistat vahvistuksen, merkki katoaa profiilistasi. Henkilöllisyys pysyy silti liitettynä tiliisi: sillä ei voi vahvistaa toista tiliä, porttikiellot koskevat sitä edelleen, ja syntymäpäivä pysyy lukittuna. Yhteys poistuu vasta, kun poistat tilisi.
+Kun henkilöllisyytesi on varmennettu, asetusten Tili-osiossa lukee **Henkilöllisyys vahvistettu**, ja sen alla on **Poista vahvistus**, josta voit perua tunnistuksen. Kun perut sen, tunnistusmerkki katoaa profiilistasi. Henkilöllisyys pysyy silti liitettynä tiliisi: sitä ei voi varmentaa toiselle tilille, porttikiellot koskevat sitä edelleen, ja syntymäpäivä pysyy lukittuna. Yhteys poistuu vasta, kun poistat tilisi.
+
+Voit varmentaa henkilöllisyytesi uudelleen aikaisintaan viikon kuluttua siitä, kun perut tunnistuksen.
 
 ## Tili
 
@@ -64,7 +66,7 @@ Kirjaudut sisään koodilla, jonka saat tekstiviestinä puhelinnumeroosi. Kirjau
 **Poista tili** (2) poistaa tilisi heti. Poistoa ei voi perua.
 
 - Nimesi, kuvasi, yhteystietosi, toiveesi, kalenterisi ja vastauksesi poistetaan heti.
-- Henkilöllisyyden vahvistus poistetaan.
+- Henkilöllisyyden varmennus poistetaan.
 - Tulevat sovitut treffit perutaan.
 - Lähettämäsi kutsut peruutetaan. Saamasi kutsut hylätään.
 - Menneet treffit, niistä annetut palautteet ja turvallisuusilmoitukset säilyvät. Nimesi tilalla niissä lukee *Poistettu käyttäjä*.
