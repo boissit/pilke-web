@@ -105,7 +105,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`mieltymykset-en` 460px<br>`invitation-en` 460px<br>`date-en` 460px<br>`feedback-en` 460px<br>`platter-verified` 460px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`mieltymykset-en` 460px<br>`invitation-en` 460px<br>`date-en` 460px<br>`feedback-en` 460px<br>`juho` 640px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kipinat.html/` | `en/date-wizard-petals` 560px |
@@ -125,9 +125,9 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/nain-se-toimii.html/` | `preferences-en` 460px<br>`kalenteri-en` 460px<br>`platter-en` 460px<br>`invitation-en` 460px<br>`date-bench-wide` 1120px<br>`feedback-en` 460px<br>`date-cancel-en` 460px<br>`date-en` 460px |
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
-| `/en/turvallisuus.html/` | `platter-verified` 400px<br>`asetukset-en` 520px |
+| `/en/turvallisuus.html/` | `juho` 640px<br>`asetukset-en` 520px |
 | `/en/yhteystiedot.html/` | none |
-| `/` | `hero-cutout-fi` 1400px<br>`mieltymykset` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`platter-verified` 460px<br>`beta-invitation-fi` 1000px |
+| `/` | `hero-cutout-fi` 1400px<br>`mieltymykset` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`juho` 640px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
@@ -147,7 +147,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/ohje/vapaat-ajat.html/` | `fi/kalenteri` 560px<br>`fi/kalenteri-valikko` 560px<br>`fi/kalenteri-toistuva` 560px<br>`fi/kalenteri-menot` 560px |
 | `/tietojen-poisto.html/` | none |
 | `/tietosuoja.html/` | none |
-| `/turvallisuus.html/` | `platter-verified` 400px<br>`asetukset` 520px |
+| `/turvallisuus.html/` | `juho` 640px<br>`asetukset` 520px |
 | `/yhteystiedot.html/` | none |
 
 Carried but drawn on no page: `story`, `story-en`, `treffit`.
@@ -184,7 +184,7 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `kalenteri` | Calendar, a week in use | `capture-kalenteri-busy.sh`, the `busy-week` step, as Veera's account | Three days of the week: free slots marked *Treffivaraus* in coral with their sparkles, the phone's own events hatched beside them, the yellow density shading, the ⋮ and (i) buttons, the tab bar. Drawn on `nain-se-toimii` |
 | `kalenteri-en` | Calendar, a week in use, English | the same step in English | The same week in English. Drawn on `/en` in place of `kalenteri` |
 | `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress bar's five sections (*Profiili*, *Persoonallisuus*, *Toiveet*, *Paikat*, *Ajat*), the first scene in italic quotation marks and its options as cards with one picked, `Jatka`. Drawn on no page; the print kit's element library places it (`tools/print-kit/build.py`) |
-| `platter-verified` | Candidates, a verified candidate | Not by the capture: an iPhone SE (750 x 1334) still from the badge work in `pilke-app`, its 40-row status bar cut off, in `src/assets/screens-iphone/` and drawn with `Phone`'s `iphone` frame. `stills.py` does not check it. Finnish on `/en` too | Juho, 25 on his photo with the verified badge after the age, the `Kartta` chip, `Ajat` and `Paikat` with three of each, `Valitse ainakin yksi aika.` and a disabled `Ehdota!`, on the peach ground. Drawn first on `turvallisuus` and in the front page's safety card. Replace with an Android capture in both languages once `capture-site-pictures.sh` takes the badge |
+| `juho` | None: the mock cast's photo, inside `VerifiedCard.astro`'s candidate card | `src/assets/cast/juho.jpg`, copied from `treffit-backend/test/` (Unsplash `WC7KIHo13Fc`, Juan Encalada, credited in `treffit_backend/mocks/data.py`) | The card itself is HTML, not a still: the photo with *Juho, 25* and the verified badge, and *Ajat* / *Times* and *Paikat* / *Places* with three of each, in the page's language. On the front page's safety card and the safety page's first card. It follows the app's `CandidateCard`, so a change to that card's look (the badge, the border, the boxes) needs the component changed by hand. A sample profile, never to be captioned as a Pilke user |
 | `asetukset` | Settings, Safety open | `screenshots.yaml`, launched `asReleased` so no tester-only row is drawn | The accordion's sections with their icons and round chevrons, Safety open with its whole explanation, the trusted-contact field and its save button, the tab bar. The most copy of any picture here, so it goes stale on wording as well as on layout |
 | `asetukset-en` | Settings, Safety open, English | `screenshots.yaml` in English | The same section in English, `Save number`. Drawn on `/en` in place of `asetukset` |
 | `hero-cutout-fi` | Home, populated, **inside a photograph, cut out** | `screens/treffit.png` composited by `scripts/photos/hero.py fi`, cut out by `scripts/photos/cutout.py` | Everything `treffit` shows, both Android bars included (the phone in the photo is an Android), bent round the phone's curved edges; the hand and phone only, transparent, on the page's coral disc, which clips the hand and arm; `hero-cutout-phone.png`, a mask of the same size, lets the phone and the fingers gripping it stand over the disc's edge, each by its own contour; the disc's circle is baked into both, so the page's geometry and `scripts/photos/cutout.py` change together. A reshoot of `treffit` reaches the page only through this composite |

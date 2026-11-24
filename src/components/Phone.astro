@@ -30,11 +30,6 @@
  * and full signal. The crop is the same on every still because every still is
  * captured on the same emulator profile, and `scripts/photos/stills.py` checks both.
  *
- * **`iphone`: a still taken on an iPhone SE rather than the capture profile.** The
- * picture is drawn whole at its own proportions, its status bar already cut off when
- * it was made, and there is no camera to draw: the SE has none in its screen. It is
- * for a screen the Android capture does not take yet, `src/assets/screens-iphone`.
- *
  * **`device` is the manual's phone: both bars kept, in an ink bezel.** A reader
  * matching the manual to their own phone sees the navigation bar too, so it stays,
  * and the screen's corners are the larger curve of a phone's display. The bezel is
@@ -63,7 +58,7 @@ interface Props {
   width?: number;
   /** Degrees clockwise, or a named lean of three degrees. */
   tilt?: 'left' | 'right' | 'none' | number;
-  frame?: 'marketing' | 'device' | 'iphone';
+  frame?: 'marketing' | 'device';
   /**
    * The shell's colour. White by default, for a phone on a tinted card. On a white
    * card a white shell disappears and the phone reads as a hole, so those pass the
@@ -103,7 +98,7 @@ const rendered = width * 2;
     <div class="screen">
       <div class="window">
         <Image src={src} alt={alt} width={rendered} densities={[1, 2]} loading="lazy" data-still={still} />
-        {frame !== 'iphone' && <span class="camera" aria-hidden="true" />}
+        <span class="camera" aria-hidden="true" />
         {Astro.slots.has('default') && <div class="overlay"><slot /></div>}
       </div>
     </div>

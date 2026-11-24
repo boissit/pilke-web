@@ -2,8 +2,8 @@
 /**
  * The safety page.
  *
- * Identity verification first, the owner's key feature, with the candidate card
- * and its badge beside it; then the safety button and the report, the
+ * Identity verification first, the owner's key feature, with a candidate card
+ * and its badge beside it (`VerifiedCard`, drawn in the page's language); then the safety button and the report, the
  * meeting-safely advice, and the location note. A page rather than a section because it is the
  * one subject here somebody arrives looking for, and because a front page that
  * spends a third of its height on safety reads as a warning about the product
@@ -15,9 +15,10 @@
  * advice below is ordinary meeting-safely sense rather than anything the product
  * enforces. Read `README.md` before adding a claim here.
  */
-import { platterVerified, shotsFor } from '../../assets/screens';
+import { shotsFor } from '../../assets/screens';
 import PageHead from '../../components/PageHead.astro';
 import Phone from '../../components/Phone.astro';
+import VerifiedCard from '../../components/VerifiedCard.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
@@ -46,7 +47,7 @@ const tips = [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('
             <h2>{t('safety.verified.title')}</h2>
             <p class="prose">{t('safety.verified.body')}</p>
           </div>
-          <Phone src={platterVerified} alt={t('shot.platter_verified')} width={200} tilt="left" frame="iphone" shell="var(--surface)" />
+          <VerifiedCard lang={lang} />
         </li>
         {
           safety.map((item) => (
@@ -124,9 +125,10 @@ const tips = [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('
     flex: 1 1 16rem;
   }
 
-  .verified > :global(.phone) {
-    --phone-width: clamp(170px, 12vw + 80px, 200px);
+  .verified > :global(.verified-card) {
+    --card-width: clamp(240px, 10vw + 160px, 280px);
     margin-inline: auto;
+    transform: rotate(-2deg);
   }
 
   .tool-list h2 {

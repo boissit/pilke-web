@@ -132,12 +132,14 @@
 # ──────────────────────────────────────────────────────────────────────────
 # Quality and safety
 #
-# Two cards side by side after the steps, the owner's own. `quality` is how the
-# candidates are picked, before the first date and after each one. `safety` says
-# where dates happen and that a trusted person can be saved, and links to
-# `turvallisuus`, which says the rest, with that page's own `safety.more`. Its
-# "julkisilla paikoilla" is the one venue claim on the site resting on a practice
-# rather than on a constant: the README says why.
+# Two cards after the steps, the owner's own. `quality` is how the candidates are
+# picked, before the first date and after each one. `safety` is three points, each
+# a short heading and the owner's line: identity verification first (its heading is
+# the safety page's `safety.verified.title`), then where dates happen and that a
+# trusted person can be saved. It links to `turvallisuus`, which says the rest, with
+# that page's own `safety.more`. The venues' "julkisilla paikoilla" is the one venue
+# claim on the site resting on a practice rather than on a constant: the README
+# says why.
 # ──────────────────────────────────────────────────────────────────────────
 
 'pitch.quality.title':
@@ -158,9 +160,22 @@
   fi: 'Kannustamme käyttäjiä vahvistamaan henkilöllisyytensä vahvan tunnistautumisen avulla turvallisuuden lisäämiseksi. Tunnistautuneena voit halutessasi treffailla vain muita tunnistettuja käyttäjiä. Tunnistautuneilla käyttäjillä näkyy profiilissaan tunnistusmerkki.'
   en: 'We encourage everyone to verify their identity with online banking ID or a mobile certificate, to make dating safer. Once you’re verified, you can choose to date only other verified people. Verified people have a badge on their profile.'
 
-'pitch.safety.body':
-  fi: 'Kaikki treffit järjestetään valikoiduilla ja julkisilla paikoilla, eli kukaan ei kutsu sinua yksin kotiinsa. Voit myös tallentaa sovellukseen luotetun henkilön puhelinnumeron.'
-  en: 'Every date is at a hand-picked public venue, so nobody’s inviting you back to theirs. We also encourage you to add someone you trust as a safety contact.'
+# The owner's two sentences, one per point; the headings are Claude's.
+'pitch.safety.venues.title':
+  fi: 'Julkiset treffipaikat'
+  en: 'Public venues'
+
+'pitch.safety.venues':
+  fi: 'Kaikki treffit järjestetään valikoiduilla ja julkisilla paikoilla, eli kukaan ei kutsu sinua yksin kotiinsa.'
+  en: 'Every date is at a hand-picked public venue, so nobody’s inviting you back to theirs.'
+
+'pitch.safety.contact.title':
+  fi: 'Luotettu henkilö'
+  en: 'Safety contact'
+
+'pitch.safety.contact':
+  fi: 'Voit myös tallentaa sovellukseen luotetun henkilön puhelinnumeron.'
+  en: 'We also encourage you to add someone you trust as a safety contact.'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Who Pilke is not for

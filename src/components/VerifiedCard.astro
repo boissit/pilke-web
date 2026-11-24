@@ -1,0 +1,157 @@
+---
+/**
+ * A candidate's card with the verified badge, drawn in HTML after the app's own.
+ *
+ * Drawn rather than shot because it has to be in the page's language and nothing
+ * captures the badge in English yet, and because a card on its own reads at any
+ * width where a whole phone screen shrinks to a thumbnail. It follows the app's
+ * `CandidateCard`: an ink-bordered card, the photo with the name and age on a dark
+ * fade, the badge after the age (Lucide `badge-check`, ink with a white fill, as the
+ * app draws it on a photo), and the shared times and places in two boxes. It leaves
+ * out the map chip and the propose button, which are the screen's rather than the
+ * person's.
+ *
+ * The person is the mock cast's Juho, an Unsplash photo (`treffit-backend/test/`,
+ * credited in `treffit_backend/mocks/data.py`), shown as a sample profile and never
+ * captioned as a Pilke user. The whole card is one picture to a screen reader,
+ * described by `card.verified.alt`, so the sample name is not read out as content.
+ *
+ * Flat, like every static thing on the site: an ink border and no shadow.
+ */
+import { Image } from 'astro:assets';
+import juho from '../assets/cast/juho.jpg';
+import { type Lang, useTranslations } from '../i18n/ui';
+import Icon from './Icon.astro';
+
+interface Props {
+  lang: Lang;
+  class?: string;
+}
+
+const { lang, class: className } = Astro.props;
+const t = useTranslations(lang);
+
+const slots = [t('card.slot.one'), t('card.slot.two'), t('card.slot.three')].map((s) => s.split('|'));
+const places = ['Kaffecentralen', 'Esplanadin puisto', 'Kaisaniemen puisto'];
+---
+
+<div class:list={['verified-card', className]} role="img" aria-label={t('card.verified.alt')}>
+  <div class="photo">
+    <Image src={juho} alt="" width={640} densities={[1, 2]} loading="lazy" />
+    <p class="name"><b>Juho</b>, 25<Icon name="badge-check" size={22} class="badge" /></p>
+  </div>
+  <div class="shared">
+    <div>
+      <p class="head">{t('card.times')}</p>
+      <ul>{slots.map(([day, time]) => <li><span>{day}</span><b>{time}</b></li>)}</ul>
+    </div>
+    <div>
+      <p class="head">{t('card.places')}</p>
+      <ul>{places.map((place) => <li><b>{place}</b></li>)}</ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .verified-card {
+    width: var(--card-width, 320px);
+    max-width: 100%;
+    border: 3px solid var(--ink);
+    border-radius: 22px;
+    background: var(--surface);
+    overflow: hidden;
+    color: var(--ink);
+  }
+
+  .photo {
+    position: relative;
+    aspect-ratio: 4 / 3;
+  }
+
+  .photo :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+  }
+
+  /* The app's fade under the name, so white text reads on any photo. */
+  .photo::after {
+    content: '';
+    position: absolute;
+    inset: 45% 0 0;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0), rgb(0 0 0 / 0.55));
+  }
+
+  .name {
+    position: absolute;
+    left: 16px;
+    bottom: 12px;
+    z-index: 1;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    color: #fff;
+    font-size: 1.75rem;
+    line-height: 1.1;
+  }
+
+  .name b {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  .name :global(.badge) {
+    margin-left: 7px;
+    fill: #fff;
+    stroke: var(--ink);
+  }
+
+  .shared {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 14px 14px 16px;
+  }
+
+  .head {
+    margin: 0 0 6px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 2.5px solid var(--ink);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 3.1rem;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+    line-height: 1.25;
+  }
+
+  li + li {
+    border-top: 2px solid var(--rule, #d9d2d0);
+  }
+
+  li span {
+    color: var(--text-soft);
+  }
+
+  li b {
+    font-weight: 700;
+    font-size: 0.88rem;
+  }
+</style>

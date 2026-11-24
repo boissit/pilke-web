@@ -48,10 +48,6 @@
   fi: 'Vahvistus ennen treffien perumista: mitä perumisesta seuraa, ja painikkeet Takaisin ja Peru.'
   en: 'The confirmation before cancelling a date: what cancelling means, with the Back and Cancel date buttons.'
 
-'shot.platter_verified':
-  fi: 'Ehdokkaan kortti: Juho, 25, ja nimen perässä tunnistusmerkki. Alla yhteiset ajat ja paikat.'
-  en: 'A match’s card: Juho, 25, with the verified badge after his name, and the times and places you share below.'
-
 'shot.asetukset':
   fi: 'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotetun henkilön numerolle.'
   en: 'The Safety section in Settings, open, with the field for your safety contact’s number.'
@@ -59,3 +55,36 @@
 'shot.date':
   fi: 'Sovitut treffit puhelimessa: aika, paikka kartalla ja turvapainike.'
   en: 'An upcoming date on a phone: the time, the place on a map, and the Safety button.'
+
+# ──────────────────────────────────────────────────────────────────────────
+# The candidate card with the verified badge
+#
+# Drawn in HTML by `VerifiedCard.astro` rather than shot, so it is in each page's
+# language. The name, age, photo and venues are the mock cast's Juho and the
+# platter's places, the same in both languages. The days carry no date, so the card
+# never shows one in the past. Claude's, not the owner's.
+# ──────────────────────────────────────────────────────────────────────────
+
+'card.verified.alt':
+  fi: 'Esimerkki ehdokkaan kortista: Juho, 25, ja nimen perässä tunnistusmerkki. Alla yhteiset ajat ja paikat.'
+  en: 'An example match card: Juho, 25, with the verified badge after his name, and the times and places you share below.'
+
+'card.times':
+  fi: 'Ajat'
+  en: 'Times'
+
+'card.places':
+  fi: 'Paikat'
+  en: 'Places'
+
+'card.slot.one':
+  fi: 'keskiviikko|klo 17.00'
+  en: 'Wednesday|5 pm'
+
+'card.slot.two':
+  fi: 'torstai|klo 16.00'
+  en: 'Thursday|4 pm'
+
+'card.slot.three':
+  fi: 'perjantai|klo 16.00'
+  en: 'Friday|4 pm'
