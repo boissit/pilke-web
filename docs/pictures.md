@@ -105,7 +105,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | Page | Pictures, in the order they appear |
 | --- | --- |
 | `/404.html/` | none |
-| `/en.html/` | `hero-cutout-en` 1400px<br>`mieltymykset-en` 460px<br>`invitation-en` 460px<br>`date-en` 460px<br>`feedback-en` 460px<br>`laura` 160px<br>`juho` 160px<br>`vieno` 160px<br>`keskusta` 900px<br>`riikka` 96px<br>`henri` 96px<br>`beta-invitation-en` 1000px |
+| `/en.html/` | `hero-cutout-en` 1400px<br>`mieltymykset-en` 460px<br>`invitation-en` 460px<br>`date-en` 460px<br>`feedback-en` 460px<br>`candidate-arttu` 460px<br>`candidate-veera` 460px<br>`candidate-veeti` 460px<br>`keskusta` 900px<br>`date-riikka` 680px<br>`date-henri` 680px<br>`beta-invitation-en` 1000px |
 | `/en/guide.html/` | none |
 | `/en/guide/ehdokkaat.html/` | `en/platter` 560px<br>`en/cooldown-nodraw` 560px |
 | `/en/guide/kipinat.html/` | `en/date-wizard-petals` 560px |
@@ -127,7 +127,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/tietosuoja.html/` | none |
 | `/en/turvallisuus.html/` | `juho` 640px<br>`asetukset-en` 520px |
 | `/en/yhteystiedot.html/` | none |
-| `/` | `hero-cutout-fi` 1400px<br>`mieltymykset` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`laura` 160px<br>`juho` 160px<br>`vieno` 160px<br>`keskusta` 900px<br>`riikka` 96px<br>`henri` 96px<br>`beta-invitation-fi` 1000px |
+| `/` | `hero-cutout-fi` 1400px<br>`mieltymykset` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`candidate-arttu` 460px<br>`candidate-veera` 460px<br>`candidate-veeti` 460px<br>`keskusta` 900px<br>`date-riikka` 680px<br>`date-henri` 680px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
 | `/kysyttya.html/` | none |
 | `/lapsiturvallisuus.html/` | none |
@@ -185,11 +185,12 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `kalenteri-en` | Calendar, a week in use, English | the same step in English | The same week in English. Drawn on `/en` in place of `kalenteri` |
 | `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress bar's five sections (*Profiili*, *Persoonallisuus*, *Toiveet*, *Paikat*, *Ajat*), the first scene in italic quotation marks and its options as cards with one picked, `Jatka`. Drawn on no page; the print kit's element library places it (`tools/print-kit/build.py`) |
 | `juho` | None: the mock cast's photo, inside `VerifiedCard.astro`'s candidate card | `src/assets/cast/juho.jpg`, copied from `treffit-backend/test/` (Unsplash `WC7KIHo13Fc`, Juan Encalada, credited in `treffit_backend/mocks/data.py`) | The card itself is HTML, not a still: the photo with *Juho, 25* and the verified badge, and *Ajat* / *Times* and *Paikat* / *Places* with three of each, in the page's language. On the front page's safety card and the safety page's first card. It follows the app's `CandidateCard`, so a change to that card's look (the badge, the border, the boxes) needs the component changed by hand. A sample profile, never to be captioned as a Pilke user |
-| `laura` | None: mock-cast photos, in the front page's quality card (`components/safety/QualityCard.astro`) | `src/assets/cast/`, copied from `treffit-backend/test/` (Unsplash, credited in `treffit_backend/mocks/data.py`) | Two of the three round photos beside *3 ehdokasta kerralla*, with `juho`. Sample profiles, never captioned as Pilke users. They show no app, so they cannot go stale |
-| `vieno` | None: mock-cast photos, in the front page's quality card (`components/safety/QualityCard.astro`) | `src/assets/cast/`, copied from `treffit-backend/test/` (Unsplash, credited in `treffit_backend/mocks/data.py`) | Two of the three round photos beside *3 ehdokasta kerralla*, with `juho`. Sample profiles, never captioned as Pilke users. They show no app, so they cannot go stale |
-| `riikka` | None: mock-cast photos, in the two date cards over the front page's map (`components/safety/SafetyMap.astro`) | `src/assets/cast/`, as above | The cards are HTML after the app's `MatchCard`: *Riikka, 32* at Café Aalto and *Henri, 26* at Esplanadin puisto, each with the verified badge. A change to the app's date card or badge needs the component changed by hand |
-| `henri` | None: mock-cast photos, in the two date cards over the front page's map (`components/safety/SafetyMap.astro`) | `src/assets/cast/`, as above | The cards are HTML after the app's `MatchCard`: *Riikka, 32* at Café Aalto and *Henri, 26* at Esplanadin puisto, each with the verified badge. A change to the app's date card or badge needs the component changed by hand |
 | `keskusta` | None: a map of central Helsinki, in the front page's safety card | `scripts/map/render.mjs` renders `scripts/map/map.html` (OpenFreeMap's positron tiles, labels off, recoloured to the site's grounds) and prints where each venue falls; the pins are HTML at those positions in `SafetyMap.astro` | The streets round Esplanadi and five catalogue venues pinned over it. Goes stale when a venue leaves `treffit-backend`'s `venues/catalogue.py` or moves: re-render and copy the printed positions. Credited *© OpenStreetMap* on the page |
+| `candidate-arttu` | Candidates, one card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Arttu, 20, with the verified badge on his photo, his times and places, `Ehdota!` / `Send invite`. Left of the fan in the front page's quality card |
+| `candidate-veeti` | Candidates, one card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Veeti, 19, the same. In the middle of the fan, on top |
+| `candidate-veera` | Candidates, one card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Veera, 24, the same. Right of the fan |
+| `date-riikka` | An agreed date's page, its date card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Riikka, 32, the badge after her age, Café Aalto, `pe 27.11. klo 17.00` / `Fri 27 Nov at 17:00`. Over the top of the front page's map, a line to Café Aalto's pin. **Shows a date**, which reads as past after 27 November 2026 |
+| `date-henri` | An agreed date's page, its date card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Henri, 26, the badge, Esplanadin puisto, `la 28.11. klo 13.00` / `Sat 28 Nov at 13:00`. Over the bottom of the map, a line to Esplanadin puisto's pin. Shows a date, as above |
 | `asetukset` | Settings, Safety open | `screenshots.yaml`, launched `asReleased` so no tester-only row is drawn | The accordion's sections with their icons and round chevrons, Safety open with its whole explanation, the trusted-contact field and its save button, the tab bar. The most copy of any picture here, so it goes stale on wording as well as on layout |
 | `asetukset-en` | Settings, Safety open, English | `screenshots.yaml` in English | The same section in English, `Save number`. Drawn on `/en` in place of `asetukset` |
 | `hero-cutout-fi` | Home, populated, **inside a photograph, cut out** | `screens/treffit.png` composited by `scripts/photos/hero.py fi`, cut out by `scripts/photos/cutout.py` | Everything `treffit` shows, both Android bars included (the phone in the photo is an Android), bent round the phone's curved edges; the hand and phone only, transparent, on the page's coral disc, which clips the hand and arm; `hero-cutout-phone.png`, a mask of the same size, lets the phone and the fingers gripping it stand over the disc's edge, each by its own contour; the disc's circle is baked into both, so the page's geometry and `scripts/photos/cutout.py` change together. A reshoot of `treffit` reaches the page only through this composite |
@@ -214,6 +215,40 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `logo` | An earlier Pilke logo, not the current wordmark | `meista.py`, cut out to its rounded tile | *PILKE* in yellow with three yellow strokes of a spark, on a black rounded square. 2022–2025 on `/meista`, laid over the lower corner of `map` |
 | `onboard` | An early design of the welcome screen, not the shipping app | `meista.py`, cut from the `esimerkkiruudut.png` board and set into `visu2`'s phone on its foot | The lilac *Esimerkkiruutu - Onboard 1*: the *Pilke* label with its sparkle, a yellow *Tervetuloa!* card with the owner's text and a *Joo!* button, cut off at the foot as on the board, lilac carried on above. 2022–2025 on `/meista` |
 | `overview` | An early design of the home screen, not the shipping app | `meista.py`, cut from the same board and set into the same phone | The lilac *Esimerkkiruutu - Overview*: the *Pilke* label and four tiles at the top, *Vinkkipankki* and a gear, the yellow tab bar (*Treffit*, *Kalenteri*, *Kysymykset*, *Turvallisuus*) cut off at the foot. 2022–2025 on `/meista` |
+
+## Cards cut out of the app
+
+The front page's quality and safety cards carry single cards from the app rather
+than phones: three candidates from a platter, fanned, and two agreed dates placed
+on a map. Each is a still of the real app cut to the card's outer ink rule, with
+the corners outside it transparent, in `src/assets/cards/<lang>/` and imported
+through `src/assets/cards.ts`. They are not taken by `capture-site-pictures.sh`
+yet; this is how they were made, so they can be made again when the cards change.
+
+1. **A stack of its own.** `treffit-backend` at main in a compose project with
+   its own name and port (not the shared `treffit_*` on 8000), seeded with
+   `seed_admin`, `mockdata`, `seed_venues` and `timeslots`, and
+   `TESTER_TOOLS_ENABLED=1`. The cast's photos go into the media root
+   (`test/*.jpg` to `assets/users/`).
+2. **The data.** `scripts/cards/scenario.py`, run with `manage.py shell` and
+   `SCENARIO=verify`, marks the whole cast verified, so any platter shows three
+   badges; `SCENARIO=dates` forces two agreed dates for Vieno (`+358021535858`, the
+   platter flows' account): Riikka at Café Aalto on Friday at 17 and Henri at
+   Esplanadin puisto on Saturday at 13. Their venues are two of the map's pins.
+3. **The device.** `pilke-app` main on an iPhone 17 Pro Max simulator (3x, 1320 x
+   2868), a development build on Metro, signed in as Vieno with the `authToken`
+   launch argument. The language is switched in Asetukset, *Sovelluksen kieli*.
+4. **The shots.** The platter: *Löydä treffit!*, through the calendar step, *Löydä
+   treffit*, the guide skipped, and each of the three cards swiped into the
+   middle. The dates: each date card on the home screen opened, and its page's
+   card shot, since the badge shows on a date's own page and not in the list.
+5. **The cut.** `scripts/cards/crop.py <shot> <box> <out>` finds the card's ink rule
+   inside a rough box (platter `60 360 1262 2650`, date page `20 1670 1300 2000` on
+   the Pro Max) and makes the ground outside its corners transparent, keeping the
+   curve anti-aliased.
+
+The date cards show their dates as the app does, so they read as past once those
+days have gone: retake them with dates ahead of the clock.
 
 ## The photographs
 

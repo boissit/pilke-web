@@ -2,22 +2,21 @@
 /**
  * The safety card: identification and the venues as equals. The copy is the owner's
  * two lines; the picture is real date spots as pins on central Helsinki (OpenFreeMap
- * tiles recoloured to the site's grounds, `scripts/map/`), with two agreed dates
- * over the map's lower corner, drawn after the app's home-screen date card
- * (`MatchCard`): the photo flush to the card's edge, the name and age with the
- * verified badge, the venue, and the day and time. Each date's venue is a coral pin;
- * the other venues are white.
+ * tiles recoloured to the site's grounds, `scripts/map/`), and two agreed dates
+ * placed at their own venues: each date's card, cut out of the app's date page
+ * (`src/assets/cards.ts`), stands over the map's edge nearest its pin, tilted a
+ * little, with an ink line from the card to the coral pin. The other venues are
+ * white pins.
  *
  * It lays itself out by its own width rather than the page's, so it works full
- * width (copy left, map right) and as the wide half of the `split` row (map under
- * the copy). On a phone the dates stand under the map, overlapping its edge.
+ * width (copy left, map right) and narrower (map under the copy). On a phone the
+ * two cards stand under the map, without the lines.
  *
  * The faces are the mock cast's (`treffit-backend/test/`, Unsplash, credited in
  * `treffit_backend/mocks/data.py`), sample profiles never captioned as Pilke users.
  */
 import { Image } from 'astro:assets';
-import henri from '../../assets/cast/henri.jpg';
-import riikka from '../../assets/cast/riikka.jpg';
+import { cardsFor } from '../../assets/cards';
 import map from '../../assets/maps/keskusta.png';
 import { type Lang, localePath, useTranslations } from '../../i18n/ui';
 import Icon from '../Icon.astro';
@@ -30,7 +29,7 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 // In percent of `keskusta.png`, from `scripts/map/render.mjs`. `date` marks the two
-// venues the dates below are at.
+// venues the dates are at: their cards name them, so their pins carry no label.
 const pins = [
   { name: 'Kaffecentralen', x: 16.91, y: 51.13 },
   { name: 'Ateljée Bar', x: 43.03, y: 48.87 },
@@ -39,10 +38,7 @@ const pins = [
   { name: 'Esplanadin puisto', x: 82.22, y: 52.25, date: true },
 ];
 
-const dates = [
-  { photo: riikka, name: 'Riikka', age: 32, venue: 'Café Aalto', when: t('pitch.safety.date.one') },
-  { photo: henri, name: 'Henri', age: 26, venue: 'Esplanadin puisto', when: t('pitch.safety.date.two') },
-];
+const cards = cardsFor(lang);
 
 const points = [
   { icon: 'badge-check', tint: 'var(--success)', title: t('safety.verified.title'), body: t('pitch.safety.verified') },
@@ -72,36 +68,30 @@ const points = [
       </div>
 
       <div class="stage">
+        <div class="stage-map">
         <div class="map" role="img" aria-label={t('pitch.safety.map.alt')}>
           <Image src={map} alt="" width={900} densities={[1, 2]} loading="lazy" />
           {
             pins.map((p) => (
               <span class:list={['pin', p.date && 'is-date']} style={`left:${p.x}%; top:${p.y}%`}>
                 <Icon name="map-pin" size={p.date ? 32 : 24} />
-                <span class="label">{p.name}</span>
+                {!p.date && <span class="label">{p.name}</span>}
               </span>
             ))
           }
           <span class="credit">{t('pitch.safety.map.credit')}</span>
         </div>
 
-        <ul class="dates" role="img" aria-label={t('pitch.safety.dates.alt')}>
-          {
-            dates.map((d) => (
-              <li>
-                <Image src={d.photo} alt="" width={96} densities={[1, 2]} class="photo" loading="lazy" />
-                <div class="details">
-                  <p class="name">
-                    <b>{d.name}</b>, {d.age}
-                    <Icon name="badge-check" size={18} class="badge" />
-                  </p>
-                  <p class="venue"><Icon name="map-pin" size={14} class="venue-pin" />{d.venue}</p>
-                  <p class="when">{d.when}</p>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
+        {/* Ink lines from each card to its pin, in the map's own percentages. */}
+        <svg class="links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <line x1="44" y1="9" x2="64.4" y2="37.5" />
+          <line x1="76" y1="91" x2="82.2" y2="53.5" />
+        </svg>
+        <div class="dates" role="img" aria-label={t('pitch.safety.dates.alt')}>
+          <Image src={cards.riikka} alt="" width={680} densities={[1, 2]} class="date riikka" loading="lazy" />
+          <Image src={cards.henri} alt="" width={680} densities={[1, 2]} class="date henri" loading="lazy" />
+        </div>
+        </div>
       </div>
     </div>
   </div>
@@ -230,83 +220,31 @@ const points = [
 
   /* ─── The two dates ───────────────────────────────────────────────────── */
 
+  /* A phone: the two cards under the map, one a little in from each side. */
+  .links {
+    display: none;
+  }
+
   .dates {
-    list-style: none;
-    max-width: 22rem;
-    margin: -28px 10px 0;
-    padding: 0;
-    position: relative;
     display: grid;
     gap: 10px;
+    margin-top: -18px;
+    position: relative;
   }
 
-  /* The app's date card: ink rule, the confirmed peach, the photo flush to three
-     edges, no shadow. */
-  .dates li {
-    display: flex;
-    align-items: stretch;
-    border: 3px solid var(--ink);
-    border-radius: 18px;
-    background: var(--card-confirmed);
-  }
-
-  .dates :global(.photo) {
-    width: 76px;
-    min-height: 76px;
-    margin: -3px 0 -3px -3px;
-    border: 3px solid var(--ink);
-    border-radius: 18px;
-    object-fit: cover;
-    flex: none;
-    align-self: stretch;
+  .dates :global(.date) {
+    display: block;
+    width: 88%;
     height: auto;
   }
 
-  .details {
-    padding: 7px 12px 8px 14px;
-    display: grid;
-    gap: 1px;
-    min-width: 0;
+  .dates :global(.riikka) {
+    transform: rotate(-1.5deg);
   }
 
-  .details p {
-    margin: 0;
-    white-space: nowrap;
-  }
-
-  .name {
-    display: flex;
-    align-items: center;
-    font-size: 1.15rem;
-    line-height: 1.2;
-  }
-
-  .name b {
-    font-weight: 700;
-  }
-
-  /* The app's badge on a card: ink outline and check on mint, after the age. */
-  .name :global(.badge) {
-    margin-left: 5px;
-    fill: var(--success);
-    stroke: var(--ink);
-  }
-
-  .venue {
-    display: flex;
-    align-items: center;
-    gap: 3px;
-    font-size: 0.92rem;
-  }
-
-  .venue :global(.venue-pin) {
-    fill: var(--brand-main);
-    flex: none;
-  }
-
-  .when {
-    font-size: 0.92rem;
-    color: var(--text-soft);
+  .dates :global(.henri) {
+    justify-self: end;
+    transform: rotate(1.5deg);
   }
 
   /* On a phone the names would run into each other: the pins say enough. */
@@ -321,24 +259,67 @@ const points = [
     }
   }
 
-  /* Wide: copy on the left, the map on the right with the dates standing over its
-     lower left corner, as the app stacks its cards. */
-  @container (min-width: 52rem) {
-    .inner {
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-      align-items: center;
+  /*
+    Room for the composition: each card over the map's edge nearest its pin, Riikka
+    across the top left towards Café Aalto, Henri across the bottom right below
+    Esplanadin puisto, with the ink lines drawn to the pins. The stage pads above
+    and below for the part of each card that stands off the map.
+  */
+  @container (min-width: 34rem) {
+    .stage {
+      padding-block: 7% 9%;
     }
 
-    .stage {
-      padding-bottom: 96px;
+    .stage-map {
+      position: relative;
+    }
+
+    .links {
+      display: block;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .links line {
+      stroke: var(--ink);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-dasharray: 1 7;
+      vector-effect: non-scaling-stroke;
     }
 
     .dates {
       position: absolute;
-      left: -24px;
-      bottom: 0;
+      inset: 0;
       margin: 0;
-      width: min(19rem, 62%);
+      display: block;
+      pointer-events: none;
+    }
+
+    .dates :global(.date) {
+      position: absolute;
+      width: 52%;
+    }
+
+    .dates :global(.riikka) {
+      left: -5%;
+      top: -7%;
+    }
+
+    .dates :global(.henri) {
+      right: -4%;
+      bottom: -9%;
+    }
+  }
+
+  @container (min-width: 52rem) {
+    .inner {
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      align-items: center;
     }
   }
 </style>

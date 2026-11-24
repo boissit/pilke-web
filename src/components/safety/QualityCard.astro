@@ -1,20 +1,15 @@
 ---
 /**
- * The quality card: the owner's heading and line, and beside them a picture of what
- * "fewer people" means: three matches' photos and the count, three at a time, which
- * is the manual's own claim and the app's `candidates.per_set`.
+ * The quality card: the owner's heading and line, and beside them the three
+ * candidates a platter offers, as the app draws them, fanned like a hand of cards
+ * with the middle one on top. Each card is a still cut out of the app
+ * (`src/assets/cards.ts`), so the fan cannot drift from the real UI.
  *
- * It lays itself out by its own width rather than the page's, so it works both as
- * a full-width band (copy left, picture right) and as the narrow column beside the
- * safety card (picture under the copy).
- *
- * The faces are the mock cast's (`treffit-backend/test/`, Unsplash, credited in
- * `treffit_backend/mocks/data.py`), sample profiles never captioned as Pilke users.
+ * It lays itself out by its own width rather than the page's: copy on the left and
+ * the fan on the right when there is room, the fan under the copy before that.
  */
 import { Image } from 'astro:assets';
-import juho from '../../assets/cast/juho.jpg';
-import laura from '../../assets/cast/laura.jpg';
-import vieno from '../../assets/cast/vieno.jpg';
+import { cardsFor } from '../../assets/cards';
 import { type Lang, useTranslations } from '../../i18n/ui';
 
 interface Props {
@@ -23,7 +18,12 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const faces = [laura, juho, vieno];
+const c = cardsFor(lang);
+const fan = [
+  { src: c.arttu, pos: 'left' },
+  { src: c.veera, pos: 'right' },
+  { src: c.veeti, pos: 'middle' },
+];
 ---
 
 <section class="slab slab-pale quality" aria-labelledby="quality-title">
@@ -33,12 +33,9 @@ const faces = [laura, juho, vieno];
         <h2 class="display-mid" id="quality-title">{t('pitch.quality.title')}</h2>
         <p>{t('pitch.quality.body')}</p>
       </div>
-      <figure class="three" role="img" aria-label={t('pitch.quality.alt')}>
-        <div class="faces">
-          {faces.map((f) => <Image src={f} alt="" width={160} densities={[1, 2]} loading="lazy" />)}
-        </div>
-        <figcaption>{t('pitch.quality.count')}</figcaption>
-      </figure>
+      <div class="fan" role="img" aria-label={t('pitch.quality.alt')}>
+        {fan.map((f) => <Image src={f.src} alt="" width={460} densities={[1, 2]} class={f.pos} loading="lazy" />)}
+      </div>
     </div>
   </div>
 </section>
@@ -54,14 +51,13 @@ const faces = [laura, juho, vieno];
 
   .inner {
     display: grid;
-    gap: clamp(24px, 2vw + 16px, 40px);
-    height: 100%;
-    align-content: space-between;
+    gap: clamp(28px, 2vw + 20px, 40px);
   }
 
   .copy {
     display: grid;
     gap: 16px;
+    align-content: center;
   }
 
   .copy p {
@@ -71,39 +67,41 @@ const faces = [laura, juho, vieno];
     line-height: 1.55;
   }
 
-  .three {
-    margin: 0;
-    display: grid;
-    justify-items: start;
-    gap: 10px;
+  /*
+    The fan: three cards on one pivot below their feet, turned out to either side,
+    the middle one last in the source so it lies on top. Flat: the cards carry their
+    own ink rule, and nothing here adds a shadow.
+  */
+  .fan {
+    --card: clamp(100px, 27cqi, 210px);
+    position: relative;
+    height: calc(var(--card) * 2237 / 1152 + 24px);
+    justify-self: center;
+    width: calc(var(--card) * 2.7);
+    max-width: 100%;
   }
 
-  /* Three round photos overlapping, each in the app's ink rule, flat. */
-  .faces {
-    display: flex;
+  .fan :global(img) {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: var(--card);
+    height: auto;
+    transform-origin: 50% 120%;
   }
 
-  .faces :global(img) {
-    width: clamp(64px, 3vw + 52px, 88px);
-    height: clamp(64px, 3vw + 52px, 88px);
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--ink);
-    background: var(--surface);
+  .fan :global(.left) {
+    transform: translateX(-50%) rotate(-12deg) translateX(-46%);
   }
 
-  .faces :global(img + img) {
-    margin-left: -18px;
+  .fan :global(.right) {
+    transform: translateX(-50%) rotate(12deg) translateX(46%);
   }
 
-  figcaption {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: clamp(1.25rem, 0.57vw + 1.11rem, 1.625rem);
-    line-height: 1.15;
+  .fan :global(.middle) {
+    transform: translateX(-50%) translateY(-14px);
   }
 
-  /* Wide: copy on the left, the picture on the right, centred on each other. */
   @container (min-width: 44rem) {
     .inner {
       grid-template-columns: minmax(0, 1fr) auto;
@@ -111,9 +109,8 @@ const faces = [laura, juho, vieno];
       column-gap: clamp(32px, 5vw, 96px);
     }
 
-    .three {
-      justify-items: center;
-      padding-right: clamp(0px, 3vw, 48px);
+    .fan {
+      --card: clamp(150px, 15cqi, 210px);
     }
   }
 </style>
