@@ -12,6 +12,7 @@ draft: false
 | Your preferred name, age and photo, and the times and places you share | Someone you're suggested to, and the other person in an invite | When you're one of their matches, or you have an invite between you |
 | Your preferred name and phone number | Your date | When you've both chosen in your feedback to share your number |
 | Your location, if you're near the venue, for {{sharing.window_minutes}} minutes | Your date | Around the start of a date, if you choose to share your location |
+| The verified badge | The same people who see your preferred name | If you've verified your identity |
 
 The table lists everything other people can see about you. Everything else is visible only to you.
 
@@ -29,6 +30,29 @@ Three notifications are always sent to your phone, because they're urgent:
 
 If you haven't marked any times for the week ahead, you get a reminder to add some on Sunday at about {{notifications.calendar_nudge_hour}}:00.
 
+## Verifying your identity
+
+You can verify your identity with online banking ID or a mobile certificate. It's optional, and you can use Pilke without it.
+
+- **When you create your account**, verifying is a step of its own, straight after you confirm your phone number. Tap **Continue to identification** or **Skip**.
+- **Later**, you'll find **Verify your identity** at the top of the Account section in Settings.
+
+You sign in through Didit and its identification broker, usually in your bank's app, and then come back to Pilke. If you verify while creating your account, your first name is filled in as your preferred name, and you can change it. Your birthday becomes the verified date, which you can't change.
+
+An identity can be verified on one account only. If you already have a Pilke account and verify while creating a new one, you're signed in to your old account, and its phone number changes to the one you just signed in with. If the identification shows you're under 18, registration ends.
+
+The [privacy policy](/en/tietosuoja) says what we store about the verification.
+
+### The verified badge
+
+Once you've verified your identity, other people see the verified badge on your match card, on invites and on the date page. Tapping the badge shows what it means.
+
+The badge means the person has confirmed who they are with online banking ID or a mobile certificate, is over 18, and that the age on their profile is their real age. We don't check preferred names or photos, so the badge says nothing about them.
+
+### Removing the verification
+
+Once your identity is verified, the Account section in Settings shows **Identity verified**, with **Remove verification** under it. When you remove it, the badge disappears from your profile and you can change your birthday again. You can verify your identity again later.
+
 ## Your account
 
 ![Account open: Sign out, Sign out on all devices and Delete account](shot:asetukset-tili#sign-out-everywhere,delete-account)
@@ -40,6 +64,7 @@ You sign in with a code you get by text message to your phone number. Signing in
 **Delete account** (2) deletes your account straight away. You can't undo this.
 
 - Your name, photo, contact details, preferences, calendar and answers are deleted at once.
+- Your identity verification is deleted.
 - Upcoming dates are cancelled.
 - Invites you sent are withdrawn. Invites you received are declined.
 - Past dates, the feedback given on them and safety reports are kept. In them, your name is replaced with *Deleted user*.

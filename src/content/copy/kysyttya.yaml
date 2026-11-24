@@ -53,6 +53,15 @@
   fi: 'Turvallisen treffailun mahdollistaminen on yksi sovelluksemme keskeisimmistä tarkoituksista. Moni kokee, että treffejä edeltävällä keskustelulla voi saada kuvan tulevan treffiparin turvallisuudesta. Koska Pilke ohittaa tämän vaiheen kokonaan, olemme panostaneet ehdotettujen treffiparien laatuun suodattimin, turvapainikkeen kehitykseen, treffipalautteeseen, käyttäjien ilmiantoon, tilien sulkuihin ja turvallisuusohjeisiin. Jos sinulla on ideoita siitä, miten voisimme edelleen parantaa treffailun turvallisuutta ilman chat-ominaisuutta, haluaisimme kuulla ne (contact@pilke.app). Lisää turvallisuudesta voit lukea [Turvallisuus-sivultamme](turvallisuus).'
   en: 'One of the main goals of Pilke has always been to make dating safer. Many people feel that chatting before a date helps them judge whether someone is safe to meet. Pilke skips that step entirely, so we’ve put our effort elsewhere: filters that improve the quality of your matches, the safety button, date feedback, reporting, account bans and safety tips. If you have ideas for how we could make dating even safer without a chat feature, we’d love to hear them at contact@pilke.app. You can read more on our [Safety page](turvallisuus).'
 
+# Identity verification: a draft for the owner, not the owner's text.
+'faq.verified.q':
+  fi: 'Mikä on vahvistettu henkilöllisyys?'
+  en: 'What’s a verified identity?'
+
+'faq.verified.a':
+  fi: 'Voit vahvistaa henkilöllisyytesi pankkitunnuksilla tai mobiilivarmenteella, kun luot tilin tai myöhemmin asetuksista. Vahvistetun käyttäjän profiilissa näkyy merkki, joka kertoo, että hän on tunnistautunut, on täysi-ikäinen ja hänen ikänsä on oikea. Kutsumanimeä ja kuvaa emme tarkista. Vahvistaminen on vapaaehtoista, ja voit poistaa vahvistuksen asetuksista. Henkilötunnustasi emme tallenna. Lue lisää [tietosuojaselosteesta](tietosuoja).'
+  en: 'You can verify your identity with online banking ID or a mobile certificate when you create your account, or later in Settings. A verified profile shows a badge, which means the person has confirmed who they are, is over 18 and that their age is real. We don’t check preferred names or photos. Verifying is optional, and you can remove it in Settings. We don’t store your personal identity code. There’s more in our [privacy policy](tietosuoja).'
+
 'faq.who.q':
   fi: 'Kuka näkee tietoni?'
   en: 'Who can see my details?'

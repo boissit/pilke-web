@@ -1,6 +1,8 @@
 ---
 title: Terms of use
 lead: What you agree to when you use Pilke, and what we promise you.
+# TODO: the identity-verification clauses need a new version and effective date
+# when the feature launches; leave both as they are until then.
 version: 2026-11-15
 effective: 2026-11-15
 draft: false
@@ -52,6 +54,11 @@ Give a real phone number and email address. Keep others out of your phone and aw
 login codes, and tell us immediately if you suspect somebody else has got into your account.
 You can sign out of a single device in settings.
 
+You can also verify your identity with online banking ID or a mobile certificate. Verifying
+is optional. An identity can be verified on one account only: if you verify an identity that
+already has an account, you are signed in to that account. Section 2 of the
+[privacy policy](/en/tietosuoja) says more about verification.
+
 ## 5. User obligations
 
 **Go on the dates you have agreed to.** The person you are meeting has set an evening aside
@@ -101,8 +108,10 @@ below:
 - **Predetermined, public venues.** Dates are arranged only at venues chosen by Pilke, and
   users cannot propose other venues.
 
-We do not, however, verify identities or run background checks, and we cannot guarantee that
-another user is who they say they are. Nor do we supervise meetings or attend them. Be as
+Some users have verified their identity with online banking ID or a mobile certificate, and
+their profile shows a badge. The badge means the user has confirmed who they are and is over
+18. We do not check preferred names or photos. We do not run background checks on anyone,
+and we cannot guarantee that a user without the badge is who they say they are. Nor do we supervise meetings or attend them. Be as
 careful as you would be meeting any stranger: tell somebody where you are going, and leave if
 it does not feel right.
 
@@ -145,6 +154,9 @@ We may also restrict your use or end the agreement if you break these terms, if 
 doing puts another user's safety at risk, or if the law requires it. We will tell you why,
 unless doing so would put another user at risk. In a serious case a restriction can take
 effect immediately; otherwise you will first be given the chance to put things right.
+
+If we ban a verified account for safety reasons, the ban applies to the identity: the same
+identity cannot verify a new account. A ban for safety reasons is permanent.
 
 ## 9. Messages and notifications
 

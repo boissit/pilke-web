@@ -13,6 +13,12 @@ One tap sends them a text message, *Pilke: [your name] pressed the safety button
 
 The screen tells you whether the message was sent. If it wasn't, call your safety contact yourself. In an emergency, call 112.
 
+## The verified badge
+
+Some people have verified their identity with online banking ID or a mobile certificate, and a verified badge shows beside their name. If your date has the badge, they've confirmed who they are and are over 18. Pilke doesn't check anyone's background, and the badge says nothing about their preferred name or photo, so act on the date as you would meeting any stranger. See [Your details and account](/en/guide/tiedot-ja-tili).
+
+If we ban a verified account for safety reasons, the same identity can't verify a new account.
+
 ## Reporting that you felt unsafe
 
 If you answer *How did the date go?* with *OK* or *Badly*, we then ask *Did you feel safe on the date?* The answer *I felt unsafe* creates a report for the Pilke team. You can make the same report from any question with the *I felt unsafe* link at the top. Under *Why did you feel unsafe?*, pick at least one reason. Under *Anything else*, you can also write in your own words, up to {{feedback.report_max_chars}} characters.
