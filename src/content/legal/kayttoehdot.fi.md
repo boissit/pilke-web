@@ -53,10 +53,10 @@ Anna oikea puhelinnumero ja sähköpostiosoite. Huolehdi siitä, ettei kukaan mu
 puhelimeesi tai kirjautumiskoodeihisi, ja ilmoita meille heti, jos epäilet jonkun muun
 päässeen tilillesi. Voit kirjautua ulos yksittäiseltä laitteelta asetuksissa.
 
-Voit myös varmentaa henkilöllisyytesi vahvalla tunnistautumisella, pankkitunnuksilla tai
-mobiilivarmenteella. Varmentaminen on vapaaehtoista. Sama henkilöllisyys voi olla
-varmennettuna vain yhdellä tilillä: jos varmennat henkilöllisyyden, jolla on jo tili,
-kirjaudut siihen tiliin. Kerromme varmennuksesta tarkemmin [tietosuojaselosteen](/tietosuoja) luvussa 2.
+Voit myös vahvistaa henkilöllisyytesi vahvalla tunnistautumisella, pankkitunnuksilla tai
+mobiilivarmenteella. Vahvistaminen on vapaaehtoista. Sama henkilöllisyys voi olla
+vahvistettuna vain yhdellä tilillä: jos vahvistat henkilöllisyyden, jolla on jo tili,
+kirjaudut siihen tiliin. Kerromme vahvistuksesta tarkemmin [tietosuojaselosteen](/tietosuoja) luvussa 2.
 
 ## 5. Käyttäjän velvollisuudet
 
@@ -106,7 +106,7 @@ luetelluin keinoin:
 - **Ennalta valitut, julkiset treffipaikat.** Treffit sovitaan vain Pilkkeen valitsemiin
   julkisiin paikkoihin, eivätkä käyttäjät voi ehdottaa muita paikkoja.
 
-Osa käyttäjistä on varmentanut henkilöllisyytensä pankkitunnuksilla tai
+Osa käyttäjistä on vahvistanut henkilöllisyytensä pankkitunnuksilla tai
 mobiilivarmenteella, ja heidän profiilissaan näkyy tunnistusmerkki. Merkki kertoo, että käyttäjä on
 tunnistautunut ja on täysi-ikäinen. Kutsumanimeä ja kuvaa emme tarkista. Käyttäjien
 taustoja emme tarkista, emmekä voi taata, että käyttäjä ilman merkkiä on väittämänsä
@@ -155,8 +155,8 @@ toimintasi vaarantaa toisen käyttäjän turvallisuuden tai jos laki sitä edell
 Kerromme sinulle syyn, jollei se vaaranna toista käyttäjää. Vakavassa tapauksessa
 rajoitus voi tulla voimaan heti, muussa tapauksessa saat ensin tilaisuuden korjata asian.
 
-Jos suljemme varmennetun tilin turvallisuussyistä, kielto koskee henkilöllisyyttä:
-samaa henkilöllisyyttä ei voi varmentaa uudelle tilille. Turvallisuussyistä annettu kielto
+Jos suljemme vahvistetun tilin turvallisuussyistä, kielto koskee henkilöllisyyttä:
+samaa henkilöllisyyttä ei voi vahvistaa uudelle tilille. Turvallisuussyistä annettu kielto
 on pysyvä.
 
 ## 9. Viestit ja ilmoitukset

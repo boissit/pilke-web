@@ -9,7 +9,7 @@ Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joi
 
 ![Ehdokkaat-näkymä: keskimmäisen ehdokkaan kortti, yhteiset ajat ja paikat](shot:platter#timeslot-chip-*,activity-chip-*)
 
-Ehdokkaan kortissa on hänen kuvansa, nimensä ja ikänsä sekä tunnistusmerkki, jos hän on varmentanut henkilöllisyytensä (katso [Tietosi ja tilisi](/ohje/tiedot-ja-tili)). Lisäksi siinä on enintään {{candidates.times_per_card}} lähintä yhteistä aikaanne (1) ja enintään {{candidates.venues_per_card}} teille molemmille sopivaa treffipaikkaa (2). Niistä kokoat kutsun. Katso [Kutsut](/ohje/kutsut).
+Ehdokkaan kortissa on hänen kuvansa, nimensä ja ikänsä sekä tunnistusmerkki, jos hän on vahvistanut henkilöllisyytensä (katso [Tietosi ja tilisi](/ohje/tiedot-ja-tili)). Lisäksi siinä on enintään {{candidates.times_per_card}} lähintä yhteistä aikaanne (1) ja enintään {{candidates.venues_per_card}} teille molemmille sopivaa treffipaikkaa (2). Niistä kokoat kutsun. Katso [Kutsut](/ohje/kutsut).
 
 ## Suosikkipaikat
 
@@ -53,7 +53,7 @@ Jos et juuri nyt voi löytää ehdokkaita, Treffit-sivun ilmoitus (1) kertoo syy
 
 ## Kysyttyä
 
-**Miksi ehdokkaita löytyi vähän tai ei yhtään?** Sopivia ehdokkaita oli alle {{candidates.per_set}}. Sovellus kertoo, mikä valinnoistasi rajaa hakua eniten, jos jokin niistä rajaa. Tähän vaikuttavat toiveet, tekeminen, treffialueet, yhteinen aika tai se, että sopivia ihmisiä on rekisteröityneenä toistaiseksi vähän. Painikkeesta pääset suoraan kalenteriin tai siihen Omien tietojen kohtaan, jossa voit muuttaa valintaa. Samat askeleet näet Treffit-sivun kohdassa **Seuraavaksi**. Useimmiten auttaa, kun merkitset kalenteriin lisää aikaa, varsinkin [korostetuille tunneille](/ohje/vapaat-ajat#kellertävät-tunnit). Jos ehdokkaita ei löytynyt yhtään, kipinät eivät kulu.
+**Miksi ehdokkaita löytyi vähän tai ei yhtään?** Sopivia ehdokkaita oli alle {{candidates.per_set}}. Sovellus kertoo, mikä valinnoistasi rajaa hakua eniten, jos jokin niistä rajaa. Tähän vaikuttavat toiveet, tekeminen, treffialueet, yhteinen aika, se, että osa ihmisistä haluaa treffeille vain tunnistautuneiden kanssa, tai se, että sopivia ihmisiä on rekisteröityneenä toistaiseksi vähän. Painikkeesta pääset suoraan kalenteriin, siihen Omien tietojen kohtaan, jossa voit muuttaa valintaa, tai vahvistamaan henkilöllisyytesi. Samat askeleet näet Treffit-sivun kohdassa **Seuraavaksi**. Useimmiten auttaa, kun merkitset kalenteriin lisää aikaa, varsinkin [korostetuille tunneille](/ohje/vapaat-ajat#kellertävät-tunnit). Jos ehdokkaita ei löytynyt yhtään, kipinät eivät kulu.
 
 **Näkeekö joku, että hän oli ehdokkaani?** Ei. Ehdokas saa tietää sinusta vasta, kun lähetät hänelle kutsun.
 

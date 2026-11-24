@@ -15,7 +15,7 @@ The screen tells you whether the message was sent. If it wasn't, call your safet
 
 ## The verified badge
 
-Some people have verified their identity with online banking ID or a mobile certificate, and their profile shows a verified badge. If your date has the badge, they've confirmed who they are and are over 18. Pilke doesn't check anyone's background, and the badge says nothing about their preferred name or photo, so act on the date as you would meeting any stranger. See [Your details and account](/en/guide/tiedot-ja-tili).
+Some people have verified their identity with online banking ID or a mobile certificate, and their profile shows a verified badge. If your date has the badge, they've confirmed who they are. Pilke doesn't check anyone's background, and the badge says nothing about their preferred name or photo, so act on the date as you would meeting any stranger. See [Your details and account](/en/guide/tiedot-ja-tili).
 
 If we ban a verified account for safety reasons, the same identity can't verify a new account.
 

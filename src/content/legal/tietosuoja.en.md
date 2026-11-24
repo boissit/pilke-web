@@ -63,6 +63,12 @@ code, but the same personal identity code always gives the same code, so it is s
 personal data. For each identification attempt we store its result and time, but not your
 identity.
 
+**In your matches.** Once you have verified your identity, you can choose in your
+preferences who is suggested to you: only verified people, verified people first, or no
+preference. If you choose only verified people, you are suggested only verified people and
+only to them. If you choose verified people first, they move up in your matches. When you
+cancel the verification, the choice goes back to no preference.
+
 **One account per person.** If, while creating an account, you verify an identity that
 already has a Pilke account, you are signed in to that account and the empty account you
 just created is deleted. The account's phone number changes to the one you signed in with,
@@ -282,7 +288,7 @@ to nobody. Section 2 says how that question works.
 | Sharing your location at the venue | Consent, which you can withdraw by stopping sharing |
 | Answers to question sets | Consent, given by answering |
 | Exchanging phone numbers after a date | Consent, given by choosing that answer |
-| Identity verification and the verified badge (section 2) | Consent, given at the verification step. You can cancel the verification in Settings. The personal identity code: section 29 of the Data Protection Act and the same consent |
+| Identity verification, the verified badge and verified people in your matches (section 2) | Consent, given at the verification step. You can cancel the verification in Settings. The personal identity code: section 29 of the Data Protection Act and the same consent |
 | The code and the record of verification after you cancel the verification: one account per person, and bans | Legitimate interest — the safety of other users |
 | The blocklist: the codes of people banned for safety reasons and of under 18s | Legitimate interest — the safety of other users |
 | Safety: reports, the record that two people are not suggested to each other after a safety report, the Safety button and restrictions | Legitimate interest — the safety of our users |
@@ -473,7 +479,9 @@ suit you and whom you might suit. The order depends on
   liked them in somebody else, we are more likely to suggest that other person to you;
 - **how often someone has been suggested:** somebody you were shown recently and did not
   invite moves down, and somebody being suggested to a great many people right now moves
-  down a little, so that the same people are not shown to everyone.
+  down a little, so that the same people are not shown to everyone;
+- **verified people first:** if you have chosen it in your preferences, verified people
+  move up in your matches.
 
 Feedback works in both directions: on whom we suggest to you, and on whom we suggest you
 to.

@@ -49,9 +49,13 @@ Once you've verified your identity, other people see the verified badge on your 
 
 The badge means the person has confirmed who they are with online banking ID or a mobile certificate, is over 18, and that the age on their profile is their real age. We don't check preferred names or photos, so the badge says nothing about them.
 
+### Verified people in suggestions
+
+Once you've verified your identity, you can choose who's suggested to you under *Verified people in suggestions* on the Preferences page of Your details: *Only verified*, *Verified first* or *No preference*.
+
 ### Cancelling the verification
 
-Once your identity is verified, the Account section in Settings shows **Identity verified**, with **Remove verification** under it, which cancels the verification. When you cancel it, the badge disappears from your profile. Your identity stays linked to your account, though: it can't verify another account, bans still apply to it, and your birthday stays locked. The link goes only when you delete your account.
+Once your identity is verified, the Account section in Settings shows **Identity verified**, with **Cancel verification** under it. When you cancel the verification, the badge disappears from your profile and *Verified people in suggestions* goes back to *No preference*. Your identity stays linked to your account, though: it can't verify another account, bans still apply to it, and your birthday stays locked. The link goes only when you delete your account.
 
 Once you've cancelled the verification, you can verify your identity again after a week at the earliest.
 

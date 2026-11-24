@@ -53,7 +53,7 @@ If you can't find matches right now, a notice on the Dates page (1) tells you wh
 
 ## Questions
 
-**Why were so few matches found, or none?** There were fewer than {{candidates.per_set}} people who suit you. The app tells you which of your settings narrows your search the most, if one does. Your preferences, things to do, date areas and shared time all affect it, and so can there being too few people who suit you signed up so far. Its button takes you straight to the calendar or to the part of Your details where you can change that setting. **Next steps** on the Dates page shows the same steps. Marking more time usually helps most, especially in the [highlighted hours](/en/guide/vapaat-ajat#the-yellow-hours). If no matches at all were found, no sparks are spent.
+**Why were so few matches found, or none?** There were fewer than {{candidates.per_set}} people who suit you. The app tells you which of your settings narrows your search the most, if one does. Your preferences, things to do, date areas and shared time all affect it, and so can some people wanting to date only verified people, or there being too few people who suit you signed up so far. Its button takes you straight to the calendar, to the part of Your details where you can change that setting, or to verifying your identity. **Next steps** on the Dates page shows the same steps. Marking more time usually helps most, especially in the [highlighted hours](/en/guide/vapaat-ajat#the-yellow-hours). If no matches at all were found, no sparks are spent.
 
 **Can someone see that they were one of my matches?** No. A match only finds out about you when you send them an invite.
 
