@@ -40,7 +40,7 @@ import betaFi from '../../assets/photos/beta-invitation-fi.jpg';
 import heroEn from '../../assets/photos/hero-cutout-en.png';
 import heroFi from '../../assets/photos/hero-cutout-fi.png';
 import heroPhoneMask from '../../assets/photos/hero-cutout-phone.png';
-import { shotsFor } from '../../assets/screens';
+import { platterVerified, shotsFor } from '../../assets/screens';
 import SparkleScatter from '../../components/SparkleScatter.astro';
 import Phone from '../../components/Phone.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
@@ -255,11 +255,12 @@ const notFor = [
   </section>
 
   <!--
-    Why the candidates and the dates can be trusted, the owner's two cards, side by
-    side once the row has room for both and stacked before that. Each is a slab of
-    its own on one of the site's grounds, peach and the safety page's mint, and the
-    pair is laid out with the page grid's own gap, so the two stand as far apart as
-    any two sections do.
+    Why the candidates and the dates can be trusted, the owner's two cards, one under
+    the other. Each is a slab of its own on one of the site's grounds, peach and the
+    safety page's mint, laid out with the page grid's own gap, so the two stand as
+    far apart as any two sections do. The safety card leads with identity
+    verification, beside the candidate card with its badge, and keeps the venues
+    and the safety contact under it as the second point.
   -->
   <div class="pair">
     <section class="slab slab-pale" aria-labelledby="quality-title">
@@ -269,12 +270,16 @@ const notFor = [
       </div>
     </section>
     <section class="slab slab-mint" aria-labelledby="safety-title">
-      <div class="wrap section-pad pair-card">
-        <h2 class="display-mid" id="safety-title">{t('pitch.safety.title')}</h2>
-        <p>{t('pitch.safety.body')}</p>
-        <p class="pair-more">
-          <a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
-        </p>
+      <div class="wrap section-pad safety-card">
+        <div class="pair-card">
+          <h2 class="display-mid" id="safety-title">{t('pitch.safety.title')}</h2>
+          <p>{t('pitch.safety.verified')}</p>
+          <p class="secondary">{t('pitch.safety.body')}</p>
+          <p class="pair-more">
+            <a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
+          </p>
+        </div>
+        <Phone src={platterVerified} alt={t('shot.platter_verified')} width={230} tilt={3} frame="iphone" />
       </div>
     </section>
   </div>
@@ -700,10 +705,8 @@ const notFor = [
 
   /* ─── Quality and safety ───────────────────────────────────────────────── */
 
-  /* Two slabs in one row of `main`, the page grid's gap between them as between
-     any two sections. Side by side from 64rem, where each is still wide enough for
-     its heading on a line or two. The cards stretch to one height, and the safety
-     card's link stands at its foot. */
+  /* Two slabs in `main`, one under the other, the page grid's gap between them as
+     between any two sections. */
   .pair {
     display: grid;
     gap: var(--section-gap);
@@ -724,15 +727,34 @@ const notFor = [
     line-height: 1.55;
   }
 
+  .pair-card p.secondary {
+    font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
+    color: var(--text-soft);
+  }
+
   .pair-more {
     margin-top: auto;
     padding-top: clamp(8px, 1.52vw + 2px, 24px);
   }
 
-  @media (min-width: 64rem) {
-    .pair {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+  /* The safety card: its copy, and the candidate card with the badge beside it from
+     64rem, under it before that. */
+  .safety-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(32px, 4vw, 64px);
+  }
+
+  .safety-card > .pair-card {
+    flex: 1 1 22rem;
+    max-width: 40rem;
+  }
+
+  .safety-card > :global(.phone) {
+    --phone-width: clamp(200px, 5vw + 160px, 230px);
+    margin-inline: auto;
   }
 
   /* ─── Who it is not for ────────────────────────────────────────────────── */

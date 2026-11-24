@@ -152,6 +152,12 @@
   fi: 'Turvallista treffailua'
   en: 'Dates you can feel safe on'
 
+# The owner's text from the safety page's first card, which leads the card here; the
+# English is Claude's.
+'pitch.safety.verified':
+  fi: 'Kannustamme käyttäjiä varmentamaan henkilöllisyytensä vahvan tunnistautumisen avulla turvallisuuden lisäämiseksi. Tunnistautuneena voit halutessasi treffailla vain muita tunnistettuja käyttäjiä. Tunnistautuneilla käyttäjillä näkyy profiilissaan tunnistusmerkki.'
+  en: 'We encourage everyone to verify their identity with online banking ID or a mobile certificate, to make dating safer. Once you’re verified, you can choose to date only other verified people. Verified people have a badge on their profile.'
+
 'pitch.safety.body':
   fi: 'Kaikki treffit järjestetään valikoiduilla ja julkisilla paikoilla, eli kukaan ei kutsu sinua yksin kotiinsa. Voit myös tallentaa sovellukseen luotetun henkilön puhelinnumeron.'
   en: 'Every date is at a hand-picked public venue, so nobody’s inviting you back to theirs. We also encourage you to add someone you trust as a safety contact.'

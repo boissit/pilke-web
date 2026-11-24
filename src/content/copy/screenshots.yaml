@@ -48,6 +48,10 @@
   fi: 'Vahvistus ennen treffien perumista: mitä perumisesta seuraa, ja painikkeet Takaisin ja Peru.'
   en: 'The confirmation before cancelling a date: what cancelling means, with the Back and Cancel date buttons.'
 
+'shot.platter_verified':
+  fi: 'Ehdokkaan kortti: Juho, 25, ja nimen perässä tunnistusmerkki. Alla yhteiset ajat ja paikat.'
+  en: 'A match’s card: Juho, 25, with the verified badge after his name, and the times and places you share below.'
+
 'shot.asetukset':
   fi: 'Asetusten Turvallisuus-osio avattuna, ja siinä kenttä luotetun henkilön numerolle.'
   en: 'The Safety section in Settings, open, with the field for your safety contact’s number.'

@@ -71,3 +71,11 @@ const shotsEn: Partial<Record<keyof typeof shots, ImageMetadata>> = {
 export function shotsFor(lang: string): Record<keyof typeof shots, ImageMetadata> {
   return lang === 'en' ? { ...shots, ...shotsEn } : shots;
 }
+
+/**
+ * The candidate card with the verified badge, Finnish, from an iPhone SE (750 wide),
+ * its status bar cut off. The Android capture does not take the badge yet, so this
+ * one still is carried apart from the rest, drawn with `Phone`'s `iphone` frame, and
+ * shown on `/en` too until an English one exists.
+ */
+export { default as platterVerified } from './screens-iphone/platter-verified.png';

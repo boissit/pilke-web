@@ -2,8 +2,9 @@
 /**
  * The safety page.
  *
- * The safety button and the report, the meeting-safely advice, and the
- * location note. A page rather than a section because it is the
+ * Identity verification first, the owner's key feature, with the candidate card
+ * and its badge beside it; then the safety button and the report, the
+ * meeting-safely advice, and the location note. A page rather than a section because it is the
  * one subject here somebody arrives looking for, and because a front page that
  * spends a third of its height on safety reads as a warning about the product
  * rather than a description of it.
@@ -14,7 +15,7 @@
  * advice below is ordinary meeting-safely sense rather than anything the product
  * enforces. Read `README.md` before adding a claim here.
  */
-import { shotsFor } from '../../assets/screens';
+import { platterVerified, shotsFor } from '../../assets/screens';
 import PageHead from '../../components/PageHead.astro';
 import Phone from '../../components/Phone.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
@@ -40,6 +41,13 @@ const tips = [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('
   <section class="slab slab-white">
     <div class="wrap section-pad tools">
       <ul class="tool-list">
+        <li class="verified">
+          <div>
+            <h2>{t('safety.verified.title')}</h2>
+            <p class="prose">{t('safety.verified.body')}</p>
+          </div>
+          <Phone src={platterVerified} alt={t('shot.platter_verified')} width={200} tilt="left" frame="iphone" shell="var(--surface)" />
+        </li>
         {
           safety.map((item) => (
             <li>
@@ -101,6 +109,24 @@ const tips = [t('tips.one'), t('tips.two'), t('tips.three'), t('tips.four'), t('
     padding: clamp(20px, 1.5vw + 14px, 28px);
     background: var(--ground);
     border-radius: var(--radius-card);
+  }
+
+  /* Verification, the first card: its text and the candidate card with the badge,
+     side by side once the card has room and the phone under the text before that. */
+  .tool-list > li.verified {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .verified > div {
+    flex: 1 1 16rem;
+  }
+
+  .verified > :global(.phone) {
+    --phone-width: clamp(170px, 12vw + 80px, 200px);
+    margin-inline: auto;
   }
 
   .tool-list h2 {
