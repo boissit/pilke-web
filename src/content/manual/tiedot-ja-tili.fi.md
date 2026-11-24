@@ -45,13 +45,13 @@ Sama henkilöllisyys voi olla vahvistettuna vain yhdellä tilillä. Jos sinulla 
 
 ### Vahvistusmerkki
 
-Kun olet vahvistanut henkilöllisyytesi, muut näkevät vahvistusmerkin ehdokaskortissasi, kutsussa ja treffisivulla. Merkkiä painamalla näet, mitä se tarkoittaa.
+Kun olet vahvistanut henkilöllisyytesi, muut näkevät vahvistusmerkin ehdokaskortissasi, kutsussa ja treffisivulla.
 
 Merkki kertoo, että ihminen on tunnistautunut pankkitunnuksilla tai mobiilivarmenteella, on täysi-ikäinen ja että profiilissa näkyvä ikä on hänen oikea ikänsä. Kutsumanimeä ja kuvaa emme tarkista, joten merkki ei kerro niistä mitään.
 
 ### Vahvistuksen poistaminen
 
-Kun henkilöllisyytesi on vahvistettu, asetusten Tili-osiossa lukee **Henkilöllisyys vahvistettu**, ja sen alla on **Poista vahvistus**. Kun poistat vahvistuksen, merkki katoaa profiilistasi ja voit taas muuttaa syntymäpäivääsi. Voit vahvistaa henkilöllisyytesi myöhemmin uudelleen.
+Kun henkilöllisyytesi on vahvistettu, asetusten Tili-osiossa lukee **Henkilöllisyys vahvistettu**, ja sen alla on **Poista vahvistus**. Kun poistat vahvistuksen, merkki katoaa profiilistasi. Henkilöllisyys pysyy silti liitettynä tiliisi: sillä ei voi vahvistaa toista tiliä, porttikiellot koskevat sitä edelleen, ja syntymäpäivä pysyy lukittuna. Yhteys poistuu vasta, kun poistat tilisi.
 
 ## Tili
 

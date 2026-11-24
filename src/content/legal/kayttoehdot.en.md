@@ -109,7 +109,7 @@ below:
   users cannot propose other venues.
 
 Some users have verified their identity with online banking ID or a mobile certificate, and
-their profile shows a badge. The badge means the user has confirmed who they are and is over
+their profile shows a verified badge. The badge means the user has confirmed who they are and is over
 18. We do not check preferred names or photos. We do not run background checks on anyone,
 and we cannot guarantee that a user without the badge is who they say they are. Nor do we supervise meetings or attend them. Be as
 careful as you would be meeting any stranger: tell somebody where you are going, and leave if
