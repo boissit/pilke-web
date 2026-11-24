@@ -169,40 +169,37 @@
   fi: 'Kaikki treffit järjestetään valikoiduilla ja julkisilla paikoilla, eli kukaan ei kutsu sinua yksin kotiinsa.'
   en: 'Every date is at a hand-picked public venue, so nobody’s inviting you back to theirs.'
 
-# Design options for the safety card, on the options branch only. Claude's.
-'pitch.safety.callout.badge':
-  fi: 'Tunnistusmerkki'
-  en: 'The verified badge'
+# The pictures in the quality and safety cards. Claude's. The count is the
+# manual's own claim (`ehdokkaat`: "Löydät kerralla … ehdokasta").
+'pitch.quality.count':
+  fi: '{{candidates.per_set}} ehdokasta kerralla'
+  en: '{{candidates.per_set}} matches at a time'
 
-'pitch.safety.callout.venue':
-  fi: 'Valikoitu, julkinen paikka'
-  en: 'A hand-picked public venue'
+'pitch.quality.alt':
+  fi: 'Kolmen ehdokkaan kuvat rinnakkain.'
+  en: 'Three matches’ photos side by side.'
+
+# Two agreed dates as the app's home screen lists them: days only, the app's own
+# time format.
+'pitch.safety.date.one':
+  fi: 'pe klo 17.00'
+  en: 'Fri, 17:00'
+
+'pitch.safety.date.two':
+  fi: 'la klo 13.00'
+  en: 'Sat, 13:00'
+
+'pitch.safety.dates.alt':
+  fi: 'Kaksi sovittua treffiä: Riikka, 32, Café Aallossa ja Henri, 26, Esplanadin puistossa. Kummallakin on tunnistusmerkki, ja molemmat paikat näkyvät kartalla.'
+  en: 'Two agreed dates: Riikka, 32, at Café Aalto and Henri, 26, at Esplanadin puisto. Both have the verified badge, and both places are on the map.'
+
+'pitch.safety.map.alt':
+  fi: 'Helsingin keskustan kartta, jossa on viisi treffipaikkaa: Kaffecentralen, Ateljée Bar, Café Aalto, Karl Fazer Café ja Esplanadin puisto.'
+  en: 'A map of central Helsinki with five date venues: Kaffecentralen, Ateljée Bar, Café Aalto, Karl Fazer Café and Esplanadin puisto.'
 
 'pitch.safety.map.credit':
   fi: '© OpenStreetMapin tekijät'
   en: '© OpenStreetMap contributors'
-
-# The venues' blurbs, copied from `treffit-backend`'s `i18n/venues.py`, where the
-# app's date screen reads them.
-'venue.blurb.aalto':
-  fi: 'Kahvit ja leivos kirjakaupan parvella'
-  en: 'Coffee and a pastry upstairs in the bookshop'
-
-'venue.blurb.esplanadi':
-  fi: 'Kävely puistossa ja jäätelö'
-  en: 'A walk in the park and an ice cream'
-
-'venue.blurb.kaffecentralen':
-  fi: 'Erikoiskahvit Fredrikinkadun kulmassa'
-  en: 'Speciality coffee on the corner of Fredrikinkatu'
-
-'venue.blurb.fazer':
-  fi: 'Leivoskahvit vanhassa konditoriassa'
-  en: 'Coffee and cake in an old patisserie'
-
-'venue.time':
-  fi: 'perjantaina klo 17.00'
-  en: 'Friday, 5 pm'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Who Pilke is not for

@@ -43,10 +43,8 @@ import heroPhoneMask from '../../assets/photos/hero-cutout-phone.png';
 import { shotsFor } from '../../assets/screens';
 import SparkleScatter from '../../components/SparkleScatter.astro';
 import Phone from '../../components/Phone.astro';
+import QualityCard from '../../components/safety/QualityCard.astro';
 import SafetyMap from '../../components/safety/SafetyMap.astro';
-import SafetyMoment from '../../components/safety/SafetyMoment.astro';
-import SafetyStatement from '../../components/safety/SafetyStatement.astro';
-import SafetyTiles from '../../components/safety/SafetyTiles.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
@@ -76,13 +74,12 @@ const photos = {
 }[lang];
 
 /*
-  Design options for the safety card, for the owner to pick from: `a` two tiles,
-  `b` one date card with numbered callouts, `c` a typographic statement, `d` the
-  venues on a map. Set at build time with PUBLIC_SAFETY_OPTION.
+  How the quality and safety cards share the row, for the owner to pick from:
+  `band`, two full-width cards one under the other, each with its copy on the left
+  and its picture on the right; `split`, the quality card narrow beside the safety
+  card. Set at build time with PUBLIC_PAIR_LAYOUT.
 */
-const SafetyOption = { a: SafetyTiles, b: SafetyMoment, c: SafetyStatement, d: SafetyMap }[
-  (import.meta.env.PUBLIC_SAFETY_OPTION ?? 'a') as 'a' | 'b' | 'c' | 'd'
-];
+const pairLayout = (import.meta.env.PUBLIC_PAIR_LAYOUT ?? 'band') as 'band' | 'split';
 
 /*
   The other apps' routine, a step at a time, as the lines between the hero and the
@@ -271,17 +268,14 @@ const notFor = [
     Why the candidates and the dates can be trusted, the owner's two cards, one under
     the other. Each is a slab of its own on one of the site's grounds, peach and the
     safety page's mint, laid out with the page grid's own gap, so the two stand as
-    far apart as any two sections do. The safety card features identification and
-    the venues as equals, in one of the design options in `components/safety/`.
+    far apart as any two sections do. Quality is the three matches at a time; safety
+    is identification and the venues, on a map of real date spots with two agreed
+    dates over it. `pairLayout` sets whether they stand one under the other or side
+    by side.
   -->
-  <div class="pair">
-    <section class="slab slab-pale" aria-labelledby="quality-title">
-      <div class="wrap section-pad pair-card">
-        <h2 class="display-mid" id="quality-title">{t('pitch.quality.title')}</h2>
-        <p>{t('pitch.quality.body')}</p>
-      </div>
-    </section>
-    <SafetyOption lang={lang} />
+  <div class:list={['pair', pairLayout]}>
+    <QualityCard lang={lang} />
+    <SafetyMap lang={lang} />
   </div>
 
   <!--
@@ -712,24 +706,13 @@ const notFor = [
     gap: var(--section-gap);
   }
 
-  .pair > .slab {
-    display: grid;
-  }
-
-  .pair-card {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .pair-card p {
-    font-size: clamp(1.0625rem, 0.19vw + 1.02rem, 1.1875rem);
-    line-height: 1.55;
-  }
-
-  .pair-more {
-    margin-top: auto;
-    padding-top: clamp(8px, 1.52vw + 2px, 24px);
+  /* `split`: the quality card a narrow column beside the safety card from 64rem.
+     Each card lays itself out by its own width (container queries), so the same
+     two cards serve both arrangements. */
+  @media (min-width: 64rem) {
+    .pair.split {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2.1fr);
+    }
   }
 
   /* ─── Who it is not for ────────────────────────────────────────────────── */

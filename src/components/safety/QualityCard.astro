@@ -1,0 +1,119 @@
+---
+/**
+ * The quality card: the owner's heading and line, and beside them a picture of what
+ * "fewer people" means: three matches' photos and the count, three at a time, which
+ * is the manual's own claim and the app's `candidates.per_set`.
+ *
+ * It lays itself out by its own width rather than the page's, so it works both as
+ * a full-width band (copy left, picture right) and as the narrow column beside the
+ * safety card (picture under the copy).
+ *
+ * The faces are the mock cast's (`treffit-backend/test/`, Unsplash, credited in
+ * `treffit_backend/mocks/data.py`), sample profiles never captioned as Pilke users.
+ */
+import { Image } from 'astro:assets';
+import juho from '../../assets/cast/juho.jpg';
+import laura from '../../assets/cast/laura.jpg';
+import vieno from '../../assets/cast/vieno.jpg';
+import { type Lang, useTranslations } from '../../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const faces = [laura, juho, vieno];
+---
+
+<section class="slab slab-pale quality" aria-labelledby="quality-title">
+  <div class="wrap section-pad">
+    <div class="inner">
+      <div class="copy">
+        <h2 class="display-mid" id="quality-title">{t('pitch.quality.title')}</h2>
+        <p>{t('pitch.quality.body')}</p>
+      </div>
+      <figure class="three" role="img" aria-label={t('pitch.quality.alt')}>
+        <div class="faces">
+          {faces.map((f) => <Image src={f} alt="" width={160} densities={[1, 2]} loading="lazy" />)}
+        </div>
+        <figcaption>{t('pitch.quality.count')}</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style>
+  .quality {
+    display: grid;
+  }
+
+  .quality > .wrap {
+    container-type: inline-size;
+  }
+
+  .inner {
+    display: grid;
+    gap: clamp(24px, 2vw + 16px, 40px);
+    height: 100%;
+    align-content: space-between;
+  }
+
+  .copy {
+    display: grid;
+    gap: 16px;
+  }
+
+  .copy p {
+    margin: 0;
+    max-width: 46ch;
+    font-size: clamp(1.0625rem, 0.19vw + 1.02rem, 1.1875rem);
+    line-height: 1.55;
+  }
+
+  .three {
+    margin: 0;
+    display: grid;
+    justify-items: start;
+    gap: 10px;
+  }
+
+  /* Three round photos overlapping, each in the app's ink rule, flat. */
+  .faces {
+    display: flex;
+  }
+
+  .faces :global(img) {
+    width: clamp(64px, 3vw + 52px, 88px);
+    height: clamp(64px, 3vw + 52px, 88px);
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--ink);
+    background: var(--surface);
+  }
+
+  .faces :global(img + img) {
+    margin-left: -18px;
+  }
+
+  figcaption {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.25rem, 0.57vw + 1.11rem, 1.625rem);
+    line-height: 1.15;
+  }
+
+  /* Wide: copy on the left, the picture on the right, centred on each other. */
+  @container (min-width: 44rem) {
+    .inner {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: clamp(32px, 5vw, 96px);
+    }
+
+    .three {
+      justify-items: center;
+      padding-right: clamp(0px, 3vw, 48px);
+    }
+  }
+</style>

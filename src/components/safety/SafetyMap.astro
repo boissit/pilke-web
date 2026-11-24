@@ -1,15 +1,26 @@
 ---
 /**
- * Option D: map-led. The real venues around Esplanadi as pins on central Helsinki
- * (OpenFreeMap tiles recoloured to the site's grounds, `scripts/map/`), with the
- * verified name card standing over the map's corner. The two points are beside it
- * from 56rem, above it on a phone.
+ * The safety card: identification and the venues as equals. The copy is the owner's
+ * two lines; the picture is real date spots as pins on central Helsinki (OpenFreeMap
+ * tiles recoloured to the site's grounds, `scripts/map/`), with two agreed dates
+ * over the map's lower corner, drawn after the app's home-screen date card
+ * (`MatchCard`): the photo flush to the card's edge, the name and age with the
+ * verified badge, the venue, and the day and time. Each date's venue is a coral pin;
+ * the other venues are white.
+ *
+ * It lays itself out by its own width rather than the page's, so it works full
+ * width (copy left, map right) and as the wide half of the `split` row (map under
+ * the copy). On a phone the dates stand under the map, overlapping its edge.
+ *
+ * The faces are the mock cast's (`treffit-backend/test/`, Unsplash, credited in
+ * `treffit_backend/mocks/data.py`), sample profiles never captioned as Pilke users.
  */
 import { Image } from 'astro:assets';
+import henri from '../../assets/cast/henri.jpg';
+import riikka from '../../assets/cast/riikka.jpg';
 import map from '../../assets/maps/keskusta.png';
 import { type Lang, localePath, useTranslations } from '../../i18n/ui';
 import Icon from '../Icon.astro';
-import VerifiedCard from '../VerifiedCard.astro';
 
 interface Props {
   lang: Lang;
@@ -18,13 +29,19 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-// In percent of `keskusta.png`, from `scripts/map/render.mjs`.
+// In percent of `keskusta.png`, from `scripts/map/render.mjs`. `date` marks the two
+// venues the dates below are at.
 const pins = [
-  { name: 'Café Aalto', x: 65.24, y: 44.37 },
-  { name: 'Karl Fazer Café', x: 82.66, y: 41 },
-  { name: 'Esplanadin puisto', x: 82.22, y: 52.25 },
   { name: 'Kaffecentralen', x: 16.91, y: 51.13 },
   { name: 'Ateljée Bar', x: 43.03, y: 48.87 },
+  { name: 'Café Aalto', x: 65.24, y: 44.37, date: true },
+  { name: 'Karl Fazer Café', x: 82.66, y: 41 },
+  { name: 'Esplanadin puisto', x: 82.22, y: 52.25, date: true },
+];
+
+const dates = [
+  { photo: riikka, name: 'Riikka', age: 32, venue: 'Café Aalto', when: t('pitch.safety.date.one') },
+  { photo: henri, name: 'Henri', age: 26, venue: 'Esplanadin puisto', when: t('pitch.safety.date.two') },
 ];
 
 const points = [
@@ -33,60 +50,81 @@ const points = [
 ];
 ---
 
-<section class="slab slab-mint" aria-labelledby="safety-title">
-  <div class="wrap section-pad maplead">
-    <div class="copy">
-      <h2 class="display-mid" id="safety-title">{t('pitch.safety.title')}</h2>
-      <ul class="points">
-        {
-          points.map((p) => (
-            <li>
-              <span class="dot" style={`background:${p.tint}`}><Icon name={p.icon} size={22} /></span>
-              <div>
-                <h3>{p.title}</h3>
-                <p>{p.body}</p>
-              </div>
-            </li>
-          ))
-        }
-      </ul>
-      <p><a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a></p>
-    </div>
-
-    <div class="stage">
-      <div class="map" aria-hidden="true">
-        <Image src={map} alt="" width={900} densities={[1, 2]} loading="lazy" />
-        {
-          pins.map((p) => (
-            <span class="pin" style={`left:${p.x}%; top:${p.y}%`}>
-              <Icon name="map-pin" size={28} />
-              <span class="label">{p.name}</span>
-            </span>
-          ))
-        }
-        <span class="credit">{t('pitch.safety.map.credit')}</span>
+<section class="slab slab-mint safety" aria-labelledby="safety-title">
+  <div class="wrap section-pad">
+    <div class="inner">
+      <div class="copy">
+        <h2 class="display-mid" id="safety-title">{t('pitch.safety.title')}</h2>
+        <ul class="points">
+          {
+            points.map((p) => (
+              <li>
+                <span class="dot" style={`background:${p.tint}`}><Icon name={p.icon} size={22} /></span>
+                <div>
+                  <h3>{p.title}</h3>
+                  <p>{p.body}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="more"><a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a></p>
       </div>
-      <VerifiedCard lang={lang} variant="photo" class="over" />
+
+      <div class="stage">
+        <div class="map" role="img" aria-label={t('pitch.safety.map.alt')}>
+          <Image src={map} alt="" width={900} densities={[1, 2]} loading="lazy" />
+          {
+            pins.map((p) => (
+              <span class:list={['pin', p.date && 'is-date']} style={`left:${p.x}%; top:${p.y}%`}>
+                <Icon name="map-pin" size={p.date ? 32 : 24} />
+                <span class="label">{p.name}</span>
+              </span>
+            ))
+          }
+          <span class="credit">{t('pitch.safety.map.credit')}</span>
+        </div>
+
+        <ul class="dates" role="img" aria-label={t('pitch.safety.dates.alt')}>
+          {
+            dates.map((d) => (
+              <li>
+                <Image src={d.photo} alt="" width={96} densities={[1, 2]} class="photo" loading="lazy" />
+                <div class="details">
+                  <p class="name">
+                    <b>{d.name}</b>, {d.age}
+                    <Icon name="badge-check" size={18} class="badge" />
+                  </p>
+                  <p class="venue"><Icon name="map-pin" size={14} class="venue-pin" />{d.venue}</p>
+                  <p class="when">{d.when}</p>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  .maplead {
+  .safety {
     display: grid;
-    gap: clamp(28px, 2.3vw + 19px, 48px);
   }
 
-  @media (min-width: 56rem) {
-    .maplead {
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      align-items: center;
-    }
+  .safety > .wrap {
+    container-type: inline-size;
+  }
+
+  .inner {
+    display: grid;
+    gap: clamp(28px, 2.3vw + 19px, 48px);
   }
 
   .copy {
     display: grid;
     gap: clamp(18px, 1.14vw + 14px, 28px);
+    align-content: start;
   }
 
   .points {
@@ -119,17 +157,20 @@ const points = [
     margin-bottom: 4px;
   }
 
-  .points p {
+  .points p,
+  .more {
     margin: 0;
+  }
+
+  .points p {
     line-height: 1.55;
     color: var(--text-soft);
   }
 
-  /* The map, and the card standing over its lower left corner. The stage leaves
-     room under the map for the part of the card that hangs below it. */
+  /* ─── The map ─────────────────────────────────────────────────────────── */
+
   .stage {
     position: relative;
-    padding-bottom: clamp(110px, 8vw + 60px, 150px);
   }
 
   .map {
@@ -147,6 +188,7 @@ const points = [
     object-fit: cover;
   }
 
+  /* The other venues white, the two dates' coral and larger. */
   .pin {
     position: absolute;
     display: flex;
@@ -157,6 +199,11 @@ const points = [
   }
 
   .pin :global(svg) {
+    display: block;
+    fill: var(--surface);
+  }
+
+  .pin.is-date :global(svg) {
     fill: var(--brand-main);
   }
 
@@ -172,26 +219,126 @@ const points = [
     background: var(--surface);
   }
 
-  /* On a phone the names would run into each other: the pins say enough. */
-  @media (max-width: 40rem) {
-    .label {
-      display: none;
-    }
-  }
-
+  /* At the top, where the dates never cover it. */
   .credit {
     position: absolute;
     right: 10px;
-    bottom: 6px;
+    top: 6px;
     font-size: 0.65rem;
     color: var(--text-soft);
   }
 
-  .stage > :global(.over) {
-    position: absolute;
-    left: clamp(-8px, 1vw - 20px, 8px);
-    bottom: 0;
-    --card-width: clamp(190px, 12vw + 110px, 270px);
-    transform: rotate(-3deg);
+  /* ─── The two dates ───────────────────────────────────────────────────── */
+
+  .dates {
+    list-style: none;
+    max-width: 22rem;
+    margin: -28px 10px 0;
+    padding: 0;
+    position: relative;
+    display: grid;
+    gap: 10px;
+  }
+
+  /* The app's date card: ink rule, the confirmed peach, the photo flush to three
+     edges, no shadow. */
+  .dates li {
+    display: flex;
+    align-items: stretch;
+    border: 3px solid var(--ink);
+    border-radius: 18px;
+    background: var(--card-confirmed);
+  }
+
+  .dates :global(.photo) {
+    width: 76px;
+    min-height: 76px;
+    margin: -3px 0 -3px -3px;
+    border: 3px solid var(--ink);
+    border-radius: 18px;
+    object-fit: cover;
+    flex: none;
+    align-self: stretch;
+    height: auto;
+  }
+
+  .details {
+    padding: 7px 12px 8px 14px;
+    display: grid;
+    gap: 1px;
+    min-width: 0;
+  }
+
+  .details p {
+    margin: 0;
+    white-space: nowrap;
+  }
+
+  .name {
+    display: flex;
+    align-items: center;
+    font-size: 1.15rem;
+    line-height: 1.2;
+  }
+
+  .name b {
+    font-weight: 700;
+  }
+
+  /* The app's badge on a card: ink outline and check on mint, after the age. */
+  .name :global(.badge) {
+    margin-left: 5px;
+    fill: var(--success);
+    stroke: var(--ink);
+  }
+
+  .venue {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.92rem;
+  }
+
+  .venue :global(.venue-pin) {
+    fill: var(--brand-main);
+    flex: none;
+  }
+
+  .when {
+    font-size: 0.92rem;
+    color: var(--text-soft);
+  }
+
+  /* On a phone the names would run into each other: the pins say enough. */
+  @container (max-width: 34rem) {
+    .label {
+      display: none;
+    }
+
+    .pin:not(.is-date) :global(svg) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  /* Wide: copy on the left, the map on the right with the dates standing over its
+     lower left corner, as the app stacks its cards. */
+  @container (min-width: 52rem) {
+    .inner {
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      align-items: center;
+    }
+
+    .stage {
+      padding-bottom: 96px;
+    }
+
+    .dates {
+      position: absolute;
+      left: -24px;
+      bottom: 0;
+      margin: 0;
+      width: min(19rem, 62%);
+    }
   }
 </style>
