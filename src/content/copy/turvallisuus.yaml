@@ -52,6 +52,15 @@
   fi: 'Jos olosi treffeillä oli turvaton, kerro siitä treffien jälkeisessä palautteessa. Tästä syntyy ilmoitus Pilkkeen ylläpidolle, ja reagoimme siihen niin pian kuin mahdollista.'
   en: 'If you didn’t feel safe on the date, say so in your feedback afterwards. That sends a report to the Pilke team, and we’ll act on it as soon as we can.'
 
+# A proposal for the owner, from the app's new safety tip; not yet approved.
+'safety.verified.title':
+  fi: 'Vahvistettu henkilöllisyys'
+  en: 'Verified identity'
+
+'safety.verified.body':
+  fi: 'Osa käyttäjistä on vahvistanut henkilöllisyytensä pankkitunnuksilla tai mobiilivarmenteella, ja heidän profiilissaan näkyy merkki. Jos treffiparillasi on merkki, hän on tunnistautunut ja on täysi-ikäinen. Taustoja Pilke ei tarkista, joten toimi sen mukaan.'
+  en: 'Some people have verified their identity with online banking ID or a mobile certificate, and their profile shows a badge. If your date has the badge, they’ve confirmed who they are and are over 18. Pilke doesn’t check anyone’s background, so act with that in mind.'
+
 # ──────────────────────────────────────────────────────────────────────────
 # Meeting somebody safely
 # ──────────────────────────────────────────────────────────────────────────

@@ -20,7 +20,7 @@ const lang = localeOf(Astro.params);
 const t = useTranslations(lang);
 
 // The questions in the order the page shows them, the owner's (`kysyttya.yaml`).
-const ORDER = ['cost', 'chat', 'matching', 'safety', 'who', 'location', 'cancel', 'noshow', 'timeout', 'ban', 'delete', 'where', 'sparks', 'nomatches', 'feedback', 'again', 'strangers'];
+const ORDER = ['cost', 'chat', 'matching', 'safety', 'verified', 'who', 'location', 'cancel', 'noshow', 'timeout', 'ban', 'delete', 'where', 'sparks', 'nomatches', 'feedback', 'again', 'strangers'];
 
 /** An answer cut into text and links: `[text](route)` links to that page of the site. */
 const parts = (answer: string) =>

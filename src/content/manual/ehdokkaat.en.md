@@ -9,7 +9,7 @@ You find {{candidates.per_set}} matches at a time. Pilke goes through everyone y
 
 ![Your matches: the middle match's card, the times you're both free and the places](shot:platter#timeslot-chip-*,activity-chip-*)
 
-A match's card shows their photo, name and age. It also has up to {{candidates.times_per_card}} of the soonest times you're both free (1) and up to {{candidates.venues_per_card}} places that suit you both (2). You build your invite from these. See [Invites](/en/guide/kutsut).
+A match's card shows their photo, name and age, and the verified badge if they've verified their identity (see [Your details and account](/en/guide/tiedot-ja-tili)). It also has up to {{candidates.times_per_card}} of the soonest times you're both free (1) and up to {{candidates.venues_per_card}} places that suit you both (2). You build your invite from these. See [Invites](/en/guide/kutsut).
 
 ## Favourite spots
 

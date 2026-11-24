@@ -1,6 +1,8 @@
 ---
 title: Käyttöehdot
 lead: Mihin sitoudut, kun käytät Pilkettä, ja mitä me lupaamme sinulle.
+# TODO: the identity-verification clauses need a new version and effective date
+# when the feature launches; leave both as they are until then.
 version: 2026-11-15
 effective: 2026-11-15
 draft: false
@@ -53,6 +55,11 @@ Anna oikea puhelinnumero ja sähköpostiosoite. Huolehdi siitä, ettei kukaan mu
 puhelimeesi tai kirjautumiskoodeihisi, ja ilmoita meille heti, jos epäilet jonkun muun
 päässeen tilillesi. Voit kirjautua ulos yksittäiseltä laitteelta asetuksissa.
 
+Voit myös vahvistaa henkilöllisyytesi pankkitunnuksilla tai mobiilivarmenteella.
+Vahvistaminen on vapaaehtoista. Sama henkilöllisyys voi olla vahvistettuna vain yhdellä
+tilillä: jos vahvistat henkilöllisyyden, jolla on jo tili, kirjaudut siihen tiliin. Kerromme
+vahvistuksesta tarkemmin [tietosuojaselosteen](/tietosuoja) luvussa 2.
+
 ## 5. Käyttäjän velvollisuudet
 
 **Mene treffeille, jotka olet sopinut.** Treffiparisi on varannut illan sinua varten. Jos
@@ -101,8 +108,11 @@ luetelluin keinoin:
 - **Ennalta valitut, julkiset treffipaikat.** Treffit sovitaan vain Pilkkeen valitsemiin
   julkisiin paikkoihin, eivätkä käyttäjät voi ehdottaa muita paikkoja.
 
-Emme kuitenkaan tarkista käyttäjien henkilöllisyyttä emmekä taustoja, emmekä voi taata,
-että toinen käyttäjä on väittämänsä henkilö. Emme myöskään valvo tapaamisia emmekä ole
+Osa käyttäjistä on vahvistanut henkilöllisyytensä pankkitunnuksilla tai
+mobiilivarmenteella, ja heidän profiilissaan näkyy merkki. Merkki kertoo, että käyttäjä on
+tunnistautunut ja on täysi-ikäinen. Kutsumanimeä ja kuvaa emme tarkista. Käyttäjien
+taustoja emme tarkista, emmekä voi taata, että käyttäjä ilman merkkiä on väittämänsä
+henkilö. Emme myöskään valvo tapaamisia emmekä ole
 niissä läsnä. Ole yhtä varovainen kuin tavatessasi kenet tahansa tuntemattoman: kerro
 jollekulle, minne menet, ja lähde pois, jos olo ei tunnu hyvältä.
 
@@ -146,6 +156,10 @@ Voimme lisäksi rajoittaa käyttöäsi tai päättää sopimuksen, jos rikot nä
 toimintasi vaarantaa toisen käyttäjän turvallisuuden tai jos laki sitä edellyttää.
 Kerromme sinulle syyn, jollei se vaaranna toista käyttäjää. Vakavassa tapauksessa
 rajoitus voi tulla voimaan heti, muussa tapauksessa saat ensin tilaisuuden korjata asian.
+
+Jos suljemme vahvistetun tilin turvallisuussyistä, kielto koskee henkilöllisyyttä:
+samalla henkilöllisyydellä ei voi vahvistaa uutta tiliä. Turvallisuussyistä annettu kielto
+on pysyvä.
 
 ## 9. Viestit ja ilmoitukset
 

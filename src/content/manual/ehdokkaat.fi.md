@@ -9,7 +9,7 @@ Löydät kerralla {{candidates.per_set}} ehdokasta. Pilke käy läpi kaikki, joi
 
 ![Ehdokkaat-näkymä: keskimmäisen ehdokkaan kortti, yhteiset ajat ja paikat](shot:platter#timeslot-chip-*,activity-chip-*)
 
-Ehdokkaan kortissa on hänen kuvansa, nimensä ja ikänsä. Lisäksi siinä on enintään {{candidates.times_per_card}} lähintä yhteistä aikaanne (1) ja enintään {{candidates.venues_per_card}} teille molemmille sopivaa treffipaikkaa (2). Niistä kokoat kutsun. Katso [Kutsut](/ohje/kutsut).
+Ehdokkaan kortissa on hänen kuvansa, nimensä ja ikänsä sekä vahvistusmerkki, jos hän on vahvistanut henkilöllisyytensä (katso [Tietosi ja tilisi](/ohje/tiedot-ja-tili)). Lisäksi siinä on enintään {{candidates.times_per_card}} lähintä yhteistä aikaanne (1) ja enintään {{candidates.venues_per_card}} teille molemmille sopivaa treffipaikkaa (2). Niistä kokoat kutsun. Katso [Kutsut](/ohje/kutsut).
 
 ## Suosikkipaikat
 
