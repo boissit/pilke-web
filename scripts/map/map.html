@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<style>html,body,#m{margin:0;width:100%;height:100%}.maplibregl-ctrl-attrib,.maplibregl-ctrl-logo{display:none!important}</style></head>
+<body><div id="m"></div><script>
+const V=[["Café Aalto",24.9437,60.1682],["Karl Fazer Café",24.9477,60.1685],["Esplanadin puisto",24.9476,60.1675],["Kaffecentralen",24.9326,60.1676],["Ateljée Bar",24.9386,60.1678]];
+const map=new maplibregl.Map({container:'m',style:'https://tiles.openfreemap.org/styles/positron',center:[24.9402,60.1677],zoom:14.75,interactive:false,attributionControl:false,preserveDrawingBuffer:true});
+map.on('style.load',()=>{const src='openmaptiles';map.addLayer({id:'pilke-grass',type:'fill',source:src,'source-layer':'landcover',filter:['in','class','grass','wood'],paint:{'fill-color':'#d4efe3'}},'building');map.addLayer({id:'pilke-park',type:'fill',source:src,'source-layer':'landuse',filter:['in','class','park','cemetery','grass'],paint:{'fill-color':'#d4efe3'}},'pilke-grass');for(const l of map.getStyle().layers){const id=l.id; if(id.startsWith('pilke-'))continue;
+ if(l.type==='symbol'){map.setLayoutProperty(id,'visibility','none');continue;}
+ if(l.type==='background'){map.setPaintProperty(id,'background-color','#fff8f4');continue;}
+ if(l.type==='fill'){let c='#fbeee8';
+   if(/water/.test(id))c='#cdeee9'; else if(/park|wood/.test(id))c='#d4efe3'; else if(/building/.test(id))c='#f8e4dc'; else if(/residential/.test(id))c='#fff8f4';
+   map.setPaintProperty(id,'fill-color',c); try{map.setPaintProperty(id,'fill-outline-color',c)}catch(e){} map.setPaintProperty(id,'fill-opacity',1); continue;}
+ if(l.type==='line'){ if(/water|river|waterway/.test(id)){map.setPaintProperty(id,'line-color','#cdeee9');continue;}
+   if(/boundary|rail|transit|ferry|aeroway/.test(id)){map.setLayoutProperty(id,'visibility','none');continue;}
+   map.setPaintProperty(id,'line-color','#ffffff');}
+}});
+map.on('idle',()=>{const w=map.getContainer().clientWidth,h=map.getContainer().clientHeight;window.PTS=V.map(([n,x,y])=>{const p=map.project([x,y]);return{name:n,x:+(p.x/w*100).toFixed(2),y:+(p.y/h*100).toFixed(2)}});window.READY=1;});
+</script></body></html>

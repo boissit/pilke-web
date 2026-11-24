@@ -41,10 +41,12 @@ import heroEn from '../../assets/photos/hero-cutout-en.png';
 import heroFi from '../../assets/photos/hero-cutout-fi.png';
 import heroPhoneMask from '../../assets/photos/hero-cutout-phone.png';
 import { shotsFor } from '../../assets/screens';
-import Icon from '../../components/Icon.astro';
 import SparkleScatter from '../../components/SparkleScatter.astro';
 import Phone from '../../components/Phone.astro';
-import VerifiedCard from '../../components/VerifiedCard.astro';
+import SafetyMap from '../../components/safety/SafetyMap.astro';
+import SafetyMoment from '../../components/safety/SafetyMoment.astro';
+import SafetyStatement from '../../components/safety/SafetyStatement.astro';
+import SafetyTiles from '../../components/safety/SafetyTiles.astro';
 import { localeOf, localePath, localeRoutes, useTranslations } from '../../i18n/ui';
 import Base from '../../layouts/Base.astro';
 
@@ -74,15 +76,12 @@ const photos = {
 }[lang];
 
 /*
-  The safety card's points, identity verification first: the owner's key feature,
-  with the venues and the safety contact after it. Each icon on a flat disc of one
-  of the app's tints, as the contact page draws its topics: mint for the badge, the
-  colour the app fills it with.
+  Design options for the safety card, for the owner to pick from: `a` two tiles,
+  `b` one date card with numbered callouts, `c` a typographic statement, `d` the
+  venues on a map. Set at build time with PUBLIC_SAFETY_OPTION.
 */
-const safetyPoints = [
-  { icon: 'badge-check', tint: 'var(--success)', title: t('safety.verified.title'), body: t('pitch.safety.verified') },
-  { icon: 'map-pin', tint: 'var(--card-sent)', title: t('pitch.safety.venues.title'), body: t('pitch.safety.venues') },
-  { icon: 'user-round-check', tint: 'var(--card-received)', title: t('pitch.safety.contact.title'), body: t('pitch.safety.contact') },
+const SafetyOption = { a: SafetyTiles, b: SafetyMoment, c: SafetyStatement, d: SafetyMap }[
+  (import.meta.env.PUBLIC_SAFETY_OPTION ?? 'a') as 'a' | 'b' | 'c' | 'd'
 ];
 
 /*
@@ -272,9 +271,8 @@ const notFor = [
     Why the candidates and the dates can be trusted, the owner's two cards, one under
     the other. Each is a slab of its own on one of the site's grounds, peach and the
     safety page's mint, laid out with the page grid's own gap, so the two stand as
-    far apart as any two sections do. The safety card is a list of three points,
-    identity verification first, beside a candidate card with the badge; side by
-    side it needs the row's whole width, so the quality card stands above it.
+    far apart as any two sections do. The safety card features identification and
+    the venues as equals, in one of the design options in `components/safety/`.
   -->
   <div class="pair">
     <section class="slab slab-pale" aria-labelledby="quality-title">
@@ -283,30 +281,7 @@ const notFor = [
         <p>{t('pitch.quality.body')}</p>
       </div>
     </section>
-    <section class="slab slab-mint" aria-labelledby="safety-title">
-      <div class="wrap section-pad safety-card">
-        <h2 class="display-mid" id="safety-title">{t('pitch.safety.title')}</h2>
-        <ul class="safety-points">
-          {
-            safetyPoints.map((point) => (
-              <li>
-                <span class="dot" style={`background: ${point.tint}`}>
-                  <Icon name={point.icon} size={22} />
-                </span>
-                <div>
-                  <h3>{point.title}</h3>
-                  <p>{point.body}</p>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
-        <VerifiedCard lang={lang} class="safety-example" />
-        <p class="safety-more">
-          <a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a>
-        </p>
-      </div>
-    </section>
+    <SafetyOption lang={lang} />
   </div>
 
   <!--
@@ -755,86 +730,6 @@ const notFor = [
   .pair-more {
     margin-top: auto;
     padding-top: clamp(8px, 1.52vw + 2px, 24px);
-  }
-
-  /* The safety card: the heading, then the points and the candidate card. Stacked
-     on a phone, the card under the points and the link last; from 48rem the card stands in a column
-     of its own beside them, centred on their height, and the link closes the list. */
-  .safety-card {
-    display: grid;
-    gap: clamp(20px, 1.52vw + 14px, 32px);
-    grid-template-areas: 'title' 'points' 'card' 'more';
-  }
-
-  .safety-card > h2 {
-    grid-area: title;
-  }
-
-  .safety-points {
-    grid-area: points;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 14px;
-  }
-
-  .safety-points li {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-    padding: clamp(16px, 1vw + 12px, 22px);
-    background: var(--surface);
-    border-radius: 22px;
-  }
-
-  .dot {
-    display: grid;
-    flex: none;
-    place-items: center;
-    width: 44px;
-    height: 44px;
-    color: var(--ink);
-    border-radius: 50%;
-  }
-
-  .safety-points h3 {
-    margin: 0 0 4px;
-    font-size: clamp(1.25rem, 0.38vw + 1.16rem, 1.5rem);
-    line-height: 1.2;
-  }
-
-  .safety-points p {
-    margin: 0;
-    font-size: clamp(1rem, 0.1vw + 0.98rem, 1.0625rem);
-    line-height: 1.5;
-    color: var(--text-soft);
-  }
-
-  .safety-card > :global(.safety-example) {
-    grid-area: card;
-    justify-self: center;
-    --card-width: 300px;
-    margin-block: 8px;
-    transform: rotate(2deg);
-  }
-
-  .safety-more {
-    grid-area: more;
-  }
-
-  @media (min-width: 48rem) {
-    .safety-card {
-      grid-template-columns: minmax(0, 1fr) auto;
-      grid-template-areas: 'title title' 'points card' 'more card';
-      column-gap: clamp(28px, 3vw, 56px);
-      align-items: start;
-    }
-
-    .safety-card > :global(.safety-example) {
-      align-self: center;
-      --card-width: clamp(260px, 18vw + 80px, 340px);
-    }
   }
 
   /* ─── Who it is not for ────────────────────────────────────────────────── */

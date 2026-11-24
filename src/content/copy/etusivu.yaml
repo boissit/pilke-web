@@ -162,20 +162,47 @@
 
 # The owner's two sentences, one per point; the headings are Claude's.
 'pitch.safety.venues.title':
-  fi: 'Julkiset treffipaikat'
-  en: 'Public venues'
+  fi: 'Valikoidut treffipaikat'
+  en: 'Hand-picked venues'
 
 'pitch.safety.venues':
   fi: 'Kaikki treffit järjestetään valikoiduilla ja julkisilla paikoilla, eli kukaan ei kutsu sinua yksin kotiinsa.'
   en: 'Every date is at a hand-picked public venue, so nobody’s inviting you back to theirs.'
 
-'pitch.safety.contact.title':
-  fi: 'Luotettu henkilö'
-  en: 'Safety contact'
+# Design options for the safety card, on the options branch only. Claude's.
+'pitch.safety.callout.badge':
+  fi: 'Tunnistusmerkki'
+  en: 'The verified badge'
 
-'pitch.safety.contact':
-  fi: 'Voit myös tallentaa sovellukseen luotetun henkilön puhelinnumeron.'
-  en: 'We also encourage you to add someone you trust as a safety contact.'
+'pitch.safety.callout.venue':
+  fi: 'Valikoitu, julkinen paikka'
+  en: 'A hand-picked public venue'
+
+'pitch.safety.map.credit':
+  fi: '© OpenStreetMapin tekijät'
+  en: '© OpenStreetMap contributors'
+
+# The venues' blurbs, copied from `treffit-backend`'s `i18n/venues.py`, where the
+# app's date screen reads them.
+'venue.blurb.aalto':
+  fi: 'Kahvit ja leivos kirjakaupan parvella'
+  en: 'Coffee and a pastry upstairs in the bookshop'
+
+'venue.blurb.esplanadi':
+  fi: 'Kävely puistossa ja jäätelö'
+  en: 'A walk in the park and an ice cream'
+
+'venue.blurb.kaffecentralen':
+  fi: 'Erikoiskahvit Fredrikinkadun kulmassa'
+  en: 'Speciality coffee on the corner of Fredrikinkatu'
+
+'venue.blurb.fazer':
+  fi: 'Leivoskahvit vanhassa konditoriassa'
+  en: 'Coffee and cake in an old patisserie'
+
+'venue.time':
+  fi: 'perjantaina klo 17.00'
+  en: 'Friday, 5 pm'
 
 # ──────────────────────────────────────────────────────────────────────────
 # Who Pilke is not for

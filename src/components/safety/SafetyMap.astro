@@ -1,0 +1,197 @@
+---
+/**
+ * Option D: map-led. The real venues around Esplanadi as pins on central Helsinki
+ * (OpenFreeMap tiles recoloured to the site's grounds, `scripts/map/`), with the
+ * verified name card standing over the map's corner. The two points are beside it
+ * from 56rem, above it on a phone.
+ */
+import { Image } from 'astro:assets';
+import map from '../../assets/maps/keskusta.png';
+import { type Lang, localePath, useTranslations } from '../../i18n/ui';
+import Icon from '../Icon.astro';
+import VerifiedCard from '../VerifiedCard.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// In percent of `keskusta.png`, from `scripts/map/render.mjs`.
+const pins = [
+  { name: 'Café Aalto', x: 65.24, y: 44.37 },
+  { name: 'Karl Fazer Café', x: 82.66, y: 41 },
+  { name: 'Esplanadin puisto', x: 82.22, y: 52.25 },
+  { name: 'Kaffecentralen', x: 16.91, y: 51.13 },
+  { name: 'Ateljée Bar', x: 43.03, y: 48.87 },
+];
+
+const points = [
+  { icon: 'badge-check', tint: 'var(--success)', title: t('safety.verified.title'), body: t('pitch.safety.verified') },
+  { icon: 'map-pin', tint: 'var(--brand-main)', title: t('pitch.safety.venues.title'), body: t('pitch.safety.venues') },
+];
+---
+
+<section class="slab slab-mint" aria-labelledby="safety-title">
+  <div class="wrap section-pad maplead">
+    <div class="copy">
+      <h2 class="display-mid" id="safety-title">{t('pitch.safety.title')}</h2>
+      <ul class="points">
+        {
+          points.map((p) => (
+            <li>
+              <span class="dot" style={`background:${p.tint}`}><Icon name={p.icon} size={22} /></span>
+              <div>
+                <h3>{p.title}</h3>
+                <p>{p.body}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+      <p><a class="go" href={localePath(lang, 'turvallisuus')}>{t('safety.more')}</a></p>
+    </div>
+
+    <div class="stage">
+      <div class="map" aria-hidden="true">
+        <Image src={map} alt="" width={900} densities={[1, 2]} loading="lazy" />
+        {
+          pins.map((p) => (
+            <span class="pin" style={`left:${p.x}%; top:${p.y}%`}>
+              <Icon name="map-pin" size={28} />
+              <span class="label">{p.name}</span>
+            </span>
+          ))
+        }
+        <span class="credit">{t('pitch.safety.map.credit')}</span>
+      </div>
+      <VerifiedCard lang={lang} variant="photo" class="over" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .maplead {
+    display: grid;
+    gap: clamp(28px, 2.3vw + 19px, 48px);
+  }
+
+  @media (min-width: 56rem) {
+    .maplead {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: center;
+    }
+  }
+
+  .copy {
+    display: grid;
+    gap: clamp(18px, 1.14vw + 14px, 28px);
+  }
+
+  .points {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+  }
+
+  .points li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .dot {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: var(--ink);
+  }
+
+  .points h3 {
+    font-size: clamp(1.25rem, 0.38vw + 1.16rem, 1.5rem);
+    line-height: 1.2;
+    margin-bottom: 4px;
+  }
+
+  .points p {
+    margin: 0;
+    line-height: 1.55;
+    color: var(--text-soft);
+  }
+
+  /* The map, and the card standing over its lower left corner. The stage leaves
+     room under the map for the part of the card that hangs below it. */
+  .stage {
+    position: relative;
+    padding-bottom: clamp(110px, 8vw + 60px, 150px);
+  }
+
+  .map {
+    position: relative;
+    aspect-ratio: 9 / 7;
+    border: 3px solid var(--ink);
+    border-radius: 24px;
+    overflow: hidden;
+  }
+
+  .map :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pin {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translate(-50%, -100%);
+    color: var(--ink);
+  }
+
+  .pin :global(svg) {
+    fill: var(--brand-main);
+  }
+
+  .label {
+    position: absolute;
+    top: 100%;
+    margin-top: 2px;
+    white-space: nowrap;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 999px;
+    background: var(--surface);
+  }
+
+  /* On a phone the names would run into each other: the pins say enough. */
+  @media (max-width: 40rem) {
+    .label {
+      display: none;
+    }
+  }
+
+  .credit {
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    font-size: 0.65rem;
+    color: var(--text-soft);
+  }
+
+  .stage > :global(.over) {
+    position: absolute;
+    left: clamp(-8px, 1vw - 20px, 8px);
+    bottom: 0;
+    --card-width: clamp(190px, 12vw + 110px, 270px);
+    transform: rotate(-3deg);
+  }
+</style>

@@ -1,0 +1,11 @@
+import { chromium } from 'playwright-core';
+const exe = `${process.env.HOME}/Library/Caches/ms-playwright/chromium-1248/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing`;
+const b = await chromium.launch({ executablePath: exe, args: ['--use-gl=angle','--enable-unsafe-swiftshader'] });
+const p = await (await b.newContext({ viewport: { width: 900, height: 700 }, deviceScaleFactor: 2 })).newPage();
+p.on('console', m => console.log('console', m.text()));
+await p.goto('file://' + process.argv[2]);
+await p.waitForFunction(() => window.READY === 1, null, { timeout: 60000 });
+await p.waitForTimeout(500);
+await p.screenshot({ path: process.argv[3] });
+console.log(JSON.stringify(await p.evaluate(() => window.PTS)));
+await b.close();

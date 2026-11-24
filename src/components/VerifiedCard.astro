@@ -25,10 +25,12 @@ import Icon from './Icon.astro';
 
 interface Props {
   lang: Lang;
+  /** `photo` is the photo and the name line alone, without the times and places. */
+  variant?: 'full' | 'photo';
   class?: string;
 }
 
-const { lang, class: className } = Astro.props;
+const { lang, variant = 'full', class: className } = Astro.props;
 const t = useTranslations(lang);
 
 const slots = [t('card.slot.one'), t('card.slot.two'), t('card.slot.three')].map((s) => s.split('|'));
@@ -40,7 +42,7 @@ const places = ['Kaffecentralen', 'Esplanadin puisto', 'Kaisaniemen puisto'];
     <Image src={juho} alt="" width={640} densities={[1, 2]} loading="lazy" />
     <p class="name"><b>Juho</b>, 25<Icon name="badge-check" size={22} class="badge" /></p>
   </div>
-  <div class="shared">
+  {variant === 'full' && <div class="shared">
     <div>
       <p class="head">{t('card.times')}</p>
       <ul>{slots.map(([day, time]) => <li><span>{day}</span><b>{time}</b></li>)}</ul>
@@ -49,7 +51,7 @@ const places = ['Kaffecentralen', 'Esplanadin puisto', 'Kaisaniemen puisto'];
       <p class="head">{t('card.places')}</p>
       <ul>{places.map((place) => <li><b>{place}</b></li>)}</ul>
     </div>
-  </div>
+  </div>}
 </div>
 
 <style>
