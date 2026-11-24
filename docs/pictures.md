@@ -125,7 +125,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/en/nain-se-toimii.html/` | `preferences-en` 460px<br>`kalenteri-en` 460px<br>`platter-en` 460px<br>`invitation-en` 460px<br>`date-bench-wide` 1120px<br>`feedback-en` 460px<br>`date-cancel-en` 460px<br>`date-en` 460px |
 | `/en/tietojen-poisto.html/` | none |
 | `/en/tietosuoja.html/` | none |
-| `/en/turvallisuus.html/` | `juho` 640px<br>`asetukset-en` 520px |
+| `/en/turvallisuus.html/` | `candidate-veeti` 280px<br>`asetukset-en` 520px |
 | `/en/yhteystiedot.html/` | none |
 | `/` | `hero-cutout-fi` 1400px<br>`mieltymykset` 460px<br>`invitation` 460px<br>`date` 460px<br>`feedback` 460px<br>`candidate-arttu` 460px<br>`candidate-veera` 460px<br>`candidate-veeti` 460px<br>`keskusta` 900px<br>`date-riikka` 680px<br>`date-henri` 680px<br>`beta-invitation-fi` 1000px |
 | `/kayttoehdot.html/` | none |
@@ -147,7 +147,7 @@ failing — about any whose sidecar's `commit` predates a change under `pilke-ap
 | `/ohje/vapaat-ajat.html/` | `fi/kalenteri` 560px<br>`fi/kalenteri-valikko` 560px<br>`fi/kalenteri-toistuva` 560px<br>`fi/kalenteri-menot` 560px |
 | `/tietojen-poisto.html/` | none |
 | `/tietosuoja.html/` | none |
-| `/turvallisuus.html/` | `juho` 640px<br>`asetukset` 520px |
+| `/turvallisuus.html/` | `candidate-veeti` 280px<br>`asetukset` 520px |
 | `/yhteystiedot.html/` | none |
 
 Carried but drawn on no page: `story`, `story-en`, `treffit`.
@@ -184,10 +184,9 @@ the flow inside it, and "in English" means that flow's copy derived by `manual-s
 | `kalenteri` | Calendar, a week in use | `capture-kalenteri-busy.sh`, the `busy-week` step, as Veera's account | Three days of the week: free slots marked *Treffivaraus* in coral with their sparkles, the phone's own events hatched beside them, the yellow density shading, the ⋮ and (i) buttons, the tab bar. Drawn on `nain-se-toimii` |
 | `kalenteri-en` | Calendar, a week in use, English | the same step in English | The same week in English. Drawn on `/en` in place of `kalenteri` |
 | `story` | Story test, first question | `screenshotStory.yaml` | The wordmark on the yellow onboarding ground, the progress bar's five sections (*Profiili*, *Persoonallisuus*, *Toiveet*, *Paikat*, *Ajat*), the first scene in italic quotation marks and its options as cards with one picked, `Jatka`. Drawn on no page; the print kit's element library places it (`tools/print-kit/build.py`) |
-| `juho` | None: the mock cast's photo, inside `VerifiedCard.astro`'s candidate card | `src/assets/cast/juho.jpg`, copied from `treffit-backend/test/` (Unsplash `WC7KIHo13Fc`, Juan Encalada, credited in `treffit_backend/mocks/data.py`) | The card itself is HTML, not a still: the photo with *Juho, 25* and the verified badge, and *Ajat* / *Times* and *Paikat* / *Places* with three of each, in the page's language. On the front page's safety card and the safety page's first card. It follows the app's `CandidateCard`, so a change to that card's look (the badge, the border, the boxes) needs the component changed by hand. A sample profile, never to be captioned as a Pilke user |
 | `keskusta` | None: a map of central Helsinki, in the front page's safety card | `scripts/map/render.mjs` renders `scripts/map/map.html` (OpenFreeMap's positron tiles, labels off, recoloured to the site's grounds) and prints where each venue falls; the pins are HTML at those positions in `SafetyMap.astro` | The streets round Esplanadi and five catalogue venues pinned over it. Goes stale when a venue leaves `treffit-backend`'s `venues/catalogue.py` or moves: re-render and copy the printed positions. Credited *© OpenStreetMap* on the page |
 | `candidate-arttu` | Candidates, one card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Arttu, 20, with the verified badge on his photo, his times and places, `Ehdota!` / `Send invite`. Left of the fan in the front page's quality card |
-| `candidate-veeti` | Candidates, one card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Veeti, 19, the same. In the middle of the fan, on top |
+| `candidate-veeti` | Candidates, one card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Veeti, 19, the same. In the middle of the fan, on top, and beside the first card on `turvallisuus` |
 | `candidate-veera` | Candidates, one card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Veera, 24, the same. Right of the fan |
 | `date-riikka` | An agreed date's page, its date card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Riikka, 32, the badge after her age, Café Aalto, `pe 27.11. klo 17.00` / `Fri 27 Nov at 17:00`. Over the top of the front page's map, a line to Café Aalto's pin. **Shows a date**, which reads as past after 27 November 2026 |
 | `date-henri` | An agreed date's page, its date card | By hand, see *Cards cut out of the app* below; `src/assets/cards/fi/` and `en/` | Henri, 26, the badge, Esplanadin puisto, `la 28.11. klo 13.00` / `Sat 28 Nov at 13:00`. Over the bottom of the map, a line to Esplanadin puisto's pin. Shows a date, as above |

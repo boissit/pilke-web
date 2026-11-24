@@ -133,13 +133,12 @@
 # Quality and safety
 #
 # Two cards after the steps, the owner's own. `quality` is how the candidates are
-# picked, before the first date and after each one. `safety` is three points, each
-# a short heading and the owner's line: identity verification first (its heading is
-# the safety page's `safety.verified.title`), then where dates happen and that a
-# trusted person can be saved. It links to `turvallisuus`, which says the rest, with
-# that page's own `safety.more`. The venues' "julkisilla paikoilla" is the one venue
-# claim on the site resting on a practice rather than on a constant: the README
-# says why.
+# picked, before the first date and after each one. `safety` is two points, each a
+# short heading and the owner's line: identity verification (its heading is the
+# safety page's `safety.verified.title`) and where dates happen. It links to
+# `turvallisuus`, which says the rest, with that page's own `safety.more`. The
+# venues' "julkisilla paikoilla" is the one venue claim on the site resting on a
+# practice rather than on a constant: the README says why.
 # ──────────────────────────────────────────────────────────────────────────
 
 'pitch.quality.title':

@@ -34,7 +34,7 @@ const pins = [
   { name: 'Kaffecentralen', x: 16.91, y: 51.13 },
   { name: 'Ateljée Bar', x: 43.03, y: 48.87 },
   { name: 'Café Aalto', x: 65.24, y: 44.37, date: true },
-  { name: 'Karl Fazer Café', x: 82.66, y: 41 },
+  { name: 'Karl Fazer Café', x: 82.66, y: 41, above: true },
   { name: 'Esplanadin puisto', x: 82.22, y: 52.25, date: true },
 ];
 
@@ -75,7 +75,7 @@ const points = [
             pins.map((p) => (
               <span class:list={['pin', p.date && 'is-date']} style={`left:${p.x}%; top:${p.y}%`}>
                 <Icon name="map-pin" size={p.date ? 32 : 24} />
-                {!p.date && <span class="label">{p.name}</span>}
+                {!p.date && <span class:list={['label', p.above && 'above']}>{p.name}</span>}
               </span>
             ))
           }
@@ -210,6 +210,14 @@ const points = [
   }
 
   /* At the top, where the dates never cover it. */
+  /* Karl Fazer Café stands just above Esplanadin puisto's pin, so its name goes
+     over its own pin rather than under it. */
+  .label.above {
+    top: auto;
+    bottom: 100%;
+    margin: 0 0 2px;
+  }
+
   .credit {
     position: absolute;
     right: 10px;
@@ -316,10 +324,20 @@ const points = [
     }
   }
 
+  /* Wide: the copy and the map in two columns of about one width, the map's no
+     wider than 34rem, so the section reads as copy with a picture rather than as a
+     map. */
   @container (min-width: 52rem) {
     .inner {
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       align-items: center;
+      column-gap: clamp(40px, 5cqi, 80px);
+    }
+
+    .stage {
+      width: 100%;
+      max-width: 34rem;
+      justify-self: center;
     }
   }
 </style>
