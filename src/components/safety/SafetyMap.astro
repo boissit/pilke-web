@@ -324,9 +324,8 @@ const points = [
     }
   }
 
-  /* Wide: the copy and the map in two columns of about one width, the map's no
-     wider than 34rem, so the section reads as copy with a picture rather than as a
-     map. */
+  /* Wide: the copy and the map in two columns, the map no wider than 22.5rem, so
+     the section reads as copy with a picture rather than as a map. */
   @container (min-width: 52rem) {
     .inner {
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -336,7 +335,7 @@ const points = [
 
     .stage {
       width: 100%;
-      max-width: 34rem;
+      max-width: 22.5rem;
       justify-self: center;
     }
   }
