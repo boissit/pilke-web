@@ -109,7 +109,7 @@ luetelluin keinoin:
   julkisiin paikkoihin, eivätkä käyttäjät voi ehdottaa muita paikkoja.
 
 Osa käyttäjistä on vahvistanut henkilöllisyytensä pankkitunnuksilla tai
-mobiilivarmenteella, ja heidän profiilissaan näkyy merkki. Merkki kertoo, että käyttäjä on
+mobiilivarmenteella, ja heidän profiilissaan näkyy vahvistusmerkki. Merkki kertoo, että käyttäjä on
 tunnistautunut ja on täysi-ikäinen. Kutsumanimeä ja kuvaa emme tarkista. Käyttäjien
 taustoja emme tarkista, emmekä voi taata, että käyttäjä ilman merkkiä on väittämänsä
 henkilö. Emme myöskään valvo tapaamisia emmekä ole

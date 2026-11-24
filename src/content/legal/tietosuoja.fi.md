@@ -5,6 +5,7 @@ title: "Tietosuoja\u00ADseloste"
 lead: Mitä tietoja käsittelemme sinusta, mihin niitä käytetään ja mitä voit vaatia.
 # TODO: the identity-verification sections need a new version and effective date
 # when the feature launches; leave both as they are until then.
+# TODO: name the identification broker in chapters 2 and 6 once Didit says which it uses.
 version: 2026-11-15
 effective: 2026-11-15
 draft: false
@@ -57,8 +58,8 @@ Pilke saa Diditiltä tunnistautumisen tuloksen. Henkilötunnuksesta lasketaan
 palvelimellamme tunniste, ja itse henkilötunnusta emme tallenna. Etunimesi ja
 syntymäaikasi näytetään sovelluksessa kerran, jotta kutsumanimi ja syntymäpäivä ovat
 seuraavalla sivulla valmiina. Etunimeä emme tallenna: kutsumanimeksi tallentuu se, minkä
-itse hyväksyt. Syntymäpäiväksi tallentuu vahvistettu päivä, eikä sitä voi muuttaa niin
-kauan kuin vahvistus on voimassa.
+itse hyväksyt. Syntymäpäiväksi tallentuu vahvistettu päivä, eikä sitä voi sen jälkeen
+muuttaa.
 
 **Mitä tallennamme.** Tiedon siitä, että olet vahvistanut henkilöllisyytesi, milloin ja
 minkä palvelun kautta, ja siitä, että olet täysi-ikäinen. Lisäksi tallennamme
@@ -77,25 +78,27 @@ siitä sinulle.
 **Porttikielto.** Porttikiellon annamme vain turvallisuussyistä: väkivallasta,
 uhkailusta tai seksuaalisesta häirinnästä. Jos tili on vahvistettu, tunniste
 tallennetaan estolistalle, eikä samalla henkilöllisyydellä voi enää vahvistaa uutta tiliä.
-Kielto on pysyvä, ja käymme jokaisen kiellon läpi kerran vuodessa. Jos estolistalla oleva
+Kielto on pysyvä, mutta henkilöstö voi purkaa sen. Jos estolistalla oleva
 henkilöllisyys yrittää vahvistaa tilin, vahvistus ei onnistu ja henkilöstö saa siitä
 tiedon.
 
 **Alle 18-vuotiaat.** Jos tunnistautuminen näyttää, että olet alle 18-vuotias,
-rekisteröityminen päättyy ja tili poistetaan. Jos tili oli jo valmis, henkilöstö poistaa
-sen. Tunniste jää estolistalle 18-vuotispäivääsi asti.
+rekisteröityminen päättyy ja tili poistetaan. Sama koskee valmista tiliä, jonka vahvistat
+asetuksista: tili poistetaan heti. Tunniste jää estolistalle 18-vuotispäivääsi asti.
 
 **Peruste.** Vahvistus perustuu suostumukseesi (tietosuoja-asetuksen 6 artiklan 1 kohdan
 a alakohta), jonka annat vahvistusvaiheessa ennen tunnistautumista. Henkilötunnusta
 käsittelemme samalla suostumuksella tietosuojalain 29 §:n nojalla. Estolista perustuu
-oikeutettuun etuun: se suojaa käyttäjiä niiltä, jotka on suljettu palvelusta
-turvallisuussyistä, ja pitää alaikäiset poissa palvelusta (luku 5).
+oikeutettuun etuun, muiden käyttäjien turvallisuuteen: se pitää poissa ne, jotka on
+suljettu palvelusta turvallisuussyistä, ja alaikäiset. Myös vahvistuksen poistamisen
+jälkeen säilytettävä tunniste perustuu oikeutettuun etuun: sen avulla jokaisella on vain
+yksi tili ja porttikielto pitää (luku 5).
 
 **Kuka käsittelee.** Didit Identity Spain, S.L. käsittelee tietoja lukuunamme
 henkilötietojen käsittelijänä. Se käyttää omia alihankkijoitaan, jotka on lueteltu
-[Diditin alihankkijasivulla](https://didit.me/terms/sub-processors/), sekä
-tunnistusvälittäjää, jonka kautta tunnistautuminen kulkee pankkiin tai
-mobiilivarmenteen tarjoajalle. Pankki tai teleyritys, jolla tunnistaudut, on
+[Diditin alihankkijasivulla](https://didit.me/terms/sub-processors/). Tunnistautuminen
+kulkee pankkiin tai mobiilivarmenteen tarjoajalle Diditin ja sen käyttämän
+tunnistusvälittäjän kautta. Pankki tai teleyritys, jolla tunnistaudut, on
 tunnistuspalvelun tarjoaja ja käsittelee tunnistautumisen tietoja omien ehtojensa
 mukaan.
 
@@ -105,13 +108,17 @@ seurantaan käytetty Sentry ja käyttöanalytiikkaan käytetty PostHog (luku 7).
 
 **Säilytys.** Pyydämme Diditiä poistamaan tunnistautumisen tiedot heti, kun tulos on
 käsitelty. Joka tapauksessa Didit poistaa ne kuukauden kuluessa. Tiedon vahvistuksesta ja
-tunnisteen säilytämme niin kauan kuin tilisi on olemassa ja vahvistus on voimassa.
+tunnisteen säilytämme niin kauan kuin tilisi on olemassa, myös jos poistat
+vahvistusmerkin.
 Turvallisuussyistä annetun kiellon tunniste säilyy pysyvästi, alaikäisen tunniste
 18-vuotispäivään asti (luku 8).
 
 **Vahvistuksen poistaminen.** Voit poistaa vahvistuksen asetuksista milloin tahansa.
-Silloin poistamme tiedon vahvistuksesta ja tunnisteen, merkki katoaa profiilistasi, ja voit
-taas muuttaa syntymäpäivääsi. Estolistalla olevaa tunnistetta poistaminen ei poista.
+Silloin vahvistusmerkki katoaa profiilistasi, eikä sitä enää näytetä muille. Henkilöllisyys
+pysyy kuitenkin tiliisi liitettynä: tieto vahvistuksesta ja tunniste jäävät, jotta
+jokaisella on edelleen vain yksi tili ja porttikiellot pitävät, ja syntymäpäivä pysyy
+lukittuna. Ne poistuvat vasta, kun poistat tilisi, paitsi jos henkilöllisyys on
+estolistalla (luku 9).
 
 ### Treffit
 
@@ -287,8 +294,9 @@ kerrota kenellekään. Luvussa 2 kerromme, miten tämä kysymys toimii.
 | Sijaintisi jakaminen treffipaikalla | Suostumus, jonka voit perua lopettamalla jakamisen |
 | Vastaukset kysymyssarjoihin | Suostumus, jonka annat vastaamalla |
 | Puhelinnumeroiden vaihto treffien jälkeen | Suostumus, jonka annat valitsemalla sen vastauksen |
-| Henkilöllisyyden vahvistus, henkilötunnuksesta laskettu tunniste ja yksi tili ihmistä kohden (luku 2) | Suostumus, jonka annat vahvistusvaiheessa ja voit perua asetuksista. Henkilötunnuksen käsittely: tietosuojalain 29 § ja sama suostumus |
-| Estolista: turvallisuussyistä suljettujen ja alaikäisten tunnisteet | Oikeutettu etu — käyttäjien turvallisuus ja se, ettei palvelussa ole alaikäisiä |
+| Henkilöllisyyden vahvistus ja vahvistusmerkki (luku 2) | Suostumus, jonka annat vahvistusvaiheessa. Merkin voit poistaa asetuksista. Henkilötunnuksen käsittely: tietosuojalain 29 § ja sama suostumus |
+| Tunniste ja tieto vahvistuksesta sen jälkeen, kun olet poistanut merkin: yksi tili ihmistä kohden ja porttikiellot | Oikeutettu etu — muiden käyttäjien turvallisuus |
+| Estolista: turvallisuussyistä suljettujen ja alaikäisten tunnisteet | Oikeutettu etu — muiden käyttäjien turvallisuus |
 | Turvallisuus: ilmoitukset, merkintä siitä, ettei teitä ehdoteta toisillenne turvallisuusilmoituksen jälkeen, turvapainike ja rajoitukset | Oikeutettu etu — käyttäjien turvallisuus |
 | Luotetun henkilön puhelinnumero | Oikeutettu etu — käyttäjän turvallisuus |
 | Kirjautumisen suojaus: koodien rajoitukset, asennustunnisteen tiiviste ja IP-osoite | Oikeutettu etu — tilien suojaaminen |
@@ -339,11 +347,13 @@ Turvallisuus- ja käytösilmoituksen vapaa teksti voi kuvata tekoja, jotka ovat 
 tällaista tietoa vain käyttäjien suojaamiseksi ja tarvittaessa oikeudellisen vaateen
 esittämiseksi tai siihen vastaamiseksi.
 
-Estolistan tunniste säilyy, vaikka tili poistetaan tai vahvistuksen suostumus perutaan,
-koska sen peruste on oikeutettu etu eikä suostumus. Turvallisuussyistä annettu kielto
-koskee vain väkivaltaa, uhkailua ja seksuaalista häirintää. Katsomme, että muiden
+Kun poistat vahvistusmerkin, tunniste jää tilillesi, koska ilman sitä sama ihminen voisi
+luoda uuden tilin tai kiertää porttikiellon. Sen peruste on silloin oikeutettu etu eikä
+suostumus. Estolistan tunniste säilyy samasta syystä, vaikka tili poistetaan.
+Porttikiellon annamme vain turvallisuussyistä: väkivallasta, uhkailusta tai seksuaalisesta
+häirinnästä. Kielto on pysyvä, mutta henkilöstö voi purkaa sen. Katsomme, että muiden
 käyttäjien suojaaminen tällaiselta ihmiseltä painaa enemmän kuin hänen etunsa tulla
-unohdetuksi, ja tarkistamme jokaisen kiellon vuosittain.
+unohdetuksi.
 
 Kun peruste on oikeutettu etu, olemme punninneet etumme ja sinun oikeutesi. Saat
 punninnasta selvityksen luvun 1 osoitteesta.
@@ -356,7 +366,7 @@ punninnasta selvityksen luvun 1 osoitteesta.
 | Treffiparisi, kun te molemmat niin valitsette | Nimimerkkisi ja puhelinnumerosi, kerran, treffien jälkeen. Tämä on ainoa luovutus, jonka perusteena on suostumuksesi, ja ainoa, jota ei voi ottaa takaisin. |
 | Luotettu henkilösi | Yhden tekstiviestin, jossa on nimimerkkisi, jos painat turvapainiketta. Viestissä ei ole sijaintiasi, treffipaikkaa eikä treffikumppaniasi. |
 | Expo (650 Industries, Inc., Yhdysvallat) | Laitteesi push-tunnisteen ja ilmoituksen sisällön. Expo välittää ilmoituksen edelleen Googlen FCM-palveluun. |
-| Didit Identity Spain, S.L. (Espanja) | Jos vahvistat henkilöllisyytesi: nimesi, syntymäaikasi ja henkilötunnuksesi tunnistautumisen ajan. Didit käyttää tunnistusvälittäjää ja omia [alihankkijoitaan](https://didit.me/terms/sub-processors/) (luku 2). |
+| Didit Identity Spain, S.L. (Espanja) | Jos vahvistat henkilöllisyytesi: nimesi, syntymäaikasi ja henkilötunnuksesi tunnistautumisen ajan. Tunnistautuminen kulkee Diditin ja sen käyttämän tunnistusvälittäjän kautta. Didit käyttää omia [alihankkijoitaan](https://didit.me/terms/sub-processors/) (luku 2). |
 | GatewayAPI (Tanska) | Puhelinnumeron ja viestin sisällön, kun lähetämme kirjautumiskoodin tai turvaviestin. |
 | OpenFreeMap (Hyperknot Software Kft., Unkari) | Laitteesi IP-osoitteen ja sen, mitä karttaruutuja se pyytää. Pyyntö lähtee laitteeltasi, ei palvelimeltamme. Palvelun oman selosteen mukaan se ei tallenna IP-osoitteita. |
 | Pilkkeen henkilöstö | Sen, mitä ylläpitonäkymä näyttää, kun se on tarpeen käyttäjätuen tai turvallisuus- tai käytösilmoituksen käsittelyn vuoksi. Jaettuja sijainteja ylläpitonäkymä ei näytä. |
@@ -395,10 +405,10 @@ Suomessa.
 | Treffit, kutsut ja perumiset | 12 kuukautta treffien ajankohdasta. |
 | Palautteet sellaisina kuin ne annettiin | 12 kuukautta treffien ajankohdasta. |
 | Palautteesta tehty tiivistelmä, jota ehdotukset käyttävät | Niin kauan kuin sen ihmisen tili on olemassa, jota palaute koskee. Luvussa 9 kerromme, mitä tilin poistaminen tekee. |
-| Tieto henkilöllisyyden vahvistuksesta ja henkilötunnuksesta laskettu tunniste | Kunnes poistat vahvistuksen tai tilisi. |
+| Tieto henkilöllisyyden vahvistuksesta ja henkilötunnuksesta laskettu tunniste | Niin kauan kuin tilisi on olemassa, myös jos poistat vahvistusmerkin. |
 | Tunnistautumiskerrat: tulos ja ajankohta, ei henkilöllisyyttä | 90 päivää. |
 | Tunnistautumisen tiedot Diditillä | Poistetaan heti, kun tulos on käsitelty, ja viimeistään kuukauden kuluttua. |
-| Estolistan tunniste | Turvallisuussyistä annetun kiellon tunniste pysyvästi, kunnes kielto puretaan; kiellot tarkistetaan vuosittain. Alaikäisen tunniste 18-vuotispäivään asti. Tilin poistaminen ei poista kumpaakaan. |
+| Estolistan tunniste | Turvallisuussyistä annetun kiellon tunniste pysyvästi, kunnes henkilöstö purkaa kiellon. Alaikäisen tunniste 18-vuotispäivään asti. Tilin poistaminen ei poista kumpaakaan. |
 | Henkilöstön merkinnät tilien yhdistämisestä, kielloista ja vahvistusten poistamisesta | Vuosi. Merkinnöissä ei ole henkilöllisyyttä. |
 | Suostumuksesi treffiparien etsintään ja sen versio | Kunnes perut suostumuksen tai poistat tilisi. |
 | Vastaus siihen, haluatko tavata uudelleen, ja vaihdettu puhelinnumero | 12 kuukautta treffien ajankohdasta, treffien mukana. |
@@ -517,7 +527,7 @@ automaattisesti.
 
 Henkilöllisyyden vahvistuksessa automaattisia ovat yhden tilin sääntö, estolista ja
 ikäraja: vahvistus ei onnistu, jos henkilöllisyys on estolistalla, ja rekisteröityminen
-päättyy, jos olet alle 18-vuotias. Voit pyytää, että päätöksen käy läpi ihminen,
+päättyy ja tili poistetaan, jos olet alle 18-vuotias. Voit pyytää, että päätöksen käy läpi ihminen,
 kirjoittamalla luvun 1 osoitteeseen.
 
 ## 11. Mitä oikeuksia sinulla on
@@ -544,8 +554,9 @@ yhdellä painalluksella, ja treffitoiveita voit muuttaa milloin tahansa. Suostum
 treffiparien etsintään voit antaa ja perua asetuksista, ja peruminen poistaa sukupuolesi,
 tiedon siitä keitä haluat tavata, vastauksesi monisuhteisuudesta sekä kaikki poliittisia
 näkemyksiä koskevat vastaukset,
-jotka olet antanut tai jotka sinusta on annettu. Henkilöllisyyden vahvistuksen voit poistaa
-asetuksista, ja poistaminen poistaa vahvistuksen ja tunnisteen. Vastausta siihen,
+jotka olet antanut tai jotka sinusta on annettu. Vahvistusmerkin voit poistaa
+asetuksista. Tieto vahvistuksesta ja tunniste jäävät silloin tilillesi oikeutetun edun
+perusteella (luku 5), ja ne poistuvat tilin mukana. Vastausta siihen,
 haluatko tavata uudelleen, ei sen sijaan voi perua: jos numerot on jo vaihdettu, peruminen
 ei saa niitä takaisin. Luvussa 5 kerromme, mitä peruminen tässä tilanteessa tarkoittaa.
 

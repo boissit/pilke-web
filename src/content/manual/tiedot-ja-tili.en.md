@@ -45,13 +45,13 @@ The [privacy policy](/en/tietosuoja) says what we store about the verification.
 
 ### The verified badge
 
-Once you've verified your identity, other people see the verified badge on your match card, on invites and on the date page. Tapping the badge shows what it means.
+Once you've verified your identity, other people see the verified badge on your match card, on invites and on the date page.
 
 The badge means the person has confirmed who they are with online banking ID or a mobile certificate, is over 18, and that the age on their profile is their real age. We don't check preferred names or photos, so the badge says nothing about them.
 
 ### Removing the verification
 
-Once your identity is verified, the Account section in Settings shows **Identity verified**, with **Remove verification** under it. When you remove it, the badge disappears from your profile and you can change your birthday again. You can verify your identity again later.
+Once your identity is verified, the Account section in Settings shows **Identity verified**, with **Remove verification** under it. When you remove it, the badge disappears from your profile. Your identity stays linked to your account, though: it can't verify another account, bans still apply to it, and your birthday stays locked. The link goes only when you delete your account.
 
 ## Your account
 

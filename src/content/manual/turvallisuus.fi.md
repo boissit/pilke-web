@@ -15,7 +15,7 @@ Näytöllä lukee, lähtikö viesti. Jos ei, soita luotetulle henkilöllesi itse
 
 ## Vahvistusmerkki
 
-Osa käyttäjistä on vahvistanut henkilöllisyytensä pankkitunnuksilla tai mobiilivarmenteella, ja heidän nimensä vieressä näkyy vahvistusmerkki. Jos treffiparillasi on merkki, hän on tunnistautunut ja on täysi-ikäinen. Taustoja Pilke ei tarkista, eikä merkki kerro kutsumanimestä tai kuvasta mitään, joten toimi treffeillä samoin kuin tavatessasi kenet tahansa tuntemattoman. Katso [Tietosi ja tilisi](/ohje/tiedot-ja-tili).
+Osa käyttäjistä on vahvistanut henkilöllisyytensä pankkitunnuksilla tai mobiilivarmenteella, ja heidän profiilissaan näkyy vahvistusmerkki. Jos treffiparillasi on merkki, hän on tunnistautunut ja on täysi-ikäinen. Taustoja Pilke ei tarkista, eikä merkki kerro kutsumanimestä tai kuvasta mitään, joten toimi treffeillä samoin kuin tavatessasi kenet tahansa tuntemattoman. Katso [Tietosi ja tilisi](/ohje/tiedot-ja-tili).
 
 Jos suljemme vahvistetun tilin turvallisuussyistä, samalla henkilöllisyydellä ei voi enää vahvistaa uutta tiliä.
 
